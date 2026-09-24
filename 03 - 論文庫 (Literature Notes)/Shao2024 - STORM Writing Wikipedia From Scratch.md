@@ -2,7 +2,7 @@
 paper_id: "Shao2024_STORM"
 title: "Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models"
 authors:
-  - "Yuhuai Shao"
+  - "Yijia Shao"
   - "Yucheng Jiang"
   - "Theodore A. Kanell"
   - "Peter Xu"
@@ -29,7 +29,7 @@ last_verified: "2026-09-24"
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Shao2024_STORM`
-> - **作者**：Yuhuai Shao, Yucheng Jiang, Theodore A. Kanell, Peter Xu, Omar Khattab, Monica S. Lam
+> - **作者**：Yijia Shao, Yucheng Jiang, Theodore A. Kanell, Peter Xu, Omar Khattab, Monica S. Lam
 > - **預印本初次發布年份 (Preprint)**：2024
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (NAACL 2024)
 > - **DOI**：無
