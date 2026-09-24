@@ -1,0 +1,78 @@
+---
+title: "Idea 04: End-to-End RAG Failure Attribution & Evidence Governance"
+evidence_status: "proposed_method"
+tags:
+  - idea
+  - error-attribution
+  - evidence-governance
+---
+
+# Idea 04: End-to-End RAG Failure Attribution & Evidence Governance
+
+> [!WARNING]
+> 下列 controller、F/R/D/A/P/C/T typing 與 deterministic repair loop 是本專案設計。它們可以受 IE、attribution、trustworthy RAG、report generation 文獻啟發，但目前不得標成 survey-established framework。
+
+## Failure taxonomy
+
+```mermaid
+flowchart LR
+    P["Parsing"] --> C["Chunking"]
+    C --> X["Extraction"]
+    X --> K["Consolidation"]
+    K --> I["Representation / Index"]
+    I --> R["Retrieval"]
+    R --> S["Evidence Sufficiency"]
+    S --> U["Context Utilization / Reasoning"]
+    U --> G["Generation"]
+    G --> V["Verification / Attribution"]
+    V --> Q["Report-level Quality"]
+```
+
+## Controller
+
+- missing knowledge → retrieve
+- extracted wrong → re-extract
+- incomplete evidence → gap search
+- conflicting evidence → provenance / temporal resolution
+- gold evidence present but answer wrong → context-utilization / reasoning failure
+- sufficient evidence + supported claims → stop
+
+## F/R/D/A/P/C/T（project-specific operational typing）
+
+- F = Fact
+- R = Requirement
+- D = Confirmed Design
+- A = Assumption
+- P = Proposal
+- C = Capability
+- T = Terms
+
+這套 typing 可用於企業交付物，但不是通用 IE taxonomy。若用於研究，必須與 NER/RE/EE/UIE、event/temporal extraction 等 established tasks 分開報告。
+
+## Claim-Evidence Ledger（project mechanism）
+
+每個 claim 保存：
+- claim text；
+- supporting / contradicting evidence IDs；
+- entailment status；
+- source authority / version；
+- unresolved gap；
+- output section。
+
+## Oracle localization
+
+| Oracle | 若結果顯著改善，主要錯誤來源 |
+|---|---|
+| Gold parsing | parsing / layout |
+| Gold chunks | segmentation |
+| Gold extraction | IE |
+| Gold consolidated facts | entity/coreference/temporal merge |
+| Gold retrieval | retrieval |
+| Gold complete evidence set | sufficiency |
+| Gold evidence in context | utilization / reasoning |
+| Gold claims | generation |
+| Gold citations | attribution |
+
+## 研究價值
+
+目標不是再做一個 end-to-end score，而是回答：**錯在 pipeline 哪一層，以及修哪一層最划算。**
