@@ -15,7 +15,7 @@ tags:
 ### 一、核心問題意識：從 Naive RAG 到 Advanced/Agentic RAG
 傳統 RAG（[[Lewis2020 - Retrieval-Augmented Generation (RAG)|Lewis et al., 2020]]）採用簡單的『切塊 $\rightarrow$ 嵌入 $\rightarrow$ 向量相似度檢索 $\rightarrow$ 生成』流程，在真實長文件處理中面臨三大破綻：
 1. **語意不對稱（Semantic Asymmetry）**：短 Query 與長 Passage 在向量空間分佈不一致。
-2. **單向量粗暴壓縮**：[[Karpukhin2020 - Dense Passage Retrieval (DPR)|DPR]] 將數百字壓成單一 1536 維向量，丟失了專有名詞、數字、精準代號等硬匹配資訊。
+2. **單向量表示的資訊瓶頸**：[[Karpukhin2020 - Dense Passage Retrieval (DPR)|DPR]] 以雙編碼器將 Query 與 Passage 各自映射為固定維度向量；向量維度取決於底層 encoder，並不存在「DPR 固定為 1536 維」的通則。單向量 dense retrieval 也可能弱化罕見字串、型號與精確詞彙訊號，因此實務上常與 sparse / late-interaction 方法比較。
 3. **盲目檢索與噪音注入**：不論問題是否已知、檢索內容是否衝突，一律無差別餵入 LLM，造成上下文污染與嚴重幻覺。
 
 ---
@@ -23,27 +23,31 @@ tags:
 ### 二、先進檢索架構光譜
 
 ```mermaid
-graph LR
-    subgraph Query Pre-processing
-        Q["User Query"] --> HY["[[Gao2022 - HyDE Zero-Shot Dense Retrieval|HyDE (假想文檔生成)]]"]
-        Q --> CR["Query Rewrite / Decompose"]
-    end
+flowchart LR
+    Q["User Query"]
+    HY["HyDE"]
+    RW["Query Rewrite / Decompose"]
+    DR["Dense Retrieval"]
+    SP["Sparse Retrieval"]
+    LI["Late Interaction"]
+    RR["Reranker"]
+    SR["Self-RAG"]
+    IR["IRCoT"]
 
-    subgraph Retrieval Engine
-        HY --> DR["Dense (DPR/BGE)"]
-        HY --> SP["Sparse (BM25/SPLADE)"]
-        HY --> LI["[[Khattab2020 - ColBERT Late Interaction|ColBERT (Late Interaction)]]"]
-    end
-
-    subgraph Hybrid & Rerank
-        DR & SP & LI --> RR["Cross-Encoder Reranker / Cohere"]
-    end
-
-    subgraph Dynamic & Adaptive Generation
-        RR --> SR["[[Asai2023 - Self-RAG|Self-RAG (反思與自我批判)]]"]
-        RR --> IR["[[Trivedi2022 - IRCoT Interleaving Retrieval and CoT|IRCoT (多跳交錯檢索)]]"]
-    end
+    Q --> HY
+    Q --> RW
+    HY --> DR
+    RW --> DR
+    RW --> SP
+    Q --> LI
+    DR --> RR
+    SP --> RR
+    LI --> RR
+    RR --> SR
+    RR --> IR
 ```
+
+**圖中節點對照**：[[Gao2022 - HyDE Zero-Shot Dense Retrieval|HyDE]] · [[Khattab2020 - ColBERT Late Interaction|ColBERT]] · [[Asai2023 - Self-RAG|Self-RAG]] · [[Trivedi2022 - IRCoT Interleaving Retrieval and CoT|IRCoT]]
 
 #### 1. 密集向量與稀疏檢索之爭 (Dense vs. Sparse)
 - **Dense Retrieval ([[Karpukhin2020 - Dense Passage Retrieval (DPR)|DPR]])**：擅長近義詞、抽象意圖捕捉；但在產品型號、錯誤代碼、罕見人名上表現極差。
@@ -55,13 +59,13 @@ graph LR
 
 #### 3. 查詢轉換與假設文檔 (Query Transformation & HyDE)
 - **代表作**：[[Gao2022 - HyDE Zero-Shot Dense Retrieval|HyDE (Gao et al., 2022)]]。
-- **機制**：令 LLM 根據問題先撰寫一篇包含假想答案的完整文章，利用該假想文檔的向量去檢索資料庫。由於假想文檔在長度、句式與詞彙分佈上與真實目標文檔完全同構，能大幅彌合查詢與文檔的幾何距離。
+- **機制**：令 LLM 根據問題先撰寫一篇包含假想答案的完整文章，利用該假想文檔的向量去檢索資料庫。其目的在於以生成的 hypothetical document 作為 dense encoder 的輸入，建立較接近文件語意空間的檢索表示；假想文件可能包含錯誤內容，也不保證與真實目標文件「完全同構」。
 
 #### 4. 自適應反思與多跳檢索 (Adaptive RAG & Multi-Hop)
 - **代表作**：[[Asai2023 - Self-RAG|Self-RAG (Asai et al., 2023)]]、[[Trivedi2022 - IRCoT Interleaving Retrieval and CoT|IRCoT (Trivedi et al., 2022)]]。
 - **機制**：
   - **Self-RAG**：利用 `[Retrieve]`、`[IsREL]`、`[IsSUP]` 標記訓練模型自覺判斷何時檢索、驗證文檔是否相關、檢驗輸出是否獲得文檔充分支持。
-  - **IRCoT**：將思維鏈（CoT）推理與檢索循環交替，將前一步的中間推論結果作為新的檢索線索，成功攻克跨多篇文檔的複雜多跳推理。
+  - **IRCoT**：將思維鏈（CoT）推理與檢索循環交替，將前一步的中間推論結果作為新的檢索線索，在原論文評估的多跳 QA 任務中改善檢索與回答表現；效果仍受中間推理品質與檢索誤差影響。
 
 ---
 
@@ -69,6 +73,12 @@ graph LR
 2024 年 Anthropic 提出了 Contextual Retrieval 工程範式：
 - **痛點**：將大文件切分為 200~300 token 的 Chunk 時，後續段落失去開頭的背景主題（如『該季度的營收增長了 5%』，在 Chunk 中丟失了『哪一年哪一家公司』）。
 - **解法**：在離線切塊時，呼叫 LLM 為每一個 Chunk 前置補充 50~100 token 的文檔全域情境說明（Contextual Explanation），使每個 Chunk 在向量嵌入與 BM25 索引中均自帶完備上下文，檢索失敗率降低 49% 以上。
+
+---
+
+## Survey-level 研究依據
+
+本 Domain 的 taxonomy 不只依靠單篇方法論文。建議先以 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 中的 **Gao et al., 2023/2024, _Retrieval-Augmented Generation for Large Language Models: A Survey_** 作為 RAG 全景入口，再回到 DPR、ColBERT、HyDE、Self-RAG、IRCoT 等 primary papers 核對具體機制與數字。Agentic RAG 則另參考 2025 的 agentic RAG survey；其出版狀態與驗證等級以 Survey Index 為準。
 
 ---
 
