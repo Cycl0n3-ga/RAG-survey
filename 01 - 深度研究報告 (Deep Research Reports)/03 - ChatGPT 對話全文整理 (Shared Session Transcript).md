@@ -6,6 +6,8 @@ tags:
 source_urls:
   - "https://chatgpt.com/share/6ab48c47-69b0-83e8-b415-014b1ca3180f"
   - "https://chatgpt.com/share/6ab49939-4750-83ee-b284-1823a1797146"
+  - "https://chatgpt.com/share/6ab49a65-6f94-83e8-bc61-1535175bca86"
+  - "https://chatgpt.com/share/6ab49925-47f8-83e8-bdd0-26b94f9528a4"
 ---
 
 # ChatGPT 對話全文整理 (Shared Session Transcript)
@@ -1900,3 +1902,722 @@ Ragflow, langchain一句話告訴我我贏什麼
 
 - **RAGFlow：**你贏在 **claim-level evidence governance**——不只是「答案附 citation」，而是能判斷每個 claim 的來源、類型、充分性與是否允許寫進正式文件。  
 - **LangChain：**你贏在 **domain-specific governance + deterministic validation**——它強在組 workflow/agent，你強在規定「資料代表什麼、claim 能不能成立、失敗後怎麼 repair」。
+---
+
+# 第三部分：Governed Evidence Chunk (GEC) 切塊哲學與學術文獻依據 (Shared Session 3)
+
+> [!NOTE] 對話背景
+> - **原始分享連結**：[ChatGPT - Chunking 設計理由與文獻依據](https://chatgpt.com/share/6ab49a65-6f94-83e8-bc61-1535175bca86)
+> - **對話主題**：SourceChunkRecord 切塊工程設計背後的學術依據、檢索粒度（Dense X）、結構與語意邊界（LumberChunker, Adaptive Chunking）、長程上下文丟失（Late Chunking, RAPTOR）、資料溯源與可變性版本控制（W3C PROV）、細粒度歸因（ReClaim, MIRAGE）與工程啟發式參數邊界。
+
+---
+
+## 👤 使用者提問 (Turn 1)
+
+chunk這麼做 有沒有什麼原因 使用哪篇論文提及的東西
+*(包含 SourceChunkRecord 結構、heading_path、previous/next chunk ID、block_ids、source_file_id、source_version_id 等工程設計)*
+
+---
+
+## 🤖 Assistant 回應 (Turn 1)
+
+有原因，但要先把一件事講清楚：
+
+> **你現在這個 chunk schema 不是直接照某一篇論文實作。**
+> 它是把「chunk granularity、structure-aware segmentation、context preservation、document provenance、versioning、authority metadata」幾種概念組合起來的工程設計。
+
+所以論文裡最好不要寫成「Our chunking follows Paper X」。比較準確的是：
+
+> **Our governed chunk representation is informed by prior work on retrieval granularity, structure-aware segmentation, contextual preservation, and fine-grained provenance.**
+
+而且你目前有些設計有很強的文獻支持，有些只是合理工程決策，不能硬牽論文。
+
+---
+
+## 先看你現在到底做了什麼
+
+目前實際 chunker 大概是：
+
+\[
+\text{Parsed blocks}
+\xrightarrow{\text{structure-aware merge}}
+\text{SourceChunkRecord}
+\]
+
+其中：
+
+\[
+c_i=
+(
+\text{text},
+\text{block IDs},
+\text{heading},
+\text{source/version},
+\text{authority},
+\text{locator},
+\text{hash},
+\text{adjacency}
+)
+\]
+
+切法大致是：
+
+\[
+target\approx800\ tokens
+\]
+
+\[
+max\approx1200\ tokens
+\]
+
+同時：
+
+- 尊重 canonical block boundary
+- heading 改變時傾向斷 chunk
+- table 不跟普通 prose 混著切
+- chunk 可由多個 block 組成
+- 保留每個 block 的原始 locator
+- 保留 logical source 與 immutable source version
+- 保留 source role / approval / authority
+- 有前後 chunk reference
+
+這其實不是單純的「fixed-size chunking」。
+
+比較適合叫：
+
+\[
+\boxed{\text{Structure-aware Governed Evidence Chunking}}
+\]
+
+---
+
+# 哪些設計可以對到哪些論文？
+
+| 你的設計 | 最相關工作 | 支持程度 | 注意 |
+|---|---|---:|---|
+| chunk 是 retrieval unit | **Dense X Retrieval**, EMNLP 2024 | ★★★★★ | 非常直接 |
+| 不是死切固定長度，而尊重 semantic/structural boundary | **LumberChunker**, Findings EMNLP 2024 | ★★★★★ | 方法不同，但理論一致 |
+| heading/block-aware、block integrity | **Adaptive Chunking**, LREC 2026 | ★★★★★ | 跟你現在特別接近 |
+| 保留 surrounding context / overlap | **Late Chunking**, 2024 | ★★★★☆ | 動機一致，但你不是 Late Chunking |
+| hierarchy/context information | **RAPTOR**, ICLR 2024 | ★★★☆☆ | 概念相關，不是相同演算法 |
+| paragraph/table/block canonical representation | **Docling Technical Report** | ★★★★☆ | 主要支持 parser/structure |
+| chunk → original source locator | **fine-grained attribution literature** | ★★★★☆ | ReClaim/MIRAGE 類 |
+| source_file vs source_version | **W3C PROV / provenance model** | ★★★★★ | 這不是 RAG chunk paper |
+| SHA-256 / immutable version | data provenance/content-addressing | ★★★★☆ | 工程/資料系統思想 |
+| authority / approval metadata | 你的 domain-governance 設計 | ★★☆☆☆ | **不是現成 paper chunking 方法** |
+| 800/1200/120 | 你的 heuristic | ☆☆☆☆☆ | **沒有論文依據，必須 benchmark** |
+
+---
+
+# 1. 為什麼 chunk 不能隨便切？
+
+這件事有非常直接的論文。
+
+### Dense X Retrieval: What Retrieval Granularity Should We Use?
+Chen et al., **EMNLP 2024**
+
+這篇研究的核心問題就是：
+
+> Retrieval corpus 到底應該以 document、passage、sentence，還是更細的 proposition 當 retrieval unit？
+
+結果顯示：
+
+\[
+\text{retrieval granularity}
+\]
+
+會顯著影響 retrieval 與 downstream QA，而他們的 proposition-level retrieval 在實驗中優於 passage/sentence retrieval。turn291273search0cite
+
+你的做法沒有用 LLM 判斷 semantic shift，而是：
+
+```python
+if heading_path changed
+and current_tokens >= 300:
+    flush()
+```
+
+本質是：
+
+\[
+HeadingChange
+\approx
+SemanticBoundary
+\]
+
+這是非常務實的 deterministic approximation。
+
+例如：
+
+```text
+3.1 公司簡介
+  ...
+  ...
+3.2 能源管理制度
+  ...
+```
+
+如果死切：
+
+```text
+chunk 7 =
+公司簡介最後兩段
++
+能源管理制度第一段
+```
+
+embedding 得到的 representation：
+
+\[
+E(c_7)
+\]
+
+會同時混入兩個 topic。
+
+你現在則傾向：
+
+\[
+c_7=\text{公司簡介}
+\]
+
+\[
+c_8=\text{能源管理制度}
+\]
+
+這個設計有充分理由。
+
+---
+
+# 3. 有一篇 2026 論文其實跟你的設計更接近
+
+### Adaptive Chunking: Optimizing Chunking-Method Selection for RAG
+LREC 2026
+
+這篇提出 chunking quality 不能只看 size，而列出五種 intrinsic metrics，包括：
+
+\[
+RC=\text{References Completeness}
+\]
+
+\[
+ICC=\text{Intrachunk Cohesion}
+\]
+
+\[
+DCC=\text{Document Contextual Coherence}
+\]
+
+\[
+BI=\text{Block Integrity}
+\]
+
+\[
+SC=\text{Size Compliance}
+\]
+
+而且實驗指出 document-aware / structure-aware chunking 可以改善 downstream RAG。turn186279search0cite
+
+你的方法不是 Late Chunking。
+
+你目前是：
+
+```text
+Document
+ ↓
+chunk
+ ↓
+independent embedding
+```
+
+所以：
+
+\[
+\boxed{\text{你沒有 implement Late Chunking}}
+\]
+
+但是你的：
+
+```text
+heading_path
+previous_chunk_id
+next_chunk_id
+overlap
+```
+
+其實都在處理同一個根本問題：
+
+\[
+\text{Chunk Boundary}
+\Rightarrow
+\text{Context Loss}.
+\]
+
+所以可以引用 Late Chunking 說明**為什麼保存 structural/context metadata 是必要問題**，不能說你用了 Late Chunking 方法。
+
+---
+
+# 6. `previous_chunk_id` / `next_chunk_id` 為什麼存在？
+
+背後也是 context reconstruction。
+
+理想上：
+
+\[
+Retrieve(c_i)
+\]
+
+之後可以做：
+
+\[
+Context(c_i)
+=
+c_{i-1}
+\oplus
+c_i
+\oplus
+c_{i+1}.
+\]
+
+這類方法通常叫：
+
+> **neighbor expansion / context expansion**
+
+它處理的問題是：
+
+```text
+Chunk A:
+The pump shall operate at...
+
+Chunk B:
+...45 kW under nominal loading conditions.
+```
+
+單獨 retrieve B：
+
+> "...45 kW under nominal loading conditions."
+
+其實不完整。
+
+加入：
+
+\[
+c_{i-1}
+\]
+
+才知道 subject。
+
+RAPTOR 也從另一個方向指出只 retrieval 短 contiguous chunks 容易失去文件較大範圍 context，因此建立 multi-level representation。turn291273search3cite
+
+因此你的：
+
+\[
+Document
+\rightarrow Block
+\rightarrow Chunk
+\rightarrow Knowledge
+\rightarrow Claim
+\]
+
+完全可以理解成 provenance graph。
+
+這其實比一般 RAG：
+
+```text
+citation = chunk 17
+```
+
+成熟很多。
+
+---
+
+# 8. 你剛剛特別問到的 logical `source_file_id`
+
+這個設計其實很好，而且不是隨便多存一個 ID。
+
+你的 scanner 現在是：
+
+\[
+source\_file\_id
+=
+H(
+project\_id,
+normalized\_path
+)
+\]
+
+而：
+
+\[
+source\_version\_id
+=
+H(
+source\_file\_id,
+content\_digest
+).
+\]
+
+所以例如：
+
+```text
+equipment_spec.docx
+```
+
+第一版：
+
+```text
+SHA256 = AAA
+```
+
+第二版內容修改：
+
+```text
+SHA256 = BBB
+```
+
+得到：
+
+\[
+sourceFileId_1=sourceFileId_2
+\]
+
+但是：
+
+\[
+sourceVersionId_1
+\neq
+sourceVersionId_2.
+\]
+
+這代表：
+
+### `source_file_id`
+
+是：
+
+\[
+\boxed{\text{logical document identity}}
+\]
+
+也就是：
+
+> 「這是哪一份文件？」
+
+### `source_version_id`
+
+則是：
+
+\[
+\boxed{\text{immutable version identity}}
+\]
+
+也就是：
+
+> 「這份文件的哪一版？」
+
+---
+
+# 9. 這個概念跟 W3C PROV 的 `wasRevisionOf` 幾乎正對
+
+例如：
+
+\[
+D^{2024}
+\]
+
+修改成：
+
+\[
+D^{2025}.
+\]
+
+你可以表示：
+
+\[
+D^{2025}
+\;prov:wasRevisionOf\;
+D^{2024}.
+\]
+
+W3C PROV 對 revision 的定義就是：
+
+> resulting entity 是原 entity 的 revised version。turn717350search0cite
+
+MIRAGE 也把 RAG answer attribution 視為可信 RAG 的重要問題，嘗試找出哪些 retrieved documents 真正影響 answer tokens。turn679114search2cite
+
+如果原表：
+
+| Pump | Power | Qty |
+|---|---:|---:|
+| P101 | 15 kW | 2 |
+| P102 | 7.5 kW | 4 |
+
+直接 flatten：
+
+```text
+Pump Power Qty P101 15 kW 2 P102 7.5 kW 4
+```
+
+結構已經受損。
+
+你保留：
+
+\[
+Table
+\rightarrow Row
+\rightarrow Cell
+\]
+
+再建立 retrieval representation，這個方向是對的。
+
+---
+
+# 13. 但有四個東西目前不能說「論文證明這樣最好」
+
+這點反而非常重要。
+
+## ① `target_tokens = 800`
+
+沒有論文證明：
+
+\[
+800
+\]
+
+是你 industrial proposal corpus 的最佳值。
+
+---
+
+## ② `max_tokens = 1200`
+
+一樣。
+
+---
+
+## ③ `overlap_tokens = 120`
+
+更不能說。
+
+而且前面我們已經發現，你實際 implementation 並不是精確重疊 120 tokens，而是：
+
+> carry 最後一個完整 block。
+
+所以甚至：
+
+\[
+Overlap\neq120
+\]
+
+通常成立。
+
+---
+
+## ④ heading change + 300 token threshold
+
+```python
+heading changed and tokens >= 300
+```
+
+也是你自己設定的 heuristic。
+
+所以這些應該變成你的 experiment：
+
+\[
+C_{400}
+\]
+
+\[
+C_{800}
+\]
+
+\[
+C_{1200}
+\]
+
+以及：
+
+\[
+Fixed
+\]
+
+\[
+Recursive
+\]
+
+\[
+HeadingAware
+\]
+
+\[
+Semantic
+\]
+
+來做 ablation。
+
+---
+
+# 我會怎麼把你目前 chunking 寫進論文
+
+我不會寫：
+
+> We employ a novel 800-token chunking algorithm.
+
+這很危險。
+
+我會寫成：
+
+> **We construct retrieval units using a deterministic structure-aware chunking procedure over canonical document blocks. Rather than splitting raw text solely at fixed token boundaries, the chunker preserves block integrity and document hierarchy, preferentially terminates chunks at heading transitions, treats structured tables separately, and retains fine-grained provenance links to the originating blocks and source versions.**
+
+然後接：
+
+> Prior work has demonstrated that retrieval granularity materially affects downstream retrieval performance (Chen et al., 2024), while semantic- and structure-aware segmentation can outperform naïve fixed-length chunking (Duarte et al., 2024; de Moura Júnior et al., 2026). turn291273search0turn186279search0cite
+
+\[
+\text{semantic/structural boundaries matter}
+\]
+
+LumberChunker / Adaptive Chunking。turn186279search1
+
+\[
+\text{chunking loses context}
+\]
+
+Late Chunking / RAPTOR。turn291273academia84
+
+\[
+\text{fine-grained provenance improves verifiability}
+\]
+
+ReClaim / MIRAGE。turn679114search3
+
+\[
+\text{versions/derivation should retain provenance relationships}
+\]
+
+W3C PROV。turn717350search0
+
+---
+
+# 第四部分：F/R/D/A/P/C/T 分類法溯源、UIE 架構定位與知識原子化 (Shared Session 4)
+
+> [!NOTE] 對話背景
+> - **原始分享連結**：[ChatGPT - F/R/D/A/P/C/T 分類法與 UIE 論文關係](https://chatgpt.com/share/6ab49925-47f8-83e8-bdd0-26b94f9528a4)
+> - **對話主題**：F/R/D/A/P/C/T 七類知識本體之學術淵源（Volere 需求工程模型、軟體工程假設管理）、UIE（Universal Information Extraction）的真實定位（Schema-guided 抽取機制而非既定分類法）、Chunk 作為檢索單元 vs. Knowledge Unit 作為語意單元的理論修正。
+
+---
+
+## 👤 使用者提問 (Turn 1)
+
+F = Fact 事實, R = Requirement 需求, D = Design 已確認設計, A = Assumption 假設
+P = Proposal 建議, C = Capability 產品能力, T = Term 條款
+
+把chunk做分類？是這篇論文？還是哪一篇？
+
+---
+
+## 🤖 Assistant 回應 (Turn 1)
+
+不是。**F/R/D/A/P/C/T 這七類不是 UIE 論文提出的 taxonomy**；UIE 提供的是「怎麼依照你指定的 schema 從文字抽取結構」，不是規定 schema 必須長什麼樣。UIE 原論文的 schema 是 entity、relation、event、sentiment 等 IE 任務類型，並透過 Structural Schema Instructor 告訴模型這次要抽哪些 type。turn734968search0
+
+你現在這組：
+
+\[
+\mathcal T=\{F,R,D,A,P,C,T\}
+\]
+
+更準確地說，是你 proposal pipeline 自己建立的 **domain-specific knowledge ontology / semantic type system**。在我們之前的版本裡，它就是放在 knowledge extraction / typed knowledge layer 使用的，並沒有一篇外部論文原封不動定義這七類。
+
+### 但它不是憑空亂分的
+
+它其實可以找到很好的學術脈絡。最接近的經典來源之一是 **Volere Requirements Knowledge Model**。Volere 明確把 requirements engineering 的 knowledge 分成不同 classes，包括：
+
+- **Fact / Assumption**
+- Functional Requirement
+- Non-functional Requirement
+- Constraint
+- Naming Conventions & Data Dictionary
+- Implementation Unit
+- System Architecture Component
+- 其他 requirements-related knowledge
+
+而且它直接定義：Fact 是「會影響 requirements 與 design 的相關知識」，Assumption 是「沒有證據但被暫時接受為真的 expectation」。turn587734view1cite
+
+所以你現在：
+
+\[
+F=\text{Fact}
+\]
+
+\[
+R=\text{Requirement}
+\]
+
+\[
+A=\text{Assumption}
+\]
+
+\[
+T=\text{Term}
+\]
+
+這四個其實和 Requirements Engineering / knowledge modeling 的傳統非常接近。
+
+尤其 Assumption 並不是我們隨便 invented 的概念。軟體工程研究裡甚至有整套 assumption management 文獻，會把 assumption 視為與 requirements、design decisions 等並列的重要 software-development knowledge artifact。turn256670search0cite
+
+所以關係應該畫成：
+
+```text
+                 你的 contribution
+                       ↓
+          F R D A P C T ontology
+                       │
+                       │ schema
+                       ↓
+Document → Chunk → Schema-conditioned Extraction
+                       ↑
+                       │
+                 UIE 提供理論依據
+```
+
+**UIE 支持「用 schema 去抽不同種類的 knowledge」；它不支持「F/R/D/A/P/C/T 這七類是標準分類」。**
+
+---
+
+### 如果你要寫成論文，我會這樣處理來源
+
+不要寫：
+
+> Following UIE, we classify chunks into Fact, Requirement, Design...
+
+這會被 reviewer 抓到，因為 UIE 根本沒有這七個類別。
+
+比較安全而且漂亮的是：
+
+> *Inspired by schema-guided universal information extraction, we define a domain-specific knowledge schema for industrial proposal generation.*
+
+然後定義：
+
+\[
+\mathcal T =
+\{
+\text{Fact},
+\text{Requirement},
+\text{Design},
+\text{Assumption},
+\text{Proposal},
+\text{Capability},
+\text{Term}
+\}
+\]
+
+其中 **F/R/A/T 可以再引用 Requirements Engineering / Volere knowledge modeling** 作為 conceptual precedent；D/P/C 則明確講是我們針對 industrial proposal generation 加入的 task-specific knowledge types。Volere 確實把 Fact/Assumption、Requirements、Terminology 等視為不同 knowledge classes，因此這個學術脈絡是站得住腳的。turn587734view1
+
+這其實比「七類全部抄自一篇 paper」還合理：**UIE 負責 extraction formalism；Requirements Engineering 負責 knowledge-class 理念；F/R/D/A/P/C/T 是你的 domain ontology contribution。**
+
+而且我會強烈建議你之後把名稱從 **Chunk Classification** 改叫 **Typed Knowledge Extraction** 或 **Semantic Knowledge Typing**。前者聽起來只是很普通的 seven-class text classifier；後者才符合你實際做的事情。
+
+---
+
+If you want, I can:
+
+- 請列出如何在系統中落實F/R/D/A/P/C/T分類
+- 說明如何結合UIE模型與F/R/D/A/P/C/T分類
+- 探討F/R/D/A/P/C/T分類在提案流程中的具體價值

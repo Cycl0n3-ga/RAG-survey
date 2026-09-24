@@ -44,6 +44,20 @@ flowchart LR
 
 目前本 Domain 不能只停在 LongBench / L-Eval / InfiniteBench / RULER。RAG 的 retrieval、grounding、multi-hop、table reasoning 與 report generation 需要不同 Gold。完整 catalog 已移至 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]，至少包含 BEIR、HotpotQA、MultiHop-RAG、RAGBench、RAGChecker、Comprehensive RAG Benchmark、T²-RAGBench、RAG4Reports、EviReportBench、AnalystBench、ReportLogic 等。
 
+#### 1. 無參考答案自動化評估框架：Ragas
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/Es2024 - RAGAS|RAGAS (Es et al., EACL 2024)]]。
+- **核心指標**：
+  - **Faithfulness（忠實度）**：將回答原子化拆解為 Claims，驗證檢索上下文對 Claim 的邏輯蘊涵（與人類評審一致性達 0.95）；
+  - **Answer Relevance（答案相關性）**：反向問題生成與相似度打分，懲罰答非所問；
+  - **Context Relevance（上下文相關性）**：懲罰冗餘不相關的噪聲檢索段落。
+
+#### 2. 細粒度 Claim 級診斷與失效歸因：RAGChecker
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/Ru2024 - RAGChecker|RAGChecker (Ru et al., 2024)]]。
+- **核心架構**：將 Ground Truth、檢索 Context 與模型 Response 同步解構為原子 Claim，在 Claim 矩陣上雙向度量：
+  - **檢索端診斷**：Claim Recall 與 Claim Precision；
+  - **生成端診斷**：Faithfulness、Completeness 與 Hallucination Rate。
+- **對本專案研究意義**：直接支撐 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04: 端到端 RAG 失效歸因]]，精準量化「檢索引進噪聲」與「生成自發幻覺」的 Trade-off。
+
 > [!NOTE] Survey support
 > RAG 評估已有專門 review/survey；請以 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 的 evaluation survey 作為領域級 taxonomy 依據，再回 benchmark paper / dataset card 核對規模與指標。
 

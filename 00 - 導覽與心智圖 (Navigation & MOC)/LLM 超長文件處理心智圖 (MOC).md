@@ -66,9 +66,9 @@ flowchart TD
 
 ### 2. 資料與檢索層 (Data & Retrieval)
 - **[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03: 先進 RAG 與檢索機制]]**
-  - 代表論文：[[03 - 論文庫 (Literature Notes)/Lewis2020 - Retrieval-Augmented Generation (RAG)|RAG (Lewis 2020)]]、[[03 - 論文庫 (Literature Notes)/Karpukhin2020 - Dense Passage Retrieval (DPR)|DPR (Karpukhin 2020)]]、[[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|ColBERT (Khattab 2020)]]、[[03 - 論文庫 (Literature Notes)/Gao2022 - HyDE Zero-Shot Dense Retrieval|HyDE (Gao 2022)]]、[[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG|Self-RAG (Asai 2023)]]。
+  - 代表論文：[[03 - 論文庫 (Literature Notes)/Lewis2020 - Retrieval-Augmented Generation (RAG)|RAG (Lewis 2020)]]、[[03 - 論文庫 (Literature Notes)/Karpukhin2020 - Dense Passage Retrieval (DPR)|DPR (Karpukhin 2020)]]、[[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|ColBERT (Khattab 2020)]]、[[03 - 論文庫 (Literature Notes)/Gao2022 - HyDE Zero-Shot Dense Retrieval|HyDE (Gao 2022)]]、[[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG|Self-RAG (Asai 2023)]]、[[03 - 論文庫 (Literature Notes)/Duarte2024 - LumberChunker|LumberChunker (Duarte 2024)]]、[[03 - 論文庫 (Literature Notes)/Gunther2024 - Late Chunking|Late Chunking (Günther 2024)]]。
 - **[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略、結構化知識擷取與證據治理]]**
-  - 代表論文：[[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X (Chen 2024)]]。
+  - 代表論文：[[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X (Chen 2024)]]、[[03 - 論文庫 (Literature Notes)/Lu2022 - UIE Universal Information Extraction|UIE (Lu 2022)]]。
 - **[[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05: Graph RAG 與結構化知識]]**
   - 代表論文：[[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|Microsoft GraphRAG (Edge 2024)]]、[[03 - 論文庫 (Literature Notes)/Gutierrez2024 - HippoRAG|HippoRAG (Gutiérrez 2024)]]。
 
@@ -85,5 +85,5 @@ flowchart TD
 
 ### 5. 評測、安全與前沿提案 (Evaluation, Safety & Roadmap)
 - **[[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)|Domain 10: 評估基準、系統工程與安全]]**
-  - 代表論文：[[03 - 論文庫 (Literature Notes)/Liu2023 - Lost in the Middle|Lost in the Middle (Liu 2023)]]、[[03 - 論文庫 (Literature Notes)/Bai2023 - LongBench Bilingual Multitask Benchmark|LongBench (Bai 2024)]]、[[03 - 論文庫 (Literature Notes)/An2023 - L-Eval Standardized Long Context Benchmark|L-Eval (An 2024)]]、[[03 - 論文庫 (Literature Notes)/Zhang2024 - InfiniteBench Beyond 100K|InfiniteBench (Zhang 2024)]]、[[03 - 論文庫 (Literature Notes)/Hsieh2024 - RULER What is the Real Context Size|RULER (Hsieh 2024)]]。
+  - 代表論文：[[03 - 論文庫 (Literature Notes)/Liu2023 - Lost in the Middle|Lost in the Middle (Liu 2023)]]、[[03 - 論文庫 (Literature Notes)/Bai2023 - LongBench Bilingual Multitask Benchmark|LongBench (Bai 2024)]]、[[03 - 論文庫 (Literature Notes)/An2023 - L-Eval Standardized Long Context Benchmark|L-Eval (An 2024)]]、[[03 - 論文庫 (Literature Notes)/Zhang2024 - InfiniteBench Beyond 100K|InfiniteBench (Zhang 2024)]]、[[03 - 論文庫 (Literature Notes)/Hsieh2024 - RULER What is the Real Context Size|RULER (Hsieh 2024)]]、[[03 - 論文庫 (Literature Notes)/Es2024 - RAGAS|RAGAS (Es 2024)]]、[[03 - 論文庫 (Literature Notes)/Ru2024 - RAGChecker|RAGChecker (Ru 2024)]]。
 - **[[02 - 研究領域專題 (Research Domains)/Domain 11 - 最具價值的研究方向與實驗設計 (Research Roadmap)|Domain 11: 最具價值的研究方向與實驗設計]]**

@@ -12,10 +12,12 @@ tags:
 > 本知識庫係依據使用者分享之 ChatGPT 深度研究會話進行系統化重構與落地擴充：
 > 1. [ChatGPT - 長文處理研究方向與技術全景](https://chatgpt.com/share/6ab48c47-69b0-83e8-b415-014b1ca3180f)
 > 2. [ChatGPT - RAG 競品生態、知識抽取與證據治理定位](https://chatgpt.com/share/6ab49939-4750-83ee-b284-1823a1797146)
+> 3. [ChatGPT - Chunking 設計理由與文獻依據 (GEC)](https://chatgpt.com/share/6ab49a65-6f94-83e8-bc61-1535175bca86)
+> 4. [ChatGPT - F/R/D/A/P/C/T 分類法與 UIE 論文關係](https://chatgpt.com/share/6ab49925-47f8-83e8-bdd0-26b94f9528a4)
 > 
 > 涵蓋從底層神經架構（Long Context / SSM）、多層次壓縮、先進 RAG、GraphRAG、階層記憶體、長篇循證生成（STORM）、F/R/D/A/P/C/T 企業知識治理到 2026 前沿評測與安全防禦的完整學術與工業技術全景。
 >
-> 💡 **本 Vault 已為您完整下載 34 篇頂級核心學術論文原始 PDF**，並在文獻筆記中無縫嵌入雙向連結，可直接在 Obsidian 內點擊閱讀！
+> 💡 **本 Vault 已為您完整下載 39 篇頂級核心學術論文原始 PDF**，並在文獻筆記中無縫嵌入雙向連結，可直接在 Obsidian 內點擊閱讀！
 
 ---
 
@@ -108,7 +110,7 @@ flowchart TD
 > [!NOTE]
 > Idea 05/06 是研究與工程提案，不是 survey-established conclusion。其實驗資料與評測入口請搭配 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]] 與 [[02 - 研究領域專題 (Research Domains)/Domain 11 - 最具價值的研究方向與實驗設計 (Research Roadmap)|Domain 11 Research Roadmap]]。
 
-### 四、核心論文庫 (34 篇文獻筆記與原始 PDF)
+### 四、核心論文庫 (39 篇文獻筆記與原始 PDF)
 > 點擊進入任一論文筆記，均可直接點擊 `[[Papers/xxx.pdf]]` 開啟原始論文：
 
 | 分類 | 核心論文筆記 | 原始 PDF 快速開啟 |
@@ -134,7 +136,10 @@ flowchart TD
 | | [[03 - 論文庫 (Literature Notes)/Gao2022 - HyDE Zero-Shot Dense Retrieval\|Gao et al. (2023) HyDE]] | [[Papers/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/Trivedi2022 - IRCoT Interleaving Retrieval and CoT\|Trivedi et al. (2023) IRCoT]] | [[Papers/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG\|Asai et al. (2024) Self-RAG]] | [[Papers/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/Duarte2024 - LumberChunker\|Duarte et al. (2024) LumberChunker]] | [[Papers/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/Gunther2024 - Late Chunking\|Günther et al. (2024) Late Chunking]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval.pdf\|PDF]] |
 | **Knowledge & Graph**| [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval\|Chen et al. (2024) Dense X]] | [[Papers/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/Lu2022 - UIE Universal Information Extraction\|Lu et al. (2022) UIE]] | [[Papers/04 - Knowledge & Graph RAG/(ACL 2022-05) Unified Structure Generation for Universal Information Extraction.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG\|Edge et al. (2024) GraphRAG]] | [[Papers/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/Gutierrez2024 - HippoRAG\|Gutiérrez et al. (2024) HippoRAG]] | [[Papers/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/Sarthi2024 - RAPTOR Recursive Tree Retrieval\|Sarthi et al. (2024) RAPTOR]] | [[Papers/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval.pdf\|PDF]] |
@@ -147,10 +152,12 @@ flowchart TD
 | | [[03 - 論文庫 (Literature Notes)/An2023 - L-Eval Standardized Long Context Benchmark\|An et al. (2024) L-Eval]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) L-Eval - Instituting Standardized Evaluation for Long Context Language Models.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/Zhang2024 - InfiniteBench Beyond 100K\|Zhang et al. (2024) InfiniteBench]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) InfiniteBench - Extending Long Context Evaluation Beyond 100K Tokens.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/Hsieh2024 - RULER What is the Real Context Size\|Hsieh et al. (2024) RULER]] | [[Papers/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/Es2024 - RAGAS\|Es et al. (2024) RAGAS]] | [[Papers/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/Ru2024 - RAGChecker\|Ru et al. (2024) RAGChecker]] | [[Papers/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation.pdf\|PDF]] |
 
 ---
 
 ## 💡 在 Obsidian 中獲得最佳閱讀體驗的小技巧
-1. **開啟 Graph View (關係圖譜)**：按下快速鍵 `Ctrl/Cmd + G`，您可以直觀看到 11 個領域專題如何透過雙向連結與 34 篇論文及核心報告交織成網。
+1. **開啟 Graph View (關係圖譜)**：按下快速鍵 `Ctrl/Cmd + G`，您可以直觀看到 11 個領域專題如何透過雙向連結與 39 篇論文及核心報告交織成網。
 2. **懸浮預覽 (Page Preview)**：按住 `Ctrl/Cmd` 並將滑鼠懸停在任一 `[[...]]` 內部連結上，即可在不跳轉的情況下即時預覽該章節或論文摘要。
 3. **分頁並排閱讀 (Split Right)**：右鍵點擊任一論文 PDF 選擇「在右側開啟分頁」，即可左邊看筆記與專題剖析、右邊直接比對原始論文公式！

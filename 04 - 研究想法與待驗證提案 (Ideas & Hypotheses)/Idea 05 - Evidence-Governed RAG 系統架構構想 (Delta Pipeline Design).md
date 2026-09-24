@@ -44,16 +44,18 @@ last_updated: 2026-09-24
 
 ```mermaid
 flowchart TD
-    D["原始文件 (Documents)<br/>• 文件雜湊值 (sha256)<br/>• 版本識別戳記<br/>• 來源路徑與作者"]
-    K["結構化解析與知識抽取 (Knowledge Extraction)<br/>• 結構層次: 章節/段落/表格/單元格<br/>• 類型化抽取: F / R / D / A / P / C / T"]
-    E["證據物件封裝 (Evidence Objects)<br/>• 絕對位置錨點 (Structural Path & Span)<br/>• 權威級別 (Authority Level)<br/>• 條件與先決狀態感知"]
+    D["原始文件 (Documents)<br/>• 邏輯檔案標識 (source_file_id)<br/>• 不可變版本雜湊 (source_version_id)<br/>• W3C PROV 衍生關係"]
+    GEC["受治理證據切塊 (Governed Evidence Chunk, GEC)<br/>• 結構感知區塊邊界 (Block Integrity)<br/>• 階層標題路徑 (heading_path)<br/>• 前後切塊錨點 (Adjacency References)"]
+    K["結構化抽取與知識原子化 (Typed Knowledge Extraction)<br/>• 形式化抽取依據: UIE (SSI Schema Guidance)<br/>• 知識原子封裝: k_ij = (span, type, value, provenance)<br/>• 類型化單元: F / R / D / A / P / C / T"]
+    E["證據物件封裝 (Evidence Objects)<br/>• 絕對位置錨點 (Block Locator & Quote Hash)<br/>• 權威級別 (Authority Level)<br/>• 條件與先決狀態感知"]
     RTV["類型約束檢索 (Type-Aware Retrieval)<br/>• 依下游任務動態路由至不同類型庫<br/>• 結合向量檢索與關鍵字精確定位"]
     C["主張生成 (Claim Generation)<br/>• 依據大綱生成段落主張集合<br/>• 顯式綁定對應候選證據"]
     V{"確定性校驗 (Deterministic Invariants)<br/>1. Requirement 覆蓋率 == 100%?<br/>2. Claim 語意蘊涵檢驗通過?<br/>3. 證據類型與使用授權合規?<br/>4. 證據組合充分性通過?"}
     O["正式交付文件 (Audit-Trailed Deliverable)<br/>• 逐句證據背書<br/>• 完整審計追溯日誌<br/>• 假設與風險清單"]
     REP["自動化修復迴圈 (Automated Repair Loop)<br/>• 鎖定未滿足 Requirement 或無效 Claim<br/>• 啟動補償性針對檢索 (Targeted Retrieval)<br/>• 限制性重新生成與修復"]
 
-    D --> K
+    D --> GEC
+    GEC --> K
     K --> E
     E --> RTV
     RTV --> C
@@ -63,9 +65,63 @@ flowchart TD
     REP --> V
 ```
 
+### 1. 受治理證據切塊 (Governed Evidence Chunk, GEC) 形式化表示
+
+本系統不採用單純的固定字數滑動窗口，而是定義高階受治理檢索單元：
+
+\[
+\boxed{c_i = (T_i, B_i, H_i, S_i, V_i, A_i, L_i)}
+\]
+
+- $T_i$：切塊文字內容（Chunk Text）；
+- $B_i$：規範來源區塊序列（Canonical Source Blocks，保持段落與表格行之完整性）；
+- $H_i$：文件階層標題路徑（Heading Path，保留全局語境）；
+- $S_i$：邏輯文件唯一識別碼（Logical Source File ID）；
+- $V_i$：不可變版本唯一識別碼（Immutable Source Version ID，基於內容 SHA-256 雜湊）；
+- $A_i$：領域權威與授權審批中繼資料（Authority / Approval Metadata）；
+- $L_i$：原始細粒度位置錨點（Original Provenance Locators）。
+
+#### 學術理論依據 vs. 待消融工程啟發式
+
+| 設計維度 | 最相關學術工作 | 理論支持程度 | 說明與邊界標記 |
+| :--- | :--- | :---: | :--- |
+| **檢索粒度重要性** | Dense X (EMNLP 2024) | ★★★★★ | 證明檢索單元粒度顯著影響下游 RAG 正確性。 |
+| **動態語意與結構邊界** | LumberChunker (EMNLP 2024) / Adaptive Chunking (2026) | ★★★★★ | 證明按語意轉折與 Block 完整性切塊優於死切固定字數。 |
+| **切塊語境遺失抗性** | Late Chunking (2024) / RAPTOR (ICLR 2024) | ★★★★☆ | 證明保存 `heading_path` 與前後參照能有效緩解上下文丟失。 |
+| **版本與衍生資料溯源** | W3C PROV-DM (2013) | ★★★★★ | `prov:wasDerivedFrom` 與 `prov:wasRevisionOf` 解決多版本文件衝突。 |
+| **細粒度引用可驗證性** | ReClaim / MIRAGE / RAGChecker (2024) | ★★★★☆ | 證明段落級粗粒度引用不可靠，需下沉至句子/Claim 級錨定。 |
+| **具體數值參數 (800/1200/120)** | *無學術文獻依據* | ☆☆☆☆☆ | **工程經驗啟發式參數**；需在後續實驗中進行不同長度消融（Ablation）。 |
+
 ---
 
 ## 三、企業知識分類體系 (F/R/D/A/P/C/T) 與操作語意
+
+### 1. 檢索單元（Retrieval Unit）與語意單元（Semantic Unit）的理論解耦
+
+> [!CAUTION] 核心方法論修正：不要說「把 Chunk 分成七類」
+> 一個檢索切塊（Chunk）通常包含數百字，內部常同時包含客觀設備參數（Fact）、客戶指標要求（Requirement）與工程改進方案（Proposal）。硬將整個 Chunk 歸類為單一標籤會遺失大量關鍵資訊。
+> 
+> **正確認識**：
+> - **Chunk 是檢索單元（Retrieval Unit）**；
+> - **F/R/D/A/P/C/T 是 Chunk 中抽取的知識原子（Knowledge Unit）之語意類型**。
+
+數學模型定義為：
+\[
+D = \{c_1, c_2, \ldots, c_n\} \quad \xrightarrow{\quad\text{Extraction}\quad} \quad E(c_i) = \{k_{i1}, k_{i2}, \ldots, k_{im}\}
+\]
+其中每個知識原子 $k_{ij} = (s_{ij}, t_{ij}, v_{ij}, p_{ij})$：
+- $s_{ij}$：文字來源跨度（Source Span）；
+- $t_{ij} \in \mathcal{T} = \{F, R, D, A, P, C, T\}$：語意知識類型；
+- $v_{ij}$：正規化屬性與數值（Normalized Value）；
+- $p_{ij}$：溯源指標（Provenance Pointer）。
+
+### 2. 學術淵源與理論定位
+- **UIE（Lu et al., ACL 2022）**：提供 $(\text{Schema}, \text{Text}) \rightarrow \text{Structure}$ 的通用抽取機制，支援以 Structural Schema Instructor (SSI) 動態引導抽取，但 UIE 原始文獻**並未定義 F/R/D/A/P/C/T 七類標籤**。
+- **Volere 需求知識模型（Robertson & Robertson）**：經典軟體需求工程文獻，明確奠定了 Fact、Assumption、Requirement、Constraint、Terminology 等知識類別概念。
+- **軟體工程假設管理（Assumption Management）**：長期確立了 Assumption 作為獨立於 Requirement 與 Confirmed Design 之外的關鍵架構工件。
+- **本系統之貢獻**：將需求工程的知識類別與工業提案情境融合，提出完整的 $\mathcal{T} = \{F, R, D, A, P, C, T\}$ 企業本體，並賦予其下游運行的操作語意約束。
+
+### 3. 操作語意（Operational Semantics）對照表
 
 本構想的核心學術假設在於：**分類標籤必須對下游處理產生因果約束，即操作語意（Operational Semantics）**：
 

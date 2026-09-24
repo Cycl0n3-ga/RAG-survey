@@ -62,7 +62,21 @@ Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造�
 
 ---
 
-## 三、三元組 (S, P, O) 的致命局限與跨塊抽取
+## 三、前沿切塊範式演進：動態邊界與延遲池化
+
+### 1. 動態語意獨立切塊：LumberChunker
+- **核心代表作**：[[03 - 論文庫 (Literature Notes)/Duarte2024 - LumberChunker|LumberChunker (Duarte et al., Findings of EMNLP 2024)]]。
+- **核心洞察**：固定字數切塊抹殺了內容的語意邊界。LumberChunker 利用 LLM 評估連續段落，動態探測內容開始發生轉折的「語意轉折點（Semantic Shift Point）」，保證切出的每個區塊具備高度的**語意獨立性（Semantic Independence）**。
+- **實驗證據**：在 3,000 組題目的 GutenQA 基準測試中（Table 1, Page 4），動態語意切塊在 Dense Retriever（Contriever/BGE）下的 Recall@5 與 DCG@5 顯著超越傳統固定切塊，下游 QA 準確率提升達 4.8%。
+
+### 2. 全文語境延遲池化：Late Chunking
+- **核心代表作**：[[03 - 論文庫 (Literature Notes)/Gunther2024 - Late Chunking|Late Chunking (Günther et al., 2024)]]。
+- **核心機制**：打破傳統「先切塊後獨立編碼（Early Chunking）」導致周圍語境徹底遺失的弊端。改為先使用長上下文 Embedding 模型（如 Jina v2/v3）對整篇長文進行雙向全局注意力編碼，使每個 Token 隱層狀態充分融合上下文，最後再依切塊邊界進行 Mean Pooling。
+- **實驗證據**：在 BEIR 檢索基準評測中（Table 2, Page 8），Late Chunking 相較於 Naive Chunking 在 nDCG@10 與 Recall@k 上取得全面穩健提升，特別能消除代名詞懸空造成的檢索失效。
+
+---
+
+## 四、三元組 (S, P, O) 的致命局限與跨塊抽取
 
 ### 1. 為什麼純三元組不是長文本知識擷取的理想表示？
 傳統知識圖譜（KG）高度依賴 `(Subject, Predicate, Object)`。但在工程、法律、商業與醫療文件中，純三元組會造成**關鍵語意嚴重失真**：
@@ -89,14 +103,27 @@ Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造�
 
 ---
 
-## 四、Survey-backed Knowledge Extraction 邊界
+## 四、Survey-backed Knowledge Extraction 邊界與 Schema 指導機制
 
 本 Domain 的「已知研究」應以 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 中的 **Generative Information Extraction survey** 與 **LLM-based Generative Information Extraction survey** 為入口，再連到 UIE、OpenIE、document-level RE、event extraction、proposition retrieval 等 primary works。
 
-必須分開五件事：**Chunking**（怎麼切輸入）、**Extraction**（抽出什麼）、**Representation**（如何表示）、**Consolidation**（跨 chunk/document 如何對齊與修復）、**Retrieval Granularity**（檢索時以什麼單位排序）。Dense X 主要研究 proposition 作為 retrieval unit，不等同於一個完整的 universal knowledge-extraction taxonomy。
+### 1. 通用模式指導抽取機制：UIE
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/Lu2022 - UIE Universal Information Extraction|UIE: Unified Structure Generation for Universal Information Extraction (Lu et al., ACL 2022)]]。
+- **理論價值**：UIE 奠定了 $(\text{Schema}, \text{Text}) \rightarrow \text{Structured Extraction}$ 的形式化抽取機制。透過 Structural Schema Instructor (SSI)，UIE 允許使用者根據任務需求動態自定義抽取目標（Demand-specific Schema），將實體、關聯、事件與屬性統一線性化生成。
+- **學術邊界釐清**：UIE 提供了「**如何依照自定義 Schema 進行抽取**」的演算法工具，但 UIE 原始論文採用的是通用 NER/RE/EE 標籤，**並未定義 F/R/D/A/P/C/T 七類特定本體**。
 
-> [!IMPORTANT] F/R/D/A/P/C/T 的證據狀態
-> 下列 F/R/D/A/P/C/T schema、操作語意、四層 evidence governance 與 D-K-E-C-V-O pipeline 是本專案的**研究假設 / engineering design**，不是目前已確認的通用 survey taxonomy。其系統架構完整版本見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05]]；端到端 failure attribution 與 oracle 設計見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。此處只保留與 IE/RAG 文獻銜接所需的概要。
+### 2. 知識類別（Knowledge Classes）的學術溯源
+- **需求工程與知識建模**：在軟體工程與需求工程經典文獻中，**Volere Requirements Knowledge Model**（Robertson & Robertson）早已明確將需求知識拆分為不同的 Knowledge Classes：
+  - **Fact 與 Assumption**（Fact 為具體影響設計的客觀事實，Assumption 為缺乏直接證據但暫時接受之假設）；
+  - **Requirement**（功能與非功能約束）；
+  - **Terminology / Data Dictionary**（術語與資料字典）。
+- 軟體工程的 **Assumption Management** 研究亦長期將假設視為與需求、設計決策並列的重要軟體工程知識工件。
+
+必須嚴格分開五件事：**Chunking**（怎麼切輸入）、**Extraction**（抽出什麼）、**Representation**（如何表示）、**Consolidation**（跨 chunk/document 如何對齊與修復）、**Retrieval Granularity**（檢索時以什麼單位排序）。Dense X 主要研究 proposition 作為 retrieval unit，不等同於一個完整的 universal knowledge-extraction taxonomy。
+
+> [!IMPORTANT] F/R/D/A/P/C/T 的證據狀態與檢索單元修正
+> 1. **單元分離**：切塊（Chunk）是**檢索單元（Retrieval Unit）**，而知識原子（Knowledge Unit）是**語意單元（Semantic Unit）**。單一 Chunk 內部往往同時包含 Fact、Requirement 與 Proposal，因此系統架構應為 $D \rightarrow \text{Chunk} \rightarrow \text{Typed Knowledge Units}$，而非粗糙地將整個 Chunk 貼上單一分類標籤。
+> 2. 下列 F/R/D/A/P/C/T schema、操作語意、四層 evidence governance 與 D-K-E-C-V-O pipeline 是本專案的**研究假設 / engineering design**，不是目前已確認的通用 survey taxonomy。其系統架構完整版本見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05]]；端到端 failure attribution 與 oracle 設計見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。此處只保留與 IE/RAG 文獻銜接所需的概要。
 
 ## 五、候選企業知識 Schema：F / R / D / A / P / C / T（Proposed）
 

@@ -23,11 +23,17 @@ graph TD
     C --> L3["3. KV Cache 剪枝與量化<br>(推論顯存物理壓縮)"]
     C --> L4["4. 上下文重構與摘要<br>(語義級資訊提煉)"]
 
-    L1 --> P1["[[Pagnoni2024 - Byte Latent Transformer (BLT)\|BLT (Byte Patches)]]"]
-    L2 --> P2["[[Jiang2023 - LLMLingua Prompt Compression\|LLMLingua]] / [[Jiang2023 - LongLLMLingua\|LongLLMLingua]]"]
-    L3 --> P3["[[Liu2024 - KIVI 2-bit KV Cache\|KIVI (2-bit)]] / [[Li2024 - SnapKV\|SnapKV]] / [[Cai2024 - PyramidKV\|PyramidKV]]"]
-    L4 --> P4["[[Xu2023 - RECOMP Context Compressor\|RECOMP]] / [[Mu2023 - Gist Tokens\|Gist Tokens]]"]
+    L1 --> P1["BLT (Byte Patches)"]
+    L2 --> P2["LLMLingua / LongLLMLingua"]
+    L3 --> P3["KIVI (2-bit) / SnapKV / PyramidKV"]
+    L4 --> P4["RECOMP / Gist Tokens"]
 ```
+
+> **圖中節點文獻對照**：
+> - L1：[[03 - 論文庫 (Literature Notes)/Pagnoni2024 - Byte Latent Transformer (BLT)|BLT (Byte Patches)]]
+> - L2：[[03 - 論文庫 (Literature Notes)/Jiang2023 - LLMLingua Prompt Compression|LLMLingua]] / [[03 - 論文庫 (Literature Notes)/Jiang2023 - LongLLMLingua|LongLLMLingua]]
+> - L3：[[03 - 論文庫 (Literature Notes)/Liu2024 - KIVI 2-bit KV Cache|KIVI 2-bit]] / [[03 - 論文庫 (Literature Notes)/Li2024 - SnapKV|SnapKV]] / [[03 - 論文庫 (Literature Notes)/Cai2024 - PyramidKV|PyramidKV]]
+> - L4：[[03 - 論文庫 (Literature Notes)/Xu2023 - RECOMP Context Compressor|RECOMP]] / [[03 - 論文庫 (Literature Notes)/Mu2023 - Gist Tokens|Gist Tokens]]
 
 ---
 
