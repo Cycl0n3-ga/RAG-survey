@@ -19,13 +19,23 @@
 - 確保本機工作目錄與遠端保持完全一致，避免版本分歧或覆蓋他人/其他設備之修改。
 
 ### 3. 作業完成自動提交與推送 (Post-Task Commit & Push)
-- **每當一個任務或階段性作業完成時，務必執行 `commit` 與 `push`**：
-  ```bash
-  git add -A
-  git commit -m "type(scope): 清楚描述本次更新之實質內容"
-  git push origin master
-  ```
-- 嚴禁作業完成後將未提交的修改留在本地，確保遠端 GitHub 儲存庫始終具備最新的研究筆記與檔案狀態。
+- **每次任務或階段性作業完成時，不只要確認有執行 `git push`，在 push 之前務必先完整確認並完成 `git commit`**：
+  - 嚴格遵守「檢查狀態 $\to$ 全部暫存 $\to$ 完成提交 $\to$ 遠端推送 $\to$ 驗證乾淨」五步閉環流程：
+    ```bash
+    # 1. 檢視修改狀態
+    git status
+    # 2. 將所有新增、修改與刪除之檔案納入暫存
+    git add -A
+    # 3. 確實執行 commit，嚴禁未 commit 就直接 push
+    git commit -m "type(scope): 清楚描述本次更新之實質內容"
+    # 4. 推送至遠端 GitHub
+    git push origin master
+    # 5. 再次確認本地 working tree 乾淨且與遠端同步
+    git status
+    ```
+- **核心鐵律**：
+  - **Push 前必須先 Commit**：絕不可在未完成 `git commit` 前就嘗試 `git push`，亦不可誤以為單純 push 就會自動提交暫存區或工作區的修改。
+  - **嚴禁遺留本地變更**：任務結束時必須以 `git status` 確認 `nothing to commit, working tree clean`，絕不可將未提交或未推送的修改滯留在本地工作目錄。
 
 ### 4. 存疑必問，正確性至上 (Clarify Doubts, Accuracy is Paramount)
 - **若對使用者的需求、格式偏好、技術細節或資料來源存在任何懷疑或不確定性，務必主動向使用者詢問釐清，切勿自行腦補或做未經證實的假設**。
