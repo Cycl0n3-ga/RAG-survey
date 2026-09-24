@@ -66,7 +66,7 @@ graph LR
 ---
 
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：動態自適應檢索、大幅降低幻覺率、顯著提高回答忠實度（Faithfulness）；缺點：需要對模型進行專門指令微調與強化學習，增加推論時解碼複雜度。
+優點：動態自適應檢索並以 reflection tokens 評估 relevance / support / utility；缺點：需要專門的資料建立與 supervised fine-tuning，且推論時 reflection-token scoring 增加解碼複雜度。原論文的方法流程不以 reinforcement learning 作為必要訓練步驟。
 
 ---
 
