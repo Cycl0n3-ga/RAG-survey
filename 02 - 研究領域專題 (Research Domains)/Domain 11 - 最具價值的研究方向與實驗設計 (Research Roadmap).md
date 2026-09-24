@@ -41,6 +41,12 @@ tags:
 - **待測 gap**：進一步定位 Parsing → Chunking → Extraction → Consolidation → Retrieval → Sufficiency → Utilization → Generation → Attribution → Report Quality。
 - **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
 
+### 2.5 Evidence-Governed Long-form Deliverable Generation
+- **已有基礎**：長篇報告生成、citation / attribution、RAG evaluation、NLI / entailment verification、requirements coverage 等研究線各自存在。
+- **待測 gap**：這些機制的完整組合是否能在 RFP / 規格書 / 審計型交付物中，把 Requirement coverage、claim-level support、source authority 與 evidence sufficiency 轉成可程式化 invariant，並透過 targeted repair 改善 end-to-end omission / unsupported-claim error。
+- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05]]。
+- **Evaluation entry**：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]。現有公開 benchmark 只能覆蓋部分維度；若要測 F/R/D/A/P/C/T、版本權威性、valid time 與 expected sufficiency，需另定義 gold schema 與 annotation protocol。
+
 ## 三、統一實驗原則
 
 每個研究提案都必須回答：
