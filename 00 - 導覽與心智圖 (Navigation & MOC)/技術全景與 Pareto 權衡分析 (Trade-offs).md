@@ -35,20 +35,27 @@ tags:
 
 ```mermaid
 flowchart TD
-    Q1{"你的核心任務是什麼？"}
+    Q["Core task"]
+    LOCAL["Local fact / precise lookup"]
+    GLOBAL["Global sensemaking"]
+    REPORT["Long-form report"]
+    AGENT["Long-running agent"]
+    RAG["Hybrid retrieval / reranking"]
+    GRAPH["Graph or hierarchical retrieval"]
+    WRITE["Outline + evidence-aware writing"]
+    MEMORY["External memory"]
 
-    Q1 -->|"局部事實問答<br>(Factoid QA / 法規定位)"| C1{"文件量有多大？"}
-    C1 -->|"< 32k Tokens"| A1["[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|直接丟入 Long Context Window]]<br>(精確無失真)"]
-    C1 -->|"> 32k ~ 數億 Tokens"| A2["[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Hybrid RAG (BM25 + ColBERT + Rerank)]]<br>+ [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Proposition Chunking]]"]
-
-    Q1 -->|"跨文件全域洞察<br>(Global Sensemaking / 主題演變)"| C2{"是否有充裕的索引構建預算？"}
-    C2 -->|"預算充足 / 離線情報分析"| B1["[[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Microsoft GraphRAG]]<br>(實體抽取 + Leiden 社群摘要)"]
-    C2 -->|"預算有限 / 需即時更新"| B2["[[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|RAPTOR 遞迴摘要樹]]<br>或 Map-Reduce 章節分塊摘要"]
-
-    Q1 -->|"超長篇專業報告撰寫<br>(Long-Form Report Generation)"| D1["[[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|STORM 架構]]<br>• 多視角訪談研究<br>• 結構化大綱擬定<br>• 循證分段寫作 + Claim-Evidence Ledger"]
-
-    Q1 -->|"長期多輪自主任務<br>(Long-term Autonomous Agent)"| E1["[[02 - 研究領域專題 (Research Domains)/Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)|MemGPT / A-MEM 外部階層記憶體]]<br>• Working Memory (Context)<br>• Episodic / Semantic Storage<br>• 自主 Paging 與主動記憶整固"]
+    Q --> LOCAL
+    Q --> GLOBAL
+    Q --> REPORT
+    Q --> AGENT
+    LOCAL --> RAG
+    GLOBAL --> GRAPH
+    REPORT --> WRITE
+    AGENT --> MEMORY
 ```
+
+**技術對照**：[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Hybrid / Advanced RAG]] · [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Graph RAG]] · [[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Long-form Generation]] · [[02 - 研究領域專題 (Research Domains)/Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)|External Memory]]
 
 ---
 
@@ -72,7 +79,7 @@ flowchart TD
 ```
 
 1. **極致成本敏感型系統**：
-   - 採用 **[[03 - 論文庫 (Literature Notes)/Jiang2023 - LongLLMLingua|LongLLMLingua]]** 進行 Prompt 4x 壓縮 + **[[03 - 論文庫 (Literature Notes)/Liu2024 - KIVI 2-bit KV Cache|KIVI 2-bit]]** 快取量化，伺服器吞吐量可提升 4 倍以上，顯存直接縮減 75%。
+   - 採用 **[[03 - 論文庫 (Literature Notes)/Jiang2023 - LongLLMLingua|LongLLMLingua]]** 進行 Prompt 4x 壓縮 + **[[03 - 論文庫 (Literature Notes)/Liu2024 - KIVI 2-bit KV Cache|KIVI 2-bit]]** 快取量化，兩種技術分別處理 prompt token 與 KV-cache；不可把不同論文、不同測試條件下的改善直接相乘或推成「整台伺服器吞吐量 4×、總 VRAM -75%」。應在相同模型、context、batch 與硬體下重新量測。
 2. **極致精度敏感型系統 (醫療/法律/國防情報)**：
    - 前端採用 **[[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X 命題解構]]**；
    - 檢索端採用 **[[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|ColBERT]]** 延遲交互 + **[[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|GraphRAG]]** 全局社群；
@@ -153,32 +160,22 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    subgraph L6["交付物與證據治理層 (Your Evidence Harness)"]
-        G1["• 企業語意分類 (F / R / D / A / P / C / T)<br>• 四層證據鏈治理 (Citation ≠ Entailment ≠ Authority ≠ Sufficiency)<br>• 確定性不變量校驗 (Coverage == 100%)<br>• 自動化修復迴圈 (Deterministic Repair Loop)"]
-    end
+    GOV["Evidence Governance<br/>proposed project layer"]
+    APP["Application / UI"]
+    DOC["Document Parsing"]
+    OPT["RAG Optimization"]
+    PIPE["Pipeline Engine"]
+    AG["Agent Runtime"]
 
-    subgraph L5["應用交付與可視化層 (Application UI)"]
-        Dify["Dify (可視化 Web UI / 快速產品原型 / 終端客戶互動)"]
-    end
-
-    subgraph L4["智能文檔理解與解析層 (Deep Document AI)"]
-        RF["RAGFlow / MinerU / Docling (版面分析 / 表格還原 / OCR)"]
-    end
-
-    subgraph L3["RAG 檢索超參數優化層 (AutoML RAG)"]
-        AR["AutoRAG (自動化 Chunk Size, Top-K, 嵌入模型, Reranker 網格搜尋)"]
-    end
-
-    subgraph L2["生產級管道引擎層 (Pipeline Execution)"]
-        HS["Haystack (高擴展性模組化 DAG 管道執行引擎)"]
-    end
-
-    subgraph L1["Agent 執行時與工具協同層 (Agent Runtime)"]
-        LC["LangGraph / LangChain (狀態圖機 / 外部工具對接 / 記憶體持久化)"]
-    end
-
-    L6 ==> L5 & L4 & L3 & L2 & L1
+    GOV --> APP
+    GOV --> DOC
+    GOV --> OPT
+    GOV --> PIPE
+    GOV --> AG
 ```
+
+> [!WARNING] 分層圖不是市場標準 taxonomy
+> 上圖只用來說明不同工具可能位於不同抽象層；Evidence Governance 是本專案的 proposed layer，詳見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
 
 ---
 
