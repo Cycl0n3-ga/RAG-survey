@@ -12,22 +12,24 @@ tags:
 
 > [!IMPORTANT] 核心工程理念
 > 在處理超長文件時，**沒有任何單一技術是萬靈丹（No Silver Bullet）**。
-> 盲目追求 10M 原生上下文會讓您的 GPU 伺服器成本爆表；而盲目採用傳統 Vector RAG 則會讓全域總結任務完全失明。
-> 優秀的系統架構師必須在 **準確率 (Accuracy)**、**延遲 (Latency)**、**顯存佔用 (VRAM)** 與 **營運成本 (Cost)** 之間找到最優的 **Pareto 前沿面 (Pareto Frontier)**。
+> Long Context、Vector RAG、GraphRAG 與 hierarchical retrieval 解決的問題不同；成本與品質也會隨模型、context、資料集、硬體與實作改變。
+> 因此架構決策應在**同一任務、同一資料與可比的 compute / token budget**下，同時量測 Accuracy、Latency、VRAM、Indexing Cost 與營運成本，再討論 Pareto frontier。
 
 ---
 
-## 一、四大主流長文本技術範式核心對比
+## 一、四類長文本技術範式：比較邊界
 
-| 評估指標 | 1. 原生 Long Context (Dense / FlashAttn) | 2. 密集向量 RAG (Hybrid Vector RAG) | 3. 圖結構檢索 (Microsoft GraphRAG) | 4. 階層樹狀檢索 (RAPTOR) |
+| 維度 | 原生 Long Context | Hybrid / Vector RAG | Microsoft GraphRAG 類圖式檢索 | RAPTOR 類階層檢索 |
 | :--- | :--- | :--- | :--- | :--- |
 | **代表技術** | [[03 - 論文庫 (Literature Notes)/Dao2022 - FlashAttention|FlashAttention]], [[03 - 論文庫 (Literature Notes)/Liu2023 - RingAttention|RingAttention]] | [[03 - 論文庫 (Literature Notes)/Karpukhin2020 - Dense Passage Retrieval (DPR)|DPR]], [[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|ColBERT]] | [[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|Microsoft GraphRAG]] | [[03 - 論文庫 (Literature Notes)/Sarthi2024 - RAPTOR Recursive Tree Retrieval|RAPTOR]] |
-| **輸入容量極限** | 128k ~ 2M Tokens (受顯存制約) | 無上限 (數億 Tokens) | 無上限 (全語料圖結構) | 書籍至百科級 (數百萬 Tokens) |
-| **全域主題理解力** | ⭐⭐⭐⭐ (依賴模型長程注意力) | ⭐ (極差，斷章取義) | ⭐⭐⭐⭐⭐ (最強，社群摘要) | ⭐⭐⭐⭐ (遞迴抽象摘要) |
-| **微觀事實檢索力** | ⭐⭐⭐⭐ (中間位置易遺忘) | ⭐⭐⭐⭐⭐ (細節關鍵字精準) | ⭐⭐⭐ (三元組可能遺失細節) | ⭐⭐⭐⭐ (底層 Chunk 精確) |
-| **首字延遲 (TTFT)** | 慢 (秒至十秒級，隨長度暴增) | 快 (數十毫秒至百毫秒) | 慢 (需平行 Map 社群摘要) | 中等 (樹遍歷數百毫秒) |
-| **索引構建成本** | 無 (即時 Prefill) | 低 (一次性向量計算) | 極高 (大量 LLM 實體與摘要呼叫) | 中高 (遞迴摘要 LLM 呼叫) |
-| **推論 Token 成本** | 極高 (每次對話吃滿全文) | 極低 (僅傳輸 Top-K 段落) | 中高 (需彙整多個社群報告) | 中等 (傳輸樹枝節點摘要) |
+| **核心機制** | 將較多原文直接放入模型 context | 先從外部語料檢索候選，再交給生成模型 | 建立實體/關係與社群摘要等圖式索引，再依 query 做 local/global retrieval | 將語料遞迴聚類/摘要成多層樹狀表示並檢索不同層級 |
+| **較自然的任務** | context 可容納且需要廣泛直接讀取原文的任務 | local fact、精確 evidence lookup、可擴展 corpus retrieval | global sensemaking、跨實體關係與社群層級問題 | multi-resolution retrieval、需要局部與摘要層級切換的任務 |
+| **主要成本來源** | prefill / attention / KV cache；依模型與 context 而變 | ingestion embedding、索引、query retrieval / reranking | entity/relation extraction、graph construction、community summarization | clustering、recursive summarization、tree construction |
+| **典型風險** | 有效 context utilization 不一定等於 nominal context length | Top-K 可能漏掉全域或跨段必要證據 | graph extraction / summarization error 可能傳播，索引成本較高 | 摘要可能丟失細節，tree quality 影響 retrieval |
+| **Latency / VRAM / 上限** | **必須依模型與硬體實測** | **必須依 retriever / reranker / generator 實測** | **必須依索引與 query mode 實測** | **必須依 tree depth / retrieval strategy 實測** |
+
+> [!WARNING] 不可直接排名
+> 上表只描述機制與常見 trade-off，不提供星等或固定 TTFT / token 上限。不同論文、框架與部署條件下的數值不能直接拼成「最佳技術」排名。
 
 ---
 
@@ -59,31 +61,26 @@ flowchart TD
 
 ---
 
-## 三、Pareto 前沿最優化策略矩陣
+## 三、Pareto 分析：把「技術排名」改成「同條件實驗」
 
-```text
-               ▲ 任務準確度 / 宏觀理解力 (Accuracy & Sensemaking)
-               │
-               │                   ● 理想目標: 動態路由混合系統 (Domain 11 提案)
-               │                     (Hybrid Router + Proposition + Ledger)
-               │
-               │             ● GraphRAG (高準確、高成本)
-               │
-               │       ● RAPTOR (中高準確、中等成本)
-               │
-               │  ● Hybrid Vector RAG (高微觀細節、極低成本)
-               │
-               │● Pure Long Context (1M Tokens) (超高顯存與延遲)
-               └──────────────────────────────────────────────►
-                                          系統吞吐量與經濟性 (Throughput & Low Cost)
-```
+本頁不預先把 GraphRAG、RAPTOR、Vector RAG 或 Long Context 排成固定優劣。真正的 Pareto frontier 必須由同一實驗條件下的測量點形成。
 
-1. **極致成本敏感型系統**：
-   - 採用 **[[03 - 論文庫 (Literature Notes)/Jiang2023 - LongLLMLingua|LongLLMLingua]]** 進行 Prompt 4x 壓縮 + **[[03 - 論文庫 (Literature Notes)/Liu2024 - KIVI 2-bit KV Cache|KIVI 2-bit]]** 快取量化，兩種技術分別處理 prompt token 與 KV-cache；不可把不同論文、不同測試條件下的改善直接相乘或推成「整台伺服器吞吐量 4×、總 VRAM -75%」。應在相同模型、context、batch 與硬體下重新量測。
-2. **極致精度敏感型系統 (醫療/法律/國防情報)**：
-   - 前端採用 **[[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X 命題解構]]**；
-   - 檢索端採用 **[[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|ColBERT]]** 延遲交互 + **[[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|GraphRAG]]** 全局社群；
-   - 生成端強制掛載 **[[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Claim-Evidence Ledger]]** 進行逐句證據鏈校驗。
+建議至少同時記錄：
+
+| 面向 | 建議指標 |
+| :--- | :--- |
+| Retrieval | Recall@K、nDCG、MRR、gold evidence coverage |
+| Generation | answer / report task score、faithfulness、unsupported claim rate |
+| Long-form | nugget / requirement coverage、citation support、report logic |
+| Cost | input/output tokens、embedding / reranking / LLM calls、indexing time |
+| Systems | end-to-end latency、TTFT（若為互動任務）、throughput、peak VRAM / RAM |
+| Governance | provenance completeness、authority/type violation、evidence sufficiency failure |
+
+### 組合技術時的注意事項
+
+- [[03 - 論文庫 (Literature Notes)/Jiang2023 - LongLLMLingua|LongLLMLingua]] 與 [[03 - 論文庫 (Literature Notes)/Liu2024 - KIVI 2-bit KV Cache|KIVI]] 分別處理 prompt/context 與 KV-cache；不同論文、不同硬體與不同 context 下的改善**不可直接相乘**成整體吞吐或 VRAM 結論。
+- [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X]]、[[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|ColBERT]]、[[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|GraphRAG]] 與 long-form evidence ledger 可以形成候選組合，但是否優於較簡單 baseline 必須透過 ablation 與 budget parity 驗證。
+- Benchmark / Dataset / Metric 的選擇見 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]；研究假設與 oracle 設計見 [[02 - 研究領域專題 (Research Domains)/Domain 11 - 最具價值的研究方向與實驗設計 (Research Roadmap)|Domain 11]]。
 
 ---
 
