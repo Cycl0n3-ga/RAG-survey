@@ -24,8 +24,13 @@ RAG (Obsidian Vault)
 ├── 01 - 深度研究報告 (Deep Research Reports)  <-- 5 萬字完整技術全景與文獻評析
 ├── 02 - 研究領域專題 (Research Domains)       <-- 11 個細分技術領域專題剖析
 ├── 03 - 論文庫 (Literature Notes)             <-- 34 篇論文結構化筆記與雙向連結
-└── Papers/                                  <-- 34 篇原始論文 PDF 文件
+├── Papers/                                  <-- 34 篇原始論文 PDF 文件
+└── AGENTS.md / GEMINI.md                    <-- AI Agent 核心協作守則 (6大規範)
 ```
+
+> [!TIP] 🤖 AI Agent 協作注意事項
+> 本專案已配置嚴格的 AI Agent 作業守則：[[AGENTS|AGENTS.md]] / [[GEMINI|GEMINI.md]]。
+> 規範包含：**master 分支直接操作、作業前 fetch、作業後 commit & push、參考資料不缺漏、雙向核對正確性、存疑必主動問清**。
 
 ---
 
