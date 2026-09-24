@@ -28,6 +28,8 @@ last_updated: "2026-09-24"
 2. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 02 - Evidence Gap-Aware Adaptive Retrieval|Evidence Gap-Aware Adaptive Retrieval]]
 3. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 03 - Provenance Temporal Conflict-Aware Evidence Resolution|Provenance / Temporal / Conflict-Aware Evidence Resolution]]
 4. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|End-to-End RAG Failure Attribution & Evidence Governance]]
+5. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)]]
+6. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 06 - 主流 RAG 框架生態與系統定位分析 (Framework Landscape & Positioning)|主流 RAG 框架生態與系統定位分析 (Framework Landscape & Positioning)]]
 
 ## 升格成 Survey-backed Domain 的門檻
 
@@ -36,3 +38,10 @@ last_updated: "2026-09-24"
 - 可重現 baseline；
 - benchmark / dataset / metrics；
 - 能寫出可反駁假設，而不是只靠概念圖。
+
+
+## Idea 05 / 06 的關係
+
+- **Idea 05** 定義 Evidence-Governed Harness 的研究假設、F/R/D/A/P/C/T operational semantics、evidence hierarchy 與 deterministic repair loop。
+- **Idea 06** 將 Idea 05 放入現有 RAG / Agent / Document-AI 工具生態中，區分「應借力的通用工程能力」與「需要以 ablation 驗證的核心研究假設」。
+- Framework 的版本、功能與效能屬快速變動事實；Idea 06 的具體比較必須以官方文件或同條件 benchmark 定期重驗。
