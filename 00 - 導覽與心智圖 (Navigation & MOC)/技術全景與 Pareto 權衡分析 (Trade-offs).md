@@ -87,115 +87,25 @@ flowchart TD
 
 ---
 
-## 四、主流 RAG 框架生態與證據治理系統深度對比
+## 四、主流 RAG 框架生態與 Evidence-Governed Harness 的定位
 
-為釐清各類 RAG 開源系統、應用平台與研究系統的差異，以下針對 **LangChain / LangGraph**、**AutoRAG**、**Haystack**、**Dify**、**RAGFlow** 與本專案之 **Evidence-Governed Harness (證據治理型交付物生成管線)** 進行深度架構解構。
+框架層比較屬於**快速變動的工程選型資訊**，不應在本 Pareto 頁重複維護固定的模型大小、VRAM、TTFT、解析延遲或「誰最強」等敘述。這些數字高度依賴版本、模型、硬體、資料與部署方式；若沒有同條件 benchmark，不可直接比較。
 
-### 1. 核心定位速查表
+完整的框架定位、委託邊界與待核驗事項集中維護於：
 
-| 系統 / 專案 | 它最強的核心定位 | 相對優勢 | 明顯弱項 / 不適用的場景 |
-| :--- | :--- | :--- | :--- |
-| **LangChain / LangGraph** | Agent 流程編排、工具整合、開源生態 | 生態系龐大、連接器多、開發社群活躍 | 缺乏資料語義約束、無確定性硬校驗、不治理 Claim 與證據生命週期 |
-| **AutoRAG** | RAG 超參數與組件自動搜尋 (AutoML RAG) | 支援多種檢索/重排器網格搜尋與自動基準評測 | 僅解決「哪個 RAG 組合最佳」，不處理 Claim 生成、審計與長篇交付物生成 |
-| **Haystack** | 生產級模組化 DAG Pipeline、高擴展性 | Pipeline 架構清晰、工程成熟度高、適合企業整合 | 僅管「下一個執行什麼 Component」，未定義資料的操作語意（Operational Semantics） |
-| **Dify** | Low-Code AI 應用平台、可視化 Workflow、快速部署 | 產品化 UX 極佳、拖拽式工作流、插件市場完善 | 抽象過高、缺乏精確版本與 Hash 審計、難以進行嚴格學術實驗對照與因果消融 |
-| **RAGFlow** | 深度文件解析 (DeepDoc, MinerU, Docling)、精確表格與版面還原 | PDF/複雜排版抽取能力極強、支援多模態與視覺定位 | 止步於「段落檢索附 Citation」，無 Claim-level 治理、無需求覆蓋校驗與修復 |
-| **Evidence-Governed Harness (本專案)** | **可審計、具操作語意的證據治理與長篇提案生成** | **F/R/D/A/P/C/T 類型化知識、四層證據鏈校驗、硬約束修復迴圈** | 生態系尚在初期、無 GUI、PDF 基礎解析仍依賴外部開源模組 |
+- [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 06 - 主流 RAG 框架生態與系統定位分析 (Framework Landscape & Positioning)|Idea 06: 主流 RAG 框架生態與系統定位分析]]
+- [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05: Evidence-Governed RAG 系統架構構想]]
 
----
+> [!IMPORTANT] 比較原則
+> LangChain / LangGraph、AutoRAG、Haystack、Dify、RAGFlow、MinerU、Docling 等工具的能力必須以**使用版本的官方文件 / 官方 repository**為準；Evidence-Governed Harness 則是本專案的 proposed architecture。框架比較用於回答「哪些通用能力應借力、哪些研究假設值得自研與 ablation」，不是產品排名。
 
-### 2. 嚴格對照：六大核心維度詳盡評析
+### 建議的工程選型順序
 
-> [!WARNING] 跨條件評估警示
-> 以下系統在設計哲學與工程邊界上存在本質差異。**不同評估基準（如 SQuAD 問答 vs. 複雜企業提案生成）下的單項評分「不可直接比較」**。架構選型必須基於系統邊界與任務先決條件。
-
-#### 維度 1：適用任務與資料集 (Task & Dataset 特性)
-- **LangChain / LangGraph**：適合多輪對話、Tool-calling 任務、輕量 ReAct Agent（如 HotpotQA, GSM8K）。
-- **AutoRAG**：適合標準 QA 資料集（如 MS MARCO, BEIR, TriviaQA）的參數調優。
-- **Haystack**：適合企業搜尋、語意 FAQ 與微服務端點集成。
-- **Dify**：適合內部知識庫問答、客服機器人、輕量辦公自動化應用。
-- **RAGFlow**：適合財報、合約、手冊等包含大量複雜表格與雙欄版面之文件問答。
-- **Evidence-Governed Harness**：專注於**企業 RFP 投標、工程規格書、可行性報告與跨章節交付物生成**（需精確覆蓋數百條 Requirement，容錯率極低）。
-
-#### 維度 2：模型規模及上下文長度 (Model Scale & Context Length)
-- **通用框架 (LangChain, Haystack, Dify)**：模型無關（Model-agnostic），通常依賴 4k~128k 商業 API（GPT-4o, Claude 3.5）。
-- **AutoRAG**：多採用開源小型模型（7B~14B）或 Embedding/Reranker 模型進行密集批次計算以降低 Sweep 成本。
-- **RAGFlow**：整合專門的 Document OCR/Layout 視覺模型（如 YOLOv8, LayoutLM）與 7B/14B 嵌入模型。
-- **Evidence-Governed Harness**：採用多模型分級協同 —— 小型模型（如 Llama-3-8B / Qwen-2.5-7B）負責命題解構與 F/R/D/A/P/C/T 分類，前沿大模型（Claude 3.5 Sonnet / GPT-4o）負責長篇大綱擬定與章節撰寫，NLI 專用模型負責語意蘊涵檢驗。
-
-#### 維度 3：硬體資源與推論成本 (Hardware & Inference Costs)
-- **LangChain / Dify**：主要是 API 調用費用；伺服器本身僅需極小 CPU/記憶體即可運行。
-- **AutoRAG**：需多次掃描評估資料集，若 sweep 81 種組合，推論與評測成本隨組合數線性爆炸（$O(N \cdot M)$）。
-- **RAGFlow**：因包含視覺版面分析與 OCR，本機部署需要配備 GPU（建議 16GB~24GB VRAM）進行文檔 Ingestion。
-- **Evidence-Governed Harness**：索引階段成本中高（需進行結構解析、命題抽取與分類標註）；但在生成階段透過類型化檢索與確定性驗證，大幅減少無效生成次數，總體 Token 浪費反而低於無約束的長 Context 盲目生成。
-
-#### 維度 4：記憶體需求、延遲及吞吐量 (VRAM, Latency & Throughput)
-- **即時問答系統 (LangChain, Haystack, Dify)**：重視首字延遲（TTFT < 500ms），吞吐量優先。
-- **AutoRAG**：離線運行，不關注即時延遲。
-- **RAGFlow**：文件上傳後解析需數十秒至數分鐘，但檢索時延遲極低（< 200ms）。
-- **Evidence-Governed Harness**：屬於**批次交付物生成管線（Batch Document Harness）**，生成完整數萬字提案需 2~10 分鐘；透過非同步驗證與修復迴圈保證結果品質，不以即時交互為目標。
-
-#### 維度 5：正確性、檢索品質及生成品質 (Accuracy & Evidence Quality)
-- **傳統 RAG (LangChain / Dify)**：僅能提供「相關片段 + 答案」；常見幻覺包括斷章取義、無支撐宣稱（Ungrounded Claims）。
-- **AutoRAG**：保證檢索層的 Recall@K 與 MRR 達到超參數最優。
-- **RAGFlow**：透過版面還原提供精準的區塊座標（Bounding Box）定位，大幅改善表格與數字檢索。
-- **Evidence-Governed Harness**：達成**四層證據治理**（$\text{Citation} \neq \text{Entailment} \neq \text{Authority} \neq \text{Sufficiency}$），強制要求：
-  - 需求覆蓋率 $Coverage(R) = 1.0$；
-  - 宣稱背書合法性 $type(E(c)) \in \{F, C, D\}$；
-  - 具備完整因果審計追溯鏈。
-
-#### 維度 6：方法的限制、失效情境與工程複雜度 (Failure Modes & Complexity)
-- **LangChain**：失效情境多為 Prompt 漂移、Agent 無限迴圈；工程維護隨鏈條增長變得難以追蹤。
-- **AutoRAG**：若測試集存在標註偏差，選出的「最佳組合」可能在新領域過擬合。
-- **Haystack**：無開箱即用的業務層治理邏輯，企業需自行編寫大量的 Custom Component。
-- **Dify**：客製化深度邏輯（如複雜的跨塊矛盾消解與修復）受限於 GUI 節點表達力。
-- **RAGFlow**：當文檔為非排版純文字或跨十個章節的邏輯推理時，其優勢減弱。
-- **Evidence-Governed Harness**：工程複雜度最高，若知識分類模組（F/R/D/A/P/C/T）分類錯誤，會導致下游操作規則連鎖失效（需依賴強健的少樣本/微調分類器）。
-
----
-
-### 3. 多層次系統架構堆疊 (The Complete Abstraction Stack)
-
-這六者並非零和對立，而是處於系統不同抽象層次：
-
-```mermaid
-flowchart TD
-    GOV["Evidence Governance<br/>proposed project layer"]
-    APP["Application / UI"]
-    DOC["Document Parsing"]
-    OPT["RAG Optimization"]
-    PIPE["Pipeline Engine"]
-    AG["Agent Runtime"]
-
-    GOV --> APP
-    GOV --> DOC
-    GOV --> OPT
-    GOV --> PIPE
-    GOV --> AG
-```
-
-> [!WARNING] 分層圖不是市場標準 taxonomy
-> 上圖只用來說明不同工具可能位於不同抽象層；Evidence Governance 是本專案的 proposed layer，詳見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
-
----
-
-### 4. 工程資源配置邊界：委託 vs. 聚焦 (What to Delegate vs. What to Keep)
-
-在系統工程與學術研究中，**不要重複造輪子**。明確的開發預算分配如下：
-
-| 功能模組 | 建議策略 | 推薦借力之開源專案 | 決策依據 |
-| :--- | :---: | :--- | :--- |
-| **通用 Pipeline DAG 引擎** | **積極委託** | [[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)#4. 主流 RAG 框架生態與證據治理系統深度對比\|Haystack]] | Haystack 的 Component 與 Pipeline 抽象極其成熟，無需自行手寫 DAG 排程。 |
-| **PDF 複雜排版與表格 OCR** | **積極委託** | RAGFlow (DeepDoc) / MinerU / Docling | 排版解析屬於重工程、多模型任務，現成方案已非常出色。 |
-| **RAG 參數網格搜尋 (Sweep)** | **積極委託** | AutoRAG | 暴力搜尋 Chunking、Embedding、Reranker 參數，AutoRAG 已具備完整標準。 |
-| **Agent 狀態圖持久化** | **積極委託** | LangGraph | 狀態機轉移、中斷等待與 Checkpointing 機制成熟。 |
-| **通用視覺化 Web UI** | **積極委託** | Dify | 嚴禁花費時間自己寫 React 前端做工作流畫布。 |
-| **企業語意知識模型 (F/R/D/A/P/C/T)** | **⭐ 核心自研** | 本專案核心代碼 | 定義 Operational Semantics，屬於學術與系統核心貢獻。 |
-| **四層證據階梯與溯源鏈** | **⭐ 核心自研** | 本專案核心代碼 | 實現細粒度跨文檔 Span 追溯、權威度評估與充分性檢驗。 |
-| **確定性校驗與修復迴圈** | **⭐ 核心自研** | 本專案核心代碼 | 實現 $Coverage(R) = 1.0$ 的硬約束保證，取代主觀 LLM 判斷。 |
-| **正式交付物生成政策** | **⭐ 核心自研** | 本專案核心代碼 | 控制章節大綱、逐句證據背書與審計報告導出。 |
-
----
+1. 先定義任務與資料契約：QA、長篇報告、RFP、表格/PDF、multi-hop 或 multimodal。
+2. 再定義不可妥協的 invariant：coverage、provenance、citation/entailment、authority、sufficiency。
+3. 對 parsing、retrieval、pipeline runtime、UI、evaluation 分別建立可替換 adapter。
+4. 以同一 dataset、同一模型與相同 compute / token budget 做 benchmark，再決定是否委託既有框架。
+5. 將 F/R/D/A/P/C/T、Evidence Governance 與 deterministic repair 視為**待驗證研究假設**，而不是預設優於現有框架的既定事實。
 
 ## 相關導覽與文獻快速跳轉
 
