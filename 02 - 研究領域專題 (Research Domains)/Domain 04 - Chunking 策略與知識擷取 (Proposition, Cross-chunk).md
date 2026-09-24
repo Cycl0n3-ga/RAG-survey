@@ -45,7 +45,7 @@ Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造�
 
 ## 二、命題級切塊：Dense X (Proposition Retrieval)
 
-- **核心代表作**：[[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X (Chen et al., EMNLP 2024)]]。
+- **核心代表作**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X (Chen et al., EMNLP 2024)]]。
 - **核心定義**：將長文切分為一個個『Proposition（命題）』。每個命題必須滿足以下三項嚴格約束：
   1. **原子性（Atomic Fact）**：僅包含一個獨立的原生事實；
   2. **不可再分性（Minimal Context）**：無法在不破壞事實完整性的前提下再細分；
@@ -64,12 +64,12 @@ Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造�
 ## 三、前沿切塊範式演進：動態邊界與延遲池化
 
 ### 1. 動態語意獨立切塊：LumberChunker
-- **核心代表作**：[[03 - 論文庫 (Literature Notes)/Duarte2024 - LumberChunker|LumberChunker (Duarte et al., Findings of EMNLP 2024)]]。
+- **核心代表作**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG|LumberChunker (Duarte et al., Findings of EMNLP 2024)]]。
 - **核心洞察**：固定字數切塊抹殺了內容的語意邊界。LumberChunker 利用 LLM 評估連續段落，動態探測內容開始發生轉折的「語意轉折點（Semantic Shift Point）」，保證切出的每個區塊具備高度的**語意獨立性（Semantic Independence）**。
 - **實驗證據**：在 3,000 組題目的 GutenQA 基準測試中（Table 1, Page 4），動態語意切塊在 Dense Retriever（Contriever/BGE）下的 Recall@5 與 DCG@5 顯著超越傳統固定切塊，下游 QA 準確率提升達 4.8%。
 
 ### 2. 全文語境延遲池化：Late Chunking
-- **核心代表作**：[[03 - 論文庫 (Literature Notes)/Gunther2024 - Late Chunking|Late Chunking (Günther et al., 2024)]]。
+- **核心代表作**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking (Günther et al., 2024)]]。
 - **核心機制**：打破傳統「先切塊後獨立編碼（Early Chunking）」導致周圍語境徹底遺失的弊端。改為先使用長上下文 Embedding 模型（如 Jina v2/v3）對整篇長文進行雙向全局注意力編碼，使每個 Token 隱層狀態充分融合上下文，最後再依切塊邊界進行 Mean Pooling。
 - **實驗證據**：在 BEIR 檢索基準評測中（Table 2, Page 8），Late Chunking 相較於 Naive Chunking 在 nDCG@10 與 Recall@k 上取得全面穩健提升，特別能消除代名詞懸空造成的檢索失效。
 
@@ -107,7 +107,7 @@ Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造�
 本 Domain 的「已知研究」應以 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 中的 **Generative Information Extraction survey** 與 **LLM-based Generative Information Extraction survey** 為入口，再連到 UIE、OpenIE、document-level RE、event extraction、proposition retrieval 等 primary works。
 
 ### 1. 通用模式指導抽取機制：UIE
-- **代表工作**：[[03 - 論文庫 (Literature Notes)/Lu2022 - UIE Universal Information Extraction|UIE: Unified Structure Generation for Universal Information Extraction (Lu et al., ACL 2022)]]。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2022-05) Unified Structure Generation for Universal Information Extraction|UIE: Unified Structure Generation for Universal Information Extraction (Lu et al., ACL 2022)]]。
 - **理論價值**：UIE 奠定了 $(\text{Schema}, \text{Text}) \rightarrow \text{Structured Extraction}$ 的形式化抽取機制。透過 Structural Schema Instructor (SSI)，UIE 允許使用者根據任務需求動態自定義抽取目標（Demand-specific Schema），將實體、關聯、事件與屬性統一線性化生成。
 - **學術邊界釐清**：UIE 提供了「**如何依照自定義 Schema 進行抽取**」的演算法工具，但 UIE 原始論文採用的是通用 NER/RE/EE 標籤，**並未定義 F/R/D/A/P/C/T 七類特定本體**。
 
@@ -255,10 +255,10 @@ flowchart TD
 ## 九、相關專題與文獻導覽
 
 - **文獻支撐**：
-  - [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X 命題檢索 (Chen et al., EMNLP 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|Microsoft GraphRAG (Edge et al., 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Shao2024 - STORM Writing Wikipedia From Scratch|STORM 知識探究與長篇寫作 (Shao et al., 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG|Self-RAG 反思與可控檢索 (Asai et al., ICLR 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X 命題檢索 (Chen et al., EMNLP 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|Microsoft GraphRAG (Edge et al., 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM 知識探究與長篇寫作 (Shao et al., 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection|Self-RAG 反思與可控檢索 (Asai et al., ICLR 2024)]]
 - **領域跳轉**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12: Knowledge Extraction & Typed Knowledge]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13: Information Preservation & Cross-chunk Consolidation]]

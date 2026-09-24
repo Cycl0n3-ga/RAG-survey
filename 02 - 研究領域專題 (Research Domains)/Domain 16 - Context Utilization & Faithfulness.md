@@ -65,9 +65,9 @@ flowchart TD
 
 | 代表工作 / 論文 | 發表 Venue / 年份 | 核心問題與發現 | 診斷機制與貢獻 | 官方來源 |
 | :--- | :--- | :--- | :--- | :--- |
-| **[[Liu2023 - Lost in the Middle\|Lost in the Middle]]** | TACL 2024 | 長文本位置偏置（U 型注意力曲線） | 證明相關證據放在 Context 開頭與結尾時準確率高，中間段落顯著衰退 | [TACL 2024](https://aclanthology.org/2024.tacl-1.9/) |
-| **[[Ru2024 - RAGChecker\|RAGChecker]]** | NeurIPS 2024 | 細粒度 Claim 級別 RAG 診斷框架 | 將 Answer 與 Context 拆解為 Claims，度量 Faithfulness, Completeness, Precision | [NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024/hash/27245589131d17368cccdfa990cbf16e-Abstract.html) |
-| **[[Es2024 - RAGAS\|RAGAS]]** | EACL 2024 | 無參考答案自動化忠實度評估 | 利用 LLM 檢驗回答 Claims 是否被 Context 蘊涵（Faithfulness 分數） | [EACL 2024](https://aclanthology.org/2024.eacl-demo.16/) |
+| **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts\|Lost in the Middle]]** | TACL 2024 | 長文本位置偏置（U 型注意力曲線） | 證明相關證據放在 Context 開頭與結尾時準確率高，中間段落顯著衰退 | [TACL 2024](https://aclanthology.org/2024.tacl-1.9/) |
+| **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation\|RAGChecker]]** | NeurIPS 2024 | 細粒度 Claim 級別 RAG 診斷框架 | 將 Answer 與 Context 拆解為 Claims，度量 Faithfulness, Completeness, Precision | [NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024/hash/27245589131d17368cccdfa990cbf16e-Abstract.html) |
+| **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation\|RAGAS]]** | EACL 2024 | 無參考答案自動化忠實度評估 | 利用 LLM 檢驗回答 Claims 是否被 Context 蘊涵（Faithfulness 分數） | [EACL 2024](https://aclanthology.org/2024.eacl-demo.16/) |
 | **CRAG (Meta)** | 2024 預印本 | 知識衝突與干擾項魯棒性基準 | Comprehensive RAG Benchmark，測試模型在噪音干擾下的生成表現 | [GitHub CRAG](https://github.com/facebookresearch/CRAG) |
 
 ---
@@ -145,9 +145,9 @@ flowchart TD
 ## 八、文獻來源與相關專題導覽 (Sources, Citations & Wikilinks)
 
 - **核心論文**：
-  - [[03 - 論文庫 (Literature Notes)/Liu2023 - Lost in the Middle|Lost in the Middle: How Language Models Use Long Contexts (Liu et al., TACL 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Ru2024 - RAGChecker|RAGChecker: A Fine-grained Framework for Diagnosing RAG (Ru et al., NeurIPS 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Es2024 - RAGAS|RAGAS: Automated Evaluation of Retrieval Augmented Generation (Es et al., EACL 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts|Lost in the Middle: How Language Models Use Long Contexts (Liu et al., TACL 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker: A Fine-grained Framework for Diagnosing RAG (Ru et al., NeurIPS 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS: Automated Evaluation of Retrieval Augmented Generation (Es et al., EACL 2024)]]
 - **專題連動**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01: Long Context 與序列架構]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08: 長篇生成與 Claim-Evidence Ledger]]

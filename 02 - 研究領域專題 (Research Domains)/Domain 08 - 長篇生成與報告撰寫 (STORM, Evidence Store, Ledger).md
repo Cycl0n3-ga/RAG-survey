@@ -21,7 +21,7 @@ tags:
 ---
 
 ### 二、史丹佛 STORM 系統：長文寫作的工程典範
-- **代表作**：[[Shao2024 - STORM Writing Wikipedia From Scratch|STORM (Shao et al., NAACL 2024)]]。
+- **代表作**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM (Shao et al., NAACL 2024)]]。
 - **核心架構流程**：
 
 ```mermaid

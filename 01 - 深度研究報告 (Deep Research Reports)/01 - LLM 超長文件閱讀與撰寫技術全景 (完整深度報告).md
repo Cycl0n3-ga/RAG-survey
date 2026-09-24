@@ -632,19 +632,19 @@ r=f(q,\text{document},\text{evidence uncertainty},B)
 
 | 方法 | Core idea | 優點 | 缺點 | 典型可處理尺度 | Compute / Cost | 代表論文 |
 |---|---|---|---|---|---|---|
-| Dense Attention | 全 token pair interaction | 表達力最直接 | \(O(L^2)\) | 取決於硬體/模型，現已到 1M 級產品 | 很高 | [[03 - 論文庫 (Literature Notes)/Vaswani2017 - Attention Is All You Need|Vaswani et al., 2017]]  |
-| FlashAttention | IO-aware exact attention | exact、不犧牲 attention 定義 | compute 仍近 quadratic | 長度由模型/記憶體決定 | 中高 | [[03 - 論文庫 (Literature Notes)/Dao2022 - FlashAttention|Dao et al., 2022]]  |
-| Longformer | local + global sparse attention | 線性級 memory scaling | sparse topology 固定 | 數千～數萬級設計 | 中 | [[03 - 論文庫 (Literature Notes)/Beltagy2020 - Longformer|Beltagy et al., 2020]]  |
-| BigBird | local + random + global | sparse 且具理論分析 | implementation 複雜 | 長 document | 中 | [[03 - 論文庫 (Literature Notes)/Zaheer2020 - BigBird|Zaheer et al., 2020]]  |
-| Mamba | selective SSM | linear sequence scaling | random access 不如 attention 直接 | 論文測到 million-length | 低～中 | [[03 - 論文庫 (Literature Notes)/Gu2023 - Mamba Linear-Time Sequence Modeling|Gu & Dao, 2023]]  |
-| LongRoPE | positional extension | 可把既有 RoPE 模型拉長 | 不保證 long reasoning | 論文最高 2.048M | finetuning 成本 | [[03 - 論文庫 (Literature Notes)/Ding2024 - LongRoPE 2M Context|Ding et al., 2024]]  |
-| Ring Attention | sequence distributed over devices | 超長 exact attention | communication 高 | million 級可行 | 很高 | [[03 - 論文庫 (Literature Notes)/Liu2023 - RingAttention|Liu et al., 2023]]  |
-| LLMLingua | token importance compression | 不需模型吃完整 prompt | 可能刪重要細節 | 原文可為 context 的多倍 | 低～中 | [[03 - 論文庫 (Literature Notes)/Jiang2023 - LLMLingua Prompt Compression|Jiang et al., 2023]]  |
-| RECOMP | task-trained context compressor | query/task-aware | 要訓練 compressor | corpus 任意，LLM 吃 compressed result | 中 | [[03 - 論文庫 (Literature Notes)/Xu2023 - RECOMP Context Compressor|Xu et al., 2023]]  |
-| Gisting | learned gist tokens | 高 compression | 需 training；interpretability 低 | 依訓練設定 | 中 | [[03 - 論文庫 (Literature Notes)/Mu2023 - Gist Tokens|Mu et al., 2023]]  |
-| KIVI | 2-bit KV cache | 大幅降低 VRAM | quantization error | 原 context 不變 | 很低 runtime overhead | [[03 - 論文庫 (Literature Notes)/Liu2024 - KIVI 2-bit KV Cache|Liu et al., 2024]]  |
-| SnapKV | important KV selection | 節省 memory 與 generation time | query/task robustness 仍要驗證 | paper 展示超長 cache | 低 | [[03 - 論文庫 (Literature Notes)/Li2024 - SnapKV|Li et al., 2024]]  |
-| BLT | entropy-based byte patches | 無固定 tokenizer、adaptive compute | 要重新預訓練模型 | byte-level large scale | pretraining 高 | [[03 - 論文庫 (Literature Notes)/Pagnoni2024 - Byte Latent Transformer (BLT)|Pagnoni et al., 2024]]  |
+| Dense Attention | 全 token pair interaction | 表達力最直接 | \(O(L^2)\) | 取決於硬體/模型，現已到 1M 級產品 | 很高 | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need|Vaswani et al., 2017]]  |
+| FlashAttention | IO-aware exact attention | exact、不犧牲 attention 定義 | compute 仍近 quadratic | 長度由模型/記憶體決定 | 中高 | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(NeurIPS 2022-12) FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness|Dao et al., 2022]]  |
+| Longformer | local + global sparse attention | 線性級 memory scaling | sparse topology 固定 | 數千～數萬級設計 | 中 | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ACL 2020-07) Longformer - The Long-Document Transformer|Beltagy et al., 2020]]  |
+| BigBird | local + random + global | sparse 且具理論分析 | implementation 複雜 | 長 document | 中 | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(NeurIPS 2020-12) Big Bird - Transformers for Longer Sequences|Zaheer et al., 2020]]  |
+| Mamba | selective SSM | linear sequence scaling | random access 不如 attention 直接 | 論文測到 million-length | 低～中 | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces|Gu & Dao, 2023]]  |
+| LongRoPE | positional extension | 可把既有 RoPE 模型拉長 | 不保證 long reasoning | 論文最高 2.048M | finetuning 成本 | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens|Ding et al., 2024]]  |
+| Ring Attention | sequence distributed over devices | 超長 exact attention | communication 高 | million 級可行 | 很高 | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) RingAttention with Blockwise Transformers for Near-Infinite Context|Liu et al., 2023]]  |
+| LLMLingua | token importance compression | 不需模型吃完整 prompt | 可能刪重要細節 | 原文可為 context 的多倍 | 低～中 | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models|Jiang et al., 2023]]  |
+| RECOMP | task-trained context compressor | query/task-aware | 要訓練 compressor | corpus 任意，LLM 吃 compressed result | 中 | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|Xu et al., 2023]]  |
+| Gisting | learned gist tokens | 高 compression | 需 training；interpretability 低 | 依訓練設定 | 中 | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens|Mu et al., 2023]]  |
+| KIVI | 2-bit KV cache | 大幅降低 VRAM | quantization error | 原 context 不變 | 很低 runtime overhead | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|Liu et al., 2024]]  |
+| SnapKV | important KV selection | 節省 memory 與 generation time | query/task robustness 仍要驗證 | paper 展示超長 cache | 低 | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation|Li et al., 2024]]  |
+| BLT | entropy-based byte patches | 無固定 tokenizer、adaptive compute | 要重新預訓練模型 | byte-level large scale | pretraining 高 | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens|Pagnoni et al., 2024]]  |
 
 **目前代表性活躍團隊**包括 Stanford 的 long-context / FlashAttention 系統研究線、Microsoft Research 的 context extension / compression / GraphRAG 研究線、Google/DeepMind 的 long-context 與 retrieval-augmented modeling、Meta FAIR 的 retrieval/token-free modeling，以及 Berkeley 等系統團隊的 serving/cache 研究；這裡不把「leading」作正式排名，而應視為幾條高影響力的代表性研究脈絡。上述各方法的作者與發表來源可由原始論文確認。
 
@@ -1023,19 +1023,19 @@ MemOS 則把 memory 提升成系統的一級資源，區分 parametric、activat
 
 | Method | Core idea | Pros | Cons | 支援的「長度」 | Cost | 代表工作 |
 |---|---|---|---|---|---|---|
-| DPR | dual-encoder passage retrieval | 快、易建 ANN index | coarse semantic representation | corpus 幾乎不限 | 低 | [[03 - 論文庫 (Literature Notes)/Karpukhin2020 - Dense Passage Retrieval (DPR)|Karpukhin et al., 2020]]  |
-| ColBERT | token-level late interaction | 細粒度 matching | index 較大 | corpus 幾乎不限 | 中 | [[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|Khattab & Zaharia, 2020]]  |
-| HyDE | hypothetical document query | zero-shot retrieval 強 | generator bias 可能污染 query | corpus unlimited | 中 | [[03 - 論文庫 (Literature Notes)/Gao2022 - HyDE Zero-Shot Dense Retrieval|Gao et al., 2022]]  |
-| Standard RAG | retrieve then generate | 簡單、可更新知識 | top-k 未必 sufficient | corpus unlimited；LLM 只吃 top-k | 低～中 | [[03 - 論文庫 (Literature Notes)/Lewis2020 - Retrieval-Augmented Generation (RAG)|Lewis et al., 2020]]  |
-| IRCoT | retrieval ↔ reasoning | multi-hop 強 | 多次 LLM/retrieval | corpus unlimited | 高 | [[03 - 論文庫 (Literature Notes)/Trivedi2022 - IRCoT Interleaving Retrieval and CoT|Trivedi et al., 2023]]  |
-| Self-RAG | model learns retrieve/reflection | 動態、自我判斷 | 需要訓練；self-eval 可能錯 | unlimited corpus | 中高 | [[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG|Asai et al., 2023]]  |
-| RAPTOR | recursive summary tree | global + local abstraction | tree build、summary errors | book/corpus-level | 高 indexing | [[03 - 論文庫 (Literature Notes)/Sarthi2024 - RAPTOR Recursive Tree Retrieval|Sarthi et al., 2024]]  |
-| Dense X | proposition retrieval | fine-grained evidence | extraction/index 爆量 | corpus unlimited | 中 | [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Chen et al., 2024]]  |
-| GraphRAG | entity graph + community summary | global corpus question、relationships | expensive indexing、extraction error | corpus-scale | 高 | [[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|Edge et al., 2024]]  |
-| HippoRAG | KG + associative graph search | multi-hop relation | graph quality sensitive | corpus-scale | 中～高 | [[03 - 論文庫 (Literature Notes)/Gutierrez2024 - HippoRAG|Gutiérrez et al., 2024]]  |
+| DPR | dual-encoder passage retrieval | 快、易建 ANN index | coarse semantic representation | corpus 幾乎不限 | 低 | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering|Karpukhin et al., 2020]]  |
+| ColBERT | token-level late interaction | 細粒度 matching | index 較大 | corpus 幾乎不限 | 中 | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT|Khattab & Zaharia, 2020]]  |
+| HyDE | hypothetical document query | zero-shot retrieval 強 | generator bias 可能污染 query | corpus unlimited | 中 | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels|Gao et al., 2022]]  |
+| Standard RAG | retrieve then generate | 簡單、可更新知識 | top-k 未必 sufficient | corpus unlimited；LLM 只吃 top-k | 低～中 | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NeurIPS 2020-12) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks|Lewis et al., 2020]]  |
+| IRCoT | retrieval ↔ reasoning | multi-hop 強 | 多次 LLM/retrieval | corpus unlimited | 高 | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions|Trivedi et al., 2023]]  |
+| Self-RAG | model learns retrieve/reflection | 動態、自我判斷 | 需要訓練；self-eval 可能錯 | unlimited corpus | 中高 | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection|Asai et al., 2023]]  |
+| RAPTOR | recursive summary tree | global + local abstraction | tree build、summary errors | book/corpus-level | 高 indexing | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|Sarthi et al., 2024]]  |
+| Dense X | proposition retrieval | fine-grained evidence | extraction/index 爆量 | corpus unlimited | 中 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Chen et al., 2024]]  |
+| GraphRAG | entity graph + community summary | global corpus question、relationships | expensive indexing、extraction error | corpus-scale | 高 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|Edge et al., 2024]]  |
+| HippoRAG | KG + associative graph search | multi-hop relation | graph quality sensitive | corpus-scale | 中～高 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|Gutiérrez et al., 2024]]  |
 | KG²RAG | vector seed + KG expansion | 保留 raw evidence | KG pipeline 複雜 | corpus-scale | 中～高 | [Zhu et al., 2025](https://aclanthology.org/2025.naacl-long.449/)  |
 | PropRAG | proposition graph/path | 減少 triple context collapse | extraction cost | corpus-scale | 中～高 | [Wang & Han, 2025](https://aclanthology.org/2025.emnlp-main.1023/)  |
-| MemGPT | hierarchical external memory | context 超過 model window | memory policy 難 | theoretically persistent | 中 | [[03 - 論文庫 (Literature Notes)/Packer2023 - MemGPT LLM as Operating System|Packer et al., 2023]]  |
+| MemGPT | hierarchical external memory | context 超過 model window | memory policy 難 | theoretically persistent | 中 | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|Packer et al., 2023]]  |
 
 ## 推理、長文撰寫、Agent 與 Verification：如何從「找到資料」變成「完成文件」
 

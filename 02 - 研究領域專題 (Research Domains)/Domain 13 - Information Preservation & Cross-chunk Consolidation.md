@@ -72,7 +72,7 @@ flowchart TD
 
 | 代表工作 / 論文 | 發表 Venue / 年份 | 核心研究維度 | 跨塊與保真機制 | 官方來源與代碼 |
 | :--- | :--- | :--- | :--- | :--- |
-| **[[Chen2023 - Dense X Proposition Retrieval\|Dense X]]** | EMNLP 2024 | 檢索單元粒度 (Proposition Granularity) | 將代名詞替換為明確全稱，補足時空背景，保證命題語意自包含 | [ACL Anthology](https://aclanthology.org/2024.emnlp-main.845/) |
+| **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA\|Dense X]]** | EMNLP 2024 | 檢索單元粒度 (Proposition Granularity) | 將代名詞替換為明確全稱，補足時空背景，保證命題語意自包含 | [ACL Anthology](https://aclanthology.org/2024.emnlp-main.845/) |
 | **PropRAG** | EMNLP 2025 | 檢索路徑搜尋 (Proposition Paths) | 構建上下文豐富命題路徑，結合免 LLM 在線束搜尋解決多跳割裂 | [EMNLP 2025](https://aclanthology.org/2025.emnlp-main.317/) |
 | **CrossAug** | 2026 預印本 | 離線圖拓撲補全 (Cross-chunk Augmentation) | 利用 GNN 引導跨越 Chunk 邊界的關係補全，修復分塊截斷的關聯 | [arXiv:2605.28004](https://arxiv.org/abs/2605.28004) (正式 Venue 待核) |
 | **Late Chunking** | 2024 預印本 | 全局編碼池化 (Late Interaction) | 整篇長文雙向注意力編碼後再 Mean-pooling，保留周邊上下文隱層向量 | [arXiv:2409.04701](https://arxiv.org/abs/2409.04701) |
@@ -146,8 +146,8 @@ flowchart LR
 ## 八、文獻來源與相關專題導覽 (Sources, Citations & Wikilinks)
 
 - **核心論文**：
-  - [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X: Proposition Retrieval (Chen et al., EMNLP 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Gunther2024 - Late Chunking|Late Chunking: Contextual Chunk Embeddings (Günther et al., 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X: Proposition Retrieval (Chen et al., EMNLP 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking: Contextual Chunk Embeddings (Günther et al., 2024)]]
 - **專題連動**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12: 知識擷取與類型化知識表示]]

@@ -33,7 +33,7 @@ flowchart LR
 #### 1. 單針大海撈針（Single-Needle NIAH）的致命欺騙性
 - **現象**：許多模型在 128k NIAH 取得 100% 綠色滿分，但在真實論文問答中一塌糊塗。
 - **原因**：單針測試本質上是在均勻背景雜訊中尋找一個特異度極高的字串（如『秘密密碼是 49204』），Attention 矩陣只要捕捉到一個極端異常峰值即可，完全不考驗推理能力。
-- **解法**：全面採用 **[[Hsieh2024 - RULER What is the Real Context Size|RULER (NVIDIA 2024)]]**：
+- **解法**：全面採用 **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models|RULER (NVIDIA 2024)]]**：
   - 多針檢索（Multi-needle Retrieval）：必須同時找出 5 根以上相互關聯的針；
   - 變數追蹤（Variable Tracking）：追蹤多個變數在長文中被反覆賦值的因果鏈；
   - 聚合歸納（Aggregation）：統計遍佈全篇的實體分佈。
@@ -45,14 +45,14 @@ flowchart LR
 目前本 Domain 不能只停在 LongBench / L-Eval / InfiniteBench / RULER。RAG 的 retrieval、grounding、multi-hop、table reasoning 與 report generation 需要不同 Gold。完整 catalog 已移至 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]，至少包含 BEIR、HotpotQA、MultiHop-RAG、RAGBench、RAGChecker、Comprehensive RAG Benchmark、T²-RAGBench、RAG4Reports、EviReportBench、AnalystBench、ReportLogic 等。
 
 #### 1. 無參考答案自動化評估框架：Ragas
-- **代表工作**：[[03 - 論文庫 (Literature Notes)/Es2024 - RAGAS|RAGAS (Es et al., EACL 2024)]]。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS (Es et al., EACL 2024)]]。
 - **核心指標**：
   - **Faithfulness（忠實度）**：將回答原子化拆解為 Claims，驗證檢索上下文對 Claim 的邏輯蘊涵（與人類評審一致性達 0.95）；
   - **Answer Relevance（答案相關性）**：反向問題生成與相似度打分，懲罰答非所問；
   - **Context Relevance（上下文相關性）**：懲罰冗餘不相關的噪聲檢索段落。
 
 #### 2. 細粒度 Claim 級診斷與失效歸因：RAGChecker
-- **代表工作**：[[03 - 論文庫 (Literature Notes)/Ru2024 - RAGChecker|RAGChecker (Ru et al., 2024)]]。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker (Ru et al., 2024)]]。
 - **核心架構**：將 Ground Truth、檢索 Context 與模型 Response 同步解構為原子 Claim，在 Claim 矩陣上雙向度量：
   - **檢索端診斷**：Claim Recall 與 Claim Precision；
   - **生成端診斷**：Faithfulness、Completeness 與 Hallucination Rate。
@@ -71,7 +71,7 @@ $$	ext{Pareto Frontier} = \{ (Accuracy, Latency, VRAM, Cost) \}$$
   2. **端到端延遲 (TTFT: Time-to-First-Token, Generation Speed)**；
   3. **顯存佔用 (VRAM: Peak Memory during Prefill & Decode)**；
   4. **財務/能源成本 ($/1M Tokens, Indexing Cost)**。
-- 一個降低 50% 顯存但僅犧牲 1% 準確率的剪枝方案（如 [[Liu2024 - KIVI 2-bit KV Cache|KIVI]]），在工業界遠比一個提升 1% 準確率但推論成本暴增 10 倍的方案更有價值。
+- 一個降低 50% 顯存但僅犧牲 1% 準確率的剪枝方案（如 [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|KIVI]]），在工業界遠比一個提升 1% 準確率但推論成本暴增 10 倍的方案更有價值。
 
 ---
 

@@ -30,32 +30,32 @@ graph TD
 ```
 
 > **圖中節點文獻對照**：
-> - L1：[[03 - 論文庫 (Literature Notes)/Pagnoni2024 - Byte Latent Transformer (BLT)|BLT (Byte Patches)]]
-> - L2：[[03 - 論文庫 (Literature Notes)/Jiang2023 - LLMLingua Prompt Compression|LLMLingua]] / [[03 - 論文庫 (Literature Notes)/Jiang2023 - LongLLMLingua|LongLLMLingua]]
-> - L3：[[03 - 論文庫 (Literature Notes)/Liu2024 - KIVI 2-bit KV Cache|KIVI 2-bit]] / [[03 - 論文庫 (Literature Notes)/Li2024 - SnapKV|SnapKV]] / [[03 - 論文庫 (Literature Notes)/Cai2024 - PyramidKV|PyramidKV]]
-> - L4：[[03 - 論文庫 (Literature Notes)/Xu2023 - RECOMP Context Compressor|RECOMP]] / [[03 - 論文庫 (Literature Notes)/Mu2023 - Gist Tokens|Gist Tokens]]
+> - L1：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens|BLT (Byte Patches)]]
+> - L2：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models|LLMLingua]] / [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ACL 2024-08) LongLLMLingua - Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression|LongLLMLingua]]
+> - L3：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|KIVI 2-bit]] / [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation|SnapKV]] / [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2024-11) PyramidKV - Dynamic KV Cache Compression based on Pyramidal Information Funneling|PyramidKV]]
+> - L4：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP]] / [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens|Gist Tokens]]
 
 ---
 
 ### 二、關鍵壓縮層次深入解析
 
 #### 1. Prompt Token 剪枝 (Token Pruning)
-- **代表工作**：[[Jiang2023 - LLMLingua Prompt Compression|LLMLingua (EMNLP 2023)]]、[[Jiang2023 - LongLLMLingua|LongLLMLingua (ACL 2024)]]。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models|LLMLingua (EMNLP 2023)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ACL 2024-08) LongLLMLingua - Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression|LongLLMLingua (ACL 2024)]]。
 - **核心機制**：利用小模型計算條件資訊熵，衡量各 Token 的資訊冗餘度。
-- **Query-Aware 的關鍵價值**：單純按文字困惑度剪枝會抹除稀有但關鍵的專有名詞。LongLLMLingua 引入 $P(Doc|Query)$，根據問題對文檔動態重配壓縮率，並將核心段落重排置於 Prompt 兩端以對抗 [[Liu2023 - Lost in the Middle|Lost in the Middle]]。
+- **Query-Aware 的關鍵價值**：單純按文字困惑度剪枝會抹除稀有但關鍵的專有名詞。LongLLMLingua 引入 $P(Doc|Query)$，根據問題對文檔動態重配壓縮率，並將核心段落重排置於 Prompt 兩端以對抗 [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts|Lost in the Middle]]。
 
 #### 2. KV Cache 動態剪枝與金字塔結構 (KV Pruning)
-- **代表工作**：[[Li2024 - SnapKV|SnapKV (2024)]]、[[Cai2024 - PyramidKV|PyramidKV (EMNLP 2024)]]。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation|SnapKV (2024)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2024-11) PyramidKV - Dynamic KV Cache Compression based on Pyramidal Information Funneling|PyramidKV (EMNLP 2024)]]。
 - **核心機制**：
   - **觀察窗口（Observation Window）**：LLM 在 Prefill 結尾會自發聚焦全局關鍵 Token。SnapKV 捕捉該注意力特徵，在每層每頭挑選保留最具影響力的核心 KV 簇，丟棄其餘 80%+ 歷史快取。
   - **金字塔漏斗（Pyramidal Funneling）**：PyramidKV 證明淺層 Attention 需要大容量保留細節，深層 Attention 僅需少量抽象快取，依此建立非對稱快取分配。
 
 #### 3. KV Cache 極限低位元量化 (KV Quantization)
-- **代表工作**：[[Liu2024 - KIVI 2-bit KV Cache|KIVI (ICML 2024)]]。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|KIVI (ICML 2024)]]。
 - **核心機制**：發現 Key 向量在維度通道具備固定離群值（Channel-wise Outliers），而 Value 向量在 Token 序列維度分佈平滑。透過非對稱分群量化將顯存降為 2-bit，無需重新微調模型權重。
 
 #### 4. 上下文重構與抽象壓縮 (Context Distillation & Soft Gist)
-- **代表工作**：[[Xu2023 - RECOMP Context Compressor|RECOMP (ICLR 2024)]]、[[Mu2023 - Gist Tokens|Gist Tokens (NeurIPS 2023)]]。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP (ICLR 2024)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens|Gist Tokens (NeurIPS 2023)]]。
 - **核心機制**：訓練專門的摘要模型將多個段落融合成稠密的高質量資訊塊；或在隱空間訓練 Gist Token，強迫模型透過修改過的 Attention Mask 將整個 Prompt 壓縮為數個 Soft Tokens。
 
 ---

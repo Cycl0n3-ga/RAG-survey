@@ -146,9 +146,9 @@ flowchart LR
 ## 八、文獻來源與相關專題導覽 (Sources, Citations & Wikilinks)
 
 - **核心論文**：
-  - [[03 - 論文庫 (Literature Notes)/Ru2024 - RAGChecker|RAGChecker: Fine-grained RAG Diagnosis (Ru et al., NeurIPS 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Es2024 - RAGAS|RAGAS: Automated Evaluation of RAG (Es et al., EACL 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Hsieh2024 - RULER What is the Real Context Size|RULER: Real Context Size Benchmark (Hsieh et al., 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker: Fine-grained RAG Diagnosis (Ru et al., NeurIPS 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS: Automated Evaluation of RAG (Es et al., EACL 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models|RULER: Real Context Size Benchmark (Hsieh et al., 2024)]]
 - **專題連動**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)|Domain 10: 評估基準、系統工程與安全]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 14 - Evidence Sufficiency & Adaptive Retrieval|Domain 14: 證據充分性與自適應檢索]]

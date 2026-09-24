@@ -85,4 +85,4 @@ flowchart LR
 ## 六、原始來源及相關筆記連結 (Sources & Related Notes)
 - **本地原始文獻**：[[Papers/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG.pdf|開啟本地 PDF 檔案]]
 - **關聯專題**：[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取]]
-- **關聯對照**：[[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X 命題檢索]]
+- **關聯對照**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X 命題檢索]]

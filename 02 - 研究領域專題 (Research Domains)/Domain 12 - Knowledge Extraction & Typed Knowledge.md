@@ -70,9 +70,9 @@ flowchart TD
 
 | 代表工作 / 論文 | 發表 Venue / 年份 | 核心方法機制 | 抽取目標與特性 | 官方來源 / 邊界 |
 | :--- | :--- | :--- | :--- | :--- |
-| **[[Lu2022 - UIE Universal Information Extraction\|UIE]]** | ACL 2022 | Structural Schema Instructor (SSI) + Text-to-Structure | 通用統一抽取（實體、關係、事件、情感）；Schema-guided | [ACL Anthology](https://aclanthology.org/2022.acl-long.395/)；不含 F/R/D/A/P/C/T 本體 |
+| **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2022-05) Unified Structure Generation for Universal Information Extraction\|UIE]]** | ACL 2022 | Structural Schema Instructor (SSI) + Text-to-Structure | 通用統一抽取（實體、關係、事件、情感）；Schema-guided | [ACL Anthology](https://aclanthology.org/2022.acl-long.395/)；不含 F/R/D/A/P/C/T 本體 |
 | **OpenIE 6** | EMNLP 2020 | Iterative Grid Labeling + Neural Coordination Parsing | 開放領域多三元組開放抽取；無固定 Schema | [EMNLP 2020](https://aclanthology.org/2020.emnlp-main.306/)；易抽得碎片化噪音 |
-| **[[Chen2023 - Dense X Proposition Retrieval\|Dense X]]** | EMNLP 2024 | LLM Propositionizer 兩階段提示與微調 | 原子級命題（Atomic, Minimal, Self-contained） | [EMNLP 2024](https://aclanthology.org/2024.emnlp-main.845/)；專注於檢索粒度 |
+| **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA\|Dense X]]** | EMNLP 2024 | LLM Propositionizer 兩階段提示與微調 | 原子級命題（Atomic, Minimal, Self-contained） | [EMNLP 2024](https://aclanthology.org/2024.emnlp-main.845/)；專注於檢索粒度 |
 | **DocRED** | ACL 2019 | 篇章級多跳關係抽取基準與模型 | 跨句子篇章級關係抽取（Document-level RE） | [ACL 2019](https://aclanthology.org/P19-1074/)；針對維基百科文章 |
 | **MAVEN** | EMNLP 2020 | 大規模通用事件抽取基準 | 事件觸發詞與 168 類事件類型識別 | [EMNLP 2020](https://aclanthology.org/2020.emnlp-main.150/)；未包含深層商業時效狀態 |
 
@@ -164,8 +164,8 @@ flowchart LR
 ## 八、文獻來源與相關專題導覽 (Sources, Citations & Wikilinks)
 
 - **核心論文**：
-  - [[03 - 論文庫 (Literature Notes)/Lu2022 - UIE Universal Information Extraction|UIE: Unified Structure Generation for Universal Information Extraction (Lu et al., ACL 2022)]]
-  - [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X: Proposition Retrieval for Open-Domain QA (Chen et al., EMNLP 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2022-05) Unified Structure Generation for Universal Information Extraction|UIE: Unified Structure Generation for Universal Information Extraction (Lu et al., ACL 2022)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X: Proposition Retrieval for Open-Domain QA (Chen et al., EMNLP 2024)]]
 - **專題連動**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13: 資訊保真與跨塊關聯整合]]

@@ -83,8 +83,8 @@ flowchart TD
 
 | 代表工作 / 論文 | 發表 Venue / 年份 | 決策時機與觸發方式 | 是否需專門訓練 | 停止與拒答機制 |
 | :--- | :--- | :--- | :--- | :--- |
-| **[[Asai2023 - Self-RAG\|Self-RAG]]** | ICLR 2024 | 生成每個段落前，以 `[Retrieve]` 預測是否檢索 | 需以 SFT 訓練 Reflection Tokens | 依 Beam Search 分數決定是否停止檢索 |
-| **[[Trivedi2022 - IRCoT Interleaving Retrieval and CoT\|IRCoT]]** | ACL 2023 | 結合思維鏈（CoT），在每一步推理生成後檢索 | 免微調，利用 Prompting 與規則交替 | 當 CoT 產生最終答案或達到固定步數時停止 |
+| **[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection\|Self-RAG]]** | ICLR 2024 | 生成每個段落前，以 `[Retrieve]` 預測是否檢索 | 需以 SFT 訓練 Reflection Tokens | 依 Beam Search 分數決定是否停止檢索 |
+| **[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions\|IRCoT]]** | ACL 2023 | 結合思維鏈（CoT），在每一步推理生成後檢索 | 免微調，利用 Prompting 與規則交替 | 當 CoT 產生最終答案或達到固定步數時停止 |
 | **Adaptive-RAG** | NAACL 2024 | 在檢索前利用分類器評估問題難度（單跳/多跳/無檢索）| 需微調輕量級分類器（如 T5/BERT） | 依問題難度自適應路由至不同策略 |
 | **Evidence Sufficiency Benchmark** | CMC 2026 | 評測基準；涵蓋 Full/Partial/Absent/Conflicting 5 種狀態 | 評測協議與資料集 | 評估模型之拒答校準率（Abstention Calibration） |
 
@@ -141,8 +141,8 @@ flowchart TD
 ## 八、文獻來源與相關專題導覽 (Sources, Citations & Wikilinks)
 
 - **核心論文**：
-  - [[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG|Self-RAG: Learning to Retrieve, Generate, and Critique (Asai et al., ICLR 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Trivedi2022 - IRCoT Interleaving Retrieval and CoT|IRCoT: Interleaving Retrieval and Chain-of-Thought (Trivedi et al., ACL 2023)]]
+  - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection|Self-RAG: Learning to Retrieve, Generate, and Critique (Asai et al., ICLR 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions|IRCoT: Interleaving Retrieval and Chain-of-Thought (Trivedi et al., ACL 2023)]]
   - Evidence Sufficiency Benchmark (CMC 2026, [DOI: 10.32604/cmc.2026.086343](https://doi.org/10.32604/cmc.2026.086343))
 - **專題連動**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03: 先進 RAG 與檢索機制]]

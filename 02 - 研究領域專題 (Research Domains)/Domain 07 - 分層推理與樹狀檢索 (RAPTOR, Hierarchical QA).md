@@ -22,7 +22,7 @@ tags:
 ---
 
 ### 二、RAPTOR 遞迴樹狀檢索技術剖析
-- **代表作**：[[Sarthi2024 - RAPTOR Recursive Tree Retrieval|RAPTOR (Sarthi et al., ICLR 2024)]]。
+- **代表作**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|RAPTOR (Sarthi et al., ICLR 2024)]]。
 - **核心架構**：
 
 ```mermaid

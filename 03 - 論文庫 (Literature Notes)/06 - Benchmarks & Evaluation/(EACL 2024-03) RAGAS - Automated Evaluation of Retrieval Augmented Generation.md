@@ -94,4 +94,4 @@ flowchart TD
 ## 六、原始來源及相關筆記連結 (Sources & Related Notes)
 - **本地原始文獻**：[[Papers/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation.pdf|開啟本地 PDF 檔案]]
 - **關聯專題**：[[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)|Domain 10: 評估基準與安全]]
-- **對照文獻**：[[03 - 論文庫 (Literature Notes)/Hsieh2024 - RULER What is the Real Context Size|RULER 長上下文真實測試]]
+- **對照文獻**：[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models|RULER 長上下文真實測試]]

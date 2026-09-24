@@ -201,9 +201,9 @@ D = \{c_1, c_2, \ldots, c_n\} \quad \xrightarrow{\quad\text{Extraction}\quad} \q
 
 ## 相關參考文獻與專題連結
 - **基礎文獻筆記**：
-  - [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X: Proposition Retrieval (Chen et al., EMNLP 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Shao2024 - STORM Writing Wikipedia From Scratch|STORM: 長篇寫作與大綱生成 (Shao et al., 2024)]]
-  - [[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|Microsoft GraphRAG: 社群摘要 (Edge et al., 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X: Proposition Retrieval (Chen et al., EMNLP 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM: 長篇寫作與大綱生成 (Shao et al., 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|Microsoft GraphRAG: 社群摘要 (Edge et al., 2024)]]
 - **相關專題與實驗入口**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取綜述]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08: 長篇生成與報告撰寫]]

@@ -23,7 +23,7 @@ tags:
 ---
 
 ### 二、作業系統隱喻：MemGPT 的記憶分層架構
-- **代表作**：[[Packer2023 - MemGPT LLM as Operating System|MemGPT (Packer et al., 2023)]]。
+- **代表作**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT (Packer et al., 2023)]]。
 - **核心哲學**：將 LLM 類比為作業系統中的 CPU，將固定長度的 Context Window 類比為實體記憶體（RAM），將外部持久化資料庫類比為硬碟（Disk）。
 
 ```mermaid
@@ -47,7 +47,7 @@ graph TD
 ---
 
 ### 三、認知心理學啟發的階層記憶體：A-MEM 與 Generative Agents
-- **代表作**：[[Park2023 - Generative Agents|Generative Agents (Park et al., 2023)]]、[[Chik2025 - A-MEM Agentic Memory System|A-MEM (2025)]]。
+- **代表作**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(UIST 2023-10) Generative Agents - Interactive Simulacra of Human Behavior|Generative Agents (Park et al., 2023)]]、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage|A-MEM (2025)]]。
 - **四種記憶系統協同**：
   1. **工作記憶 (Working Memory)**：當前推理中的暫存資料。
   2. **情節記憶 (Episodic Memory)**：帶有時間戳與因果順序的具體事件記錄（如『在第 3 次搜尋時發現了 A 與 B 公司的合資協議』）。

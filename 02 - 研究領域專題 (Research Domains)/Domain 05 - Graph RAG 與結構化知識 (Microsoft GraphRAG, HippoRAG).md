@@ -55,7 +55,7 @@ flowchart TD
 > 這張圖刻意把不同 Graph-RAG family 分開。Microsoft GraphRAG 的核心索引流程是 entity/relationship graph、community detection 與 community reports；claim/covariate extraction 應視版本與設定而定，不應畫成所有版本都必經的核心步驟。
 
 #### 1. 微軟 GraphRAG：社群檢測與多元搜尋模式
-- **代表作**：[[Edge2024 - Microsoft GraphRAG|GraphRAG (Edge et al., 2024)]]。
+- **代表作**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|GraphRAG (Edge et al., 2024)]]。
 - **核心架構**：
   1. **Graph Extraction**：核心流程利用 LLM 抽取實體（Entity）與關係（Relationship）；GraphRAG 的 claim/covariate extraction 在官方實作中為可選功能（預設關閉），不應視為所有標準索引流程的必要步驟。
   2. **Community Detection**：利用圖論演算法（Leiden）將密集互動的實體聚類為多層次社群（C0 宏觀到 C3 微觀）。
@@ -67,7 +67,7 @@ flowchart TD
      - **Basic Search**：以原始文字塊的向量檢索作為基線。
 
 #### 2. HippoRAG：神經生物學啟發的高速聯想記憶
-- **代表作**：[[Gutierrez2024 - HippoRAG|HippoRAG (Gutiérrez et al., NeurIPS 2024)]]。
+- **代表作**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG (Gutiérrez et al., NeurIPS 2024)]]。
 - **核心架構**：
   - 模擬大腦新皮質（儲存原始文檔）與海馬迴（快速索引聯想網絡）的雙重記憶理論。
   - 將檢索問題中的實體作為激活信號，在圖結構上利用 **Personalized PageRank (PPR)** 進行機率擴散。
@@ -93,7 +93,7 @@ flowchart TD
 
 ### 四、實務選型指南 (Pragmatic Guidelines)
 > [!TIP] 什麼時候真正需要 GraphRAG？
-> 1. 如果你的業務場景是**客服問答、法規條文精準定位**：請使用 **Hybrid RAG (BM25 + Dense + Rerank)** 或 **[[Chen2023 - Dense X Proposition Retrieval|Proposition Retrieval]]**，GraphRAG 的額外建圖與摘要成本未必能在此類局部查詢中帶來相稱收益，應以相同資料與成本預算實測。
+> 1. 如果你的業務場景是**客服問答、法規條文精準定位**：請使用 **Hybrid RAG (BM25 + Dense + Rerank)** 或 **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Proposition Retrieval]]**，GraphRAG 的額外建圖與摘要成本未必能在此類局部查詢中帶來相稱收益，應以相同資料與成本預算實測。
 > 2. 如果你的業務場景是**情報分析、商業競爭對手全景掃描、整本長篇報告主題洞察**：**Microsoft GraphRAG** 是針對 global sensemaking 的代表性方法之一；階層摘要、長上下文直接閱讀、多輪檢索與其他 graph-based RAG 也可作為比較 baseline，不能宣稱 GraphRAG 是唯一方案。
 
 ---
