@@ -16,35 +16,43 @@ tags:
 ## 一、全景系統拓撲架構圖
 
 ```mermaid
-graph TD
-    DOC["超長文檔集 / 書籍 / 萬頁報告 (100k ~ 10M Tokens)"]
+flowchart TD
+    DOC["Very Long Documents"]
+    LC["Long Context and Sequence Models"]
+    COMP["Compression"]
+    PARSE["Parsing and Chunking"]
+    IE["Knowledge Extraction"]
+    RET["Retrieval and Reranking"]
+    GRAPH["Graph / Structured RAG"]
+    MEM["External Memory"]
+    HIER["Hierarchical Retrieval"]
+    SUF["Evidence Sufficiency"]
+    GEN["Long-form Generation"]
+    AGENT["Agentic Workflow"]
+    EVAL["Evaluation and Safety"]
+    IDEA["Ideas / Hypotheses"]
 
-    subgraph Layer 1: 模型與序列計算層
-        DOC --> LC["[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)\|Domain 01: Long Context]]<br>• FlashAttention-2/3<br>• Mamba / Selective SSM<br>• Ring Attention<br>• LongRoPE 2M"]
-        DOC --> CP["[[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)\|Domain 02: 多層次壓縮]]<br>• LLMLingua (Token Pruning)<br>• KIVI (2-bit KV Cache)<br>• SnapKV / PyramidKV<br>• RECOMP (Context Compressor)"]
-    end
-
-    subgraph Layer 2: 知識表示與檢索層
-        DOC --> CK["[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)\|Domain 04: 知識抽取與證據治理]]<br>• Dense X (Proposition)<br>• F/R/D/A/P/C/T 分類與操作語意<br>• 四層證據階梯 (Citation≠Entailment≠Authority≠Sufficiency)<br>• D-K-E-C-V-O 閉環與確定性修復迴圈"]
-        CK --> RAG["[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)\|Domain 03: 先進 RAG]]<br>• ColBERT (Late Interaction)<br>• HyDE (Hypothetical Doc)<br>• Self-RAG (Reflection)<br>• Contextual Retrieval"]
-        CK --> GRAG["[[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)\|Domain 05: Graph RAG]]<br>• Microsoft GraphRAG (Leiden)<br>• HippoRAG (PPR 聯想記憶)<br>• PropRAG / KG2RAG"]
-    end
-
-    subgraph Layer 3: 記憶與階層推理層
-        RAG & GRAG --> MEM["[[02 - 研究領域專題 (Research Domains)/Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)\|Domain 06: 外部記憶體]]<br>• MemGPT (LLM as OS)<br>• A-MEM (Cognitive Architecture)<br>• Working / Episodic / Semantic"]
-        RAG & GRAG --> TREE["[[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)\|Domain 07: 分層推理]]<br>• RAPTOR (Recursive Tree)<br>• Map-Reduce / Refine<br>• Tree-of-Thought"]
-    end
-
-    subgraph Layer 4: 長篇生成與智能體層
-        MEM & TREE & LC --> GEN["[[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)\|Domain 08: 長篇生成撰寫]]<br>• STORM (Research-Outline-Write)<br>• Evidence Store<br>• Claim-Evidence Ledger"]
-        GEN --> AGENT["[[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與自主研究 (Planning, Multi-Agent)\|Domain 09: Agentic 工作流]]<br>• Dynamic Planning<br>• Multi-Agent Debate<br>• Deep Research Protocol"]
-    end
-
-    subgraph Layer 5: 評估驗證與前沿藍圖
-        AGENT --> EVAL["[[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)\|Domain 10: 評估基準與安全]]<br>• RULER / InfiniteBench<br>• Lost in the Middle<br>• Pareto Frontier<br>• RAG Poisoning & Prompt Injection"]
-        EVAL --> ROAD["[[02 - 研究領域專題 (Research Domains)/Domain 11 - 最具價值的研究方向與實驗設計 (Research Roadmap)\|Domain 11: 核心研究藍海與實驗]]<br>• Evidence Sufficiency<br>• Dynamic Routing<br>• Gold-Evidence Benchmark"]
-    end
+    DOC --> LC
+    DOC --> COMP
+    DOC --> PARSE
+    PARSE --> IE
+    IE --> RET
+    IE --> GRAPH
+    RET --> MEM
+    GRAPH --> MEM
+    RET --> HIER
+    GRAPH --> HIER
+    RET --> SUF
+    HIER --> SUF
+    LC --> GEN
+    MEM --> GEN
+    SUF --> GEN
+    GEN --> AGENT
+    AGENT --> EVAL
+    EVAL -. unresolved gaps .-> IDEA
 ```
+
+**圖中節點對照**：Domain 01 Long Context · Domain 02 Compression · Domain 03 Retrieval · Domain 04 Chunking / Extraction · Domain 05 Graph RAG · Domain 06 Memory · Domain 07 Hierarchical Retrieval · Domain 08 Long-form Generation · Domain 09 Agentic Workflow · Domain 10 Evaluation · Domain 11 Research Gaps。完整連結見下方 Domain 索引；未經文獻驗證的延伸設計見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]。
 
 ---
 
