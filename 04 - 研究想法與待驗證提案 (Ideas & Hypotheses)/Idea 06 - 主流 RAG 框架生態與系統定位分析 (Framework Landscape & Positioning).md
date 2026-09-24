@@ -7,6 +7,8 @@ tags:
   - engineering-architecture
 author: "Research Proposal"
 status: "analysis / proposal"
+evidence_status: "proposed_method"
+verification_scope: "framework facts require version-specific official verification"
 last_updated: 2026-09-24
 ---
 
@@ -140,3 +142,4 @@ flowchart TD
 - **架構設計**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05 - Evidence-Governed RAG 系統架構構想]]
 - **對照專題**：[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取]]
 - **權衡決策**：[[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術全景與 Pareto 權衡分析]]
+- **Benchmark / Dataset 導覽**：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
