@@ -8,6 +8,7 @@ source_urls:
   - "https://chatgpt.com/share/6ab49939-4750-83ee-b284-1823a1797146"
   - "https://chatgpt.com/share/6ab49a65-6f94-83e8-bc61-1535175bca86"
   - "https://chatgpt.com/share/6ab49925-47f8-83e8-bdd0-26b94f9528a4"
+  - "https://chatgpt.com/share/6ab4ec3e-d6fc-83e8-aa1a-9428d15af1db"
 ---
 
 # ChatGPT 對話全文整理 (Shared Session Transcript)
@@ -2621,3 +2622,57 @@ If you want, I can:
 - 請列出如何在系統中落實F/R/D/A/P/C/T分類
 - 說明如何結合UIE模型與F/R/D/A/P/C/T分類
 - 探討F/R/D/A/P/C/T分類在提案流程中的具體價值
+---
+
+# 第五部分：RAG-survey 完整修訂基準、研究架構與實驗規範 (Shared Session 5)
+
+> [!NOTE] 對話背景
+> - **原始分享連結**：[ChatGPT - 分支 · SURVEY! (RAG-survey 完整修訂基準報告)](https://chatgpt.com/share/6ab4ec3e-d6fc-83e8-aa1a-9428d15af1db)
+> - **對話主題**：以當前 Repo 骨架為基準，全面確立 17 大研究領域（Domain 01–17）、32 個子問題研究地圖、Knowledge Extraction & Evidence Sufficiency 深入專題、統一 Benchmark Catalog（評測協定、模態、指標、授權）、三階段 Commit 實施計畫與可反駁實驗規範。
+> - **完整獨立報告存檔**：請參閱專屬文件 [[01 - 深度研究報告 (Deep Research Reports)/04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)|04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)]]。
+
+---
+
+## 👤 使用者提問 (Turn 1)
+
+目前為了解：現在的 LLM 會用 Token 來當作上下文，而 Token 的數量必然等於文件長度。
+要理解一份企劃書，有前情提要、工廠概況等，亦即內容極多。
+我已經知道的大研究方向：
+- Long Context
+- Token/KV Compression
+- Context Compression
+- RAG
+
+還有什麼研究方向？
+
+---
+
+## 🤖 Assistant 回應概要 (Turn 1)
+
+「極長、具有前後依賴與結構的企劃書，如何讓 LLM 真正理解？」
+Long Context、Token/KV Compression、Context Compression、RAG 僅覆蓋了一部分。
+真正的超長文檔深度理解橫跨六大關鍵研究支柱：
+1. **知識表示與抽取（Knowledge Representation & Extraction）**：Chunk、Proposition、Triple、Event、Claim 的表示能力差異。
+2. **證據充分性與自適應檢索（Evidence Sufficiency & Adaptive Retrieval）**：相關不等於足夠，需識別 Evidence Gaps。
+3. **時序、衝突與版本溯源（Temporal, Conflict & Provenance）**：新舊版本、適用條件差異與真衝突消解。
+4. **上下文利用與忠實度（Context Utilization & Faithfulness）**：證據在 Context 內依然出錯之失效歸因（Retriever vs Generator Failure）。
+5. **長篇循證生成（Long-form Grounded Generation）**：多輪對話式大綱、Evidence Ledger 與審計追蹤。
+6. **評估基準與度量衡（Benchmarks & Evaluation Protocols）**：細粒度 Claim 級評測，嚴禁混淆 Dataset 與 Metric。
+
+---
+
+## 👤 使用者提問 (Turn 2)
+
+把我們剛剛討論過的內容再更仔細的研究，並提供給我以剛剛的《RAG-survey 修訂基準報告》為基底，而更仔細的修改基準。最終結果請直接輸出 md 給我。
+
+---
+
+## 🤖 Assistant 交付成果 (Turn 2)
+
+已產出 7.3 萬字之規範性修訂基準文件，確立：
+- **第一層架構**：保留既有 Domain 01–11，新增 Domain 12–17 補足被埋沒的六條核心研究線；
+- **第二層架構**：以六層、32 個子問題編目；
+- **深入專題**：Knowledge Extraction 標註 Schema（8 種失真類型）、Evidence Slot 狀態機與 Stopping Criteria；
+- **Benchmark Catalog**：收錄 DocLayNet, CUAD, TAT-QA, MultiHop-RAG, CRUD-RAG 等 20+ 官方評測基準，分離 Benchmark / Dataset / Metric；
+- **三階段實施步驟**：Commit A (Correctness) → Commit B (Domain coverage 12–17) → Commit C (Benchmarks & Navigation)。
+*(完整長文收錄於專屬報告 04)*

@@ -14,6 +14,7 @@ tags:
 > 2. [ChatGPT - RAG 競品生態、知識抽取與證據治理定位](https://chatgpt.com/share/6ab49939-4750-83ee-b284-1823a1797146)
 > 3. [ChatGPT - Chunking 設計理由與文獻依據 (GEC)](https://chatgpt.com/share/6ab49a65-6f94-83e8-bc61-1535175bca86)
 > 4. [ChatGPT - F/R/D/A/P/C/T 分類法與 UIE 論文關係](https://chatgpt.com/share/6ab49925-47f8-83e8-bdd0-26b94f9528a4)
+> 5. [ChatGPT - RAG-survey 完整修訂基準與研究架構](https://chatgpt.com/share/6ab4ec3e-d6fc-83e8-aa1a-9428d15af1db)
 > 
 > 涵蓋從底層神經架構（Long Context / SSM）、多層次壓縮、先進 RAG、GraphRAG、階層記憶體、長篇循證生成（STORM）、F/R/D/A/P/C/T 企業知識治理到 2026 前沿評測與安全防禦的完整學術與工業技術全景。
 >
@@ -83,6 +84,7 @@ flowchart TD
 1. [[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)]] *(5 萬字完整綜述)*
 2. [[01 - 深度研究報告 (Deep Research Reports)/02 - 補充資料與參考文獻評析 (Reference Audit)|02 - 補充資料與參考文獻評析 (Reference Audit)]] *(知識抽象階梯與反思)*
 3. [[01 - 深度研究報告 (Deep Research Reports)/03 - ChatGPT 對話全文整理 (Shared Session Transcript)|03 - ChatGPT 對話全文整理 (Shared Session Transcript)]] *(對話原始記錄存檔)*
+4. [[01 - 深度研究報告 (Deep Research Reports)/04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)|04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)]] *(7.3 萬字規範性修訂基準與實施藍圖)*
 
 ### 二、11 大研究領域專題 (Research Domains)
 - **模型與架構層**：
