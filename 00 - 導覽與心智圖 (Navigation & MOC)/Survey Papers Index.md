@@ -96,3 +96,21 @@ evidence_scope: "這篇文獻實際能支持的敘述"
 - Huang et al. Hallucination Survey: https://doi.org/10.1145/3703155
 - Li et al. Attribution Survey: https://arxiv.org/abs/2311.03731
 - Ni et al. Trustworthy RAG Survey: https://arxiv.org/abs/2502.06872
+
+
+## 補充：值得納入但仍需逐篇全文核驗的 survey candidates
+
+下列項目用來擴充 coverage；在建立正式 Literature Note 前仍需核對作者、版本與正式 venue：
+
+| Candidate | Coverage | Status |
+| :--- | :--- | :--- |
+| Retrieval-Augmented Generation for Natural Language Processing: A Survey | RAG / NLP taxonomy | pending_verification |
+| A Survey on RAG Meeting LLMs: Towards Retrieval-Augmented Large Language Models | RAG pipeline / enhancement taxonomy | pending_verification |
+| Retrieval Augmented Generation or Long-Context LLMs? A Comprehensive Study and Hybrid Approach | Long-context vs RAG（屬 comparative study，非純 survey） | primary_comparative_work |
+| Long Context vs. RAG for LLMs: An Evaluation and Revisits | Long-context vs RAG（evaluation paper） | primary_comparative_work |
+| Surveys on knowledge-graph / KG-enhanced RAG | Graph/KG RAG | pending_verification |
+| Surveys on LLM memory mechanisms | Memory | pending_verification |
+| Surveys on long-form text generation / report generation | Long-form generation | coverage_gap |
+
+> [!CAUTION]
+> 「更多 survey paper」不代表可以用 survey 取代 primary paper。Survey 用於建立研究領域與 taxonomy；演算法流程、作者聲稱、benchmark 數字、速度與成本仍應引用原論文。
