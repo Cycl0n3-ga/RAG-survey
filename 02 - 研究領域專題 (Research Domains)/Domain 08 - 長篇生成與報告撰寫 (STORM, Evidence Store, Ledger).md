@@ -13,10 +13,10 @@ tags:
 ---
 
 ### 一、核心問題意識：長文寫作不等於一次生成
-要求 LLM 在單一 Prompt 下輸出 20,000 字是極其幼稚且注定失敗的設計：
+單次 Prompt 直接生成超長報告，通常較難同時維持全篇結構、資訊覆蓋、跨章一致性與可追溯引用；因此相關工作常將研究、規劃、寫作與驗證拆成多階段：
 1. **結構空洞與膨脹廢話**：LLM 為了填補長度要求，會陷入循環重複與空泛修飾，實質資訊密度斷崖式下跌。
-2. **前後矛盾與論點漂移**：在缺乏外部顯式狀態追蹤時，生成到第 8,000 字時早已遺忘第 500 字設立的前置假設與術語定義。
-3. **引文憑空捏造**：在長篇自由生成時，LLM 的幻覺率呈指數級上升。
+2. **前後矛盾與論點漂移**：缺乏外部狀態或章節級規劃時，跨章術語、假設與主張容易漂移；實際退化程度需依模型、長度與任務測量。
+3. **引文憑空捏造**：長篇生成擴大了需要驗證的 claim 與 citation 數量，也增加 coverage 與 consistency 的評估難度；目前不應無來源地宣稱幻覺率會隨篇幅「指數級」上升。
 
 ---
 
@@ -54,9 +54,9 @@ sequenceDiagram
 ### 三、關鍵工程構件：Evidence Store 與 Claim-Evidence Ledger
 
 #### 1. 獨立證據庫 (Evidence Store)
-- 長文撰寫絕不能讓生成器自由漫遊於整個原始數據庫。
-- 必須在『研究階段』將所有找到的有效文獻段落編號歸檔進專屬的 Evidence Store，每個證據具備唯一識別碼 `[E1]`, `[E2]`。
-- 撰寫階段強制要求生成模組只能調用 Evidence Store 中的資料，並標註具體編號。
+- **Evidence Store 是一種設計選擇，不是所有長篇生成方法的必要條件。** Evidence-first 方法可在寫作前封存/整理證據池；另一類方法則在寫作期間依 evidence gap 迭代檢索。
+- 若採固定 Evidence Store，可為證據配置唯一識別碼（如 `E1`, `E2`）、來源 span 與 provenance，以利 claim-level attribution。
+- 正式實驗應比較 fixed evidence pool 與 gap-aware iterative retrieval 在 factual support、coverage、成本與 latency 上的取捨。
 
 #### 2. 主張-證據台帳 (Claim-Evidence Ledger)
 - 評估與防護長篇論文生成真實性的最強機制：
@@ -69,9 +69,27 @@ sequenceDiagram
 ---
 
 ### 四、長篇報告撰寫的黃金原則
-1. **Separation of Concerns（研究與撰寫解耦）**：先做完窮盡式資訊檢索與證據鏈審查，再啟動寫作，切忌邊寫邊搜。
+1. **Separation of Concerns（責任分離）**：將檢索、規劃、寫作與驗證設為可獨立評估的模組；系統可以採生成前固定 Evidence Pool，也可以在寫作期間依 evidence gap 補查，兩者應由 benchmark 比較。
 2. **Hierarchy-Driven Writing（大綱驅動分段撰寫）**：將萬字大文拆解為 1,000~2,000 字的獨立子章節，各章節帶有明確的 Context Summary 與章節專屬任務說明。
 3. **Post-Generation Consistency Pass（後置一致性校準）**：撰寫完畢後，由審閱 Agent 通讀全篇，專門消除術語不一致、章節重疊與語調斷層。
+
+---
+
+## 五、2026 報告生成評測版圖
+
+長篇報告不能只用單一「品質分數」評估。後續 survey 應至少分成四個軸：
+
+| 軸 | 代表 benchmark / work | 問題 |
+| :--- | :--- | :--- |
+| Citation / sentence support | RAG4Reports | 每句 claim 是否真的被來源支持？ |
+| Information coverage | RAG4Reports nugget coverage、EviReportBench | 報告是否涵蓋應有的重要資訊？ |
+| Factuality / evidence integration | EviReport / EviReportBench | 內容是否正確、是否妥善整合證據？ |
+| Report-level logic / professional quality | ReportLogic、AnalystBench | 全篇結構、論述與專業交付品質是否成立？ |
+
+其中 RAG4Reports 是 shared task / benchmark，不應與 EFSG、AMU 等參賽方法論文混為同一種 artifact；ReportLogic、AnalystBench 的資料釋出狀態也應個別核對。完整清單見 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]。
+
+> [!NOTE] Survey coverage
+> 長篇報告生成目前不像通用 RAG 那樣已有單一、成熟且涵蓋全部子題的 survey。因此 STORM、EviReport、RAG4Reports、EFSG、AnalystBench、ReportLogic 等 primary/benchmark works 可以構成 evidence map，但尚未被 survey 直接支持的「Claim-Evidence Ledger」「固定 Evidence Store」「Gap-aware Writer」組合設計，應移至 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]，不得當成 survey 共識。
 
 ---
 
