@@ -7,7 +7,7 @@ tags:
 
 > [!INFO] 導言
 > 本文件記錄針對使用者補充之參考文獻所進行的系統性回查、文獻補強與架構評析。
-> 深入剖析了從 **Chunk $\rightarrow$ Sentence $\rightarrow$ Proposition $\rightarrow$ Triple $\rightarrow$ Event $\rightarrow$ Graph** 的知識抽象階梯，並指出 Evidence Sufficiency 與 Cross-chunk Reasoning 的核心突破點。
+> 整理 **Chunk、Sentence、Proposition、Triple、Event、Graph** 等不同表示方式及其 trade-offs；它們不是必然依序演化的單一路徑。本文同時記錄 Evidence Sufficiency 與 Cross-chunk Reasoning 等待驗證研究問題。
 > - **回主報告**：[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|LLM 超長文件閱讀與撰寫技術全景報告]]
 > - **相關專題**：[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Chunking 策略與知識擷取]]
 
@@ -195,7 +195,7 @@ Compression
 
 ## 這份資料提到的代表工作
 
-我會逐篇回頭用**原始論文與官方專案**重新驗證，而不直接把這份 Markdown 當成 authoritative source。
+以下工作應以**原始論文與官方專案**為 authoritative source；本 Reference Audit 僅作研究線索與查核紀錄。已驗證的領域級 taxonomy 另見 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]，未被 survey/primary literature 直接支持的延伸則移至 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]。
 
 目前資料中值得納入的核心 lineage 包括：
 
@@ -210,7 +210,7 @@ Compression
 | **PropRAG** | Multi-hop proposition retrieval | Proposition path + beam search |
 | **CrossAug** | Cross-chunk knowledge extraction | 補足 chunk-local extraction 漏掉的跨段關係 |
 
-其中我尤其會把 **Dense X Retrieval → GraphRAG → HippoRAG → KG²RAG → PropRAG → Cross-chunk extraction** 畫成一條演化線。
+這些工作不應畫成單向「演化線」：Dense X 研究 retrieval granularity；GraphRAG 偏 global sensemaking；HippoRAG 偏 associative multi-hop retrieval；KG²RAG/PropRAG 偏結構引導的 retrieval；cross-chunk extraction 則屬於 extraction/consolidation。它們可互相組合，但研究問題不同。
 
 大致可以理解成：
 
