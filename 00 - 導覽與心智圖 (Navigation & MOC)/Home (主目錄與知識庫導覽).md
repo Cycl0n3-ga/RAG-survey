@@ -19,17 +19,18 @@ tags:
 
 ---
 
-## 🧭 知識庫四大核心目錄
+## 🧭 知識庫核心目錄
 
 ```text
 RAG (Obsidian Vault)
-├── 00 - 導覽與心智圖 (Navigation & MOC)  <-- 您目前所在位置
-├── 01 - 深度研究報告 (Deep Research Reports)  <-- 5 萬字完整技術全景與文獻評析
-├── 02 - 研究領域專題 (Research Domains)       <-- 11 個細分技術領域專題剖析
-├── 03 - 論文庫 (Literature Notes)             <-- 34 篇論文結構化筆記與雙向連結
-└── Papers/                                  <-- 34 篇原始論文 PDF 文件
-├── Papers/                                  <-- 34 篇原始論文 PDF 文件
-└── AGENTS.md / GEMINI.md                    <-- AI Agent 核心協作守則 (6大規範)
+├── 00 - 導覽與心智圖 (Navigation & MOC)
+├── 01 - 深度研究報告 (Deep Research Reports)
+├── 02 - 研究領域專題 (Research Domains)
+├── 03 - 論文庫 (Literature Notes)
+├── 04 - 研究想法與待驗證提案 (Ideas & Hypotheses)
+├── Papers/
+├── AGENTS.md
+└── GEMINI.md
 ```
 
 > [!TIP] 🤖 AI Agent 協作注意事項
@@ -41,26 +42,40 @@ RAG (Obsidian Vault)
 ## 🚀 推薦閱讀路徑 (Reading Paths)
 
 ```mermaid
-graph TD
-    Start["起點: 根據您的研究目標選擇閱讀路徑"]
-    Start --> P1["路徑 A: 全景鳥瞰與宏觀趨勢<br>(Academic & Vision)"]
-    Start --> P2["路徑 B: 系統架構與技術選型<br>(System Architect)"]
-    Start --> P3["路徑 C: 前沿論文精讀與實驗<br>(Researcher & PhD)"]
+flowchart TD
+    START["選擇研究入口"]
+    MAP["Research Taxonomy and Domain Map"]
+    SURVEY["Survey Papers Index"]
+    REPORT["Deep Research Report"]
+    DOMAINS["Research Domains"]
+    PAPERS["Primary Literature Notes"]
+    BENCH["RAG Benchmark Catalog"]
+    IDEAS["Ideas and Hypotheses"]
 
-    P1 --> N1["[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)\|LLM 超長文件處理心智圖]]"]
-    N1 --> N2["[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)\|5 萬字深度研究全景報告]]"]
-
-    P2 --> S1["[[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)\|技術全景與 Pareto 權衡分析]]"]
-    S1 --> S2["[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)\|先進 RAG 專題]] & [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)\|GraphRAG 專題]]"]
-    S2 --> S3["[[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)\|長篇寫作與 STORM 專題]]"]
-
-    P3 --> R1["[[02 - 研究領域專題 (Research Domains)/Domain 11 - 最具價值的研究方向與實驗設計 (Research Roadmap)\|最具價值研究方向與實驗設計]]"]
-    R1 --> R2["[[03 - 論文庫 (Literature Notes)/Vaswani2017 - Attention Is All You Need\|精讀 34 篇論文庫與原始 PDF]]"]
+    START --> MAP
+    START --> SURVEY
+    MAP --> REPORT
+    MAP --> DOMAINS
+    SURVEY --> DOMAINS
+    DOMAINS --> PAPERS
+    DOMAINS --> BENCH
+    DOMAINS --> IDEAS
 ```
+
+**入口對照**：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Research Taxonomy]] · [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] · [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|Benchmark Catalog]] · [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
 
 ---
 
 ## 📑 目錄快速跳轉
+
+### 零、研究地圖、Survey 與 Benchmark
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
+- [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
+
+> [!IMPORTANT] Survey 與研究提案分流
+> Research Domains 優先描述已有 survey / review 與 primary papers 可支持的研究版圖；尚未被文獻直接驗證的 taxonomy 延伸、controller、F/R/D/A/P/C/T 操作規則與 evidence-governance 組合設計，集中放在 Ideas & Hypotheses，避免把本專案構想誤寫成社群共識。
 
 ### 一、深度研究報告 (Deep Research Reports)
 1. [[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)]] *(5 萬字完整綜述)*
