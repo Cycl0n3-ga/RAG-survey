@@ -8,7 +8,7 @@ tags:
 # Domain 05: Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG, Hybrid Search)
 
 > [!ABSTRACT] 核心問題意識 (Core Problem Statement)
-> **向量檢索擅長局部精確匹配，但在處理跨越全篇的全局問題（如主題演變、全局實體關聯）時徹底失效。如何引入圖結構彌合局部碎片與全局宏觀理解？**
+> **向量 Top-k 檢索在局部相關片段定位上具有優勢，但對需要跨文件聚合、關係遍歷或全域主題彙整的問題可能不足。圖結構、階層摘要與多輪檢索提供了不同的補強路徑；本 Domain 比較它們的適用條件與代價。**
 
 ---
 
@@ -26,30 +26,38 @@ tags:
 ### 二、三大前沿 Graph RAG 架構剖析
 
 ```mermaid
-graph TD
-    DOC["非結構化長文件語料庫"] --> KG["知識圖譜構建<br>(Entity / Relation / Claim)"]
-    
-    subgraph Microsoft GraphRAG
-        KG --> LE["Leiden 圖社群檢測"]
-        LE --> CS["分層社群摘要生成<br>(Community Summaries)"]
-        CS --> GS["Global Search<br>(Map-Reduce 平行評估)"]
-    end
+flowchart TD
+    DOC["非結構化長文件語料庫"]
+    KG["Entity / Relation Graph"]
+    CLAIM["Optional Claim / Covariate Extraction"]
+    LE["Leiden Community Detection"]
+    CS["Community Reports"]
+    GS["Global Search"]
+    BIO["Associative Graph Index"]
+    PPR["Personalized PageRank"]
+    HR["HippoRAG Retrieval"]
+    SEED["Vector Seed Retrieval"]
+    EXP["Graph / KG Expansion"]
 
-    subgraph HippoRAG
-        KG --> BIO["海馬迴聯想索引"]
-        BIO --> PPR["Personalized PageRank<br>(圖拓撲突觸擴散)"]
-        PPR --> AR["單步多跳聯想檢索"]
-    end
-
-    subgraph KG2RAG / Hybrid
-        KG --> HS["向量種子定位 + 子圖擴展"]
-    end
+    DOC --> KG
+    DOC -. optional .-> CLAIM
+    KG --> LE
+    LE --> CS
+    CS --> GS
+    KG --> BIO
+    BIO --> PPR
+    PPR --> HR
+    DOC --> SEED
+    SEED --> EXP
 ```
+
+> [!NOTE] 圖示範圍
+> 這張圖刻意把不同 Graph-RAG family 分開。Microsoft GraphRAG 的核心索引流程是 entity/relationship graph、community detection 與 community reports；claim/covariate extraction 應視版本與設定而定，不應畫成所有版本都必經的核心步驟。
 
 #### 1. 微軟 GraphRAG：社群檢測與 Map-Reduce 全局摘要
 - **代表作**：[[Edge2024 - Microsoft GraphRAG|GraphRAG (Edge et al., 2024)]]。
 - **核心架構**：
-  1. **Graph Extraction**：利用 LLM 多輪抽取實體（Entity）、關係（Relationship）與主張（Claim）。
+  1. **Graph Extraction**：核心流程利用 LLM 抽取實體（Entity）與關係（Relationship）；GraphRAG 的 claim/covariate extraction 在部分版本/設定中可啟用，不應視為所有 Standard Index 的必要步驟。
   2. **Community Detection**：利用圖論演算法（Leiden）將密集互動的實體聚類為多層次社群（C0 宏觀到 C3 微觀）。
   3. **Summarization**：自底向上為每個社群撰寫結構化摘要報告。
   4. **Global Search**：將使用者查詢分派給所有社群摘要進行評分篩選（Map），最後整合輸出（Reduce）。
@@ -59,7 +67,7 @@ graph TD
 - **核心架構**：
   - 模擬大腦新皮質（儲存原始文檔）與海馬迴（快速索引聯想網絡）的雙重記憶理論。
   - 將檢索問題中的實體作為激活信號，在圖結構上利用 **Personalized PageRank (PPR)** 進行機率擴散。
-  - 無需多輪呼叫 LLM 即可在毫秒級精確點亮多跳關聯的遠程證據文檔。
+  - 核心設計以一次圖上的 Personalized PageRank 傳播取代多輪 retrieval-reasoning 迭代；速度與成本改善必須引用論文中的特定 baseline 與實驗設定，不能泛化成固定的毫秒級延遲。
 
 #### 3. KG²RAG & PropRAG：保留原始語境的混合圖檢索
 - 克服傳統知識圖譜『實體關係孤立化』的問題，將命題（Proposition）作為圖節點，或者以向量先定位種子節點，再沿著關係邊擴展檢索周邊保留完整原文語境的鄰居節點。
@@ -74,14 +82,20 @@ graph TD
 | **強項任務** | 具體事實問答 (Factoid QA) | 全局宏觀主題、趨勢歸納 | 多跳關聯推理 (Multi-hop QA) |
 | **弱項任務** | 全局綜述、跨實體關係網絡 | 成本極其高昂、即時更新難 | 高度抽象或無實體問題 |
 | **索引構建成本** | 低 ($O(N)$ 嵌入計算) | 極高 (大量 LLM 抽取與摘要呼叫) | 中等 (需抽取實體，後續圖運算快) |
-| **推論延遲** | 毫秒級 (< 50ms) | 數秒至數十秒 (Map-Reduce) | 亞秒級 (< 200ms) |
+| **推論延遲** | 依 ANN、reranker、硬體與 corpus 而定 | 依 community report 數量、模型與 map-reduce 設定而定 | 依圖規模、PPR 與 passage reranking 設定而定 |
 
 ---
 
 ### 四、實務選型指南 (Pragmatic Guidelines)
 > [!TIP] 什麼時候真正需要 GraphRAG？
-> 1. 如果你的業務場景是**客服問答、法規條文精準定位**：請使用 **Hybrid RAG (BM25 + Dense + Rerank)** 或 **[[Chen2023 - Dense X Proposition Retrieval|Proposition Retrieval]]**，GraphRAG 的高昂成本在此場景下是嚴重的資源浪費。
-> 2. 如果你的業務場景是**情報分析、商業競爭對手全景掃描、整本長篇報告主題洞察**：**GraphRAG** 是目前唯一能有效產出全局宏觀圖景的成熟方案。
+> 1. 如果你的業務場景是**客服問答、法規條文精準定位**：請使用 **Hybrid RAG (BM25 + Dense + Rerank)** 或 **[[Chen2023 - Dense X Proposition Retrieval|Proposition Retrieval]]**，GraphRAG 的額外建圖與摘要成本未必能在此類局部查詢中帶來相稱收益，應以相同資料與成本預算實測。
+> 2. 如果你的業務場景是**情報分析、商業競爭對手全景掃描、整本長篇報告主題洞察**：**Microsoft GraphRAG** 是針對 global sensemaking 的代表性方法之一；階層摘要、長上下文直接閱讀、多輪檢索與其他 graph-based RAG 也可作為比較 baseline，不能宣稱 GraphRAG 是唯一方案。
+
+---
+
+## Survey-level 研究依據
+
+Graph RAG 已有專門 survey。此 Domain 應以 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 中的 **_Graph Retrieval-Augmented Generation: A Survey_ (2025)** 作為領域級 taxonomy 入口，再以 Microsoft GraphRAG、HippoRAG、KG²RAG、LightRAG、PropRAG 等 primary papers 核實個別機制。Survey 與 primary paper 的證據角色不可互換。
 
 ---
 
