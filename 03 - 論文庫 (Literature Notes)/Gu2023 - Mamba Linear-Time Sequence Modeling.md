@@ -6,7 +6,7 @@ authors:
   - "Tri Dao"
 year: 2023
 publication_year: 2024
-venue: "COLM 2024 / arXiv"
+venue: "COLM 2024"
 doi: null
 arxiv: "2312.00752"
 url: "https://arxiv.org/abs/2312.00752"
@@ -26,7 +26,7 @@ last_verified: "2026-09-24"
 > - **Paper ID**：`Gu2023_Mamba`
 > - **作者**：Albert Gu, Tri Dao
 > - **預印本初次發布年份 (Preprint)**：2023
-> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (COLM 2024 / arXiv)
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (COLM 2024)
 > - **DOI**：無
 > - **arXiv**：[2312.00752](https://arxiv.org/abs/2312.00752)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
