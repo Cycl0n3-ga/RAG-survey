@@ -7,7 +7,7 @@ tags:
   - engineering-architecture
 author: "Research Proposal"
 status: "analysis / proposal"
-evidence_status: "proposed_method"
+evidence_status: "pending_verification"
 verification_scope: "framework facts require version-specific official verification"
 last_updated: 2026-09-24
 ---
