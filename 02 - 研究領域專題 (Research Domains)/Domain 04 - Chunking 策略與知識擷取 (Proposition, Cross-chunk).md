@@ -96,7 +96,7 @@ Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造�
 必須分開五件事：**Chunking**（怎麼切輸入）、**Extraction**（抽出什麼）、**Representation**（如何表示）、**Consolidation**（跨 chunk/document 如何對齊與修復）、**Retrieval Granularity**（檢索時以什麼單位排序）。Dense X 主要研究 proposition 作為 retrieval unit，不等同於一個完整的 universal knowledge-extraction taxonomy。
 
 > [!IMPORTANT] F/R/D/A/P/C/T 的證據狀態
-> 下列 F/R/D/A/P/C/T schema、操作語意、四層 evidence governance 與 D-K-E-C-V-O pipeline 是本專案的**研究假設 / engineering design**，不是目前已確認的通用 survey taxonomy。其完整版本已移至 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]；此處保留概要，是為了說明它如何與既有 IE/RAG 文獻銜接。
+> 下列 F/R/D/A/P/C/T schema、操作語意、四層 evidence governance 與 D-K-E-C-V-O pipeline 是本專案的**研究假設 / engineering design**，不是目前已確認的通用 survey taxonomy。其系統架構完整版本見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05]]；端到端 failure attribution 與 oracle 設計見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。此處只保留與 IE/RAG 文獻銜接所需的概要。
 
 ## 五、候選企業知識 Schema：F / R / D / A / P / C / T（Proposed）
 
@@ -207,7 +207,7 @@ flowchart TD
 ```
 
 > [!WARNING] Proposed architecture
-> 上圖是本專案的可測試 reference architecture，不是 survey paper 已建立的標準 RAG pipeline。其假設、oracle 與 ablation 設計見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
+> 上圖是本專案的可測試 reference architecture，不是 survey paper 已建立的標準 RAG pipeline。其 Evidence-Governed reference architecture 與 deterministic repair 假設見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05]]；failure attribution、oracle 與 error-propagation ablation 見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
 
 ### 確定性不變量 (Deterministic Invariants)
 與傳統 Agent 依賴「LLM 自我評估：我覺得這段寫得挺好的」不同，證據治理系統引入嚴格的程式碼級確定性約束：
@@ -236,4 +236,6 @@ flowchart TD
 - **領域跳轉**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05: Graph RAG 與知識圖譜]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08: 長篇生成與 Claim-Evidence Ledger]]
-  - [[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術全景與框架深度對比]]
+  - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05: Evidence-Governed RAG 系統架構]]
+  - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 06 - 主流 RAG 框架生態與系統定位分析 (Framework Landscape & Positioning)|Idea 06: 框架生態與系統定位]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術全景與 Pareto 權衡分析]]
