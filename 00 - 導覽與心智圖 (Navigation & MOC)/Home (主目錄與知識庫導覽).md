@@ -9,8 +9,11 @@ tags:
 # 📚 LLM 超長文件閱讀、理解、推理與撰寫知識庫
 
 > [!NOTE] 知識庫緣起與範疇
-> 本知識庫係依據使用者分享之 [ChatGPT 深度研究會話 (長文處理研究方向)](https://chatgpt.com/share/6ab48c47-69b0-83e8-b415-014b1ca3180f) 所進行的系統化重構與落地擴充。
-> 涵蓋從底層神經架構（Long Context / SSM）、多層次壓縮、先進 RAG、GraphRAG、階層記憶體、長篇循證生成（STORM）、到 2026 前沿評測與安全防禦的完整學術與工業技術全景。
+> 本知識庫係依據使用者分享之 ChatGPT 深度研究會話進行系統化重構與落地擴充：
+> 1. [ChatGPT - 長文處理研究方向與技術全景](https://chatgpt.com/share/6ab48c47-69b0-83e8-b415-014b1ca3180f)
+> 2. [ChatGPT - RAG 競品生態、知識抽取與證據治理定位](https://chatgpt.com/share/6ab49939-4750-83ee-b284-1823a1797146)
+> 
+> 涵蓋從底層神經架構（Long Context / SSM）、多層次壓縮、先進 RAG、GraphRAG、階層記憶體、長篇循證生成（STORM）、F/R/D/A/P/C/T 企業知識治理到 2026 前沿評測與安全防禦的完整學術與工業技術全景。
 >
 > 💡 **本 Vault 已為您完整下載 34 篇頂級核心學術論文原始 PDF**，並在文獻筆記中無縫嵌入雙向連結，可直接在 Obsidian 內點擊閱讀！
 
@@ -70,7 +73,7 @@ graph TD
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02: 多層次壓縮技術 (Token, KV Cache, Context)]]
 - **資料、檢索與知識圖譜層**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03: 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
-  - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取 (Proposition, Cross-chunk)]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略、結構化知識擷取與證據治理 (Proposition, Typed Knowledge & Evidence Governance)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05: Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)]]
 - **記憶與階層推理層**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)|Domain 06: 外部記憶體架構 (MemGPT, A-MEM, Working Memory)]]

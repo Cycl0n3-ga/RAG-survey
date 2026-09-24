@@ -25,7 +25,7 @@ graph TD
     end
 
     subgraph Layer 2: 知識表示與檢索層
-        DOC --> CK["[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)\|Domain 04: 知識表示與切塊]]<br>• Dense X (Proposition)<br>• Semantic Chunking<br>• Cross-chunk Consolidation"]
+        DOC --> CK["[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)\|Domain 04: 知識抽取與證據治理]]<br>• Dense X (Proposition)<br>• F/R/D/A/P/C/T 分類與操作語意<br>• 四層證據階梯 (Citation≠Entailment≠Authority≠Sufficiency)<br>• D-K-E-C-V-O 閉環與確定性修復迴圈"]
         CK --> RAG["[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)\|Domain 03: 先進 RAG]]<br>• ColBERT (Late Interaction)<br>• HyDE (Hypothetical Doc)<br>• Self-RAG (Reflection)<br>• Contextual Retrieval"]
         CK --> GRAG["[[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)\|Domain 05: Graph RAG]]<br>• Microsoft GraphRAG (Leiden)<br>• HippoRAG (PPR 聯想記憶)<br>• PropRAG / KG2RAG"]
     end
@@ -59,7 +59,7 @@ graph TD
 ### 2. 資料與檢索層 (Data & Retrieval)
 - **[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03: 先進 RAG 與檢索機制]]**
   - 代表論文：[[03 - 論文庫 (Literature Notes)/Lewis2020 - Retrieval-Augmented Generation (RAG)|RAG (Lewis 2020)]]、[[03 - 論文庫 (Literature Notes)/Karpukhin2020 - Dense Passage Retrieval (DPR)|DPR (Karpukhin 2020)]]、[[03 - 論文庫 (Literature Notes)/Khattab2020 - ColBERT Late Interaction|ColBERT (Khattab 2020)]]、[[03 - 論文庫 (Literature Notes)/Gao2022 - HyDE Zero-Shot Dense Retrieval|HyDE (Gao 2022)]]、[[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG|Self-RAG (Asai 2023)]]。
-- **[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取]]**
+- **[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略、結構化知識擷取與證據治理]]**
   - 代表論文：[[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X (Chen 2024)]]。
 - **[[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05: Graph RAG 與結構化知識]]**
   - 代表論文：[[03 - 論文庫 (Literature Notes)/Edge2024 - Microsoft GraphRAG|Microsoft GraphRAG (Edge 2024)]]、[[03 - 論文庫 (Literature Notes)/Gutierrez2024 - HippoRAG|HippoRAG (Gutiérrez 2024)]]。

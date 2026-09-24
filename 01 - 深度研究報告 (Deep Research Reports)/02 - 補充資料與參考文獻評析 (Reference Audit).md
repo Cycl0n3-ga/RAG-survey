@@ -165,6 +165,8 @@ Compression
 ├── Semantic compression
 │   ├── summarization
 │   ├── atomic propositions
+│   ├── typed knowledge (F/R/D/A/P/C/T)
+│   ├── evidence objects (with provenance & authority)
 │   ├── triples
 │   ├── events
 │   └── graphs
@@ -177,6 +179,19 @@ Compression
 ```
 
 這一點我會在完整報告中特別加強，因為我認為這是**目前很多文獻 taxonomy 沒有整理得非常乾淨的地方**。
+
+### 核心論點深化：知識類型的操作語意 (Operational Semantics)
+
+將純文字抽取為 `F/R/D/A/P/C/T`（事實、需求、確認設計、假設、建議、能力、術語）若僅作為靜態標籤，學術價值有限；其核心在於**操作語意**：
+\[
+\text{type}(x) \Longrightarrow \text{allowed\_operations}(x)
+\]
+例如：**Requirement (R)** 具有「必須 100% 被方案覆蓋」之確定性硬約束，且絕不可作為「本系統已實現某功能」之證據；**Assumption (A)** 必須顯式附帶風險標註。
+同時，證據治理必須跨越表面腳標，落實四層審計階梯：
+\[
+\text{Citation} \neq \text{Entailment} \neq \text{Authority} \neq \text{Sufficiency}
+\]
+
 
 ## 這份資料提到的代表工作
 

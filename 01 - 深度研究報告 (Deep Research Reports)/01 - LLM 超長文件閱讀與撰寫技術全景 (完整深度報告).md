@@ -869,7 +869,7 @@ PropRAG 就明確指出簡單 triple 可能有 **context collapse** 問題，因
 
 2026 的 E²RAG 進一步區分 entity graph 與 event graph，意圖保留時間和因果結構。
 
-因此我會把未來 Knowledge Representation 寫成：
+因此我會把未來長文本與企業級交付物系統的 Knowledge Representation 寫成具備時空、模態與約束屬性的多元組：
 
 \[
 K=
@@ -886,11 +886,56 @@ K=
 )
 \]
 
-而不是：
+而不是單純的：
 
 \[
 K=(subject,predicate,object)
 \]
+
+### 從被動檢索走向「端到端證據治理流水線」(Evidence-Governed Pipeline)
+
+在嚴肅工程規格、招標提案（RFP）與審計報告等場景中，單純的 $Q \rightarrow \text{Retrieve} \rightarrow A$ 遠遠不足以保證交付品質。必須將知識抽取提升為完整的證據治理閉環：
+
+\[
+\boxed{D \longrightarrow K \longrightarrow E \longrightarrow C \longrightarrow V \longrightarrow O}
+\]
+
+- **$D$ (Documents)**：原始文件集合，透過 Source Manifest 嚴格記錄檔案雜湊（sha256）、版本時間戳與來源路徑。
+- **$K$ (Knowledge Extraction & Typing)**：結構化解析（章節/段落/表格/單元格）並抽取為具備操作語意的類型化企業知識（F/R/D/A/P/C/T）。
+- **$E$ (Evidence Objects)**：封裝帶有文檔絕對定位（Structural Path & Span）、時效性與權威度（Authority）的證據單元。
+- **$C$ (Claims)**：基於大綱與特定章節需求生成的候選主張，顯式錨定候選證據。
+- **$V$ (Deterministic Validation & Invariants)**：確定性硬約束校驗，若需求覆蓋不足或證據不充分，直接觸發自動化修復迴圈（Automated Repair Loop）。
+- **$O$ (Output Artifact)**：導出逐句證據背書、完整審計日誌與風險宣告的正式交付物。
+
+### 企業級知識分類體系 (F/R/D/A/P/C/T) 與操作語意
+
+知識分類絕非被動的 Metadata 標籤，其核心價值在於定義**操作語意（Operational Semantics）**：
+
+\[
+\boxed{\text{type}(x) \Longrightarrow \text{allowed\_operations}(x)}
+\]
+
+1. **F = Fact (客觀事實)**：客觀已發生的數據與現狀；具最高權威度，可作為效能宣稱的有力證據。
+2. **R = Requirement (需求條件)**：客戶規格與招標約束；**下游方案必須 100% 覆蓋**（$Coverage(R) = 1.0$），不可被當作能力或事實，違反則校驗失敗。
+3. **D = Confirmed Design (確認設計)**：團隊已敲定的架構決策；作為系統骨幹。
+4. **A = Assumption (假設條件)**：暫時設定之未證前提；必須顯式標註風險宣告，若推翻需重新計算。
+5. **P = Proposal (建議方案)**：候選實施路徑；需對齊相關需求 R 並論證其合理性。
+6. **C = Capability (現有能力)**：組織現有功能與實績；需引用歷史測試報告背書。
+7. **T = Terms (術語規範)**：跨章節統一業務名詞定義，消除歧義。
+
+### 四層證據階梯：超越表面引用 (Beyond Surface Citation)
+
+傳統 RAG 以為生成內容加上 `[Doc A, p.3]` 即代表回答可信，但真實的審計存在四個嚴格層次：
+
+\[
+\boxed{\text{Citation} \neq \text{Entailment} \neq \text{Authority} \neq \text{Sufficiency}}
+\]
+
+1. **Citation（表面引用）**：僅輸出文檔指向標籤，極易被模型幻覺偽造。
+2. **Entailment（語意蘊涵）**：透過 NLI 模型嚴格檢驗證據段落是否在邏輯上必然支持該 Claim。
+3. **Authority（權威性與合法性）**：檢查文檔是否為最新有效版本，且證據類型與主張類型相容（如不能拿 Requirement 充當 Capability 證據）。
+4. **Sufficiency（充分性）**：檢驗給定證據集合是否完整自足，無任何未言明的推論跳躍。
+
 
 ### Cross-chunk knowledge extraction 是很值得研究的一線
 
