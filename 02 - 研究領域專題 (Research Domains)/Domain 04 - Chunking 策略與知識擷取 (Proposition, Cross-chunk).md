@@ -19,7 +19,7 @@ tags:
 
 ## 一、傳統 Chunking 的本質缺陷與層次躍升
 
-長文本處理與 RAG 系統的失敗，超過 50% 起源於最前端切塊階段造成的語意破壞。純固定字數切塊（如 512 tokens + 10% overlap）存在三大本質缺陷：
+Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造成語意割裂、指代懸空與條件遺失；目前沒有足夠通用證據支持「超過 50% 的 RAG 失敗源於切塊」這種跨資料集比例，故不採用該數字。純固定字數切塊（如 512 tokens + 10% overlap）存在三大本質缺陷：
 1. **語意割裂（Semantic Fragmentation）**：完整的邏輯推導、因果論證或條款規定被機械式攔腰截斷於兩個相鄰 Chunk 之間。
 2. **代名詞與語境懸空（Pronoun & Context Ambiguity）**：Chunk 內充斥「該公司」、「此項規格」、「上述例外條件」等代名詞，脫離原始上下文後在向量空間中成為語意模糊的漂浮向量。
 3. **條件、時態與否定態遺失（Condition & Modality Loss）**：主句落在 Chunk A（如「該設備最高流量可達 $50\text{ m}^3/\text{h}$」），但關鍵限制前提落在 Chunk B（如「前提是操作壓力維持於 3 bar 以上且僅限常溫純水」），導致檢索僅檢索出前半段，生成出完全錯誤的事實宣稱。
@@ -78,18 +78,27 @@ tags:
   - 前提條件（Condition：需主管機關核准）；
   - 不確定性（Uncertainty）；
   - 交易金額與合約細節。
-- **結論**：長文本知識擷取必須走向**富屬性超圖（Hypergraph）**、**條件感知命題圖（Condition-aware Proposition Graph）** 或 **事件圖（Event Graph）**，絕不能盲目降維為純三元組。
+- **結論**：未帶 qualifier 的簡單 SPO triple 可能遺失時間、條件、否定與模態；可比較的表示包含 qualified triples、events、propositions、evidence objects 與 hypergraphs。哪一種表示較合適取決於任務與 benchmark，不能預先宣稱只有超圖或事件圖可行。
 
 ### 2. 跨塊知識擷取 (Cross-Chunk Knowledge Extraction)
 核心事實常跨越長文件的大篇幅章節：
 - *第 2 章*：「專案代號 Titan 於 2021 年第三季啟動立項。」
 - *第 11 章*：「由於市場轉向，Titan 代號團隊於 2024 年初遭全面裁撤。」
-- **局部單塊提取之盲區**：任何單一 Chunk 均無法得出「Titan 專案實際運作週期為 2021-2024」之宏觀事實。
+- **局部單塊提取之盲區**：兩段文字可支持「2021 年立項」與「2024 年團隊裁撤」，但**不能僅由此推論專案本身於 2024 年終止**；這正是 cross-chunk consolidation 必須區分「可直接合併的證據」與「需要額外證據的推論」的例子。
 - **前沿解法**：兩階段抽取管線 —— 第一階段在各局部 Chunk 抽取實體與局部事實；第二階段啟動 Cross-Chunk 實體對齊、時序鏈重建與矛盾消解（Contradiction Resolution），整合成全局事件節點。
 
 ---
 
-## 四、企業級知識分類體系：F / R / D / A / P / C / T 分類法
+## 四、Survey-backed Knowledge Extraction 邊界
+
+本 Domain 的「已知研究」應以 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 中的 **Generative Information Extraction survey** 與 **LLM-based Generative Information Extraction survey** 為入口，再連到 UIE、OpenIE、document-level RE、event extraction、proposition retrieval 等 primary works。
+
+必須分開五件事：**Chunking**（怎麼切輸入）、**Extraction**（抽出什麼）、**Representation**（如何表示）、**Consolidation**（跨 chunk/document 如何對齊與修復）、**Retrieval Granularity**（檢索時以什麼單位排序）。Dense X 主要研究 proposition 作為 retrieval unit，不等同於一個完整的 universal knowledge-extraction taxonomy。
+
+> [!IMPORTANT] F/R/D/A/P/C/T 的證據狀態
+> 下列 F/R/D/A/P/C/T schema、操作語意、四層 evidence governance 與 D-K-E-C-V-O pipeline 是本專案的**研究假設 / engineering design**，不是目前已確認的通用 survey taxonomy。其完整版本已移至 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]；此處保留概要，是為了說明它如何與既有 IE/RAG 文獻銜接。
+
+## 五、候選企業知識 Schema：F / R / D / A / P / C / T（Proposed）
 
 在嚴肅工程文件、投標提案與系統架構中，知識絕不能只被當作平鋪直敘的「文字資料」，而必須被賦予精確的**企業語意類別（Typed Enterprise Knowledge）**：
 
@@ -105,7 +114,7 @@ tags:
 
 ---
 
-## 五、知識類型的操作語意 (Operational Semantics of Knowledge Typing)
+## 六、知識類型的操作語意（Proposed Operational Semantics）
 
 > [!CAUTION] 研究與工程核心陷阱
 > **若 F/R/D/A/P/C/T 僅被當作被動的 metadata 標籤（Tag），它就沒有任何學術創新與系統價值！**
@@ -131,7 +140,7 @@ tags:
 
 ---
 
-## 六、四層證據階梯架構 (The 4-Layer Evidence Hierarchy)
+## 七、四層證據階梯（Proposed Evidence Governance Model）
 
 傳統 RAG 以為「有引用（Citation）就代表回答可信」，這是極為幼稚的假設。真實的證據治理存在四個嚴格遞進的審計層次：
 
@@ -166,7 +175,7 @@ tags:
 
 ---
 
-## 七、端到端證據生命週期與確定性修復鏈
+## 八、端到端證據生命週期與確定性修復鏈（Proposed）
 
 將知識擷取與 RAG 提升為嚴密的受治理流水線：
 
@@ -176,17 +185,29 @@ tags:
 
 ```mermaid
 flowchart TD
-    D["原始文件 (Source Documents)<br>• 文件雜湊值 (sha256)<br>• 版本識別戳記 (Version ID)<br>• 來源路徑與作者"] 
-    --> K["結構化解析與知識抽取 (Parsing & Extraction)<br>• 結構層次: 章節/段落/表格/單元格<br>• 類型化抽取: F / R / D / A / P / C / T"]
-    --> E["證據物件封裝 (Evidence Objects)<br>• 絕對位置錨點 (Structural Path & Span)<br>• 權威級別 (Authority Level)<br>• 實體與條件感知 (Condition-aware)"]
-    --> RTV["類型約束檢索 (Type-Aware Retrieval)<br>• 依下游任務動態路由至不同類型庫<br>• 結合密集向量與稀疏關鍵字"]
-    --> C["主張生成 (Claim Generation)<br>• 依據大綱生成段落的主張集合<br>• 顯式綁定對應候選證據"]
-    --> V{"確定性校驗 (Deterministic Invariants)<br>1. Requirement Coverage == 100%?<br>2. Claim Entailment Valid?<br>3. Evidence Type Permitted?<br>4. Evidence Sufficiency Passed?"}
+    SRC["Source Documents"]
+    PARSE["Parsing and Structure"]
+    EXT["Knowledge Extraction"]
+    EVID["Evidence Objects"]
+    RET["Retrieval"]
+    GEN["Claim Generation"]
+    VER{"Verification"}
+    OUT["Deliverable"]
+    REPAIR["Targeted Repair"]
 
-    V -- "校驗通過" --> O["正式交付文件 (Audit-Trailed Deliverable)<br>• 逐句證據背書<br>• 完整審計追溯日誌<br>• 假設與風險清單"]
-    V -- "發現違規 / 覆蓋率不足" --> REP["確定性修復迴圈 (Automated Repair Loop)<br>• 鎖定未滿足 Requirement 或無效 Claim<br>• 啟動補償性針對檢索 (Targeted Retrieval)<br>• 限制性重新生成與修復"]
-    REP --> V
+    SRC --> PARSE
+    PARSE --> EXT
+    EXT --> EVID
+    EVID --> RET
+    RET --> GEN
+    GEN --> VER
+    VER -->|pass| OUT
+    VER -->|gap or violation| REPAIR
+    REPAIR --> RET
 ```
+
+> [!WARNING] Proposed architecture
+> 上圖是本專案的可測試 reference architecture，不是 survey paper 已建立的標準 RAG pipeline。其假設、oracle 與 ablation 設計見 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
 
 ### 確定性不變量 (Deterministic Invariants)
 與傳統 Agent 依賴「LLM 自我評估：我覺得這段寫得挺好的」不同，證據治理系統引入嚴格的程式碼級確定性約束：
@@ -205,7 +226,7 @@ flowchart TD
 
 ---
 
-## 八、相關專題與文獻導覽
+## 九、相關專題與文獻導覽
 
 - **文獻支撐**：
   - [[03 - 論文庫 (Literature Notes)/Chen2023 - Dense X Proposition Retrieval|Dense X 命題檢索 (Chen et al., EMNLP 2024)]]
