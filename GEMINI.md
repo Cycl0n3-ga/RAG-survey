@@ -135,3 +135,15 @@ last_verified: 2026-09-24                              # 最後核對日期 (YYY
 - `03 - 論文庫 (Literature Notes)/`：存放各篇論文標準化結構筆記。
 - `Papers/`：存放依大類分類的論文 PDF 全文，檔名格式統一為：
   `Papers/[大類子資料夾]/(會議/期刊 發表年月) 論文名稱.pdf`
+
+
+---
+
+## Survey / Idea 與 Mermaid 補充規則（2026-09-24）
+
+- Research Domains 中的分類與結論應有 survey/review/tutorial/benchmark overview 作為領域級支撐；具體技術主張仍回到 primary paper 核實。
+- 尚未由文獻直接驗證的研究架構、taxonomy 延伸、F/R/D/A/P/C/T 操作規則、Evidence Gap Controller 等，放入 `04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/`，不得寫成 survey 共識。
+- Benchmark、Dataset、Metric、Evaluation Framework 必須分開。
+- Mermaid node label 不直接放 Obsidian `[[wikilink]]`；改在圖下建立節點對照。
+- Mermaid label 使用 `ID["文字"]` / `ID{"文字"}`，換行用 `<br/>`，subgraph 使用穩定 ID + 引號標題，不使用 `A & B --> C` shorthand。
+- 修改圖後檢查 fence、括號、subgraph/end 配對與 GitHub 預覽。
