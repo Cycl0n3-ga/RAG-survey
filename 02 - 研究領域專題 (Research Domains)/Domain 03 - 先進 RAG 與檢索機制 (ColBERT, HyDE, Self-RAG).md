@@ -73,6 +73,9 @@ flowchart LR
   - **自覺反思反饋**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection|Self-RAG (Asai et al., 2023)]] 利用 Reflection Tokens 自主決定何時檢索並檢驗生成內容是否被證據支持。
   - **多跳交錯推理**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions|IRCoT (Trivedi et al., 2022)]] 將思維鏈（CoT）推理與檢索循環交替，以前一步推論成果作為下一步檢索線索。
   - **抗噪閱讀筆記**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|Chain-of-Note (Yu et al., 2024)]] 逐篇撰寫閱讀筆記，顯式排除無關干擾文檔，極限抗噪表現超越標準 RAG 近 20 個百分點。
+  - **黑盒平行集成與 LM 監督**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2024-06) REPLUG - Retrieval-Augmented Black-Box Language Models|REPLUG (Shi et al., 2024)]] 將商用黑盒 LLM 平行輸入多篇段落並進行機率加權邊際化（Ensemble Generation），並提出 REPLUG LSR 以 LM 困惑度回饋微調稠密檢索器。
+  - **雙重指令微調範式**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) RA-DIT - Retrieval-Augmented Dual Instruction Tuning|RA-DIT (Lin et al., 2024)]] 分別對 LLM 與檢索器實施雙重指令微調（RA-IT 提升背景利用與抗噪，LSR 微調 Query Encoder 對齊偏好），在保持向量索引不變下達成多項知識基準 SOTA。
+  - **校正性主動檢索**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation|Corrective RAG (CRAG, Yan et al., 2024)]] 設計輕量級檢索評估器評定置信度，動態觸發文檔精煉、丟棄並調用 Web 搜尋糾錯，或雙源融合，搭配「分解-重組（Decompose-then-Recompose）」算法最大化信噪比。
 
 ---
 

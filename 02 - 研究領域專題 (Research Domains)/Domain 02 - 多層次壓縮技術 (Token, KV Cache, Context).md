@@ -40,13 +40,15 @@ graph TD
 ### 二、關鍵壓縮層次深入解析
 
 #### 1. Prompt Token 剪枝 (Token Pruning)
-- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models|LLMLingua (EMNLP 2023)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ACL 2024-08) LongLLMLingua - Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression|LongLLMLingua (ACL 2024)]]。
-- **核心機制**：利用小模型計算條件資訊熵，衡量各 Token 的資訊冗餘度。
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) Compressing Context to Enhance Inference Efficiency of Large Language Models|Selective Context (EMNLP 2023)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models|LLMLingua (EMNLP 2023)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ACL 2024-08) LongLLMLingua - Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression|LongLLMLingua (ACL 2024)]]。
+- **核心機制**：利用小模型計算條件資訊熵與自資訊量（Self-Information），衡量各語義單元（Token / Phrase / Sentence）的資訊冗餘度。
 - **Query-Aware 的關鍵價值**：單純按文字困惑度剪枝會抹除稀有但關鍵的專有名詞。LongLLMLingua 引入 $P(Doc|Query)$，根據問題對文檔動態重配壓縮率，並將核心段落重排置於 Prompt 兩端以對抗 [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts|Lost in the Middle]]。
 
-#### 2. KV Cache 動態剪枝與金字塔結構 (KV Pruning)
-- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation|SnapKV (2024)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2024-11) PyramidKV - Dynamic KV Cache Compression based on Pyramidal Information Funneling|PyramidKV (EMNLP 2024)]]。
+#### 2. KV Cache 動態剪枝與驅逐機制 (KV Cache Eviction & Pruning)
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) H2O - Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models|H2O (NeurIPS 2023)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Scissorhands - Exploiting the Persistence of Importance Hypothesis for LLM KV Cache Compression at Test Time|Scissorhands (NeurIPS 2023)]]、[[03 - 論文庫 (Literature Notes)/03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation|SnapKV (2024)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2024-11) PyramidKV - Dynamic KV Cache Compression based on Pyramidal Information Funneling|PyramidKV (EMNLP 2024)]]。
 - **核心機制**：
+  - **重擊者與累積注意力 (Heavy-Hitters & Accumulation)**：H2O 發現極少數關鍵 Token 貢獻大部分注意力，設計結合近期窗口與 $H_2$ 的動態驅逐算法，實現 20% 快取預算下吞吐量提升最高達 29 倍。
+  - **重要性持續性假說 (Persistence of Importance)**：Scissorhands 證明早期獲得高注意力的 Token 在後續步驟持續重要（跨步重疊率超 90%），在測試時實現 5 倍顯存修剪且與 4-bit 量化無縫相容。
   - **觀察窗口（Observation Window）**：LLM 在 Prefill 結尾會自發聚焦全局關鍵 Token。SnapKV 捕捉該注意力特徵，在每層每頭挑選保留最具影響力的核心 KV 簇，丟棄其餘 80%+ 歷史快取。
   - **金字塔漏斗（Pyramidal Funneling）**：PyramidKV 證明淺層 Attention 需要大容量保留細節，深層 Attention 僅需少量抽象快取，依此建立非對稱快取分配。
 
