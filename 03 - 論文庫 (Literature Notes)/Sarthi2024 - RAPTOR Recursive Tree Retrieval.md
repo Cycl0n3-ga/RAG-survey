@@ -48,7 +48,7 @@ last_verified: "2026-09-24"
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
-遞迴構建摘要樹：1. 將原始文本切塊並嵌入向量；2. 使用高斯混合模型（GMM）進行軟分群（一個塊可屬於多個群）；3. 由 LLM 為每個群生成抽象摘要；4. 遞迴對摘要再次分群摘要，直至生成頂層根節點。推論時採用樹狀遍歷（Tree Traversal）或全層塌陷（Collapsed Tree）綜合檢索。
+遞迴構建摘要樹：1. 將原始文本切塊並嵌入向量；2. 先以 UMAP 降維，再使用 Gaussian Mixture Model（GMM）進行 soft clustering（一個節點可屬於多個群）；聚類依 embedding 語義結構，而不是要求 chunk 在原文中相鄰；3. 由 LLM 為每個群生成抽象摘要；4. 遞迴對摘要再次分群摘要，直至生成頂層根節點。推論時採用樹狀遍歷（Tree Traversal）或全層塌陷（Collapsed Tree）綜合檢索。
 
 ```mermaid
 graph LR
