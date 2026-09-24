@@ -51,7 +51,7 @@ last_verified: "2026-09-24"
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
-1. Extract：利用 LLM 從長文本中提取實體（Entities）、關係（Relationships）與主張（Claims）；2. Graph Clustering：使用 Leiden 社群檢測演算法將知識圖譜劃分為多層次社群（Communities）；3. Community Summaries：自底向上為每個社群生成預先摘要；4. Global Search：以 Map-Reduce 方式平行檢索社群摘要並彙整最終答案。
+1. Extract：核心流程利用 LLM 從長文本中提取實體（Entities）與關係（Relationships）；claim/covariate extraction 依版本與設定可選，不應視為所有索引流程的必經步驟；2. Graph Clustering：使用 Leiden 社群檢測演算法將知識圖譜劃分為多層次社群（Communities）；3. Community Summaries：自底向上為每個社群生成預先摘要；4. Global Search：以 Map-Reduce 方式平行檢索社群摘要並彙整最終答案。
 
 ```mermaid
 graph LR
@@ -74,7 +74,7 @@ graph LR
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-2024 年長文知識庫領域最具震撼力的突破之一，確立了圖結構在整體語料庫理解中的統治地位。
+2024 年長文知識庫領域最具震撼力的突破之一，提供了以圖社群摘要處理 global sensemaking 的代表性路徑；是否優於其他方法取決於任務、語料與成本設定。
 
 ---
 
