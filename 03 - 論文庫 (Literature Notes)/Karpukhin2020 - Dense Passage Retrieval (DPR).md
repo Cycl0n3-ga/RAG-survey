@@ -50,30 +50,52 @@ last_verified: "2026-09-24"
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
-訓練兩個獨立的 BERT 編碼器：Question Encoder $E_Q(q)$ 與 Passage Encoder $E_P(p)$，利用點積計算相似度 $\text{sim}(q, p) = E_Q(q)^T E_P(p)$。透過 In-batch Negatives 與 Hard Negative Mining 進行高效率對比學習。
+DPR 採用雙編碼器（Dual-Encoder）架構，利用兩個獨立的預訓練模型分別映射查詢與段落：
+1. **雙編碼器表示**：
+   - Question Encoder $E_Q(q) \in \mathbb{R}^d$（以 BERT-base 為底座時 $d = 768$ 維）；
+   - Passage Encoder $E_P(p) \in \mathbb{R}^d$（以 `[CLS]` 標記之隱層表示作為整段段落的密集向量）；
+   - 相關度計算：$\text{sim}(q, p) = \langle E_Q(q), E_P(p) \rangle$（向量內積）。
+2. **訓練機制**：
+   - 採用對比學習目標（Negative Log-Likelihood of Positive Passage）；
+   - In-batch Negatives：同一個 batch 內其他樣本的標註正例互為負例，顯著提高計算效率；
+   - Hard Negative Mining：混入 BM25 檢索中排名高但不包含答案的困難負例（Hard Negatives）。
+3. **推論機制**：
+   - 全語料庫（如 2,100 萬篇維基百科段落）離線預計算為 768 維密集向量並建立 FAISS 索引；
+   - 線上查詢僅需計算一次 $E_Q(q)$，透過最大內積搜尋（MIPS / FAISS）在毫秒級時間內傳回 Top-$k$ 候選段落。
 
 ```mermaid
-graph LR
-    A["輸入文本 / Query"] --> B["Dense Dual-Encoder Retrieval 處理機制"]
-    B --> C["優化後特徵 / 檢索結果 / 狀態"]
-    C --> D["下游 LLM 解碼 / 最終輸出"]
+flowchart TD
+    subgraph offline["離線索引階段 (Offline Passage Indexing)"]
+        DOC["全文語料庫段落集 p"] --> EP["Passage Encoder EP(p)<br/>(BERT-base, d=768)"]
+        EP --> EMB["Passage Dense Vectors"]
+        EMB --> FAISS["FAISS 索引庫 (MIPS Index)"]
+    end
+
+    subgraph online["線上查詢階段 (Online Retrieval)"]
+        Q["使用者問題 q"] --> EQ["Question Encoder EQ(q)<br/>(BERT-base, d=768)"]
+        EQ --> Q_VEC["Query Vector EQ(q)"]
+        Q_VEC --> SEARCH["最大內積搜尋<br/>sim(q, p) = <EQ(q), EP(p)>"]
+        FAISS --> SEARCH
+        SEARCH --> TOPK["Top-k 檢索結果段落集"]
+    end
 ```
 
 ---
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 2 (Page 5): 在 Top-20 檢索準確率上，DPR 達到 78.4%，大幅超越傳統強力 BM25 的 59.1% (提升近 20 個百分點)；確立向量雙塔檢索標準。
+> **出處與評估條件**：Table 2 (Page 5): 在 Top-20 檢索準確率上，DPR 在 Natural Questions 上達到 78.4%，大幅超越傳統強力 BM25 的 59.1% (提升近 20 個百分點)；確立了向量雙塔神經檢索作為開放域問答標準 retriever 的地位。
 
 ---
 
-## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：語意泛化強、離線預算 Passage 向量後線上可用 FAISS 做亞毫秒級 ANN 檢索；缺點：雙塔在單一向量中過度壓縮整個段落，容易遺失專有名詞、代號與極細微數字細節。
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
+- **優勢**：強大的語義同義詞泛化與抽象意圖捕捉能力；全語料離線向量化後線上搜尋延遲極低。
+- **限制**：以單一 768 維向量壓縮整個長段落存在嚴重的資訊瓶頸；對罕見實體、產品型號代碼、精確數字匹配極為脆弱（在此類場景往往不如 BM25），且泛化到未見領域（Out-of-Domain）時效果常顯著衰減。
 
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-開啟了向量數據庫（Vector DB）與神經語意檢索時代，為所有現代 RAG 系統提供標準向量檢索基底。
+確立了神經稠密檢索（Dense Retrieval）的基本範式，也是所有現代 Dense RAG、混合檢索（Hybrid Search）與多階段 Reranking 架構的起點。
 
 ---
 

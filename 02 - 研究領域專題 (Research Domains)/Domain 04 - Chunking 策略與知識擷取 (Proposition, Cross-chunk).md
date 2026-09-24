@@ -24,23 +24,22 @@ Chunking 會改變 retrieval unit 與可保留的局部語境，因此可能造�
 2. **代名詞與語境懸空（Pronoun & Context Ambiguity）**：Chunk 內充斥「該公司」、「此項規格」、「上述例外條件」等代名詞，脫離原始上下文後在向量空間中成為語意模糊的漂浮向量。
 3. **條件、時態與否定態遺失（Condition & Modality Loss）**：主句落在 Chunk A（如「該設備最高流量可達 $50\text{ m}^3/\text{h}$」），但關鍵限制前提落在 Chunk B（如「前提是操作壓力維持於 3 bar 以上且僅限常溫純水」），導致檢索僅檢索出前半段，生成出完全錯誤的事實宣稱。
 
-### 知識單元抽象層次階梯 (Knowledge Abstraction Hierarchy)
+### 知識單元多元表示光譜 (Parallel Knowledge Representations Spectrum)
+
+不同知識表示形式各有其表達力與檢索特點，並非單向進化的替代階梯，而是依任務需求平行存在的表示光譜：
 
 ```text
 原始文件 (Raw Document)
  │
- ├─ 結構化元素 (Structural Elements) ── Heading / Paragraph / Table / Row / Cell
- │
- ├─ 語義塊 (Semantic Chunk) ──────── 依 Markdown 標題層次、列表結構切分
- │
- ├─ 命題 (Proposition) ──────────── 最小、原子級、自包含的事實陳述 (Dense X)
- │
- ├─ 類型化知識 (Typed Knowledge) ─── F/R/D/A/P/C/T 等具操作約束之語意單元
- │
- ├─ 結構化三元組 (SPO Triple) ────── (主詞, 謂詞, 受詞) ── 易遺失先決條件與模態
- │
- └─ 證據對象 (Evidence Object) ───── 具備 Source Hash、Span、權威度、時效性之可審計單元
+ ├── 原始文字塊 (Raw Passage / Chunk) ── 保留完整排版與上下文，檢索時噪音與跨度較大
+ ├── 結構化元素 (Structural Elements) ──── Heading / Paragraph / Table / Row / Cell
+ ├── 命題 (Proposition, Dense X) ──────── 原子級、語意自足陳述，利於細粒度事實檢索
+ ├── 帶限定詞三元組 (Qualified Triple) ─── 包含時間、條件、否定等限定詞的結構化關聯
+ ├── 事件單元 (Event Object) ──────────── 包含 Trigger, Arguments, Temporal Scope, Status
+ ├── 類型化知識 (Typed Knowledge) ──────── F/R/D/A/P/C/T 等具操作約束之語意單元 (Proposed)
+ └── 證據對象 (Evidence Object) ────────── 具備 Source Hash, Span, 權威度, 時效性之可審計單元
 ```
+各表示形式在資訊保留、檢索粒度與錯誤傳播的權衡，詳見 [[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12]] 與 [[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13]]。
 
 ---
 
@@ -261,6 +260,8 @@ flowchart TD
   - [[03 - 論文庫 (Literature Notes)/Shao2024 - STORM Writing Wikipedia From Scratch|STORM 知識探究與長篇寫作 (Shao et al., 2024)]]
   - [[03 - 論文庫 (Literature Notes)/Asai2023 - Self-RAG|Self-RAG 反思與可控檢索 (Asai et al., ICLR 2024)]]
 - **領域跳轉**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12: Knowledge Extraction & Typed Knowledge]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13: Information Preservation & Cross-chunk Consolidation]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05: Graph RAG 與知識圖譜]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08: 長篇生成與 Claim-Evidence Ledger]]
   - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05: Evidence-Governed RAG 系統架構]]

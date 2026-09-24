@@ -49,30 +49,54 @@ last_verified: "2026-09-24"
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
-將長文撰寫解構為三階段工程：1. Pre-writing（研究與訪談）：模擬各領域專家角色（Role-playing）向網路搜索引擎提問，進行多視角深度資訊蒐集；2. Outline Generation：彙整訪談所得證據，遞迴擬定結構嚴密的多級大綱；3. Article Generation & Polishing：依照大綱分段撰寫並自動嵌入引文連結，最後進行全篇語氣一致性潤飾。
+STORM（Synthesis of Topic Outlines through Repeated Multiperspective Questioning）將長篇維基百科/報告撰寫解構為三階段 Agentic 循證流程：
+1. **寫作前研究與視角訪談（Pre-writing via Multiperspective Research）**：
+   - 視角發現（Perspective Discovery）：從目標主題出發，模擬相關領域專家角色（如經濟學家、歷史學家、工程師）；
+   - 多輪訪談對話（Simulated Conversations）：專家 Agent 透過搜尋引擎提出深層查詢，蒐集多視角客觀證據與統計數據；
+2. **大綱構建與策劃（Hierarchical Outline Generation）**：
+   - 彙整訪談所得證據，由大綱 Agent 遞迴擬定結構嚴密的多級章節大綱（Hierarchical Outline）；
+3. **分段循證撰寫與潤飾（Grounded Article Writing & Polishing）**：
+   - 依據大綱將寫作任務分派給撰寫器，每一章節僅綁定該章節所需的專屬 Evidence Set；
+   - 嚴格嵌入精確引文標記（In-text Citations）；
+   - 後置一致性編輯器（Post-editing Pass）：通讀全篇消除章節間語調不一致與術語重複。
 
 ```mermaid
-graph LR
-    A["輸入文本 / Query"] --> B["Agentic Long-Form Writing 處理機制"]
-    B --> C["優化後特徵 / 檢索結果 / 狀態"]
-    C --> D["下游 LLM 解碼 / 最終輸出"]
+flowchart TD
+    TOPIC["輸入研究主題 (Research Topic)"] --> PERS["視角發現 (Perspective Discovery)<br/>模擬多領域專家角色"]
+    
+    subgraph prewriting["寫作前研究與訪談 (Pre-writing Stage)"]
+        PERS --> CONV["多視角模擬對話與搜尋引擎互動"]
+        CONV --> SEARCH["外部搜尋 / 檢索知識庫"]
+        SEARCH --> EVI["收集與整理具備溯源依據之證據庫"]
+    end
+
+    EVI --> OUTLINE["遞迴多層次大綱策劃 (Hierarchical Outline Generation)"]
+    
+    subgraph writing["分段循證撰寫與修訂 (Grounded Writing Stage)"]
+        OUTLINE --> DISP["章節任務分派 + 對應證據子集"]
+        DISP --> SEC_WRITE["章節循證撰寫 (自動嵌入 Citation)"]
+        SEC_WRITE --> POLISH["全篇一致性校準與語氣潤飾"]
+    end
+
+    POLISH --> FINAL["萬字維基百科全書級報告 / 交付物"]
 ```
 
 ---
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 1 & Figure 3 (Page 6-7): 人工評測顯示 STORM 撰寫的長篇文章在結構條理性、資訊深度與引文可驗證性 (Citation Recall) 上以 72% 的比例被專業評審評為優於一般 RAG。
+> **出處與評估條件**：Table 1 & Figure 3 (Page 6-7): 作者建立了由近期真實維基百科頁面構建的評測基準 **FreshWiki**；在雙盲專家與維基百科資深編輯人工評測中，STORM 在長文條理性、資訊深度與引文準確率（Citation Recall）上，以 72% 的勝率被評為顯著優於常規 RAG 與未引導長文生成系統。
 
 ---
 
-## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：生成文章長度可達萬字以上，結構極其專業，資訊深度遠超單次 Prompt 生成；缺點：依賴大量外部檢索與多智慧體反覆呼叫，整體生成時間長（數分鐘至數十分鐘）。
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
+- **優勢**：能夠自動化生成結構嚴密、多視角覆蓋、萬字以上的深度綜合長文，解決了單次生成結構空洞與內容重複的問題。
+- **限制**：整體撰寫需要多次外部檢索與多 Agent 複雜互動，產生長達數分鐘至數十分鐘的生成延遲；對專業垂直工程領域的嚴格規範條款覆蓋率仍缺乏確定性代數約束（需額外引入 Evidence Governance 機制）。
 
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-超長篇報告生成的奠基石，確立了『先研究提問 $\rightarrow$ 次擬定大綱 $\rightarrow$ 再循證撰寫』的標準長文寫作流程。
+確立了『多視角研究 $\rightarrow$ 層次大綱規劃 $\rightarrow$ 循證分段撰寫 $\rightarrow$ 全域一致性審閱』的標準長篇生成工程範式。
 
 ---
 

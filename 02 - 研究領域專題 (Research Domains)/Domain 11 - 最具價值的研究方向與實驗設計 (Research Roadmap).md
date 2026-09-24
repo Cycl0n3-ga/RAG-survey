@@ -24,27 +24,27 @@ tags:
 ### 2.1 Information-Preserving Knowledge Extraction
 - **已有基礎**：Generative IE、UIE、document-level RE、event extraction、proposition retrieval。
 - **待測 gap**：抽取後是否保留 negation、condition、modality、temporal scope、coreference 與 provenance，以及這些失真如何傳播到 RAG。
-- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 01 - Information-Preserving Knowledge Extraction|Idea 01]]。
+- **對應專題與提案**：[[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12: Knowledge Extraction]]、[[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13: Information Preservation]]，以及 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 01 - Information-Preserving Knowledge Extraction|Idea 01]]。
 
 ### 2.2 Evidence Gap-Aware Adaptive Retrieval
 - **已有基礎**：IRCoT、Self-RAG、Adaptive-RAG、corrective / iterative retrieval。
 - **待測 gap**：從「需要再搜」進一步定位「缺哪一種必要證據」，並以 evidence coverage 決定下一步與停止條件。
-- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 02 - Evidence Gap-Aware Adaptive Retrieval|Idea 02]]。
+- **對應專題與提案**：[[02 - 研究領域專題 (Research Domains)/Domain 14 - Evidence Sufficiency & Adaptive Retrieval|Domain 14: Evidence Sufficiency]]，以及 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 02 - Evidence Gap-Aware Adaptive Retrieval|Idea 02]]。
 
 ### 2.3 Provenance / Temporal / Conflict-Aware Resolution
 - **已有基礎**：temporal QA、provenance、citation/attribution、knowledge conflict 等分散研究。
 - **待測 gap**：在版本化企業文件中，同時處理 valid time、document version、authority 與 counter-evidence。
-- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 03 - Provenance Temporal Conflict-Aware Evidence Resolution|Idea 03]]。
+- **對應專題與提案**：[[02 - 研究領域專題 (Research Domains)/Domain 15 - Temporal Conflict & Provenance-aware RAG|Domain 15: Temporal & Conflict RAG]]，以及 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 03 - Provenance Temporal Conflict-Aware Evidence Resolution|Idea 03]]。
 
-### 2.4 End-to-End Failure Attribution
+### 2.4 End-to-End Failure Attribution & Evaluation Protocols
 - **已有基礎**：RAG evaluation / RAGChecker 等會拆解 retriever 與 generator。
 - **待測 gap**：進一步定位 Parsing → Chunking → Extraction → Consolidation → Retrieval → Sufficiency → Utilization → Generation → Attribution → Report Quality。
-- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
+- **對應專題與提案**：[[02 - 研究領域專題 (Research Domains)/Domain 16 - Context Utilization & Faithfulness|Domain 16: Context Utilization]]、[[02 - 研究領域專題 (Research Domains)/Domain 17 - RAG Benchmarks & Evaluation Protocols|Domain 17: Benchmarks & Protocols]]，以及 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
 
 ### 2.5 Evidence-Governed Long-form Deliverable Generation
 - **已有基礎**：長篇報告生成、citation / attribution、RAG evaluation、NLI / entailment verification、requirements coverage 等研究線各自存在。
 - **待測 gap**：這些機制的完整組合是否能在 RFP / 規格書 / 審計型交付物中，把 Requirement coverage、claim-level support、source authority 與 evidence sufficiency 轉成可程式化 invariant，並透過 targeted repair 改善 end-to-end omission / unsupported-claim error。
-- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05]]。
+- **對應專題與提案**：[[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08: 長篇生成]]，以及 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05]]。
 - **Evaluation entry**：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]。現有公開 benchmark 只能覆蓋部分維度；若要測 F/R/D/A/P/C/T、版本權威性、valid time 與 expected sufficiency，需另定義 gold schema 與 annotation protocol。
 
 ## 三、統一實驗原則

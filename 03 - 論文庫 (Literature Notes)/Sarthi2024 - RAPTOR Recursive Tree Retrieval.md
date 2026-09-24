@@ -48,30 +48,53 @@ last_verified: "2026-09-24"
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
-遞迴構建摘要樹：1. 將原始文本切塊並嵌入向量；2. 先以 UMAP 降維，再使用 Gaussian Mixture Model（GMM）進行 soft clustering（一個節點可屬於多個群）；聚類依 embedding 語義結構，而不是要求 chunk 在原文中相鄰；3. 由 LLM 為每個群生成抽象摘要；4. 遞迴對摘要再次分群摘要，直至生成頂層根節點。推論時採用樹狀遍歷（Tree Traversal）或全層塌陷（Collapsed Tree）綜合檢索。
+RAPTOR（Recursive Abstractive Processing for Tree-Organized Retrieval）構建了一種遞迴抽象分層樹狀索引結構，核心流程分為建樹與檢索兩大階段：
+1. **遞迴分群與抽象摘要（Recursive Clustering & Summarization）**：
+   - 文本切塊與嵌入：將長文切分成固定長度（如 100 tokens）的葉節點（Leaf Chunks）並計算密集向量；
+   - 降維與軟分群：使用 UMAP 進行非線性降維，再利用高斯混合模型（Gaussian Mixture Model, GMM）進行**軟分群（Soft Clustering）**——允許單一節點依機率隸屬於多個語意分群；**分群依據是向量空間中的語義鄰近度，而非文本在原文中的物理線性相鄰**；
+   - 抽象摘要：呼叫 LLM 為每個分群撰寫高度概括的摘要，作為上一層的父節點；
+   - 遞迴重複：對生成的摘要節點再次執行嵌入、UMAP 降維、GMM 分群與摘要，直至收斂至頂層根節點。
+2. **檢索模式（Retrieval Modes）**：
+   - **樹狀遍歷（Tree Traversal）**：由根節點出發，依向量相似度逐層向下貪婪擴展剪枝；
+   - **全層坍縮檢索（Collapsed Tree Retrieval）**：將所有層級的原始葉節點與各層摘要節點扁平化放入同一個向量池中統一比對，使檢索器能同時捕捉高階宏觀論述與底層細粒度事實。
+3. **重要學術邊界**：
+   - RAPTOR 是一種**文件分層索引與檢索架構（Hierarchical Indexing & Retrieval）**；
+   - **嚴禁將其與推論期的 Tree-of-Thought（ToT）推理搜尋混淆**：ToT 是在生成時對思考鏈進行分叉、評估與回溯的解碼策略，而 RAPTOR 是在檢索前構建文件語意的多分辨率摘要樹。
 
 ```mermaid
-graph LR
-    A["輸入文本 / Query"] --> B["Recursive Summary Tree 處理機制"]
-    B --> C["優化後特徵 / 檢索結果 / 狀態"]
-    C --> D["下游 LLM 解碼 / 最終輸出"]
+flowchart TD
+    subgraph indexing["離線遞迴建樹 (Recursive Tree Construction)"]
+        L["原始文本葉節點 (Leaf Chunks)"] --> EMB["計算 Text Embeddings"]
+        EMB --> UMAP["UMAP 降維 + GMM 軟分群<br/>(基於語義相似度，非原文相鄰)"]
+        UMAP --> LLM_SUM["LLM 抽象摘要生成"]
+        LLM_SUM --> L1["Level 1 抽象摘要節點"]
+        L1 --> REC["遞迴聚類與摘要"]
+        REC --> L2["Level 2 / Root 宏觀摘要節點"]
+    end
+
+    subgraph retrieval["線上檢索 (Collapsed Tree Retrieval)"]
+        Q["使用者問題 Query"] --> POOL["全層坍縮檢索池<br/>{Leafs + Level 1 + Level 2}"]
+        POOL --> COS["向量相似度篩選 Top-k 節點<br/>(兼具宏觀摘要與微觀細節)"]
+        COS --> GEN["下游 LLM 循證回答"]
+    end
 ```
 
 ---
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 1 & Table 2 (Page 6-7): 在 QuALITY 超長小說選擇題數據集上達到 82.6% 準確率 (刷新 SOTA)；證明全層坍縮樹狀檢索在長文本全局問答上具備決定性優勢。
+> **出處與評估條件**：Table 1 & Table 2 (Page 6-7): 在 QuALITY 超長小說選擇題數據集上，RAPTOR 結合 UnifiedQA-3B 達到 82.6% 準確率 (超越 SOTA 基線達 4.0 個百分點)；在 NarrativeQA 與 QASPER 上亦全面優於標準 DPR 與 BM25，證明全層坍縮樹狀檢索在超長文本宏觀整合問答上之實證優勢。
 
 ---
 
-## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：在 QuALITY、NarrativeQA 等超長篇小說/報告問答基準上大幅刷新 SOTA；缺點：建樹需要多輪摘要呼叫，若底層摘要產生偏差，上層節點會持續擴大該錯誤。
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
+- **優勢**：打破了傳統 Chunking 只能檢索局部碎片的死穴，能夠在單一檢索池中同時調度全書主題背景與精確細節。
+- **限制**：建樹成本高昂（需對各層次分群呼叫大量 LLM 摘要 API）；若底層摘要產生幻覺或關鍵資訊漏失，上層父節點會永久繼承並放大該偏差（誤差層級傳播）。
 
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-長文件階層式檢索（Hierarchical Indexing）的奠基之作，廣泛被整合進先進 RAG 生態。
+長文件階層式檢索（Hierarchical Indexing）的奠基之作，啟發了後續包括 Microsoft GraphRAG 在內的階層式感知與多解析度檢索設計。
 
 ---
 

@@ -59,7 +59,7 @@ sequenceDiagram
 - 正式實驗應比較 fixed evidence pool 與 gap-aware iterative retrieval 在 factual support、coverage、成本與 latency 上的取捨。
 
 #### 2. 主張-證據台帳 (Claim-Evidence Ledger)
-- 評估與防護長篇論文生成真實性的最強機制：
+- 一種用於檢驗長篇報告真實性、引文涵蓋率與溯源性的可審計架構設計（待驗證研究構想）：
 
 | Claim ID | 具體主張陳述 (Generated Claim) | 支持證據來源 (Evidence Doc) | 證據支持等級 (Support Level) | 潛在反例或例外 (Exceptions) | 所屬章節位置 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -95,6 +95,10 @@ sequenceDiagram
 
 ## 相關導覽與文獻快速跳轉
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
+- **專題連動**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 14 - Evidence Sufficiency & Adaptive Retrieval|Domain 14: Evidence Sufficiency & Adaptive Retrieval]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 16 - Context Utilization & Faithfulness|Domain 16: Context Utilization & Faithfulness]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 17 - RAG Benchmarks & Evaluation Protocols|Domain 17: RAG Benchmarks & Evaluation Protocols]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
 - **深度研究報告**：[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|技術全景深度報告]]
 - **權衡分析**：[[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術成熟度與 Pareto 權衡分析]]

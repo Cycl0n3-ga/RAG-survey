@@ -54,13 +54,17 @@ flowchart TD
 > [!NOTE] 圖示範圍
 > 這張圖刻意把不同 Graph-RAG family 分開。Microsoft GraphRAG 的核心索引流程是 entity/relationship graph、community detection 與 community reports；claim/covariate extraction 應視版本與設定而定，不應畫成所有版本都必經的核心步驟。
 
-#### 1. 微軟 GraphRAG：社群檢測與 Map-Reduce 全局摘要
+#### 1. 微軟 GraphRAG：社群檢測與多元搜尋模式
 - **代表作**：[[Edge2024 - Microsoft GraphRAG|GraphRAG (Edge et al., 2024)]]。
 - **核心架構**：
-  1. **Graph Extraction**：核心流程利用 LLM 抽取實體（Entity）與關係（Relationship）；GraphRAG 的 claim/covariate extraction 在部分版本/設定中可啟用，不應視為所有 Standard Index 的必要步驟。
+  1. **Graph Extraction**：核心流程利用 LLM 抽取實體（Entity）與關係（Relationship）；GraphRAG 的 claim/covariate extraction 在官方實作中為可選功能（預設關閉），不應視為所有標準索引流程的必要步驟。
   2. **Community Detection**：利用圖論演算法（Leiden）將密集互動的實體聚類為多層次社群（C0 宏觀到 C3 微觀）。
-  3. **Summarization**：自底向上為每個社群撰寫結構化摘要報告。
-  4. **Global Search**：將使用者查詢分派給所有社群摘要進行評分篩選（Map），最後整合輸出（Reduce）。
+  3. **Summarization**：自底向上為每個社群撰寫結構化摘要報告（Community Reports）。
+  4. **四大搜尋模式（Search Modes）**：
+     - **Global Search**：將全域問題分派給各社群摘要進行 Map-Reduce 評分與彙整，專注於宏觀主題感知；
+     - **Local Search**：以實體為錨點檢索相鄰關係、實體屬性與原始關聯文本塊，專注於具體實體推理；
+     - **DRIFT Search**：結合全局社群資訊與局部圖遍歷，由粗到細進行動態擴展；
+     - **Basic Search**：以原始文字塊的向量檢索作為基線。
 
 #### 2. HippoRAG：神經生物學啟發的高速聯想記憶
 - **代表作**：[[Gutierrez2024 - HippoRAG|HippoRAG (Gutiérrez et al., NeurIPS 2024)]]。
@@ -71,6 +75,7 @@ flowchart TD
 
 #### 3. KG²RAG & PropRAG：保留原始語境的混合圖檢索
 - 克服傳統知識圖譜『實體關係孤立化』的問題，將命題（Proposition）作為圖節點，或者以向量先定位種子節點，再沿著關係邊擴展檢索周邊保留完整原文語境的鄰居節點。
+- **PropRAG**（EMNLP 2025）：提出上下文豐富的命題路徑（Proposition Paths）與免 LLM 在線束搜尋（LLM-free online beam search），以低推論成本實現精準多跳檢索。
 
 ---
 
@@ -101,6 +106,9 @@ Graph RAG 已有專門 survey。此 Domain 應以 [[00 - 導覽與心智圖 (Nav
 
 ## 相關導覽與文獻快速跳轉
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
+- **專題連動**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13: Information Preservation & Cross-chunk Consolidation]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 17 - RAG Benchmarks & Evaluation Protocols|Domain 17: RAG Benchmarks & Evaluation Protocols]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
 - **深度研究報告**：[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|技術全景深度報告]]
 - **權衡分析**：[[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術成熟度與 Pareto 權衡分析]]

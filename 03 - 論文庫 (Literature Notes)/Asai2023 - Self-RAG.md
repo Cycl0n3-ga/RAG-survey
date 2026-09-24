@@ -48,36 +48,64 @@ last_verified: "2026-09-24"
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
-引入四種反思標記（Reflection Tokens）：1. `[Retrieve]`（是否需要檢索）；2. `[IsREL]`（文檔是否與主題相關）；3. `[IsSUP]`（生成的主張是否受到文檔支持）；4. `[IsUSE]`（生成內容是否實用）。訓練模型輸出這些標記，並在推論時利用 Beam Search 選擇最高質量路徑。
+Self-RAG 透過專屬的反思標記（Reflection Tokens）實現自適應檢索與批判生成，其訓練與推論機制包含三個核心層次：
+1. **反思標記體系**：
+   - 檢索控制：`[Retrieve]` $\in \{\text{yes}, \text{no}, \text{continue}\}$（判斷當前上下文是否需要外部補充）；
+   - 相關性批判：`[IsREL]` $\in \{\text{relevant}, \text{irrelevant}\}$（檢驗檢索文檔是否切題）；
+   - 忠實度批判：`[IsSUP]` $\in \{\text{fully supported}, \text{partially supported}, \text{no support}\}$（檢驗生成命題是否獲文檔嚴格背書）；
+   - 實用度批判：`[IsUSE]` $\in \{1, 2, 3, 4, 5\}$（評估回答整體資訊價值）。
+2. **訓練機制（無需強化學習 RL）**：
+   - 先訓練 Critic 模型：利用 GPT-4 離線提示生成 reflection token 標註資料，微調出 Critic 模型；
+   - 訓練 Generator 模型：利用 Critic 模型對大規模語料自動插入 reflection tokens，以標準監督式微調（Supervised Fine-Tuning, SFT）訓練單一 Generator 同時學會生成文字與反思標記；全流程**不依賴強化學習（RL）**。
+3. **推論機制**：在解碼階段，利用自定義權重對各 reflection token 進行打分，透過束搜尋（Segment-level Beam Search）動態選取最優路徑。
 
 ```mermaid
-graph LR
-    A["輸入文本 / Query"] --> B["Adaptive RAG / Self-Reflection 處理機制"]
-    B --> C["優化後特徵 / 檢索結果 / 狀態"]
-    C --> D["下游 LLM 解碼 / 最終輸出"]
+flowchart TD
+    Q["輸入問題 / 當前上下文 x"] --> DEC{"Generator 預測<br/>[Retrieve]"}
+    DEC -->|no / continue| GEN_DIR["直接解碼生成回應 y"]
+    DEC -->|yes| RET["檢索外部候選文檔集 D = {d1, ..., dK}"]
+    
+    subgraph parallel_eval["平行評估與候選路徑評分"]
+        RET --> P1["文檔 d1"]
+        RET --> P2["文檔 dK"]
+        P1 --> REL1{"評估 [IsREL]"}
+        P2 --> REL2{"評估 [IsREL]"}
+        REL1 -->|Relevant| Y1["生成對應段落 y1"]
+        REL2 -->|Relevant| Y2["生成對應段落 yK"]
+        Y1 --> SUP1["評估 [IsSUP] 與 [IsUSE]"]
+        Y2 --> SUP2["評估 [IsSUP] 與 [IsUSE]"]
+    end
+
+    SUP1 --> BEAM["Segment-level Beam Search 綜合打分"]
+    SUP2 --> BEAM
+    BEAM --> OUT["選取最高分路徑輸出"]
+    GEN_DIR --> OUT
 ```
 
 ---
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 1 (Page 6): 在 Pub/Bio/OpenQA 基準上，Self-RAG 7B 模型擊敗了未檢索的 70B 模型與常規 RAG 系統；生成引文忠實度 (Faithfulness) 提升超過 30%。
+> **出處與評估條件**：Table 1 (Page 6): 在 Open-domain QA（PopQA, TriviaQA）與 BioASQ 基準上，Self-RAG 7B 模型顯著超越未檢索的 Llama-2-70B 與常規 RAG 系統；在忠實度評估上，引文支持率（Citation Precision/Recall）提升超過 30 個百分點。
 
 ---
 
-## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：動態自適應檢索並以 reflection tokens 評估 relevance / support / utility；缺點：需要專門的資料建立與 supervised fine-tuning，且推論時 reflection-token scoring 增加解碼複雜度。原論文的方法流程不以 reinforcement learning 作為必要訓練步驟。
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
+- **優勢**：實現了自適應檢索、相關性過濾與自我驗證的單一模型原生整合，大幅減少不必要檢索並抑制幻覺。
+- **限制**：需要離線構建複雜標註語料並進行 SFT，推論時的多候選段落 beam search 解碼顯著增加了計算延遲與顯存負擔。
+- **訓練邊界**：原論文之 Critic 與 Generator 均採用標準因果語言模型 SFT，不以 PPO 或 DPO 等強化學習為必要步驟。
 
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-開創了『自省式檢索（Self-Reflective RAG）』範式，是現代高品質長文知識問答與反思 Agent 的核心理論來源。
+開創了『自省式檢索（Self-Reflective RAG）』範式，是現代自適應 RAG、證據充分性判斷（[[02 - 研究領域專題 (Research Domains)/Domain 14 - Evidence Sufficiency & Adaptive Retrieval|Domain 14]]）與反思 Agent 的核心理論來源。
 
 ---
 
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 14 - Evidence Sufficiency & Adaptive Retrieval|Domain 14 - Evidence Sufficiency & Adaptive Retrieval]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)|Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]

@@ -87,12 +87,15 @@ $$	ext{Pareto Frontier} = \{ (Accuracy, Latency, VRAM, Cost) \}$$
 - 透過對抗性字串優化使該偽造文檔在向量檢索中獲得異常高的排名，進而污染最終生成的長篇報告。
 
 #### 3. 隱私洩漏 (Contextual Privacy Leakage)
-- 當多使用者的長歷史記錄未被嚴格隔離時，長文本模型的注意力機制可能無意間跨 Session 提取殘留在共享 KV Cache 中的敏感數據。
+- 在多租戶（Multi-tenant）或共享推論架構中，若系統啟用了跨請求的 Prompt Caching / Prefix Caching（如 RadixAttention 或 PagedAttention 共享前綴）而未施加嚴格的租戶邊界驗證與權限隔離，攻擊者可能透過特定前綴探測，非法命中並提取殘留在共享緩存中的其他使用者敏感上下文。
 
 ---
 
 ## 相關導覽與文獻快速跳轉
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
+- **專題連動**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 17 - RAG Benchmarks & Evaluation Protocols|Domain 17: RAG Benchmarks & Evaluation Protocols]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
 - **深度研究報告**：[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|技術全景深度報告]]
 - **權衡分析**：[[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術成熟度與 Pareto 權衡分析]]

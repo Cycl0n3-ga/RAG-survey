@@ -48,30 +48,50 @@ last_verified: "2026-09-24"
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
-仿生海馬迴索引（Hippocampal Indexing Theory）：新皮質保留原始文本，海馬迴充當聯想索引圖。利用 OpenIE 抽取知識圖譜，在檢索時將 Query 中的實體作為種子節點，在圖上執行個人化佩奇排名（Personalized PageRank, PPR）以極低成本模擬大腦突觸的聯想擴散，精準啟動多跳遠程關聯段落。
+HippoRAG 受到認知神經科學海馬迴索引理論（Hippocampal Indexing Theory）啟發，設計了分離式雙重記憶系統：
+1. **雙重記憶架構**：
+   - **大腦新皮質（Neocortex）**：儲存未經修改的原始文本段落（Passages），保證語意的原始保真度與完整上下文；
+   - **海馬迴（Hippocampus）**：透過 OpenIE（開源實體與關係抽取）構建關聯知識圖譜，節點包含名詞短語實體與對應的段落節點，邊代表實體共現或抽取出的語意關係。
+2. **單步個人化佩奇排名檢索（PPR-based Associative Retrieval）**：
+   - 查詢實體辨識：從使用者問題中提取關鍵命名實體；
+   - 語義匹配種子節點：利用密集檢索器（如 Contriever）將問題實體連接至海馬迴圖中最相近的知識節點，並賦予初始機率權重（Personalized Vector）；
+   - 圖拓撲擴散（PPR）：在知識圖譜上執行快速矩陣運算之 Personalized PageRank 隨機遊走擴散，模擬神經突觸聯想；
+   - 段落排序：將擴散後的節點權重聚合回關聯的段落節點，直接產出多跳關聯的 Top-$k$ 候選段落。
 
 ```mermaid
-graph LR
-    A["輸入文本 / Query"] --> B["Neurobiologically-Inspired Graph Memory 處理機制"]
-    B --> C["優化後特徵 / 檢索結果 / 狀態"]
-    C --> D["下游 LLM 解碼 / 最終輸出"]
+flowchart TD
+    subgraph indexing["離線雙重記憶索引 (Offline Memory Indexing)"]
+        DOC["原始長文本段落 (Neocortex)"] --> OPENIE["OpenIE 實體與關係抽取"]
+        OPENIE --> KG["海馬迴關聯圖 (Hippocampus Graph)<br/>{實體節點 + 段落節點 + 語義邊}"]
+    end
+
+    subgraph retrieval["線上聯想檢索 (Online Associative Retrieval)"]
+        Q["使用者問題 Query"] --> NER["LLM 抽取查詢實體"]
+        NER --> MATCH["實體向量比對定位種子節點"]
+        MATCH --> PPR["Personalized PageRank (PPR) 圖機率擴散<br/>(單次圖運算，免多輪 LLM 生成)"]
+        KG --> PPR
+        PPR --> AGG["段落節點機率聚合與排序"]
+        DOC --> AGG
+        AGG --> OUT["Top-k 多跳關聯證據段落"]
+    end
 ```
 
 ---
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 1 & Figure 4 (Page 6-7): HippoRAG 以單次 PPR-based retrieval 與多輪 IRCoT 等方法比較；論文摘要/實驗報告的是特定設定下約 10–20× lower cost 與 6–13× faster，而不是可泛化為所有情境的固定 10–30× latency 改善。
+> **出處與評估條件**：Table 1 & Figure 4 (Page 6-7): 在 2WikiMultiHopQA、HotpotQA 與 MuSiQue 等多跳基準測試中，HippoRAG 在檢索 Recall@2 與下游回答準確率上匹敵甚至超越多輪迭代檢索架構（IRCoT）。在原論文所採用的具體實驗硬體與 API 評估環境下，由於以圖上單次矩陣 PPR 運算取代了反覆呼叫 LLM 進行思維鏈推理，HippoRAG 達成了約 6–13 倍的檢索加速與 10–20 倍的檢索階段成本節省；該數據依賴於特定 baseline 與資料集條件，不應無邊界泛化為所有情境下的固定加速比。
 
 ---
 
-## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：單次檢索即可捕捉多跳關聯，在 MuSiQue 與 2Wiki 基準上超越 IRCoT 且在論文特定比較中具顯著成本/速度優勢；缺點：高度依賴實體抽取的精確度，面對抽象非實體問題效果有所下降。
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
+- **優勢**：無需多輪 LLM 互動即可實現多跳遠程知識關聯，大幅降低多跳問答的線上推論延遲與 API 費用。
+- **限制**：高度依賴前端 OpenIE 抽取的品質；若關鍵實體未被辨識，圖擴散路徑將中斷；對無明確命名實體之純抽象邏輯推理問題效果較受限。
 
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-為神經生物學記憶機制在 LLM 長文本檢索架構中的實踐樹立了典範。
+為非參數化外部記憶（Non-parametric Memory）與知識圖譜拓撲演算法在先進 RAG 中的深度結合樹立了標竿。
 
 ---
 
