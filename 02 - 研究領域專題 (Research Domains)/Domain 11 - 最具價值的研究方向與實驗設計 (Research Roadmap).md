@@ -1,72 +1,80 @@
 ---
-title: "Domain 11: 最具價值的研究方向與實驗設計 (Research Roadmap & Actionable Proposals)"
+title: "Domain 11: 研究缺口、可反駁假設與實驗設計 (Research Gaps & Experimental Roadmap)"
 tags:
-  - "domain/roadmap-experiments"
+  - domain/roadmap-experiments
   - research-domain
+  - research-gaps
 ---
 
-# Domain 11: 最具價值的研究方向與實驗設計 (Research Roadmap & Actionable Proposals)
+# Domain 11: 研究缺口、可反駁假設與實驗設計
 
-> [!ABSTRACT] 核心問題意識 (Core Problem Statement)
-> **面對 2026 年長文處理的浩瀚領域，哪些題目已經是紅海/死胡同？哪些方向才真正具備高論文價值與實用壁壘？具體實驗該如何設計？**
+> [!ABSTRACT]
+> 本 Domain 不再宣稱哪些題目是「紅海」「藍海」或「最高學術價值」。它的用途是把 survey / primary literature 中仍未充分解決的問題轉成**可反駁假設、baseline、oracle、dataset 與 metric**。尚未被文獻驗證的完整方法設計，一律放到 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]。
 
----
+## 一、三層證據狀態
 
-### 一、研究紅海 vs. 研究藍海 (Where NOT to research vs. Where to research)
+| 層級 | 定義 | 在本 Repo 的處理方式 |
+| :--- | :--- | :--- |
+| A. Survey-backed | 已有 survey/review 將其視為明確研究線 | 可放 Research Domains，並連 Survey Index |
+| B. Primary-work gap | 已有方法研究，但仍有可具體描述的限制 | 可在 Domain 中寫「open problem」，但需連 primary paper |
+| C. Proposed hypothesis | 本專案提出的 taxonomy、controller、schema 或組合 | 只能放 Ideas；Domain 僅連結並標示 proposed |
 
-> [!WARNING] 建議避開的低價值方向（已過度飽和或邊際收益極低）
-> 1. **單純把 Context Window 從 2M 拉到 4M**：除非擁有千卡叢集與新算子架構，純粹微調位置編碼已無實質創新空間。
-> 2. **粗糙的 Prompt Token 剪枝修補**：在小數據集上微調簡單刪詞策略，往往只能產出難以落地的增量論文。
-> 3. **簡單的 Vector RAG 參數調優**：調 Top-K、換 Embedding 模型已無法構成有深度的研究主幹。
+## 二、目前候選研究缺口
 
-> [!TIP] 具備最高學術價值與工業突破潛力的三大藍海
-> 1. **Evidence Sufficiency（證據充分性理論與判定）**：
->    - 核心問題：系統何時該知道『檢索到的資料已經足以完全回答問題』？何時應承認『資訊不足，需停止猜測』？
-> 2. **Cross-Chunk Knowledge Consolidation（跨區塊語義消解與動態圖演化）**：
->    - 核心問題：如何自動對齊、合併分散在百頁文檔不同角落的矛盾線索，建立全域因果圖？
-> 3. **Long Context vs. RAG Dynamic Routing（動態自適應路徑分流）**：
->    - 核心問題：建立輕量級決策器，依據問題複雜度與文檔分佈，動態決定『整份文檔塞入 Long Context』還是『走 GraphRAG 檢索』。
+### 2.1 Information-Preserving Knowledge Extraction
+- **已有基礎**：Generative IE、UIE、document-level RE、event extraction、proposition retrieval。
+- **待測 gap**：抽取後是否保留 negation、condition、modality、temporal scope、coreference 與 provenance，以及這些失真如何傳播到 RAG。
+- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 01 - Information-Preserving Knowledge Extraction|Idea 01]]。
 
----
+### 2.2 Evidence Gap-Aware Adaptive Retrieval
+- **已有基礎**：IRCoT、Self-RAG、Adaptive-RAG、corrective / iterative retrieval。
+- **待測 gap**：從「需要再搜」進一步定位「缺哪一種必要證據」，並以 evidence coverage 決定下一步與停止條件。
+- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 02 - Evidence Gap-Aware Adaptive Retrieval|Idea 02]]。
 
-### 二、推薦可立即實作的學術實驗方案 (Actionable Proposal)
+### 2.3 Provenance / Temporal / Conflict-Aware Resolution
+- **已有基礎**：temporal QA、provenance、citation/attribution、knowledge conflict 等分散研究。
+- **待測 gap**：在版本化企業文件中，同時處理 valid time、document version、authority 與 counter-evidence。
+- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 03 - Provenance Temporal Conflict-Aware Evidence Resolution|Idea 03]]。
 
-#### 實驗題目：基於『主張-證據台帳』的動態自省長篇學術報告生成評估系統
+### 2.4 End-to-End Failure Attribution
+- **已有基礎**：RAG evaluation / RAGChecker 等會拆解 retriever 與 generator。
+- **待測 gap**：進一步定位 Parsing → Chunking → Extraction → Consolidation → Retrieval → Sufficiency → Utilization → Generation → Attribution → Report Quality。
+- **Proposal**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
+
+## 三、統一實驗原則
+
+每個研究提案都必須回答：
+1. **Baseline**：與哪些已發表方法比較？
+2. **Oracle**：如果上游階段完全正確，下游理論上可改善多少？
+3. **Dataset / Gold**：現成 benchmark 是否真的提供所需標註？若沒有，哪些欄位需自行標？
+4. **Metric**：模組指標與 end-to-end 指標分開。
+5. **Ablation**：一次只移除一個新增機制。
+6. **Budget parity**：檢索次數、token、LLM calls 與 latency 應報告，避免以更多計算量冒充方法提升。
+7. **Falsification criterion**：預先定義什麼結果代表假設不成立。
+
+## 四、Reference experimental flow
 
 ```mermaid
-graph TD
-    Input["複雜研究問題 (Query)"] --> Router["動態路由路由器 (Complexity Router)"]
-    
-    Router -->|局部精確事實| V_RAG["Hybrid RAG / Dense X"]
-    Router -->|全局宏觀趨勢| G_RAG["GraphRAG / Community"]
-    Router -->|稠密因果推演| LC["Long Context Window (FlashAttn)"]
-    
-    V_RAG & G_RAG & LC --> ES["統一證據庫 (Evidence Store)"]
-    
-    ES --> Draft["大綱導向章節生成 (Outline-driven Writer)"]
-    Draft --> Ledger["構建 Claim-Evidence Ledger (主張-證據審核台帳)"]
-    
-    Ledger --> Verifier["驗證判別器 (Sufficiency & Faithfulness Verifier)"]
-    Verifier -->|存在證據斷裂或過度推論| Loop["定向補查 (Targeted Gap Retrieval)"]
-    Loop --> ES
-    Verifier -->|通過| Final["輸出可追溯長文報告 + 準確引文"]
+flowchart LR
+    FAIL["Failure Analysis"] --> REP["Representation / Extraction"]
+    REP --> RET["Adaptive Retrieval"]
+    RET --> SUF["Evidence Sufficiency"]
+    SUF --> GEN["Long-form Generation"]
+    GEN --> VER["Verification"]
+    VER --> ATTR["Failure Attribution"]
+
+    OR1["Gold extraction"] -. oracle .-> REP
+    OR2["Gold evidence"] -. oracle .-> RET
+    OR3["Gold context"] -. oracle .-> GEN
 ```
 
-#### 關鍵實驗變量控制（Gold-Evidence 實驗）
-- **實驗組 A**：Full Long Context（直接將所有參考論文拼接送入 GPT-4o / Claude 3.5 Sonnet / Gemini 1.5 Pro）；
-- **實驗組 B**：標準 Advanced Vector RAG；
-- **實驗組 C**：微軟 GraphRAG；
-- **實驗組 D (本文方法)**：動態路由 + 命題切塊 + Claim-Evidence Ledger。
+## 五、Benchmark 導覽
 
-#### 核心評估指標
-1. **Faithfulness（忠實度）**：生成的主張受引文完全支持的比例（藉由人工評審與 LLM-as-a-Judge 雙盲比對）。
-2. **Global Sensemaking Score**：在需要跨文件彙整的宏觀評測集上的邏輯完備度。
-3. **Pareto 效率**：計算達到 90% 準確率時所需的總 Token 開銷與端到端執行時間。
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
 
----
+## 相關導覽
 
-## 相關導覽與文獻快速跳轉
-- **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
-- **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
-- **深度研究報告**：[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|技術全景深度報告]]
-- **權衡分析**：[[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術成熟度與 Pareto 權衡分析]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄]]
+- [[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|技術全景深度報告]]
