@@ -133,5 +133,30 @@ last_verified: 2026-09-24                              # 最後核對日期 (YYY
 - `01 - 深度研究報告 (Deep Research Reports)/`：存放完整深度調研報告與對話存檔。
 - `02 - 研究領域專題 (Research Domains)/`：存放各細分技術領域專題分析。
 - `03 - 論文庫 (Literature Notes)/`：存放各篇論文標準化結構筆記。
+- `04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/`：存放尚未由既有文獻直接驗證的 taxonomy 延伸、研究假設、方法草案與實驗提案；**不得把這些內容寫成社群共識或已驗證方法**。
 - `Papers/`：存放依大類分類的論文 PDF 全文，檔名格式統一為：
   `Papers/[大類子資料夾]/(會議/期刊 發表年月) 論文名稱.pdf`
+
+
+---
+
+## 🔎 Survey 與 Idea 分流規則 (Survey-vs-Idea Gate)
+
+本 Repo 名稱為 RAG-survey，因此「Research Domains」中的分類與結論必須能由可追溯文獻支撐。
+
+1. **Survey-backed domain**：每個 Domain 至少連到一篇與該領域直接相關的 survey / review / tutorial / benchmark overview；若目前找不到合適 survey，必須標示 `survey_coverage: partial`，不可假裝已有社群共識。
+2. **Primary-paper evidence**：Survey 只能用來證明「這是一條已存在的研究線」；具體方法、數字與機制仍需回到 primary paper 核實。
+3. **Ideas are not survey findings**：F/R/D/A/P/C/T、四層 Citation→Entailment→Authority→Sufficiency、Evidence Gap Controller、Temporal Conflict Resolver 等若沒有直接文獻證明其完整組合，必須放在 `04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/`，Research Domain 只能以「研究假設／設計草案」連結過去。
+4. **禁止 novelty 宣告**：不得使用「唯一」「最高學術價值」「藍海」「已解決」「必然優於」等字眼，除非有明確、同條件、可追溯證據；研究價值應改寫成可反駁假設。
+5. **Benchmark / Dataset / Metric 分離**：Benchmark 是任務與評測協議，Dataset 是資料，Metric 是計分方式，Evaluation Framework 是評估工具；不得混稱。
+
+## 🧜 Mermaid 相容性規範
+
+為同時相容 GitHub Mermaid 與 Obsidian：
+
+- Mermaid node label **不得直接嵌入 Obsidian `[[wikilink]]`**；圖下方另設「圖中節點對照」使用 Wikilink。
+- Node label 統一使用 `ID["文字"]` 或 decision `ID{"文字"}`；避免讓裸露的 `[` / `]` 出現在 label 中。
+- HTML 換行統一使用 `<br/>`。
+- `subgraph` 使用穩定 ID + 引號標題，例如 `subgraph retrieval["Retrieval Engine"]`。
+- 不使用 `A & B --> C` 等 shorthand；拆成 `A --> C`、`B --> C`，提高不同 Mermaid renderer 的相容性。
+- 修改 Mermaid 後必須至少檢查：fence 成對、node delimiter 成對、subgraph/end 成對，並確認 GitHub 預覽不顯示多餘的中括號。
