@@ -79,6 +79,12 @@ tags:                                                  # 標籤 (List of tags)
   - dense-attention
 verification_status: "verified"                        # 驗證狀態：verified (已比對原文全文) / pending_verification (待驗證) / abstract_only (僅摘要)
 last_verified: 2026-09-24                              # 最後核對日期 (YYYY-MM-DD)
+# 選填擴充欄位 (Optional Extended Metadata)：
+artifact_type: "method_paper"                          # 工件類型：method_paper | benchmark_paper | dataset | evaluation_framework | survey | proposal
+research_questions: []                                 # 探討之核心研究子題標籤 (如 retrieval_granularity, context_utilization)
+benchmark_ids: []                                      # 相關之評測基準 ID
+dataset_ids: []                                        # 相關之資料集 ID
+metrics: []                                            # 評測指標
 ---
 ```
 

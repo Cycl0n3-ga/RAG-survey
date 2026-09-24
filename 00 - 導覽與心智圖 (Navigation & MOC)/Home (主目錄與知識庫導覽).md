@@ -86,23 +86,29 @@ flowchart TD
 3. [[01 - 深度研究報告 (Deep Research Reports)/03 - ChatGPT 對話全文整理 (Shared Session Transcript)|03 - ChatGPT 對話全文整理 (Shared Session Transcript)]] *(對話原始記錄存檔)*
 4. [[01 - 深度研究報告 (Deep Research Reports)/04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)|04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)]] *(7.3 萬字規範性修訂基準與實施藍圖)*
 
-### 二、11 大研究領域專題 (Research Domains)
+### 二、17 大研究領域專題 (Research Domains)
 - **模型與架構層**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01: Long Context 與序列架構 (Attention, SSM, Ring)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02: 多層次壓縮技術 (Token, KV Cache, Context)]]
-- **資料、檢索與知識圖譜層**：
+- **檢索、知識抽取與結構化層**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03: 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
-  - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略、結構化知識擷取與證據治理 (Proposition, Typed Knowledge & Evidence Governance)]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取 (Proposition, Cross-chunk)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05: Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)]]
-- **記憶與階層推理層**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12: 知識擷取與類型化知識表示 (Knowledge Extraction & Typed Knowledge)]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13: 資訊保真與跨塊關聯整合 (Information Preservation & Cross-chunk Consolidation)]]
+- **記憶、推理與自適應控制層**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)|Domain 06: 外部記憶體架構 (MemGPT, A-MEM, Working Memory)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07: 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]
-- **長篇生成與智能體層**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 14 - Evidence Sufficiency & Adaptive Retrieval|Domain 14: 證據充分性與自適應檢索 (Evidence Sufficiency & Adaptive Retrieval)]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 15 - Temporal Conflict & Provenance-aware RAG|Domain 15: 時序衝突與來源仲裁 RAG (Temporal Conflict & Provenance-aware RAG)]]
+- **長篇生成、上下文利用與智能體層**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08: 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與自主研究 (Planning, Multi-Agent)|Domain 09: Agentic 工作流與自主研究 (Planning, Multi-Agent)]]
-- **評估、安全與前沿提案**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 16 - Context Utilization & Faithfulness|Domain 16: 上下文利用率與生成忠實度 (Context Utilization & Faithfulness)]]
+- **評估基準、系統工程與研究路線**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)|Domain 10: 評估基準、系統工程與安全 (Benchmarks & Safety)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 11 - 最具價值的研究方向與實驗設計 (Research Roadmap)|Domain 11: 最具價值的研究方向與實驗設計 (Research Roadmap)]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 17 - RAG Benchmarks & Evaluation Protocols|Domain 17: RAG 評測基準與評估協議 (RAG Benchmarks & Evaluation Protocols)]]
 
 ### 三、研究想法與待驗證提案 (Ideas & Hypotheses)
 - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses Index]]
