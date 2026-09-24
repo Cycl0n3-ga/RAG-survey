@@ -61,12 +61,12 @@ graph LR
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 1 & Figure 4 (Page 6-7): 在多跳知識基準 MuSiQue 上，HippoRAG 僅需單步圖擴散檢索即可達到與多輪 IRCoT 相當的召回率，推論延遲降低 10-30 倍。
+> **出處與評估條件**：Table 1 & Figure 4 (Page 6-7): HippoRAG 以單次 PPR-based retrieval 與多輪 IRCoT 等方法比較；論文摘要/實驗報告的是特定設定下約 10–20× lower cost 與 6–13× faster，而不是可泛化為所有情境的固定 10–30× latency 改善。
 
 ---
 
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：單次檢索即可捕捉多跳關聯，在 MuSiQue 與 2Wiki 基準上超越 IRCoT 且速度快 10-30 倍；缺點：高度依賴實體抽取的精確度，面對抽象非實體問題效果有所下降。
+優點：單次檢索即可捕捉多跳關聯，在 MuSiQue 與 2Wiki 基準上超越 IRCoT 且在論文特定比較中具顯著成本/速度優勢；缺點：高度依賴實體抽取的精確度，面對抽象非實體問題效果有所下降。
 
 ---
 
