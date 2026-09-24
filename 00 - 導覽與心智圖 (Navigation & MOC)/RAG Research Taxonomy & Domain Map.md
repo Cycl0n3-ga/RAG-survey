@@ -46,11 +46,11 @@ last_updated: "2026-09-24"
 | Answer | 25 Grounded Generation & Abstention | Survey-backed | Domain 03 / 10 |
 | | 26 Faithfulness & Claim-level Verification | **Survey-backed** | Domain 10 |
 | | 27 Citation & Attribution | **Survey-backed** | Domain 10 |
-| | 28 Long-form Report Generation | Method-backed; dedicated benchmark literature rapidly growing | Domain 08 |
+| | 28 Long-form Report Generation | Method-backed; dedicated benchmark literature rapidly growing; evidence-governed delivery remains **Idea** | Domain 08、Idea 05 |
 | | 29 Multimodal Document RAG | **Survey-backed** | Domain 11 / future domain |
 | Systems | 30 Agentic RAG & Evidence Memory | **Survey-backed** | Domain 06 / 09 |
 | | 31 RAG Systems & Cost Optimization | Survey-backed / systems literature | Domain 02 / 10 |
-| | 32 RAG Evaluation, Robustness & Error Attribution | **Survey-backed** for evaluation/trustworthiness; error attribution partly **Idea** | Domain 10 / Ideas 04 |
+| | 32 RAG Evaluation, Robustness & Error Attribution | **Survey-backed** for evaluation/trustworthiness; end-to-end error attribution and deterministic evidence governance partly **Idea** | Domain 10 / Ideas 04、05 |
 
 ## 二、Knowledge Extraction：不得再與 Chunking 混為一談
 
@@ -126,3 +126,5 @@ Chunk、Sentence、Proposition、Atomic Fact、Qualified Triple、Event、Claim�
 - [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
 - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
+- [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05 - Evidence-Governed RAG]]
+- [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 06 - 主流 RAG 框架生態與系統定位分析 (Framework Landscape & Positioning)|Idea 06 - Framework Landscape & Positioning]]
