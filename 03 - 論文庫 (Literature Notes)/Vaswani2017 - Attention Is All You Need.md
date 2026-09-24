@@ -1,27 +1,42 @@
 ---
+paper_id: "Vaswani2017_Attention"
 title: "Attention Is All You Need"
-authors: ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar", "Jakob Uszkoreit", "Llion Jones", "Aidan N. Gomez", "Łukasz Kaiser", "Illia Polosukhin"]
+authors:
+  - "Ashish Vaswani"
+  - "Noam Shazeer"
+  - "Niki Parmar"
+  - "Jakob Uszkoreit"
+  - "Llion Jones"
+  - "Aidan N. Gomez"
+  - "Łukasz Kaiser"
+  - "Illia Polosukhin"
 year: 2017
+publication_year: 2017
 venue: "NeurIPS 2017"
+doi: "10.5555/3295222.3295349"
 arxiv: "1706.03762"
 url: "https://arxiv.org/abs/1706.03762"
 pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
 tags:
-  - paper
-  - dense-attention---architecture-foundation
+  - "paper"
+  - "dense-attention---architecture-foundation"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Attention Is All You Need
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Vaswani2017_Attention`
 > - **作者**：Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin
-> - **年份 / 會議**：2017 (NeurIPS 2017)
+> - **預印本初次發布年份 (Preprint)**：2017
+> - **正式發表年份 / 會議或期刊 (Venue)**：2017 (NeurIPS 2017)
+> - **DOI**：10.5555/3295222.3295349
 > - **arXiv**：[1706.03762](https://arxiv.org/abs/1706.03762)
-> - **論文分類**：`Dense Attention / Architecture Foundation`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +44,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 傳統 RNN/LSTM 的循序特性使其無法平行計算，且在捕捉極長距離依賴時面臨梯度消失與記憶瓶頸；CNN 雖然可平行，但感受野擴展受限於卷積層數。
 
 ---
@@ -46,7 +61,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 2 (Page 8): 在 WMT 2014 英德翻譯取得 28.4 BLEU (刷新 SOTA，訓練成本僅 3.5 天 8x P100 GPU)；Table 1 (Page 6): 複雜度比較證明 Self-Attention 具備最低最大路徑長度 O(1)。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：全局交互能力極強、高度可平行運算；缺點：時間與記憶體複雜度皆為 $O(L^2)$，造成 Context Window 擴展至長文本時面臨極嚴重的運算與顯存瓶頸（二次方爆炸）。
 
 ---
@@ -56,7 +77,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

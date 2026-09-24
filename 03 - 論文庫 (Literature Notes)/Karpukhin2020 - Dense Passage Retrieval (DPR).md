@@ -1,27 +1,42 @@
 ---
+paper_id: "Karpukhin2020_DPR"
 title: "Dense Passage Retrieval for Open-Domain Question Answering"
-authors: ["Vladimir Karpukhin", "Barlas Oğuz", "Sewon Min", "Patrick Lewis", "Ledell Wu", "Sergey Edunov", "Danqi Chen", "Wen-tau Yih"]
+authors:
+  - "Vladimir Karpukhin"
+  - "Barlas Oğuz"
+  - "Sewon Min"
+  - "Patrick Lewis"
+  - "Ledell Wu"
+  - "Sergey Edunov"
+  - "Danqi Chen"
+  - "Wen-tau Yih"
 year: 2020
+publication_year: 2020
 venue: "EMNLP 2020"
+doi: null
 arxiv: "2004.04906"
 url: "https://arxiv.org/abs/2004.04906"
 pdf_file: "Papers/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
 tags:
-  - paper
-  - dense-dual-encoder-retrieval
+  - "paper"
+  - "dense-dual-encoder-retrieval"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Dense Passage Retrieval for Open-Domain Question Answering
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Karpukhin2020_DPR`
 > - **作者**：Vladimir Karpukhin, Barlas Oğuz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, Wen-tau Yih
-> - **年份 / 會議**：2020 (EMNLP 2020)
+> - **預印本初次發布年份 (Preprint)**：2020
+> - **正式發表年份 / 會議或期刊 (Venue)**：2020 (EMNLP 2020)
+> - **DOI**：無
 > - **arXiv**：[2004.04906](https://arxiv.org/abs/2004.04906)
-> - **論文分類**：`Dense Dual-Encoder Retrieval`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +44,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 傳統 BM25 等詞頻匹配演算法嚴重受限於同義詞替換（Vocabulary Mismatch）與語意隱式表達，無法精準捕捉長句子背後的意圖。
 
 ---
@@ -46,7 +61,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 2 (Page 5): 在 Top-20 檢索準確率上，DPR 達到 78.4%，大幅超越傳統強力 BM25 的 59.1% (提升近 20 個百分點)；確立向量雙塔檢索標準。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：語意泛化強、離線預算 Passage 向量後線上可用 FAISS 做亞毫秒級 ANN 檢索；缺點：雙塔在單一向量中過度壓縮整個段落，容易遺失專有名詞、代號與極細微數字細節。
 
 ---
@@ -56,7 +77,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

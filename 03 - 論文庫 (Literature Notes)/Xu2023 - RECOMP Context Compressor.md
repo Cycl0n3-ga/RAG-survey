@@ -1,8 +1,14 @@
 ---
+paper_id: "Xu2024_RECOMP"
 title: "RECOMP: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation"
-authors: ["Fangyuan Xu", "Weijia Shi", "Eunsol Choi"]
+authors:
+  - "Fangyuan Xu"
+  - "Weijia Shi"
+  - "Eunsol Choi"
 year: 2023
+publication_year: 2024
 venue: "ICLR 2024"
+doi: null
 arxiv: "2310.04408"
 url: "https://arxiv.org/abs/2310.04408"
 pdf_file: "Papers/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation.pdf"
@@ -10,19 +16,23 @@ domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
 tags:
-  - paper
-  - context-compression-(abstractive-&-extractive)
+  - "paper"
+  - "context-compression-(abstractive-&-extractive)"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # RECOMP: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Xu2024_RECOMP`
 > - **作者**：Fangyuan Xu, Weijia Shi, Eunsol Choi
-> - **年份 / 會議**：2023 (ICLR 2024)
+> - **預印本初次發布年份 (Preprint)**：2023
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICLR 2024)
+> - **DOI**：無
 > - **arXiv**：[2310.04408](https://arxiv.org/abs/2310.04408)
-> - **論文分類**：`Context Compression (Abstractive & Extractive)`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -30,7 +40,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 RAG 檢索出的多個文檔存在大量重複、相互衝突或與問題無關的噪音，若直接拼接餵入 LLM 會佔滿上下文並引發幻覺。
 
 ---
@@ -47,7 +57,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 2 (Page 7): 抽取式壓縮器將檢索段落壓縮至原本的 20%，生成準確率與全量段落相當；摘要式壓縮器在多文本問答中顯著降低幻覺率。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：語意連貫度遠高於 Token 刪減、資訊密度極高；缺點：需要額外訓練壓縮器模型，摘要過程可能產生二次幻覺（將原文件的細節篡改）。
 
 ---
@@ -57,7 +73,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]

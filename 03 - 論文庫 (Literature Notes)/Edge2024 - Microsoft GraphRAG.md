@@ -1,8 +1,19 @@
 ---
+paper_id: "Edge2024_GraphRAG"
 title: "From Local to Global: A Graph RAG Approach to Query-Focused Summarization"
-authors: ["Darren Edge", "Ha Trinh", "Newman Cheng", "Joshua Bradley", "Alex Chao", "Apurva Mody", "Steven Truitt", "Jonathan Larson"]
+authors:
+  - "Darren Edge"
+  - "Ha Trinh"
+  - "Newman Cheng"
+  - "Joshua Bradley"
+  - "Alex Chao"
+  - "Apurva Mody"
+  - "Steven Truitt"
+  - "Jonathan Larson"
 year: 2024
-venue: "Microsoft Research / arXiv 2024"
+publication_year: 2024
+venue: "Microsoft Research / arXiv"
+doi: null
 arxiv: "2404.16130"
 url: "https://arxiv.org/abs/2404.16130"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization.pdf"
@@ -10,19 +21,23 @@ domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]"
 tags:
-  - paper
-  - graph-rag---global-sensemaking
+  - "paper"
+  - "graph-rag---global-sensemaking"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # From Local to Global: A Graph RAG Approach to Query-Focused Summarization
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Edge2024_GraphRAG`
 > - **作者**：Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Jonathan Larson
-> - **年份 / 會議**：2024 (Microsoft Research / arXiv 2024)
+> - **預印本初次發布年份 (Preprint)**：2024
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (Microsoft Research / arXiv)
+> - **DOI**：無
 > - **arXiv**：[2404.16130](https://arxiv.org/abs/2404.16130)
-> - **論文分類**：`Graph RAG / Global Sensemaking`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -30,7 +45,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 標準 Vector RAG 面臨『局部事實檢索強，全域宏觀理解弱』的致命缺陷。對於『整份文件集討論的核心主題是什麼？』等全域性問題，Top-K 向量檢索完全失效。
 
 ---
@@ -47,7 +62,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 (Page 7): 在百萬字 Podcast 與新聞全域提問中，GraphRAG 社群摘要在全局理解完備度 (Comprehensiveness) 與多樣性上以 70%+ 的勝率壓倒傳統 Vector RAG。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：全域主題理解能力、跨實體關係推理能力遠超傳統 RAG；缺點：建索引過程需要極大量的 LLM API 呼叫，索引成本高達傳統 RAG 的數十倍。
 
 ---
@@ -57,7 +78,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]

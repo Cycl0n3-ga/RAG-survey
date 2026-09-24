@@ -1,27 +1,37 @@
 ---
+paper_id: "Mu2023_GistTokens"
 title: "Learning to Compress Prompts with Gist Tokens"
-authors: ["Jesse Mu", "Xiang Lisa Li", "Noah D. Goodman"]
+authors:
+  - "Jesse Mu"
+  - "Xiang Lisa Li"
+  - "Noah D. Goodman"
 year: 2023
+publication_year: 2023
 venue: "NeurIPS 2023"
+doi: null
 arxiv: "2304.08467"
 url: "https://arxiv.org/abs/2304.08467"
 pdf_file: "Papers/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]"
 tags:
-  - paper
-  - learned-representation-compression
+  - "paper"
+  - "learned-representation-compression"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Learning to Compress Prompts with Gist Tokens
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Mu2023_GistTokens`
 > - **作者**：Jesse Mu, Xiang Lisa Li, Noah D. Goodman
-> - **年份 / 會議**：2023 (NeurIPS 2023)
+> - **預印本初次發布年份 (Preprint)**：2023
+> - **正式發表年份 / 會議或期刊 (Venue)**：2023 (NeurIPS 2023)
+> - **DOI**：無
 > - **arXiv**：[2304.08467](https://arxiv.org/abs/2304.08467)
-> - **論文分類**：`Learned Representation Compression`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +39,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 現有壓縮依賴文字層面的刪除或重寫，而 Transformer 隱層維度本身具備更強大的資訊表徵潛力。
 
 ---
@@ -46,7 +56,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 (Page 6): 在 Alpaca 與 HumanEval 上將 Prompt 壓縮多達 26x，推論 FLOPs 降低 40%，且在未經微調的泛化任務上保留了 92% 的指令遵循能力。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：極致壓縮比（數百 token 壓成 1~2 個向量）、加速顯著；缺點：需修改模型訓練注意力遮罩、缺乏可解釋性，且複雜邏輯的多跳線索難以全部無失真編碼進固定向量。
 
 ---
@@ -56,7 +72,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

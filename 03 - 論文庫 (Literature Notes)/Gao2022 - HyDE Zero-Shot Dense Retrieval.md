@@ -1,27 +1,38 @@
 ---
+paper_id: "Gao2023_HyDE"
 title: "Precise Zero-Shot Dense Retrieval without Relevance Labels"
-authors: ["Luyu Gao", "Xueguang Ma", "Jimmy Lin", "Jamie Callan"]
+authors:
+  - "Luyu Gao"
+  - "Xueguang Ma"
+  - "Jimmy Lin"
+  - "Jamie Callan"
 year: 2022
+publication_year: 2023
 venue: "ACL 2023"
+doi: null
 arxiv: "2212.10496"
 url: "https://arxiv.org/abs/2212.10496"
 pdf_file: "Papers/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
 tags:
-  - paper
-  - query-expansion---hypothetical-generation
+  - "paper"
+  - "query-expansion---hypothetical-generation"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Precise Zero-Shot Dense Retrieval without Relevance Labels
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Gao2023_HyDE`
 > - **作者**：Luyu Gao, Xueguang Ma, Jimmy Lin, Jamie Callan
-> - **年份 / 會議**：2022 (ACL 2023)
+> - **預印本初次發布年份 (Preprint)**：2022
+> - **正式發表年份 / 會議或期刊 (Venue)**：2023 (ACL 2023)
+> - **DOI**：無
 > - **arXiv**：[2212.10496](https://arxiv.org/abs/2212.10496)
-> - **論文分類**：`Query Expansion / Hypothetical Generation`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +40,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 使用者的查詢（Query）通常只有一句短話，而目標文檔（Passage）往往是數百字長段落，二者在向量空間中存在嚴重的幾何分佈不對稱（Asymmetry）。
 
 ---
@@ -46,7 +57,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 (Page 5): 在沒有任何微調標籤的零樣本檢索 (Zero-shot) 下，HyDE 在 11 個不同領域的 TREC 數據集上全面擊敗 Contriever 與 BM25。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：零樣本（Zero-shot）檢索能力極強、無需訓練任何檢索模型；缺點：增加了一次 LLM 生成延遲與 API 費用，若模型產生嚴重的偏見反向誤導檢索目標。
 
 ---
@@ -56,7 +73,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

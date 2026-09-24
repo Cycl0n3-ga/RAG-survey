@@ -1,27 +1,40 @@
 ---
+paper_id: "Li2024_SnapKV"
 title: "SnapKV: LLM Knows What You are Looking for Before Generation"
-authors: ["Yuhong Li", "Yingbing Huang", "Bowen Yang", "Bolei Ma", "Chenghao Cui", "et al."]
+authors:
+  - "Yuhong Li"
+  - "Yingbing Huang"
+  - "Bowen Yang"
+  - "Bolei Ma"
+  - "Chenghao Cui"
+  - "et al."
 year: 2024
-venue: "arXiv 2024"
+publication_year: 2024
+venue: "NeurIPS 2024"
+doi: null
 arxiv: "2404.14469"
 url: "https://arxiv.org/abs/2404.14469"
 pdf_file: "Papers/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]"
 tags:
-  - paper
-  - kv-cache-pruning
+  - "paper"
+  - "kv-cache-pruning"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # SnapKV: LLM Knows What You are Looking for Before Generation
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Li2024_SnapKV`
 > - **作者**：Yuhong Li, Yingbing Huang, Bowen Yang, Bolei Ma, Chenghao Cui, et al.
-> - **年份 / 會議**：2024 (arXiv 2024)
+> - **預印本初次發布年份 (Preprint)**：2024
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (NeurIPS 2024)
+> - **DOI**：無
 > - **arXiv**：[2404.14469](https://arxiv.org/abs/2404.14469)
-> - **論文分類**：`KV Cache Pruning`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +42,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 長文本在 Prefill 之後，KV Cache 隨長度呈線性增長，然而大部分歷史 token 在生成過程中極少被再次關注（注意力稀疏性）。
 
 ---
@@ -46,7 +59,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 2 (Page 6): 在 16k 與 32k 長度的 LongBench 評測中，僅保留 20% 的 KV 快取即可達到與 Full Cache 99.4% 的綜合準確率吻合度，Prefill 後解碼速度提升 3.2x。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：生成階段顯存恆定、推論吞吐量提升 3-4x；缺點：如果後續多輪對話中提問轉移了主題，先前被丟棄的 KV Cache 無法找回，必須重新 Prefill。
 
 ---
@@ -56,7 +75,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

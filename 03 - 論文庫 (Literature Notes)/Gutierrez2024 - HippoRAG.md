@@ -1,8 +1,16 @@
 ---
+paper_id: "Gutierrez2024_HippoRAG"
 title: "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models"
-authors: ["Bernal Jiménez Gutiérrez", "Yiheng Shu", "Yu Gu", "Michihiro Yasunaga", "Yu Su"]
+authors:
+  - "Bernal Jiménez Gutiérrez"
+  - "Yiheng Shu"
+  - "Yu Gu"
+  - "Michihiro Yasunaga"
+  - "Yu Su"
 year: 2024
+publication_year: 2024
 venue: "NeurIPS 2024"
+doi: null
 arxiv: "2405.14831"
 url: "https://arxiv.org/abs/2405.14831"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models.pdf"
@@ -10,19 +18,23 @@ domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)|Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)]]"
 tags:
-  - paper
-  - neurobiologically-inspired-graph-memory
+  - "paper"
+  - "neurobiologically-inspired-graph-memory"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Gutierrez2024_HippoRAG`
 > - **作者**：Bernal Jiménez Gutiérrez, Yiheng Shu, Yu Gu, Michihiro Yasunaga, Yu Su
-> - **年份 / 會議**：2024 (NeurIPS 2024)
+> - **預印本初次發布年份 (Preprint)**：2024
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (NeurIPS 2024)
+> - **DOI**：無
 > - **arXiv**：[2405.14831](https://arxiv.org/abs/2405.14831)
-> - **論文分類**：`Neurobiologically-Inspired Graph Memory`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -30,7 +42,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 多跳複雜推理在傳統 RAG 中需要多次迭代呼叫 LLM，耗時且容易累積誤差；而全圖社群檢測成本又過於巨大。
 
 ---
@@ -47,7 +59,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 & Figure 4 (Page 6-7): 在多跳知識基準 MuSiQue 上，HippoRAG 僅需單步圖擴散檢索即可達到與多輪 IRCoT 相當的召回率，推論延遲降低 10-30 倍。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：單次檢索即可捕捉多跳關聯，在 MuSiQue 與 2Wiki 基準上超越 IRCoT 且速度快 10-30 倍；缺點：高度依賴實體抽取的精確度，面對抽象非實體問題效果有所下降。
 
 ---
@@ -57,7 +75,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)|Domain 06 - 外部記憶體架構 (MemGPT, A-MEM, Working Memory)]]

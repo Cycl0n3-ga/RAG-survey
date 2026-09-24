@@ -1,8 +1,16 @@
 ---
+paper_id: "Asai2024_SelfRAG"
 title: "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
-authors: ["Akari Asai", "Zeqiu Wu", "Yizhong Wang", "Avirup Sil", "Hannaneh Hajishirzi"]
+authors:
+  - "Akari Asai"
+  - "Zeqiu Wu"
+  - "Yizhong Wang"
+  - "Avirup Sil"
+  - "Hannaneh Hajishirzi"
 year: 2023
+publication_year: 2024
 venue: "ICLR 2024"
+doi: null
 arxiv: "2310.11511"
 url: "https://arxiv.org/abs/2310.11511"
 pdf_file: "Papers/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection.pdf"
@@ -10,19 +18,23 @@ domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)|Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)]]"
 tags:
-  - paper
-  - adaptive-rag---self-reflection
+  - "paper"
+  - "adaptive-rag---self-reflection"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Asai2024_SelfRAG`
 > - **作者**：Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, Hannaneh Hajishirzi
-> - **年份 / 會議**：2023 (ICLR 2024)
+> - **預印本初次發布年份 (Preprint)**：2023
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICLR 2024)
+> - **DOI**：無
 > - **arXiv**：[2310.11511](https://arxiv.org/abs/2310.11511)
-> - **論文分類**：`Adaptive RAG / Self-Reflection`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -30,7 +42,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 傳統 RAG 無論問題難易與自身知識庫存，盲目觸發檢索；且對檢索出的低品質文檔缺乏批判能力，容易被噪音誤導。
 
 ---
@@ -47,7 +59,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 (Page 6): 在 Pub/Bio/OpenQA 基準上，Self-RAG 7B 模型擊敗了未檢索的 70B 模型與常規 RAG 系統；生成引文忠實度 (Faithfulness) 提升超過 30%。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：動態自適應檢索、大幅降低幻覺率、顯著提高回答忠實度（Faithfulness）；缺點：需要對模型進行專門指令微調與強化學習，增加推論時解碼複雜度。
 
 ---
@@ -57,7 +75,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)|Domain 10 - 評估基準、系統工程與安全 (Benchmarks & Safety)]]

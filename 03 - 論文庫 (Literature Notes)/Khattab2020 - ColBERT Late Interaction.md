@@ -1,27 +1,36 @@
 ---
+paper_id: "Khattab2020_ColBERT"
 title: "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT"
-authors: ["Omar Khattab", "Matei Zaharia"]
+authors:
+  - "Omar Khattab"
+  - "Matei Zaharia"
 year: 2020
+publication_year: 2020
 venue: "SIGIR 2020"
+doi: "10.1145/3397271.3401075"
 arxiv: "2004.12832"
 url: "https://arxiv.org/abs/2004.12832"
 pdf_file: "Papers/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
 tags:
-  - paper
-  - multi-vector-late-interaction
+  - "paper"
+  - "multi-vector-late-interaction"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Khattab2020_ColBERT`
 > - **作者**：Omar Khattab, Matei Zaharia
-> - **年份 / 會議**：2020 (SIGIR 2020)
+> - **預印本初次發布年份 (Preprint)**：2020
+> - **正式發表年份 / 會議或期刊 (Venue)**：2020 (SIGIR 2020)
+> - **DOI**：10.1145/3397271.3401075
 > - **arXiv**：[2004.12832](https://arxiv.org/abs/2004.12832)
-> - **論文分類**：`Multi-Vector Late Interaction`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +38,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 DPR 單向量壓縮嚴重失真；而 Cross-Encoder（將 Query 與 Document 拼接）雖然精準但無法離線預先構建向量索引，計算成本為 $O(N)$ 極高。
 
 ---
@@ -46,7 +55,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 & Figure 2 (Page 6-7): 在 MS MARCO 檢索基準上，ColBERT MRR@10 達到 36.0 (與 Cross-Encoder 相當)，且檢索延遲從秒級縮短至 13 毫秒，快 170x。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：細粒度關鍵字與語意兼顧，檢索精度大幅超越 DPR，顯著減少資訊丟失；缺點：存儲所有 Token 的嵌入向量導致索引體積比一般向量庫大 5-10 倍（後續由 ColBERTv2 殘差壓縮改善）。
 
 ---
@@ -56,7 +71,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

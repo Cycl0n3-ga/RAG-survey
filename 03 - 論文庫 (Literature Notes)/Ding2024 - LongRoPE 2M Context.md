@@ -1,27 +1,42 @@
 ---
+paper_id: "Ding2024_LongRoPE"
 title: "LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens"
-authors: ["Yiran Ding", "Li Lyna Zhang", "Chengruidong Zhang", "Yuanyuan Xu", "Ning Shang", "Jiahang Xu", "Fan Yang", "Mao Yang"]
+authors:
+  - "Yiran Ding"
+  - "Li Lyna Zhang"
+  - "Chengruidong Zhang"
+  - "Yuanyuan Xu"
+  - "Ning Shang"
+  - "Jiahang Xu"
+  - "Fan Yang"
+  - "Mao Yang"
 year: 2024
-venue: "Microsoft Research / ICML 2024"
+publication_year: 2024
+venue: "ICML 2024"
+doi: null
 arxiv: "2402.13753"
 url: "https://arxiv.org/abs/2402.13753"
 pdf_file: "Papers/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
 tags:
-  - paper
-  - positional-encoding-extension
+  - "paper"
+  - "positional-encoding-extension"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Ding2024_LongRoPE`
 > - **作者**：Yiran Ding, Li Lyna Zhang, Chengruidong Zhang, Yuanyuan Xu, Ning Shang, Jiahang Xu, Fan Yang, Mao Yang
-> - **年份 / 會議**：2024 (Microsoft Research / ICML 2024)
+> - **預印本初次發布年份 (Preprint)**：2024
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICML 2024)
+> - **DOI**：無
 > - **arXiv**：[2402.13753](https://arxiv.org/abs/2402.13753)
-> - **論文分類**：`Positional Encoding Extension`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +44,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 標準 RoPE 外推會導致注意力分配劇烈混亂，而傳統線性插值（PI）或 YaRN 在極限外推比例（如 8x 以上）時高頻與低頻維度的插值嚴重破壞短距離語言建模能力。
 
 ---
@@ -46,7 +61,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 & Figure 3 (Page 6-7): 將 LLaMA2-7B 與 Mistral 原生窗口成功擴展至 2048k (2M) tokens；在 2M 長度 Passkey 檢索取得 99.8% 準確率，微調僅消耗 10 億 token。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：成本極低（微調 token 量極少）、外推長度達 2M；缺點：位置編碼插值僅解決了模型『看得懂位置』，不代表模型具備在 2M 長度下不遺忘、複雜多跳邏輯推理的能力。
 
 ---
@@ -56,7 +77,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

@@ -1,27 +1,41 @@
 ---
+paper_id: "Liu2024_KIVI"
 title: "KIVI: A Tuning-Free Asymmetric 2-bit Quantization for KV Cache"
-authors: ["Zirui Liu", "Jiayi Yuan", "Hongye Jin", "Shaochen Zhong", "Zhaozhuo Xu", "Vladimir Braverman", "Xia Hu"]
+authors:
+  - "Zirui Liu"
+  - "Jiayi Yuan"
+  - "Hongye Jin"
+  - "Shaochen Zhong"
+  - "Zhaozhuo Xu"
+  - "Vladimir Braverman"
+  - "Xia Hu"
 year: 2024
+publication_year: 2024
 venue: "ICML 2024"
+doi: null
 arxiv: "2402.02750"
 url: "https://arxiv.org/abs/2402.02750"
 pdf_file: "Papers/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]"
 tags:
-  - paper
-  - kv-cache-quantization
+  - "paper"
+  - "kv-cache-quantization"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # KIVI: A Tuning-Free Asymmetric 2-bit Quantization for KV Cache
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Liu2024_KIVI`
 > - **作者**：Zirui Liu, Jiayi Yuan, Hongye Jin, Shaochen Zhong, Zhaozhuo Xu, Vladimir Braverman, Xia Hu
-> - **年份 / 會議**：2024 (ICML 2024)
+> - **預印本初次發布年份 (Preprint)**：2024
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICML 2024)
+> - **DOI**：無
 > - **arXiv**：[2402.02750](https://arxiv.org/abs/2402.02750)
-> - **論文分類**：`KV Cache Quantization`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +43,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 長文本推論時，KV Cache 的顯存佔用遠遠超過模型權重本身，限制了單卡批次大小（Batch Size）與最大上下文長度。
 
 ---
@@ -46,7 +60,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 & Figure 4 (Page 6-7): 將 LLaMA-7B/13B/70B 的 KV 快取無損量化至 2-bit，單張 A100-80GB 推論上下文長度從 32k 暴增至 128k+，推論吞吐量提升 2.6x ~ 3.8x。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：無需重新訓練、即插即用、顯存節省極大、長文本準確率幾乎無損；缺點：引入了 Dequantization 的計算開銷，對極低延遲的短文本任務加速有限。
 
 ---
@@ -56,7 +76,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

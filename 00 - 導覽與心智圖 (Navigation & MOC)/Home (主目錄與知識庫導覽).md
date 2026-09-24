@@ -24,6 +24,7 @@ RAG (Obsidian Vault)
 ├── 01 - 深度研究報告 (Deep Research Reports)  <-- 5 萬字完整技術全景與文獻評析
 ├── 02 - 研究領域專題 (Research Domains)       <-- 11 個細分技術領域專題剖析
 ├── 03 - 論文庫 (Literature Notes)             <-- 34 篇論文結構化筆記與雙向連結
+└── Papers/                                  <-- 34 篇原始論文 PDF 文件
 ├── Papers/                                  <-- 34 篇原始論文 PDF 文件
 └── AGENTS.md / GEMINI.md                    <-- AI Agent 核心協作守則 (6大規範)
 ```

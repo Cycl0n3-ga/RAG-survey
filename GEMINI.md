@@ -1,9 +1,11 @@
 # Agent 工作守則與專案注意事項 (Project Guidelines for AI Agents)
 
 本專案為 **LLM 超長文件處理、RAG、知識圖譜與長篇生成技術全景知識庫**。
-所有在此專案中工作的 AI Agent（包含 Antigravity、Gemini、Claude、Cursor 等）**必須嚴格遵守以下 6 大核心工作守則**：
+所有在此專案中工作的 AI Agent（包含 Antigravity、Gemini、Claude、Cursor 等）**必須嚴格遵守以下核心工作守則與標準化規範**。
 
 ---
+
+## 🎯 核心工作守則 (Core Operational Principles)
 
 ### 1. 分支操作原則 (Branch Policy)
 - **可以直接在 `master` 分支上操作**。
@@ -25,26 +27,111 @@
   ```
 - 嚴禁作業完成後將未提交的修改留在本地，確保遠端 GitHub 儲存庫始終具備最新的研究筆記與檔案狀態。
 
-### 4. 參考資料必須完備無缺漏 (Comprehensive & Exhaustive References)
-- **引用的文獻、論文、模型、年份、會議、連結與資料來源必須嚴格精確，絕不可遺漏或簡化**。
-- 若論文有 arXiv ID、ACL Anthology 連結或官方發布頁面，必須一併提供完整的永久連結。
-- 新增論文時，必須同步下載原始 PDF 檔案至 `Papers/` 對應的分類子資料夾，並在 `03 - 論文庫 (Literature Notes)/` 中建立對應的結構化筆記。
-
-### 5. 雙向交叉核對內容正確性 (Bidirectional Verification)
-- **嚴格驗證事實與推論的雙向一致性**：
-  - 確保筆記中的核心宣稱（Claims）與原始論文（Source Papers）的實驗數據、方法描述完全吻合，嚴禁臆測、過度推論或張冠李戴。
-  - 交叉核對內部雙向連結（Obsidian Wikilinks `[[...]]`），確保筆記與 PDF 相對路徑正確無誤，無懸空斷鏈（Dangling Links）。
-  - 對於有爭議的技術對比（例如 Long Context vs. RAG、SSM vs. Transformer），必須平衡呈現各自的優劣勢與適用邊界，提供完整的 Trade-offs 分析。
-
-### 6. 存疑必問，正確性至上 (Clarify Doubts, Accuracy is Paramount)
+### 4. 存疑必問，正確性至上 (Clarify Doubts, Accuracy is Paramount)
 - **若對使用者的需求、格式偏好、技術細節或資料來源存在任何懷疑或不確定性，務必主動向使用者詢問釐清，切勿自行腦補或做未經證實的假設**。
 - **本專案的核心價值在於學術與工業實踐的高準確度**，正確性永遠高於單純的生成速度。
 
 ---
 
-### 📂 目錄結構規範 (Directory Structure Convention)
+## 📚 可驗證的引用標準 (Verifiable Citation & Reference Standards)
+
+1. **原始來源核對**：
+   - 論文的標題、作者列表、發表年份、發表會議/期刊（Venue）、DOI 或 arXiv ID **必須由原始文獻或官方學術索引（arXiv, ACL Anthology, IEEE, ACM, OpenReview 等）直接核對**。
+2. **版本區分機制（嚴禁混淆發表年份）**：
+   - 必須嚴格區分**預印本（Preprint）**、**正式發表版本（Conference / Journal Published Version）**與**後續擴充修訂版本**。
+   - **不得將 arXiv 初次上傳年份直接當成正式會議/期刊發表年份**（例如：某論文 2023 年掛在 arXiv，2024 年被 ICLR 錄取接收，其預印年份為 2023，正式發表年份為 2024）。
+3. **實驗數據可溯源性**：
+   - 筆記中記錄的所有關鍵實驗數據與基準表現，**應標註對應論文中的具體頁碼、表格編號（Table X）或圖表（Figure Y）**，並註記其評估條件（如模型尺寸、測試長度、Few-shot 設定等）。
+4. **誠實原則（嚴禁充數）**：
+   - 無法取得論文 PDF 全文時，**不得假裝已閱讀全文**，嚴禁下載與該論文無關的檔案或空檔案充數。若僅能獲取 Abstract，必須在筆記中如實標註為「僅基於摘要整理，全文待查驗」。
+5. **查重與版本比對**：
+   - 新增論文前，必須先以 **DOI、arXiv ID 或正式學術識別碼** 進行查重。
+   - 特別針對預印本、會議論文與後續擴充的期刊版本，**絕不能只憑標題或作者相似就認定內容完全相同**，必須核查章節、定理證明與實驗數據之差異。
+
+---
+
+## 📝 論文筆記標準化 (Literature Note Standardization)
+
+新建立與維護的論文筆記**必須遵循統一的 YAML Frontmatter 及 Markdown 正文結構**。
+
+### 1. YAML Frontmatter 規範
+Frontmatter 必須使用固定欄位名稱與一致的資料型別。不得因為新增欄位而任意刪除舊筆記中的既有 metadata。
+
+```yaml
+---
+paper_id: "Vaswani2017_Attention"                       # 格式：[第一作者姓氏][年份]_[簡短識別名稱]
+title: "Attention Is All You Need"                     # 論文完整正式標題 (字串)
+authors:                                               # 作者完整陣列 (List of strings)
+  - "Ashish Vaswani"
+  - "Noam Shazeer"
+  - "Niki Parmar"
+year: 2017                                             # 預印本/初次發布年份 (整數)
+publication_year: 2017                                 # 正式出版/會議舉辦年份 (整數，若未正式出版填 null)
+venue: "NeurIPS 2017"                                  # 正式發表會議或期刊名稱 (字串，若僅為預印本填 "arXiv")
+doi: "10.5555/3295222.3295349"                         # 數位物件識別碼 (字串，無則填 null)
+arxiv: "1706.03762"                                    # arXiv ID (字串，無則填 null)
+url: "https://arxiv.org/abs/1706.03762"                # 官方發布或 arXiv 永久連結 (URL 字串)
+pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need.pdf" # 本地相對路徑
+domains:                                               # 所屬專題領域 (List of Wikilinks)
+  - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
+tags:                                                  # 標籤 (List of tags)
+  - paper
+  - dense-attention
+verification_status: "verified"                        # 驗證狀態：verified (已比對原文全文) / pending_verification (待驗證) / abstract_only (僅摘要)
+last_verified: 2026-09-24                              # 最後核對日期 (YYYY-MM-DD)
+---
+```
+
+### 2. 論文筆記正文必備結構 (Mandatory Sections)
+論文筆記正文**至少應完整包含以下 7 大核心板塊**。無法取得證據的項目應明確標註「待驗證」，**嚴禁為了填滿模板而主觀臆測或編造內容**：
+
+1. **一話摘要 (TL;DR)**：一句話精準概括論文的核心貢獻與關鍵結論。
+2. **研究背景與問題定義 (Problem Statement)**：原始作者試圖解決的核心痛點、現有方法瓶頸與研究假設。
+3. **核心方法與技術架構 (Methodology & Architecture)**：具體演算法、數學公式、系統架構圖（Mermaid）與關鍵模組設計。
+4. **主要實驗結果與證據 (Empirical Results & Evidence)**：
+   - 記錄關鍵 Benchmark 分數；
+   - **必須明確指出數據出處（如：Table 2, Page 6）**；
+   - 註明評估之基準模型、Context 長度與硬體限制條件。
+5. **優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)**：客觀剖析其技術代價（例如：計算量增加、顯存負擔、對特定任務的脆弱性）。
+6. **對本專案研究領域的實際意義 (Implications for Research Domains)**：該技術在長文本處理、RAG、記憶體或長篇撰寫系統中的定位與借鑑價值。
+7. **原始來源及相關筆記連結 (Sources & Related Notes)**：
+   - 連結至本地 PDF：`[[Papers/...|開啟本地 PDF 檔案]]`；
+   - 關聯之領域專題與同類/前驅/後繼論文筆記。
+
+---
+
+## ⚖️ 技術比較與 Trade-offs 規範 (Technical Comparisons & Trade-offs)
+
+本知識庫嚴禁非學術性的「踩一捧一」或缺乏邊界的定性宣稱。在比較不同技術方案時，必須遵守以下規範：
+
+### 1. 明確界定比較條件
+針對以下典型技術對比（但不限於）：
+- **Long Context vs. RAG**
+- **Dense Retrieval vs. Sparse Retrieval**
+- **GraphRAG vs. Conventional Vector RAG**
+- **Transformer vs. State Space Models (SSM/Mamba)**
+
+必須在報告與專題中逐一詳盡對比下列 6 大維度：
+1. **適用任務與資料集**（Task & Dataset 特性，如 Factoid QA vs. Global Summarization vs. Multi-hop Reasoning）。
+2. **模型規模及上下文長度**（Model Parameter Scale & Tested Context Length）。
+3. **硬體資源與推論成本**（GPU 要求、FLOPs、API 成本）。
+4. **記憶體需求、延遲及吞吐量**（KV Cache VRAM 佔用、Time-to-First-Token、Tokens/Second）。
+5. **正確性、檢索品質及生成品質**（Recall, Precision, Faithfulness, Hallucination Rate）。
+6. **方法的限制、失效情境與工程複雜度**（Failure Modes, Indexing Complexity, Maintenance Cost）。
+
+### 2. 嚴格對照原則與禁令
+- 🚫 **禁止無條件跨條件比較**：禁止將不同資料集、不同模型規模或不同評估條件下的分數直接作為技術優劣的證明。
+- ⚠️ **明確標記「不可直接比較」**：若對比的兩組數據來自不同實驗環境，必須在表格與正文中明確醒目標註「不可直接比較（Incomparable Conditions）」，並陳述其變量差異。
+- 🚫 **禁止過度推廣**：不得將特定實驗（如合成的單針大海撈針任務）的結果無條件推廣至所有實際使用情境。
+- 💡 **技術建議必須附帶邊界條件**：任何技術選型推薦（如「何時選用 GraphRAG」）必須明確附帶其適用的先決條件、資源門檻與不適用場景。
+
+---
+
+## 📂 目錄結構規範 (Directory Structure Convention)
+
 - `00 - 導覽與心智圖 (Navigation & MOC)/`：存放全景 MOC、主目錄與技術選型權衡筆記。
 - `01 - 深度研究報告 (Deep Research Reports)/`：存放完整深度調研報告與對話存檔。
 - `02 - 研究領域專題 (Research Domains)/`：存放各細分技術領域專題分析。
-- `03 - 論文庫 (Literature Notes)/`：存放各篇論文的結構化筆記。
-- `Papers/`：存放依大類分類的論文 PDF 全文，檔名格式統一為 `(會議/期刊 發表年月) 論文名稱.pdf`。
+- `03 - 論文庫 (Literature Notes)/`：存放各篇論文標準化結構筆記。
+- `Papers/`：存放依大類分類的論文 PDF 全文，檔名格式統一為：
+  `Papers/[大類子資料夾]/(會議/期刊 發表年月) 論文名稱.pdf`

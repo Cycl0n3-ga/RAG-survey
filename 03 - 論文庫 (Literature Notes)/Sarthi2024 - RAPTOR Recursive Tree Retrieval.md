@@ -1,27 +1,40 @@
 ---
+paper_id: "Sarthi2024_RAPTOR"
 title: "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval"
-authors: ["Parth Sarthi", "Salman Abdullah", "Aditi Tuli", "Shubham Khanna", "Anna Goldie", "Christopher D. Manning"]
+authors:
+  - "Parth Sarthi"
+  - "Salman Abdullah"
+  - "Aditi Tuli"
+  - "Shubham Khanna"
+  - "Anna Goldie"
+  - "Christopher D. Manning"
 year: 2024
-venue: "Stanford / ICLR 2024"
+publication_year: 2024
+venue: "ICLR 2024"
+doi: null
 arxiv: "2401.18059"
 url: "https://arxiv.org/abs/2401.18059"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]"
 tags:
-  - paper
-  - recursive-summary-tree
+  - "paper"
+  - "recursive-summary-tree"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Sarthi2024_RAPTOR`
 > - **作者**：Parth Sarthi, Salman Abdullah, Aditi Tuli, Shubham Khanna, Anna Goldie, Christopher D. Manning
-> - **年份 / 會議**：2024 (Stanford / ICLR 2024)
+> - **預印本初次發布年份 (Preprint)**：2024
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICLR 2024)
+> - **DOI**：無
 > - **arXiv**：[2401.18059](https://arxiv.org/abs/2401.18059)
-> - **論文分類**：`Recursive Summary Tree`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +42,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 長篇書籍、超長論文包含不同層次的語義結構（段落、章節、全書主題），扁平的 Chunking 只能檢索局部碎片，無法回答橫跨全書的宏觀問題。
 
 ---
@@ -46,7 +59,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 & Table 2 (Page 6-7): 在 QuALITY 超長小說選擇題數據集上達到 82.6% 準確率 (刷新 SOTA)；證明全層坍縮樹狀檢索在長文本全局問答上具備決定性優勢。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：在 QuALITY、NarrativeQA 等超長篇小說/報告問答基準上大幅刷新 SOTA；缺點：建樹需要多輪摘要呼叫，若底層摘要產生偏差，上層節點會持續擴大該錯誤。
 
 ---
@@ -56,7 +75,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]

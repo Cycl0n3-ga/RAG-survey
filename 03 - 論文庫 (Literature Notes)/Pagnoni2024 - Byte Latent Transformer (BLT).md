@@ -1,8 +1,17 @@
 ---
+paper_id: "Pagnoni2024_BLT"
 title: "Byte Latent Transformer: Patches Scale Better Than Tokens"
-authors: ["Artidoro Pagnoni", "Ram Pasunuru", "Pedro Rodriguez", "John Nguyen", "Benjamin Muller", "et al."]
+authors:
+  - "Artidoro Pagnoni"
+  - "Ram Pasunuru"
+  - "Pedro Rodriguez"
+  - "John Nguyen"
+  - "Benjamin Muller"
+  - "et al."
 year: 2024
-venue: "Meta FAIR / arXiv 2024"
+publication_year: 2024
+venue: "Meta FAIR / arXiv"
+doi: null
 arxiv: "2412.09871"
 url: "https://arxiv.org/abs/2412.09871"
 pdf_file: "Papers/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens.pdf"
@@ -10,19 +19,23 @@ domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]"
 tags:
-  - paper
-  - byte-level-patching---tokenizer-free
+  - "paper"
+  - "byte-level-patching---tokenizer-free"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Byte Latent Transformer: Patches Scale Better Than Tokens
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Pagnoni2024_BLT`
 > - **作者**：Artidoro Pagnoni, Ram Pasunuru, Pedro Rodriguez, John Nguyen, Benjamin Muller, et al.
-> - **年份 / 會議**：2024 (Meta FAIR / arXiv 2024)
+> - **預印本初次發布年份 (Preprint)**：2024
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (Meta FAIR / arXiv)
+> - **DOI**：無
 > - **arXiv**：[2412.09871](https://arxiv.org/abs/2412.09871)
-> - **論文分類**：`Byte-level Patching / Tokenizer-Free`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -30,7 +43,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 固定詞表 Tokenizer 存在跨語言不平等、拼寫脆弱、領域泛化差等問題，且將長文本機械化切片，無法在複雜長句中靈活分配計算資源。
 
 ---
@@ -47,7 +60,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 2 (Page 8): 於相同推論 FLOPs 下，BLT 在英文與跨語言長文本建模中 Perplexity 顯著優於 LLaMA-3 Tokenizer 基準，且對字符隨機噪聲具備極強魯棒性。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：徹底告別 Tokenizer 偏見、高壓縮比、長文本在非結構化資料下更穩健；缺點：需要從頭預訓練全新的基座模型，無法直接套用於現有 LLaMA/GPT 架構。
 
 ---
@@ -57,7 +76,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)|Domain 02 - 多層次壓縮技術 (Token, KV Cache, Context)]]

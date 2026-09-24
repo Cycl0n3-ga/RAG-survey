@@ -1,8 +1,15 @@
 ---
+paper_id: "Trivedi2023_IRCoT"
 title: "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions"
-authors: ["Harsh Trivedi", "Niranjan Balasubramanian", "Tushar Khot", "Ashish Sabharwal"]
+authors:
+  - "Harsh Trivedi"
+  - "Niranjan Balasubramanian"
+  - "Tushar Khot"
+  - "Ashish Sabharwal"
 year: 2022
+publication_year: 2023
 venue: "ACL 2023"
+doi: null
 arxiv: "2212.10509"
 url: "https://arxiv.org/abs/2212.10509"
 pdf_file: "Papers/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions.pdf"
@@ -10,19 +17,23 @@ domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]"
 tags:
-  - paper
-  - multi-hop-reasoning---iterative-retrieval
+  - "paper"
+  - "multi-hop-reasoning---iterative-retrieval"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Trivedi2023_IRCoT`
 > - **作者**：Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, Ashish Sabharwal
-> - **年份 / 會議**：2022 (ACL 2023)
+> - **預印本初次發布年份 (Preprint)**：2022
+> - **正式發表年份 / 會議或期刊 (Venue)**：2023 (ACL 2023)
+> - **DOI**：無
 > - **arXiv**：[2212.10509](https://arxiv.org/abs/2212.10509)
-> - **論文分類**：`Multi-Hop Reasoning / Iterative Retrieval`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -30,7 +41,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 標準 RAG 採用單次檢索（One-shot Retrieval），然而在複雜長文問題中，後續線索必須依賴前面的推理結果才能得知（如『A 公司的母公司的創辦人是誰？』）。
 
 ---
@@ -47,7 +58,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 2 (Page 6): 在 HotpotQA 與 2WikiMultihopQA 等複雜多跳問答數據集上，IRCoT 的多跳檢索召回率與最終 QA 準確率較單步 RAG 提升高達 15-21 個 F1 分數。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：在 HotpotQA、2WikiMultiHop 等多跳長文問答基準上大幅擊敗單次檢索；缺點：多輪 LLM 呼叫延遲較高，且如果中間某一跳檢索引入錯誤雜訊，容易發生錯誤傳播（Error Cascade）。
 
 ---
@@ -57,7 +74,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]

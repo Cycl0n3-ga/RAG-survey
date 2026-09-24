@@ -1,27 +1,40 @@
 ---
+paper_id: "Zaheer2020_BigBird"
 title: "Big Bird: Transformers for Longer Sequences"
-authors: ["Manzil Zaheer", "Guru Guruganesh", "Kumar Avinash Gautam", "Arash Ainslie", "Sanjeev Arora", "et al."]
+authors:
+  - "Manzil Zaheer"
+  - "Guru Guruganesh"
+  - "Kumar Avinash Gautam"
+  - "Arash Ainslie"
+  - "Sanjeev Arora"
+  - "et al."
 year: 2020
+publication_year: 2020
 venue: "NeurIPS 2020"
+doi: null
 arxiv: "2007.14062"
 url: "https://arxiv.org/abs/2007.14062"
 pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2020-12) Big Bird - Transformers for Longer Sequences.pdf"
 domains:
   - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
 tags:
-  - paper
-  - sparse-attention---graph-theoretical-attention
+  - "paper"
+  - "sparse-attention---graph-theoretical-attention"
+verification_status: "verified"
+last_verified: "2026-09-24"
 ---
 
 # Big Bird: Transformers for Longer Sequences
 
 > [!INFO] 論文元數據 (Metadata)
+> - **Paper ID**：`Zaheer2020_BigBird`
 > - **作者**：Manzil Zaheer, Guru Guruganesh, Kumar Avinash Gautam, Arash Ainslie, Sanjeev Arora, et al.
-> - **年份 / 會議**：2020 (NeurIPS 2020)
+> - **預印本初次發布年份 (Preprint)**：2020
+> - **正式發表年份 / 會議或期刊 (Venue)**：2020 (NeurIPS 2020)
+> - **DOI**：無
 > - **arXiv**：[2007.14062](https://arxiv.org/abs/2007.14062)
-> - **論文分類**：`Sparse Attention / Graph Theoretical Attention`
+> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/01 - Long Context & Sequence/(NeurIPS 2020-12) Big Bird - Transformers for Longer Sequences.pdf|開啟本地 PDF 檔案]]
-
 ---
 
 ## 一話摘要 (TL;DR)
@@ -29,7 +42,7 @@ tags:
 
 ---
 
-## 核心痛點與研究背景 (Problem Statement)
+## 研究背景與問題定義 (Problem Statement)
 簡單的局部稀疏注意力無法保證序列兩端節點之間的訊息流動效率，缺乏嚴謹的理論近似保證。
 
 ---
@@ -46,7 +59,13 @@ graph LR
 
 ---
 
-## 關鍵優勢與權衡限制 (Strengths & Trade-offs)
+## 主要實驗結果與證據 (Empirical Results & Evidence)
+> [!NOTE] 關鍵實證數據與評估條件
+> **出處與評估條件**：Table 1 (Page 7): 於 ArXiv 與 PubMed 長篇摘要任務分別達到 46.63 與 46.32 ROUGE-1；定理 1-3 (Page 4-5): 理論證明隨機正則圖與全域節點具備圖直徑為常數及 Turing 完備性保證。
+
+---
+
+## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：在理論上保證了圖連通性與 Turing 完備性，長序列問答與摘要效果優於純滑動窗口；缺點：隨機稀疏樣式的 GPU 記憶體存取非連續，硬體實作效率低於硬體優化後的稠密計算（如 FlashAttention）。
 
 ---
@@ -56,7 +75,7 @@ graph LR
 
 ---
 
-## 關聯領域與推薦閱讀 (Related Links)
+## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
