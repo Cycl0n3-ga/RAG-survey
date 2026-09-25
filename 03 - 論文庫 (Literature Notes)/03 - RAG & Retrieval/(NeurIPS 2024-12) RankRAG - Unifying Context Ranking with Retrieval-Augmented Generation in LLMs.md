@@ -17,8 +17,8 @@ doi: null
 arxiv: "2407.02485"
 url: "https://arxiv.org/abs/2407.02485"
 pdf_file: "Papers/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs.pdf"
-domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)]]"
+domains: []
+- "[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 16 - Context 應用與 Faithfulness 監控 (Lost in the Middle, Attribution)|Domain 16 - Context 應用與 Faithfulness 監控 (Lost in the Middle, Attribution)]]"
 tags:
   - paper
