@@ -198,7 +198,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 02 (上下文壓縮與 KV Cache 管理)**：
+1. **A02 (Context/KV Compression & Inference Efficiency)**：
    H2O 是現代動態 KV Cache 驅逐（Eviction-based Compression）的奠基之作，啟發了後續的 Scissorhands、StreamingLLM、SnapKV 等大量快取壓縮工作。
 2. **工業級部署與長文本 RAG Serving**：
    在 RAG 系統的生成階段，檢索到的大量段落往往導致輸入 context 突破 4k–16k tokens。H2O 提供了一種在保持 Generation 質量的同時，使部署服務具備高並發抗壓能力的關鍵工程解決方案。
