@@ -177,8 +177,8 @@ Re² Bench 包含 130 萬條真實時序實例，涵蓋三大時效衝突領域�
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 15 (Temporal Conflict & Provenance-aware RAG)**：提供了處理文檔版本迭代與時序衝突的標準設計範式，證明「時序解析」必須嵌入向量空間而非僅作為硬性 SQL filter。
-2. **Domain 17 (RAG Benchmarks & Evaluation Protocols)**：Re² Bench 確立了時間敏感型 RAG 評測的標準協議，證明傳統以靜態維基百科為主的基準（如 SQuAD, NQ）會嚴重掩蓋真實世界的時序幻覺。
+1. **D08 (Temporal Conflict & Provenance Resolution)**：提供了處理文檔版本迭代與時序衝突的標準設計範式，證明「時序解析」必須嵌入向量空間而非僅作為硬性 SQL filter。
+2. **D13 (RAG Evaluation & Failure Attribution)**：Re² Bench 確立了時間敏感型 RAG 評測的標準協議，證明傳統以靜態維基百科為主的基準（如 SQuAD, NQ）會嚴重掩蓋真實世界的時序幻覺。
 
 ---
 
