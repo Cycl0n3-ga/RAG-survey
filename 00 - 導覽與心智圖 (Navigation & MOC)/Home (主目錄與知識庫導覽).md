@@ -58,8 +58,8 @@ taxonomy_version: "v2"
 
 ## Literature Corpus
 
-- **125** dedicated literature notes
-- **121** local PDFs + **4** notes linked to official remote full text
+- **126** dedicated literature notes
+- **121** local PDFs + **5** notes linked to official remote full text
 - 6 storage folders: Long Context, Compression/KV, RAG/Retrieval, Knowledge/Graph, Memory/Agents, Benchmarks/Evaluation
 - 這 6 個資料夾只是 storage categories，**不是 Research Domains**
 

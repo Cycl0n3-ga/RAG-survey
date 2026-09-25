@@ -64,10 +64,10 @@ Research Domains
 | D07 | 3 |
 | D08 | 2 |
 | D09 | 6 |
-| D10 | 0 |
+| D10 | 1 |
 | D11 | 6 |
 | D12 | 2 |
 | D13 | 20 |
 | D14 | 0 |
 
-目前最需要補文獻的區域是 **D08、D10、D12、D14**。其中 **D10 與 D14 目前都是 0 篇 primary-domain note**；D08 雖有 FreshLLMs / Re³，但主要只覆蓋 temporal/freshness，不足以代表一般 authority/provenance arbitration。
+目前最需要補文獻的區域是 **D08、D10、D12、D14**。其中 **D14 目前仍是 0 篇 primary-domain note**；D10 已由 AURORA 補上 continual-indexing anchor，但 production CRUD / deletion / invalidation coverage 仍薄；D08 雖有 FreshLLMs / Re³，但主要只覆蓋 temporal/freshness，不足以代表一般 authority/provenance arbitration。

@@ -10,10 +10,10 @@ last_updated: "2026-09-26"
 # 論文庫總索引 (Literature Notes Index)
 
 > [!INFO] 結構說明
-> 本目錄收錄專案中精讀與標準化結構之論文筆記，**目錄與檔名規範與 `Papers/` 完全一致**：
+> 本目錄收錄專案中精讀與標準化結構之論文筆記，**storage folder 與命名規範原則上對齊 `Papers/`；remote-only 全文例外明列**：
 > - 子目錄劃分為 6 個 **storage folders**，僅用於檔案整理，不代表 Research Domains；
 > - 筆記檔名統一採用 `(發表會議/期刊 發表年月) 論文名稱.md`；
-> - corpus 狀態：**125 篇 notes；121 份 local PDF；4 篇使用官方 remote full text**（A-MEM、EviReport、EFSG、T²-RAGBench）。
+> - corpus 狀態：**126 篇 notes；121 份 local PDF；5 篇使用官方 remote full text**（A-MEM、AURORA、EviReport、EFSG、T²-RAGBench）。
 >
 > 正式分類一律看 YAML 的 `taxonomy_home` / `primary_domain` / `secondary_domains` / `paradigm_tags` / `adjacent_interfaces`；不再使用 `domains` 欄位。
 
@@ -60,7 +60,7 @@ last_updated: "2026-09-26"
 | SIGCOMM 2024 | CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving\|(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving]] | [[Papers/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving.pdf\|PDF]] |
 | NeurIPS 2024 | MiniCache: KV Cache Compression in Depth Dimension for Large Language Models | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models\|(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models]] | [[Papers/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models.pdf\|PDF]] |
 
-### 03 - RAG & Retrieval (24 篇)
+### 03 - RAG & Retrieval (25 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -89,7 +89,7 @@ last_updated: "2026-09-26"
 | arXiv 2024 | Late Chunking: Contextual Chunk Embeddings for Retrieval | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval\|(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval.pdf\|PDF]] |
 | arXiv 2024 | Evaluation of Retrieval-Augmented Generation: A Survey | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey\|(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey.pdf\|PDF]] |
 
-### 04 - Knowledge & Graph RAG (23 篇)
+| Findings of ACL 2026 | AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) AURORA - Neuro-Symbolic Continual Indexing for Evolving RAG Systems\|(ACL 2026-07) AURORA]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.495/) |\n\n### 04 - Knowledge & Graph RAG (23 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -132,7 +132,7 @@ last_updated: "2026-09-26"
 | ICML 2024 / arXiv | MemGPT: Towards LLMs as Operating Systems | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems\|(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems]] | [[Papers/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems.pdf\|PDF]] |
 | NAACL 2024 | Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models (STORM) | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models\|(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models]] | [[Papers/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models.pdf\|PDF]] |
 | Nature 2025 / arXiv | OpenScholar: Synthesizing Scientific Literature with Retrieval-Augmented Language Models | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models\|(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models]] | [[Papers/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models.pdf\|PDF]] |
-| NeurIPS 2025 | A-Mem: Agentic Memory for LLM Agents | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents\|(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage]] | [NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) |
+| NeurIPS 2025 | A-Mem: Agentic Memory for LLM Agents | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents\|(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents]] | [NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) |
 | Findings of ACL 2026 | EviReport: From Reasoned Outlines to Evidence Tracked Long-Form Reports | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports\|(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.1397/) |
 | RAG4Reports 2026 | EFSG: Evidence-First Structured Generation for Multilingual RAG Report Generation | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation\|(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation]] | [ACL Anthology](https://aclanthology.org/2026.rag4reports-1.14/) |
 | arXiv 2024 | MemoRAG: Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery\|(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery]] | [[Papers/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery.pdf\|PDF]] |

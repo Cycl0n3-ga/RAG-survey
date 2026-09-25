@@ -48,16 +48,18 @@ flowchart LR
 
 ## Boundary
 **Dynamic Index ≠ Memory.**  
-D10 管 external knowledge base 的狀態；D11 管跨 interaction 的 persistent state。
+D10 管 canonical external knowledge/index 的更新；D11 管系統形成且持續演化的 derived memory state。
 
 ## Representative Notes
 
-**Current primary-note coverage: 0**
+**Current primary-note coverage: 1**
 
-目前 repo **沒有一篇可以直接作為 D10 primary anchor 的 dedicated note**。FreshLLMs / FreshQA 研究的是 current-world QA 與 search augmentation，應放 D08/D13/D05；它不實作 incremental index maintenance。
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) AURORA - Neuro-Symbolic Continual Indexing for Evolving RAG Systems|AURORA]]
+
+AURORA 是目前最直接的 D10 primary anchor：它研究 distribution shift 下的 continual index adaptation。FreshLLMs / FreshQA 則屬 current-world QA 與 search augmentation，應放 D08/D13/D05，不能拿來代替 index maintenance。
 
 > [!NOTE]
-> 目前 repo 對 incremental vector/graph maintenance、deletion semantics、staleness detection、re-embedding、derived-index invalidation 與 versioned index 的 dedicated literature coverage 仍不足。這是 **真正缺文獻**，不應再用 freshness QA paper 代替。
+> 即使加入 AURORA，目前對 **source-level CRUD、deletion propagation、derived-summary/graph invalidation、versioned index 與 production update streams** 的 dedicated coverage 仍不足。
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
