@@ -149,9 +149,9 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 08（長篇生成與報告撰寫）的啟示**：
+1. **對 D09（Grounded Generation & Long-form Synthesis）的啟示**：
    - 在構建科學論文問答助手（如 OpenScholar / PaperQA）時，QASPER 是評估模型能否從萬字論文中精準摘取實驗數值與結論的核心基準。
-2. **對 Domain 14（證據充分性與拒答）的啟示**：
+2. **對 D06（Evidence Sufficiency & Adaptive Retrieval）的啟示**：
    - QASPER 中 27.3% 的 Unanswerable 題型是測試 RAG 系統「知道自己不知道」的天然黃金資料。
 
 ---
