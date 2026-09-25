@@ -23,6 +23,18 @@ tags:
   - "agent-memory-stream-&-reflection"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D11"
+  - "D12"
+paradigm_tags:
+  - "general_agent"
+  - "memory"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # Generative Agents: Interactive Simulacra of Human Behavior

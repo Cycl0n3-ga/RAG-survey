@@ -39,6 +39,15 @@ benchmark_ids:
 metrics:
   - "Perplexity (PPL)"
   - "Accuracy"
+taxonomy_version: "v2"
+taxonomy_home: "D11"
+primary_domain: "D11"
+secondary_domains:
+  - "D12"
+paradigm_tags:
+  - "memory_augmented_rag"
+adjacent_interfaces: []
+
 ---
 
 # Augmenting Language Models with Long-Term Memory (LongMem)

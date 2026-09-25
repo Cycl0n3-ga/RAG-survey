@@ -43,6 +43,17 @@ metrics:
   - "Accuracy"
   - "Tool Call Frequency (%)"
   - "Perplexity"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D12"
+paradigm_tags:
+  - "general_agent"
+  - "tool_use"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # Toolformer: Language Models Can Teach Themselves to Use Tools

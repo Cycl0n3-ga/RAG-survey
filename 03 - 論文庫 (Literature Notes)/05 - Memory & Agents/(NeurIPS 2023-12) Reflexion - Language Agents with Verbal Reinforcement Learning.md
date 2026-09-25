@@ -40,6 +40,17 @@ metrics:
   - "pass@1"
   - "Success Rate (SR)"
   - "Exact Match (EM)"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D12"
+paradigm_tags:
+  - "general_agent"
+  - "tool_use"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # Reflexion: Language Agents with Verbal Reinforcement Learning

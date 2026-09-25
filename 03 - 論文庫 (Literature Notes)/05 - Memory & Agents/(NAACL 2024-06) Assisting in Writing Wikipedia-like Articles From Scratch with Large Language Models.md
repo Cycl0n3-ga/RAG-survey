@@ -23,6 +23,17 @@ tags:
   - "agentic-long-form-writing"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D09"
+primary_domain: "D09"
+secondary_domains:
+  - "D05"
+  - "D12"
+paradigm_tags:
+  - "long_form_rag"
+  - "agentic_rag"
+adjacent_interfaces: []
+
 ---
 
 # Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models
