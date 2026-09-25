@@ -181,7 +181,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 04 (Chunking 與知識擷取) & Domain 12 (Typed Knowledge)**：
+1. **D02 (Segmentation & Contextualization) & Domain 12 (Typed Knowledge)**：
    DocRED 證明了 40.7% 的事實無法在單句甚至單個固定 Chunk 內抽齊。這為本專案強調的「跨塊關聯整合（Cross-chunk Consolidation）」與「超越單句的結構化知識圖譜構建」提供了最權威的實驗數據支撐。
 2. **GraphRAG 實體與關聯抽取評估**：
    在 GraphRAG 系統中，如何從切碎的文本塊精確重建全域實體關係網，DocRED 是評估抽取器是否具備多跳推理能力的第一標竿。
