@@ -158,7 +158,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 01（Long Context 與序列架構）的定位**：
+1. **對 A01（Long Context & Sequence Architecture）的定位**：
    - LongNet 代表了「稀疏注意力 + 多尺度膨脹」技術路線的極限；它證明了完全線性的 Transformer 可以透過多尺度幾何結構實現，為未來的超長 Context 提供了重要的工程與理論邊界。
 2. **與 RAG 技術的互補性**：
    - LongNet 雖然能吞下 1B tokens，但抽樣稀疏性決定了它更適合做全域宏觀統計與代碼結構理解，而在需要 100% 精確事實提取時，依然需要 RAG 進行精準的高密度檢索。
