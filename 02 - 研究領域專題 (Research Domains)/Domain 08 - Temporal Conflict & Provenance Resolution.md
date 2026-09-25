@@ -4,13 +4,13 @@ domain_id: "D08"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Evidence Resolution"
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 ---
 
 # Domain 08 - Temporal Conflict & Provenance Resolution
 
 ## Core Question
-當 evidence 的來源、時間、版本、適用條件或 authority 不同時，如何判斷哪些 evidence 適用於目前 query？
+當 evidence 隨時間或版本改變、或不同來源對同一事實互相衝突時，如何判斷哪些 evidence 對目前 query 仍有效？
 
 ```mermaid
 flowchart LR
@@ -24,13 +24,17 @@ flowchart LR
 ```
 
 ## Includes
-- source provenance
-- authority / source quality
 - valid time / record time
 - document / knowledge versioning
+- freshness / recency at query time
 - temporal constraint matching
-- conflict detection / classification
+- temporal / version conflict detection
+- provenance needed to identify competing evidence sources
 - condition-aware evidence resolution
+
+> [!CAUTION]
+> **Source authority / generic provenance governance 不等於已成熟的單一 RAG subfield。**  
+> 目前最直接的 literature support 是 temporal / version-aware retrieval 與 conflict handling；authority-weighted arbitration 應視為較薄的 Level-2 topic 或 project hypothesis，除非有直接 primary literature。
 
 ## Excludes
 - citation formatting / attribution output → D09
@@ -50,8 +54,9 @@ Citation answers「輸出引用哪裡」；provenance answers「這份 evidence 
 
 ## Representative Notes
 
-**Current primary-note coverage: 1**
+**Current primary-note coverage: 2**
 
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs / FreshQA]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³]]
 
 > [!NOTE]

@@ -127,7 +127,7 @@ flowchart TD
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
 1. **為 RAG 記憶體治理提供仿生學啟發**：傳統 RAG 往往預設「文檔永遠有效」，MemoryBank 引入的時間衰退公式與強化機制，為動態知識庫的淘汰與維護（Data Pruning & Lifecycle Management）提供了極佳借鑑。
-2. **與階層式記憶體系統的互補**：與 [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]] 的分層作業系統抽象、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage|A-MEM]] 的樹狀索引形成緊密互補。
+2. **與階層式記憶體系統的互補**：與 [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]] 的分層作業系統抽象、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]] 的動態 note linking / memory evolution 形成互補。
 
 ---
 

@@ -13,7 +13,7 @@ authors:
 year: 2024
 publication_year: 2024
 venue: "ACL 2024"
-doi: "10.18653/v1/2024.acl-long.748"
+doi: "10.18653/v1/2024.acl-long.585"
 arxiv: "2401.00396"
 url: "https://arxiv.org/abs/2401.00396"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) RAGTruth - A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models.pdf"

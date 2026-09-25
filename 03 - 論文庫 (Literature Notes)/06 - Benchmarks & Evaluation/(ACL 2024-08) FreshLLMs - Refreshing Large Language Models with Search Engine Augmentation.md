@@ -16,9 +16,9 @@ authors:
 year: 2023
 publication_year: 2024
 venue: "Findings of ACL 2024"
-doi: "10.18653/v1/2024.findings-acl.642"
+doi: "10.18653/v1/2024.findings-acl.813"
 arxiv: "2310.03214"
-url: "https://aclanthology.org/2024.findings-acl.642/"
+url: "https://aclanthology.org/2024.findings-acl.813/"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation.pdf"
 tags:
   - paper
@@ -41,11 +41,11 @@ metrics:
   - "Relaxed Accuracy"
   - "Hallucination Rate"
 taxonomy_version: "v2"
-taxonomy_home: "D10"
-primary_domain: "D10"
+taxonomy_home: "D08"
+primary_domain: "D08"
 secondary_domains:
   - "D05"
-  - "D08"
+  - "D13"
 paradigm_tags:
   - "dynamic_rag"
   - "freshness"

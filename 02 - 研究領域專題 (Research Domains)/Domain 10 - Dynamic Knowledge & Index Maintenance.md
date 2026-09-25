@@ -4,7 +4,7 @@ domain_id: "D10"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Cross-Lifecycle"
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 ---
 
 # Domain 10 - Dynamic Knowledge & Index Maintenance
@@ -52,12 +52,12 @@ D10 管 external knowledge base 的狀態；D11 管跨 interaction 的 persisten
 
 ## Representative Notes
 
-**Current primary-note coverage: 1**
+**Current primary-note coverage: 0**
 
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs]]
+目前 repo **沒有一篇可以直接作為 D10 primary anchor 的 dedicated note**。FreshLLMs / FreshQA 研究的是 current-world QA 與 search augmentation，應放 D08/D13/D05；它不實作 incremental index maintenance。
 
 > [!NOTE]
-> 目前 repo 對 incremental vector/graph maintenance、deletion semantics、staleness detection 與 versioned index 的 dedicated literature coverage 仍不足。
+> 目前 repo 對 incremental vector/graph maintenance、deletion semantics、staleness detection、re-embedding、derived-index invalidation 與 versioned index 的 dedicated literature coverage 仍不足。這是 **真正缺文獻**，不應再用 freshness QA paper 代替。
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]

@@ -13,9 +13,9 @@ authors:
 year: 2023
 publication_year: 2024
 venue: "NAACL 2024"
-doi: "10.18653/v1/2024.naacl-long.408"
+doi: "10.18653/v1/2024.naacl-long.463"
 arxiv: "2301.12652"
-url: "https://aclanthology.org/2024.naacl-long.408/"
+url: "https://aclanthology.org/2024.naacl-long.463/"
 pdf_file: "Papers/03 - RAG & Retrieval/(NAACL 2024-06) REPLUG - Retrieval-Augmented Black-Box Language Models.pdf"
 tags:
   - paper
@@ -57,7 +57,7 @@ adjacent_interfaces: []
 > - **作者**：Weijia Shi, Sewon Min, Michihiro Yasunaga, Minjoon Seo, Rich James, Mike Lewis, Luke Zettlemoyer, Wen-tau Yih (Univ of Washington, Stanford, KAIST, Meta FAIR)
 > - **預印本初次發布年份 (Preprint)**：2023 (arXiv:2301.12652)
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (NAACL 2024, Long)
-> - **DOI**：[10.18653/v1/2024.naacl-long.408](https://doi.org/10.18653/v1/2024.naacl-long.408)
+> - **DOI**：[10.18653/v1/2024.naacl-long.463](https://doi.org/10.18653/v1/2024.naacl-long.463)
 > - **arXiv**：[2301.12652](https://arxiv.org/abs/2301.12652)
 > - **驗證狀態**：`verified` (已比對 NAACL 官方全文與論文 PDF)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(NAACL 2024-06) REPLUG - Retrieval-Augmented Black-Box Language Models.pdf|開啟本地 PDF 檔案]]

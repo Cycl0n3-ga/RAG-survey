@@ -4,7 +4,7 @@ tags:
   - index
   - literature-notes
   - papers
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 ---
 
 # 論文庫總索引 (Literature Notes Index)
@@ -13,7 +13,7 @@ last_updated: "2026-09-25"
 > 本目錄收錄專案中精讀與標準化結構之論文筆記，**目錄與檔名規範與 `Papers/` 完全一致**：
 > - 子目錄劃分為 6 個 **storage folders**，僅用於檔案整理，不代表 Research Domains；
 > - 筆記檔名統一採用 `(發表會議/期刊 發表年月) 論文名稱.md`；
-> - **論文擴充優先級規劃**：完整 P0 / P1 / P2 候選清單、實作批次與驗證閘門請參閱 [[03 - 論文庫 (Literature Notes)/00 - 論文擴充待補清單|00 - 論文擴充待補清單 (Prioritized Backlog)]]。
+> - corpus 狀態：**125 篇 notes；121 份 local PDF；4 篇使用官方 remote full text**（A-MEM、EviReport、EFSG、T²-RAGBench）。
 >
 > 正式分類一律看 YAML 的 `taxonomy_home` / `primary_domain` / `secondary_domains` / `paradigm_tags` / `adjacent_interfaces`；不再使用 `domains` 欄位。
 
@@ -132,7 +132,7 @@ last_updated: "2026-09-25"
 | ICML 2024 / arXiv | MemGPT: Towards LLMs as Operating Systems | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems\|(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems]] | [[Papers/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems.pdf\|PDF]] |
 | NAACL 2024 | Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models (STORM) | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models\|(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models]] | [[Papers/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models.pdf\|PDF]] |
 | Nature 2025 / arXiv | OpenScholar: Synthesizing Scientific Literature with Retrieval-Augmented Language Models | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models\|(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models]] | [[Papers/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models.pdf\|PDF]] |
-| arXiv 2025 | A-MEM: Agentic Memory System with Hierarchical Structured Storage | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage\|(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage]] | [[Papers/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage.pdf\|PDF]] |
+| NeurIPS 2025 | A-Mem: Agentic Memory for LLM Agents | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents\|(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage]] | [NeurIPS Proceedings](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) |
 | Findings of ACL 2026 | EviReport: From Reasoned Outlines to Evidence Tracked Long-Form Reports | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports\|(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.1397/) |
 | RAG4Reports 2026 | EFSG: Evidence-First Structured Generation for Multilingual RAG Report Generation | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation\|(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation]] | [ACL Anthology](https://aclanthology.org/2026.rag4reports-1.14/) |
 | arXiv 2024 | MemoRAG: Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery\|(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery]] | [[Papers/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery.pdf\|PDF]] |

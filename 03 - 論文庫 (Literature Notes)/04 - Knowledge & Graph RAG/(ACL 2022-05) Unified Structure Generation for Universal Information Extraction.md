@@ -13,7 +13,7 @@ authors:
 year: 2022
 publication_year: 2022
 venue: "ACL 2022"
-doi: "10.18653/v1/2022.acl-long.21"
+doi: "10.18653/v1/2022.acl-long.395"
 arxiv: "2203.12277"
 url: "https://arxiv.org/abs/2203.12277"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(ACL 2022-05) Unified Structure Generation for Universal Information Extraction.pdf"

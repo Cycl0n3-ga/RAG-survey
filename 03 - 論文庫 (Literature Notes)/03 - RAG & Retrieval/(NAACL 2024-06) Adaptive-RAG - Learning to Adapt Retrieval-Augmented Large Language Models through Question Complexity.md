@@ -10,9 +10,9 @@ authors:
 year: 2024
 publication_year: 2024
 venue: "NAACL 2024"
-doi: "10.18653/v1/2024.naacl-long.409"
+doi: "10.18653/v1/2024.naacl-long.389"
 arxiv: "2403.14403"
-url: "https://aclanthology.org/2024.naacl-long.409/"
+url: "https://aclanthology.org/2024.naacl-long.389/"
 pdf_file: "Papers/03 - RAG & Retrieval/(NAACL 2024-06) Adaptive-RAG - Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity.pdf"
 tags:
   - paper
@@ -57,7 +57,7 @@ adjacent_interfaces: []
 > - **作者**：Soyeong Jeong, Jinheon Baek, Sukmin Cho, Sung Ju Hwang, Jong C. Park (KAIST)
 > - **預印本初次發布年份 (Preprint)**：2024 (arXiv:2403.14403)
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (NAACL 2024, Long)
-> - **DOI**：[10.18653/v1/2024.naacl-long.409](https://doi.org/10.18653/v1/2024.naacl-long.409)
+> - **DOI**：[10.18653/v1/2024.naacl-long.389](https://doi.org/10.18653/v1/2024.naacl-long.389)
 > - **arXiv**：[2403.14403](https://arxiv.org/abs/2403.14403)
 > - **驗證狀態**：`verified` (已比對 NAACL 官方全文與論文 PDF)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(NAACL 2024-06) Adaptive-RAG - Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity.pdf|開啟本地 PDF 檔案]]

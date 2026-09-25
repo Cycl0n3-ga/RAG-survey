@@ -62,12 +62,12 @@ Research Domains
 | D05 | 18 |
 | D06 | 4 |
 | D07 | 3 |
-| D08 | 1 |
+| D08 | 2 |
 | D09 | 6 |
-| D10 | 1 |
+| D10 | 0 |
 | D11 | 6 |
 | D12 | 2 |
 | D13 | 20 |
 | D14 | 0 |
 
-目前最需要補文獻的區域是 **D08、D10、D12、D14**；其中 D14 尚無 primary-domain literature note，現有 KIVI / CacheGen 等僅屬 A02 與 D14 的交界，不應假裝成完整的 RAG systems/security coverage。
+目前最需要補文獻的區域是 **D08、D10、D12、D14**。其中 **D10 與 D14 目前都是 0 篇 primary-domain note**；D08 雖有 FreshLLMs / Re³，但主要只覆蓋 temporal/freshness，不足以代表一般 authority/provenance arbitration。

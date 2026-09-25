@@ -4,7 +4,7 @@ tags:
   - moc
   - index
   - navigation
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 taxonomy_version: "v2"
 ---
 
@@ -59,11 +59,10 @@ taxonomy_version: "v2"
 ## Literature Corpus
 
 - **125** dedicated literature notes
-- **122** local PDF / full-text artifacts
+- **121** local PDFs + **4** notes linked to official remote full text
 - 6 storage folders: Long Context, Compression/KV, RAG/Retrieval, Knowledge/Graph, Memory/Agents, Benchmarks/Evaluation
 - 這 6 個資料夾只是 storage categories，**不是 Research Domains**
 
-[[03 - 論文庫 (Literature Notes)/00 - 論文擴充待補清單|Literature Coverage Status]]
 
 ## Project Rule
 

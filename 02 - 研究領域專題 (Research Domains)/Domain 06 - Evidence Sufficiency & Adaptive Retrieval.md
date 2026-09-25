@@ -4,7 +4,7 @@ domain_id: "D06"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Retrieval Control"
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 ---
 
 # Domain 06 - Evidence Sufficiency & Adaptive Retrieval
@@ -39,14 +39,22 @@ flowchart LR
 - time / source / version conflict resolution → D08
 - general multi-action agent controller → D12
 
+## Two Research Tracks
+
+D06 目前刻意保留在同一 Domain，但必須區分兩個不同問題：
+
+1. **Retrieval Control**：何時 retrieve / retry / rewrite / stop。FLARE、Self-RAG、Adaptive-RAG、Corrective RAG 主要支撐這條線。
+2. **Evidence Sufficiency**：目前 evidence set 是否完整到足以回答、缺哪一類證據、何時應 abstain。這條線的直接方法文獻比 Retrieval Control 薄，不能把前述 adaptive-retrieval papers 當成完整 sufficiency controller 的既有證明。
+
 ## Level-2 Topics
 - Retrieval Necessity
 - Adaptive Retrieval
 - Corrective Retrieval
+- Stopping Policy
 - Evidence Coverage
 - Evidence Sufficiency
 - Gap Localization
-- Stopping / Abstention
+- Abstention / Escalation
 
 ## Boundary
 ```text
