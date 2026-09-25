@@ -89,8 +89,6 @@ flowchart TD
 ### 一、深度研究報告 (Deep Research Reports)
 1. [[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)]] *(5 萬字完整綜述)*
 2. [[01 - 深度研究報告 (Deep Research Reports)/02 - 補充資料與參考文獻評析 (Reference Audit)|02 - 補充資料與參考文獻評析 (Reference Audit)]] *(知識抽象階梯與反思)*
-3. [[01 - 深度研究報告 (Deep Research Reports)/03 - ChatGPT 對話全文整理 (Shared Session Transcript)|03 - ChatGPT 對話全文整理 (Shared Session Transcript)]] *(對話原始記錄存檔)*
-4. [[01 - 深度研究報告 (Deep Research Reports)/04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)|04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)]] *(7.3 萬字規範性修訂基準與實施藍圖)*
 
 ### 二、14 個研究領域 (Research Domains)
 
