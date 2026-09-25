@@ -172,7 +172,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 12 (Typed Knowledge 表示) & Domain 04 (知識擷取)**：
+1. **D03 Knowledge Extraction & Information Preservation**：
    OneIE 展示了「類型化知識（Typed Knowledge）」與「Schema 圖約束」如何顯式防禦神經模型的幻覺。這為本專案的知識抽取管線提供了不可或缺的「結構化約束驗證」工程範式。
 2. **GraphRAG 的知識圖譜質量保證**：
    在從非結構化文檔自動建構圖譜時，未經校驗的神經抽取會產生大量髒數據（如把城市當成法人代表）。引入 OneIE 式的全局互斥檢查是確保 GraphRAG 實體關係圖具備工業可用性的關鍵技術保證。
