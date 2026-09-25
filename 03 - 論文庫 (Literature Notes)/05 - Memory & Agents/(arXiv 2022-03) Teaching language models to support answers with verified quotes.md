@@ -140,8 +140,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 14 (Evidence Sufficiency) 的核心支撐**：GopherCite 提供了「證據充分性判定（Sufficiency Assessment）」的早期標竿實踐，為本專案設計 Evidence Gap Controller 與主動拒答門檻提供了直接的文獻背書。
-2. **對 Domain 16 (Context Utilization & Faithfulness) 的啟示**：證明了「字面抽取約束（Extractive Quote Constraint）」能夠有效防止模型在長文本解碼過程中進行語意自由發揮。
+1. **對 D06 (Evidence Sufficiency & Adaptive Retrieval) 的核心支撐**：GopherCite 提供了「證據充分性判定（Sufficiency Assessment）」的早期標竿實踐，為本專案設計 Evidence Gap Controller 與主動拒答門檻提供了直接的文獻背書。
+2. **對 D07/D09 (Context Utilization & Grounded Generation) 的啟示**：證明了「字面抽取約束（Extractive Quote Constraint）」能夠有效防止模型在長文本解碼過程中進行語意自由發揮。
 
 ---
 
