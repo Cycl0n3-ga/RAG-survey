@@ -168,7 +168,7 @@ flowchart LR
 flowchart LR
     CORE["D01-D12 Core RAG System"]
 
-    CORE --> D13["D13 Evaluation & Failure Attribution"]
+    CORE -. "evaluate / diagnose" .-> D13["D13 Evaluation & Failure Attribution"]
     D14["D14 Systems, Robustness & Security"] -. "latency / cost / observability / reliability" .-> CORE
 
     A01["A01 Long Context"] -. "hybrid retrieval-vs-read" .-> D05["D05 Retrieval"]
