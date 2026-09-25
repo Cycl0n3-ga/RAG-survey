@@ -9,7 +9,7 @@ authors:
 year: 2022
 publication_year: 2023
 venue: "ACL 2023"
-doi: null
+doi: "10.18653/v1/2023.acl-long.99"
 arxiv: "2212.10496"
 url: "https://arxiv.org/abs/2212.10496"
 pdf_file: "Papers/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels.pdf"
@@ -36,14 +36,14 @@ adjacent_interfaces: []
 > - **作者**：Luyu Gao, Xueguang Ma, Jimmy Lin, Jamie Callan
 > - **預印本初次發布年份 (Preprint)**：2022
 > - **正式發表年份 / 會議或期刊 (Venue)**：2023 (ACL 2023)
-> - **DOI**：無
+> - **DOI**：10.18653/v1/2023.acl-long.99
 > - **arXiv**：[2212.10496](https://arxiv.org/abs/2212.10496)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels.pdf|開啟本地 PDF 檔案]]
 ---
 
 ## 一話摘要 (TL;DR)
-**先由 LLM 生成一份『虛構但語意完整的假想文檔』再進行向量檢索，徹底解決 Query 與 Document 長度與語意不對稱的痛點。**
+**HyDE 先由 instruction-following LLM 生成 hypothetical document，再以無監督 dense encoder 將其映射到 corpus embedding space；在論文測試中可改善 zero-shot dense retrieval，但不代表 query–document mismatch 已被完全解決。**
 
 ---
 
@@ -66,7 +66,7 @@ graph LR
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 1 (Page 5): 在沒有任何微調標籤的零樣本檢索 (Zero-shot) 下，HyDE 在 11 個不同領域的 TREC 數據集上全面擊敗 Contriever 與 BM25。
+> **論文結論**：在無 relevance labels 的 zero-shot 設定下，HyDE 相較 Contriever 有顯著改善，並在多種 web search、QA、fact verification 與非英語檢索任務中呈現具競爭力的表現；不同 dataset / baseline 的結果應依原表逐項比較。
 
 ---
 
@@ -76,12 +76,12 @@ graph LR
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-啟發了大量 Query Transformation 與 Query Expansion 技術，是現代高難度複雜檢索的標準手段之一。
+HyDE 是 query transformation / hypothetical-document retrieval 的代表性方法之一，適合作為 D05 中 query transformation 的 baseline / prior work。
 
 ---
 
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
+  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
