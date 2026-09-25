@@ -170,7 +170,7 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 03 與 Domain 16 (上下文利用與忠實度) 的理論支撐**：
+1. **對 D05/D07/D09（Retrieval、Context Utilization、Grounded Generation） 的理論支撐**：
    - Chain-of-Note 是目前解決「檢索雜訊干擾」與「生成忠實度失真」最為直觀有效的落地架構之一。
 2. **對證據帳本 (Evidence Ledger) 與四層檢驗機制的借鑑**：
    - CON 的三類筆記劃分，直接契合了本專案在長篇報告與知識治理中強調的「Citation $\to$ Entailment $\to$ Authority $\to$ Sufficiency」審計哲學。
