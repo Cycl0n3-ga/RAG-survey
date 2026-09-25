@@ -126,8 +126,8 @@ flowchart TD
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-- **支持 Domain 13（跨塊整合）**：LongRAG 提供了「與其費盡心思在後處理做 Cross-chunk 拼接，不如直接前移增大檢索粒度」的重要路徑。
-- **Long Context 與 RAG 融合實踐**：確立了「Long Context 不是取代 RAG，而是重構 RAG 粒度」的核心結論，直擊 Domain 01 與 Domain 03 的關鍵權衡。
+- **對 D02 Segmentation & Contextualization 的啟示**：LongRAG 探索以較大的 retrieval units 減少過度碎片化，屬於 retrieval granularity 與 long-context/RAG interface 的設計選項。
+- **Long Context 與 RAG 的 interface**：主要連到 A01 Long Context、D02 retrieval granularity、D05 retrieval 與 D07 context utilization；不再以舊 Domain 編號描述。
 
 ---
 
