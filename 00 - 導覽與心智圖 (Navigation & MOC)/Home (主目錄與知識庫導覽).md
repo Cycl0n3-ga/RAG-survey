@@ -53,7 +53,6 @@ taxonomy_version: "v2"
 
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|Paradigm Tags]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|Adjacent Interfaces]]
-- [[01 - 深度研究報告 (Deep Research Reports)/01 - RAG Taxonomy v2 Research Overview|Current Research Overview]]
 
 ## Literature Corpus
 
