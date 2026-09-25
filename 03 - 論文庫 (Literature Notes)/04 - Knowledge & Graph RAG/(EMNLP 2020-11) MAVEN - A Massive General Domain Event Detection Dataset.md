@@ -161,7 +161,7 @@ MAVEN 原文（Pages 1652–1671）對比了經典事件抽取模型在 ACE 2005
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 04 (Chunking 與 Knowledge Extraction)**：為「從非結構化長文本中提取動態事件」提供了最權威的 Gold Standard，是將 RAG 文本塊轉化為事件知識圖譜（Event KG）的基石。
+1. **D02 (Segmentation & Contextualization)**：為「從非結構化長文本中提取動態事件」提供了最權威的 Gold Standard，是將 RAG 文本塊轉化為事件知識圖譜（Event KG）的基石。
 2. **Domain 12 (Typed Knowledge & Dynamic Ontologies)**：證明基於層級模式（Hierarchical Ontology）的事件抽象能有效支撐複雜語義推論，對構建 GraphRAG 中的動態時間節點具有極高參考價值。
 
 ---
