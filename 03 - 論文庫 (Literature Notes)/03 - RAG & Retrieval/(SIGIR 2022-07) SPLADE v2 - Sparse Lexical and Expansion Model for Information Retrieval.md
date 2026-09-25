@@ -165,7 +165,7 @@ SPLADE v2 在 SIGIR 2022 原文（Pages 2353–2358）中展示了頂級檢索�
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 03 (Advanced RAG 與檢索技術)**：在 Dense Retrieval 與 Sparse BM25 之間建立了最強大的橋樑，是構建 Hybrid Search（混合檢索）系統不可或缺的核心組件。
+1. **D05 (Query Understanding & Retrieval)**：在 Dense Retrieval 與 Sparse BM25 之間建立了最強大的橋樑，是構建 Hybrid Search（混合檢索）系統不可或缺的核心組件。
 2. **Domain 02 (脈絡壓縮與效率)**：展現了如何透過正則化約束控制推論 FLOPs，對長文本檢索管線中的成本與延遲平衡具有極佳借鑑價值。
 
 ---
