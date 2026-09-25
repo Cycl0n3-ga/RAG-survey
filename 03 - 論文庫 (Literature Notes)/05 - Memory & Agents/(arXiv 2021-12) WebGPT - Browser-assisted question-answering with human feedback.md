@@ -150,8 +150,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 08 (Long-form Report Generation) 的奠基意義**：WebGPT 是後續 STORM、EviReport 等長篇深度研究架構的鼻祖，首次在神經架構層面驗證了「引用引文（Citing Sources）」是保障長文真實性的唯一護城河。
-2. **對 Domain 16 (Context Utilization & Faithfulness) 的啟示**：證明了強制模型輸出顯式引用錨點（Quote Spans）能大幅約束解碼空間，杜絕無來源支撐的事實性幻覺。
+1. **對 D09 (Grounded Generation & Long-form Synthesis) 的奠基意義**：WebGPT 是後續 STORM、EviReport 等長篇深度研究架構的鼻祖，首次在神經架構層面驗證了「引用引文（Citing Sources）」是保障長文真實性的唯一護城河。
+2. **對 D09 (Grounded Generation & Attribution) 的啟示**：證明了強制模型輸出顯式引用錨點（Quote Spans）能大幅約束解碼空間，杜絕無來源支撐的事實性幻覺。
 
 ---
 
