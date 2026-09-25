@@ -89,8 +89,6 @@ doi: "10.5555/3295222.3295349"                         # 數位物件識別碼 (
 arxiv: "1706.03762"                                    # arXiv ID (字串，無則填 null)
 url: "https://arxiv.org/abs/1706.03762"                # 官方發布或 arXiv 永久連結 (URL 字串)
 pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need.pdf" # 本地相對路徑
-domains:                                               # 所屬專題領域 (List of Wikilinks)
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:                                                  # 標籤 (List of tags)
   - paper
   - dense-attention
@@ -98,6 +96,14 @@ verification_status: "verified"                        # 驗證狀態：verified
 last_verified: 2026-09-24                              # 最後核對日期 (YYYY-MM-DD)
 # 選填擴充欄位 (Optional Extended Metadata)：
 artifact_type: "method_paper"                          # 工件類型：method_paper | benchmark_paper | dataset | evaluation_framework | survey | proposal
+taxonomy_version: "v2"
+taxonomy_home: "A01"                                   # D01-D14；若主要屬相鄰研究則 A01-A05；跨域 survey 可用 CROSS
+primary_domain: null                                   # RAG core method 使用 D01-D14；adjacent-only paper 填 null
+secondary_domains: []
+paradigm_tags:
+  - "long_context"
+adjacent_interfaces:
+  - "A01"
 research_questions: []                                 # 探討之核心研究子題標籤 (如 retrieval_granularity, context_utilization)
 benchmark_ids: []                                      # 相關之評測基準 ID
 dataset_ids: []                                        # 相關之資料集 ID
