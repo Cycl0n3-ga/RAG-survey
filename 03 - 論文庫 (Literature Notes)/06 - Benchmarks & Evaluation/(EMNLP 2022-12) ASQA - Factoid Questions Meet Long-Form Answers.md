@@ -138,8 +138,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 08 (Long-form Report Generation) 的評測奠基**：ASQA 是評估長篇報告「觀點全面性（Perspective Comprehensiveness）」與「爭議分歧展示」的核心標準資料集。
-2. **對 Domain 17 (RAG Benchmarks) 的架構指引**：證明了評測長文生成不可僅看 ROUGE 或 BLEU，必須結合實體級「事實覆蓋（Fact Recall）」與「消歧完整性（DR）」的複合協議。
+1. **對 D09 (Grounded Generation & Long-form Synthesis) 的評測奠基**：ASQA 是評估長篇報告「觀點全面性（Perspective Comprehensiveness）」與「爭議分歧展示」的核心標準資料集。
+2. **對 D13 (RAG Evaluation & Failure Attribution) 的架構指引**：證明了評測長文生成不可僅看 ROUGE 或 BLEU，必須結合實體級「事實覆蓋（Fact Recall）」與「消歧完整性（DR）」的複合協議。
 
 ---
 
