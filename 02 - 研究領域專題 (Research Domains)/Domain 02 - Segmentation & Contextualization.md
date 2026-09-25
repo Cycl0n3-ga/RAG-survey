@@ -69,6 +69,15 @@ Raw-chunk RAG 可由 D02 直接進 D04；D03 是可選支線，不是所有 RAG 
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG|LumberChunker]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
 
+## Contextualization Patterns
+「Contextualization」不等於重新做 information extraction；它的目的是讓 retrieval unit 在脫離全文後仍保留足夠語境。
+
+- **Late Chunking**：先對較長文本做 contextual encoding，再在 chunk boundary 後做 pooling；主要位於 D02↔D04 交界。
+- **Contextual Retrieval（Anthropic, engineering technique, 2024）**：為每個 chunk 產生簡短的 document-specific context，將其 prepend 到 chunk 後再建立 embedding 與 BM25 index。這是產業工程技術，不是本 repo 的 peer-reviewed paper note；官方說明：https://www.anthropic.com/engineering/contextual-retrieval
+- **Parent-child / section context**：以小 unit 檢索、用較大 parent context 提供生成內容。
+
+邊界：chunk-specific context 的產生屬 D02；embedding / lexical representation 屬 D04；runtime search / fusion / reranking 屬 D05。
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Ingestion & Structure|D01 Document Ingestion & Structure]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]

@@ -45,3 +45,28 @@ last_updated: "2026-09-24"
 - **Idea 05** 定義 Evidence-Governed Harness 的研究假設、F/R/D/A/P/C/T operational semantics、evidence hierarchy 與 deterministic repair loop。
 - **Idea 06** 將 Idea 05 放入現有 RAG / Agent / Document-AI 工具生態中，區分「應借力的通用工程能力」與「需要以 ablation 驗證的核心研究假設」。
 - Framework 的版本、功能與效能屬快速變動事實；Idea 06 的具體比較必須以官方文件或同條件 benchmark 定期重驗。
+
+
+## 統一實驗原則
+
+所有 proposed method / hypothesis 都應至少回答：
+
+1. **Baseline**：與哪些已發表方法比較？
+2. **Oracle**：若上游完全正確，下游理論上還能改善多少？
+3. **Dataset / Gold**：現有 benchmark 是否真的有需要的 gold annotation？
+4. **Metric**：module-level 與 end-to-end metrics 分開。
+5. **Ablation**：一次只移除一個新增機制。
+6. **Budget parity**：token、retrieval calls、LLM calls、latency / compute 要可比，避免以更多算力冒充方法提升。
+7. **Falsification criterion**：預先定義什麼結果代表假設不成立。
+
+### Retained candidate directions from earlier synthesis
+
+以下概念保留為 **project hypotheses / experiment candidates**，不是新增 Domain：
+
+- **Query-Adaptive Multi-Representation Retrieval**：依 query 在 raw chunk、proposition、summary、graph、table、whole-document 等 representation 間 routing；與 Idea 02 / D04 / D05 相交。
+- **Unified Context Budget Controller**：把 full-context、RAG、graph search、compression、memory、additional search 視為同一 budget 下可選 action；目標是找到足以完成任務的最小充分 context，而不是最大化塞入 context。
+- **Claim-Evidence Graph / Ledger**：claim 與 evidence 以 direct-support、contradicts、qualifies、depends-on 等 edge 建模；canonical proposal 見 Idea 04 / 05。
+- **Long-document Consistency Memory**：維護跨章 entities、definitions、numbers、claims、assumptions 等 document state，避免跨章漂移；與 D11 / D09 相交。
+- **Cross-chunk / Cross-document Event Knowledge**：事件表示需保留 trigger、condition、state-before/after、time、actor、quantity、exception、source；與 Idea 01 / D03 相交。
+
+這些方向只有在形成清楚 task definition、baseline、benchmark 與 falsifiable hypothesis 後，才適合升格為獨立研究工作。

@@ -63,6 +63,26 @@ Dynamic index = maintenance of external knowledge/index
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery|MemoRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|From RAG to Memory]]
 
+## Memory Types and Governance Boundary
+Memory 不應只用「向量庫」一詞概括。可用下列維度理解：
+
+- **Working state**：本輪/短期 task state；若只存在 prompt/context，主要屬 D07/D12，而非 persistent memory。
+- **Episodic memory**：過去 interaction / observation / trajectory。
+- **Semantic memory**：從多次 interaction 整合出的穩定事實或概念。
+- **Procedural / skill memory**：工具使用、policy、workflow 等「怎麼做」的知識；通常與 A04 General Agents / D12 相交。
+- **Task / document state**：長時間任務的進度、已完成章節、未解決問題與一致性狀態。
+
+### Memory governance
+
+Persistent memory 還需要回答：
+- 誰可以 write / read？
+- 何時 consolidate / invalidate / forget？
+- 原始 source 被刪除後，derived summary / fact / graph edge / memory 是否也要失效？
+- 不同 user / tenant 的 memory 是否可能交叉檢索？
+- memory update 是否保留 provenance 與 version？
+
+這些治理問題與 D14 privacy/access control 交叉，但 memory lifecycle 本身仍屬 D11。
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 Dynamic Knowledge & Index Maintenance]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]

@@ -75,6 +75,22 @@ D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是�
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions|IRCoT]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs|RankRAG]]
 
+## Retrieval Strategy Spectrum
+舊版「Advanced RAG」頁面的有效內容保留為 retrieval strategy spectrum，但重新放回正確邊界：
+
+| Strategy | Core idea | Canonical home |
+|---|---|---|
+| Dense retrieval | query / passage single-vector semantic matching | D05 |
+| Sparse / lexical | exact / weighted lexical matching | D05 |
+| Late interaction | token-level query-document interaction（例如 ColBERT） | D04 encoding + D05 search |
+| Hybrid retrieval | dense + sparse + fusion / RRF | D04/D05 |
+| Query transformation | rewrite / expansion / HyDE | D05 |
+| Decomposition / multi-hop | sub-question → iterative retrieval | D05 |
+| Adaptive / active retrieval | decide whether/when to retrieve again | D06（不是 D05 的 relevance 問題） |
+| Agent-controlled retrieval | controller selects tools/actions | D12 |
+
+這個表的目的，是避免再把「Advanced RAG」當成一個模糊大 Domain。
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]

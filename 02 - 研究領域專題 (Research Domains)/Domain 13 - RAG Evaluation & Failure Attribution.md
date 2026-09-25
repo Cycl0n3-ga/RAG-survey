@@ -89,6 +89,23 @@ End-to-end score 不能直接說明 bottleneck 位於 retrieval、evidence const
 這是 repo 的 evaluation convention，用來避免把 multimodal benchmark 誤標成純文字 benchmark。
 
 
+## Capability-Specific Benchmarking
+Long-context benchmark、retrieval benchmark、RAG benchmark 與 long-form report benchmark **不能互相替代**。
+
+- Needle-in-a-Haystack 類測試主要測特定 retrieval/position 能力，不能單獨證明長文理解、multi-hop reasoning 或真實 RAG 品質。
+- Long-context evaluation 應至少區分：position robustness、retrieval、multi-hop / aggregation、long-document QA。
+- RAG evaluation 還需要 retrieval relevance、evidence sufficiency、faithfulness、citation / attribution。
+- Long-form evaluation 另外需要 information coverage、cross-section consistency、report logic 等。
+
+因此「某模型在 128k/1M NIAH 表現很好」不能直接推出「它在真實長文件 RAG / report generation 上同樣可靠」。
+
+### Oracle diagnostic principle
+
+最重要的分離實驗之一是：
+`Generator(Gold Evidence)`
+
+若 gold evidence 已完整放入 context，答案仍錯，主要問題就不應再歸咎於 retriever；應繼續檢查 D07 utilization、reasoning、generation 或 attribution。
+
 ## Navigation
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]

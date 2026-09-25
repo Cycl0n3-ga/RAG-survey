@@ -64,6 +64,25 @@ flowchart LR
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation|LightRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey|GraphRAG Survey]]
 
+## Representation Families
+舊版 GraphRAG / hierarchical 頁面中的核心概念保留為 **representation/index choices**，而不是額外 top-level Domain：
+
+| Family | Main object | Typical strength | Main boundary |
+|---|---|---|---|
+| Raw text / chunk | passage text | local evidence fidelity | segmentation in D02 |
+| Proposition / claim | self-contained semantic unit | fine-grained retrieval | extraction may touch D03 |
+| Graph / KG | entity / relation / event graph | relational traversal / global structure | query-time graph search in D05 |
+| Hierarchical / multi-resolution | tree / community / recursive summaries | local↔global resolution switching | retrieval policy in D05 |
+| Hybrid | lexical + dense + graph + hierarchy | channel complementarity | fusion/reranking in D05 |
+
+### Graph and hierarchical structure are not a single algorithm
+
+- Microsoft GraphRAG-style systems separate **graph/community representation** from **local/global query modes**; the former belongs here, the latter belongs to D05.
+- HippoRAG-style association mechanisms use graph structure as non-parametric memory/index; Personalized PageRank-like traversal is a retrieval mechanism at D05/D11 boundary.
+- RAPTOR-style recursive summaries are a hierarchical representation; tree traversal / collapsed retrieval are D05 retrieval choices.
+
+因此「Vector RAG vs GraphRAG vs Hierarchical RAG」不是三個互斥 Domain，而是可組合的 representation / retrieval paradigms。
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]

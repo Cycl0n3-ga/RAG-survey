@@ -65,6 +65,17 @@ flowchart LR
 > [!NOTE]
 > ReAct、Toolformer、AutoGen、WebGPT 等目前放在 A04 General Agents & Tool Use；只有當 contribution 直接控制 RAG evidence lifecycle 時，才歸 D12。
 
+## Control Mechanisms
+Agentic RAG 的核心不是「用了 Agent」三個字，而是 **state → action policy**。舊版 Agentic/Deep-Research 頁面中的有效機制保留如下：
+
+1. **Dynamic planning**：根據目前 evidence / gap / budget 重規劃下一步。
+2. **Tool selection**：search、database、code、file、graph、verification 等 action 的選擇。
+3. **Reflection / repair**：依 retrieval、verification、coverage failure 決定重寫 query、補檢索、重驗證或 abstain。
+4. **Multi-agent coordination**：角色分工可用於 research / verification / writing，但只有當 coordination 直接控制 RAG evidence lifecycle 時才是 D12。
+5. **Sandbox / permission boundary**：tool execution 的安全與權限屬 D14/A04 的系統交界。
+
+ReAct、Toolformer、AutoGen、WebGPT 等一般 agent/tool-use 工作仍放 A04；D12 只保留 RAG-specific orchestration。
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
