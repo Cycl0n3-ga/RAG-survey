@@ -55,7 +55,7 @@ flowchart TD
     START["選擇研究入口"]
     MAP["Research Taxonomy and Domain Map"]
     SURVEY["Survey Papers Index"]
-    REPORT["Deep Research Report"]
+    REPORT["Current Research Overview"]
     DOMAINS["Research Domains"]
     PAPERS["Primary Literature Notes"]
     BENCH["RAG Benchmark Catalog"]
@@ -86,9 +86,8 @@ flowchart TD
 > [!IMPORTANT] Survey 與研究提案分流
 > Research Domains 優先描述已有 survey / review 與 primary papers 可支持的研究版圖；尚未被文獻直接驗證的 taxonomy 延伸、controller、F/R/D/A/P/C/T 操作規則與 evidence-governance 組合設計，集中放在 Ideas & Hypotheses，避免把本專案構想誤寫成社群共識。
 
-### 一、深度研究報告 (Deep Research Reports)
-1. [[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)]] *(5 萬字完整綜述)*
-2. [[01 - 深度研究報告 (Deep Research Reports)/02 - 補充資料與參考文獻評析 (Reference Audit)|02 - 補充資料與參考文獻評析 (Reference Audit)]] *(知識抽象階梯與反思)*
+### 一、研究總覽
+- [[01 - 深度研究報告 (Deep Research Reports)/01 - RAG Taxonomy v2 Research Overview|RAG Taxonomy v2 Research Overview]]
 
 ### 二、14 個研究領域 (Research Domains)
 
@@ -123,8 +122,8 @@ flowchart TD
 > [!NOTE]
 > Idea 05/06 是研究與工程提案，不是 survey-established conclusion。其實驗資料與評測入口請搭配 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]] 與 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]。
 
-### 四、核心論文庫 (115 篇文獻筆記與 112 篇原始 PDF)
-> 點擊進入任一論文筆記，均可直接點擊 `[[Papers/xxx.pdf]]` 開啟原始論文；下一階段優先擴充規劃請參閱 [[03 - 論文庫 (Literature Notes)/00 - 論文擴充待補清單|00 - 論文擴充待補清單 (Prioritized Backlog)]]：
+### 四、核心論文庫 (125 篇文獻筆記與 122 篇原始 PDF)
+> 點擊進入任一論文筆記，均可直接點擊 `[[Papers/xxx.pdf]]` 開啟原始論文；下一階段優先擴充規劃請參閱 [[03 - 論文庫 (Literature Notes)/00 - 論文擴充待補清單|Literature Coverage Status]]：
 
 | 分類 | 核心論文筆記 | 原始 PDF 快速開啟 |
 | :--- | :--- | :--- |
