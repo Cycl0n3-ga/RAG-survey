@@ -49,6 +49,14 @@ sequenceDiagram
     STORM-->>User: 產出萬字維基百科/研究報告
 ```
 
+#### 2. WebGPT 與 GopherCite：主動網路研究、逐字引文與拒答機制
+- **[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2021-12) WebGPT - Browser-assisted question-answering with human feedback|WebGPT (Nakano et al., OpenAI 2021)]]**：首創文字網頁瀏覽器環境（search, browse, scroll, quote），透過 RLHF 訓練模型自主採集網路證據並在長篇回答中標註可驗證引用，在 ELI5 上以 56% 勝率超越人類專家示範。
+- **[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes|GopherCite (Menick et al., DeepMind 2022)]]**：引入強制逐字字面校驗（Verbatim Quotes）與選擇性拒答（Abstention）機制，在缺乏充分證據時主動棄權，將長篇回答高品質率提升至 80%。
+
+#### 3. EviReport 與 EFSG：證據追蹤大綱與結構化生成範式
+- **[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports|EviReport (Findings of ACL 2026)]]**：提出證據錨定大綱（Reasoned Outlines）與缺口感知追加檢索（Gap-Aware Append Queries），在 EviReportBench 上實現 2.16× 事實覆蓋率與 +8.9 分精準度。
+- **[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation|EFSG (RAG4Reports 2026)]]**：提出證據先行（Evidence-First）範式，在寫作前完全凍結黃金事實庫，關閉動態檢索，以嚴格結構化解碼根除無支撐大綱導致的事實性漂移。
+
 ---
 
 ### 三、關鍵工程構件：Evidence Store 與 Claim-Evidence Ledger
