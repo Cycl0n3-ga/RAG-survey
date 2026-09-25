@@ -15,9 +15,6 @@ doi: null
 arxiv: "2404.14469"
 url: "https://arxiv.org/abs/2404.14469"
 pdf_file: "Papers/02 - Compression & KV Cache/(arXiv 2024-04) SnapKV - LLM Knows What You are Looking for Before Generation.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
 tags:
   - "paper"
   - "kv-cache-pruning"

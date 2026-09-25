@@ -17,9 +17,6 @@ doi: null
 arxiv: "2311.09210"
 url: "https://arxiv.org/abs/2311.09210"
 pdf_file: "Papers/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]"
 tags:
   - paper
   - chain-of-note
@@ -180,8 +177,8 @@ graph TD
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
 - **本地 PDF 原文**：
   - [[Papers/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models.pdf|開啟本地 PDF 檔案]]
 - **相關演進技術筆記**：

@@ -23,9 +23,6 @@ doi: "10.1145/3651890.3672234"
 arxiv: "2310.07240"
 url: "https://dl.acm.org/doi/10.1145/3651890.3672234"
 pdf_file: "Papers/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
 tags:
   - paper
   - kv-cache

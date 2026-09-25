@@ -18,9 +18,6 @@ doi: "10.18653/v1/2023.emnlp-main.495"
 arxiv: "2305.06983"
 url: "https://aclanthology.org/2023.emnlp-main.495/"
 pdf_file: "Papers/03 - RAG & Retrieval/(EMNLP 2023-12) Active Retrieval Augmented Generation.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]"
 tags:
   - paper
   - active-retrieval
@@ -185,8 +182,8 @@ graph TD
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]
 - **本地 PDF 原文**：
   - [[Papers/03 - RAG & Retrieval/(EMNLP 2023-12) Active Retrieval Augmented Generation.pdf|開啟本地 PDF 檔案]]
 - **相關演進技術筆記**：
