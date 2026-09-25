@@ -211,7 +211,7 @@ metrics: []                                            # 評測指標
 - D11 Memory-Augmented RAG
 - D12 Agentic RAG & Orchestration
 - D13 RAG Evaluation & Failure Attribution
-- D14 RAG Systems & Reliability
+- D14 RAG Systems, Robustness & Security
 
 ### 分類規則
 1. **Domain = lifecycle / system research problem**。

@@ -47,7 +47,7 @@ taxonomy_version: "v2"
 
 ### Evaluation / Deployment
 - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems & Reliability|D14 RAG Systems & Reliability]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|D14 RAG Systems, Robustness & Security]]
 
 ## Other Axes
 

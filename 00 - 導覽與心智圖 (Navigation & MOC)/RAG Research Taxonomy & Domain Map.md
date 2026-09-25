@@ -42,7 +42,7 @@ flowchart LR
     D11["D11 Memory-Augmented RAG"] --> CORE
     D12["D12 Agentic RAG & Orchestration"] --> CORE
     CORE --> D13["D13 Evaluation & Failure Attribution"]
-    D14["D14 Systems & Reliability"] --> CORE
+    D14["D14 Systems, Robustness & Security"] --> CORE
 ```
 
 ## 3. The 14 Domains
@@ -62,7 +62,7 @@ flowchart LR
 | D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|Memory-Augmented RAG]] | 如何管理跨 interaction 的 persistent memory？ |
 | D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|Agentic RAG & Orchestration]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
 | D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|RAG Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的問題來源？ |
-| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems & Reliability|RAG Systems & Reliability]] | 如何管理 latency、cost、observability 與 runtime reliability？ |
+| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Robustness & Security]] | 如何管理 latency、cost、observability 與 runtime reliability？ |
 
 ## 4. Other Axes
 

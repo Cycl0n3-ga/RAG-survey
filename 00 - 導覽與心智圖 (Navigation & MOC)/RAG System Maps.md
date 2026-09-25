@@ -94,7 +94,7 @@ flowchart LR
     CORE["D01-D12 RAG System"]
 
     CORE --> D13["D13 Evaluation & Failure Attribution"]
-    D14["D14 Systems & Reliability"] -. "latency / cost / observability" .-> CORE
+    D14["D14 Systems, Robustness & Security"] -. "latency / cost / observability" .-> CORE
 
     A01["A01 Long Context"] -.-> CORE
     A02["A02 Context / KV Compression"] -.-> CORE
@@ -153,7 +153,7 @@ flowchart LR
 | D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|Memory-Augmented RAG]] |
 | D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|Agentic RAG & Orchestration]] |
 | D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|RAG Evaluation & Failure Attribution]] |
-| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems & Reliability|RAG Systems & Reliability]] |
+| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Robustness & Security]] |
 
 ## Related
 
