@@ -4,15 +4,13 @@ domain_id: "D11"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Cross-Lifecycle"
-migration_status: "scaffold"
 last_updated: "2026-09-25"
 ---
 
 # Domain 11 - Memory-Augmented RAG
 
-> [!IMPORTANT] Canonical Domain v2
+> [!IMPORTANT]
 > 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-> 目前為 migration scaffold；舊 Domain 尚未刪除。
 
 ## Core Question
 如何跨 interaction 保存、檢索、合併、更新與遺忘 persistent state，而不只是查詢 corpus？
@@ -38,4 +36,3 @@ last_updated: "2026-09-25"
 ## Navigation
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Canonical RAG Domain Migration Map|Migration Map]]
