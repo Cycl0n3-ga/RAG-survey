@@ -193,6 +193,6 @@ flowchart TD
   - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]
   - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]
 - 相關代理人與評測筆記：
-  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NeurIPS 2023-11) AgentBench - Evaluating LLMs as Agents.md|(NeurIPS 2023-11) AgentBench]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ICLR 2024-05) AgentBench - Evaluating LLMs as Agents|(NeurIPS 2023-11) AgentBench]]
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation.md|(ACL 2024-08) FreshLLMs]]
   - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation.md|(arXiv 2023-08) AutoGen]]
