@@ -163,9 +163,9 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **D02 (Segmentation & Contextualization) & Domain 13 (資訊保真與跨塊整合)**：
+1. **D03 Knowledge Extraction & Information Preservation**：
    SciREX 提供了最強有力的實驗證據：在真實科研文檔中，**55% 的複合事實跨越了章節**。如果 RAG 系統單純按 200–500 token 盲目切塊，必然會徹底割裂超過半數的核心科學命題！
-2. **專業級學術報告與 Deep Research Agent (Domain 08 & 09)**：
+2. **對 D09 Grounded Generation 與 D12 Agentic RAG 的間接意義**：
    對於想要構建「自動閱讀數十篇文獻並總結 SOTA 比較表格」的 Agent 系統而言，SciREX 所定義的 Task-Dataset-Method-Metric 四元組是知識圖譜與表格抽取的根本架構。
 
 ---
