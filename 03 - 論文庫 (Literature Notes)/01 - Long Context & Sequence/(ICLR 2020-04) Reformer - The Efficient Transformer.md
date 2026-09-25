@@ -12,9 +12,6 @@ doi: null
 arxiv: "2001.04451"
 url: "https://openreview.net/forum?id=rkgNKkHtvB"
 pdf_file: "Papers/01 - Long Context & Sequence/(ICLR 2020-04) Reformer - The Efficient Transformer.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - locality-sensitive-hashing

@@ -15,9 +15,6 @@ doi: "10.18653/v1/P19-1285"
 arxiv: "1901.02860"
 url: "https://aclanthology.org/P19-1285/"
 pdf_file: "Papers/01 - Long Context & Sequence/(ACL 2019-07) Transformer-XL - Attentive Language Models Beyond a Fixed-Length Context.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - segment-recurrence

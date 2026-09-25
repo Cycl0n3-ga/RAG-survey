@@ -14,8 +14,6 @@ doi: null
 arxiv: "2309.17453"
 url: "https://openreview.net/forum?id=NG7sS5HOZp"
 pdf_file: "Papers/01 - Long Context & Sequence/(ICLR 2024-05) Efficient Streaming Language Models with Attention Sinks.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - attention-sinks

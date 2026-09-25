@@ -16,8 +16,6 @@ doi: null
 arxiv: "2309.12307"
 url: "https://openreview.net/forum?id=6pmfdmzrTG"
 pdf_file: "Papers/01 - Long Context & Sequence/(ICLR 2024-05) LongLoRA - Efficient Fine-tuning of Long-Context Large Language Models.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - long-context

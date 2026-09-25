@@ -22,9 +22,6 @@ doi: null
 arxiv: "2009.14794"
 url: "https://openreview.net/forum?id=Ua6nl0P2sna"
 pdf_file: "Papers/01 - Long Context & Sequence/(ICLR 2021-05) Rethinking Attention with Performers.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - linear-attention
