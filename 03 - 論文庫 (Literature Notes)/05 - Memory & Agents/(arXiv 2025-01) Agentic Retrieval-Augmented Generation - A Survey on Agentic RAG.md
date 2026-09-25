@@ -136,7 +136,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 09（Agentic 工作流）與 Domain 08（長篇生成）的指引**：
+1. **對 D12（Agentic RAG & Orchestration）與 D09（Grounded Generation & Long-form Synthesis）的指引**：
    - Agentic RAG 是本專案最終邁向「自主長篇專業研報撰寫」的核心理論支柱；本綜述確立的 Planning $\to$ Tool Use $\to$ Reflection 閉環可直接轉化為專案的生產管線。
 2. **對 Domain 11（Research Roadmap）的價值**：
    - 明確指出了未來的核心研究瓶頸：如何在保持 Agent 自主決策靈活性的同時，施加剛性的證據控制與成本預算管理。
