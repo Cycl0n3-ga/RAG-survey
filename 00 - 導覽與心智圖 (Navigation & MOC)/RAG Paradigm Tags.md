@@ -26,6 +26,7 @@ Paradigm 是橫跨 lifecycle 的方法族，不是額外 Domain。
 | long_form_rag | report-level evidence synthesis | D09,D13 |
 | long_context_hybrid | long-context reading 與 RAG routing/packing | D05,D07,D14 |
 | hybrid_rag | lexical/dense/graph/structured channels 融合 | D04,D05 |
+| retrieval_augmented_training | retrieval 在 pretraining / instruction-tuning / joint retriever-reader training 中被納入學習流程 | D04,D05 |
 
 ## Metadata convention
 ```yaml

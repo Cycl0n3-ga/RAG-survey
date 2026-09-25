@@ -62,6 +62,13 @@ flowchart LR
 
 本專案的 **F/R/D/A/P/C/T** ontology 與 Evidence-Governed pipeline 是 project hypothesis，放在 Ideas & Hypotheses，不當作既有文獻共識。
 
+## Conceptual Boundaries
+
+- **Retrieval Unit ≠ Semantic Unit**：chunk / passage 是檢索單元；entity / event / proposition / claim 是語意單元，兩者不可強行一對一。
+- **Knowledge Type ≠ Authority / Usability**：一段內容被抽成 Fact / Requirement / Claim，不代表它自動具有足夠權威、時效或可用性；這些需由 D08 / evidence governance 另外判斷。
+- **Extraction Correctness ≠ Evidence Sufficiency**：抽取得正確，仍可能沒有涵蓋回答問題所需的全部 evidence；那是 D06 的問題。
+- **Structured ≠ More Faithful by default**：結構化可能提高可檢索性，也可能丟失 negation、condition、scope、time、unit 或 provenance，因此需做 preservation ablation。
+
 ## Representative Notes
 
 **Current primary-note coverage: 12**
