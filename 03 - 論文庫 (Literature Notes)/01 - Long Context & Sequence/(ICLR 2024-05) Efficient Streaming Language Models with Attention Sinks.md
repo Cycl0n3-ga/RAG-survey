@@ -15,9 +15,7 @@ arxiv: "2309.17453"
 url: "https://openreview.net/forum?id=NG7sS5HOZp"
 pdf_file: "Papers/01 - Long Context & Sequence/(ICLR 2024-05) Efficient Streaming Language Models with Attention Sinks.pdf"
 domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 上下文壓縮與 KV Cache 管理 (H2O, Scissorhands, StreamingLLM)|Domain 02 - 上下文壓縮與 KV Cache 管理 (H2O, Scissorhands, StreamingLLM)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - attention-sinks
@@ -197,7 +195,7 @@ graph TD
 
 - **所屬研究領域**：
   - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
-  - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 上下文壓縮與 KV Cache 管理 (H2O, Scissorhands, StreamingLLM)|Domain 02 - 上下文壓縮與 KV Cache 管理 (H2O, Scissorhands, StreamingLLM)]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
 - **本地 PDF 原文**：
   - [[Papers/01 - Long Context & Sequence/(ICLR 2024-05) Efficient Streaming Language Models with Attention Sinks.pdf|開啟本地 PDF 檔案]]
 - **相關演進技術筆記**：
