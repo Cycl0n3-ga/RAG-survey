@@ -140,8 +140,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 10 (Benchmarks & Safety) 的落地支撐**：為評估企業級 RAG 系統提供了開箱即用的多維診斷評測套件。
-2. **對 Domain 02 (Context Compression) 與 Domain 04 (Chunking) 的直接啟發**：Chunk Utilization 指標實證證明了「粗切塊 + 大 Top-k」是極端浪費顯存且降低準確率的工程反模式，強烈支持本專案推動的「命題切塊（Dense X）」與「KV Cache 剪枝」。
+1. **對 D13 (RAG Evaluation & Failure Attribution) 的落地支撐**：為評估企業級 RAG 系統提供了開箱即用的多維診斷評測套件。
+2. **對 Domain 02 (Context Compression) 與 D02 (Segmentation & Contextualization) 的直接啟發**：Chunk Utilization 指標實證證明了「粗切塊 + 大 Top-k」是極端浪費顯存且降低準確率的工程反模式，強烈支持本專案推動的「命題切塊（Dense X）」與「KV Cache 剪枝」。
 
 ---
 
