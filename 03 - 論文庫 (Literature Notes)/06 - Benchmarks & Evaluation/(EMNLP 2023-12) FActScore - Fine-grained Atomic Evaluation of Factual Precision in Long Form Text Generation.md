@@ -37,6 +37,16 @@ metrics:
   - "FActScore"
   - "Supported Fact Ratio"
   - "Unsupported Error Rate"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D09"
+paradigm_tags:
+  - "factuality"
+  - "evaluation"
+adjacent_interfaces: []
+
 ---
 
 # FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation

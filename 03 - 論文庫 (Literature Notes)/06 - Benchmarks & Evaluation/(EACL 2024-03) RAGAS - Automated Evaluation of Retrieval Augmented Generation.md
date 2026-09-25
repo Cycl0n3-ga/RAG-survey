@@ -24,6 +24,14 @@ tags:
   - hallucination
 verification_status: "verified"
 last_verified: 2026-09-24
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains: []
+paradigm_tags:
+  - "rag_evaluation"
+adjacent_interfaces: []
+
 ---
 
 # Ragas: Automated Evaluation of Retrieval Augmented Generation

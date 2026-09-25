@@ -52,6 +52,15 @@ metrics:
   - "accuracy"
   - "f1"
   - "rouge"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # KILT: a Benchmark for Knowledge Intensive Language Tasks

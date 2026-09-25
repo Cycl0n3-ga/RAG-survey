@@ -46,6 +46,17 @@ metrics:
   - "Task Success Rate (SR %)"
   - "Achievable Task SR (SR_AC %)"
   - "Unachievable Task SR (SR_UA %)"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D13"
+  - "D12"
+paradigm_tags:
+  - "agent_evaluation"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # WebArena: A Realistic Web Environment for Building Autonomous Agents

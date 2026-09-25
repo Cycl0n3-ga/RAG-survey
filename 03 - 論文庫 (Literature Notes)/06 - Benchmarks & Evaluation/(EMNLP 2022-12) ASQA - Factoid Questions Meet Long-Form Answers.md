@@ -32,6 +32,16 @@ metrics:
   - "Exact Match (EM)"
   - "ROUGE-L"
   - "STR-EM"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D09"
+paradigm_tags:
+  - "long_form_rag"
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # ASQA: Factoid Questions Meet Long-Form Answers

@@ -39,6 +39,16 @@ metrics:
   - "f1"
   - "supporting_fact_f1"
   - "reasoning_path_f1"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "multi_hop_rag"
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps (2WikiMultiHopQA)

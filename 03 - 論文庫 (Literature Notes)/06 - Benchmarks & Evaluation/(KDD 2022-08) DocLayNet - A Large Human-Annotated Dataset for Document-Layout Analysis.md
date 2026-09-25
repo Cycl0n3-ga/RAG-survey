@@ -35,6 +35,17 @@ benchmark_ids:
   - "DocLayNet"
 metrics:
   - "mAP@0.5-0.95"
+taxonomy_version: "v2"
+taxonomy_home: "D01"
+primary_domain: "D01"
+secondary_domains:
+  - "D13"
+paradigm_tags:
+  - "document_structure"
+  - "benchmark"
+  - "multimodal_rag"
+adjacent_interfaces: []
+
 ---
 
 # DocLayNet: A Large Human-Annotated Dataset for Document-Layout Analysis

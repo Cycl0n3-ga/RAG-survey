@@ -29,6 +29,14 @@ metrics:
   - "Retrieval Hit@k"
   - "Table QA Accuracy"
   - "Cross-Modal Faithfulness"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains: []
+paradigm_tags:
+  - "rag_evaluation"
+adjacent_interfaces: []
+
 ---
 
 # T²-RAGBench: Benchmarking Text-and-Table Retrieval Augmented Generation

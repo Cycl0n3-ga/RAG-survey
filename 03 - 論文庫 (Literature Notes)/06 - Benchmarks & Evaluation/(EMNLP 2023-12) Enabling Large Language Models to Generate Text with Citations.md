@@ -37,6 +37,15 @@ metrics:
   - "STR-EM"
   - "QA-F1"
   - "ROUGE-L"
+taxonomy_version: "v2"
+taxonomy_home: "D09"
+primary_domain: "D09"
+secondary_domains:
+  - "D13"
+paradigm_tags:
+  - "citation_aware_rag"
+adjacent_interfaces: []
+
 ---
 
 # Enabling Large Language Models to Generate Text with Citations (ALCE)

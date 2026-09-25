@@ -58,6 +58,17 @@ metrics:
   - "Success Rate (SR)"
   - "Overall Agent Score"
   - "Interaction Rounds"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D13"
+  - "D12"
+paradigm_tags:
+  - "agent_evaluation"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # AgentBench: Evaluating LLMs as Agents
