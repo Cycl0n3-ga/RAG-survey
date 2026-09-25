@@ -80,7 +80,7 @@ flowchart TD
 | **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2021-06) A Frustratingly Easy Approach for Entity and Relation Extraction|PURE]]** | NAACL 2021 | 獨立任務編碼器 + 標記實體提示（Typed Entity Markers） | 解除實體與關係表示共享衝突，以極簡管線超越複雜聯合模型 | [NAACL 2021](https://aclanthology.org/2021.naacl-main.5/) |
 | **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2021-11) REBEL - Relation Extraction By End-to-end Language generation|REBEL]]** | EMNLP 2021 | Seq2Seq 自回歸生成三元組線性字串 | 統一關係抽取為條件式字串生成，突破預先定義 Schema 限制 | [EMNLP 2021](https://aclanthology.org/2021.emnlp-main.180/) |
 | **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2022-07) GenIE - Generative Information Extraction|GenIE]]** | NAACL 2022 | 前綴樹（Trie / Prefix-Tree）約束受限自回歸解碼 | 保證封閉式 KG 抽取 100% 合法，根除自回歸生成幻覺 | [NAACL 2022](https://aclanthology.org/2022.naacl-main.224/) |
-| **MAVEN** | EMNLP 2020 | 大規模通用事件抽取基準 | 事件觸發詞與 168 類事件類型識別 | [EMNLP 2020](https://aclanthology.org/2020.emnlp-main.150/)；未包含深層商業時效狀態 |
+| **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) MAVEN - A Massive General Domain Event Detection Dataset\|MAVEN]]** | EMNLP 2020 | 大規模通用領域事件檢測基準 (4,480 篇文檔，11.8 萬 Event Mentions) | 168 類事件類型與觸發詞標註，比 ACE 2005 大 22 倍 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) MAVEN - A Massive General Domain Event Detection Dataset\|文獻筆記]] · [EMNLP 2020](https://aclanthology.org/2020.emnlp-main.150/) |
 
 ---
 

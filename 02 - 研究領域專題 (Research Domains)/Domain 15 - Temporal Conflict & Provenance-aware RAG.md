@@ -72,7 +72,7 @@ conflict_relation: null                  # 關聯衝突主張 ID (若存在)
 
 | 代表工作 / 論文 | 發表 Venue / 年份 | 核心研究問題 | 衝突處理機制 | 官方來源與限制 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Re³** | ACL 2026 | Relevance, Recency 與舊版本干擾 | 建立時間敏感測試基準 Re² Bench；評估模型對過期干擾的敏感度 | [ACL Anthology](https://aclanthology.org/2026.acl-long.1180/)；不能推廣為最新永遠正確 |
+| **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination\|Re³]]** | ACL 2026 | Relevance, Recency 與舊版本干擾 | 雙編碼器架構 (TADRE) + 衝突感知過濾器 (CARF)；提出 1.3M 規模之 Re² Bench 測試過期干擾 | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination\|文獻筆記]] / [ACL Anthology](https://aclanthology.org/2026.acl-long.1180/) |
 | **ConfRAG** | 2024 預印本 | 外部檢索內容與參數記憶的知識衝突 | 區分內在知識衝突與外部上下文衝突，引導模型權衡 | [arXiv:2403.08319](https://arxiv.org/abs/2403.08319) |
 | **TimeQA / TempLAMA** | TACL / EMNLP | 時間演化事實問答（Temporal QA） | 探討實體屬性隨時間變更時之檢索與預測能力 | 多針對百科類實體，缺乏複雜工程版本矩陣 |
 | **W3C PROV-DM** | W3C Standard | 資料譜系（Data Provenance）標準 | Entity-Activity-Agent 溯源三元組與演變歷史建模 | 資料庫與語意網標準，尚未被大語言模型廣泛原生支援 |

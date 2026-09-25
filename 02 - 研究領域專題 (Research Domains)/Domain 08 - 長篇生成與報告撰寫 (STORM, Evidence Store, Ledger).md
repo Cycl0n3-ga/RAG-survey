@@ -89,15 +89,15 @@ sequenceDiagram
 
 | 軸 | 代表 benchmark / work | 問題 |
 | :--- | :--- | :--- |
-| Citation / sentence support | RAG4Reports | 每句 claim 是否真的被來源支持？ |
-| Information coverage | RAG4Reports nugget coverage、EviReportBench | 報告是否涵蓋應有的重要資訊？ |
-| Factuality / evidence integration | EviReport / EviReportBench | 內容是否正確、是否妥善整合證據？ |
-| Report-level logic / professional quality | ReportLogic、AnalystBench | 全篇結構、論述與專業交付品質是否成立？ |
+| Citation / sentence support | RAG4Reports、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation\|EFSG (ACL 2026)]] | 每句 claim 是否真的被來源支持？ |
+| Information coverage | RAG4Reports nugget coverage、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports\|EviReport (ACL 2026)]] | 報告是否涵蓋應有的重要資訊？ |
+| Factuality / evidence integration | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports\|EviReport / EviReportBench]]、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models\|OpenScholar / ScholarQABench]] | 內容是否正確、是否妥善整合證據與學術引用？ |
+| Report-level logic / professional quality | ReportLogic、[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) AnalystBench - Benchmarking Professional Long-Form Report Generation with Web-Mined Multimodal Tasks\|AnalystBench (ACL 2026)]] | 全篇結構、論述、多模態圖表與專業交付品質是否成立？ |
 
 其中 RAG4Reports 是 shared task / benchmark，不應與 EFSG、AMU 等參賽方法論文混為同一種 artifact；ReportLogic、AnalystBench 的資料釋出狀態也應個別核對。完整清單見 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]。
 
 > [!NOTE] Survey coverage
-> 長篇報告生成目前不像通用 RAG 那樣已有單一、成熟且涵蓋全部子題的 survey。因此 STORM、EviReport、RAG4Reports、EFSG、AnalystBench、ReportLogic 等 primary/benchmark works 可以構成 evidence map，但尚未被 survey 直接支持的「Claim-Evidence Ledger」「固定 Evidence Store」「Gap-aware Writer」組合設計，應移至 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]，不得當成 survey 共識。
+> 長篇報告生成目前不像通用 RAG 那樣已有單一、成熟且涵蓋全部子題的 survey。因此 [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM]]、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports|EviReport]]、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation|EFSG]]、[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) AnalystBench - Benchmarking Professional Long-Form Report Generation with Web-Mined Multimodal Tasks|AnalystBench]]、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models|OpenScholar]]、ReportLogic 等 primary/benchmark works 可以構成 evidence map，但尚未被 survey 直接支持的「Claim-Evidence Ledger」「固定 Evidence Store」「Gap-aware Writer」組合設計，應移至 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]，不得當成 survey 共識。
 
 ---
 

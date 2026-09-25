@@ -56,7 +56,9 @@ flowchart LR
 
 #### 1. 密集向量與稀疏檢索之爭 (Dense vs. Sparse)
 - **Dense Retrieval ([[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering|DPR]])**：擅長近義詞、抽象意圖捕捉；但在產品型號、錯誤代碼、罕見人名上表現較脆弱。
-- **Hybrid Search (BM25 + Dense + RRF)**：已成為工業界常見實踐。透過倒數排名融合（Reciprocal Rank Fusion, RRF）同時兼顧字面精確與語義泛化。
+- **無監督對比學習 (Unsupervised Contrastive Learning)**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(TMLR 2022-08) Unsupervised Dense Information Retrieval with Contrastive Learning|Contriever (Izacard et al., TMLR 2022)]] 藉由反轉去噪（Inverse Cloze Task）與獨立裁剪對比學習，無需標註資料即可訓練出強大的開放域稠密檢索器，在 BEIR 零樣本檢索上超越 BM25。
+- **神經稀疏詞彙擴展 (Sparse Lexical & Expansion)**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SIGIR 2022-07) SPLADE v2 - Sparse Lexical and Expansion Model for Information Retrieval|SPLADE v2 (Formal et al., SIGIR 2022)]] 利用 BERT MLM 預測頭對全文詞彙表動態預測權重並搭配 FLOPS 正則化，實現精確倒排索引檢索，兼具稀疏詞彙的高效倒排結構與深層語意擴展能力。
+- **Hybrid Search (BM25 / SPLADE + Dense + RRF)**：已成為工業界常見實踐。透過倒數排名融合（Reciprocal Rank Fusion, RRF）同時兼顧字面精確與語義泛化。
 
 #### 2. 多向量延遲交互 (Contextualized Late Interaction)
 - **代表作**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT|ColBERT (SIGIR 2020)]]、[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2022-07) ColBERTv2 - Effective and Efficient Retrieval via Lightweight Late Interaction|ColBERTv2 (NAACL 2022)]]。
@@ -76,6 +78,8 @@ flowchart LR
   - **黑盒平行集成與 LM 監督**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2024-06) REPLUG - Retrieval-Augmented Black-Box Language Models|REPLUG (Shi et al., 2024)]] 將商用黑盒 LLM 平行輸入多篇段落並進行機率加權邊際化（Ensemble Generation），並提出 REPLUG LSR 以 LM 困惑度回饋微調稠密檢索器。
   - **雙重指令微調範式**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) RA-DIT - Retrieval-Augmented Dual Instruction Tuning|RA-DIT (Lin et al., 2024)]] 分別對 LLM 與檢索器實施雙重指令微調（RA-IT 提升背景利用與抗噪，LSR 微調 Query Encoder 對齊偏好），在保持向量索引不變下達成多項知識基準 SOTA。
   - **校正性主動檢索**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation|Corrective RAG (CRAG, Yan et al., 2024)]] 設計輕量級檢索評估器評定置信度，動態觸發文檔精煉、丟棄並調用 Web 搜尋糾錯，或雙源融合，搭配「分解-重組（Decompose-then-Recompose）」算法最大化信噪比。
+  - **重排序與生成統一模型**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs|RankRAG (Yu et al., NeurIPS 2024)]] 透過兩階段指令微調將 Context Ranking 與 Generation 統一至單一 LLM，8B 模型在 9 項知識基準上平均超越 GPT-4 與 Llama3-70B。
+  - **長上下文融合檢索**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-06) LongRAG - Enhancing Retrieval-Augmented Generation with Long-context LLMs|LongRAG (Jiang et al., 2024)]] 將檢索單元由短段落（100-300 字）擴充為整篇長文或大粗粒度區塊（4k 字），將檢索負擔大幅卸載給長上下文 LLM 的內部注意力。
 
 ---
 

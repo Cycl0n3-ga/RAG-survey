@@ -61,6 +61,9 @@ graph TD
 7. **無分詞自適應架構 (Byte-level Tokenizer-Free)**：
    - 代表作：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens|Byte Latent Transformer (Pagnoni et al., 2024)]]。
    - 核心思想：揚棄剛性 Tokenizer，依據資訊熵自適應聚合 Byte Patches，減少無效序列長度並動態分配算力。
+8. **高效長上下文微調 (Efficient Long-Context Fine-Tuning)**：
+   - 代表作：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) LongLoRA - Efficient Fine-tuning of Long-Context Large Language Models|LongLoRA (Chen et al., ICLR 2024)]]。
+   - 核心思想：提出平移稀疏注意力（Shifted Sparse Attention, $S^2$-Attn）大幅降低微調顯存與運算開銷，並配合 LoRA+（解凍 Embedding 與 LayerNorm），僅以 0.004% 額外參數量即可在單台 8x A100 上將 7B 模型延伸至 32k、70B 延伸至 100k，困惑度對齊 Full Fine-Tuning。
 
 ---
 
@@ -76,6 +79,7 @@ graph TD
 | **Linear Kernel** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2021-05) Rethinking Attention with Performers\|Performer (FAVOR+)]] | $O(L \cdot m \cdot d)$ | $O(L)$ | 隨機特徵無偏近似 | 依賴特徵數 $m$，短序列 GPU 吞吐不及高度特化 GEMM |
 | **Linear SSM** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces\|Mamba]] | $O(L)$ | $O(1)$ (推論) | 資訊狀態壓縮 | 精確 Copy/Recall（如 NIAH）不如 Attention |
 | **Positional Ext**| [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens\|LongRoPE]] | 依基座模型 | 依基座模型 | 坐標外推 | 僅保證位置辨識，不保證長文複雜多跳推理能力 |
+| **Shifted Sparse FT** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) LongLoRA - Efficient Fine-tuning of Long-Context Large Language Models\|LongLoRA]] | $O(L \cdot G)$ (微調) | $O(L)$ (低顯存微調) | 平移區塊近似，推論保持完全精確 | 依賴 LoRA+ 可訓練 LayerNorm/Embedding |
 | **Distributed** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) RingAttention with Blockwise Transformers for Near-Infinite Context\|RingAttention]] | $O(L^2 / N)$ | $O(L / N)$ | 完全精確 | 極度依賴跨節點高速互聯頻寬（InfiniBand） |
 
 ---
