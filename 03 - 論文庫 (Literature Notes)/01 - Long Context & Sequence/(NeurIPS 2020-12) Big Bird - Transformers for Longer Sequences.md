@@ -22,6 +22,15 @@ tags:
   - "sparse-attention---graph-theoretical-attention"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "A01"
+primary_domain: null
+secondary_domains: []
+paradigm_tags:
+  - "long_context"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # Big Bird: Transformers for Longer Sequences
