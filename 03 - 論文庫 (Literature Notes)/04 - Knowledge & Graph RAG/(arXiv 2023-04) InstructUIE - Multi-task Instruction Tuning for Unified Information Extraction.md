@@ -153,7 +153,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 12（Knowledge Extraction & Typed Knowledge）的支撐**：
+1. **對 D03 Knowledge Extraction & Information Preservation 的支撐**：
    - InstructUIE 證明了通用指令微調在抽取任務中的威力；本專案提議的 F/R/D/A/P/C/T 七類操作語意標籤，可直接採用其指令模板結構進行 Zero-shot 或 Few-shot 冷啟動抽取。
 2. **對 D02（Segmentation & Contextualization）的支撐**：
    - 提供了一種不依賴大型專有 API（如 GPT-4）的高效私有化知識抽取方案。
