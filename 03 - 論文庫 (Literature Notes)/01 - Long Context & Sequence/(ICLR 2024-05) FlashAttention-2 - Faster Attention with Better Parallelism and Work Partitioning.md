@@ -180,7 +180,7 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 01 (Long Context & Sequence) 的底層推動力**：
+1. **對 A01 (Long Context & Sequence Architecture) 的底層推動力**：
    - FlashAttention-2 已經成為當前全球所有前沿長文本大模型（LLaMA-3, Mistral, Gemma, Qwen, DeepSeek）的標準標配。
 2. **對分散式超長上下文（RingAttention）的支撐**：
    - RingAttention 與 DeepSpeed Ulysses 的核心 Blockwise 運算，底層正是依賴 FlashAttention-2 的分塊計算與狀態轉移能力，才得以實現 1M–10M 上下文的分散式擴展。
