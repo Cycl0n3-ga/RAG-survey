@@ -35,6 +35,15 @@ benchmark_ids:
 metrics:
   - "Exact Match (EM)"
   - "Marginal Log-Likelihood"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "retrieval"
+adjacent_interfaces: []
+
 ---
 
 # REALM: Retrieval-Augmented Language Model Pre-Training

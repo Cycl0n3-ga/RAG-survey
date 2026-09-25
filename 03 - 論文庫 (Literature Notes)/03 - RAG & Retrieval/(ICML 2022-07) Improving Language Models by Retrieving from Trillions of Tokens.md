@@ -74,6 +74,15 @@ metrics:
   - "Bits Per Byte (bpb)"
   - "Perplexity"
   - "Exact Match (EM)"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "retrieval"
+adjacent_interfaces: []
+
 ---
 
 # Improving Language Models by Retrieving from Trillions of Tokens (RETRO)

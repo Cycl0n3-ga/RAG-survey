@@ -41,6 +41,15 @@ metrics:
   - "Perplexity"
   - "Exact Match (EM)"
   - "Accuracy"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "retrieval"
+adjacent_interfaces: []
+
 ---
 
 # REPLUG: Retrieval-Augmented Black-Box Language Models

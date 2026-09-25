@@ -42,6 +42,15 @@ metrics:
   - "F1 Score"
   - "Latency per Query (s)"
   - "Retrieval Step Count"
+taxonomy_version: "v2"
+taxonomy_home: "D06"
+primary_domain: "D06"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "adaptive_rag"
+adjacent_interfaces: []
+
 ---
 
 # Adaptive-RAG: Learning to Adapt Retrieval-Augmented LLMs through Question Complexity

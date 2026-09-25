@@ -22,6 +22,15 @@ tags:
   - "foundational-rag"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D09"
+paradigm_tags:
+  - "rag"
+adjacent_interfaces: []
+
 ---
 
 # Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks

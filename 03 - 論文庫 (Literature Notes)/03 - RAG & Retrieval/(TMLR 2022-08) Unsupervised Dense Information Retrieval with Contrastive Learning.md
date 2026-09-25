@@ -45,6 +45,15 @@ metrics:
   - "nDCG@10"
   - "Recall@100"
   - "Recall@20"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "retrieval"
+adjacent_interfaces: []
+
 ---
 
 # Unsupervised Dense Information Retrieval with Contrastive Learning (Contriever)

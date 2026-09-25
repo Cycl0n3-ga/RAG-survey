@@ -22,6 +22,17 @@ tags:
   - "adaptive-rag---self-reflection"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D06"
+primary_domain: "D06"
+secondary_domains:
+  - "D05"
+  - "D09"
+paradigm_tags:
+  - "adaptive_rag"
+  - "reflective_rag"
+adjacent_interfaces: []
+
 ---
 
 # Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection

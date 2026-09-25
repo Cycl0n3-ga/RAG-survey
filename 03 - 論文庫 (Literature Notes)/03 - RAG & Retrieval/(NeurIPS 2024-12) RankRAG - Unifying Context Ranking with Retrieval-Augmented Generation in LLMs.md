@@ -51,6 +51,16 @@ metrics:
   - "Exact Match (EM)"
   - "Accuracy (Acc)"
   - "F1-Score"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D07"
+  - "D09"
+paradigm_tags:
+  - "reranking"
+adjacent_interfaces: []
+
 ---
 
 # RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs

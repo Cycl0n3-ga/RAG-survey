@@ -40,6 +40,15 @@ metrics:
   - "MRR@10"
   - "NDCG@10"
   - "Recall@1000"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "retrieval"
+adjacent_interfaces: []
+
 ---
 
 # SPLADE v2: Sparse Lexical and Expansion Model for Information Retrieval
