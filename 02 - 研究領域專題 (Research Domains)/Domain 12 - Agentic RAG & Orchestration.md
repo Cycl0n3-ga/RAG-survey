@@ -9,49 +9,53 @@ last_updated: "2026-09-25"
 
 # Domain 12 - Agentic RAG & Orchestration
 
-> [!IMPORTANT]
-> 本頁是目前正式 RAG Taxonomy v2 的 D12。
-
 ## Core Question
-系統如何根據目前 state 自主選擇下一個 RAG action、資料源、工具或子任務？
-
-## Includes
-- planning and routing
-- controller / policy
-- tool selection
-- multi-agent coordination
-- iterative search / read / verify / generate loops
-- workflow orchestration
-
-## Excludes
-- 單一 retriever architecture → D05
-- 只有 retrieve / stop 判斷的 adaptive retrieval → D06
-- persistent memory 本身 → D11
-- 一般 agent framework 但沒有 RAG-specific control → Adjacent Interface A04
-
-## Boundary
-
-Agentic RAG 是 control plane，不是固定 pipeline stage。
+系統如何根據目前 state 自主選擇下一個 retrieval、tool、verification、memory 或 generation action？
 
 ```mermaid
 flowchart LR
-    STATE["Current State"] --> CTRL["Controller"]
-    CTRL --> RET["Retrieve"]
-    CTRL --> REWRITE["Rewrite"]
-    CTRL --> VERIFY["Verify"]
-    CTRL --> GEN["Generate"]
-    RET --> STATE
-    REWRITE --> STATE
-    VERIFY --> STATE
-    GEN --> STATE
+    S["Current State"] --> C["Controller / Policy"]
+    C --> Q["Rewrite / Decompose"]
+    C --> R["Retrieve / Route"]
+    C --> V["Verify / Resolve"]
+    C --> G["Generate / Abstain"]
+    C --> M["Read / Write Memory"]
+    Q -.-> S
+    R -.-> S
+    V -.-> S
+    G -.-> S
+    M -.-> S
 ```
 
-## Classification Rules
-- 主要 contribution 若是 action selection / orchestration，Primary Domain 才是 D12。
-- GraphRAG、Hierarchical RAG、Memory-Augmented RAG 等可作 Secondary Domain 或 paradigm tag。
-- 一般 Agent / Tool Use 文獻若未直接研究 RAG，放在 A04 Adjacent Interface。
+## Includes
+- controller / policy
+- planning / routing
+- tool selection
+- iterative search-read-verify-generate loops
+- multi-agent coordination
+- workflow orchestration
+- action selection from system state
+
+## Excludes
+- retrieval algorithm本身 → D05
+- retrieve / retry / stop 的局部 sufficiency policy → D06
+- persistent memory lifecycle本身 → D11
+- generic agents without RAG-specific evidence control → A04
+
+## Level-2 Topics
+- Planning
+- Controller / Policy
+- Tool Use
+- Routing
+- Multi-Agent Coordination
+- Research Workflow Orchestration
+- Failure-aware Repair
+
+## Boundary
+**Agentic RAG 是 control plane，不是固定 pipeline stage。**  
+若 paper 只改 retrieval method，不因為使用 agent loop 就自動歸 D12。
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]

@@ -9,29 +9,44 @@ last_updated: "2026-09-25"
 
 # Domain 01 - Document Ingestion & Structure
 
-> [!IMPORTANT]
-> 本頁是目前正式 RAG Taxonomy v2 的 D01。
-
 ## Core Question
-原始文件如何轉換成保留結構、版面、來源與 metadata 的可檢索 corpus？
+如何把 PDF、Web、DB、表格、圖片等來源轉成保留結構、版面、metadata 與 source anchors 的可處理 corpus？
+
+```mermaid
+flowchart LR
+    SRC["Documents / Web / DB / Tables / Images"] --> P["Parse"]
+    SRC -. "scanned / image" .-> OCR["OCR / Vision Parsing"]
+    P --> S["Structure Recovery"]
+    OCR --> S
+    S --> M["Metadata / Source Anchors"]
+    M --> D02["D02 Segmentation"]
+```
 
 ## Includes
-- document parsing / structure recovery
-- layout-aware ingestion
-- table / chart / multimodal document structure
-- metadata / source-span preservation
+- PDF / HTML / Office / database ingestion
+- OCR / vision parsing
+- layout / heading / section / table structure recovery
+- metadata normalization
+- page / span / URI / hash anchoring
+- multimodal document structure
 
 ## Excludes
-- chunk boundary optimization → D02
-- knowledge extraction → D03
-- retrieval ranking → D05
+- chunk boundary selection → D02
+- entity / relation / event extraction → D03
+- index representation → D04
 
-## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等使用 paradigm tags。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+## Level-2 Topics
+- Document Parsing
+- OCR / Vision Parsing
+- Layout Understanding
+- Structure Recovery
+- Table / Figure Structure
+- Metadata / Source Anchoring
+- Multimodal Document Ingestion
+
+## Boundary
+D01 的輸出是 **structured source units**；它不決定最終 retrieval granularity，也不把文件直接轉成 knowledge graph。
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]

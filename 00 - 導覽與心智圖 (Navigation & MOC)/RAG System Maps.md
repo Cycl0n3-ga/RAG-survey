@@ -107,6 +107,35 @@ flowchart LR
 - **D14**：deployment / reliability plane，不是 retrieval algorithm。
 - **A01–A05**：Adjacent Interfaces，不計入 14 Domains。
 
+## 5. Failure / Repair Paths
+
+```mermaid
+flowchart LR
+    SIG["Failure Signal"] --> DIAG["Diagnose Failure Type"]
+    D12["D12 Controller"] -. "select repair" .-> DIAG
+
+    DIAG --> EX["Extraction Error"]
+    DIAG --> RM["Retrieval Miss"]
+    DIAG --> GAP["Insufficient Evidence"]
+    DIAG --> CF["Temporal / Provenance Conflict"]
+    DIAG --> UG["Unsupported / Incomplete Generation"]
+
+    EX --> D03["D03 Re-extract / Expand Source"]
+    RM --> D05["D05 Rewrite / Retrieve"]
+    GAP --> D06["D06 Retry / Stop / Abstain"]
+    CF --> D08["D08 Resolve Time / Source / Version"]
+    UG --> D09["D09 Verify / Repair Generation"]
+
+    D03 -.-> SIG
+    D05 -.-> SIG
+    D06 -.-> SIG
+    D08 -.-> SIG
+    D09 -.-> SIG
+```
+
+這張圖只表達 **repair action space**；不是所有系統都需要完整 controller。  
+重點是不要把 extraction error、retrieval miss、insufficient evidence、temporal conflict 與 generation failure 全部當成「再檢索一次」。
+
 ## Domain Index
 
 | ID | Domain |
