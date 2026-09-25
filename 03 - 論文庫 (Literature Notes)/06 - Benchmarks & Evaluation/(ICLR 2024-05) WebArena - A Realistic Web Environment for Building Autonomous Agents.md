@@ -175,7 +175,7 @@ flowchart TD
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-### 對 Domain 09 (Agentic 工作流) 與 Domain 17 (基準評測) 的啟發
+### 對 D12 (Agentic RAG & Orchestration) 與 D13 (RAG Evaluation & Failure Attribution) 的啟發
 1. **奠定 Agent 評測的金標準（Gold Standard for Web Agents）**：
    - WebArena 確立了「真實環境 Docker 化 + Accessibility Tree 觀測 + 終態功能性驗證」的評測範式，後續的 WorkArena、VisualWebArena 等皆沿用此核心設計。
 2. **對 Multi-Agent 協同的迫切需求**：
