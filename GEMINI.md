@@ -159,7 +159,6 @@ metrics: []                                            # 評測指標
 ## 📂 目錄結構規範 (Directory Structure Convention)
 
 - `00 - 導覽與心智圖 (Navigation & MOC)/`：存放全景 MOC、主目錄與技術選型權衡筆記。
-- `01 - 深度研究報告 (Deep Research Reports)/`：存放完整深度調研報告與對話存檔。
 - `02 - 研究領域專題 (Research Domains)/`：存放各細分技術領域專題分析。
 - `03 - 論文庫 (Literature Notes)/`：存放各篇論文標準化結構筆記，分類與檔名完全對齊 `Papers/` 結構：
   `03 - 論文庫 (Literature Notes)/[大類子資料夾]/(會議/期刊 發表年月) 論文名稱.md`
