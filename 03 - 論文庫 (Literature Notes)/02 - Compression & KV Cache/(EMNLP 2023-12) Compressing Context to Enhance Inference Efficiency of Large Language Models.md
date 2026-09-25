@@ -14,8 +14,8 @@ arxiv: "2310.06201"
 url: "https://aclanthology.org/2023.emnlp-main.391/"
 pdf_file: "Papers/02 - Compression & KV Cache/(EMNLP 2023-12) Compressing Context to Enhance Inference Efficiency of Large Language Models.pdf"
 domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 上下文壓縮與 KV Cache 管理 (Prompt 壓縮, 選擇性丟棄, 量化)|Domain 02 - 上下文壓縮與 KV Cache 管理 (Prompt 壓縮, 選擇性丟棄, 量化)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]"
 tags:
   - paper
   - prompt-compression
@@ -188,4 +188,4 @@ flowchart TD
   - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) H2O - Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models|H2O: Heavy-Hitter Oracle for Efficient Generative Inference]]
   - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Scissorhands - Exploiting the Persistence of Importance Hypothesis for LLM KV Cache Compression at Test Time|Scissorhands: Exploiting the Persistence of Importance Hypothesis]]
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 上下文壓縮與 KV Cache 管理 (Prompt 壓縮, 選擇性丟棄, 量化)|Domain 02 - 上下文壓縮與 KV Cache 管理]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]
