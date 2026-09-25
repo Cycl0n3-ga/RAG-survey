@@ -16,9 +16,9 @@ doi: null
 arxiv: "2112.09118"
 url: "https://openreview.net/forum?id=jKN1pXi7b0"
 pdf_file: "Papers/03 - RAG & Retrieval/(TMLR 2022-08) Unsupervised Dense Information Retrieval with Contrastive Learning.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]"
+domains:
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]"
 tags:
   - paper
   - dense-retrieval
@@ -191,7 +191,7 @@ Contriever 在 TMLR 2022 原文（Pages 6–9）中提供了詳盡的實驗對�
 
 ### 關聯專題與論文筆記
 - **專題報告**：
-  - `[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術]]`
+  - `[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]`
   - `[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]`
 - **同領域代表性論文**：
   - `[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2022-07) ColBERTv2 - Effective and Efficient Retrieval via Lightweight Late Interaction|(NAACL 2022-07) ColBERTv2]]`
