@@ -25,6 +25,16 @@ tags:
   - retrieval
 verification_status: "verified"
 last_verified: 2026-09-24
+taxonomy_version: "v2"
+taxonomy_home: "D02"
+primary_domain: "D02"
+secondary_domains:
+  - "D04"
+  - "D05"
+paradigm_tags:
+  - "contextual_chunking"
+adjacent_interfaces: []
+
 ---
 
 # Late Chunking: Contextual Chunk Embeddings for Retrieval

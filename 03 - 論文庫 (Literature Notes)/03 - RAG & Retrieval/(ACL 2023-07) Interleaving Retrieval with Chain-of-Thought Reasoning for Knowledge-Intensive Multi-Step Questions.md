@@ -21,6 +21,16 @@ tags:
   - "multi-hop-reasoning---iterative-retrieval"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D06"
+  - "D12"
+paradigm_tags:
+  - "multi_hop_rag"
+adjacent_interfaces: []
+
 ---
 
 # Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions

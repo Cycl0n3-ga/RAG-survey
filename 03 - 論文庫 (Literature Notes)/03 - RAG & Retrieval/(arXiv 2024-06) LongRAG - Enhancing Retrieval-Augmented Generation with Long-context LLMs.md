@@ -37,6 +37,17 @@ metrics:
   - "exact_match"
   - "f1"
   - "answer_recall"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D02"
+  - "D07"
+paradigm_tags:
+  - "long_context_hybrid"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # LongRAG: Enhancing Retrieval-Augmented Generation with Long-context LLMs

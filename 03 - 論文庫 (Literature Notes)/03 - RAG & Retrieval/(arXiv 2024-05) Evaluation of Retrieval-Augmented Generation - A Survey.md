@@ -44,6 +44,15 @@ metrics:
   - "Answer Faithfulness"
   - "Answer Relevance"
   - "Hit Rate"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains: []
+paradigm_tags:
+  - "rag_evaluation"
+  - "survey"
+adjacent_interfaces: []
+
 ---
 
 # Evaluation of Retrieval-Augmented Generation: A Survey

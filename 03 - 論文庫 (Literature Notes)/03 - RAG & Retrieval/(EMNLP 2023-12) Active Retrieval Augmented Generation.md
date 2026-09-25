@@ -44,6 +44,15 @@ metrics:
   - "Token-level F1"
   - "Disambig-F1"
   - "ROUGE-L"
+taxonomy_version: "v2"
+taxonomy_home: "D06"
+primary_domain: "D06"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "adaptive_rag"
+adjacent_interfaces: []
+
 ---
 
 # Active Retrieval Augmented Generation (FLARE)

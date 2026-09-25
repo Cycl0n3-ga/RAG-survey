@@ -36,6 +36,16 @@ benchmark_ids:
 metrics:
   - "Accuracy"
   - "FactScore"
+taxonomy_version: "v2"
+taxonomy_home: "D06"
+primary_domain: "D06"
+secondary_domains:
+  - "D05"
+  - "D12"
+paradigm_tags:
+  - "corrective_rag"
+adjacent_interfaces: []
+
 ---
 
 # Corrective Retrieval Augmented Generation (CRAG)

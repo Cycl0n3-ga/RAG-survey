@@ -24,6 +24,15 @@ tags:
   - "dense-dual-encoder-retrieval"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "retrieval"
+adjacent_interfaces: []
+
 ---
 
 # Dense Passage Retrieval for Open-Domain Question Answering

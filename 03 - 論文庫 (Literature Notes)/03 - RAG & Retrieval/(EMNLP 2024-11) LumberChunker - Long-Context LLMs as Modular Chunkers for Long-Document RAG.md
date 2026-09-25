@@ -26,6 +26,15 @@ tags:
   - rag
 verification_status: "verified"
 last_verified: 2026-09-24
+taxonomy_version: "v2"
+taxonomy_home: "D02"
+primary_domain: "D02"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "semantic_chunking"
+adjacent_interfaces: []
+
 ---
 
 # LumberChunker: Long-Form Narrative Document Segmentation

@@ -41,6 +41,15 @@ metrics:
   - "Exact Match (EM)"
   - "F1 Score"
   - "Noise Robustness Delta"
+taxonomy_version: "v2"
+taxonomy_home: "D07"
+primary_domain: "D07"
+secondary_domains:
+  - "D09"
+paradigm_tags:
+  - "evidence_utilization"
+adjacent_interfaces: []
+
 ---
 
 # Chain-of-Note: Enhancing Robustness in Retrieval-Augmented Language Models

@@ -46,6 +46,19 @@ metrics:
   - "answer_relevance"
   - "context_precision"
   - "context_recall"
+taxonomy_version: "v2"
+taxonomy_home: "CROSS"
+primary_domain: null
+secondary_domains:
+  - "D05"
+  - "D06"
+  - "D07"
+  - "D09"
+  - "D13"
+paradigm_tags:
+  - "survey"
+adjacent_interfaces: []
+
 ---
 
 # Retrieval-Augmented Generation for Large Language Models: A Survey
