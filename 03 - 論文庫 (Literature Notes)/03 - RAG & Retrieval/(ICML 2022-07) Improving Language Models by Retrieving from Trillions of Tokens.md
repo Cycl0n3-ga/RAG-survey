@@ -52,8 +52,6 @@ doi: null
 arxiv: "2112.04426"
 url: "https://proceedings.mlr.press/v162/borgeaud22a.html"
 pdf_file: "Papers/03 - RAG & Retrieval/(ICML 2022-07) Improving Language Models by Retrieving from Trillions of Tokens.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
 tags:
   - paper
   - autoregressive-rag
@@ -209,7 +207,7 @@ graph TD
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
 - **本地 PDF 原文**：
   - [[Papers/03 - RAG & Retrieval/(ICML 2022-07) Improving Language Models by Retrieving from Trillions of Tokens.pdf|開啟本地 PDF 檔案]]
 - **相關演進技術筆記**：

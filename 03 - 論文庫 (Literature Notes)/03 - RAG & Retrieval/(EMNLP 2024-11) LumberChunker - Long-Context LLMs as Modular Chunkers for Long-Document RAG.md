@@ -15,9 +15,6 @@ doi: null
 arxiv: "2406.17526"
 url: "https://arxiv.org/abs/2406.17526"
 pdf_file: "Papers/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
 tags:
   - paper
   - chunking
