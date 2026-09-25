@@ -42,6 +42,14 @@ metrics:
   - "Ign F1"
   - "AUC"
   - "Ign AUC"
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains: []
+paradigm_tags:
+  - "knowledge_extraction"
+adjacent_interfaces: []
+
 ---
 
 # DocRED: A Large-Scale Document-Level Relation Extraction Dataset

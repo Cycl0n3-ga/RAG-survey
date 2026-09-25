@@ -37,6 +37,14 @@ metrics:
   - "Precision"
   - "Recall"
   - "F1 Score"
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains: []
+paradigm_tags:
+  - "knowledge_extraction"
+adjacent_interfaces: []
+
 ---
 
 # SciREX: A Challenge Dataset for Document-Level Information Extraction

@@ -43,6 +43,18 @@ metrics:
   - "f1"
   - "bleu"
   - "rouge"
+taxonomy_version: "v2"
+taxonomy_home: "D04"
+primary_domain: "D04"
+secondary_domains:
+  - "D03"
+  - "D05"
+  - "D09"
+paradigm_tags:
+  - "graph_rag"
+  - "survey"
+adjacent_interfaces: []
+
 ---
 
 # Graph Retrieval-Augmented Generation: A Survey

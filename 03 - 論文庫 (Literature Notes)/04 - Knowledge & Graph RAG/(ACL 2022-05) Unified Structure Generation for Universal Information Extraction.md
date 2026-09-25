@@ -27,6 +27,14 @@ tags:
   - structured-generation
 verification_status: "verified"
 last_verified: 2026-09-24
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains: []
+paradigm_tags:
+  - "knowledge_extraction"
+adjacent_interfaces: []
+
 ---
 
 # Unified Structure Generation for Universal Information Extraction (UIE)

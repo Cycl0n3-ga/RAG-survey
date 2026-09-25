@@ -38,6 +38,14 @@ metrics:
   - "F1 Score"
   - "AUC (Area Under PR Curve)"
   - "Speed (Sentences/sec)"
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains: []
+paradigm_tags:
+  - "knowledge_extraction"
+adjacent_interfaces: []
+
 ---
 
 # OpenIE6: Iterative Grid Labeling and Coordination Analysis for Open Information Extraction

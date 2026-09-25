@@ -34,6 +34,17 @@ benchmark_ids:
 metrics:
   - "EM"
   - "QA F1"
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains:
+  - "D04"
+  - "D05"
+paradigm_tags:
+  - "graph_rag"
+  - "cross_chunk"
+adjacent_interfaces: []
+
 ---
 
 # Beyond Chunk-Local Extraction: Cross-Chunk Graph Augmentation for GraphRAG (CrossAug)

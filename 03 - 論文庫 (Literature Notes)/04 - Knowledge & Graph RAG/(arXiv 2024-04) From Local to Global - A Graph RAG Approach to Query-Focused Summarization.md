@@ -25,6 +25,18 @@ tags:
   - "graph-rag---global-sensemaking"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D04"
+primary_domain: "D04"
+secondary_domains:
+  - "D03"
+  - "D05"
+  - "D09"
+paradigm_tags:
+  - "graph_rag"
+  - "global_sensemaking"
+adjacent_interfaces: []
+
 ---
 
 # From Local to Global: A Graph RAG Approach to Query-Focused Summarization

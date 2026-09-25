@@ -36,6 +36,15 @@ metrics:
   - "Diversity Win-rate"
   - "Empowerment Win-rate"
   - "Token Cost"
+taxonomy_version: "v2"
+taxonomy_home: "D04"
+primary_domain: "D04"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "graph_rag"
+adjacent_interfaces: []
+
 ---
 
 # LightRAG: Simple and Fast Retrieval-Augmented Generation

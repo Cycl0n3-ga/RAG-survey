@@ -49,6 +49,14 @@ metrics:
   - "Relation Strict F1"
   - "Event Trigger F1"
   - "Event Argument F1"
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains: []
+paradigm_tags:
+  - "knowledge_extraction"
+adjacent_interfaces: []
+
 ---
 
 # InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction
