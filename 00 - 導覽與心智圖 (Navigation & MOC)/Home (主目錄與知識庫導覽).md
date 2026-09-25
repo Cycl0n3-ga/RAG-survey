@@ -17,7 +17,7 @@ taxonomy_version: "v2"
 ## Start Here
 
 1. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
-2. [[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|RAG System Maps]]
+2. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG System Maps|RAG System Maps]]
 3. [[02 - 研究領域專題 (Research Domains)/README|Research Domains]]
 4. [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]
 5. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|Benchmark Catalog]]
