@@ -180,7 +180,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **D02 (Segmentation & Contextualization) & Domain 12 (Typed Knowledge)**：
+1. **D03 Knowledge Extraction & Information Preservation**：
    DyGIE++ 是判別式資訊抽取（Discriminative IE）發展史上的巔峰之作。它確立了「片段枚舉 + 跨句上下文 + 多任務圖傳播」的標準範式，成為後續 OneIE、PURE 以及生成式 UIE 的核心基線。
 2. **知識圖譜底層三元組抽取引擎**：
    在將非結構化文字轉為 GraphRAG 實體-關係圖的過程中，DyGIE++ 的 Span 級提取技術保證了極高的字面精確度，有效避免了生成式大模型在開放抽取時常見的幻覺實體問題。
