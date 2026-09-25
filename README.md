@@ -19,54 +19,18 @@ A structured literature survey and research map for Retrieval-Augmented Generati
 
 ## Taxonomy at a Glance
 
-```mermaid
-flowchart LR
-    D01["D01 Ingestion"] --> D02["D02 Segmentation"]
-    D02 --> D04["D04 Representation & Indexing"]
-    D02 -. "optional extraction" .-> D03["D03 Knowledge Extraction"]
-    D03 --> D04
+For reading and presentation, use six survey-aligned macro groups. The **canonical internal taxonomy remains D01–D14**.
 
-    D04 --> D05["D05 Query & Retrieval"]
-    D05 --> D06["D06 Sufficiency & Adaptive Retrieval"]
-    D05 -. "optional temporal / source validation" .-> D08["D08 Temporal / Conflict / Provenance"]
-    D08 --> D06
+| Macro group | Internal Domains | Scope |
+|---|---|---|
+| Source & Knowledge Construction | D01–D04 | ingestion, segmentation, extraction, representation, indexing |
+| Retrieval & Evidence Control | D05–D08 | query, retrieval, adaptive retrieval, context/evidence validation |
+| Grounded Generation | D09 | grounded generation, attribution, long-form synthesis |
+| Stateful & Agentic RAG | D10–D12 | dynamic knowledge, memory, orchestration |
+| Evaluation | D13 | evaluation and failure attribution |
+| Deployment & Trust | D14 | systems, robustness, privacy, security |
 
-    D06 --> D07["D07 Context Construction & Utilization"]
-    D07 --> D09["D09 Grounded Generation"]
-    D06 -. "gap / retry" .-> D05
-    D09 -. "unsupported / incomplete" .-> D06
-
-    D10["D10 Dynamic Knowledge"] -.-> D04
-    D11["D11 Memory"] -.-> D05
-    D11 -.-> D07
-    D12["D12 Agentic Orchestration"] -.-> D05
-    D12 -.-> D06
-    D12 -.-> D09
-    D13["D13 Evaluation"] -.-> D05
-    D13 -.-> D09
-    D14["D14 Systems, Robustness & Security"] -.-> D04
-    D14 -.-> D05
-    D14 -.-> D09
-```
-
-## 14 Research Domains
-
-| ID | Domain |
-|---|---|
-| D01 | Document Ingestion & Structure |
-| D02 | Segmentation & Contextualization |
-| D03 | Knowledge Extraction & Information Preservation |
-| D04 | Knowledge Representation & Indexing |
-| D05 | Query Understanding & Retrieval |
-| D06 | Evidence Sufficiency & Adaptive Retrieval |
-| D07 | Context Construction & Evidence Utilization |
-| D08 | Temporal Conflict & Provenance Resolution |
-| D09 | Grounded Generation, Attribution & Long-form Synthesis |
-| D10 | Dynamic Knowledge & Index Maintenance |
-| D11 | Memory-Augmented RAG |
-| D12 | Agentic RAG & Orchestration |
-| D13 | RAG Evaluation & Failure Attribution |
-| D14 | RAG Systems, Robustness & Security |
+Full definitions and boundaries: [RAG Research Taxonomy & Domain Map](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/RAG%20Research%20Taxonomy%20%26%20Domain%20Map.md) and [Research Domains](./02%20-%20%E7%A0%94%E7%A9%B6%E9%A0%98%E5%9F%9F%E5%B0%88%E9%A1%8C%20%28Research%20Domains%29/README.md).
 
 ## Classification Rules
 
