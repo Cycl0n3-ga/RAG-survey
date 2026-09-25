@@ -91,8 +91,8 @@ flowchart TD
 ---
 
 ## 五、對本專案研究領域的實際意義 (Implications for Research Domains)
-- **標準化評估尺規**：本專案在 `Domain 10` 與 `04 - 研究想法` 中進行消融實驗時，Ragas 提供了最被學術與工業界廣泛接受的自動化評測 Baseline。
-- **銜接四層證據階梯**：Ragas 的 Faithfulness 驗證了本專案四層證據階梯中的「第二層：語意蘊涵（Entailment）」在自動化評測中的可行性。
+- **D13 評估基線**：RAGAS 提供可自動化計算的 RAG 評估指標，可作為 D13 的候選 evaluation baseline；是否適合作為主指標仍需依資料集、judge model 與人工評估一致性驗證。
+- **與本專案 Ideas 的關係**：RAGAS 的 faithfulness 類指標可用於比較 claim 與 context 的支持程度，但不能直接視為已驗證本專案的完整 evidence-governance 設計。
 
 ---
 
