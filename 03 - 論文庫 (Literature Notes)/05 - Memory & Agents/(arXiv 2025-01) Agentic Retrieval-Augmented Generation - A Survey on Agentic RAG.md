@@ -5,8 +5,10 @@ authors:
   - "Aditi Singh"
   - "Abul Ehtesham"
   - "Saket Kumar"
+  - "Tala Talaei Khoei"
+  - "Athanasios V. Vasilakos"
 year: 2025
-publication_year: 2025
+publication_year: null
 venue: "arXiv"
 doi: null
 arxiv: "2501.09136"
@@ -20,7 +22,7 @@ tags:
   - dynamic-planning
   - reflection
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "survey"
 research_questions:
   - "agentic_rag_taxonomy"

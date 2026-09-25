@@ -15,7 +15,7 @@ authors:
   - "Shupeng Li"
   - "Penghao Zhao"
 year: 2023
-publication_year: 2023
+publication_year: null
 venue: "arXiv"
 doi: null
 arxiv: "2311.12351"
@@ -29,7 +29,7 @@ tags:
   - kv-cache
   - attention-optimization
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "survey"
 research_questions:
   - "long_context_architectures"

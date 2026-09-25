@@ -17,7 +17,7 @@ authors:
   - "Siyuan Li"
   - "Chunsai Du"
 year: 2023
-publication_year: 2023
+publication_year: null
 venue: "arXiv"
 doi: null
 arxiv: "2304.08085"
@@ -30,7 +30,7 @@ tags:
   - universal-ie
   - multi-task
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "method_paper"
 research_questions:
   - "unified_information_extraction"

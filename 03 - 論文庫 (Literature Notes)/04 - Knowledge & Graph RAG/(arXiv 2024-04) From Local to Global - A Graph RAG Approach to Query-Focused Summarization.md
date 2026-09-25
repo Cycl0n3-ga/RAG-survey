@@ -9,10 +9,12 @@ authors:
   - "Alex Chao"
   - "Apurva Mody"
   - "Steven Truitt"
+  - "Dasha Metropolitansky"
+  - "Robert Osazuwa Ness"
   - "Jonathan Larson"
 year: 2024
-publication_year: 2024
-venue: "Microsoft Research / arXiv"
+publication_year: null
+venue: "arXiv"
 doi: null
 arxiv: "2404.16130"
 url: "https://arxiv.org/abs/2404.16130"
@@ -21,7 +23,7 @@ tags:
   - "paper"
   - "graph-rag---global-sensemaking"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-26"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D04"
@@ -41,7 +43,7 @@ adjacent_interfaces: []
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Edge2024_GraphRAG`
-> - **作者**：Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Jonathan Larson
+> - **作者**：Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, Jonathan Larson
 > - **預印本初次發布年份 (Preprint)**：2024
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (Microsoft Research / arXiv)
 > - **DOI**：無
