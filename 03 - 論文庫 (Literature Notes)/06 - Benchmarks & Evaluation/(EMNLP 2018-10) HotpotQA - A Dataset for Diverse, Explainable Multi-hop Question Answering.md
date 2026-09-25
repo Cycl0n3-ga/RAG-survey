@@ -146,8 +146,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 05 (Graph RAG) 與 Domain 03 (先進 RAG) 的基準地位**：HotpotQA 是驗證 GraphRAG、PPR 圖擴散、IRCoT 交錯推理以及 PropRAG 束搜尋的核心試金石。
-2. **對 Domain 17 (RAG Benchmarks) 的規範性指導**：證明評估多跳系統必須引入「Joint 指標」，不能單純看 Answer 準確率而放任模型胡亂掛載支撐事實。
+1. **對 D04/D05 (Graph Representation & Retrieval) 的基準地位**：HotpotQA 是驗證 GraphRAG、PPR 圖擴散、IRCoT 交錯推理以及 PropRAG 束搜尋的核心試金石。
+2. **對 D13 (RAG Evaluation & Failure Attribution) 的規範性指導**：證明評估多跳系統必須引入「Joint 指標」，不能單純看 Answer 準確率而放任模型胡亂掛載支撐事實。
 
 ---
 
