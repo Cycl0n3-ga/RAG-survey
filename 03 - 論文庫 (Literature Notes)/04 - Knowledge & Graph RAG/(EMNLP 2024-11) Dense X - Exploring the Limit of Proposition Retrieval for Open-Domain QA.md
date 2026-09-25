@@ -1,6 +1,6 @@
 ---
 paper_id: "Chen2024_DenseX"
-title: "Dense X: Exploring the Limit of Proposition Retrieval for Open-Domain QA"
+title: "Dense X Retrieval: What Retrieval Granularity Should We Use?"
 authors:
   - "Tong Chen"
   - "Hongwei Wang"
@@ -13,7 +13,7 @@ authors:
 year: 2023
 publication_year: 2024
 venue: "EMNLP 2024"
-doi: null
+doi: "10.18653/v1/2024.emnlp-main.845"
 arxiv: "2312.06648"
 url: "https://arxiv.org/abs/2312.06648"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA.pdf"
@@ -36,21 +36,21 @@ adjacent_interfaces: []
 
 ---
 
-# Dense X: Exploring the Limit of Proposition Retrieval for Open-Domain QA
+# Dense X Retrieval: What Retrieval Granularity Should We Use?
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Chen2024_DenseX`
 > - **作者**：Tong Chen, Hongwei Wang, Sihao Chen, Wenhao Yu, Kaixin Ma, Xinran Zhao, Hongming Zhang, Dong Yu
 > - **預印本初次發布年份 (Preprint)**：2023
-> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (EMNLP 2024 Oral)
-> - **DOI**：無
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (EMNLP 2024)
+> - **DOI**：10.18653/v1/2024.emnlp-main.845
 > - **arXiv**：[2312.06648](https://arxiv.org/abs/2312.06648)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA.pdf|開啟本地 PDF 檔案]]
 ---
 
 ## 一話摘要 (TL;DR)
-**提出命題級檢索（Proposition Retrieval），將非結構化段落解構為自包含的原生事實單元，徹底解決固定長度切塊的語義割裂與代詞懸空。**
+**系統比較 document / passage / sentence / proposition 等 retrieval granularity，並提出以自包含 proposition 作為細粒度 retrieval unit；實驗顯示在其測試設定下可改善 retrieval 與 downstream QA。**
 
 ---
 
@@ -63,8 +63,7 @@ adjacent_interfaces: []
 提出將檢索粒度下沉至**命題（Proposition）**層級：
 1. **命題定義（Three Axiomatic Properties）**：
    - **原子性（Atomic Fact）**：表達一個單一不可再分的事實；
-   - **極小上下文（Minimal Context）**：在不破壞事實完整性的前提下無法進一步拆解；
-   - **語意自足性（Fully Self-Contained）**：所有代名詞均被消解為明確具體實體，並補齊時間、地點與限定條件。
+   - **語意自足性（Self-Contained）**：以簡潔自然語言表達單一 distinct factoid，使 proposition 可獨立作為 retrieval unit。
 2. **Propositionizer 模型**：
    - 透過兩步驟提示（Prompting）與微調的開源模型，將維基百科段落轉換為命題集合；
 3. **密集檢索評估（Dense X）**：
@@ -99,13 +98,13 @@ flowchart TD
 ---
 
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
-- **優勢**：檢索顆粒度極其精準、徹底杜絕代名詞歧義，顯著提升事實密集型任務的檢索精確度。
+- **優勢**：在論文測試條件下，細粒度 proposition indexing 可提升 retrieval 與部分 downstream QA；較短且自包含的 unit 也可降低 passage 內無關資訊。
 - **限制**：每個段落拆解出多個命題，導致向量資料庫索引規模膨脹 5–10 倍；抽離了宏觀因果論證與段落層次結構；離線處理計算成本顯著高於純字數切塊。
 
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-重新定義了 Chunking 的本質是『語義表示學習（Representation Learning）』而非機械切分，為細粒度事實檢索與後續命題路徑搜尋（如 PropRAG）奠定了理論基石。
+此工作直接研究 retrieval granularity，說明 proposition 可以是 passage / sentence 之外的另一種 retrieval unit；它不代表 proposition 必然取代其他 chunking 或 representation 方法。
 
 ---
 
@@ -113,6 +112,6 @@ flowchart TD
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
   - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
+  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
