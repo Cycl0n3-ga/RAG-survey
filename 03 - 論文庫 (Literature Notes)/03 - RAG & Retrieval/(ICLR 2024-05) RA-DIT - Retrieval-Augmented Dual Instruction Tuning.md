@@ -206,7 +206,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 03 (先進 RAG 機制)**：
+1. **D05 (Query Understanding & Retrieval)**：
    確立了「檢索器」與「生成器」雙向對齊的標準範式。打破了以往「僅微調 LLM」或「僅訓練語意檢索器」的單向局限，證明了「LM-Supervised Retrieval」與「Context-Aware Instruction Tuning」的互補性。
 2. **長文件與知識庫系統構建**：
    在工業實踐中，企業通常已經建立了大規模的向量索引。RA-DIT「僅更新 Query 編碼器」的策略為現有向量系統的低成本增強提供了極具工程落地價值的借鑑路徑。
