@@ -149,8 +149,8 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 10（評估基準與系統工程）的關鍵支撐**：
-   - RGAR 框架為本專案提供了現成的架構藍圖，可以直接指導本知識庫評測管線的設計（包含檢索率、忠實度與拒答率三項硬性指標）。
+1. **對 D13（RAG Evaluation & Failure Attribution）的支撐**：
+   - 此 survey 可用於整理 RAG evaluation 的問題空間與指標類型；具體 metric、框架與實驗結論仍應回到對應 primary paper 驗證，不把單一 survey taxonomy 當成本 repo 的固定評估架構。
 2. **對 Domain 11（Research Roadmap）的支撐**：
    - 明確指出了目前 RAG 評測界最欠缺的研究方向：動態知識衝突仲裁、低成本小模型評審以及多模態文檔解析評估。
 
