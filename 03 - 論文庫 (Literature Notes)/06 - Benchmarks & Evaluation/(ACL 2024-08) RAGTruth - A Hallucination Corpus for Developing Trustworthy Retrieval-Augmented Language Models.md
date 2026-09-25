@@ -148,8 +148,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 10 (Benchmarks & Safety) 的里程碑意義**：為本專案安全與防禦研究提供了最直接的實證測試靶場。
-2. **對 Domain 16 (Context Utilization & Faithfulness) 的演算法指導**：可利用 RAGTruth 訓練本專案的「Evidence Gap Controller」與「幻覺自動過濾網關」，在回答呈現給用戶前執行 Token 級遮罩與重新解碼。
+1. **對 D13 (RAG Evaluation & Failure Attribution) 的里程碑意義**：為本專案安全與防禦研究提供了最直接的實證測試靶場。
+2. **對 D09/D13 (Grounded Generation & Evaluation) 的演算法指導**：可利用 RAGTruth 訓練本專案的「Evidence Gap Controller」與「幻覺自動過濾網關」，在回答呈現給用戶前執行 Token 級遮罩與重新解碼。
 
 ---
 
