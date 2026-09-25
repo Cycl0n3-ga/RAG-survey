@@ -132,8 +132,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 03 (先進 RAG 與檢索機制) 的架構指引**：實證支持了工業級 RAG 必須採用 **Hybrid Search（BM25 + Dense） + Reranker**，不可單押純雙塔 Dense 向量。
-2. **對 Domain 17 (RAG Benchmarks) 的基礎地位**：BEIR 是本專案評估檢索器召回能力的底座，為檢驗任何切塊策略或嵌入模型提供了終極審判場。
+1. **對 D05 (Query Understanding & Retrieval) 的架構指引**：實證支持了工業級 RAG 必須採用 **Hybrid Search（BM25 + Dense） + Reranker**，不可單押純雙塔 Dense 向量。
+2. **對 D13 (RAG Evaluation & Failure Attribution) 的基礎地位**：BEIR 是本專案評估檢索器召回能力的底座，為檢驗任何切塊策略或嵌入模型提供了終極審判場。
 
 ---
 
