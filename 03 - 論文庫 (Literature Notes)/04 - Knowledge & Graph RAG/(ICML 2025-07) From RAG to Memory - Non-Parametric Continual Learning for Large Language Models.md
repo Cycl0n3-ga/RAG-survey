@@ -142,7 +142,7 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 05 (GraphRAG) 的啟示**：確立了「圖拓撲隨機遊走（PPR）+ 密集向量」作為處理複雜多跳 RAG 的黃金範式，為知識圖譜與向量數據庫的混合架構提供了強大支撐。
+1. **對 D04/D05 (Graph Representation & Retrieval) 的啟示**：確立了「圖拓撲隨機遊走（PPR）+ 密集向量」作為處理複雜多跳 RAG 的黃金範式，為知識圖譜與向量數據庫的混合架構提供了強大支撐。
 2. **對 Domain 06 (External Memory) 的啟示**：展示了長效記憶架構可透過非參數化實體拓撲維護，為終端 Agent 的持續記憶演化與歷史對話歸檔提供了具體可行的圖更新協議。
 
 ---
