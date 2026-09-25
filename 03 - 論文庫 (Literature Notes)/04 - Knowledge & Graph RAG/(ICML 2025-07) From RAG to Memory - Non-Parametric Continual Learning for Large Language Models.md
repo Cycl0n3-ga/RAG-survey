@@ -14,9 +14,6 @@ doi: null
 arxiv: "2502.14802"
 url: "https://arxiv.org/abs/2502.14802"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]"
 tags:
   - paper
   - graph-rag
@@ -151,4 +148,4 @@ flowchart TD
 - 原始論文 PDF：[[Papers/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models.pdf|開啟本地 PDF]]
 - arXiv 永久連結：[arXiv:2502.14802](https://arxiv.org/abs/2502.14802)
 - 關聯前驅筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]
-- 關聯專題領域：[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
+- 關聯專題領域：[[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]

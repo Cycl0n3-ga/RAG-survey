@@ -14,9 +14,6 @@ doi: null
 arxiv: "2502.06864"
 url: "https://arxiv.org/abs/2502.06864"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
 tags:
   - paper
   - graph-rag
@@ -146,4 +143,4 @@ flowchart TD
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - 原始論文 PDF：[[Papers/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation.pdf|開啟本地 PDF]]
 - arXiv 永久連結：[arXiv:2502.06864](https://arxiv.org/abs/2502.06864)
-- 關聯專題領域：[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
+- 關聯專題領域：[[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
