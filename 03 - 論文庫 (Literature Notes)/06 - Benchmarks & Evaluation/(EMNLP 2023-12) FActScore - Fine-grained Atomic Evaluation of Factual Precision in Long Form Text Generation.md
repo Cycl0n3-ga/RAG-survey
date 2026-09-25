@@ -155,8 +155,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 16 (Context Utilization & Faithfulness) 的標準化意義**：確立了「長篇生成必須先做原子事實拆解（Decomposition）」的學術共識，是構建 Faithfulness 評估管線的黃金標準。
-2. **對 Domain 04 (Proposition Retrieval) 的理論呼應**：FActScore 的原子事實思想與 Dense X 的命題檢索（Proposition）在語意表示上高度契合，證明了「原子命題」無論在檢索端還是評測端都是最穩健的治理單元。
+1. **對 D09/D13 (Grounded Generation & Evaluation) 的標準化意義**：確立了「長篇生成必須先做原子事實拆解（Decomposition）」的學術共識，是構建 Faithfulness 評估管線的黃金標準。
+2. **對 D02 (Proposition Retrieval Granularity) 的理論呼應**：FActScore 的原子事實思想與 Dense X 的命題檢索（Proposition）在語意表示上高度契合，證明了「原子命題」無論在檢索端還是評測端都是最穩健的治理單元。
 
 ---
 
