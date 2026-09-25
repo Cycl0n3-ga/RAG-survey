@@ -34,7 +34,7 @@ flowchart LR
     D12["D12 Agentic Orchestration"] -.-> D05
     D13["D13 Evaluation"] -.-> D05
     D13 -.-> D09
-    D14["D14 Systems & Reliability"] -.-> D04
+    D14["D14 Systems, Robustness & Security"] -.-> D04
 ```
 
 ## 14 Research Domains
@@ -54,7 +54,7 @@ flowchart LR
 | D11 | Memory-Augmented RAG |
 | D12 | Agentic RAG & Orchestration |
 | D13 | RAG Evaluation & Failure Attribution |
-| D14 | RAG Systems & Reliability |
+| D14 | RAG Systems, Robustness & Security |
 
 ## Classification Rules
 
