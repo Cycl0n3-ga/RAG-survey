@@ -151,8 +151,8 @@ flowchart TD
 
 1. **對 D13（RAG Evaluation & Failure Attribution）的支撐**：
    - 此 survey 可用於整理 RAG evaluation 的問題空間與指標類型；具體 metric、框架與實驗結論仍應回到對應 primary paper 驗證，不把單一 survey taxonomy 當成本 repo 的固定評估架構。
-2. **對 Domain 11（Research Roadmap）的支撐**：
-   - 明確指出了目前 RAG 評測界最欠缺的研究方向：動態知識衝突仲裁、低成本小模型評審以及多模態文檔解析評估。
+2. **對研究想法與後續實驗的啟發**：
+   - 可據此整理待驗證的 evaluation gaps，例如動態知識衝突、低成本 evaluator 與多模態文件評估；這些屬 research agenda，不再作為獨立 Domain。
 
 ---
 
@@ -163,7 +163,6 @@ flowchart TD
 - **關聯領域筆記**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
   - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
-  - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
 - **同類/相關論文筆記**：
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems|(NAACL 2024-06) ARES]]
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-06) RAGBench - Explainable Benchmark for Retrieval-Augmented Generation Systems|(arXiv 2024-06) RAGBench]]
