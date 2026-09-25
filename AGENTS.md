@@ -184,3 +184,36 @@ metrics: []                                            # 評測指標
 - `subgraph` 使用穩定 ID + 引號標題，例如 `subgraph retrieval["Retrieval Engine"]`。
 - 不使用 `A & B --> C` 等 shorthand；拆成 `A --> C`、`B --> C`，提高不同 Mermaid renderer 的相容性。
 - 修改 Mermaid 後必須至少檢查：fence 成對、node delimiter 成對、subgraph/end 成對，並確認 GitHub 預覽不顯示多餘的中括號。
+
+
+---
+
+## 🧭 Canonical RAG Taxonomy v2
+
+自 2026-09-25 起，`02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/` 為 RAG core research domains 的 canonical 分類。根目錄既有 Domain 01–17 暫時保留為 migration sources，直到 backlinks 與 literature metadata 完成遷移。
+
+### Canonical Domains
+- D01 Document Ingestion & Structure
+- D02 Segmentation & Contextualization
+- D03 Knowledge Extraction & Information Preservation
+- D04 Knowledge Representation & Indexing
+- D05 Query Understanding & Retrieval
+- D06 Evidence Sufficiency & Adaptive Retrieval
+- D07 Context Construction & Evidence Utilization
+- D08 Temporal Conflict & Provenance Resolution
+- D09 Grounded Generation, Attribution & Long-form Synthesis
+- D10 Dynamic Knowledge & Index Maintenance
+- D11 Memory-Augmented RAG
+- D12 Agentic RAG & Orchestration
+- D13 RAG Evaluation & Failure Attribution
+- D14 RAG Systems, Robustness & Security
+
+### 分類規則
+1. **Domain = lifecycle research problem**；GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等原則上是 paradigm/tag，不與 lifecycle Domain 平行。
+2. 每篇 method paper 優先增加 `primary_domain`、`secondary_domains`、`paradigm_tags`。
+3. Long Context、KV Cache、general model architecture 不再視為 RAG core Domain；僅保留與 retrieval / context / systems 的 interface。
+4. Research Roadmap、Evidence Gap Controller、F/R/D/A/P/C/T 等 project-specific proposal 必須留在 `04 - 研究想法與待驗證提案`。
+5. 遷移期間不得直接刪除 legacy Domain pages；必須先修 Wikilinks、paper metadata、MOC，再 archive/delete。
+6. 新增 X-RAG 名詞時，先判斷 Primary Domain，再加 paradigm tag；不得因熱門名稱直接新增 top-level Domain。
+
+詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]。

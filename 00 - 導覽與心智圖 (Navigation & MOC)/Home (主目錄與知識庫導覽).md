@@ -20,6 +20,12 @@ tags:
 >
 > 💡 **本 Vault 已為您完整建立 125 篇頂級核心學術論文筆記與 122 篇原始 PDF**，並在文獻筆記中無縫嵌入雙向連結，可直接在 Obsidian 內點擊閱讀！
 
+
+> [!IMPORTANT] RAG Canonical Taxonomy v2
+> RAG core research domains 已開始遷移至 **14 個 lifecycle-based canonical domains**。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等改以 orthogonal paradigm tags 管理；Long Context / KV Cache / general model architecture 改為 adjacent interfaces。
+> 
+> 入口：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]] · [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]] · [[00 - 導覽與心智圖 (Navigation & MOC)/Canonical RAG Domain Migration Map|Migration Map]]
+
 ---
 
 ## 🧭 知識庫核心目錄
