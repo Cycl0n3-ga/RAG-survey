@@ -4,15 +4,13 @@ domain_id: "D02"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Corpus Construction"
-migration_status: "content-migrated-from-legacy-04"
 last_updated: "2026-09-25"
 ---
 
 # Domain 02 - Segmentation & Contextualization
 
-> [!IMPORTANT] Canonical Domain v2
-> 本 Domain 只回答：**文件應切成什麼 retrieval units，以及切分後如何保留足夠上下文？**
-> 它不負責 entity/relation/event extraction（D03），也不負責 index schema（D04）。
+> [!IMPORTANT]
+> 本頁是目前正式 RAG Taxonomy v2 的 D02。核心只處理 retrieval unit 的切分與 contextualization；knowledge extraction 屬 D03，index design 屬 D04。
 
 ## Core Question
 
@@ -142,4 +140,3 @@ D02 Segmentation / Contextualization
 
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Paper Domain Migration Manifest|Paper Domain Migration Manifest]]
