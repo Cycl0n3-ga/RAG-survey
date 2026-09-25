@@ -22,6 +22,17 @@ tags:
   - "neurobiologically-inspired-graph-memory"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D04"
+primary_domain: "D04"
+secondary_domains:
+  - "D05"
+  - "D11"
+paradigm_tags:
+  - "graph_rag"
+  - "memory_augmented_rag"
+adjacent_interfaces: []
+
 ---
 
 # HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models

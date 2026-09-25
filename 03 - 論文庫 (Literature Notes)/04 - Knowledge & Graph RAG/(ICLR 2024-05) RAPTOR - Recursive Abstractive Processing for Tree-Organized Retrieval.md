@@ -22,6 +22,16 @@ tags:
   - "recursive-summary-tree"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D04"
+primary_domain: "D04"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "hierarchical_rag"
+  - "multi_resolution"
+adjacent_interfaces: []
+
 ---
 
 # RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval

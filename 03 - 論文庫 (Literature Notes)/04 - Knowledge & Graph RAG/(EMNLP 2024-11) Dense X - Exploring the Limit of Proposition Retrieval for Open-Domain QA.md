@@ -26,6 +26,18 @@ tags:
   - "proposition-level-chunking"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D02"
+primary_domain: "D02"
+secondary_domains:
+  - "D03"
+  - "D04"
+  - "D05"
+paradigm_tags:
+  - "proposition_rag"
+  - "retrieval_granularity"
+adjacent_interfaces: []
+
 ---
 
 # Dense X: Exploring the Limit of Proposition Retrieval for Open-Domain QA

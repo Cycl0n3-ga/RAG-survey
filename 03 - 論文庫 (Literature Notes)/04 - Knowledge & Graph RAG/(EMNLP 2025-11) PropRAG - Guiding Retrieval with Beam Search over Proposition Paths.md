@@ -33,6 +33,17 @@ benchmark_ids:
 metrics:
   - "Recall@5"
   - "QA F1"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D03"
+  - "D04"
+paradigm_tags:
+  - "proposition_rag"
+  - "multi_hop_rag"
+adjacent_interfaces: []
+
 ---
 
 # PropRAG: Guiding Retrieval with Beam Search over Proposition Paths

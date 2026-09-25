@@ -43,6 +43,15 @@ metrics:
   - "Accuracy"
   - "Hallucination Rate"
   - "Token Efficiency"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "graph_rag"
+adjacent_interfaces: []
+
 ---
 
 # G-Retriever: Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering

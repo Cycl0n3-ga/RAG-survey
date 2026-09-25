@@ -45,6 +45,18 @@ metrics:
   - "F1"
   - "LR-1"
   - "LR-2"
+taxonomy_version: "v2"
+taxonomy_home: "D12"
+primary_domain: "D12"
+secondary_domains:
+  - "D04"
+  - "D05"
+paradigm_tags:
+  - "graph_rag"
+  - "agentic_rag"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # GraphReader: Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models

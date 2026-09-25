@@ -36,6 +36,16 @@ benchmark_ids:
 metrics:
   - "Recall@5"
   - "QA F1"
+taxonomy_version: "v2"
+taxonomy_home: "D11"
+primary_domain: "D11"
+secondary_domains:
+  - "D10"
+paradigm_tags:
+  - "memory_augmented_rag"
+adjacent_interfaces:
+  - "A05"
+
 ---
 
 # From RAG to Memory: Non-Parametric Continual Learning for Large Language Models (HippoRAG 2)

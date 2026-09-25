@@ -36,6 +36,14 @@ metrics:
   - "Entity F1"
   - "Relation F1"
   - "Strict Relation F1 (Rel+)"
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains: []
+paradigm_tags:
+  - "knowledge_extraction"
+adjacent_interfaces: []
+
 ---
 
 # A Frustratingly Easy Approach for Entity and Relation Extraction (PURE)

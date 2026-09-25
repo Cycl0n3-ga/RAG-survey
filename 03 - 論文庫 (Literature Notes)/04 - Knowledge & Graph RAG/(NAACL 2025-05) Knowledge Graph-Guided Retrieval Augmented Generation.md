@@ -36,6 +36,16 @@ metrics:
   - "ROUGE-2"
   - "ROUGE-L"
   - "BLEU"
+taxonomy_version: "v2"
+taxonomy_home: "D05"
+primary_domain: "D05"
+secondary_domains:
+  - "D04"
+paradigm_tags:
+  - "graph_rag"
+  - "knowledge_graph_rag"
+adjacent_interfaces: []
+
 ---
 
 # Knowledge Graph-Guided Retrieval Augmented Generation (KG²RAG)
