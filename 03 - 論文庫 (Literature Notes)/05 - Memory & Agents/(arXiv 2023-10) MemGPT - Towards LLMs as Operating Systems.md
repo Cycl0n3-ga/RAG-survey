@@ -15,8 +15,8 @@ doi: null
 arxiv: "2310.08560"
 url: "https://arxiv.org/abs/2310.08560"
 pdf_file: "Papers/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems.pdf"
-domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 11 - Memory-Augmented RAG|D11 Domain 11 - Memory-Augmented RAG]]"
+domains: []
+- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 11 - Memory-Augmented RAG|D11 Domain 11 - Memory-Augmented RAG]]"
   - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 12 - Agentic RAG & Orchestration|D12 Domain 12 - Agentic RAG & Orchestration]]"
 - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]"
 tags:

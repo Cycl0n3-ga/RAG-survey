@@ -34,8 +34,8 @@ doi: null
 arxiv: "2411.14199"
 url: "https://arxiv.org/abs/2411.14199"
 pdf_file: "Papers/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models.pdf"
-domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)]]"
+domains: []
+- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 05 - GraphRAG 與知識表示 (Graph, Vector, Hybrid)|Domain 05 - GraphRAG 與知識表示 (Graph, Vector, Hybrid)]]"
 tags:
   - paper
@@ -193,7 +193,7 @@ OpenScholar 原文（Pages 10–13）在 ScholarQABench 基準上呈現了詳細
 
 ### 關聯專題與論文筆記
 - **專題報告**：
-  - `[[02 - 研究領域專題 (Research Domains)/Domain 08 - 長篇生成與報告撰寫 (STORM, Evidence Store, Ledger)|Domain 08 - 長篇生成與報告撰寫]]`
+  - `[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]`
   - `[[02 - 研究領域專題 (Research Domains)/Domain 05 - GraphRAG 與知識表示 (Graph, Vector, Hybrid)|Domain 05 - GraphRAG 與知識表示]]`
 - **同領域代表性論文**：
   - `[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2023-12) Enabling Large Language Models to Generate Text with Citations|(EMNLP 2023-12) ALCE]]`
