@@ -10,30 +10,48 @@ last_updated: "2026-09-25"
 # Domain 12 - Agentic RAG & Orchestration
 
 > [!IMPORTANT]
-> 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
+> 本頁是目前正式 RAG Taxonomy v2 的 D12。
 
 ## Core Question
-系統如何根據 state 自主選擇下一個 RAG action、工具、資料源或子任務？
+系統如何根據目前 state 自主選擇下一個 RAG action、資料源、工具或子任務？
 
 ## Includes
-- planning / routing
-- tool use
+- planning and routing
 - controller / policy
+- tool selection
 - multi-agent coordination
-- research workflow orchestration
-- iterative search-think-act loops
+- iterative search / read / verify / generate loops
+- workflow orchestration
 
 ## Excludes
-- 只有 adaptive retriever → D06
-- 純 reasoning tree（非 RAG）
 - 單一 retriever architecture → D05
+- 只有 retrieve / stop 判斷的 adaptive retrieval → D06
+- persistent memory 本身 → D11
+- 一般 agent framework 但沒有 RAG-specific control → Adjacent Interface A04
+
+## Boundary
+
+Agentic RAG 是 control plane，不是固定 pipeline stage。
+
+```mermaid
+flowchart LR
+    STATE["Current State"] --> CTRL["Controller"]
+    CTRL --> RET["Retrieve"]
+    CTRL --> REWRITE["Rewrite"]
+    CTRL --> VERIFY["Verify"]
+    CTRL --> GEN["Generate"]
+    RET --> STATE
+    REWRITE --> STATE
+    VERIFY --> STATE
+    GEN --> STATE
+```
 
 ## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- 架構型名稱使用 paradigm tags，而非新增 top-level Domain。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+- 主要 contribution 若是 action selection / orchestration，Primary Domain 才是 D12。
+- GraphRAG、Hierarchical RAG、Memory-Augmented RAG 等可作 Secondary Domain 或 paradigm tag。
+- 一般 Agent / Tool Use 文獻若未直接研究 RAG，放在 A04 Adjacent Interface。
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
