@@ -174,7 +174,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 02 (上下文壓縮與 KV Cache 管理)**：
+1. **A02 (Context/KV Compression & Inference Efficiency)**：
    確立了「Prompt-level 資訊熵壓縮」的代表性基準。後續知名工作如 LongLLMLingua、LLMLingua 均直接繼承並擴展了此種基於自資訊量的剪枝思想。
 2. **工業級 RAG 檢索段落二次壓縮**：
    在 RAG 系統檢索出 Top-$k$ 篇粗粒度段落後，直接塞入 LLM 往往成本過高。利用 Selective Context 作為「檢索後置過濾器（Post-Retrieval Filter）」，可大幅減少無關上下文，提高下游問答的精準度與性價比。
