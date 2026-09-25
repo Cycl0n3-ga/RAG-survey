@@ -13,7 +13,7 @@ last_updated: "2026-09-26"
 > 本目錄收錄專案中精讀與標準化結構之論文筆記，**storage folder 與命名規範原則上對齊 `Papers/`；remote-only 全文例外明列**：
 > - 子目錄劃分為 6 個 **storage folders**，僅用於檔案整理，不代表 Research Domains；
 > - 筆記檔名統一採用 `(發表會議/期刊 發表年月) 論文名稱.md`；
-> - corpus 狀態：**126 篇 notes；121 份 local PDF；5 篇使用官方 remote full text**（A-MEM、AURORA、EviReport、EFSG、T²-RAGBench）。
+> - corpus 狀態：**128 篇 notes；121 份 local PDF；7 篇使用官方 remote full text**（A-MEM、AURORA、When Facts Change、PoisonedRAG、EviReport、EFSG、T²-RAGBench）。
 >
 > 正式分類一律看 YAML 的 `taxonomy_home` / `primary_domain` / `secondary_domains` / `paradigm_tags` / `adjacent_interfaces`；不再使用 `domains` 欄位。
 
@@ -60,7 +60,7 @@ last_updated: "2026-09-26"
 | SIGCOMM 2024 | CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving\|(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving]] | [[Papers/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving.pdf\|PDF]] |
 | NeurIPS 2024 | MiniCache: KV Cache Compression in Depth Dimension for Large Language Models | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models\|(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models]] | [[Papers/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models.pdf\|PDF]] |
 
-### 03 - RAG & Retrieval (25 篇)
+### 03 - RAG & Retrieval (26 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -89,7 +89,7 @@ last_updated: "2026-09-26"
 | arXiv 2024 | Late Chunking: Contextual Chunk Embeddings for Retrieval | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval\|(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval.pdf\|PDF]] |
 | arXiv 2024 | Evaluation of Retrieval-Augmented Generation: A Survey | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey\|(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey.pdf\|PDF]] |
 
-| Findings of ACL 2026 | AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) AURORA - Neuro-Symbolic Continual Indexing for Evolving RAG Systems\|(ACL 2026-07) AURORA]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.495/) |\n\n### 04 - Knowledge & Graph RAG (23 篇)
+| Findings of ACL 2026 | AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) AURORA - Neuro-Symbolic Continual Indexing for Evolving RAG Systems\|(ACL 2026-07) AURORA]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.495/) |\n\n| USENIX Security 2025 | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models\|(USENIX Security 2025-08) PoisonedRAG]] | [USENIX](https://www.usenix.org/conference/usenixsecurity25/presentation/zou-poisonedrag) |\n\n### 04 - Knowledge & Graph RAG (23 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -139,7 +139,7 @@ last_updated: "2026-09-26"
 | arXiv 2023 | AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation\|(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation]] | [[Papers/05 - Memory & Agents/(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation.pdf\|PDF]] |
 | arXiv 2025 | Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG\|(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG]] | [[Papers/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG.pdf\|PDF]] |
 
-### 06 - Benchmarks & Evaluation (31 篇)
+### 06 - Benchmarks & Evaluation (32 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -173,4 +173,4 @@ last_updated: "2026-09-26"
 | KDD 2022 | DocLayNet: A Large Human-Annotated Dataset for Document-Layout Analysis | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis\|(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis]] | [[Papers/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis.pdf\|PDF]] |
 | Pattern Recognition 2023 | Hierarchical Multimodal Transformers for Multi-Page DocVQA (MP-DocVQA) | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA\|(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA]] | [[Papers/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA.pdf\|PDF]] |
 | NAACL 2021 | QASPER: A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers\|(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers]] | [[Papers/06 - Benchmarks & Evaluation/(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers.pdf\|PDF]] |
-| ACL 2026 | ReportLogic: Evaluating Logical Quality in Deep Research Reports | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports\|(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports.pdf\|PDF]] |
+| Findings of ACL 2026 | When Facts Change: Temporal Knowledge Conflict Resolution in LLMs | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-07) When Facts Change - Temporal Knowledge Conflict Resolution in LLMs\|(ACL 2026-07) When Facts Change]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.103/) |\n| ACL 2026 | ReportLogic: Evaluating Logical Quality in Deep Research Reports | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports\|(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports.pdf\|PDF]] |

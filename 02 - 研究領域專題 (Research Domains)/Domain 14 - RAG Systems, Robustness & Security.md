@@ -4,7 +4,7 @@ domain_id: "D14"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Deployment"
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 ---
 
 # Domain 14 - RAG Systems, Robustness & Security
@@ -36,6 +36,16 @@ flowchart LR
 - benchmark methodology → D13
 - retrieval relevance algorithm → D05
 
+## Research Tracks
+
+D14 是 deployment umbrella，不代表下列三條線已經是一個單一成熟 subfield：
+
+1. **RAG Systems / Serving**：latency、throughput、cost、index/search scalability、cache/batching、observability。
+2. **Robustness & Security**：corpus poisoning、retrieval manipulation、retrieved-content prompt injection、adversarial / noisy evidence。
+3. **Privacy & Governance**：access control、tenant isolation、retrieval-data leakage、derived-data persistence。
+
+Security paper 不能拿來當 systems paper；KV-cache / serving paper 也不能替代 RAG-specific security evidence。
+
 ## Level-2 Topics
 - Serving Latency / Throughput / Cost
 - Indexing & Serving Scalability
@@ -45,7 +55,9 @@ flowchart LR
 - Corpus / Retrieval Integrity
 - Retrieved-content Prompt Injection
 - Corpus Poisoning
-- Privacy / Access Control
+- Retrieval-data Privacy
+- Access Control / Tenant Isolation
+- Derived-data Deletion / Persistence
 
 ## Boundary
 D14 是 deployment / infrastructure / robustness plane，不是 retrieval quality 本身。若研究主要改進 ranking relevance，歸 D05；若主要評估 failure，歸 D13。
@@ -61,31 +73,36 @@ Adjacent notes:
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving|CacheGen]]
 
 ## Systems and Threat Model
+
 ### End-to-end systems path
 
-RAG latency 不只來自 generator，可拆為：
+```text
+T_total =
+  T_parse/embed
++ T_search
++ T_rerank
++ T_prefill
++ T_decode
+```
 
-[
-T_{total}=T_{parse/embed}+T_{search}+T_{rerank}+T_{prefill}+T_{decode}
-]
-
-部署評估因此至少應同時報告 latency / TTFT、throughput、token / model-call budget、peak memory、indexing / serving cost；具體數值必須在同硬體、同模型、同 corpus 條件下量測。
+部署評估至少應同時報告 latency / TTFT、throughput、token / model-call budget、peak memory、indexing / serving cost；具體數值必須在同硬體、同模型、同 corpus 條件下比較。
 
 ### Threat classes
 
-- **Retrieved-content / indirect prompt injection**：外部文件中的 instruction 被模型誤當成可信控制指令。
+- **Retrieved-content / indirect prompt injection**：外部文件中的 instruction 被模型誤當成控制指令。
 - **Corpus / retrieval poisoning**：攻擊者操控可被索引與召回的內容，使惡意或錯誤 evidence 被優先檢索。
-- **Privacy / tenant leakage**：ACL、tenant isolation 或 retrieval filter 失敗，使一個 user 查到另一個 user 的內容。
-- **Derived-data persistence**：原文刪除後，summary、embedding、knowledge graph edge 或 memory 仍保留敏感資訊。
-- **Noisy / adversarial evidence**：表面高度相關的 distractor、矛盾內容或偽來源使 generator 失真。
+- **Privacy / tenant leakage**：ACL、tenant isolation 或 retrieval filter 失敗，使不同 user / tenant 的資料交叉暴露。
+- **Derived-data persistence**：原文刪除後，summary、embedding、knowledge graph edge 或 memory 仍殘留。
+- **Noisy / adversarial evidence**：高度相關的 distractor、矛盾內容或偽來源導致 downstream generation 失真。
 
 硬邊界：
-[
-Retrieved Document 
-eq Trusted Instruction
-]
 
-目前 D14 沒有 dedicated primary paper note，所以上述先作為 threat taxonomy / coverage target，而不是宣稱 repo 已完成此領域文獻 survey。
+```text
+Retrieved Document ≠ Trusted Instruction
+Retrieved Document ≠ Trusted Truth
+```
+
+目前已有 RAG-specific security primary anchor，但 D14 的 systems/serving 與 privacy/access-control coverage 仍不足。
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]

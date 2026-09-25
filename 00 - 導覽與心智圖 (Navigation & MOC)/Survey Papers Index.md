@@ -60,6 +60,12 @@ last_updated: "2026-09-26"
   [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey|Literature Note]]
 - **Ni et al. — Towards Trustworthy Retrieval Augmented Generation for Large Language Models: A Survey** (arXiv:2502.06872).  
   支撐 reliability、privacy、safety、fairness、explainability、accountability；主要對應 D14。
+- **Khonde et al. — End-to-end security threats and defenses in retrieval-augmented LLM agents**, Discover Artificial Intelligence, 2026, DOI: 10.1007/s44163-026-01726-x.  
+  最新 peer-reviewed security review 之一；明確整理 retrieval poisoning、indirect prompt injection、tool attacks 與跨 pipeline defenses。
+
+### Memory / Persistent State
+- **Memory in the Age of AI Agents** (arXiv:2512.13564).  
+  這是 agent-memory survey，不是 RAG-only survey；它以 forms / functions / dynamics 整理 memory，適合支撐 D11 的 write / evolve / retrieve 邊界，但不能拿來宣稱 D11 是所有 RAG survey 的標準 top-level Domain。
 
 ### Adjacent but Important
 - **Abootorabi et al. — Ask in Any Modality: A Comprehensive Survey on Multimodal Retrieval-Augmented Generation**, Findings of ACL 2025.  
@@ -88,13 +94,16 @@ last_updated: "2026-09-26"
 ## 5. Verified Source Entrypoints
 
 - General RAG (Gao): https://arxiv.org/abs/2312.10997
-- General RAG 2026 (Faridi et al.): https://doi.org/10.1002/widm.70122\n- RAG for NLP Survey 2026 (Wu et al.): https://doi.org/10.1007/s10462-026-11605-7
+- General RAG 2026 (Faridi et al.): https://doi.org/10.1002/widm.70122
+- RAG for NLP Survey 2026 (Wu et al.): https://doi.org/10.1007/s10462-026-11605-7
 - RAG-Reasoning Survey: https://aclanthology.org/2025.findings-emnlp.648/
 - GraphRAG Survey: https://arxiv.org/abs/2408.08921
 - Generative IE Survey: https://aclanthology.org/2025.coling-main.324/
 - Multimodal RAG Survey: https://aclanthology.org/2025.findings-acl.861/
 - RAG Evaluation Survey: https://arxiv.org/abs/2405.07437
 - Trustworthy RAG Survey: https://arxiv.org/abs/2502.06872
+- End-to-end RAG Security Review 2026: https://doi.org/10.1007/s44163-026-01726-x
+- Agent Memory Survey: https://arxiv.org/abs/2512.13564
 
 > [!CAUTION]
 > Survey 用來確認「研究線存在與如何被社群整理」；任何演算法流程、效果數字、速度、成本或 novelty claim 仍必須回 primary paper。

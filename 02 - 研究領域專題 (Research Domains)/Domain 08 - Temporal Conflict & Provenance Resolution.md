@@ -41,26 +41,35 @@ flowchart LR
 - index refresh mechanics → D10
 - generic relevance ranking → D05
 
+## Research Tracks
+
+1. **Temporal / Version Alignment**：freshness、valid time、version 與 query time 是否一致。
+2. **Knowledge Conflict**：context–memory、inter-context、intra-memory conflict 的 detection / diagnosis / resolution。
+3. **Provenance / Authority**：source identity、lineage、authority / credibility；目前 direct RAG literature 相對較薄，不能把它當成與 temporal conflict 同樣成熟。
+
 ## Level-2 Topics
-- Provenance
-- Authority
 - Temporal RAG
 - Version-aware RAG
+- Context–Memory Conflict
+- Inter-context Conflict
 - Conflict Detection
 - Conflict Resolution
+- Provenance
+- Authority / Credibility
 
 ## Boundary
 Citation answers「輸出引用哪裡」；provenance answers「這份 evidence 從哪裡來、何時有效、適用於什麼條件」。兩者相關但不是同一問題。
 
 ## Representative Notes
 
-**Current primary-note coverage: 2**
+**Current primary-note coverage: 3**
 
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs / FreshQA]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-07) When Facts Change - Temporal Knowledge Conflict Resolution in LLMs|When Facts Change]]
 
 > [!NOTE]
-> 目前 repo 在 provenance、source authority、version conflict 與 condition-aware arbitration 的 primary literature coverage 仍偏薄；這是文獻缺口，不應用 project proposal 補成「既有共識」。
+> 目前 temporal / version / context–memory conflict 已有直接 literature；真正仍偏薄的是 **source authority / credibility arbitration、provenance-aware multi-source resolution、condition-aware arbitration**。這些仍應標成 coverage gap，而不是用 project proposal 補成「既有共識」。
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
