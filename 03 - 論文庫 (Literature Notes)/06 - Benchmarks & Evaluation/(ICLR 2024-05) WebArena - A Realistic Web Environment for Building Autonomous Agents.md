@@ -22,7 +22,8 @@ arxiv: "2307.13854"
 url: "https://arxiv.org/abs/2307.13854"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents.pdf"
 domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)|Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 Adjacent Interface]]"
+- "[[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)|Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 17 - 基準評測與評估體系 (Benchmarks, Ragas, TruLens)|Domain 17 - 基準評測與評估體系 (Benchmarks, Ragas, TruLens)]]"
 tags:
   - paper
