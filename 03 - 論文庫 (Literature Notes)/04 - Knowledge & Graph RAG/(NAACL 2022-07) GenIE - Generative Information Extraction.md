@@ -64,7 +64,7 @@ adjacent_interfaces: []
 ---
 
 ## 一話摘要 (TL;DR)
-GenIE 首次將**封閉式資訊抽取（Closed Information Extraction）**形式化為端到端自回歸生成任務，利用前綴樹（Trie / Prefix Tree）施加**受約束的束搜索解碼（Constrained Beam Search）**，強制生成嚴格對齊既定知識庫 Schema 的規範化實體與關係，徹底解決了生成式模型易幻覺未註冊實體的痛點，在百萬級實體規模下超越流水線基準達 32 個 F1 百分點。
+GenIE 首次將**封閉式資訊抽取（Closed Information Extraction）**形式化為端到端自回歸生成任務，利用前綴樹（Trie / Prefix Tree）施加**受約束的束搜索解碼（Constrained Beam Search）**，強制生成嚴格對齊既定知識庫 Schema 的規範化實體與關係，緩解了生成式模型易幻覺未註冊實體的痛點，在百萬級實體規模下超越流水線基準達 32 個 F1 百分點。
 
 ---
 
