@@ -158,7 +158,7 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 03 與 Domain 14 (自適應檢索與證據充分性) 的貢獻**：
+1. **對 D05 Query Understanding & Retrieval 與 D06 Evidence Sufficiency & Adaptive Retrieval 的貢獻**：
    - 提供了「在發起檢索前進行複雜度路由」的最簡潔工業標準，是構建智慧動態 RAG 閘道（Smart Gateway）的核心機制。
 2. **對 Pareto 權衡分析 (Trade-offs) 的實證價值**：
    - 完美印證了本專案的核心觀點：**「架構選擇不存在單一最優解，唯有依 Query 特性動態調度方能實現全局 Pareto 最優」**。
