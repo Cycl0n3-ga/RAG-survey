@@ -19,8 +19,8 @@ doi: "10.18653/v1/2020.emnlp-main.129"
 arxiv: "2004.13590"
 url: "https://aclanthology.org/2020.emnlp-main.129/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(EMNLP 2020-11) MAVEN - A Massive General Domain Event Detection Dataset.pdf"
-domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 切分與 Knowledge Extraction 全景|Domain 04 - Chunking 切分與 Knowledge Extraction 全景]]"
+domains: []
+- "[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 切分與 Knowledge Extraction 全景|Domain 04 - Chunking 切分與 Knowledge Extraction 全景]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 12 - 知識抽取、型別化知識與動態本體 (Knowledge Extraction)|Domain 12 - 知識抽取、型別化知識與動態本體 (Knowledge Extraction)]]"
 tags:
   - paper
