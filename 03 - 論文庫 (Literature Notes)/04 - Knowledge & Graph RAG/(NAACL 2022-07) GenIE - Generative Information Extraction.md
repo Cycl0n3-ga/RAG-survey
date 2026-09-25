@@ -174,7 +174,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 05 (GraphRAG) & Domain 12 (Typed Knowledge 表示)**：
+1. **D04/D05 (Graph Representation & Retrieval) & Domain 12 (Typed Knowledge 表示)**：
    GenIE 是企業級知識圖譜構建（Enterprise KG Construction）的理想範式。在企業內部，實體庫通常存在嚴格的 ERP/CRM 字典與合規 Schema；利用 GenIE 的前綴樹約束技術，能保證 LLM 抽取的圖譜節點 100% 錨定企業金標準實體，杜絕任何圖譜污染。
 2. **消除 RAG 索引階段的「圖譜實體漂移」**：
    在長文檔切塊建圖時，同一實體在不同 Chunk 中可能被 LLM 寫成不同名字（如 "Apple Inc.", "Apple", "AAPL"）。GenIE 的約束生成機制從源頭完成了實體歸一化（Entity Canonicalization），極大簡化了跨 Chunk 圖譜融合管線。
