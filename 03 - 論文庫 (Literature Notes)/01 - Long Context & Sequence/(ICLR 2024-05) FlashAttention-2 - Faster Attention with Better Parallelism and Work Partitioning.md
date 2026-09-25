@@ -32,6 +32,15 @@ metrics:
   - "TFLOPs/s per GPU"
   - "Model FLOPs Utilization (MFU)"
   - "Wall-clock Speedup Ratio"
+taxonomy_version: "v2"
+taxonomy_home: "A01"
+primary_domain: null
+secondary_domains: []
+paradigm_tags:
+  - "long_context"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning

@@ -34,6 +34,15 @@ metrics:
   - "Bits Per Character (bpc)"
   - "BLEU"
   - "Memory Footprint"
+taxonomy_version: "v2"
+taxonomy_home: "A01"
+primary_domain: null
+secondary_domains: []
+paradigm_tags:
+  - "long_context"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # Reformer: The Efficient Transformer

@@ -37,6 +37,15 @@ benchmark_ids:
 metrics:
   - "Perplexity"
   - "Latency"
+taxonomy_version: "v2"
+taxonomy_home: "A01"
+primary_domain: null
+secondary_domains: []
+paradigm_tags:
+  - "long_context"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # LongNet: Scaling Transformers to 1,000,000,000 Tokens

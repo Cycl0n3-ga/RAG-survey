@@ -42,6 +42,15 @@ dataset_ids:
 metrics:
   - "Perplexity (PPL)"
   - "Accuracy"
+taxonomy_version: "v2"
+taxonomy_home: "A01"
+primary_domain: null
+secondary_domains: []
+paradigm_tags:
+  - "long_context"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models

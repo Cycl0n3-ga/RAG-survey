@@ -39,6 +39,15 @@ metrics:
   - "Perplexity (PPL)"
   - "Passkey Retrieval Accuracy (%)"
   - "Training GPU Hours (A100)"
+taxonomy_version: "v2"
+taxonomy_home: "A01"
+primary_domain: null
+secondary_domains: []
+paradigm_tags:
+  - "long_context"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # YaRN: Efficient Context Window Extension of Large Language Models
