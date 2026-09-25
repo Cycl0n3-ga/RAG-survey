@@ -4,13 +4,12 @@ domain_id: "D03"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Corpus Construction"
-migration_status: "content-migrated-from-legacy-04-12-13"
 last_updated: "2026-09-25"
 ---
 
 # Domain 03 - Knowledge Extraction & Information Preservation
 
-> [!IMPORTANT] Canonical Domain v2
+> [!IMPORTANT]
 > 本 Domain 只回答：**從文字抽出什麼 semantic knowledge units，以及抽取、對齊與整合時如何避免失真？**
 > Chunk boundary 本身屬 D02；knowledge representation / index schema 屬 D04。
 
@@ -188,4 +187,3 @@ D05 Retrieval
 
 - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
 - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Paper Domain Migration Manifest|Paper Domain Migration Manifest]]
