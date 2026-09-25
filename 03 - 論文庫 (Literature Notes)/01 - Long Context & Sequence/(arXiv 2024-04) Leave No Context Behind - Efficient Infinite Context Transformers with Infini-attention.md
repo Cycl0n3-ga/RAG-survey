@@ -12,8 +12,6 @@ doi: null
 arxiv: "2404.07143"
 url: "https://arxiv.org/abs/2404.07143"
 pdf_file: "Papers/01 - Long Context & Sequence/(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - infinite-context

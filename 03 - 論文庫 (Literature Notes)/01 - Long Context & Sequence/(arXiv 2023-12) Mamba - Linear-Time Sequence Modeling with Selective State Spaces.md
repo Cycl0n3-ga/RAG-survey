@@ -11,9 +11,6 @@ doi: null
 arxiv: "2312.00752"
 url: "https://arxiv.org/abs/2312.00752"
 pdf_file: "Papers/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - "paper"
   - "state-space-models-(ssm)---alternative-architectures"

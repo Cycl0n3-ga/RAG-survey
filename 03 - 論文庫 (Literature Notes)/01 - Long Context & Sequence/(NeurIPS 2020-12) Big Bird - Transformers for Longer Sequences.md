@@ -15,9 +15,6 @@ doi: null
 arxiv: "2007.14062"
 url: "https://arxiv.org/abs/2007.14062"
 pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2020-12) Big Bird - Transformers for Longer Sequences.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - "paper"
   - "sparse-attention---graph-theoretical-attention"

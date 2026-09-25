@@ -14,9 +14,6 @@ doi: null
 arxiv: "2310.05736"
 url: "https://arxiv.org/abs/2310.05736"
 pdf_file: "Papers/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
 tags:
   - "paper"
   - "prompt-token-pruning"

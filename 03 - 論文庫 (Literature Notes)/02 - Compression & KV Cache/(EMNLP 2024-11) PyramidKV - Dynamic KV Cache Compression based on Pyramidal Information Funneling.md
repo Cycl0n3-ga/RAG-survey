@@ -14,9 +14,6 @@ doi: null
 arxiv: "2406.02069"
 url: "https://arxiv.org/abs/2406.02069"
 pdf_file: "Papers/02 - Compression & KV Cache/(EMNLP 2024-11) PyramidKV - Dynamic KV Cache Compression based on Pyramidal Information Funneling.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
 tags:
   - "paper"
   - "layer-wise-pyramidal-kv-cache-compression"

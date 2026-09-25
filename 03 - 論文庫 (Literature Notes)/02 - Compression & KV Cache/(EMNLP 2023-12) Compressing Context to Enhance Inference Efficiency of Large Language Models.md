@@ -13,9 +13,6 @@ doi: "10.18653/v1/2023.emnlp-main.391"
 arxiv: "2310.06201"
 url: "https://aclanthology.org/2023.emnlp-main.391/"
 pdf_file: "Papers/02 - Compression & KV Cache/(EMNLP 2023-12) Compressing Context to Enhance Inference Efficiency of Large Language Models.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]"
 tags:
   - paper
   - prompt-compression

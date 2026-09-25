@@ -21,11 +21,6 @@ doi: null
 arxiv: "2311.12351"
 url: "https://arxiv.org/abs/2311.12351"
 pdf_file: "Papers/01 - Long Context & Sequence/(arXiv 2023-11) Advancing Transformer Architecture in Long-Context Large Language Models - A Survey.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
-  - "[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]"
 tags:
   - paper
   - survey

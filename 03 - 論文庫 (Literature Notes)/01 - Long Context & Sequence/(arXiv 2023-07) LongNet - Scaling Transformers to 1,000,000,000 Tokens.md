@@ -17,9 +17,6 @@ doi: null
 arxiv: "2307.02486"
 url: "https://arxiv.org/abs/2307.02486"
 pdf_file: "Papers/01 - Long Context & Sequence/(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - long-context

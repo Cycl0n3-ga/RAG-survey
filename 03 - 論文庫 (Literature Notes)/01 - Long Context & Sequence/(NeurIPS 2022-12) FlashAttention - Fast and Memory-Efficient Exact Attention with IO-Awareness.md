@@ -14,9 +14,6 @@ doi: null
 arxiv: "2205.14135"
 url: "https://arxiv.org/abs/2205.14135"
 pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2022-12) FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - "paper"
   - "hardware-io-aware-exact-attention"

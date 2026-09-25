@@ -16,9 +16,6 @@ doi: null
 arxiv: "2310.06201"
 url: "https://arxiv.org/abs/2310.06201"
 pdf_file: "Papers/02 - Compression & KV Cache/(ACL 2024-08) LongLLMLingua - Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
 tags:
   - "paper"
   - "query-aware-prompt-compression"

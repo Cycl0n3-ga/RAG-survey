@@ -16,9 +16,6 @@ doi: null
 arxiv: "2402.02750"
 url: "https://arxiv.org/abs/2402.02750"
 pdf_file: "Papers/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache.pdf"
-domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
 tags:
   - "paper"
   - "kv-cache-quantization"
