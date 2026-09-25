@@ -22,8 +22,8 @@ arxiv: "2306.14048"
 url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6ceffa7b734e425fb93e1a73b5199870-Abstract-Conference.html"
 pdf_file: "Papers/02 - Compression & KV Cache/(NeurIPS 2023-12) H2O - Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models.pdf"
 domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Adjacent Interface]]"
-- "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 上下文壓縮與 KV Cache 管理 (Prompt 壓縮, 選擇性丟棄, 量化)|Domain 02 - 上下文壓縮與 KV Cache 管理 (Prompt 壓縮, 選擇性丟棄, 量化)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 14 - RAG Systems & Reliability|D14 RAG Systems & Reliability]]"
 tags:
   - paper
   - kv-cache-eviction
@@ -213,4 +213,4 @@ flowchart TD
   - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Scissorhands - Exploiting the Persistence of Importance Hypothesis for LLM KV Cache Compression at Test Time|Scissorhands: Exploiting the Persistence of Importance Hypothesis]]
   - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) Compressing Context to Enhance Inference Efficiency of Large Language Models|Selective Context: Compressing Context to Enhance Inference Efficiency]]
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 上下文壓縮與 KV Cache 管理 (Prompt 壓縮, 選擇性丟棄, 量化)|Domain 02 - 上下文壓縮與 KV Cache 管理]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A02 Context/KV Compression & Inference Efficiency]]
