@@ -1,6 +1,6 @@
 ---
 paper_id: "Asai2024_OpenScholar"
-title: "OpenScholar: Synthesizing Scientific Literature with Retrieval-Augmented Language Models"
+title: "Synthesizing scientific literature with retrieval-augmented language models"
 authors:
   - "Akari Asai"
   - "Jacqueline He"
@@ -28,11 +28,11 @@ authors:
   - "Pang Wei Koh"
   - "Hannaneh Hajishirzi"
 year: 2024
-publication_year: 2025
-venue: "Nature 2025"
-doi: null
+publication_year: 2026
+venue: "Nature 2026"
+doi: "10.1038/s41586-025-10072-4"
 arxiv: "2411.14199"
-url: "https://arxiv.org/abs/2411.14199"
+url: "https://www.nature.com/articles/s41586-025-10072-4"
 pdf_file: "Papers/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models.pdf"
 tags:
   - paper
@@ -40,7 +40,7 @@ tags:
   - literature-rag
   - citation-verification
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D09"
@@ -86,5 +86,6 @@ flowchart LR
 - Paradigm tags: `long_form_rag`, `agentic_rag`
 
 ## Sources
-- arXiv: 2411.14199
+- Nature 650, 857–863 (2026): https://doi.org/10.1038/s41586-025-10072-4
+- arXiv preprint: 2411.14199
 - [[Papers/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models.pdf|開啟本地 PDF]]

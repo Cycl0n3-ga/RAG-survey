@@ -17,11 +17,11 @@ authors:
   - "Doug Burger"
   - "Chi Wang"
 year: 2023
-publication_year: 2023
-venue: "arXiv"
+publication_year: 2024
+venue: "COLM 2024"
 doi: null
 arxiv: "2308.08155"
-url: "https://arxiv.org/abs/2308.08155"
+url: "https://www.microsoft.com/en-us/research/publication/autogen-enabling-next-gen-llm-applications-via-multi-agent-conversation-framework/"
 pdf_file: "Papers/05 - Memory & Agents/(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation.pdf"
 tags:
   - paper
@@ -30,7 +30,7 @@ tags:
   - conversation-framework
   - tool-use
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "method_paper"
 research_questions:
   - "multi_agent_orchestration"

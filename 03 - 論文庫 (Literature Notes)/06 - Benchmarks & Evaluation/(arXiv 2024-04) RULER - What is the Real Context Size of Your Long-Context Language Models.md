@@ -11,16 +11,16 @@ authors:
   - "Boris Ginsburg"
 year: 2024
 publication_year: 2024
-venue: "NVIDIA / arXiv"
+venue: "COLM 2024"
 doi: null
 arxiv: "2404.06654"
-url: "https://arxiv.org/abs/2404.06654"
+url: "https://openreview.net/forum?id=kIoBbc76Sy"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models.pdf"
 tags:
   - "paper"
   - "behavioral-context-size-evaluation"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-26"
 artifact_type: "benchmark_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A01"
@@ -40,7 +40,7 @@ adjacent_interfaces:
 > - **Paper ID**：`Hsieh2024_RULER`
 > - **作者**：Cheng-Ping Hsieh, Simeng Sun, Samuel Kriman, Shantanu Acharya, Dima Rekesh, Fei Jia, Boris Ginsburg
 > - **預印本初次發布年份 (Preprint)**：2024
-> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (NVIDIA / arXiv)
+> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (COLM 2024)
 > - **DOI**：無
 > - **arXiv**：[2404.06654](https://arxiv.org/abs/2404.06654)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)

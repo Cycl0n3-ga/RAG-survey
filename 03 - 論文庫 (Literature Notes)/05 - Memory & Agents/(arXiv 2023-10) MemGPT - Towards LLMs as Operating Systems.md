@@ -9,8 +9,8 @@ authors:
   - "Sarah Wooders"
   - "Joseph E. Gonzalez"
 year: 2023
-publication_year: 2024
-venue: "ICML 2024 / arXiv"
+publication_year: null
+venue: "arXiv"
 doi: null
 arxiv: "2310.08560"
 url: "https://arxiv.org/abs/2310.08560"
@@ -19,7 +19,7 @@ tags:
   - "paper"
   - "hierarchical-external-memory---llm-os"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-26"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D11"
@@ -38,7 +38,7 @@ adjacent_interfaces: []
 > - **Paper ID**：`Packer2023_MemGPT`
 > - **作者**：Charles Packer, Vivian Fang, Shishir G. Patil, Kevin Lin, Sarah Wooders, Joseph E. Gonzalez
 > - **預印本初次發布年份 (Preprint)**：2023
-> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICML 2024 / arXiv)
+> - **正式發表年份 / 會議或期刊 (Venue)**：尚無正式會議/期刊版本（arXiv 2023）
 > - **DOI**：無
 > - **arXiv**：[2310.08560](https://arxiv.org/abs/2310.08560)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)

@@ -9,11 +9,11 @@ authors:
   - "Haoran Deng"
   - "Xiangyang Ji"
 year: 2024
-publication_year: null
-venue: "arXiv"
-doi: null
+publication_year: 2026
+venue: "ACM TOIS 2026"
+doi: "10.1145/3777378"
 arxiv: "2408.08921"
-url: "https://arxiv.org/abs/2408.08921"
+url: "https://doi.org/10.1145/3777378"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey.pdf"
 tags:
   - paper
@@ -22,7 +22,7 @@ tags:
   - knowledge-graph
   - multi-hop-reasoning
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "survey"
 research_questions:
   - "graphrag_taxonomy"
@@ -149,6 +149,7 @@ flowchart TD
 ---
 
 ## 7. 原始來源及相關筆記連結 (Sources & Related Notes)
+- **正式版本**：ACM Transactions on Information Systems 44(2), Article 35 (2026), DOI: 10.1145/3777378；online first 2025-12-23。
 - **開啟本地 PDF**：[[Papers/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey.pdf|開啟原始論文 PDF]]
 - **關聯筆記**：
   - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|(arXiv 2024-04) GraphRAG (Edge et al.)]]

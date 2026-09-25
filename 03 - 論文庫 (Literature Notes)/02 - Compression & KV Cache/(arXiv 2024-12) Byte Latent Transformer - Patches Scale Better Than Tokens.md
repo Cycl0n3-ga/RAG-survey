@@ -9,17 +9,17 @@ authors:
   - "Benjamin Muller"
   - "et al."
 year: 2024
-publication_year: 2024
-venue: "Meta FAIR / arXiv"
-doi: null
+publication_year: 2025
+venue: "ACL 2025"
+doi: "10.18653/v1/2025.acl-long.453"
 arxiv: "2412.09871"
-url: "https://arxiv.org/abs/2412.09871"
+url: "https://aclanthology.org/2025.acl-long.453/"
 pdf_file: "Papers/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens.pdf"
 tags:
   - "paper"
   - "byte-level-patching---tokenizer-free"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-26"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A03"
@@ -39,8 +39,8 @@ adjacent_interfaces:
 > - **Paper ID**：`Pagnoni2024_BLT`
 > - **作者**：Artidoro Pagnoni, Ram Pasunuru, Pedro Rodriguez, John Nguyen, Benjamin Muller, et al.
 > - **預印本初次發布年份 (Preprint)**：2024
-> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (Meta FAIR / arXiv)
-> - **DOI**：無
+> - **正式發表年份 / 會議或期刊 (Venue)**：2025 (ACL 2025, Long Papers; Outstanding Paper)
+> - **DOI**：10.18653/v1/2025.acl-long.453
 > - **arXiv**：[2412.09871](https://arxiv.org/abs/2412.09871)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens.pdf|開啟本地 PDF 檔案]]

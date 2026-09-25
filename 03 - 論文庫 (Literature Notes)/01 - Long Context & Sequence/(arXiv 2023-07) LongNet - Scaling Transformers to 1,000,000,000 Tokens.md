@@ -11,7 +11,7 @@ authors:
   - "Nanning Zheng"
   - "Furu Wei"
 year: 2023
-publication_year: 2023
+publication_year: null
 venue: "arXiv"
 doi: null
 arxiv: "2307.02486"
@@ -24,7 +24,7 @@ tags:
   - linear-complexity
   - billion-token-scale
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "method_paper"
 research_questions:
   - "billion_token_scaling"

@@ -99,5 +99,5 @@ flowchart LR
 
 - **NeurIPS 2025 Proceedings**：https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html
 - **arXiv**：https://arxiv.org/abs/2502.12110
-- **本地 PDF**：目前未存；先前同名檔案實際是 NoLiMa（arXiv:2502.05167），已判定為錯誤工件，不能作為本篇來源。
+- **本地 PDF**：目前未存，使用 NeurIPS Proceedings / arXiv 官方全文。
 - **相關領域**：[[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]、[[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]

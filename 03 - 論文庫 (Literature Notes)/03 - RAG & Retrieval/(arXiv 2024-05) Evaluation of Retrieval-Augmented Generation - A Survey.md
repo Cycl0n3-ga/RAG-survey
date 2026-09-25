@@ -9,11 +9,11 @@ authors:
   - "Qi Liu"
   - "Zhaofeng Liu"
 year: 2024
-publication_year: 2024
-venue: "arXiv"
-doi: null
+publication_year: 2025
+venue: "CCF BigData 2024 / Springer 2025"
+doi: "10.1007/978-981-96-1024-2_8"
 arxiv: "2405.07437"
-url: "https://arxiv.org/abs/2405.07437"
+url: "https://doi.org/10.1007/978-981-96-1024-2_8"
 pdf_file: "Papers/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey.pdf"
 tags:
   - paper
@@ -23,7 +23,7 @@ tags:
   - evaluation-metrics
   - benchmarks
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-26
 artifact_type: "survey"
 research_questions:
   - "rag_evaluation_taxonomy"

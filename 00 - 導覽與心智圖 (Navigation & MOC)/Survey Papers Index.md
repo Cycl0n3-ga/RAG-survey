@@ -48,14 +48,14 @@ last_updated: "2026-09-26"
   [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG|Literature Note]]
 
 ### Structured Knowledge / GraphRAG
-- **Peng et al. — Graph Retrieval-Augmented Generation: A Survey** (arXiv:2408.08921; later ACM TOIS).  
+- **Peng et al. — Graph Retrieval-Augmented Generation: A Survey**, ACM Transactions on Information Systems 44(2), 2026, DOI: 10.1145/3777378 (online first 2025-12-23).  
   以 Graph-Based Indexing → Graph-Guided Retrieval → Graph-Enhanced Generation 組織 GraphRAG；支撐 D03/D04/D05/D09 的 graph interface。  
   [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey|Literature Note]]
 - **Zhang et al. — A Survey of Generative Information Extraction**, COLING 2025.  
   支撐 D03 的 generative IE；**不**直接證明本 repo 的 information-preservation / F/R/D/A/P/C/T research proposal。
 
 ### Evaluation / Trustworthiness
-- **Yu et al. — Evaluation of Retrieval-Augmented Generation: A Survey** (arXiv:2405.07437).  
+- **Yu et al. — Evaluation of Retrieval-Augmented Generation: A Survey**, CCF BigData 2024 proceedings, Springer 2025, DOI: 10.1007/978-981-96-1024-2_8.  
   支撐 D13 的 retrieval / generation evaluation、faithfulness 與 benchmark design。  
   [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey|Literature Note]]
 - **Ni et al. — Towards Trustworthy Retrieval Augmented Generation for Large Language Models: A Survey** (arXiv:2502.06872).  
@@ -97,10 +97,10 @@ last_updated: "2026-09-26"
 - General RAG 2026 (Faridi et al.): https://doi.org/10.1002/widm.70122
 - RAG for NLP Survey 2026 (Wu et al.): https://doi.org/10.1007/s10462-026-11605-7
 - RAG-Reasoning Survey: https://aclanthology.org/2025.findings-emnlp.648/
-- GraphRAG Survey: https://arxiv.org/abs/2408.08921
+- GraphRAG Survey: https://doi.org/10.1145/3777378
 - Generative IE Survey: https://aclanthology.org/2025.coling-main.324/
 - Multimodal RAG Survey: https://aclanthology.org/2025.findings-acl.861/
-- RAG Evaluation Survey: https://arxiv.org/abs/2405.07437
+- RAG Evaluation Survey: https://doi.org/10.1007/978-981-96-1024-2_8
 - Trustworthy RAG Survey: https://arxiv.org/abs/2502.06872
 - End-to-end RAG Security Review 2026: https://doi.org/10.1007/s44163-026-01726-x
 - Agent Memory Survey: https://arxiv.org/abs/2512.13564
