@@ -1,134 +1,125 @@
 ---
 title: "RAG Research Taxonomy & Domain Map"
 taxonomy_version: "v2"
-tags: [taxonomy, survey, rag, research-map]
+tags:
+  - taxonomy
+  - survey
+  - rag
+  - research-map
 last_updated: "2026-09-25"
 ---
 
-# RAG Research Taxonomy & Domain Map — Canonical Taxonomy v2
+# RAG Research Taxonomy & Domain Map
 
 > [!IMPORTANT]
-> 這是 **RAG-survey 的研究組織 taxonomy**，不是宣稱學界存在唯一標準分類。
-> 主軸採 **lifecycle / research problem**；GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等改為 orthogonal paradigms/tags。
+> 本 repo 的正式分類只有 **14 個 RAG Research Domains（D01–D14）**。
+> Domain 代表「研究問題發生在哪個 RAG lifecycle / system layer」；GraphRAG、Hierarchical RAG、Agentic RAG 等屬於跨 Domain 的 paradigm tags；Long Context、KV Cache、General Agents 等放在 Adjacent Interfaces。
 
-## Taxonomy Count：到底是 14、17 還是 32？
-
-- **14 = Canonical Domains（D01–D14）**：目前唯一正式的 top-level RAG research domains。
-- **17 = Legacy Domain pages**：舊架構留下的 17 個頁面，遷移期間暫存，**不再計入 canonical domain 數量**。
-- **32 = Legacy Level-2 research topics**：原本 research map 的細分 topics，不是 32 個 domains；正逐步收斂到 D01–D14 內的 Level-2 topics。
-- **5 = Adjacent Interfaces（A01–A05）**：Long Context、Compression/KV、General Agents 等相鄰研究線，**不是 RAG core domains**。
-
-因此目前 repo 的正式口徑是：**14 Canonical Domains + 5 Adjacent Interfaces；17 legacy pages 暫存；32 舊 topics 僅作遷移對照。**
-
-## Canonical Lifecycle
+## 1. Core Lifecycle
 
 ```mermaid
-flowchart TD
-    C["Corpus / Sources"] --> D01["D01 Document Ingestion & Structure"]
+flowchart LR
+    SRC["Knowledge Sources"] --> D01["D01 Ingestion & Structure"]
     D01 --> D02["D02 Segmentation & Contextualization"]
-    D02 --> D03["D03 Knowledge Extraction & Information Preservation"]
-    D03 --> D04["D04 Knowledge Representation & Indexing"]
+
+    D02 --> D04["D04 Representation & Indexing"]
+    D02 -. "optional extraction" .-> D03["D03 Knowledge Extraction & Preservation"]
+    D03 --> D04
+
     Q["User Query"] --> D05["D05 Query Understanding & Retrieval"]
     D04 --> D05
     D05 --> D06["D06 Evidence Sufficiency & Adaptive Retrieval"]
-    D06 --> D07["D07 Context Construction & Evidence Utilization"]
-    D07 --> D08["D08 Temporal Conflict & Provenance Resolution"]
-    D08 --> D09["D09 Grounded Generation, Attribution & Long-form Synthesis"]
-    D10["D10 Dynamic Knowledge & Index Maintenance"] --> D04
-    D11["D11 Memory-Augmented RAG"] --> D07
-    D12["D12 Agentic RAG & Orchestration"] --> D05
-    D12 --> D06
-    D12 --> D09
-    D13["D13 RAG Evaluation & Failure Attribution"] --> D05
-    D13 --> D09
-    D14["D14 RAG Systems, Robustness & Security"] --> D04
-    D14 --> D05
-    D14 --> D09
+    D06 --> D07["D07 Context Construction & Utilization"]
+    D07 --> D08["D08 Temporal / Conflict / Provenance"]
+    D08 --> D09["D09 Grounded Generation & Long-form Synthesis"]
 ```
 
-## 14 Canonical Domains
+**重點**：D03 不是所有 RAG 的必經步驟。Raw-chunk RAG 可以直接由 D02 進 D04；需要 entity / relation / event / proposition / graph knowledge 時才走 D03。
+
+## 2. Cross-Lifecycle Domains
+
+```mermaid
+flowchart LR
+    D10["D10 Dynamic Knowledge & Index Maintenance"] --> INDEX["Knowledge / Index State"]
+    D11["D11 Memory-Augmented RAG"] --> CTX["Persistent / Retrieved Memory"]
+    D12["D12 Agentic RAG & Orchestration"] --> CTRL["Control Plane"]
+    D13["D13 RAG Evaluation & Failure Attribution"] --> EVAL["Evaluation Plane"]
+    D14["D14 RAG Systems, Robustness & Security"] --> SYS["System Plane"]
+
+    INDEX --> CORE["Core RAG Lifecycle"]
+    CTX --> CORE
+    CTRL --> CORE
+    CORE --> EVAL
+    SYS --> CORE
+```
+
+## 3. 14 Research Domains
 
 | ID | Domain | Core Question |
 |---|---|---|
-| D01 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 01 - Document Ingestion & Structure|Document Ingestion & Structure]] | 原始文件如何轉換成保留結構、版面、來源與 metadata 的可檢索 corpus？ |
-| D02 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|Segmentation & Contextualization]] | 文件應被切成什麼 retrieval units，且切分後如何保留足夠上下文？ |
-| D03 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|Knowledge Extraction & Information Preservation]] | 從原始文字抽取哪些知識單位，以及如何避免抽取與跨 chunk 整合時遺失關鍵語義？ |
-| D04 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|Knowledge Representation & Indexing]] | 知識應以何種表示與索引結構保存，才能支援不同 retrieval 與 reasoning 需求？ |
-| D05 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|Query Understanding & Retrieval]] | 如何理解 query，並從一個或多個 index 中找出、排序與組合最相關的候選 evidence？ |
-| D06 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|Evidence Sufficiency & Adaptive Retrieval]] | 目前 evidence 是否足以回答問題；若不足，缺什麼、下一個 retrieval action 是什麼、何時停止？ |
-| D07 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 07 - Context Construction & Evidence Utilization|Context Construction & Evidence Utilization]] | 候選 evidence 找到後，如何建構有限 context，並確保模型實際使用關鍵證據？ |
-| D08 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 08 - Temporal Conflict & Provenance Resolution|Temporal Conflict & Provenance Resolution]] | 當來源、時間、版本或條件不同而造成 evidence 衝突時，如何判斷哪些證據適用於當前 query？ |
-| D09 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|Grounded Generation Attribution & Long-form Synthesis]] | 如何由 evidence 產生可驗證答案或長篇報告，並讓重要 claim 可追溯、可引用、可驗證？ |
-| D10 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 10 - Dynamic Knowledge & Index Maintenance|Dynamic Knowledge & Index Maintenance]] | 外部知識新增、修改、刪除或失效時，RAG index 如何正確且低成本地維護？ |
-| D11 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 11 - Memory-Augmented RAG|Memory-Augmented RAG]] | 如何跨 interaction 保存、檢索、合併、更新與遺忘 persistent state，而不只是查詢 corpus？ |
-| D12 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 12 - Agentic RAG & Orchestration|Agentic RAG & Orchestration]] | 系統如何根據 state 自主選擇下一個 RAG action、工具、資料源或子任務？ |
-| D13 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|RAG Evaluation & Failure Attribution]] | 如何分離評估 retrieval、evidence、generation 與 end-to-end failure，並定位錯誤真正發生在哪一層？ |
-| D14 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 14 - RAG Systems Robustness & Security|RAG Systems Robustness & Security]] | 如何在真實部署下控制成本、延遲、可觀測性與攻擊面，並維持 RAG 可靠性？ |
+| D01 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 01 - Document Ingestion & Structure|Document Ingestion & Structure]] | 如何把 PDF / Web / DB / Tables / Images 轉成保留結構與來源資訊的 corpus？ |
+| D02 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|Segmentation & Contextualization]] | 應切成什麼 retrieval units，且如何保留必要上下文？ |
+| D03 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|Knowledge Extraction & Information Preservation]] | 要抽取哪些 semantic units，且如何避免 qualifier / cross-chunk information loss？ |
+| D04 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|Knowledge Representation & Indexing]] | 知識如何表示、編碼與建立 vector / lexical / graph / hierarchical / hybrid index？ |
+| D05 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|Query Understanding & Retrieval]] | 如何理解 query，搜尋、融合與 rerank 候選 evidence？ |
+| D06 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|Evidence Sufficiency & Adaptive Retrieval]] | Evidence 是否足夠；若不足，缺什麼、是否 retry / stop / abstain？ |
+| D07 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 07 - Context Construction & Evidence Utilization|Context Construction & Evidence Utilization]] | 如何把 evidence 組成有限 context，並確保模型實際利用？ |
+| D08 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 08 - Temporal Conflict & Provenance Resolution|Temporal Conflict & Provenance Resolution]] | 如何處理時間、版本、來源權威與 evidence conflict？ |
+| D09 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|Grounded Generation, Attribution & Long-form Synthesis]] | 如何產生可驗證、可歸因、可引用的答案或長篇報告？ |
+| D10 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 10 - Dynamic Knowledge & Index Maintenance|Dynamic Knowledge & Index Maintenance]] | Knowledge base 變動時如何增量更新並避免 stale index？ |
+| D11 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 11 - Memory-Augmented RAG|Memory-Augmented RAG]] | 如何保存、檢索、整合與淘汰跨 interaction 的 persistent memory？ |
+| D12 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 12 - Agentic RAG & Orchestration|Agentic RAG & Orchestration]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
+| D13 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|RAG Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的失敗來源？ |
+| D14 | [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 14 - RAG Systems Robustness & Security|RAG Systems, Robustness & Security]] | 如何處理 latency、cost、observability、privacy、poisoning、prompt injection 與 robustness？ |
 
-## Domain vs Paradigm vs Task vs Interface
+## 4. Level-2 Topics
 
-| 類型 | 例子 | 規則 |
-|---|---|---|
-| Canonical Domain | Retrieval、Evidence Sufficiency、Context Utilization | D01–D14 |
-| Paradigm / Tag | GraphRAG、Hierarchical RAG、Adaptive RAG、Multimodal RAG | [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]] |
-| Output Task | QA、Long-form Report、Research Synthesis | 放到主要 lifecycle Domain + task tag |
-| Adjacent Interface | Long Context、KV Cache、general inference optimization、model editing | 不再作 RAG core Domain |
-| Project Idea | Evidence Gap Controller、F/R/D/A/P/C/T、Evidence-Governed RAG | `04 - 研究想法與待驗證提案` |
+Level-2 topic 是 Domain 內部研究子題，**不另外編號成新的 Domain**。
 
-## Critical Boundaries
-
-### Segmentation ≠ Extraction ≠ Representation
-```text
-Document -> Segmentation -> Retrieval Units
-         -> Extraction   -> Entities / Relations / Events / Propositions / Claims
-         -> Representation & Indexing -> Vector / Lexical / Graph / Hierarchical / Hybrid Index
-```
-
-### Relevance ≠ Sufficiency ≠ Utilization ≠ Faithfulness
-```text
-Relevant evidence retrieved
-!= enough evidence collected
-!= model actually used the evidence
-!= generated claims are supported
-```
-
-### Dynamic Index ≠ Memory
-D10 管理 external knowledge base / index state；D11 管理跨 interaction 的 persistent state。
-
-## Legacy 17-domain Mapping
-
-| Legacy | New home |
+| Domain | Representative Topics |
 |---|---|
-| 01 Long Context | Adjacent Interface + D07 |
-| 02 Compression | D07 + D14 + Adjacent Interface |
-| 03 Advanced RAG | D05 + D06 + D12 |
-| 04 Chunking & KE | D02 + D03 |
-| 05 GraphRAG | D03/D04/D05 + `graph_rag` |
-| 06 Memory | D11 |
-| 07 Hierarchical Reasoning | D04/D05 + `hierarchical_rag` |
-| 08 Long-form Generation | D09 |
-| 09 Agentic Workflow | D12 |
-| 10 Evaluation/System/Safety | D13 + D14 |
-| 11 Research Roadmap | Ideas & Hypotheses |
-| 12 Knowledge Extraction | D03 |
-| 13 Information Preservation | D03 + D13 |
-| 14 Evidence Sufficiency | D06 |
-| 15 Temporal/Conflict/Provenance | D08 |
-| 16 Context Utilization/Faithfulness | D07 + D09 |
-| 17 Benchmarks/Evaluation | D13 |
+| D01 | parsing, OCR, layout, table/chart structure, source anchoring |
+| D02 | fixed/semantic/structure-aware chunking, parent-child, proposition units, late/contextual chunking |
+| D03 | entity/relation/event/proposition/claim extraction, coreference, qualifiers, consolidation, extraction repair |
+| D04 | dense/sparse/late interaction, graph, hierarchy, multi-resolution, ANN, hybrid index |
+| D05 | query rewrite, expansion, HyDE, decomposition, routing, dense/sparse/graph retrieval, fusion, reranking, multi-hop |
+| D06 | retrieval necessity, evidence coverage, sufficiency, gap localization, retry/stop/abstention |
+| D07 | filtering, dedup, context packing, compression, ordering, token budget, lost-in-the-middle, utilization |
+| D08 | valid time, version, provenance, authority, conflict detection/resolution |
+| D09 | grounded generation, claim verification, citation, attribution, long-form planning/synthesis, abstention |
+| D10 | freshness, staleness, incremental indexing, graph/index refresh |
+| D11 | episodic/semantic memory, write/read, consolidation, forgetting |
+| D12 | planning, controller, tool use, routing, multi-agent orchestration |
+| D13 | benchmark/dataset/metric separation, oracle evaluation, failure attribution, meta-evaluation |
+| D14 | latency, throughput, cost, cache, observability, access control, poisoning, injection, adversarial robustness |
 
-## Migration Policy
-1. Canonical D01–D14 先建立。
-2. Legacy Domain 01–17 暫不刪除。
-3. 逐篇更新 literature note 的 `primary_domain`、`secondary_domains`、`paradigm_tags`。
-4. Home / MOC / Benchmark Catalog / Survey Index 逐步改指 canonical pages。
-5. backlinks 歸零後才 archive/delete legacy pages。
+## 5. Orthogonal Paradigms
 
-## Survey Design Choice
-現有 RAG surveys 常用 component 或 pre-retrieval → retrieval → post-retrieval → generation 類 lifecycle 組織；本 repo 再細化 evidence sufficiency、provenance、memory、systems 與 failure attribution，目的在提高研究診斷性，而非宣稱此 14-domain 切法是 universal standard。
+GraphRAG、Hierarchical RAG、Adaptive RAG、Corrective RAG、Agentic RAG、Multimodal RAG、Temporal RAG、Long-form RAG 等不是額外 Domain，而是跨 Domain 的方法族。
 
-## Related
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Canonical RAG Domain Migration Map|Migration Map]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
-- [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
+→ [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+
+## 6. Adjacent Interfaces
+
+Long Context、KV Cache / inference optimization、tokenization / general model architecture、general agents、continual learning / model editing 與 RAG 有重要交界，但不是 RAG core Domain。
+
+→ [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
+
+## 7. Classification Rules
+
+1. Paper 先判斷 **Primary Domain**，再列 Secondary Domains。
+2. GraphRAG / Hierarchical RAG 等用 `paradigm_tags` 表示。
+3. Adjacent work 使用 `taxonomy_home: Axx`，不要硬塞進 D01–D14。
+4. Chunking ≠ Extraction ≠ Representation。
+5. Relevance ≠ Sufficiency ≠ Utilization ≠ Faithfulness。
+6. Dynamic Index ≠ Persistent Memory。
+7. Benchmark ≠ Dataset ≠ Metric ≠ Evaluation Framework。
+8. Project-specific proposal 放在 `04 - 研究想法與待驗證提案`，不可寫成 survey-established fact。
+
+## Navigation
+
+- [[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|RAG System Maps]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|Paradigm Tags]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|Adjacent Interfaces]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|Benchmark Catalog]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]

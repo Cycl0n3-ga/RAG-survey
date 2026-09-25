@@ -188,11 +188,11 @@ metrics: []                                            # 評測指標
 
 ---
 
-## 🧭 Canonical RAG Taxonomy v2
+## 🧭 RAG Taxonomy
 
-自 2026-09-25 起，`02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/` 為 RAG core research domains 的 canonical 分類。根目錄既有 Domain 01–17 暫時保留為 migration sources，直到 backlinks 與 literature metadata 完成遷移。
+`02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/` 是本 repo 唯一正式的 RAG Domain 集合，共 **D01–D14**。
 
-### Canonical Domains
+### Domains
 - D01 Document Ingestion & Structure
 - D02 Segmentation & Contextualization
 - D03 Knowledge Extraction & Information Preservation
@@ -209,11 +209,12 @@ metrics: []                                            # 評測指標
 - D14 RAG Systems, Robustness & Security
 
 ### 分類規則
-1. **Domain = lifecycle research problem**；GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等原則上是 paradigm/tag，不與 lifecycle Domain 平行。
-2. 每篇 method paper 優先增加 `primary_domain`、`secondary_domains`、`paradigm_tags`。
-3. Long Context、KV Cache、general model architecture 不再視為 RAG core Domain；僅保留與 retrieval / context / systems 的 interface。
-4. Research Roadmap、Evidence Gap Controller、F/R/D/A/P/C/T 等 project-specific proposal 必須留在 `04 - 研究想法與待驗證提案`。
-5. 遷移期間不得直接刪除 legacy Domain pages；必須先修 Wikilinks、paper metadata、MOC，再 archive/delete。
-6. 新增 X-RAG 名詞時，先判斷 Primary Domain，再加 paradigm tag；不得因熱門名稱直接新增 top-level Domain。
+1. **Domain = lifecycle / system research problem**。
+2. 每篇 method paper 使用 `primary_domain`、`secondary_domains`、`paradigm_tags`。
+3. GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等使用 paradigm tags，不新增平行 top-level Domain。
+4. Long Context、KV Cache、general model architecture、general agents、continual learning 使用 Adjacent Interfaces。
+5. Research Roadmap、Evidence Gap Controller、F/R/D/A/P/C/T 等 project-specific proposal 放在 `04 - 研究想法與待驗證提案`。
+6. 新增 X-RAG 名詞時，先判斷 Primary Domain，再決定 paradigm tag。
 
 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]。
+

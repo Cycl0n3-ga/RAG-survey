@@ -172,3 +172,37 @@ metrics: []                                            # 評測指標
 - Mermaid node label 不直接放 Obsidian `[[wikilink]]`；改在圖下建立節點對照。
 - Mermaid label 使用 `ID["文字"]` / `ID{"文字"}`，換行用 `<br/>`，subgraph 使用穩定 ID + 引號標題，不使用 `A & B --> C` shorthand。
 - 修改圖後檢查 fence、括號、subgraph/end 配對與 GitHub 預覽。
+
+
+---
+
+## 🧭 RAG Taxonomy
+
+`02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/` 是本 repo 唯一正式的 RAG Domain 集合，共 **D01–D14**。
+
+### Domains
+- D01 Document Ingestion & Structure
+- D02 Segmentation & Contextualization
+- D03 Knowledge Extraction & Information Preservation
+- D04 Knowledge Representation & Indexing
+- D05 Query Understanding & Retrieval
+- D06 Evidence Sufficiency & Adaptive Retrieval
+- D07 Context Construction & Evidence Utilization
+- D08 Temporal Conflict & Provenance Resolution
+- D09 Grounded Generation, Attribution & Long-form Synthesis
+- D10 Dynamic Knowledge & Index Maintenance
+- D11 Memory-Augmented RAG
+- D12 Agentic RAG & Orchestration
+- D13 RAG Evaluation & Failure Attribution
+- D14 RAG Systems, Robustness & Security
+
+### 分類規則
+1. **Domain = lifecycle / system research problem**。
+2. 每篇 method paper 使用 `primary_domain`、`secondary_domains`、`paradigm_tags`。
+3. GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等使用 paradigm tags，不新增平行 top-level Domain。
+4. Long Context、KV Cache、general model architecture、general agents、continual learning 使用 Adjacent Interfaces。
+5. Research Roadmap、Evidence Gap Controller、F/R/D/A/P/C/T 等 project-specific proposal 放在 `04 - 研究想法與待驗證提案`。
+6. 新增 X-RAG 名詞時，先判斷 Primary Domain，再決定 paradigm tag。
+
+詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]。
+
