@@ -138,7 +138,7 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 05 (Graph RAG) 的啟示**：證明了「KG 不是單獨回答問題的終點，而是文字檢索的引導者（Guide）」，打破了純知識庫問答（KBQA）與傳統 RAG 的界限。
+1. **對 D04/D05 (Graph Representation & Retrieval) 的啟示**：證明了「KG 不是單獨回答問題的終點，而是文字檢索的引導者（Guide）」，打破了純知識庫問答（KBQA）與傳統 RAG 的界限。
 2. **對企業級交付應用的指導**：在工程規格書與法規審計中，可透過預先構建的核心術語與標準架構圖，引導檢索器精準命中不同章節的關聯條款，防止關鍵約束條件被截斷。
 
 ---
