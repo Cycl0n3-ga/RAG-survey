@@ -38,6 +38,14 @@ metrics:
   - "Answer Relevance"
   - "Context Completeness"
   - "Chunk Utilization"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains: []
+paradigm_tags:
+  - "rag_evaluation"
+adjacent_interfaces: []
+
 ---
 
 # RAGBench: Explainable Benchmark for Retrieval-Augmented Generation Systems

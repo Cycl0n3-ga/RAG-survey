@@ -37,6 +37,16 @@ metrics:
   - "over_answer_rate"
   - "behavioral_expected_calibration_error"
   - "accuracy"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D06"
+paradigm_tags:
+  - "evidence_sufficiency"
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # Do LLMs Know When Evidence is Insufficient? An Evidence Sufficiency Benchmark for Answer-Abstention Calibration in Retrieval-Augmented Generation

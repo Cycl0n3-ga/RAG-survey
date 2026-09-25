@@ -23,6 +23,16 @@ tags:
   - "comprehensive-long-context-benchmark"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "A01"
+primary_domain: null
+secondary_domains:
+  - "D13"
+paradigm_tags:
+  - "long_context_evaluation"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding

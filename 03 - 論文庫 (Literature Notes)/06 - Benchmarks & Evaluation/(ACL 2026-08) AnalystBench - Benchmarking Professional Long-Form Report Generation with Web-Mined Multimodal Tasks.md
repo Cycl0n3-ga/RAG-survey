@@ -46,6 +46,16 @@ metrics:
   - "Groundedness / Hallucination Rate (%)"
   - "Visual Inclusion / Quality Score"
   - "Report Length (Words)"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D09"
+paradigm_tags:
+  - "long_form_rag"
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # AnalystBench: Benchmarking professional long-form report generation with web-mined multimodal tasks

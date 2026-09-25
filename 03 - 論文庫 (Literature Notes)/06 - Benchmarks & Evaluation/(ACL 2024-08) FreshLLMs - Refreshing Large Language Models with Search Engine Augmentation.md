@@ -43,6 +43,17 @@ metrics:
   - "Strict Accuracy"
   - "Relaxed Accuracy"
   - "Hallucination Rate"
+taxonomy_version: "v2"
+taxonomy_home: "D10"
+primary_domain: "D10"
+secondary_domains:
+  - "D05"
+  - "D08"
+paradigm_tags:
+  - "dynamic_rag"
+  - "freshness"
+adjacent_interfaces: []
+
 ---
 
 # FreshLLMs: Refreshing Large Language Models with Search Engine Augmentation

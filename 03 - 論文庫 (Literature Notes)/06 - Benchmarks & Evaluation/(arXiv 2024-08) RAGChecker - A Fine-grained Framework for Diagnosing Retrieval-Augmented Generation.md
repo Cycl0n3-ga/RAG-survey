@@ -38,6 +38,14 @@ tags:
   - benchmark
 verification_status: "verified"
 last_verified: 2026-09-24
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains: []
+paradigm_tags:
+  - "rag_evaluation"
+adjacent_interfaces: []
+
 ---
 
 # RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation

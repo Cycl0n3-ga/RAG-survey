@@ -36,6 +36,16 @@ metrics:
   - "Hallucination Rate (%)"
   - "Hallucination Span Count"
   - "Span Detection F1"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D09"
+paradigm_tags:
+  - "rag_evaluation"
+  - "hallucination"
+adjacent_interfaces: []
+
 ---
 
 # RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models

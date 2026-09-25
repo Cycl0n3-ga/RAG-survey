@@ -48,6 +48,17 @@ metrics:
   - "Recall@5"
   - "MRR (Mean Reciprocal Rank)"
   - "Generation Accuracy (Acc)"
+taxonomy_version: "v2"
+taxonomy_home: "D08"
+primary_domain: "D08"
+secondary_domains:
+  - "D05"
+  - "D13"
+paradigm_tags:
+  - "temporal_rag"
+  - "recency"
+adjacent_interfaces: []
+
 ---
 
 # Re3: Relevance & Recency Retrieval for Mitigating Temporal Hallucination

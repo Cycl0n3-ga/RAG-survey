@@ -39,6 +39,16 @@ benchmark_ids:
 metrics:
   - "Agreement Accuracy"
   - "Inter-Annotator Agreement"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D09"
+paradigm_tags:
+  - "long_form_rag"
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # ReportLogic: Evaluating Logical Quality in Deep Research Reports
