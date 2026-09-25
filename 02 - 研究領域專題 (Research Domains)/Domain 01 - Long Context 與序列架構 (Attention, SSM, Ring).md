@@ -67,6 +67,12 @@ graph TD
 9. **壓縮記憶體與局部注意力門控融合 (Compressive Memory & Gated Local-Global Attention)**：
    - 代表作：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention|Infini-attention (Munkhdalai et al., Google 2024)]]。
    - 核心思想：在標準 Transformer block 內整合局部點積注意力與壓縮線性關聯記憶體，透過可學習門控動態聚合，以有界常數記憶體開銷（1.6M 參數，節省 114×）解鎖 100 萬 Token 原生檢索能力。
+10. **擴張稀疏注意力與 10 億 Token 序列擴展 (Dilated Attention & Billion-Token Scaling)**：
+    - 代表作：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens|LongNet (Ding et al., 2023)]]。
+    - 核心思想：提出擴張注意力（Dilated Attention），注意力範圍隨距離指數級擴散，將計算與顯存複雜度降至嚴格線性 $O(L)$。搭配分散式序列並行（Sequence Parallelism），延遲在跨卡並行下維持平穩，達成 10 億 Token 序列建模能力。
+11. **長上下文 Transformer 架構演進全景綜述 (Long-Context Transformer Survey)**：
+    - 代表綜述：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-11) Advancing Transformer Architecture in Long-Context Large Language Models - A Survey|Advancing Transformer Architecture in Long-Context LLMs (Huang et al., 2023)]]。
+    - 核心思想：系統性梳理 Transformer 長文本全生命週期架構優化（預訓練結構改良、微調擴展、推論 KV 快取管理與綜合評測）。
 
 ---
 
@@ -77,6 +83,7 @@ graph TD
 | **Dense Exact** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need\|Transformer]] | $O(L^2)$ | $O(L^2)$ | 完全精確 | 無法單獨承受超百萬長度 |
 | **IO-Aware Exact** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(NeurIPS 2022-12) FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness\|FlashAttention-1/2]] | $O(L^2)$ (高常數加速) | $O(L)$ | 完全精確 | 運算量本質仍為平方，極限長度仍受算力制約 |
 | **Sparse / LSH** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ACL 2020-07) Longformer - The Long-Document Transformer\|Longformer]], [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2020-04) Reformer - The Efficient Transformer\|Reformer]] | $O(L \log L)$ ~ $O(L)$ | $O(L)$ | 局部精確，遠程稀疏/雜湊 | 遠距多跳依賴傳播層數多，GPU 動態雜湊存取效率低 |
+| **Dilated Attention** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens\|LongNet]] | $O(L)$ (線性) | $O(L)$ | 隨距離幾何擴散，短距密集長距稀疏 | 極度依賴序列並行架構，超遠距細粒度精確抽取仍有資訊損失 |
 | **Segment Recurrence** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ACL 2019-07) Transformer-XL - Attentive Language Models Beyond a Fixed-Length Context\|Transformer-XL]] | $O(L \times M)$ | $O(N \times M)$ | 歷史快取循環 | 單向因果限制，無法反向傳播長程梯度 |
 | **Streaming Sinks** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) Efficient Streaming Language Models with Attention Sinks\|StreamingLLM]] | $O(W \times L)$ | $O(1)$ 常數快取 | 匯聚錨定，近期精確 | 拋棄中間歷史，無法支援遠程事實檢索與 NIAH |
 | **Linear Kernel** | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2021-05) Rethinking Attention with Performers\|Performer (FAVOR+)]] | $O(L \cdot m \cdot d)$ | $O(L)$ | 隨機特徵無偏近似 | 依賴特徵數 $m$，短序列 GPU 吞吐不及高度特化 GEMM |

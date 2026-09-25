@@ -37,9 +37,12 @@ graph TD
     L0_3["原始 Chunk 3"]
     L0_4["原始 Chunk 4"]
     
-    L0_1 & L0_2 --> C1
-    L0_3 & L0_4 --> C2
-    C1 & C2 --> Root
+    L0_1 --> C1
+    L0_2 --> C1
+    L0_3 --> C2
+    L0_4 --> C2
+    C1 --> Root
+    C2 --> Root
 ```
 
 1. **軟聚類（Soft Clustering via GMM）**：
@@ -53,7 +56,15 @@ graph TD
 
 ---
 
-### 三、分層推理的範式：Map-Reduce vs. Refine vs. Tree-of-Thought
+### 三、多頁階層多模態理解：MP-DocVQA 與 Hi-VT5
+- **代表作**：[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA|MP-DocVQA (Tito et al., Pattern Recognition 2023)]]。
+- **核心架構**：面對多達 20 頁的超長視覺與排版文件，傳統單頁模型（LayoutLM）或直接扁平拼接會導致顯存爆炸與交叉干擾。Hi-VT5 採用階層式 Transformer 架構：
+  1. **Page-level Encoder**：利用輕量視覺-文本編碼器平行處理各單頁內部細粒度佈局與文字特徵；
+  2. **Document-level Decoder**：利用階層跨注意力（Hierarchical Cross-Attention）跨頁聚合全局頁面表徵，兼顧高解析度微觀文字辨識與宏觀跨頁證據鏈推理。
+
+---
+
+### 四、分層推理的範式：Map-Reduce vs. Refine vs. Tree-of-Thought
 針對超長文理解，目前工業界採用三種主要推理工作流：
 1. **Map-Reduce 模式**：
    - **Map**：平行將每一章節/區塊送入 LLM 提取局部關鍵點或評分。
@@ -68,6 +79,10 @@ graph TD
 ---
 
 ## 相關導覽與文獻快速跳轉
+- **代表性文獻**：
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|RAPTOR 遞迴樹狀檢索 (Sarthi et al., ICLR 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA|MP-DocVQA / Hi-VT5 多頁階層式文件理解 (Tito et al., 2023)]]
+  - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-06) LongRAG - Enhancing Retrieval-Augmented Generation with Long-context LLMs|LongRAG 長單元檢索 (Zhao et al., 2024)]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
 - **深度研究報告**：[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|技術全景深度報告]]

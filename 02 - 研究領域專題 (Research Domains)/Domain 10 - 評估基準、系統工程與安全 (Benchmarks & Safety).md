@@ -59,7 +59,7 @@ flowchart LR
 - **對本專案研究意義**：直接支撐 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04: 端到端 RAG 失效歸因]]，精準量化「檢索引進噪聲」與「生成自發幻覺」的 Trade-off。
 
 > [!NOTE] Survey support
-> RAG 評估已有專門 review/survey；請以 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 的 evaluation survey 作為領域級 taxonomy 依據，再回 benchmark paper / dataset card 核對規模與指標。
+> RAG 評估已有專門系統性綜述支撐：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey|Evaluation of Retrieval-Augmented Generation: A Survey (Yu et al., 2024)]]，提出 RGAR 評估架構（檢索、生成與附加需求）與完整指標體系；請同時參考 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]] 作為領域級 taxonomy 依據，再回 benchmark paper / dataset card 核對規模與指標。
 
 ### 三、拒絕單一 Accuracy：評估應報多維 Trade-off
 長文本處理的本質是**工程資源與性能的權衡**。單獨宣稱『我的方法準確率提升了 2%』毫無學術價值，除非同時呈現 Pareto 前沿面：

@@ -81,6 +81,7 @@ flowchart TD
 | **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2021-11) REBEL - Relation Extraction By End-to-end Language generation|REBEL]]** | EMNLP 2021 | Seq2Seq 自回歸生成三元組線性字串 | 統一關係抽取為條件式字串生成，突破預先定義 Schema 限制 | [EMNLP 2021](https://aclanthology.org/2021.emnlp-main.180/) |
 | **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2022-07) GenIE - Generative Information Extraction|GenIE]]** | NAACL 2022 | 前綴樹（Trie / Prefix-Tree）約束受限自回歸解碼 | 保證封閉式 KG 抽取 100% 合法，根除自回歸生成幻覺 | [NAACL 2022](https://aclanthology.org/2022.naacl-main.224/) |
 | **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) MAVEN - A Massive General Domain Event Detection Dataset\|MAVEN]]** | EMNLP 2020 | 大規模通用領域事件檢測基準 (4,480 篇文檔，11.8 萬 Event Mentions) | 168 類事件類型與觸發詞標註，比 ACE 2005 大 22 倍 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) MAVEN - A Massive General Domain Event Detection Dataset\|文獻筆記]] · [EMNLP 2020](https://aclanthology.org/2020.emnlp-main.150/) |
+| **[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction|InstructUIE]]** | arXiv 2023 | 多任務指令微調 (IE INSTRUCTIONS, 32 個資料集) | 統一 NER、RE、EE 之大規模自然語言指令引導抽取；11B 模型 Entity F1 85.19% | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction|文獻筆記]] · arXiv:2304.08085 |
 
 ---
 

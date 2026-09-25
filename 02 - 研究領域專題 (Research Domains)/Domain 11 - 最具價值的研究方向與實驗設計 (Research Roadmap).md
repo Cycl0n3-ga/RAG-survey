@@ -74,11 +74,18 @@ flowchart LR
     OR3["Gold context"] -. oracle .-> GEN
 ```
 
-## 五、Benchmark 導覽
+## 五、領域級文獻綜述與 Benchmark 導覽
 
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
+- **核心領域綜述 (Domain Surveys)**：
+  - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey|RAG 評估全景綜述 (Yu et al., 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG|Agentic RAG 全景綜述 (Singh et al., 2025)]]
+  - [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-11) Advancing Transformer Architecture in Long-Context Large Language Models - A Survey|長上下文 LLM 架構綜述 (Huang et al., 2023)]]
+  - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2023-12) Retrieval-Augmented Generation for Large Language Models - A Survey|RAG 全景綜述 (Gao et al., 2023)]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey|Graph RAG 全景綜述 (Peng et al., 2024)]]
+- **評測索引與導覽**：
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
 
 ## 相關導覽
 

@@ -17,7 +17,7 @@ last_updated: "2026-09-25"
 
 ## 一、分類導覽
 
-### 01 - Long Context & Sequence (15 篇)
+### 01 - Long Context & Sequence (17 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -36,6 +36,8 @@ last_updated: "2026-09-25"
 | ICML 2024 | LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens\|(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens]] | [[Papers/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens.pdf\|PDF]] |
 | COLM 2024 | Mamba: Linear-Time Sequence Modeling with Selective State Spaces | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces\|(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces]] | [[Papers/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces.pdf\|PDF]] |
 | arXiv 2024 | Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention\|(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention]] | [[Papers/01 - Long Context & Sequence/(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention.pdf\|PDF]] |
+| arXiv 2023 | LongNet: Scaling Transformers to 1,000,000,000 Tokens | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens\|(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens]] | [[Papers/01 - Long Context & Sequence/(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens.pdf\|PDF]] |
+| arXiv 2023 | Advancing Transformer Architecture in Long-Context LLMs: A Comprehensive Survey | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-11) Advancing Transformer Architecture in Long-Context Large Language Models - A Survey\|(arXiv 2023-11) Advancing Transformer Architecture in Long-Context Large Language Models - A Survey]] | [[Papers/01 - Long Context & Sequence/(arXiv 2023-11) Advancing Transformer Architecture in Long-Context Large Language Models - A Survey.pdf\|PDF]] |
 
 
 ### 02 - Compression & KV Cache (13 篇)
@@ -56,7 +58,7 @@ last_updated: "2026-09-25"
 | SIGCOMM 2024 | CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving\|(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving]] | [[Papers/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving.pdf\|PDF]] |
 | NeurIPS 2024 | MiniCache: KV Cache Compression in Depth Dimension for Large Language Models | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models\|(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models]] | [[Papers/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models.pdf\|PDF]] |
 
-### 03 - RAG & Retrieval (23 篇)
+### 03 - RAG & Retrieval (24 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -83,8 +85,9 @@ last_updated: "2026-09-25"
 | EMNLP 2024 | Chain-of-Note: Enhancing Robustness in Retrieval-Augmented Language Models | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models\|(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models]] | [[Papers/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models.pdf\|PDF]] |
 | arXiv 2024 | Corrective Retrieval Augmented Generation (CRAG) | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation\|(arXiv 2024-01) Corrective Retrieval Augmented Generation]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation.pdf\|PDF]] |
 | arXiv 2024 | Late Chunking: Contextual Chunk Embeddings for Retrieval | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval\|(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval.pdf\|PDF]] |
+| arXiv 2024 | Evaluation of Retrieval-Augmented Generation: A Survey | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey\|(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey.pdf\|PDF]] |
 
-### 04 - Knowledge & Graph RAG (22 篇)
+### 04 - Knowledge & Graph RAG (23 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -110,8 +113,9 @@ last_updated: "2026-09-25"
 | arXiv 2026 | Beyond Chunk-Local Extraction: Cross-Chunk Graph Augmentation for GraphRAG (CrossAug) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG\|(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG]] | [[Papers/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG.pdf\|PDF]] |
 | EMNLP 2020 | OpenIE6: Iterative Grid Labeling and Coordination Analysis for Open Information Extraction | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction\|(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction]] | [[Papers/04 - Knowledge & Graph RAG/(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction.pdf\|PDF]] |
 | NeurIPS 2024 | G-Retriever: Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering\|(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering]] | [[Papers/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering.pdf\|PDF]] |
+| arXiv 2023 | InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction\|(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction]] | [[Papers/04 - Knowledge & Graph RAG/(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction.pdf\|PDF]] |
 
-### 05 - Memory & Agents (15 篇)
+### 05 - Memory & Agents (17 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -130,8 +134,10 @@ last_updated: "2026-09-25"
 | Findings of ACL 2026 | EviReport: From Reasoned Outlines to Evidence Tracked Long-Form Reports | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports\|(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.1397/) |
 | RAG4Reports 2026 | EFSG: Evidence-First Structured Generation for Multilingual RAG Report Generation | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation\|(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation]] | [ACL Anthology](https://aclanthology.org/2026.rag4reports-1.14/) |
 | arXiv 2024 | MemoRAG: Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery\|(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery]] | [[Papers/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery.pdf\|PDF]] |
+| arXiv 2023 | AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation\|(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation]] | [[Papers/05 - Memory & Agents/(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation.pdf\|PDF]] |
+| arXiv 2025 | Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG\|(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG]] | [[Papers/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG.pdf\|PDF]] |
 
-### 06 - Benchmarks & Evaluation (27 篇)
+### 06 - Benchmarks & Evaluation (31 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -162,3 +168,7 @@ last_updated: "2026-09-25"
 | ACL 2026 | Re³: Relevance & Recency Retrieval for Mitigating Temporal Hallucination (Re² Bench) | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination\|(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination.pdf\|PDF]] |
 | ACL 2024 | FreshLLMs: Refreshing Large Language Models with Search Engine Augmentation | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation\|(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation.pdf\|PDF]] |
 | ICLR 2024 | WebArena: A Realistic Web Environment for Building Autonomous Agents | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents\|(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents]] | [[Papers/06 - Benchmarks & Evaluation/(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents.pdf\|PDF]] |
+| KDD 2022 | DocLayNet: A Large Human-Annotated Dataset for Document-Layout Analysis | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis\|(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis]] | [[Papers/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis.pdf\|PDF]] |
+| Pattern Recognition 2023 | Hierarchical Multimodal Transformers for Multi-Page DocVQA (MP-DocVQA) | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA\|(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA]] | [[Papers/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA.pdf\|PDF]] |
+| NAACL 2021 | QASPER: A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers\|(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers]] | [[Papers/06 - Benchmarks & Evaluation/(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers.pdf\|PDF]] |
+| ACL 2026 | ReportLogic: Evaluating Logical Quality in Deep Research Reports | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports\|(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports.pdf\|PDF]] |

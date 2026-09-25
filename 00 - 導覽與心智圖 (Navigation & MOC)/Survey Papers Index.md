@@ -15,19 +15,19 @@ last_updated: "2026-09-24"
 
 ## 1. General RAG
 
-| Survey | 年份 / 狀態 | 支撐範圍 |
-|---|---|---|
-| Gao et al., *Retrieval-Augmented Generation for Large Language Models: A Survey* | arXiv 2023 | Naive / Advanced / Modular RAG、retrieval-generation pipeline |
-| Wu et al., *Retrieval-Augmented Generation for Natural Language Processing: A Survey* (RAG and RAU) | arXiv 2024 | Retrieval-augmented understanding / generation across NLP |
-| Zhao et al., *Retrieval-Augmented Generation for AI-Generated Content: A Survey* | Data Science and Engineering 2026 | RAG architectures、AIGC applications、evaluation / future directions |
-| Brown et al., *A Systematic Literature Review of Retrieval-Augmented Generation: Techniques, Metrics, and Challenges* | BDCC 2025 | Systematic review、methods、metrics、challenges |
+| Survey | 年份 / 狀態 | 支撐範圍 | 筆記連結 |
+|---|---|---|---|
+| Gao et al., *Retrieval-Augmented Generation for Large Language Models: A Survey* | arXiv 2023 | Naive / Advanced / Modular RAG、retrieval-generation pipeline | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2023-12) Retrieval-Augmented Generation for Large Language Models - A Survey\|文獻筆記]] |
+| Wu et al., *Retrieval-Augmented Generation for Natural Language Processing: A Survey* (RAG and RAU) | arXiv 2024 | Retrieval-augmented understanding / generation across NLP | - |
+| Zhao et al., *Retrieval-Augmented Generation for AI-Generated Content: A Survey* | Data Science and Engineering 2026 | RAG architectures、AIGC applications、evaluation / future directions | - |
+| Brown et al., *A Systematic Literature Review of Retrieval-Augmented Generation: Techniques, Metrics, and Challenges* | BDCC 2025 | Systematic review、methods、metrics、challenges | - |
 
 ## 2. GraphRAG / Structured Knowledge
 
-| Survey | 年份 / 狀態 | 支撐範圍 |
-|---|---|---|
-| Peng et al., *Graph Retrieval-Augmented Generation: A Survey* | ACM TOIS 2025 | GraphRAG taxonomy、graph construction、retrieval、generation、benchmarks |
-| Zhong et al., *A Comprehensive Survey on Automatic Knowledge Graph Construction* | ACM Computing Surveys 2023 | KG construction；支撐 IE→KG，不等同 GraphRAG |
+| Survey | 年份 / 狀態 | 支撐範圍 | 筆記連結 |
+|---|---|---|---|
+| Peng et al., *Graph Retrieval-Augmented Generation: A Survey* | ACM TOIS 2025 | GraphRAG taxonomy、graph construction、retrieval、generation、benchmarks | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey\|文獻筆記]] |
+| Zhong et al., *A Comprehensive Survey on Automatic Knowledge Graph Construction* | ACM Computing Surveys 2023 | KG construction；支撐 IE→KG，不等同 GraphRAG | - |
 
 ## 3. Information Extraction
 
@@ -41,12 +41,13 @@ last_updated: "2026-09-24"
 
 ## 4. Long Context / Context Engineering
 
-| Survey | 年份 / 狀態 | 支撐範圍 |
-|---|---|---|
-| Wang et al., *Beyond the Limits: A Survey of Techniques to Extend the Context Length in Large Language Models* | IJCAI 2024 | context extension、architecture / training / extrapolation |
-| Liu et al., *A Comprehensive Survey on Long Context Language Modeling* | arXiv 2025 | architecture、data、training、inference、evaluation |
-| Liu et al., *Thus Spake Long-Context Large Language Model* | arXiv 2025 | architecture、infrastructure、training、evaluation |
-| Mei et al., *A Survey of Context Engineering for Large Language Models* | arXiv 2025 | context retrieval、processing、management、agentic context |
+| Survey | 年份 / 狀態 | 支撐範圍 | 筆記連結 |
+|---|---|---|---|
+| Huang et al., *Advancing Transformer Architecture in Long-Context Large Language Models: A Survey* | arXiv 2023 | Pre-training, fine-tuning, inference (KV Cache), evaluation | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-11) Advancing Transformer Architecture in Long-Context Large Language Models - A Survey\|文獻筆記]] |
+| Wang et al., *Beyond the Limits: A Survey of Techniques to Extend the Context Length in Large Language Models* | IJCAI 2024 | context extension、architecture / training / extrapolation | - |
+| Liu et al., *A Comprehensive Survey on Long Context Language Modeling* | arXiv 2025 | architecture、data、training、inference、evaluation | - |
+| Liu et al., *Thus Spake Long-Context Large Language Model* | arXiv 2025 | architecture、infrastructure、training、evaluation | - |
+| Mei et al., *A Survey of Context Engineering for Large Language Models* | arXiv 2025 | context retrieval、processing、management、agentic context | - |
 
 ## 5. Multimodal RAG
 
@@ -56,19 +57,19 @@ last_updated: "2026-09-24"
 
 ## 6. Evaluation / Trustworthiness / Faithfulness
 
-| Survey | 年份 / 狀態 | 支撐範圍 |
-|---|---|---|
-| Yu et al., *Evaluation of Retrieval-Augmented Generation: A Survey* | CCF Big Data / Springer 2025 | RAG evaluation process、retrieval/generation metrics、benchmarks |
-| Gan et al., *Retrieval Augmented Generation Evaluation in the Era of Large Language Models: A Comprehensive Survey* | arXiv 2025 | expanded evaluation taxonomy |
-| Huang et al., *A Survey on Hallucination in Large Language Models* | ACM TOIS 2025 | factuality、faithfulness、detection、mitigation；含 RAG limitations |
-| Li et al., *A Survey of Large Language Models Attribution* | arXiv 2023 | attribution / citation、sources、evaluation、limitations |
-| Ni et al., *Towards Trustworthy Retrieval Augmented Generation for Large Language Models: A Survey* | ACM Computing Surveys 2026 | reliability、privacy、safety、fairness、explainability、accountability |
+| Survey | 年份 / 狀態 | 支撐範圍 | 筆記連結 |
+|---|---|---|---|
+| Yu et al., *Evaluation of Retrieval-Augmented Generation: A Survey* | CCF Big Data / Springer 2025 | RAG evaluation process、retrieval/generation metrics (RGAR)、benchmarks | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey\|文獻筆記]] |
+| Gan et al., *Retrieval Augmented Generation Evaluation in the Era of Large Language Models: A Comprehensive Survey* | arXiv 2025 | expanded evaluation taxonomy | - |
+| Huang et al., *A Survey on Hallucination in Large Language Models* | ACM TOIS 2025 | factuality、faithfulness、detection、mitigation；含 RAG limitations | - |
+| Li et al., *A Survey of Large Language Models Attribution* | arXiv 2023 | attribution / citation、sources、evaluation、limitations | - |
+| Ni et al., *Towards Trustworthy Retrieval Augmented Generation for Large Language Models: A Survey* | ACM Computing Surveys 2026 | reliability、privacy、safety、fairness、explainability、accountability | - |
 
 ## 7. Agentic RAG
 
-| Survey | 年份 / 狀態 | 支撐範圍 |
-|---|---|---|
-| Singh et al., *Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG* | arXiv 2025 | agentic RAG architectures、planning、tools、reflection、multi-agent |
+| Survey | 年份 / 狀態 | 支撐範圍 | 筆記連結 |
+|---|---|---|---|
+| Singh et al., *Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG* | arXiv 2025 | agentic RAG architectures、planning、tools、reflection、multi-agent | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG\|文獻筆記]] |
 
 ## 8. Evidence status
 
