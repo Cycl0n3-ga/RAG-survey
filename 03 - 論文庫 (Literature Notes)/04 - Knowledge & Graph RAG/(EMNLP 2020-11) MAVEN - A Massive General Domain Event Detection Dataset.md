@@ -55,7 +55,7 @@ adjacent_interfaces: []
 # MAVEN: A Massive General Domain Event Detection Dataset
 
 ## 1. 一話摘要 (TL;DR)
-MAVEN 構建了規模遠超傳統 ACE 2005 與 TAC KBP 的通用領域事件檢測（Event Detection）基準數據集，包含 4,480 篇文檔、49,873 個句子、168 種細粒度事件類型、111,611 個事件與 118,732 個事件提及（規模為 ACE 2005 的 20 倍以上），徹底解決了既有數據集領域狹窄、類型稀疏及單句多事件模式嚴重不足的根本瓶頸。
+MAVEN 構建了規模遠超傳統 ACE 2005 與 TAC KBP 的通用領域事件檢測（Event Detection）基準數據集，包含 4,480 篇文檔、49,873 個句子、168 種細粒度事件類型、111,611 個事件與 118,732 個事件提及（規模為 ACE 2005 的 20 倍以上），緩解了既有數據集領域狹窄、類型稀疏及單句多事件模式嚴重不足的根本瓶頸。
 
 ---
 
@@ -159,7 +159,7 @@ MAVEN 原文（Pages 1652–1671）對比了經典事件抽取模型在 ACE 2005
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **D02 (Segmentation & Contextualization)**：為「從非結構化長文本中提取動態事件」提供了最權威的 Gold Standard，是將 RAG 文本塊轉化為事件知識圖譜（Event KG）的基石。
+1. **D02 (Segmentation & Contextualization)**：為「從非結構化長文本中提取動態事件」提供了最權威的 常用參考基準，是將 RAG 文本塊轉化為事件知識圖譜（Event KG）的基石。
 2. **Domain 12 (Typed Knowledge & Dynamic Ontologies)**：證明基於層級模式（Hierarchical Ontology）的事件抽象能有效支撐複雜語義推論，對構建 GraphRAG 中的動態時間節點具有極高參考價值。
 
 ---
