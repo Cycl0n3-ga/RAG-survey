@@ -3,10 +3,11 @@ paper_id: "Packer2023_MemGPT"
 title: "MemGPT: Towards LLMs as Operating Systems"
 authors:
   - "Charles Packer"
+  - "Sarah Wooders"
+  - "Kevin Lin"
   - "Vivian Fang"
   - "Shishir G. Patil"
-  - "Kevin Lin"
-  - "Sarah Wooders"
+  - "Ion Stoica"
   - "Joseph E. Gonzalez"
 year: 2023
 publication_year: null
@@ -16,11 +17,26 @@ arxiv: "2310.08560"
 url: "https://arxiv.org/abs/2310.08560"
 pdf_file: "Papers/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems.pdf"
 tags:
-  - "paper"
-  - "hierarchical-external-memory---llm-os"
+  - paper
+  - hierarchical-memory
+  - virtual-context-management
+  - llm-agent
 verification_status: "verified"
-last_verified: "2026-09-26"
+last_verified: 2026-09-26
 artifact_type: "method_paper"
+research_questions:
+  - "virtual_context_management"
+  - "self_managed_external_memory"
+  - "multi_session_conversation_memory"
+  - "long_document_analysis"
+benchmark_ids:
+  - "Multi-Session Chat"
+  - "NaturalQuestions-Open document QA"
+  - "Nested key-value retrieval"
+metrics:
+  - "Accuracy"
+  - "ROUGE-L Recall"
+  - "Conversation opener similarity"
 taxonomy_version: "v2"
 taxonomy_home: "D11"
 primary_domain: "D11"
@@ -29,62 +45,88 @@ secondary_domains:
 paradigm_tags:
   - "memory_augmented_rag"
 adjacent_interfaces: []
-
 ---
 
 # MemGPT: Towards LLMs as Operating Systems
 
-> [!INFO] 論文元數據 (Metadata)
-> - **Paper ID**：`Packer2023_MemGPT`
-> - **作者**：Charles Packer, Vivian Fang, Shishir G. Patil, Kevin Lin, Sarah Wooders, Joseph E. Gonzalez
-> - **預印本初次發布年份 (Preprint)**：2023
-> - **正式發表年份 / 會議或期刊 (Venue)**：尚無正式會議/期刊版本（arXiv 2023）
-> - **DOI**：無
-> - **arXiv**：[2310.08560](https://arxiv.org/abs/2310.08560)
-> - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
-> - **本地 PDF 連結**：[[Papers/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems.pdf|開啟本地 PDF 檔案]]
----
+## 一話摘要
 
-## 一話摘要 (TL;DR)
-**借鑑傳統作業系統的階層式記憶體虛擬化技術，讓 LLM 自主管理主記憶體（Context）與外部磁碟存儲，實現無限上下文錯覺。**
+MemGPT 把有限 context window 類比為 RAM，讓 LLM 透過 function calls 在 main context、recall storage、archival storage 間自主搬移資訊，形成 OS-inspired virtual context management。
 
----
+## 核心架構
 
-## 研究背景與問題定義 (Problem Statement)
-固定 Context Window 限制了長對話與長期文件的連續性，單純 RAG 缺乏自主狀態控制權與記憶主動寫入/更新機制。
+### Main context
+- System Instructions：read-only control instructions。
+- Working Context：LLM 可主動修改的固定 read/write 區。
+- FIFO Queue：近期 messages + recursive summary。
 
----
+### External context
+- Recall Storage：完整 interaction/message history。
+- Archival Storage：任意長度的外部長期資料。
 
-## 核心方法與技術架構 (Methodology & Architecture)
-將 LLM 視為 CPU，Context Window 視為 RAM，外部資料庫視為 Disk。定義三層記憶架構：1. Working Context（當前可見 prompt）；2. Recall Storage（對話歷史檢索庫）；3. Archival Storage（外部長期知識庫）。LLM 透過專用函數呼叫（Function Calling）自主執行 `memory_read`、`memory_write`、`memory_edit` 與分頁換入/換出（Paging）。
+### Control
+- Queue Manager：監控 context pressure、evict FIFO messages、更新 recursive summary。
+- Memory Pressure Warning：接近 context limit 時提醒 agent 保存重要資訊。
+- Function Executor：執行 memory/search calls。
+- Function Chaining：允許多次 retrieval / memory actions 後再回答。
 
 ```mermaid
-graph LR
-    A["輸入文本 / Query"] --> B["Hierarchical External Memory / LLM OS 處理機制"]
-    B --> C["優化後特徵 / 檢索結果 / 狀態"]
-    C --> D["下游 LLM 解碼 / 最終輸出"]
+flowchart LR
+    E["Event"] --> MC["Main Context"]
+    MC --> W["Working Context"]
+    MC --> Q["FIFO Queue"]
+    Q --> RS["Recall Storage"]
+    MC <--> AS["Archival Storage"]
+    L["LLM"] --> F["Function Calls"]
+    F --> W
+    F --> RS
+    F --> AS
+    RS --> MC
+    AS --> MC
 ```
 
----
+## 主要實驗結果與證據
 
-## 主要實驗結果與證據 (Empirical Results & Evidence)
-> [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Figure 3 & Table 1 (Page 6-7): 於 Multi-session Chat 與長文文檔分析中，MemGPT 成功克服固定 context 限制，維持長達數萬輪的連續一致性，記憶體管理錯誤率低於 4%。
+### Deep Memory Retrieval — Table 2
 
----
+| Base model | Baseline Accuracy | + MemGPT Accuracy | Baseline ROUGE-L(R) | + MemGPT ROUGE-L(R) |
+|---|---:|---:|---:|---:|
+| GPT-3.5 Turbo | 38.7% | 66.9% | 0.394 | 0.629 |
+| GPT-4 | 32.1% | 92.5% | 0.296 | 0.814 |
+| GPT-4 Turbo | 35.3% | 93.4% | 0.359 | 0.827 |
 
-## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
-優點：模型具備自我修正與長期狀態維護能力，理論上支援無限長壽命 Agent；缺點：LLM 需要耗費大量的思考步數管理自身記憶，在複雜任務中易發生記憶策略失調（Memory thrashing）。
+這是最直接的 long-term conversational-memory result。
 
----
+### Conversation opener — Table 3
 
-## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-提出『LLM 即作業系統』的宏偉藍圖，是智慧體長期記憶體架構（Agentic Long-term Memory）的先驅代表作。
+用 persona similarity / human-opener similarity 評估 engagement；MemGPT 可產生與 accumulated persona information 高度相關的 opener。這是 similarity-based evaluation，不是 system reliability test。
 
----
+### Document analysis
 
-## 原始來源及相關筆記連結 (Sources & Related Notes)
-- **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
-- **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
-- **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG System Maps|RAG System Maps]]
+另測：
+- NaturalQuestions-Open-style multi-document QA；
+- nested key-value retrieval。
+
+archival search + pagination 讓固定-context LLM 能處理超過一次 prompt 容量的資料。
+
+> [!CAUTION]
+> 原論文沒有報告「記憶體管理錯誤率 <4%」或「維持數萬輪連續一致性」之類的 operational reliability 指標；先前筆記中的說法已刪除。
+
+## Trade-offs
+
+- 優勢：把 context management / persistent storage 變成 agent 可主動操作的 state machine。
+- 成本：memory/search/function calls 增加 inference steps。
+- 策略依賴：LLM 必須正確決定 save/search/edit 時機。
+- 「virtual context」是 external-memory abstraction，不代表模型一次 attention 到無限 tokens。
+
+## Taxonomy Boundary
+
+- **D11 primary**：persistent memory lifecycle / read-write hierarchy。
+- **D12 secondary**：LLM 自主選擇 memory actions。
+- page 回 prompt 後的 packing / utilization 屬 D07。
+
+## Sources
+
+- arXiv: https://arxiv.org/abs/2310.08560
+- [[Papers/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems.pdf|Local PDF]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
