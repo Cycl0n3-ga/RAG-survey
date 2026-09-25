@@ -11,11 +11,13 @@ last_updated: "2026-09-25"
 
 > [!INFO] 結構說明
 > 本目錄收錄專案中精讀與標準化結構之論文筆記，**目錄與檔名規範與 `Papers/` 完全一致**：
-> - 子目錄劃分為 6 大領域專題；
+> - 子目錄劃分為 6 個 **storage folders**，僅用於檔案整理，不代表 Research Domains；
 > - 筆記檔名統一採用 `(發表會議/期刊 發表年月) 論文名稱.md`；
 > - **論文擴充優先級規劃**：完整 P0 / P1 / P2 候選清單、實作批次與驗證閘門請參閱 [[03 - 論文庫 (Literature Notes)/00 - 論文擴充待補清單|00 - 論文擴充待補清單 (Prioritized Backlog)]]。
+>
+> 正式分類一律看 YAML 的 `taxonomy_home` / `primary_domain` / `secondary_domains` / `paradigm_tags` / `adjacent_interfaces`；不再使用 `domains` 欄位。
 
-## 一、分類導覽
+## 一、Storage Folder 導覽
 
 ### 01 - Long Context & Sequence (17 篇)
 
