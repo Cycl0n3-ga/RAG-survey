@@ -66,16 +66,21 @@ flowchart TD
      - **DRIFT Search**：結合全局社群資訊與局部圖遍歷，由粗到細進行動態擴展；
      - **Basic Search**：以原始文字塊的向量檢索作為基線。
 
-#### 2. HippoRAG：神經生物學啟發的高速聯想記憶
-- **代表作**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG (Gutiérrez et al., NeurIPS 2024)]]。
+#### 2. HippoRAG & HippoRAG 2：神經生物學啟發的高速聯想記憶
+- **代表作**：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG (Gutiérrez et al., NeurIPS 2024)]] 與 [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|HippoRAG 2 (ICML 2025)]]。
 - **核心架構**：
-  - 模擬大腦新皮質（儲存原始文檔）與海馬迴（快速索引聯想網絡）的雙重記憶理論。
+  - 模擬大腦新皮質（儲存原始文檔）與海馬迴（快速索引聯想網絡）的互補學習系統（CLS）理論。
   - 將檢索問題中的實體作為激活信號，在圖結構上利用 **Personalized PageRank (PPR)** 進行機率擴散。
-  - 核心設計以一次圖上的 Personalized PageRank 傳播取代多輪 retrieval-reasoning 迭代；速度與成本改善必須引用論文中的特定 baseline 與實驗設定，不能泛化成固定的毫秒級延遲。
+  - HippoRAG 2 進一步引進動態拓撲剪枝與非參數化持續學習，將多跳問答檢索 Recall@5 推升至 78.2%。
 
-#### 3. KG²RAG & PropRAG：保留原始語境的混合圖檢索
-- 克服傳統知識圖譜『實體關係孤立化』的問題，將命題（Proposition）作為圖節點，或者以向量先定位種子節點，再沿著關係邊擴展檢索周邊保留完整原文語境的鄰居節點。
-- **PropRAG**（EMNLP 2025）：提出上下文豐富的命題路徑（Proposition Paths）與免 LLM 在線束搜尋（LLM-free online beam search），以低推論成本實現精準多跳檢索。
+#### 3. KG²RAG & PropRAG：保留原始語境的結構化路徑檢索
+- **KG²RAG**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation|NAACL 2025]]）：利用 KG 結構化路徑導航，錨定引導非結構化文本區塊檢索，克服純向量檢索的語意孤島問題。
+- **PropRAG**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths|EMNLP 2025]]）：以語意自包含的原子命題（Proposition）為圖節點，透過在線束搜尋（Beam Search over Proposition Paths）實現多跳精準推理，平均 F1 達 64.4%。
+
+#### 4. LightRAG、CrossAug 與 GraphReader：效能突破、跨區塊擴展與自主漫遊
+- **LightRAG**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation|arXiv 2024]]）：提出 Low-level 與 High-level 雙層檢索範式，大幅降低微軟 GraphRAG 99% 的查詢 Token 開銷，原生支援無損增量更新。
+- **CrossAug**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG|arXiv 2026]]）：針對主流 GraphRAG 僅在單塊內部抽取的痛點，透過自監督 GNN 預測拓撲缺口並由 LLM 落地補全跨塊關係邊。
+- **GraphReader**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|Findings of EMNLP 2024]]）：將超長文本構建為異質圖，由自主 Agent 以 4k 小視窗主動漫遊探索與記錄筆記，超越 128k 原生長文本 LLM。
 
 ---
 
