@@ -60,7 +60,7 @@ flowchart LR
 D03 與 D08 都是條件式路徑：
 - raw-chunk RAG 可由 D02 直接進 D04；
 - 只有需要 structured knowledge 時才走 D03；
-- 只有 time / version / authority / source conflict 需要顯式處理時才走 D08。
+- 只有 time / version / source conflict 需要顯式處理時才走 D08；source authority / credibility arbitration 是較薄的可選子題。
 
 ## 2. Cross-Lifecycle Domains
 

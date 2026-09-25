@@ -6,7 +6,7 @@ tags:
   - rag
   - architecture
   - system-map
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 ---
 
 # RAG System Maps
@@ -87,7 +87,7 @@ flowchart LR
 flowchart LR
     EV["Candidate Evidence"] --> D06["D06 Evidence Sufficiency"]
 
-    EV -. "time / version / authority / conflict" .-> D08["D08 Temporal / Conflict / Provenance"]
+    EV -. "time / version / source conflict" .-> D08["D08 Temporal / Conflict / Provenance"]
     D08 --> D06
 
     D06 -->|Sufficient| FILTER["Filter / Dedup"]

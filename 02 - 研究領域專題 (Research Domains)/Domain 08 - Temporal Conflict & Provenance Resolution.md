@@ -14,12 +14,14 @@ last_updated: "2026-09-26"
 
 ```mermaid
 flowchart LR
-    EV["Evidence"] --> P["Provenance"]
-    P --> A["Authority"]
-    A --> T["Valid Time / Version"]
-    T --> C["Conflict Detection"]
+    EV["Evidence"] --> P["Source / Provenance"]
+    EV --> T["Valid Time / Version"]
+    EV -. "when source trust matters" .-> A["Authority / Credibility"]
+    P --> C["Conflict Detection"]
+    T --> C
+    A --> C
     C -->|No conflict| OUT["Resolved Evidence"]
-    C -->|Conflict| R["Scope / Time / Authority Resolution"]
+    C -->|Conflict| R["Temporal / Version / Source Resolution"]
     R --> OUT
 ```
 

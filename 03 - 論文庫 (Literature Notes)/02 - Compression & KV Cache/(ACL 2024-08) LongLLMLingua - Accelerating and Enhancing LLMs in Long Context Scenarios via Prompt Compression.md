@@ -12,15 +12,15 @@ authors:
 year: 2023
 publication_year: 2024
 venue: "ACL 2024"
-doi: null
-arxiv: "2310.06201"
-url: "https://arxiv.org/abs/2310.06201"
+doi: "10.18653/v1/2024.acl-long.91"
+arxiv: "2310.06839"
+url: "https://aclanthology.org/2024.acl-long.91/"
 pdf_file: "Papers/02 - Compression & KV Cache/(ACL 2024-08) LongLLMLingua - Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression.pdf"
 tags:
   - "paper"
   - "query-aware-prompt-compression"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-26"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A02"
@@ -41,8 +41,8 @@ adjacent_interfaces:
 > - **作者**：Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, Lili Qiu
 > - **預印本初次發布年份 (Preprint)**：2023
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ACL 2024)
-> - **DOI**：無
-> - **arXiv**：[2310.06201](https://arxiv.org/abs/2310.06201)
+> - **DOI**：10.18653/v1/2024.acl-long.91
+> - **arXiv**：[2310.06839](https://arxiv.org/abs/2310.06839)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(ACL 2024-08) LongLLMLingua - Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression.pdf|開啟本地 PDF 檔案]]
 ---
