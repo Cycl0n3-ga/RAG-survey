@@ -73,15 +73,20 @@ last_updated: "2026-09-24"
 
 ## 8. Evidence status
 
-每篇 literature note 建議加入：
+本 repo 目前統一使用 Literature Note 的現行 YAML schema：
 
 ```yaml
-paper_type: "survey | method | benchmark | dataset | evaluation | software"
-verification_status: "verified_from_paper | abstract_only | pending_verification"
-evidence_scope: "這篇文獻實際能支持的敘述"
+artifact_type: "survey"          # method_paper | benchmark_paper | dataset | evaluation_framework | survey | proposal
+verification_status: "verified"  # verified | pending_verification | abstract_only
+taxonomy_version: "v2"
+taxonomy_home: "D13"             # D01-D14 / A01-A05 / CROSS
+primary_domain: "D13"            # adjacent-only / CROSS 可為 null
+secondary_domains: []
+paradigm_tags: []
+adjacent_interfaces: []
 ```
 
-**禁止**把 `abstract_only` 寫成「已全文核實」，也禁止把 project hypothesis 標成 survey finding。
+**禁止**另建第二套 `paper_type` / `domains` 分類欄位；`abstract_only` 不得寫成「已全文核實」，project hypothesis 也不得標成 survey finding。
 
 ## 9. 原始來源入口
 
