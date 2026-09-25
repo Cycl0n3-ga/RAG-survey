@@ -197,7 +197,7 @@ flowchart TD
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-### 對 Domain 01 (Long Context) 與 Domain 02 (KV Cache 壓縮) 的啟發
+### 對 A01 (Long Context & Sequence Architecture) 與 A02 (Context/KV Compression & Inference Efficiency) 的啟發
 1. **重新定義 Attention 與 RNN 的交界**：
    - Infini-attention 證明了 Transformer 無需在「全量二次方注意力」與「純線性 RNN (如 Mamba)」之間二選一；透過「段內 Standard Attention + 段間 Compressive Linear Attention」，達成了精確度與推論效率的平衡。
 2. **與 RAG 的分工邊界**：
