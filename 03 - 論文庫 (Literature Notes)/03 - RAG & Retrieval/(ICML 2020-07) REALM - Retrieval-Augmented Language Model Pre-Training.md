@@ -175,7 +175,7 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 03 (Advanced RAG) 的開創性定位**：
+1. **對 D05 (Query Understanding & Retrieval) 的開創性定位**：
    - REALM 是 NLP 歷史上第一個證明「檢索可以作為語言模型預訓練的一等公民（First-Class Citizen）」的經典工作，啟發了後續的 RETRO、Atlas 與 Self-RAG。
 2. **對證據治理與溯源機制的意義**：
    - 其潛在變數邊際化公式 $p(y|x) = \sum_z p(z|x)p(y|x,z)$ 成為評估證據充分性（Evidence Sufficiency）與來源權威仲裁的最早數學框架。
