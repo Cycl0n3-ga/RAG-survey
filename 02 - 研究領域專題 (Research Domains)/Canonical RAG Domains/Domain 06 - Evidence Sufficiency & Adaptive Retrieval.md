@@ -4,15 +4,13 @@ domain_id: "D06"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Retrieval Control"
-migration_status: "scaffold"
 last_updated: "2026-09-25"
 ---
 
 # Domain 06 - Evidence Sufficiency & Adaptive Retrieval
 
-> [!IMPORTANT] Canonical Domain v2
+> [!IMPORTANT]
 > 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-> 目前為 migration scaffold；舊 Domain 尚未刪除。
 
 ## Core Question
 目前 evidence 是否足以回答問題；若不足，缺什麼、下一個 retrieval action 是什麼、何時停止？
@@ -39,4 +37,3 @@ last_updated: "2026-09-25"
 ## Navigation
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Canonical RAG Domain Migration Map|Migration Map]]
