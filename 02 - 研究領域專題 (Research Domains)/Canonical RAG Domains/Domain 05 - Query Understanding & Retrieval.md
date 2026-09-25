@@ -4,15 +4,13 @@ domain_id: "D05"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Retrieval"
-migration_status: "scaffold"
 last_updated: "2026-09-25"
 ---
 
 # Domain 05 - Query Understanding & Retrieval
 
-> [!IMPORTANT] Canonical Domain v2
+> [!IMPORTANT]
 > 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-> 目前為 migration scaffold；舊 Domain 尚未刪除。
 
 ## Core Question
 如何理解 query，並從一個或多個 index 中找出、排序與組合最相關的候選 evidence？
@@ -38,4 +36,3 @@ last_updated: "2026-09-25"
 ## Navigation
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Canonical RAG Domain Migration Map|Migration Map]]
