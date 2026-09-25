@@ -13,8 +13,8 @@ doi: "10.1145/3477495.3531857"
 arxiv: "2109.10086"
 url: "https://dl.acm.org/doi/10.1145/3477495.3531857"
 pdf_file: "Papers/03 - RAG & Retrieval/(SIGIR 2022-07) SPLADE v2 - Sparse Lexical and Expansion Model for Information Retrieval.pdf"
-domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)]]"
+domains: []
+- "[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 脈絡壓縮與 KV 快取 (Compaction, Eviction, Pruning)|Domain 02 - 脈絡壓縮與 KV 快取 (Compaction, Eviction, Pruning)]]"
 tags:
   - paper
