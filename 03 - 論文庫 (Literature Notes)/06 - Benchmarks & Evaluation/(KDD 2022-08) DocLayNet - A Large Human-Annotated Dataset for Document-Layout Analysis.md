@@ -14,9 +14,6 @@ doi: "10.1145/3534678.3539043"
 arxiv: "2206.01062"
 url: "https://doi.org/10.1145/3534678.3539043"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]"
 tags:
   - paper
   - document-layout-analysis
@@ -171,8 +168,8 @@ flowchart TD
 - **本地 PDF**：`[[Papers/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis.pdf|開啟本地 PDF 檔案]]`
 - **官方開源庫**：[Hugging Face ds4sd/DocLayNet](https://huggingface.co/datasets/ds4sd/DocLayNet) · [GitHub ds4sd/DocLayNet](https://github.com/DS4SD/DocLayNet)
 - **關聯領域筆記**：
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
-  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
 - **同類/相關論文筆記**：
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2026-03) T2-RAGBench - Benchmarking Text-and-Table Retrieval Augmented Generation|(EACL 2026-03) T2-RAGBench]]
   - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|(EMNLP 2024-11) Dense X]]
