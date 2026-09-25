@@ -12,8 +12,8 @@ last_updated: "2026-09-25"
 # RAG Research Taxonomy & Domain Map
 
 > [!IMPORTANT]
-> 本 repo 目前只有 **14 個正式 RAG Research Domains（D01–D14）**。
-> 其他分類只作為 Topic、Paradigm Tag 或 Adjacent Interface，不再使用第二套 Domain 編號。
+> 本 repo 只使用 **14 個正式 RAG Research Domains（D01–D14）**。
+> Topic、Paradigm Tag、Adjacent Interface 都不是額外 Domain。
 
 ## 1. Core Lifecycle
 
@@ -21,18 +21,29 @@ last_updated: "2026-09-25"
 flowchart LR
     SRC["Knowledge Sources"] --> D01["D01 Ingestion & Structure"]
     D01 --> D02["D02 Segmentation & Contextualization"]
+
     D02 --> D04["D04 Representation & Indexing"]
     D02 -. "optional extraction" .-> D03["D03 Knowledge Extraction & Preservation"]
     D03 --> D04
+
     Q["User Query"] --> D05["D05 Query Understanding & Retrieval"]
     D04 --> D05
+
     D05 --> D06["D06 Evidence Sufficiency & Adaptive Retrieval"]
+    D05 -. "when time / source / version matters" .-> D08["D08 Temporal / Conflict / Provenance"]
+    D08 --> D06
+
     D06 --> D07["D07 Context Construction & Utilization"]
-    D07 --> D08["D08 Temporal / Conflict / Provenance"]
-    D08 --> D09["D09 Grounded Generation & Long-form Synthesis"]
+    D07 --> D09["D09 Grounded Generation & Long-form Synthesis"]
+
+    D06 -. "gap / retry" .-> D05
+    D09 -. "unsupported / incomplete" .-> D06
 ```
 
-D03 是可選支線：raw-chunk RAG 可由 D02 直接進 D04；需要 structured knowledge 時才走 D03。
+D03 與 D08 都是條件式路徑：
+- raw-chunk RAG 可由 D02 直接進 D04；
+- 只有需要 structured knowledge 時才走 D03；
+- 只有 time / version / authority / source conflict 需要顯式處理時才走 D08。
 
 ## 2. Cross-Lifecycle Domains
 
@@ -62,7 +73,7 @@ flowchart LR
 | D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|Memory-Augmented RAG]] | 如何管理跨 interaction 的 persistent memory？ |
 | D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|Agentic RAG & Orchestration]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
 | D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|RAG Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的問題來源？ |
-| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Robustness & Security]] | 如何管理 latency、cost、observability 與 runtime reliability？ |
+| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Robustness & Security]] | 如何管理 latency、cost、observability、robustness 與 security？ |
 
 ## 4. Other Axes
 
@@ -81,6 +92,7 @@ Domain != Paradigm Tag != Benchmark
 
 ## Navigation
 
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG System Maps|RAG System Maps]]
 - [[02 - 研究領域專題 (Research Domains)/README|Research Domains]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
