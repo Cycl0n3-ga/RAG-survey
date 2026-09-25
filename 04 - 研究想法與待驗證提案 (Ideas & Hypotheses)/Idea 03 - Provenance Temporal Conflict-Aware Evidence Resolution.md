@@ -42,3 +42,22 @@ extraction_confidence: null
 ## Metrics
 
 Temporal accuracy、conflict detection F1、source selection accuracy、citation entailment、abstention / uncertainty calibration。
+
+
+## Conflict Type Taxonomy（project lens）
+
+為避免把所有矛盾都簡化成「新文件覆蓋舊文件」，至少區分：
+
+1. **Temporal supersedence**：新版確實取代舊版。
+2. **Scope divergence**：不同 site / condition / product / phase，表面矛盾但其實適用範圍不同。
+3. **Authority discrepancy**：Draft / discussion note 與 Approved / authoritative source 衝突。
+4. **Genuine contradiction**：相同時間、條件、scope 下仍不可調和。
+
+## Candidate Resolution Policies
+
+- **Recency heuristic**：只看新舊；成本低，但歷史問題與 draft 容易判錯。
+- **Juxtaposition / disclosure**：保留多版本並列，不強行消解。
+- **Provenance-aware arbitration**：依 authority、scope、valid time、version 做顯式仲裁。
+- **Counter-evidence stress test**：將 support / contradict evidence 同時交給 verifier，檢查真正衝突來源。
+
+這些是可比較的 resolution policies，不應把其中任何一種預設成普遍正確。

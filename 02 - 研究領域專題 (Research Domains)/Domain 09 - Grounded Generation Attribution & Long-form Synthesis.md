@@ -69,6 +69,21 @@ Citation present
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes|GopherCite]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2023-12) Enabling Large Language Models to Generate Text with Citations|ALCE / Citation-grounded generation]]
 
+## Long-form Orchestration Patterns
+
+長篇生成至少有三種不同 orchestration pattern，不能全部叫「一次生成」：
+
+1. **Outline-first / research-first**：先研究與建立大綱，再依 section 對應 evidence 撰寫；STORM 是代表工作。
+2. **Evidence-first fixed pool**：生成前先整理/封存 evidence pool，再從固定證據寫作；適合強調 auditability 的設計。
+3. **Gap-aware iterative writing**：寫作或規劃過程發現 coverage gap 時再追加 retrieval；EviReport 類工作靠近這一路線。
+
+### Evidence Store 與 Claim-Evidence Ledger
+
+- **Evidence Store**：一個可選的系統設計，用穩定 evidence ID、source span、provenance 保存可引用證據；不是所有長文方法的必要條件。
+- **Claim-Evidence Ledger**：project-specific 可審計機制，將 generated claim 對應 supporting / contradicting evidence、verification status 與 section。其 canonical 定義放在 [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04]]。
+- fixed evidence pool 與 iterative retrieval 應作為可比較的設計選擇，而非先驗宣稱其中一種必然較好。
+
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]

@@ -66,6 +66,17 @@ Evidence retrieved
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|Chain-of-Note]]
 
+## Failure Modes Retained from Earlier Synthesis
+
+這些是 D07 要保留的診斷視角：
+- **Position bias / Lost in the Middle**：evidence 已進 context，但位置造成利用率下降。
+- **Distractor vulnerability**：高相似但錯誤或無關 evidence 稀釋關鍵資訊。
+- **Parametric-prior conflict**：模型偏向內部參數知識，而忽略更新後的 retrieved evidence。
+- **Packing failure**：正確 evidence 被排序、截斷或壓縮方式破壞。
+
+這些 failure 與 D05 retrieval miss 不同：**Gold evidence 已存在於候選或 final context 時，錯誤不能再全部歸咎於 retriever。**
+
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]

@@ -58,3 +58,25 @@ Gap-aware controller 應在相同 token / retrieval budget 下，提高：
 ## Metrics
 
 Evidence recall、requirement coverage、retrieval calls、latency/cost、answer correctness、abstention calibration。
+
+
+## Evidence Slot State Model（project controller state）
+
+> [!WARNING]
+> 這是本專案 controller 的狀態設計，不等同於任何 benchmark 的官方 label set。
+
+每個 required evidence slot 可處於：
+
+1. `missing`：尚未找到候選證據。
+2. `retrieved-unverified`：找到候選，但尚未完成 entailment / authority 驗證。
+3. `supported`：已有足以支持該 requirement 的證據。
+4. `conflicting`：存在互相矛盾的可用證據。
+5. `ineligible`：內容相關，但因版本、authority、scope 或其他治理條件不能作為有效支持。
+
+Action policy 不應只做 retrieve-more：
+- missing → targeted retrieval；
+- retrieved-unverified → verify；
+- conflicting → D08 provenance/time resolution；
+- ineligible → search alternate source；
+- all required slots supported → stop / generate；
+- budget exhausted → abstain / escalate。

@@ -55,3 +55,20 @@ tags:
 - Generative IE surveys：[[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
+
+
+## Operational Distortion Taxonomy（project lens）
+
+> [!WARNING]
+> 下列八類是本專案用於 error analysis 的 operational taxonomy，不是學界公認的唯一八分類。
+
+1. **Negation loss**：否定被抽掉，語義翻轉。
+2. **Modality loss**：may / proposed / planned 被錯當成已發生事實。
+3. **Condition loss**：先決條件或適用條件與主張分離。
+4. **Temporal-scope loss**：有效期間、版本或歷史狀態被抹平。
+5. **Coreference / entity drift**：代詞或同名實體跨 chunk 對錯對象。
+6. **Numeric / unit loss**：數值保留但單位、量綱或量測條件遺失。
+7. **Source / applicability scope loss**：特定 site / project / jurisdiction 被錯誤泛化。
+8. **Unsupported cross-chunk edge**：跨段整合時建立了原文沒有支持的關係。
+
+這八類可直接用於 ablation：比較 raw chunk、proposition、triple、qualified proposition / evidence object 在各類失真上的 error rate。
