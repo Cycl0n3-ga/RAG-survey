@@ -72,7 +72,7 @@ ColBERTv2 透過**殘差量化壓縮（Residual Compression with Centroids）**�
 
 $$\text{Score}(Q, D) = \sum_{i \in Q} \max_{j \in D} E(q_i)^\top E(d_j)$$
 
-ColBERT 徹底解決了單向量密集檢索（如 DPR）的語意壓縮損失問題，但面臨致命的工業落地瓶頸：
+ColBERT 緩解了單向量密集檢索（如 DPR）的語意壓縮損失問題，但面臨致命的工業落地瓶頸：
 1. **儲存空間膨脹（Prohibitive Space Footprint）**：每個 Token 向量需 128 維 16-bit 浮點數（256 Bytes），在百萬級語料庫（如 MS MARCO 880 萬段落）上，索引體積高達 **154 GB 至 280 GB**，無法全載入單機 RAM。
 2. **非領域資料泛化落差（Out-of-Domain Generalization Gap）**：單純以 MS MARCO 弱標籤三元組訓練的模型，在長尾與專業領域資料集上容易過擬合。
 
