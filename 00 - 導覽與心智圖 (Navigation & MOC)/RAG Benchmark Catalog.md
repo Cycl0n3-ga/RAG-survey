@@ -101,3 +101,21 @@ flowchart TD
 - **系統工程與安全**：[[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|D14 RAG Systems, Robustness & Security]]
 - **研究藍圖**：[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
 - **主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
+
+
+## 六、Benchmark Audit Checklist
+
+新增或修改 benchmark note 時，至少確認：
+
+1. **Task definition**：實際測什麼能力？
+2. **Dataset / corpus**：資料來源、規模、domain 是什麼？
+3. **Gold annotation**：answer、supporting facts、span、citation、layout 還是 expert checklist？
+4. **Metrics**：官方主指標與輔助指標是什麼？
+5. **Data split / leakage risk**：train / dev / test 怎麼切？是否可能被模型預訓練看過？
+6. **Modalities**：text / table / image / layout；純文字方法是否能公平使用？
+7. **License / access**：資料是否公開、需申請、或只有 benchmark server？
+8. **Reproducibility**：官方 code / evaluation script / version 是否存在？
+9. **Appropriate uses**：這個 benchmark 最適合回答什麼研究問題？
+10. **What it cannot measure**：不能把該分數外推成什麼能力？
+
+這個 checklist 是 repo 的審計規範，不是 benchmark 本身的官方欄位。

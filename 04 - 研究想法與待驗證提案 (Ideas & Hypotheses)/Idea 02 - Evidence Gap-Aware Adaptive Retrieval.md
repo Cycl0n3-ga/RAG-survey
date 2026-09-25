@@ -80,3 +80,54 @@ Action policy 不應只做 retrieve-more：
 - ineligible → search alternate source；
 - all required slots supported → stop / generate；
 - budget exhausted → abstain / escalate。
+
+
+## Stopping and Abstention Policy（proposed）
+
+Evidence sufficiency 不應只是一個模糊的 0–1 self-score。對 requirement set (R(q)=\{r_1,...,r_m\}) 可定義 weighted coverage（本專案 proposed metric）：
+
+[
+Coverage(q,E)=\frac{\sum_i w_i s_i}{\sum_i w_i}
+]
+
+其中 (s_i=1) 表示 eligible evidence 已完整支持 requirement (r_i)。
+
+建議 stopping 同時滿足：
+
+[
+Coverage \ge \tau_{cov}
+]
+
+[
+CriticalMissing = 0
+]
+
+[
+HighSeverityConflict = 0
+]
+
+並額外考慮：
+- estimated marginal gain of another retrieval；
+- remaining retrieval / token / latency budget。
+
+### Abstention / downgrade cases
+
+| Condition | Proposed action |
+|---|---|
+| critical evidence missing | abstain / partial answer |
+| only stale evidence | explicitly state temporal limitation |
+| only ineligible source | abstain / search alternate source |
+| authoritative sources conflict | report conflict; do not guess |
+| coverage below threshold | targeted retrieval; abstain after budget exhaustion |
+| evidence retrieved but verifier cannot support claim | do not generate that claim |
+
+### Metrics
+
+- Evidence Slot Recall
+- Critical Evidence Recall
+- Counter-evidence Recall
+- False-Sufficient Rate
+- False-Insufficient Rate
+- Early-stop Error Rate
+- Abstention Accuracy
+- Retrieval Rounds / Documents Read / Input Tokens / LLM Calls

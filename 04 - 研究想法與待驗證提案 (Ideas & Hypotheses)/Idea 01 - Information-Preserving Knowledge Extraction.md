@@ -72,3 +72,53 @@ tags:
 8. **Unsupported cross-chunk edge**：跨段整合時建立了原文沒有支持的關係。
 
 這八類可直接用於 ablation：比較 raw chunk、proposition、triple、qualified proposition / evidence object 在各類失真上的 error rate。
+
+
+## Proposed Annotation Schema
+
+> [!WARNING]
+> 這是本專案用於 information-preservation 實驗的 annotation proposal，不是公開 benchmark 的既有 schema。
+
+```yaml
+knowledge_unit_id: "K001"
+source_document_id: "D001"
+source_span:
+  start: 1024
+  end: 1128
+representation_type: "proposition"
+
+semantic_attributes:
+  entity_coreference_preserved: true
+  temporal_scope_preserved: true
+  condition_preserved: true
+  negation_preserved: true
+  modality_preserved: true
+  source_scope_preserved: true
+  numeric_value_preserved: true
+  numeric_unit_preserved: true
+  event_state_preserved: true
+
+errors:
+  unsupported_inference: false
+  hallucinated_relation: false
+  entity_merge_error: false
+```
+
+### Representation comparison principle
+
+同一份 source evidence 應可比較 Span / Sentence / Proposition / Triple / Event / Graph 等表示，且不能預設「越結構化越好」。
+
+- Bare SPO triple 很難直接承載 time / condition / negation / modality / provenance；
+- qualified triple / reification / edge attributes 可以補回資訊，但會增加 schema 與 extraction complexity；
+- proposition 保留自然語言語意，但仍可能在 atomicization 時遺失 discourse / scope；
+- event representation 對 time / state transition 較自然，但仍可能需要 raw span 作 provenance anchor。
+
+研究目標是量測 transformation 後到底保留多少 downstream-required information，而不是只比較 JSON 結構是否漂亮。
+
+## Semantic Compression vs Structural Augmentation
+
+Knowledge extraction 同時有兩個方向：
+- **semantic compression**：把長文本壓成較少、較可檢索的 knowledge units；
+- **structural augmentation**：補上 entity link、time、condition、source、event state 等顯式結構。
+
+兩者存在 trade-off：壓得越激進，越可能丟失限定條件；結構加得越多，extraction / consolidation error surface 也越大。
