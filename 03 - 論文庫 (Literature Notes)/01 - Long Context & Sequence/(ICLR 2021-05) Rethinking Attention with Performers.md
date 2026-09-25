@@ -207,9 +207,9 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 01 (Long Context & Sequence) 的啟發**：
+1. **對 A01 (Long Context & Sequence Architecture) 的啟發**：
    - 奠定了線性注意力（Linear Attention）的現代數學基礎，後續的 Linear Transformers、CosFormer、以及今日的 Recurrent / State Space Models（如 Mamba, RWKV, TransNormer）均深受 FAVOR+ 核分解與前綴和遞歸機制的啟發。
-2. **對 Domain 02 (KV Cache 替代方案) 的借鑑**：
+2. **對 A02 (Context/KV Compression & Inference Efficiency) 的借鑑**：
    - 提供了一種完全不維護巨大歷史 Token-by-Token KV Cache 的思路，以固定的 $m \times d$ 隱藏矩陣實現 $O(1)$ 滾動狀態推論。
 
 ---
