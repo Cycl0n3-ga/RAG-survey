@@ -167,7 +167,7 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 03 (先進 RAG 檢索器選型) 的關鍵指引**：
+1. **對 D05 (Query Understanding & Retrieval) 的關鍵指引**：
    - ColBERTv2 是目前開源生態中最為成熟的 Late Interaction 實踐標準。在要求細粒度精確溯源、專有名詞多、長尾實體密集的 RAG 場景中，其檢索品質顯著優於常規 OpenAI text-embedding 或 DPR。
 2. **對 Chunking 與 Proposition 的互補性**：
    - 當與 Proposition Chunking（Dense X）結合時，ColBERTv2 能夠直接在句子/命題層級實現精確到詞的語意對齊。
