@@ -145,7 +145,7 @@ $$\text{Score} = \frac{N_{\text{Perfect}} + 0.5 \times N_{\text{Acceptable}} - N
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-- **直接支撐 Domain 15（時效衝突）與 Domain 17（評測協議）**：CRAG 提供了多時間維度動態查詢的黃金標準，驗證了動態衝突消解機制的急迫性。
+- **直接支撐 D08（Temporal Conflict & Provenance Resolution）與 D13（RAG Evaluation & Failure Attribution）**：CRAG 提供了多時間維度動態查詢的黃金標準，驗證了動態衝突消解機制的急迫性。
 - **與 Corrective RAG 概念對稱**：在知識庫中補齊了 Meta CRAG 評測基準，徹底消除了命名縮寫混淆的隱患。
 
 ---
