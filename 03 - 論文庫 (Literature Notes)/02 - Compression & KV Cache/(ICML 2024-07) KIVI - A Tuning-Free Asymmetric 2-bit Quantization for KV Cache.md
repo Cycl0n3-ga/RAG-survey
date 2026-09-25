@@ -8,6 +8,7 @@ authors:
   - "Shaochen Zhong"
   - "Zhaozhuo Xu"
   - "Vladimir Braverman"
+  - "Beidi Chen"
   - "Xia Hu"
 year: 2024
 publication_year: 2024
@@ -38,7 +39,7 @@ adjacent_interfaces:
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Liu2024_KIVI`
-> - **作者**：Zirui Liu, Jiayi Yuan, Hongye Jin, Shaochen Zhong, Zhaozhuo Xu, Vladimir Braverman, Xia Hu
+> - **作者**：Zirui Liu, Jiayi Yuan, Hongye Jin, Shaochen Zhong, Zhaozhuo Xu, Vladimir Braverman, Beidi Chen, Xia Hu
 > - **預印本初次發布年份 (Preprint)**：2024
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICML 2024)
 > - **DOI**：無
@@ -48,12 +49,12 @@ adjacent_interfaces:
 ---
 
 ## 一話摘要 (TL;DR)
-**無需微調（Tuning-Free）的非對稱 2-bit KV 快取量化，將超長上下文的顯存佔用縮減至原本的 1/4。**
+**KIVI 是 tuning-free 的非對稱 2-bit KV-cache quantization：Key 採 per-channel、Value 採 per-token 量化；論文報告約 2.6× 較低 peak memory、最多 4× batch size，以及約 2.35×–3.47× throughput。**
 
 ---
 
 ## 研究背景與問題定義 (Problem Statement)
-長文本推論時，KV Cache 的顯存佔用遠遠超過模型權重本身，限制了單卡批次大小（Batch Size）與最大上下文長度。
+在長 context 或較大 batch 下，KV Cache 會成為重要的推論記憶體成本，限制可服務的 batch size 與 context 長度；其相對於模型權重的占比依模型與工作負載而異。
 
 ---
 
@@ -71,7 +72,7 @@ graph LR
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 1 & Figure 4 (Page 6-7): 將 LLaMA-7B/13B/70B 的 KV 快取無損量化至 2-bit，單張 A100-80GB 推論上下文長度從 32k 暴增至 128k+，推論吞吐量提升 2.6x ~ 3.8x。
+> **論文整體結果**：KIVI 在 Llama-2、Falcon 與 Mistral 等模型上以 2-bit KV cache 維持接近原精度品質；作者報告約 **2.6× 較低 peak memory（包含 model weights）**、最多 **4× 較大 batch size**，以及約 **2.35×–3.47× throughput**。這些數字是特定實驗設定結果，不應解讀為所有模型與硬體的固定倍率。
 
 ---
 
@@ -81,7 +82,7 @@ graph LR
 ---
 
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
-證明了 KV Cache 可以在完全不修改文本內容的前提下，純粹透過底層數值精度壓縮解決顯存瓶頸，已成為各推理框架（vLLM、TensorRT-LLM）必備能力。
+KIVI 說明 KV-cache quantization 是降低推論記憶體成本的一條可行路線；是否由特定 serving framework 採用、採用何種 quantization scheme，需依各框架版本另行核實。
 
 ---
 
