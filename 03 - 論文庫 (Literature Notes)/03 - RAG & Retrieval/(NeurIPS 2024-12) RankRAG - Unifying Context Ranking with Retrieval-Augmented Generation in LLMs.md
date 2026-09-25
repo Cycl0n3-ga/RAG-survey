@@ -17,9 +17,10 @@ doi: null
 arxiv: "2407.02485"
 url: "https://arxiv.org/abs/2407.02485"
 pdf_file: "Papers/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 16 - Context 應用與 Faithfulness 監控 (Lost in the Middle, Attribution)|Domain 16 - Context 應用與 Faithfulness 監控 (Lost in the Middle, Attribution)]]"
+domains:
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation Attribution & Long-form Synthesis]]"
 tags:
   - paper
   - reranking
@@ -180,8 +181,8 @@ RankRAG 在 NeurIPS 2024 原文（Pages 6–8）中對 9 個跨領域數據集�
 
 ### 關聯專題與論文筆記
 - **專題報告**：
-  - `[[02 - 研究領域專題 (Research Domains)/Domain 03 - Advanced RAG 與檢索技術 (Dense, Late Interaction, Graph)|Domain 03 - Advanced RAG 與檢索技術]]`
-  - `[[02 - 研究領域專題 (Research Domains)/Domain 16 - Context 應用與 Faithfulness 監控 (Lost in the Middle, Attribution)|Domain 16 - Context 應用與真實性]]`
+  - `[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]`
+  - `[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]`
 - **同領域代表性論文**：
   - `[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) RA-DIT - Retrieval-Augmented Dual Instruction Tuning|(ICLR 2024-05) RA-DIT]]`
   - `[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2024-06) REPLUG - Retrieval-Augmented Black-Box Language Models|(NAACL 2024-06) REPLUG]]`
