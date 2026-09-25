@@ -77,10 +77,11 @@ flowchart TD
 - **KG²RAG**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation|NAACL 2025]]）：利用 KG 結構化路徑導航，錨定引導非結構化文本區塊檢索，克服純向量檢索的語意孤島問題。
 - **PropRAG**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths|EMNLP 2025]]）：以語意自包含的原子命題（Proposition）為圖節點，透過在線束搜尋（Beam Search over Proposition Paths）實現多跳精準推理，平均 F1 達 64.4%。
 
-#### 4. LightRAG、CrossAug 與 GraphReader：效能突破、跨區塊擴展與自主漫遊
+#### 4. LightRAG、CrossAug、GraphReader 與 G-Retriever：效能突破、跨區塊擴展、自主漫遊與子圖最優化
 - **LightRAG**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation|arXiv 2024]]）：提出 Low-level 與 High-level 雙層檢索範式，大幅降低微軟 GraphRAG 99% 的查詢 Token 開銷，原生支援無損增量更新。
 - **CrossAug**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG|arXiv 2026]]）：針對主流 GraphRAG 僅在單塊內部抽取的痛點，透過自監督 GNN 預測拓撲缺口並由 LLM 落地補全跨塊關係邊。
 - **GraphReader**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|Findings of EMNLP 2024]]）：將超長文本構建為異質圖，由自主 Agent 以 4k 小視窗主動漫遊探索與記錄筆記，超越 128k 原生長文本 LLM。
+- **G-Retriever**（[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering|NeurIPS 2024]]）：將文字圖檢索構建為 Prize-Collecting Steiner Tree (PCST) 凸優化子圖發現，配合 Graph Transformer 與凍結 LLM 的 Prompt 微調，修剪 80–90% 無關圖結構並壓制 60% 幻覺。
 
 ---
 

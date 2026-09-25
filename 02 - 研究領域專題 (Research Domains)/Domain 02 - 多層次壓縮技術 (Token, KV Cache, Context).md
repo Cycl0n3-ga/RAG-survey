@@ -60,14 +60,24 @@ graph TD
 - **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP (ICLR 2024)]]、[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens|Gist Tokens (NeurIPS 2023)]]。
 - **核心機制**：訓練專門的摘要模型將多個段落融合成稠密的高質量資訊塊；或在隱空間訓練 Gist Token，強迫模型透過修改過的 Attention Mask 將整個 Prompt 壓縮為數個 Soft Tokens。
 
+#### 5. KV Cache 跨層深度壓縮 (Depth-Dimension Layer Merging)
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models|MiniCache (NeurIPS 2024)]]。
+- **核心機制**：發現深層網路相鄰層的 KV Cache 狀態呈現高度方向餘弦相似性。透過模長與方向解耦（Magnitude-Direction Disentanglement），在保留極少數重要 Token 的同時，將相鄰層的定向狀態透過球形線性插值（SLERP）進行合併，結合 4-bit 量化達成高達 5.02× 顯存壓縮且近乎無損。
+
+#### 6. KV 快取串流與網路傳輸壓縮 (Streaming & Network Delta Encoding)
+- **代表工作**：[[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving|CacheGen (SIGCOMM 2024)]]。
+- **核心機制**：針對分散式節點間的上下文快取傳輸瓶頸，提出自適應 Delta 量化與客製化算術編碼器，將 KV Cache 壓縮至平均 4.2–4.8 bits/token，將網路頻寬負擔減輕 3.5×–4.4×，大幅加速首字生成延遲（TTFT 提速 3.5×–4.3×）。
+
 ---
 
 ### 三、各壓縮策略的關鍵權衡 (Trade-Offs)
 
-| 壓縮技術 | 作用階段 | 是否需已知 Query | 是否需額外訓練 | 顯存節省倍率 | 主要風險與限制 |
+| 壓縮技術 | 作用階段 | 是否需已知 Query | 是否需額外訓練 | 顯存/頻寬節省倍率 | 主要風險與限制 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **LLMLingua** | 前處理 | 否 (早期) / 是 (Long) | 否 (用預訓練小模型) | 3x ~ 20x (Prompt 長度) | 強制刪詞可能破壞條件句與精密數字代碼 |
 | **KIVI (2-bit)** | 推論解碼 | 否 | 否 (Tuning-free) | ~4x (KV Cache 顯存) | 需客製化 CUDA 反量化算子，對短序列加速有限 |
+| **MiniCache** | Prefill 後與解碼 | 否 | 否 (無監督/Tuning-free) | ~5x (結合量化顯存) | 僅適用於深層層間相似度高的基座架構 |
+| **CacheGen** | 跨節點傳輸 | 否 | 否 (動態編碼) | 3.5x ~ 4.4x (網路頻寬) | 需額外 CPU/GPU 編解碼計算開銷 |
 | **SnapKV / PyramidKV**| Prefill 後 | 依問題而定 | 否 | 3x ~ 5x (KV Cache 顯存) | 一旦使用者切換話題，被丟棄的 KV 無法復原 |
 | **RECOMP** | 檢索與生成之間 | 是 | 是 (需訓練壓縮器) | 2x ~ 8x (輸入長度) | 摘要生成過程可能引入二次事實幻覺 |
 | **Gist Tokens** | Prefill | 否 | 是 (需微調基座模型) | 10x ~ 100x | 黑盒表徵不可解釋，多跳推理細節易丟失 |

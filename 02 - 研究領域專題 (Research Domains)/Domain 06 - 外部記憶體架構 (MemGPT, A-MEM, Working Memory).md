@@ -49,6 +49,7 @@ graph TD
 ### 三、認知心理學啟發的階層記憶體：A-MEM、MemoryBank 與 Generative Agents
 - **代表作**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(UIST 2023-10) Generative Agents - Interactive Simulacra of Human Behavior|Generative Agents (Park et al., 2023)]]、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank (Zhong et al., 2024)]]、[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage|A-MEM (2025)]]。
 - **神經側網記憶增強**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory|LongMem (Wang et al., 2023)]] 採用凍結 LLM 主幹搭配可訓練 Residual SideNet 與解耦 Key-Value 記憶體檢索，打破 KV Cache 顯存瓶頸。
+- **長程全域記憶驅動檢索**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery|MemoRAG (Qian et al., 2024 / WWW 2025)]] 採用 1M 上下文專用記憶模型作為內部工作記憶，預先壓縮保留語料庫全局語意地圖，面對模糊問題時生成關鍵線索（Clues）導航稠密檢索器，突破純向量檢索在全局理解上的結構性缺陷。
 - **遺忘曲線與主動整固**：MemoryBank 借鑑艾賓浩斯遺忘曲線（$R = e^{-\Delta t / S}$）動態調整記憶強度，避免陳舊對話無效膨脹。
 - **四種記憶系統協同**：
   1. **工作記憶 (Working Memory)**：當前推理中的暫存資料。

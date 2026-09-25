@@ -78,6 +78,7 @@ graph TD
 - **自主工具學習 (Self-supervised Tool Learning)**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) Toolformer - Language Models Can Teach Themselves to Use Tools|Toolformer (Schick et al., NeurIPS 2023)]] 基於自監督損失差值自學何時呼叫計算機、搜尋引擎或維基百科 API。
 - **多智能體長篇協同寫作**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM (Shao et al., NAACL 2024)]] 透過多角色視角探索與問答對話建構長篇結構化文章。
 - **多輪環境智能體基準**：[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ICLR 2024-05) AgentBench - Evaluating LLMs as Agents|AgentBench (Liu et al., ICLR 2024)]] 首創涵蓋 OS、DB、KG、網頁等 8 大互動環境的客觀綜合評測體系。
+- **真實高仿真網頁環境與功能性執行基準**：[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents|WebArena (Zhou et al., ICLR 2024)]] 封裝 Magento、GitLab、Redmine 與 Postmill 等 4 大 Docker 網站，設計 812 個真實長視野任務與拒答校準驗證，以環境終態功能正確性為評測標準，展示出頂尖 LLM (GPT-4 14.41%) 與人類 (78.24%) 的顯著差距。
 
 ---
 

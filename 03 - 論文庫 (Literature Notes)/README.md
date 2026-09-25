@@ -17,7 +17,7 @@ last_updated: "2026-09-25"
 
 ## 一、分類導覽
 
-### 01 - Long Context & Sequence (14 篇)
+### 01 - Long Context & Sequence (15 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -35,9 +35,10 @@ last_updated: "2026-09-25"
 | ICLR 2024 | LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) LongLoRA - Efficient Fine-tuning of Long-Context Large Language Models\|(ICLR 2024-05) LongLoRA - Efficient Fine-tuning of Long-Context Large Language Models]] | [[Papers/01 - Long Context & Sequence/(ICLR 2024-05) LongLoRA - Efficient Fine-tuning of Long-Context Large Language Models.pdf\|PDF]] |
 | ICML 2024 | LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens\|(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens]] | [[Papers/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens.pdf\|PDF]] |
 | COLM 2024 | Mamba: Linear-Time Sequence Modeling with Selective State Spaces | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces\|(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces]] | [[Papers/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces.pdf\|PDF]] |
+| arXiv 2024 | Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention\|(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention]] | [[Papers/01 - Long Context & Sequence/(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention.pdf\|PDF]] |
 
 
-### 02 - Compression & KV Cache (11 篇)
+### 02 - Compression & KV Cache (13 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -52,6 +53,8 @@ last_updated: "2026-09-25"
 | NeurIPS 2023 | Learning to Compress Prompts with Gist Tokens | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens|(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens]] | [[Papers/02 - Compression & KV Cache/(NeurIPS 2023-12) Learning to Compress Prompts with Gist Tokens.pdf|PDF]] |
 | Meta FAIR / arXiv | Byte Latent Transformer: Patches Scale Better Than Tokens | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens|(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens]] | [[Papers/02 - Compression & KV Cache/(arXiv 2024-12) Byte Latent Transformer - Patches Scale Better Than Tokens.pdf|PDF]] |
 | ICLR 2024 | RECOMP: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation]] | [[Papers/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation.pdf|PDF]] |
+| SIGCOMM 2024 | CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving\|(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving]] | [[Papers/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving.pdf\|PDF]] |
+| NeurIPS 2024 | MiniCache: KV Cache Compression in Depth Dimension for Large Language Models | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models\|(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models]] | [[Papers/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models.pdf\|PDF]] |
 
 ### 03 - RAG & Retrieval (23 篇)
 
@@ -81,7 +84,7 @@ last_updated: "2026-09-25"
 | arXiv 2024 | Corrective Retrieval Augmented Generation (CRAG) | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation\|(arXiv 2024-01) Corrective Retrieval Augmented Generation]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation.pdf\|PDF]] |
 | arXiv 2024 | Late Chunking: Contextual Chunk Embeddings for Retrieval | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval\|(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval.pdf\|PDF]] |
 
-### 04 - Knowledge & Graph RAG (20 篇)
+### 04 - Knowledge & Graph RAG (22 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -105,8 +108,10 @@ last_updated: "2026-09-25"
 | NAACL 2025 | Knowledge Graph-Guided Retrieval Augmented Generation (KG²RAG) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation\|(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation]] | [[Papers/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation.pdf\|PDF]] |
 | EMNLP 2025 | PropRAG: Guiding Retrieval with Beam Search over Proposition Paths | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths\|(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths]] | [[Papers/04 - Knowledge & Graph RAG/(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths.pdf\|PDF]] |
 | arXiv 2026 | Beyond Chunk-Local Extraction: Cross-Chunk Graph Augmentation for GraphRAG (CrossAug) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG\|(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG]] | [[Papers/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG.pdf\|PDF]] |
+| EMNLP 2020 | OpenIE6: Iterative Grid Labeling and Coordination Analysis for Open Information Extraction | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction\|(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction]] | [[Papers/04 - Knowledge & Graph RAG/(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction.pdf\|PDF]] |
+| NeurIPS 2024 | G-Retriever: Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering\|(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering]] | [[Papers/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering.pdf\|PDF]] |
 
-### 05 - Memory & Agents (14 篇)
+### 05 - Memory & Agents (15 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -124,8 +129,9 @@ last_updated: "2026-09-25"
 | arXiv 2025 | A-MEM: Agentic Memory System with Hierarchical Structured Storage | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage\|(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage]] | [[Papers/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage.pdf\|PDF]] |
 | Findings of ACL 2026 | EviReport: From Reasoned Outlines to Evidence Tracked Long-Form Reports | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports\|(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.1397/) |
 | RAG4Reports 2026 | EFSG: Evidence-First Structured Generation for Multilingual RAG Report Generation | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation\|(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation]] | [ACL Anthology](https://aclanthology.org/2026.rag4reports-1.14/) |
+| arXiv 2024 | MemoRAG: Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery\|(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery]] | [[Papers/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery.pdf\|PDF]] |
 
-### 06 - Benchmarks & Evaluation (25 篇)
+### 06 - Benchmarks & Evaluation (27 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -154,3 +160,5 @@ last_updated: "2026-09-25"
 | CMC 2026 | Do LLMs Know When Evidence is Insufficient? An Evidence Sufficiency Benchmark | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CMC 2026-08) Do LLMs Know When Evidence is Insufficient - An Evidence Sufficiency Benchmark\|(CMC 2026-08) Do LLMs Know When Evidence is Insufficient - An Evidence Sufficiency Benchmark]] | [[Papers/06 - Benchmarks & Evaluation/(CMC 2026-08) Do LLMs Know When Evidence is Insufficient - An Evidence Sufficiency Benchmark.pdf\|PDF]] |
 | Findings of ACL 2026 | AnalystBench: Benchmarking Professional Long-Form Report Generation with Web-Mined Multimodal Tasks | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) AnalystBench - Benchmarking Professional Long-Form Report Generation with Web-Mined Multimodal Tasks\|(ACL 2026-08) AnalystBench - Benchmarking Professional Long-Form Report Generation with Web-Mined Multimodal Tasks]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2026-08) AnalystBench - Benchmarking Professional Long-Form Report Generation with Web-Mined Multimodal Tasks.pdf\|PDF]] |
 | ACL 2026 | Re³: Relevance & Recency Retrieval for Mitigating Temporal Hallucination (Re² Bench) | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination\|(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination.pdf\|PDF]] |
+| ACL 2024 | FreshLLMs: Refreshing Large Language Models with Search Engine Augmentation | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation\|(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation.pdf\|PDF]] |
+| ICLR 2024 | WebArena: A Realistic Web Environment for Building Autonomous Agents | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents\|(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents]] | [[Papers/06 - Benchmarks & Evaluation/(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents.pdf\|PDF]] |

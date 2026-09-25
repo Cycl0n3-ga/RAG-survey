@@ -80,6 +80,7 @@ flowchart LR
   - **校正性主動檢索**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation|Corrective RAG (CRAG, Yan et al., 2024)]] 設計輕量級檢索評估器評定置信度，動態觸發文檔精煉、丟棄並調用 Web 搜尋糾錯，或雙源融合，搭配「分解-重組（Decompose-then-Recompose）」算法最大化信噪比。
   - **重排序與生成統一模型**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs|RankRAG (Yu et al., NeurIPS 2024)]] 透過兩階段指令微調將 Context Ranking 與 Generation 統一至單一 LLM，8B 模型在 9 項知識基準上平均超越 GPT-4 與 Llama3-70B。
   - **長上下文融合檢索**：[[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-06) LongRAG - Enhancing Retrieval-Augmented Generation with Long-context LLMs|LongRAG (Jiang et al., 2024)]] 將檢索單元由短段落（100-300 字）擴充為整篇長文或大粗粒度區塊（4k 字），將檢索負擔大幅卸載給長上下文 LLM 的內部注意力。
+  - **記憶啟發式知識發現與自適應線索生成**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery|MemoRAG (Qian et al., 2024 / WWW 2025)]] 提出雙系統架構，由百萬長度記憶模型預先快取語料全局語意，面對模糊問題時主動生成精確線索（Clues）引導檢索器鎖定散落證據，在 UltraDomain 等跨文檔基準上將跨領域平均分提升至 36.2。
 
 ---
 
