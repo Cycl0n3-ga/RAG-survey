@@ -184,7 +184,7 @@ graph TD
 
 1. **對 A02 (Context/KV Compression & Inference Efficiency) 的核心啟發**：
    - Attention Sink 是所有現代 KV Cache 剪枝演算法（如 H2O, Scissorhands, FastGen）的**必備前置條件**。任何 KV Cache 逐出策略若未錨定前 4 個 Sink Token，均會導致模型崩潰。
-2. **對 Domain 06 / 15 (長效 Agent 與對話記憶系統) 的架構定位**：
+2. **對 A01 Long Context、D11 Memory-Augmented RAG 的架構定位**：
    - StreamingLLM 解決了底層 LLM 的「無限執行緒保活（Liveness）」問題，使 Agent 可以在不 OOM 的情況下永續運作；而對於被遺忘的中間資訊，則必須配合外部檢索或 GraphRAG 進行「外部記憶補全」，形成互補架構。
 
 ---
