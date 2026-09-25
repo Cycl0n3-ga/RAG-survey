@@ -159,7 +159,7 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 07 (Hierarchical & Tree Retrieval) 與 Domain 09 (Agentic Workflows) 的融合啟示**：證明了「圖結構化存儲 + Agent 主動探索」是超越純向量檢索與純長文本窗口的最具擴展性範式。
+1. **對 D04/D05 (Hierarchical Representation & Retrieval) 與 D12 (Agentic RAG & Orchestration) 的融合啟示**：證明了「圖結構化存儲 + Agent 主動探索」是超越純向量檢索與純長文本窗口的最具擴展性範式。
 2. **對企業長篇調查報告產生的指引**：在分析數百頁的企業年報、訴訟判決或招標規格書時，GraphReader 提供了主動收集散落證據、邊讀邊記筆記並最終彙總的標準工業落地參考。
 
 ---
