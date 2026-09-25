@@ -165,7 +165,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 04 (Chunking 與知識擷取) & Domain 12 (Typed Knowledge)**：
+1. **D02 (Segmentation & Contextualization) & Domain 12 (Typed Knowledge)**：
    REBEL 是現代「生成式資訊抽取（Generative IE）」的里程碑之作。它直接啟發了中科院的 UIE（Lu et al., 2022）與 Stanford/EPFL 的 GenIE。它證明了 LLM 自回歸生成三元組不僅可行，而且在知識覆蓋度與靈活性上遠超傳統判別模型。
 2. **GraphRAG 的非結構化知識灌庫**：
    在現代 GraphRAG 管線中，REBEL 的線性化提示語法被廣泛借鑑為 LLM 抽取實體關係的標準 Output Format，是從文本直接生成圖譜邊表的最主流範式之一。
