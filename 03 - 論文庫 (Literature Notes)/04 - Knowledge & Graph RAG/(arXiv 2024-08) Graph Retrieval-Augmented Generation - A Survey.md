@@ -15,10 +15,6 @@ doi: null
 arxiv: "2408.08921"
 url: "https://arxiv.org/abs/2408.08921"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]"
-  - "[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]"
 tags:
   - paper
   - survey
@@ -147,7 +143,7 @@ flowchart TD
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-- **領域專題支撐**：直接充實了 [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]] 的理論骨架，補全了當前知識庫對 GraphRAG 領域級綜述的空白。
+- **領域專題支撐**：直接充實了 [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]] 的理論骨架，補全了當前知識庫對 GraphRAG 領域級綜述的空白。
 - **跨模組借鑑**：釐清了路徑級檢索與子圖級檢索的適用邊界，指導企業知識庫如何針對不同查詢類型動態切換策略。
 
 ---
