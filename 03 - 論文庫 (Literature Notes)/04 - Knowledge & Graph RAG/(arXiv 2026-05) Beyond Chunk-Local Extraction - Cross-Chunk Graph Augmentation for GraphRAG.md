@@ -135,7 +135,7 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 05 (Graph RAG) 的核心啟示**：明確指出當前所有主流 GraphRAG 的共性短板是「Chunk 邊界割裂」，為構建全局知識網絡提供了切實可行的解決路徑。
+1. **對 D04/D05 (Graph Representation & Retrieval) 的核心啟示**：明確指出當前所有主流 GraphRAG 的共性短板是「Chunk 邊界割裂」，為構建全局知識網絡提供了切實可行的解決路徑。
 2. **對 Domain 13 (Cross-chunk Consolidation) 的支撐**：證明了跨段落實體對齊與關係重構是提升長文本可審計性與多跳精確度的關鍵樞紐。
 
 ---
