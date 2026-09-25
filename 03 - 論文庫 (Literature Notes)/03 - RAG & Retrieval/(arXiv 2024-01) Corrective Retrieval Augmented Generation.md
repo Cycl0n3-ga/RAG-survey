@@ -192,7 +192,7 @@ flowchart TD
 
 1. **D05 (Query Understanding & Retrieval)**：
    確立了「檢索前置驗證與自適應路由」的核心地位。與 FLARE、Self-RAG、Adaptive-RAG 共同構築了現代 Agentic RAG 的動態決策控制層。
-2. **Domain 10 (衝突消解與時效性更新)**：
+2. **D06 Evidence Sufficiency & Adaptive Retrieval，並與 D08 Temporal Conflict & Provenance Resolution 相鄰**：
    CRAG 中利用外部即時 Web 搜尋覆蓋過期靜態知識庫的策略，是處理知識時效性（Temporal Conflict）的經典工業解決方案。
 3. **架構分流界線提醒**：
    嚴格區分本篇 **Corrective RAG (CRAG, Yan et al., 2024)** 與 Meta 主導發布的 **Comprehensive RAG Benchmark (CRAG Benchmark, Yang et al., 2024)**，避免混淆方法論與評測框架。
