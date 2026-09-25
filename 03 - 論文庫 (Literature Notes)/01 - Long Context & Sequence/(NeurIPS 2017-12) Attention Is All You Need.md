@@ -19,6 +19,7 @@ url: "https://arxiv.org/abs/1706.03762"
 pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need.pdf"
 domains:
   - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
+- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
 - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - "paper"
