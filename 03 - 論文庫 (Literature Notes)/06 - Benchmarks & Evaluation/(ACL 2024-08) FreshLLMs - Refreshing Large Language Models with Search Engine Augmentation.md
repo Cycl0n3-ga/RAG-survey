@@ -157,7 +157,7 @@ flowchart TD
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-在時間感知 RAG 與來源仲裁（Domain 15）及前沿評測（Domain 17）中：
+在目前 taxonomy 中，本工作主要連到 **D08 Temporal Conflict & Provenance Resolution** 與 **D13 RAG Evaluation & Failure Attribution**：
 - **引入時態分級測試機制**：本專案應將 FreshQA 的四分類（Fast / Slow / Never / False-premise）作為檢驗內部 RAG 抗時效幻覺的標準測試維度；
 - **簡潔回答抑制幻覺**：在報告生成的細節填補中，應嚴格遵守 FreshLLMs 的「證據先驗直答」原則，杜絕自由發揮式廢話。
 
