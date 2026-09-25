@@ -127,7 +127,7 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 08 (Long-form Report Generation) 的方法論劃界**：清楚闡明了「Evidence-first（先備料再開伙）」與「Gap-aware（邊做邊補料）」的哲學差異，為本專案知識庫提供了平衡事實嚴謹與探索深度的完整雙軌方案。
+1. **對 D09 (Grounded Generation & Long-form Synthesis) 的方法論劃界**：清楚闡明了「Evidence-first（先備料再開伙）」與「Gap-aware（邊做邊補料）」的哲學差異，為本專案知識庫提供了平衡事實嚴謹與探索深度的完整雙軌方案。
 2. **對企業交付文件的落地指引**：在處理高風險招標合約與政府標案審計時，EFSG 提供了確保無任何非合規宣稱的剛性防禦範本。
 
 ---
