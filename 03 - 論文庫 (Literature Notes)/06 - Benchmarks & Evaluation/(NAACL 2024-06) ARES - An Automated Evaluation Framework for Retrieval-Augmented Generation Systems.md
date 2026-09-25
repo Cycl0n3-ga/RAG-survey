@@ -134,8 +134,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 10 (Benchmarks & Safety) 的落地意義**：確立了企業級 RAG 系統「自動化回歸評估（Automated Regression Evaluation）」的標準技術架構。
-2. **對 Domain 17 (Evaluation Protocols) 的方法論指導**：推動本專案評測體系從單純的「呼叫 GPT-4 打分」進化為「小樣本錨定 + 統計置信校準」的現代學術標準。
+1. **對 D13 (RAG Evaluation & Failure Attribution) 的落地意義**：確立了企業級 RAG 系統「自動化回歸評估（Automated Regression Evaluation）」的標準技術架構。
+2. **對 D13 (RAG Evaluation & Failure Attribution) 的方法論指導**：推動本專案評測體系從單純的「呼叫 GPT-4 打分」進化為「小樣本錨定 + 統計置信校準」的現代學術標準。
 
 ---
 
