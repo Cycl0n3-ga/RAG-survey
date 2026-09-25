@@ -13,7 +13,8 @@ arxiv: "2404.07143"
 url: "https://arxiv.org/abs/2404.07143"
 pdf_file: "Papers/01 - Long Context & Sequence/(arXiv 2024-04) Leave No Context Behind - Efficient Infinite Context Transformers with Infini-attention.pdf"
 domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
+- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 動態記憶體與 KV Cache 壓縮 (Streaming, H2O, SnapKV)|Domain 02 - 動態記憶體與 KV Cache 壓縮 (Streaming, H2O, SnapKV)]]"
 tags:
   - paper
@@ -116,10 +117,10 @@ flowchart TD
 ```
 
 ### 圖中節點對照
-- `InputSeq`：[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|序列分段機制]]
-- `LocalBranch`：[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|局部遮罩點積注意力]]
+- `InputSeq`：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
+- `LocalBranch`：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
 - `MemoryBranch`：[[02 - 研究領域專題 (Research Domains)/Domain 02 - 動態記憶體與 KV Cache 壓縮 (Streaming, H2O, SnapKV)|壓縮線性關聯記憶體]]
-- `Gate`：[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|多頭可學習門控]]
+- `Gate`：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
 
 ### 數學原理與關鍵公式
 1. **壓縮記憶體矩陣表示（Compressive Memory）**：
@@ -214,7 +215,7 @@ flowchart TD
 
 ### 相關文獻與領域筆記
 - 所屬領域專題：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
   - [[02 - 研究領域專題 (Research Domains)/Domain 02 - 動態記憶體與 KV Cache 壓縮 (Streaming, H2O, SnapKV)|Domain 02 - 動態記憶體與 KV Cache 壓縮]]
 - 相關長序列與記憶體筆記：
   - [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need.md|(NeurIPS 2017-12) Attention Is All You Need]]

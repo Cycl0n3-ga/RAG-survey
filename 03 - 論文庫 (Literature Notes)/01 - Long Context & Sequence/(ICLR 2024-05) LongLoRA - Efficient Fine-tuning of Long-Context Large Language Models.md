@@ -17,7 +17,8 @@ arxiv: "2309.12307"
 url: "https://openreview.net/forum?id=6pmfdmzrTG"
 pdf_file: "Papers/01 - Long Context & Sequence/(ICLR 2024-05) LongLoRA - Efficient Fine-tuning of Long-Context Large Language Models.pdf"
 domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
+- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
   - "[[02 - 研究領域專題 (Research Domains)/Domain 02 - 脈絡壓縮與 KV 快取 (Compaction, Eviction, Pruning)|Domain 02 - 脈絡壓縮與 KV 快取 (Compaction, Eviction, Pruning)]]"
 tags:
   - paper
@@ -184,7 +185,7 @@ LongLoRA 在 ICLR 2024 原文（Pages 5–7）中在 Proof-pile 與 PG19 驗證�
 
 ### 關聯專題與論文筆記
 - **專題報告**：
-  - `[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構]]`
+  - `[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]`
   - `[[02 - 研究領域專題 (Research Domains)/Domain 02 - 脈絡壓縮與 KV 快取 (Compaction, Eviction, Pruning)|Domain 02 - 脈絡壓縮與 KV 快取]]`
 - **同領域代表性論文**：
   - `[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) YaRN - Efficient Context Window Extension of Large Language Models|(ICLR 2024-05) YaRN]]`

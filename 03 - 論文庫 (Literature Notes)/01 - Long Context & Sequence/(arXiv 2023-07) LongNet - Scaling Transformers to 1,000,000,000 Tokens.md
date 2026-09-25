@@ -18,7 +18,8 @@ arxiv: "2307.02486"
 url: "https://arxiv.org/abs/2307.02486"
 pdf_file: "Papers/01 - Long Context & Sequence/(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens.pdf"
 domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Adjacent Interface]]"
+- "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:
   - paper
   - long-context
@@ -169,7 +170,7 @@ flowchart TD
 - **本地 PDF**：`[[Papers/01 - Long Context & Sequence/(arXiv 2023-07) LongNet - Scaling Transformers to 1,000,000,000 Tokens.pdf|開啟本地 PDF 檔案]]`
 - **官方開源連結**：[arXiv:2307.02486](https://arxiv.org/abs/2307.02486) · [Microsoft aka.ms/GeneralAI](https://aka.ms/GeneralAI)
 - **關聯領域筆記**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
 - **同類/相關論文筆記**：
   - [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2020-04) Reformer - The Efficient Transformer|(ICLR 2020-04) Reformer]]
   - [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2021-05) Rethinking Attention with Performers|(ICLR 2021-05) Performer]]
