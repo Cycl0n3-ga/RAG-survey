@@ -192,7 +192,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 03 (先進 RAG 與檢索機制)**：
+1. **D05 (Query Understanding & Retrieval)**：
    確立了「檢索前置驗證與自適應路由」的核心地位。與 FLARE、Self-RAG、Adaptive-RAG 共同構築了現代 Agentic RAG 的動態決策控制層。
 2. **Domain 10 (衝突消解與時效性更新)**：
    CRAG 中利用外部即時 Web 搜尋覆蓋過期靜態知識庫的策略，是處理知識時效性（Temporal Conflict）的經典工業解決方案。
