@@ -1,6 +1,6 @@
 ---
 paper_id: "Gunther2024_LateChunking"
-title: "Late Chunking: Contextual Chunk Embeddings for Retrieval"
+title: "Late Chunking: Contextual Chunk Embeddings Using Long-Context Embedding Models"
 authors:
   - "Michael Günther"
   - "Isabelle Mohr"
@@ -34,10 +34,10 @@ adjacent_interfaces: []
 
 ---
 
-# Late Chunking: Contextual Chunk Embeddings for Retrieval
+# Late Chunking: Contextual Chunk Embeddings Using Long-Context Embedding Models
 
 > [!ABSTRACT] 一話摘要 (TL;DR)
-> 本文提出 **Late Chunking** 範式，顛覆傳統「先切塊後獨立編碼」的流程，改為先利用長上下文 Embedding 模型對整份完整文檔進行全局注意力編碼，再依據切塊邊界進行池化（Mean Pooling），徹底消除切塊邊界處的上下文遺失與代名詞語境缺失問題。
+> 本文提出 **Late Chunking**：先以 long-context embedding model 編碼較長文本，再於 transformer 之後、mean pooling 之前依 chunk boundary 聚合 token representations，使 chunk embeddings 能利用周邊上下文；它可減輕 early chunking 的 context loss，但不能保證消除所有跨段資訊遺失。
 
 ---
 
@@ -77,10 +77,10 @@ flowchart TD
 
 ## 四、優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 - **優勢**：
-  - 完全解決代名詞指代懸空、跨段條件遺失的核心難題；
+  - 可降低 chunk 獨立編碼造成的部分上下文遺失，特別是需要前文語境的 retrieval cases；
   - 對向量資料庫索引結構完全透明，無需重新訓練專屬架構。
 - **限制與工程代價**：
-  - **受限於 Embedding 模型的最大上下文**：若文檔超過模型最大視窗（如 8,192 tokens），仍需進行分段外層切塊；
+  - **受限於 Embedding 模型的最大上下文**：超過模型可編碼長度時仍需分段；實際上限取決於所用 embedding model。
   - **運算成本隨全文二次方上升**：對超長文檔計算 Dense Attention 的顯存消耗顯著高於分別編碼小 Chunk。
 
 ---
