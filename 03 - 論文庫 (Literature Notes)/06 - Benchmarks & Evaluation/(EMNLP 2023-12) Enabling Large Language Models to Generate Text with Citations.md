@@ -153,8 +153,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 08 (Long-form Report Generation) 的核心標準意義**：為長篇報告系統（如 STORM、EviReport）提供了權威可量化的自動引文驗證指標。
-2. **對 Domain 16 (Context Utilization & Faithfulness) 的直接落地**：ALCE 的 Citation Recall/Precision 計算邏輯可直接作為本專案 Evidence Ledger 治理管線中的自動審核算子。
+1. **對 D09 (Grounded Generation & Long-form Synthesis) 的核心標準意義**：為長篇報告系統（如 STORM、EviReport）提供了權威可量化的自動引文驗證指標。
+2. **對 D09/D13 (Attribution & Evaluation) 的直接落地**：ALCE 的 Citation Recall/Precision 計算邏輯可直接作為本專案 Evidence Ledger 治理管線中的自動審核算子。
 
 ---
 
