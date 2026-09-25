@@ -19,9 +19,8 @@ doi: "10.18653/v1/2020.emnlp-main.129"
 arxiv: "2004.13590"
 url: "https://aclanthology.org/2020.emnlp-main.129/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(EMNLP 2020-11) MAVEN - A Massive General Domain Event Detection Dataset.pdf"
-domains: []
-- "[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 切分與 Knowledge Extraction 全景|Domain 04 - Chunking 切分與 Knowledge Extraction 全景]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 12 - 知識抽取、型別化知識與動態本體 (Knowledge Extraction)|Domain 12 - 知識抽取、型別化知識與動態本體 (Knowledge Extraction)]]"
+domains:
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]"
 tags:
   - paper
   - dataset
@@ -177,8 +176,8 @@ MAVEN 原文（Pages 1652–1671）對比了經典事件抽取模型在 ACE 2005
 
 ### 關聯專題與論文筆記
 - **專題報告**：
-  - `[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 切分與 Knowledge Extraction 全景|Domain 04 - Chunking 與知識抽取]]`
-  - `[[02 - 研究領域專題 (Research Domains)/Domain 12 - 知識抽取、型別化知識與動態本體 (Knowledge Extraction)|Domain 12 - 型別化知識與本體]]`
+  - `[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]`
+  - `[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]`
 - **同領域代表性論文**：
   - `[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2019-07) DocRED - A Large-Scale Document-Level Relation Extraction Dataset|(ACL 2019-07) DocRED]]`
   - `[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2020-07) A Joint Neural Model for Information Extraction with Global Features|(ACL 2020-07) OneIE]]`
