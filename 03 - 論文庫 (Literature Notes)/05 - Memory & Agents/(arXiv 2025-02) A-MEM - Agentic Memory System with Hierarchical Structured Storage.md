@@ -18,6 +18,15 @@ tags:
   - "agentic-structured-memory"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D11"
+primary_domain: "D11"
+secondary_domains:
+  - "D12"
+paradigm_tags:
+  - "memory_augmented_rag"
+adjacent_interfaces: []
+
 ---
 
 # A-MEM: Agentic Memory System with Hierarchical Structured Storage

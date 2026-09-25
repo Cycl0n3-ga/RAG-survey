@@ -64,6 +64,17 @@ metrics:
   - "Citation F1 (Cite)"
   - "LLM Judge Score (Prometheus: Org, Rel, Cov)"
   - "Cost per Query (USD / q)"
+taxonomy_version: "v2"
+taxonomy_home: "D09"
+primary_domain: "D09"
+secondary_domains:
+  - "D05"
+  - "D12"
+paradigm_tags:
+  - "long_form_rag"
+  - "agentic_rag"
+adjacent_interfaces: []
+
 ---
 
 # OpenScholar: Synthesizing Scientific Literature with Retrieval-Augmented Language Models

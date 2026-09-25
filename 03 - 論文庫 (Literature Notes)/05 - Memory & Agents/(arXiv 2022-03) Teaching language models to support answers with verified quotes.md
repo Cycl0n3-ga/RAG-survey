@@ -40,6 +40,15 @@ metrics:
   - "High-Quality Answer Rate"
   - "Supported Factual Precision"
   - "Abstention Rate"
+taxonomy_version: "v2"
+taxonomy_home: "D09"
+primary_domain: "D09"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "citation_aware_rag"
+adjacent_interfaces: []
+
 ---
 
 # Teaching language models to support answers with verified quotes (GopherCite)

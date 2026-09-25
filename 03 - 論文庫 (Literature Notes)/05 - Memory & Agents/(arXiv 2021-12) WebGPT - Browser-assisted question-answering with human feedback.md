@@ -46,6 +46,17 @@ benchmark_ids:
 metrics:
   - "Human Preference Win-rate"
   - "Factual Accuracy"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D12"
+paradigm_tags:
+  - "general_agent"
+  - "tool_use"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # WebGPT: Browser-assisted question-answering with human feedback

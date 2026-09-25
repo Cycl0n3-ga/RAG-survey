@@ -46,6 +46,17 @@ benchmark_ids:
 metrics:
   - "Success Rate"
   - "F1 Score"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D12"
+paradigm_tags:
+  - "general_agent"
+  - "tool_use"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation

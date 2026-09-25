@@ -32,6 +32,18 @@ research_questions:
   - "tool_use_and_multi_agent"
 benchmark_ids: []
 metrics: []
+taxonomy_version: "v2"
+taxonomy_home: "D12"
+primary_domain: "D12"
+secondary_domains:
+  - "D05"
+  - "D06"
+  - "D11"
+paradigm_tags:
+  - "agentic_rag"
+  - "survey"
+adjacent_interfaces: []
+
 ---
 
 # Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG

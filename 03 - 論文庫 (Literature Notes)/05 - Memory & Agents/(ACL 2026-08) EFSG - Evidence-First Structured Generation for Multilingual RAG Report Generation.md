@@ -29,6 +29,17 @@ metrics:
   - "Factual Support Rate"
   - "Cross-Lingual Consistency"
   - "Hallucination Free Rate"
+taxonomy_version: "v2"
+taxonomy_home: "D09"
+primary_domain: "D09"
+secondary_domains:
+  - "D07"
+  - "D13"
+paradigm_tags:
+  - "long_form_rag"
+  - "citation_aware_rag"
+adjacent_interfaces: []
+
 ---
 
 # EFSG: Evidence-First Structured Generation for Multilingual RAG Report Generation

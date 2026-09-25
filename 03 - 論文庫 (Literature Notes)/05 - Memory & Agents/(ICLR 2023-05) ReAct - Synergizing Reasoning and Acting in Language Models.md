@@ -40,6 +40,17 @@ metrics:
   - "Exact Match (EM)"
   - "Success Rate (SR)"
   - "Accuracy"
+taxonomy_version: "v2"
+taxonomy_home: "A04"
+primary_domain: null
+secondary_domains:
+  - "D12"
+paradigm_tags:
+  - "general_agent"
+  - "tool_use"
+adjacent_interfaces:
+  - "A04"
+
 ---
 
 # ReAct: Synergizing Reasoning and Acting in Language Models

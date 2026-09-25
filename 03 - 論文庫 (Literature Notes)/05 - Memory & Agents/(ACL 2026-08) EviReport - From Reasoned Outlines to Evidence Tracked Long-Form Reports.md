@@ -29,6 +29,19 @@ metrics:
   - "Factual Accuracy"
   - "Factual Coverage"
   - "Visual Evidence Integration"
+taxonomy_version: "v2"
+taxonomy_home: "D09"
+primary_domain: "D09"
+secondary_domains:
+  - "D04"
+  - "D06"
+  - "D12"
+paradigm_tags:
+  - "long_form_rag"
+  - "graph_rag"
+  - "citation_aware_rag"
+adjacent_interfaces: []
+
 ---
 
 # EviReport: From Reasoned Outlines to Evidence Tracked Long-Form Reports
