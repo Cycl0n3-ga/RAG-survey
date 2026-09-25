@@ -124,7 +124,7 @@ flowchart TD
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-- **支撐 Domain 03（多步檢索）與 Domain 07（樹狀推理）**：MuSiQue 是檢驗 IRCoT、Self-RAG 與 RAPTOR 多跳鏈接能力的終極試金石。
+- **支撐 Domain 03（多步檢索）與 D04/D05（Hierarchical Representation & Retrieval）**：MuSiQue 是檢驗 IRCoT、Self-RAG 與 RAPTOR 多跳鏈接能力的終極試金石。
 - **評測誠信守則**：警示本專案在進行多跳技術比較時，絕不能單憑 HotpotQA 的分數宣稱「多跳推理已解決」。
 
 ---
