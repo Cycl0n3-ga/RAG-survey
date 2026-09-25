@@ -9,31 +9,52 @@ last_updated: "2026-09-25"
 
 # Domain 04 - Knowledge Representation & Indexing
 
-> [!IMPORTANT]
-> 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-
 ## Core Question
-知識應以何種表示與索引結構保存，才能支援不同 retrieval 與 reasoning 需求？
+知識應以什麼形式表示、編碼與建立索引，才能支援後續 retrieval、multi-hop 與 synthesis？
+
+```mermaid
+flowchart LR
+    U["Units from D02 / D03"] --> TXT["Raw Text / Chunk"]
+    U --> PROP["Proposition / Claim"]
+    U --> STR["Triple / Event"]
+    TXT --> ENC["Dense / Sparse / Late Interaction"]
+    PROP --> ENC
+    STR --> G["Graph Representation"]
+    ENC --> V["Vector / Lexical Index"]
+    G --> GI["Graph Index"]
+    TXT --> H["Hierarchical / Multi-resolution"]
+    H --> HI["Hierarchical Index"]
+    V --> HY["Optional Hybrid Index"]
+    GI --> HY
+    HI --> HY
+```
 
 ## Includes
-- chunk / proposition / qualified triple / event / claim / evidence-object representations
-- dense / sparse / late-interaction representation
-- vector / lexical / graph / hybrid index
+- chunk / proposition / claim / qualified triple / event / evidence-object representation
+- dense / sparse / late-interaction encoding
+- vector / lexical / graph / hierarchical index
 - knowledge graph construction
-- hierarchical / multi-resolution index
+- multi-resolution / hybrid indexing
 - ANN infrastructure
 
 ## Excludes
-- query rewriting → D05
-- sufficiency / stopping → D06
-- dynamic update policy → D10
+- query rewrite / ranking → D05
+- evidence sufficiency / stopping → D06
+- index refresh / version update → D10
 
-## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- 架構型名稱使用 paradigm tags，而非新增 top-level Domain。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+## Level-2 Topics
+- Knowledge Representation
+- Embedding & Representation Learning
+- KG Construction
+- Multi-resolution & Hierarchical Indexing
+- Hybrid Indexing
+- ANN / Vector Infrastructure
+
+## Boundary
+**Chunk、Proposition、Triple、Event、Graph 不是成熟度階梯。**  
+它們可能分別是 retrieval unit、semantic unit、representation 或 index structure；GraphRAG / Hierarchical RAG 因此以 paradigm tag 表示，不另立 top-level Domain。
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]

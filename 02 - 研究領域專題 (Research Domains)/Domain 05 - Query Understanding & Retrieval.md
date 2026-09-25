@@ -9,30 +9,62 @@ last_updated: "2026-09-25"
 
 # Domain 05 - Query Understanding & Retrieval
 
-> [!IMPORTANT]
-> 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-
 ## Core Question
-如何理解 query，並從一個或多個 index 中找出、排序與組合最相關的候選 evidence？
+如何理解 query，選擇 retrieval strategy，並找出、融合與排序最相關的候選 evidence？
+
+```mermaid
+flowchart LR
+    Q["Query"] --> U["Understand"]
+    U -. "optional" .-> RW["Rewrite / Expand / HyDE"]
+    U -. "optional" .-> DC["Decompose"]
+    U --> RT["Route"]
+    RW --> RT
+    DC --> RT
+    RT --> D["Dense"]
+    RT --> S["Sparse"]
+    RT --> G["Graph"]
+    RT --> H["Hierarchical"]
+    D --> F["Fusion / Rerank"]
+    S --> F
+    G --> F
+    H --> F
+    DC -. "next hop" .-> MH["Multi-hop"]
+    F -. "need next hop" .-> MH
+    MH -.-> RT
+    F --> EV["Candidate Evidence"]
+```
 
 ## Includes
-- query rewrite / expansion / decomposition
+- query understanding / constraint extraction
+- query rewrite / expansion / HyDE
+- decomposition / sub-question planning
 - sparse / dense / late-interaction retrieval
-- reranking / filtering / fusion
+- graph / hierarchical retrieval
+- fusion / reranking / filtering
 - multi-hop / compositional retrieval
 - query-adaptive retrieval granularity
 
 ## Excludes
-- 是否已找夠 evidence → D06
-- context packing → D07
-- controller / tool orchestration → D12
+- 是否已取得足夠 evidence → D06
+- context packing / compression → D07
+- general controller / tool orchestration → D12
 
-## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- 架構型名稱使用 paradigm tags，而非新增 top-level Domain。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+## Level-2 Topics
+- Query Understanding
+- Query Transformation
+- Query Decomposition
+- Retrieval Routing
+- Retrieval & Reranking
+- Fusion
+- Multi-hop Retrieval
+- Retrieval Granularity
+
+## Boundary
+```text
+Relevance ≠ Sufficiency
+```
+D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是否已足夠完成任務」。
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]

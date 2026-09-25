@@ -9,14 +9,22 @@ last_updated: "2026-09-25"
 
 # Domain 11 - Memory-Augmented RAG
 
-> [!IMPORTANT]
-> 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-
 ## Core Question
-如何跨 interaction 保存、檢索、合併、更新與遺忘 persistent state，而不只是查詢 corpus？
+系統如何跨 interaction 保存、檢索、整合、更新與遺忘 persistent state，而不是每次只查詢外部 corpus？
+
+```mermaid
+flowchart LR
+    I["Interaction / Observation"] --> W["Memory Write"]
+    W --> C["Consolidate"]
+    C --> M["Persistent Memory"]
+    M --> R["Memory Retrieval"]
+    R --> CTX["Context / Action"]
+    M -. "outdated / invalid" .-> F["Forget / Invalidate"]
+    F -.-> M
+```
 
 ## Includes
-- episodic / semantic / working memory
+- episodic / semantic / task memory
 - memory write / retrieval
 - memory consolidation
 - forgetting / invalidation
@@ -25,14 +33,25 @@ last_updated: "2026-09-25"
 
 ## Excludes
 - general corpus update → D10
-- single-turn context construction → D07
+- single-turn context packing → D07
+- controller deciding when/how to use tools → D12
 
-## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- 架構型名稱使用 paradigm tags，而非新增 top-level Domain。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+## Level-2 Topics
+- Memory Write
+- Memory Retrieval
+- Episodic / Semantic Memory
+- Consolidation
+- Forgetting / Invalidation
+- Long-horizon State
+- Memory Provenance
+
+## Boundary
+```text
+RAG corpus = external knowledge source
+Persistent memory = state accumulated across interactions
+Dynamic index = maintenance of external knowledge/index
+```
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 Dynamic Knowledge & Index Maintenance]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]

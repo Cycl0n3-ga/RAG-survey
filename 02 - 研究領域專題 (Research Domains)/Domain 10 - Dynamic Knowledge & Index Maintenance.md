@@ -9,31 +9,48 @@ last_updated: "2026-09-25"
 
 # Domain 10 - Dynamic Knowledge & Index Maintenance
 
-> [!IMPORTANT]
-> 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-
 ## Core Question
-外部知識新增、修改、刪除或失效時，RAG index 如何正確且低成本地維護？
+外部 knowledge base 持續新增、修改、刪除或失效時，RAG index 如何正確且低成本地保持最新？
+
+```mermaid
+flowchart LR
+    CH["Source Change"] --> DET["Detect / Validate Change"]
+    DET --> VER["Version / Freshness"]
+    VER --> UP["Insert / Update / Delete"]
+    UP --> V["Vector / Lexical Refresh"]
+    UP --> G["Graph / Summary Refresh"]
+    V --> IDX["Current Index"]
+    G --> IDX
+```
 
 ## Includes
-- incremental indexing
+- change detection
+- freshness / staleness
 - insert / update / delete semantics
-- staleness detection
+- incremental indexing
 - embedding refresh
 - entity resolution across versions
-- graph / community / summary recomputation
-- version-aware retrieval
+- graph / summary recomputation
+- version-aware retrieval support
 
 ## Excludes
-- conversation memory → D11
-- evidence conflict resolution → D08
+- persistent user/agent memory → D11
+- evidence conflict resolution at query time → D08
+- parametric model editing → A05
 
-## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- 架構型名稱使用 paradigm tags，而非新增 top-level Domain。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+## Level-2 Topics
+- Dynamic Indexing
+- Freshness / Staleness
+- Incremental Embedding Update
+- Graph Maintenance
+- Versioned Knowledge
+- Deletion / Invalidation
+
+## Boundary
+**Dynamic Index ≠ Memory.**  
+D10 管 external knowledge base 的狀態；D11 管跨 interaction 的 persistent state。
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]

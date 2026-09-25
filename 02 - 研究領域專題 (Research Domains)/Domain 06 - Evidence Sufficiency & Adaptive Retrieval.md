@@ -9,31 +9,54 @@ last_updated: "2026-09-25"
 
 # Domain 06 - Evidence Sufficiency & Adaptive Retrieval
 
-> [!IMPORTANT]
-> 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-
 ## Core Question
-目前 evidence 是否足以回答問題；若不足，缺什麼、下一個 retrieval action 是什麼、何時停止？
+目前 evidence 是否足以回答問題；若不足，缺什麼、是否要再檢索，以及何時停止？
+
+```mermaid
+flowchart LR
+    EV["Candidate Evidence"] --> COV["Coverage"]
+    COV --> SUFF["Sufficiency"]
+    SUFF -->|Enough| STOP["Stop Retrieval"]
+    SUFF -->|Missing| GAP["Gap Localization"]
+    GAP --> RET["Retrieve More"]
+    GAP --> RW["Rewrite / Decompose"]
+    GAP --> AB["Abstain / Escalate"]
+    RET -.-> EV
+    RW -.-> EV
+```
 
 ## Includes
 - retrieval necessity
-- evidence coverage / completeness / sufficiency
+- evidence coverage / completeness
+- evidence sufficiency
 - gap localization
 - adaptive / corrective / iterative retrieval
 - stopping policy
 - retrieval-time abstention / escalation
 
 ## Excludes
-- general relevance ranking → D05
-- conflict / time / source resolution → D08
-- general agent orchestration → D12
+- relevance ranking → D05
+- time / source / version conflict resolution → D08
+- general multi-action agent controller → D12
 
-## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- 架構型名稱使用 paradigm tags，而非新增 top-level Domain。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+## Level-2 Topics
+- Retrieval Necessity
+- Adaptive Retrieval
+- Corrective Retrieval
+- Evidence Coverage
+- Evidence Sufficiency
+- Gap Localization
+- Stopping / Abstention
+
+## Boundary
+```text
+Relevant evidence
+    != complete evidence
+    != sufficient evidence
+```
+Adaptive RAG 是 paradigm tag；只有當 paper 的主要研究問題是「何時 retrieve / retry / stop」時，Primary Domain 才是 D06。
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]

@@ -9,31 +9,56 @@ last_updated: "2026-09-25"
 
 # Domain 07 - Context Construction & Evidence Utilization
 
-> [!IMPORTANT]
-> 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-
 ## Core Question
-候選 evidence 找到後，如何建構有限 context，並確保模型實際使用關鍵證據？
+候選 evidence 找到後，如何在有限 context budget 中組織資訊，並確保模型真的使用關鍵 evidence？
+
+```mermaid
+flowchart LR
+    EV["Selected Evidence"] --> F["Filter / Dedup"]
+    F --> P["Pack"]
+    P -. "optional" .-> C["Compress"]
+    P --> O["Order"]
+    C --> O
+    O --> B["Budget"]
+    B --> CTX["Final Context"]
+    CTX --> U["Evidence Utilization"]
+    LC["A01 Long Context"] -.-> CTX
+    KV["A02 Context / KV Compression"] -.-> C
+```
 
 ## Includes
-- context filtering / dedup / ordering
-- context packing / budget allocation
-- retrieval-aware context compression
-- evidence organization
-- lost-in-the-middle / position effects
-- parametric-vs-retrieved knowledge interaction
+- evidence filtering / deduplication
+- context packing
+- retrieval-aware compression
+- ordering / position effects
+- token budget allocation
+- lost-in-the-middle
+- retrieved-vs-parametric knowledge interaction
+- context utilization
 
 ## Excludes
-- KV-cache compression 本身 → Adjacent Interface
 - retrieval ranking → D05
-- claim-level output verification → D09
+- evidence sufficiency → D06
+- KV-cache optimization本身 → A02
+- output claim verification / citation → D09
 
-## Classification Rules
-- 一篇論文可跨多個 Domain，但必須指定一個 Primary Domain。
-- 其餘影響層級列為 Secondary Domains。
-- 架構型名稱使用 paradigm tags，而非新增 top-level Domain。
-- 尚未由既有文獻直接支持的完整方法組合放入 `04 - 研究想法與待驗證提案`。
+## Level-2 Topics
+- Context Selection
+- Context Packing
+- Context Compression for RAG
+- Ordering / Position
+- Budget Allocation
+- Context Utilization
+- Parametric vs Retrieved Knowledge
+
+## Boundary
+```text
+Evidence retrieved
+    != evidence placed in context
+    != evidence actually used by the model
+```
 
 ## Navigation
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]
+- [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
