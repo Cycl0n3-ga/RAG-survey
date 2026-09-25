@@ -21,6 +21,7 @@ tags:
   - hallucination
 verification_status: "verified"
 last_verified: 2026-09-24
+artifact_type: "evaluation_framework"
 taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"

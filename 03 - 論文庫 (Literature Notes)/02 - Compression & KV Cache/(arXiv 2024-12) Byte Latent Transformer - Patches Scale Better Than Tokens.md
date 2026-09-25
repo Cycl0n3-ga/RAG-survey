@@ -20,6 +20,7 @@ tags:
   - "byte-level-patching---tokenizer-free"
 verification_status: "verified"
 last_verified: "2026-09-24"
+artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A03"
 primary_domain: null

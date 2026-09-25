@@ -22,6 +22,7 @@ tags:
   - "dense-dual-encoder-retrieval"
 verification_status: "verified"
 last_verified: "2026-09-24"
+artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"

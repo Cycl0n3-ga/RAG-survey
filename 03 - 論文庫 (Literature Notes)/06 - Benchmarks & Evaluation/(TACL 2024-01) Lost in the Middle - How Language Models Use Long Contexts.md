@@ -21,6 +21,7 @@ tags:
   - "long-context-evaluation-&-analysis"
 verification_status: "verified"
 last_verified: "2026-09-24"
+artifact_type: "benchmark_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D07"
 primary_domain: "D07"

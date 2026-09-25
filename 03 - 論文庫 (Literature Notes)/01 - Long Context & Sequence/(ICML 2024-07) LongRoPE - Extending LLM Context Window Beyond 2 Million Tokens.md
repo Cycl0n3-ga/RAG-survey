@@ -22,6 +22,7 @@ tags:
   - "positional-encoding-extension"
 verification_status: "verified"
 last_verified: "2026-09-24"
+artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A01"
 primary_domain: null
