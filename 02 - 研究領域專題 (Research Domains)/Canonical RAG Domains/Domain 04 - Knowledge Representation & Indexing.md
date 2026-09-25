@@ -4,15 +4,13 @@ domain_id: "D04"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Indexing"
-migration_status: "scaffold"
 last_updated: "2026-09-25"
 ---
 
 # Domain 04 - Knowledge Representation & Indexing
 
-> [!IMPORTANT] Canonical Domain v2
+> [!IMPORTANT]
 > 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-> 目前為 migration scaffold；舊 Domain 尚未刪除。
 
 ## Core Question
 知識應以何種表示與索引結構保存，才能支援不同 retrieval 與 reasoning 需求？
@@ -39,4 +37,3 @@ last_updated: "2026-09-25"
 ## Navigation
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Canonical RAG Domain Migration Map|Migration Map]]
