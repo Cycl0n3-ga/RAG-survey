@@ -4,15 +4,13 @@ domain_id: "D07"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Post-Retrieval"
-migration_status: "scaffold"
 last_updated: "2026-09-25"
 ---
 
 # Domain 07 - Context Construction & Evidence Utilization
 
-> [!IMPORTANT] Canonical Domain v2
+> [!IMPORTANT]
 > 本頁依「RAG lifecycle 中的研究問題」分類。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等不再與 lifecycle Domain 平行，而以 paradigm tags 管理。
-> 目前為 migration scaffold；舊 Domain 尚未刪除。
 
 ## Core Question
 候選 evidence 找到後，如何建構有限 context，並確保模型實際使用關鍵證據？
@@ -39,4 +37,3 @@ last_updated: "2026-09-25"
 ## Navigation
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Canonical Taxonomy v2]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
-- [[00 - 導覽與心智圖 (Navigation & MOC)/Canonical RAG Domain Migration Map|Migration Map]]
