@@ -169,7 +169,7 @@ LongLoRA 在 ICLR 2024 原文（Pages 5–7）中在 Proof-pile 與 PG19 驗證�
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 01 (Long Context 與序列架構)**：提供了經濟高效的長上下文擴展標準範式，是開源社群訓練超長上下文模型的核心工程基石。
+1. **A01 (Long Context & Sequence Architecture)**：提供了經濟高效的長上下文擴展標準範式，是開源社群訓練超長上下文模型的核心工程基石。
 2. **Domain 02 (脈絡壓縮與 KV 快取)**：證實了注意力局部稀疏分組在梯度流反向傳播中的有效性，為後續測試期 KV 快取動態剪枝提供了架構依據。
 
 ---
