@@ -46,3 +46,26 @@ Research Domains
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|Adjacent Interfaces]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|Benchmark Catalog]]
+
+## Literature Coverage Snapshot
+
+> 這是目前 repo 的**實際 primary-domain paper-note 數量**；只計 `primary_domain`，不計 secondary domain 或 Adjacent Interface。它用來顯示 survey coverage，不代表領域重要性。
+
+| Domain | Primary notes |
+|---|---:|
+| D01 | 2 |
+| D02 | 3 |
+| D03 | 12 |
+| D04 | 5 |
+| D05 | 18 |
+| D06 | 4 |
+| D07 | 3 |
+| D08 | 1 |
+| D09 | 6 |
+| D10 | 1 |
+| D11 | 6 |
+| D12 | 2 |
+| D13 | 20 |
+| D14 | 0 |
+
+目前最需要補文獻的區域是 **D08、D10、D12、D14**；其中 D14 尚無 primary-domain literature note，現有 KIVI / CacheGen 等僅屬 A02 與 D14 的交界，不應假裝成完整的 RAG systems/security coverage。
