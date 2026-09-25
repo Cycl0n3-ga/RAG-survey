@@ -5,7 +5,7 @@ authors:
   - "Parth Sarthi"
   - "Salman Abdullah"
   - "Aditi Tuli"
-  - "Shubham Khanna"
+  - "Shubh Khanna"
   - "Anna Goldie"
   - "Christopher D. Manning"
 year: 2024
@@ -36,7 +36,7 @@ adjacent_interfaces: []
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Sarthi2024_RAPTOR`
-> - **作者**：Parth Sarthi, Salman Abdullah, Aditi Tuli, Shubham Khanna, Anna Goldie, Christopher D. Manning
+> - **作者**：Parth Sarthi, Salman Abdullah, Aditi Tuli, Shubh Khanna, Anna Goldie, Christopher D. Manning
 > - **預印本初次發布年份 (Preprint)**：2024
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ICLR 2024)
 > - **DOI**：無
@@ -108,6 +108,6 @@ flowchart TD
 
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
+  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
 - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
 - **全景心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
