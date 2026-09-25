@@ -22,9 +22,9 @@ arxiv: "2307.13854"
 url: "https://arxiv.org/abs/2307.13854"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(ICLR 2024-05) WebArena - A Realistic Web Environment for Building Autonomous Agents.pdf"
 domains:
-  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 Adjacent Interface]]"
-- "[[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)|Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 17 - 基準評測與評估體系 (Benchmarks, Ragas, TruLens)|Domain 17 - 基準評測與評估體系 (Benchmarks, Ragas, TruLens)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]"
 tags:
   - paper
   - autonomous-agents
@@ -114,9 +114,9 @@ flowchart TD
 ```
 
 ### 圖中節點對照
-- `Env`：[[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)|WebArena 仿真網站生態系]]
-- `AgentLoop`：[[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)|Perception-Action 互動迴圈]]
-- `Evaluator`：[[02 - 研究領域專題 (Research Domains)/Domain 17 - 基準評測與評估體系 (Benchmarks, Ragas, TruLens)|功能終態驗證器]]
+- `Env`：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]
+- `AgentLoop`：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]
+- `Evaluator`：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]
 
 ### 關鍵機制與設計細節
 1. **四大開源真實網站完全 Docker 化**：
@@ -194,8 +194,8 @@ flowchart TD
 
 ### 相關文獻與領域筆記
 - 所屬領域專題：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Agentic 工作流與多代理人協同 (Multi-Agent RAG)|Domain 09 - Agentic 工作流與多代理人協同]]
-  - [[02 - 研究領域專題 (Research Domains)/Domain 17 - 基準評測與評估體系 (Benchmarks, Ragas, TruLens)|Domain 17 - 基準評測與評估體系]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]
+  - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A04 General Agents & Tool Use]]
 - 相關代理人與評測筆記：
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NeurIPS 2023-11) AgentBench - Evaluating LLMs as Agents.md|(NeurIPS 2023-11) AgentBench]]
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation.md|(ACL 2024-08) FreshLLMs]]
