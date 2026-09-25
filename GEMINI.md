@@ -178,7 +178,7 @@ metrics: []                                            # 評測指標
 
 ## 🧭 RAG Taxonomy
 
-`02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/` 是本 repo 唯一正式的 RAG Domain 集合，共 **D01–D14**。
+`02 - 研究領域專題 (Research Domains)/` 是本 repo 唯一正式的 RAG Domain 集合，共 **D01–D14**。
 
 ### Domains
 - D01 Document Ingestion & Structure
@@ -198,7 +198,7 @@ metrics: []                                            # 評測指標
 
 ### 分類規則
 1. **Domain = lifecycle / system research problem**。
-2. 每篇 method paper 使用 `primary_domain`、`secondary_domains`、`paradigm_tags`。
+2. 每篇 method paper 使用 `taxonomy_home`、`primary_domain`、`secondary_domains`、`paradigm_tags`、`adjacent_interfaces`；不要再維護重複的 `domains` 欄位。
 3. GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等使用 paradigm tags，不新增平行 top-level Domain。
 4. Long Context、KV Cache、general model architecture、general agents、continual learning 使用 Adjacent Interfaces。
 5. Research Roadmap、Evidence Gap Controller、F/R/D/A/P/C/T 等 project-specific proposal 放在 `04 - 研究想法與待驗證提案`。
