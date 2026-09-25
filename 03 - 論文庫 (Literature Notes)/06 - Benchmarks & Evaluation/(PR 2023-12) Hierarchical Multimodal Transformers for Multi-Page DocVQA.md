@@ -161,9 +161,9 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 07（分層推理與樹狀檢索）的啟示**：
+1. **對 D04/D05（Hierarchical Representation & Retrieval）的啟示**：
    - Hi-VT5 的「頁面級獨立編碼摘要 $\to$ 跨頁全域解碼」機制，本質上與文字領域的 RAPTOR / 樹狀摘要完全契合，證明了多模態長文件解析必須走階層化路線。
-2. **對 Domain 17（評測基準）的啟示**：
+2. **對 D13（RAG Evaluation & Failure Attribution）的啟示**：
    - MP-DocVQA 填補了純文字 RAG 基準（如 HotpotQA, BEIR）與視覺文件之間的空隙，是評測多模態 RAG（Document RAG）的關鍵基準。
 
 ---
