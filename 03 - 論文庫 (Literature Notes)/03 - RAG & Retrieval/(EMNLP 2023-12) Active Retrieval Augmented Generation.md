@@ -177,7 +177,7 @@ graph TD
 
 1. **對 Domain 03 (自適應檢索機制) 的重要啟發**：
    - FLARE 樹立了「主動檢索（Active RAG）」的經典技術範式，擺脫了被動靜態檢索的泥淖。
-2. **對 Domain 08 (長篇報告寫作 STORM 與 Evidence Store) 的支撐**：
+2. **對 D09 (Grounded Generation & Long-form Synthesis) 的支撐**：
    - 在章節級長篇報告撰寫時，FLARE 的前瞻試探邏輯是充實大綱細節、補齊具體論據的最佳機制之一。
 
 ---
