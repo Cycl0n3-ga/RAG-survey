@@ -30,17 +30,26 @@ graph TD
     Lead --> Plan["動態規劃模組 (Dynamic Planning)"]
     Plan --> Lead
     
-    subgraph Multi-Agent Execution Layer
-        Lead --> A1["Search & Crawler Agent<br>(學術檢索與文獻下載)"]
-        Lead --> A2["Fact-Check & Audit Agent<br>(文獻真實性核查與年代比對)"]
-        Lead --> A3["Synthesis & Analysis Agent<br>(方法論提煉與矩陣對比)"]
-        Lead --> A4["Report Writing Agent<br>(大綱落實與章節撰寫)"]
+    subgraph MultiAgentLayer["Multi-Agent Execution Layer"]
+        Lead --> A1["Search & Crawler Agent<br/>(學術檢索與文獻下載)"]
+        Lead --> A2["Fact-Check & Audit Agent<br/>(文獻真實性核查與年代比對)"]
+        Lead --> A3["Synthesis & Analysis Agent<br/>(方法論提煉與矩陣對比)"]
+        Lead --> A4["Report Writing Agent<br/>(大綱落實與章節撰寫)"]
     end
     
-    A1 & A2 & A3 & A4 --> Env["外部工具環境<br>(arXiv API / Web Search / Code Sandbox / Obsidian Vault)"]
-    Env --> A1 & A2 & A3 & A4
+    A1 --> Env["外部工具環境<br/>(arXiv API / Web Search / Code Sandbox / Obsidian Vault)"]
+    A2 --> Env
+    A3 --> Env
+    A4 --> Env
+    Env --> A1
+    Env --> A2
+    Env --> A3
+    Env --> A4
     
-    A1 & A2 & A3 & A4 --> Critic["Critic & Verification Agent (獨立評審)"]
+    A1 --> Critic["Critic & Verification Agent (獨立評審)"]
+    A2 --> Critic
+    A3 --> Critic
+    A4 --> Critic
     Critic -->|通過| Lead
     Critic -->|未達標/存在證據缺口| Plan
 ```
@@ -60,6 +69,15 @@ graph TD
 
 #### 3. 多角色協同 (Multi-Agent Debate & Reflection)
 - 透過讓不同 Agent 分別扮演『贊成者』、『質疑審查者（Devil's Advocate）』與『仲裁者』，消除單一模型生成的認知偏誤與幻覺。
+
+---
+
+### 四、核心文獻與基準評測 (Key Literature & Benchmarks)
+- **推理與行動交織 (Reasoning & Acting)**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ICLR 2023-05) ReAct - Synergizing Reasoning and Acting in Language Models|ReAct (Yao et al., ICLR 2023)]] 將思維鏈（Thought）與行動（Action/Observation）動態交織，顯著降低獨立 CoT 的幻覺率。
+- **語言強化學習反思 (Verbal Reinforcement Learning)**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) Reflexion - Language Agents with Verbal Reinforcement Learning|Reflexion (Shinn et al., NeurIPS 2023)]] 無需微調權重，透過自然語言啟發式反思與情節記憶自我糾錯。
+- **自主工具學習 (Self-supervised Tool Learning)**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) Toolformer - Language Models Can Teach Themselves to Use Tools|Toolformer (Schick et al., NeurIPS 2023)]] 基於自監督損失差值自學何時呼叫計算機、搜尋引擎或維基百科 API。
+- **多智能體長篇協同寫作**：[[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM (Shao et al., NAACL 2024)]] 透過多角色視角探索與問答對話建構長篇結構化文章。
+- **多輪環境智能體基準**：[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ICLR 2024-05) AgentBench - Evaluating LLMs as Agents|AgentBench (Liu et al., ICLR 2024)]] 首創涵蓋 OS、DB、KG、網頁等 8 大互動環境的客觀綜合評測體系。
 
 ---
 

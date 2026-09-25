@@ -53,7 +53,7 @@ graph TD
    - 代表作：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2021-05) Rethinking Attention with Performers|Performer (Choromanski et al., 2020/2021)]]、[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces|Mamba (Gu & Dao, 2023)]]、RWKV。
    - 核心思想：利用正交隨機特徵（FAVOR+）無偏估計正值核矩陣並透過矩陣結合律化簡運算，或採用具備時變選擇特性的狀態空間模型（Selective SSM），推論時顯存恆定 $O(1)$，長度外推呈嚴格線性 $O(L)$。
 5. **位置編碼外推 (Positional Encoding Extension)**：
-   - 代表作：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens|LongRoPE (Ding et al., 2024)]]、YaRN、NTK-aware Scaling。
+   - 代表作：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens|LongRoPE (Ding et al., 2024)]]、[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) YaRN - Efficient Context Window Extension of Large Language Models|YaRN (Peng et al., 2023/2024)]]、NTK-aware Scaling。
    - 核心思想：透過演化演算法或頻率維度非均勻縮放，將預訓練的 RoPE 旋轉角度平滑插值到 2M+ 長度，使模型無需從頭預訓練即可辨識遠距離座標。
 6. **分散式超長上下文 (Distributed Context / Ring Attention)**：
    - 代表作：[[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) RingAttention with Blockwise Transformers for Near-Infinite Context|RingAttention (Liu et al., 2023)]]、DeepSpeed Ulysses。

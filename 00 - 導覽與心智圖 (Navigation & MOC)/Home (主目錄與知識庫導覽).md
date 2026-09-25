@@ -18,7 +18,7 @@ tags:
 > 
 > 涵蓋從底層神經架構（Long Context / SSM）、多層次壓縮、先進 RAG、GraphRAG、階層記憶體、長篇循證生成（STORM）、F/R/D/A/P/C/T 企業知識治理到 2026 前沿評測與安全防禦的完整學術與工業技術全景。
 >
-> 💡 **本 Vault 已為您完整下載 83 篇頂級核心學術論文原始 PDF**，並在文獻筆記中無縫嵌入雙向連結，可直接在 Obsidian 內點擊閱讀！
+> 💡 **本 Vault 已為您完整下載 91 篇頂級核心學術論文原始 PDF**，並在文獻筆記中無縫嵌入雙向連結，可直接在 Obsidian 內點擊閱讀！
 
 ---
 
@@ -118,7 +118,7 @@ flowchart TD
 > [!NOTE]
 > Idea 05/06 是研究與工程提案，不是 survey-established conclusion。其實驗資料與評測入口請搭配 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]] 與 [[02 - 研究領域專題 (Research Domains)/Domain 11 - 最具價值的研究方向與實驗設計 (Research Roadmap)|Domain 11 Research Roadmap]]。
 
-### 四、核心論文庫 (83 篇文獻筆記與原始 PDF)
+### 四、核心論文庫 (91 篇文獻筆記與原始 PDF)
 > 點擊進入任一論文筆記，均可直接點擊 `[[Papers/xxx.pdf]]` 開啟原始論文；下一階段優先擴充規劃請參閱 [[03 - 論文庫 (Literature Notes)/00 - 論文擴充待補清單|00 - 論文擴充待補清單 (Prioritized Backlog)]]：
 
 | 分類 | 核心論文筆記 | 原始 PDF 快速開啟 |
@@ -133,6 +133,7 @@ flowchart TD
 | | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) FlashAttention-2 - Faster Attention with Better Parallelism and Work Partitioning\|Dao (2023) FlashAttention-2]] | [[Papers/01 - Long Context & Sequence/(ICLR 2024-05) FlashAttention-2 - Faster Attention with Better Parallelism and Work Partitioning.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) Efficient Streaming Language Models with Attention Sinks\|Xiao et al. (2023) StreamingLLM]] | [[Papers/01 - Long Context & Sequence/(ICLR 2024-05) Efficient Streaming Language Models with Attention Sinks.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) RingAttention with Blockwise Transformers for Near-Infinite Context\|Liu et al. (2023) RingAttention]] | [[Papers/01 - Long Context & Sequence/(ICLR 2024-05) RingAttention with Blockwise Transformers for Near-Infinite Context.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICLR 2024-05) YaRN - Efficient Context Window Extension of Large Language Models\|Peng et al. (2023) YaRN]] | [[Papers/01 - Long Context & Sequence/(ICLR 2024-05) YaRN - Efficient Context Window Extension of Large Language Models.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens\|Ding et al. (2024) LongRoPE 2M]] | [[Papers/01 - Long Context & Sequence/(ICML 2024-07) LongRoPE - Extending LLM Context Window Beyond 2 Million Tokens.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces\|Gu & Dao (2023) Mamba]] | [[Papers/01 - Long Context & Sequence/(arXiv 2023-12) Mamba - Linear-Time Sequence Modeling with Selective State Spaces.pdf\|PDF]] |
 | **Compression** | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EMNLP 2023-12) Compressing Context to Enhance Inference Efficiency of Large Language Models\|Li et al. (2023) Selective Context]] | [[Papers/02 - Compression & KV Cache/(EMNLP 2023-12) Compressing Context to Enhance Inference Efficiency of Large Language Models.pdf\|PDF]] |
@@ -152,6 +153,7 @@ flowchart TD
 | | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT\|Khattab & Zaharia (2020) ColBERT]] | [[Papers/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICML 2022-07) Improving Language Models by Retrieving from Trillions of Tokens\|Borgeaud et al. (2022) RETRO]] | [[Papers/03 - RAG & Retrieval/(ICML 2022-07) Improving Language Models by Retrieving from Trillions of Tokens.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2022-07) ColBERTv2 - Effective and Efficient Retrieval via Lightweight Late Interaction\|Santhanam et al. (2022) ColBERTv2]] | [[Papers/03 - RAG & Retrieval/(NAACL 2022-07) ColBERTv2 - Effective and Efficient Retrieval via Lightweight Late Interaction.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(JMLR 2023-01) Atlas - Few-shot Learning with Retrieval Augmented Language Models\|Izacard et al. (2023) Atlas]] | [[Papers/03 - RAG & Retrieval/(JMLR 2023-01) Atlas - Few-shot Learning with Retrieval Augmented Language Models.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels\|Gao et al. (2023) HyDE]] | [[Papers/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions\|Trivedi et al. (2023) IRCoT]] | [[Papers/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2023-12) Active Retrieval Augmented Generation\|Jiang et al. (2023) FLARE]] | [[Papers/03 - RAG & Retrieval/(EMNLP 2023-12) Active Retrieval Augmented Generation.pdf\|PDF]] |
@@ -183,8 +185,13 @@ flowchart TD
 | | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG\|Zhang et al. (2026) CrossAug]] | [[Papers/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG.pdf\|PDF]] |
 | **Memory & Agents** | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2021-12) WebGPT - Browser-assisted question-answering with human feedback\|Nakano et al. (2021) WebGPT]] | [[Papers/05 - Memory & Agents/(arXiv 2021-12) WebGPT - Browser-assisted question-answering with human feedback.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes\|Menick et al. (2022) GopherCite]] | [[Papers/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ICLR 2023-05) ReAct - Synergizing Reasoning and Acting in Language Models\|Yao et al. (2023) ReAct]] | [[Papers/05 - Memory & Agents/(ICLR 2023-05) ReAct - Synergizing Reasoning and Acting in Language Models.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(UIST 2023-10) Generative Agents - Interactive Simulacra of Human Behavior\|Park et al. (2023) Generative Agents]] | [[Papers/05 - Memory & Agents/(UIST 2023-10) Generative Agents - Interactive Simulacra of Human Behavior.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems\|Packer et al. (2023) MemGPT]] | [[Papers/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) Reflexion - Language Agents with Verbal Reinforcement Learning\|Shinn et al. (2023) Reflexion]] | [[Papers/05 - Memory & Agents/(NeurIPS 2023-12) Reflexion - Language Agents with Verbal Reinforcement Learning.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) Toolformer - Language Models Can Teach Themselves to Use Tools\|Schick et al. (2023) Toolformer]] | [[Papers/05 - Memory & Agents/(NeurIPS 2023-12) Toolformer - Language Models Can Teach Themselves to Use Tools.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory\|Wang et al. (2023) LongMem]] | [[Papers/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory\|Zhong et al. (2024) MemoryBank]] | [[Papers/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models\|Shao et al. (2024) STORM]] | [[Papers/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage\|Chuang et al. (2025) A-MEM]] | [[Papers/05 - Memory & Agents/(arXiv 2025-02) A-MEM - Agentic Memory System with Hierarchical Structured Storage.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports\|Liu et al. (2026) EviReport]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.1397/) |
@@ -197,6 +204,7 @@ flowchart TD
 | | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts\|Liu et al. (2024) Lost in Middle]] | [[Papers/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation\|Es et al. (2024) RAGAS]] | [[Papers/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models\|Hsieh et al. (2024) RULER]] | [[Papers/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models.pdf\|PDF]] |
+| | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ICLR 2024-05) AgentBench - Evaluating LLMs as Agents\|Liu et al. (2024) AgentBench]] | [[Papers/06 - Benchmarks & Evaluation/(ICLR 2024-05) AgentBench - Evaluating LLMs as Agents.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems\|Saad-Falcon et al. (2024) ARES]] | [[Papers/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-06) RAGBench - Explainable Benchmark for Retrieval-Augmented Generation Systems\|Truong et al. (2024) RAGBench]] | [[Papers/06 - Benchmarks & Evaluation/(arXiv 2024-06) RAGBench - Explainable Benchmark for Retrieval-Augmented Generation Systems.pdf\|PDF]] |
 | | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) L-Eval - Instituting Standardized Evaluation for Long Context Language Models\|An et al. (2024) L-Eval]] | [[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) L-Eval - Instituting Standardized Evaluation for Long Context Language Models.pdf\|PDF]] |
@@ -210,6 +218,6 @@ flowchart TD
 ---
 
 ## 💡 在 Obsidian 中獲得最佳閱讀體驗的小技巧
-1. **開啟 Graph View (關係圖譜)**：按下快速鍵 `Ctrl/Cmd + G`，您可以直觀看到 17 個領域專題如何透過雙向連結與 83 篇論文及核心報告交織成網。
+1. **開啟 Graph View (關係圖譜)**：按下快速鍵 `Ctrl/Cmd + G`，您可以直觀看到 17 個領域專題如何透過雙向連結與 91 篇論文及核心報告交織成網。
 2. **懸浮預覽 (Page Preview)**：按住 `Ctrl/Cmd` 並將滑鼠懸停在任一 `[[...]]` 內部連結上，即可在不跳轉的情況下即時預覽該章節或論文摘要。
 3. **分頁並排閱讀 (Split Right)**：右鍵點擊任一論文 PDF 選擇「在右側開啟分頁」，即可左邊看筆記與專題剖析、右邊直接比對原始論文公式！
