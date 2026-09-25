@@ -189,9 +189,9 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 01 (Long Context & Sequence) 的啟發**：
+1. **對 A01 (Long Context & Sequence Architecture) 的啟發**：
    - Transformer-XL 是現代長序列架構演進史上承前啟後的關鍵節點。它證明了「以快取換計算」及「相對位置編碼」是解除固定長度限制的兩大黃金法則。
-2. **對 Domain 02 (KV Cache 管理) 的奠基**：
+2. **對 A02 (Context/KV Compression & Inference Efficiency) 的奠基**：
    - 其 Segment Recurrence Memory 快取機制，正是現代 LLM Serving 中 KV Cache 重用（Prompt Cache / Chunked Prefill / Rolling Cache）的最早實踐形態。
 3. **對長文件生成系統的工程借鑑**：
    - 在章節級長篇小說或技術報告生成中，Transformer-XL 提供了「分段生成、隱藏狀態向前流動」的範例架構。
