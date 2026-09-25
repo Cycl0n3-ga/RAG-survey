@@ -21,9 +21,9 @@ authors:
   - "Yue Zhang"
   - "Zheng Zhang"
 year: 2024
-publication_year: null
-venue: "arXiv"
-doi: null
+publication_year: 2024
+venue: "NeurIPS 2024 Datasets and Benchmarks Track"
+doi: "10.52202/079017-0692"
 arxiv: "2408.08067"
 url: "https://arxiv.org/abs/2408.08067"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation.pdf"
@@ -48,7 +48,7 @@ adjacent_interfaces: []
 # RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation
 
 > [!ABSTRACT] 一話摘要 (TL;DR)
-> 本文提出 **RAGChecker**，首個基於命題/Claim 級別細粒度標註的 RAG 診斷與評估架構，定義了包含檢索端（Claim Recall, Precision）與生成端（Faithfulness, Completeness, Hallucination）的一整套診斷指標，能精準歸因 RAG 系統的失效根因。
+> 本文提出 **RAGChecker**，以 claim-level checking 建立 retrieval 與 generation 的細粒度診斷指標，目標是提供比 response-level scoring 更可定位的 RAG error signals。
 
 ---
 
@@ -97,8 +97,8 @@ flowchart TD
 
 ## 四、優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 - **優勢**：
-  - 首個實現端到端細粒度失效歸因的框架，能明確告訴工程師問題出在 Retriever 還是 Generator；
-  - 與人類專家對長篇回答評分的相關性達到目前公開基準最高水準。
+  - 提供 retriever / generator 分層的 claim-level diagnostic metrics，可協助定位錯誤來源；
+  - 論文的 meta-evaluation 報告其指標與 human judgments 的相關性優於作者比較的既有方法。
 - **限制與工程代價**：
   - **計算複雜度高**：需對全文進行三次 Claim 抽取與成對 NLI 矩陣比對，評測一次 Benchmark 的 Token 消耗顯著高於傳統指標；
   - **高度依賴 Claim 抽取器品質**：若 Claim 抽取不均勻，會直接影響分母統計。
