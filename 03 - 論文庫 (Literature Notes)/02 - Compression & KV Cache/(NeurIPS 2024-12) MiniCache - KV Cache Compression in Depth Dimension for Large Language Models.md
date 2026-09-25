@@ -36,6 +36,17 @@ metrics:
   - "Average Score"
   - "Compression Ratio"
   - "Peak Memory (GB)"
+taxonomy_version: "v2"
+taxonomy_home: "A02"
+primary_domain: null
+secondary_domains:
+  - "D14"
+paradigm_tags:
+  - "kv_cache"
+  - "inference_efficiency"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # MiniCache: KV Cache Compression in Depth Dimension for Large Language Models

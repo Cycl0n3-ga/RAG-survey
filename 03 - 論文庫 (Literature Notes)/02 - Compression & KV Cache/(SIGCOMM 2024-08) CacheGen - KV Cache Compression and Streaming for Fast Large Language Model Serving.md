@@ -45,6 +45,17 @@ metrics:
   - "TTFT (Time-to-First-Token)"
   - "Bandwidth Reduction Ratio"
   - "Downstream Accuracy Loss"
+taxonomy_version: "v2"
+taxonomy_home: "A02"
+primary_domain: null
+secondary_domains:
+  - "D14"
+paradigm_tags:
+  - "kv_cache"
+  - "inference_efficiency"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving

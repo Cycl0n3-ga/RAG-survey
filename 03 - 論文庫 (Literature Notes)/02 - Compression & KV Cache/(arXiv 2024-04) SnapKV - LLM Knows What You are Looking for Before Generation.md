@@ -22,6 +22,17 @@ tags:
   - "kv-cache-pruning"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "A02"
+primary_domain: null
+secondary_domains:
+  - "D14"
+paradigm_tags:
+  - "kv_cache"
+  - "inference_efficiency"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # SnapKV: LLM Knows What You are Looking for Before Generation

@@ -23,6 +23,16 @@ tags:
   - "byte-level-patching---tokenizer-free"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "A03"
+primary_domain: null
+secondary_domains: []
+paradigm_tags:
+  - "tokenization"
+  - "model_architecture"
+adjacent_interfaces:
+  - "A03"
+
 ---
 
 # Byte Latent Transformer: Patches Scale Better Than Tokens

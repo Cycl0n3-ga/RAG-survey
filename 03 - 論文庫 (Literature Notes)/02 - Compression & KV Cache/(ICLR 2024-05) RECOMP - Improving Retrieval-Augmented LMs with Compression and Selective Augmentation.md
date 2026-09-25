@@ -20,6 +20,15 @@ tags:
   - "context-compression-(abstractive-&-extractive)"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D07"
+primary_domain: "D07"
+secondary_domains: []
+paradigm_tags:
+  - "context_compression"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # RECOMP: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation

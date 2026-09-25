@@ -48,6 +48,17 @@ metrics:
   - "Accuracy"
   - "Inference Throughput (tokens/s)"
   - "Latency (ms)"
+taxonomy_version: "v2"
+taxonomy_home: "A02"
+primary_domain: null
+secondary_domains:
+  - "D14"
+paradigm_tags:
+  - "kv_cache"
+  - "inference_efficiency"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models

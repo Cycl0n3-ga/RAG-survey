@@ -19,6 +19,16 @@ tags:
   - "learned-representation-compression"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "A02"
+primary_domain: null
+secondary_domains:
+  - "D07"
+paradigm_tags:
+  - "context_compression"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # Learning to Compress Prompts with Gist Tokens

@@ -21,6 +21,16 @@ tags:
   - "prompt-token-pruning"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "A02"
+primary_domain: null
+secondary_domains:
+  - "D07"
+paradigm_tags:
+  - "context_compression"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # LLMLingua: Compressing Context for Accelerated Inference of Large Language Models

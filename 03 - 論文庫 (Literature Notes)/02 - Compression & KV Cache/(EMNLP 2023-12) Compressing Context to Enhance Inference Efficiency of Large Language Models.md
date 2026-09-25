@@ -41,6 +41,16 @@ metrics:
   - "Faithfulness"
   - "Latency Reduction (%)"
   - "Memory Reduction (%)"
+taxonomy_version: "v2"
+taxonomy_home: "A02"
+primary_domain: null
+secondary_domains:
+  - "D07"
+paradigm_tags:
+  - "context_compression"
+adjacent_interfaces:
+  - "A02"
+
 ---
 
 # Compressing Context to Enhance Inference Efficiency of Large Language Models (Selective Context)
