@@ -45,10 +45,10 @@ flowchart LR
 - segmentation-induced information loss analysis
 
 ### Excludes
-- entity / relation / event / claim extraction → [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03]]
-- vector / graph / hierarchical index construction → [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04]]
-- query-time retrieval policy → [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05]]
-- evidence sufficiency / retry / stopping → [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06]]
+- entity / relation / event / claim extraction → [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03]]
+- vector / graph / hierarchical index construction → [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04]]
+- query-time retrieval policy → [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05]]
+- evidence sufficiency / retry / stopping → [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06]]
 
 ## 1. Segmentation Strategies
 
