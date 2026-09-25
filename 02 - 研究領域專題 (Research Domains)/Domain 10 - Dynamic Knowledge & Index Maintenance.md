@@ -60,6 +60,7 @@ D10 管 external knowledge base 的狀態；D11 管跨 interaction 的 persisten
 > 目前 repo 對 incremental vector/graph maintenance、deletion semantics、staleness detection 與 versioned index 的 dedicated literature coverage 仍不足。
 
 ## Navigation
+- [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]

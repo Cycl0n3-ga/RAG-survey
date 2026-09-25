@@ -81,30 +81,29 @@ Action policy 不應只做 retrieve-more：
 - all required slots supported → stop / generate；
 - budget exhausted → abstain / escalate。
 
-
 ## Stopping and Abstention Policy（proposed）
 
 Evidence sufficiency 不應只是一個模糊的 0–1 self-score。對 requirement set (R(q)=\{r_1,...,r_m\}) 可定義 weighted coverage（本專案 proposed metric）：
 
-[
-Coverage(q,E)=\frac{\sum_i w_i s_i}{\sum_i w_i}
-]
+$$
+\text{Coverage}(q,E)=\frac{\sum_i w_i s_i}{\sum_i w_i}
+$$
 
-其中 (s_i=1) 表示 eligible evidence 已完整支持 requirement (r_i)。
+其中 $s_i=1$ 表示 eligible evidence 已完整支持 requirement $r_i$。
 
 建議 stopping 同時滿足：
 
-[
-Coverage \ge \tau_{cov}
-]
+$$
+\text{Coverage} \ge \tau_{cov}
+$$
 
-[
-CriticalMissing = 0
-]
+$$
+\text{CriticalMissing} = 0
+$$
 
-[
-HighSeverityConflict = 0
-]
+$$
+\text{HighSeverityConflict} = 0
+$$
 
 並額外考慮：
 - estimated marginal gain of another retrieval；
@@ -131,3 +130,10 @@ HighSeverityConflict = 0
 - Early-stop Error Rate
 - Abstention Accuracy
 - Retrieval Rounds / Documents Read / Input Tokens / LLM Calls
+
+## 鄰接專題與文獻
+
+- [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]

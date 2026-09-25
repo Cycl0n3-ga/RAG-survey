@@ -61,3 +61,9 @@ Temporal accuracy、conflict detection F1、source selection accuracy、citation
 - **Counter-evidence stress test**：將 support / contradict evidence 同時交給 verifier，檢查真正衝突來源。
 
 這些是可比較的 resolution policies，不應把其中任何一種預設成普遍正確。
+
+## 鄰接專題與文獻
+
+- [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 Dynamic Knowledge & Index Maintenance]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³ (ACL 2026)]]

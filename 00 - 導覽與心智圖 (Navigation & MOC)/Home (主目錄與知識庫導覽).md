@@ -21,7 +21,9 @@ taxonomy_version: "v2"
 3. [[02 - 研究領域專題 (Research Domains)/README|Research Domains]]
 4. [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]
 5. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|Benchmark Catalog]]
-6. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
+6. [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]
+7. [[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術全景與 Pareto 權衡分析 (Trade-offs)]]
+8. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
 
 ## 14 Research Domains
 
