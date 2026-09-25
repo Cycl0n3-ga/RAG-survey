@@ -23,18 +23,28 @@ flowchart LR
     D02 --> D04["D04 Representation & Indexing"]
     D02 -. "optional extraction" .-> D03["D03 Knowledge Extraction"]
     D03 --> D04
+
     D04 --> D05["D05 Query & Retrieval"]
     D05 --> D06["D06 Sufficiency & Adaptive Retrieval"]
+    D05 -. "optional temporal / source validation" .-> D08["D08 Temporal / Conflict / Provenance"]
+    D08 --> D06
+
     D06 --> D07["D07 Context Construction & Utilization"]
-    D07 --> D08["D08 Temporal / Conflict / Provenance"]
-    D08 --> D09["D09 Grounded Generation"]
+    D07 --> D09["D09 Grounded Generation"]
+    D06 -. "gap / retry" .-> D05
+    D09 -. "unsupported / incomplete" .-> D06
 
     D10["D10 Dynamic Knowledge"] -.-> D04
-    D11["D11 Memory"] -.-> D07
+    D11["D11 Memory"] -.-> D05
+    D11 -.-> D07
     D12["D12 Agentic Orchestration"] -.-> D05
+    D12 -.-> D06
+    D12 -.-> D09
     D13["D13 Evaluation"] -.-> D05
     D13 -.-> D09
     D14["D14 Systems, Robustness & Security"] -.-> D04
+    D14 -.-> D05
+    D14 -.-> D09
 ```
 
 ## 14 Research Domains
