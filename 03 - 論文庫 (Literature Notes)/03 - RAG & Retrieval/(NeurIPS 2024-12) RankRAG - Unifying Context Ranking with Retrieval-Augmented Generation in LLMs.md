@@ -167,8 +167,8 @@ RankRAG 在 NeurIPS 2024 原文（Pages 6–8）中對 9 個跨領域數據集�
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 03 (Advanced RAG 與檢索技術)**：確立了「端到端一體化 Rerank-Generate」的演進趨勢，證明現代 LLM 本身就是最強大的相關性打分器。
-2. **Domain 16 (Context 應用與 Faithfulness)**：為對抗「Lost-in-the-Middle」提供了一種主動過濾雜訊的標準解決方案。
+1. **D05 (Query Understanding & Retrieval)**：確立了「端到端一體化 Rerank-Generate」的演進趨勢，證明現代 LLM 本身就是最強大的相關性打分器。
+2. **D07/D09 (Context Utilization & Grounded Generation)**：為對抗「Lost-in-the-Middle」提供了一種主動過濾雜訊的標準解決方案。
 
 ---
 
