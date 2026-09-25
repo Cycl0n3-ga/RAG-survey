@@ -139,8 +139,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 05 (Graph RAG) 與 Domain 07 (Hierarchical Retrieval) 的強力佐證**：MultiHop-RAG 實證揭示的 33% 檢索落差，直接為引進 HippoRAG、PropRAG 與圖拓撲導航提供了不可或缺的立論依據。
-2. **對 Domain 17 (RAG Benchmarks) 的標竿價值**：確立了在多跳基準測試中必須強制報告「Oracle vs RAG 差距」的評測金律。
+1. **對 D04/D05 (Structured Representation & Retrieval) 的強力佐證**：MultiHop-RAG 實證揭示的 33% 檢索落差，直接為引進 HippoRAG、PropRAG 與圖拓撲導航提供了不可或缺的立論依據。
+2. **對 D13 (RAG Evaluation & Failure Attribution) 的標竿價值**：確立了在多跳基準測試中必須強制報告「Oracle vs RAG 差距」的評測金律。
 
 ---
 
