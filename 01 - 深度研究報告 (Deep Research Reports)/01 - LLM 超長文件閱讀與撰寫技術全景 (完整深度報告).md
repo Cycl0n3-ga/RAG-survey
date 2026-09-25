@@ -11,7 +11,7 @@ tags:
 > 全面貫穿：**模型層 (Long Context, Compression)** $\rightarrow$ **資料與檢索層 (RAG, GraphRAG, Memory)** $\rightarrow$ **推理與生成層 (Hierarchical Reasoning, STORM, Verification)** $\rightarrow$ **評估與安全 (Benchmarks, Safety)**。
 > - **回主目錄**：[[00 - 導覽與心智圖 (Navigation & MOC)/Home (主目錄與知識庫導覽)|主目錄與知識庫導覽]]
 > - **心智圖**：[[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件處理心智圖 (MOC)|超長文件處理研究方向心智圖]]
-> - **領域專題**：[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|查看 11 個研究領域專題]]
+> - **領域專題**：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
 
 ---
 
