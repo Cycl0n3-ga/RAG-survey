@@ -129,8 +129,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 08 (Long-form Report Generation) 的核心範式價值**：明確了長篇深度報告撰寫的「標準作業程序（SOP）」，證明「大綱與證據互鎖 + 缺口追加」是兼顧覆蓋度與真實性的最佳實踐。
-2. **對 Domain 14 (Evidence Sufficiency) 的啟發**：展示了「缺口感知（Gap-Awareness）」的落地方式，即何時該停止生成並觸發額外檢索的判斷邊界。
+1. **對 D09 (Grounded Generation & Long-form Synthesis) 的核心範式價值**：明確了長篇深度報告撰寫的「標準作業程序（SOP）」，證明「大綱與證據互鎖 + 缺口追加」是兼顧覆蓋度與真實性的最佳實踐。
+2. **對 D06 (Evidence Sufficiency & Adaptive Retrieval) 的啟發**：展示了「缺口感知（Gap-Awareness）」的落地方式，即何時該停止生成並觸發額外檢索的判斷邊界。
 
 ---
 
