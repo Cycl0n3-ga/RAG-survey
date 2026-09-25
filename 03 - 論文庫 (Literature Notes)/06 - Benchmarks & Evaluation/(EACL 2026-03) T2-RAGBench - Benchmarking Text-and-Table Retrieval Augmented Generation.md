@@ -130,8 +130,8 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 04 (Chunking 策略) 的直接指導**：證明了「Table-Aware Chunking（表格感知切塊）」與「表格線性化（Table Linearization）」在工業 RAG 中是不可或缺的剛需模組，純按 Token 長度切塊在企業級文件上注定失敗。
-2. **對 Domain 17 (RAG Benchmarks) 的維度擴展**：為本專案建立跨模態可審計檢索體系提供了最重要的基準錨點。
+1. **對 D02 (Segmentation & Contextualization) 的直接指導**：證明了「Table-Aware Chunking（表格感知切塊）」與「表格線性化（Table Linearization）」在工業 RAG 中是不可或缺的剛需模組，純按 Token 長度切塊在企業級文件上注定失敗。
+2. **對 D13 (RAG Evaluation & Failure Attribution) 的維度擴展**：為本專案建立跨模態可審計檢索體系提供了最重要的基準錨點。
 
 ---
 
