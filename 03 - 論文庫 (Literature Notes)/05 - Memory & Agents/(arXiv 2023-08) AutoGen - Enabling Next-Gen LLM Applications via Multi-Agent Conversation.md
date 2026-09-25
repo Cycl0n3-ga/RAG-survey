@@ -156,9 +156,9 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 09（Agentic 工作流）的啟示**：
+1. **對 D12（Agentic RAG & Orchestration）的啟示**：
    - AutoGen 是現代 Multi-Agent 系統的骨幹參考實作；本專案在設計長篇報告的多角色撰寫（如 Outline Planner, Retrieval Specialist, Section Drafter, Fact Checker）時，應吸收其角色隔離與訊息傳遞模式。
-2. **對 Domain 06（外部記憶體）的啟示**：
+2. **對 D11（Memory-Augmented RAG）的啟示**：
    - 可以在 Agent 內部客製化記憶模組（如專屬向量庫或 HippoRAG 圖譜），實現多 Agent 協同且異質的知識庫管理。
 
 ---
