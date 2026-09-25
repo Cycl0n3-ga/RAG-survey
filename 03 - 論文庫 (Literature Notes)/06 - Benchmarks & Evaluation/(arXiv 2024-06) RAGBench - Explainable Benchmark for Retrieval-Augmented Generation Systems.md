@@ -137,7 +137,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 1. **對 D13 (RAG Evaluation & Failure Attribution) 的落地支撐**：為評估企業級 RAG 系統提供了開箱即用的多維診斷評測套件。
-2. **對 Domain 02 (Context Compression) 與 D02 (Segmentation & Contextualization) 的直接啟發**：Chunk Utilization 指標實證證明了「粗切塊 + 大 Top-k」是極端浪費顯存且降低準確率的工程反模式，強烈支持本專案推動的「命題切塊（Dense X）」與「KV Cache 剪枝」。
+2. **對 D02 / D07 的啟發**：Chunk Utilization 可用來觀察 retrieved context 中實際被答案使用的比例，因此適合分析 segmentation、Top-k 與 context packing 的效率；它本身不直接證明 proposition retrieval 或 KV-cache pruning 必然更好。
 
 ---
 
