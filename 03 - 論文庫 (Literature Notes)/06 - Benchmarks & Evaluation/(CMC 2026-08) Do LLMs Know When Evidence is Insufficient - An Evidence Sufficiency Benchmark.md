@@ -141,7 +141,7 @@ flowchart LR
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-- **核心支撐 Domain 14（證據充分度與自適應檢索）**：本論文直接驗證了 Domain 14 中關於「Evidence Sufficiency Controller」與「拒答校準」的理論必要性。
+- **核心支撐 D06（Evidence Sufficiency & Adaptive Retrieval）**：本論文直接驗證了 D06 中關於「Evidence Sufficiency Controller」與「拒答校準」的理論必要性。
 - **補全文獻庫最新 2026 年出版成果**：填補了知識庫中關於專門證據充分度評測基準（Benchmark Paper）的空白。
 
 ---
