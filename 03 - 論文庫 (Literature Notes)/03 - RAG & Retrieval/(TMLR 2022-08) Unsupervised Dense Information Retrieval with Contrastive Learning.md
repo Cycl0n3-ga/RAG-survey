@@ -177,8 +177,8 @@ Contriever 在 TMLR 2022 原文（Pages 6–9）中提供了詳盡的實驗對�
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 03 (Advanced RAG 與檢索技術)**：奠定了現代稠密檢索預訓練的核心技術標準，後續的 BGE、E5 等模型均廣泛繼承了 Contriever 的對比學習架構。
-2. **Domain 17 (RAG Benchmarks & Evaluation Protocols)**：作為 BEIR 基準測試中密集成型方案的核心對照基線（Strong Baseline），是檢驗任何新檢索器是否具備真實泛化能力的試金石。
+1. **D05 (Query Understanding & Retrieval)**：奠定了現代稠密檢索預訓練的核心技術標準，後續的 BGE、E5 等模型均廣泛繼承了 Contriever 的對比學習架構。
+2. **D13 (RAG Evaluation & Failure Attribution)**：作為 BEIR 基準測試中密集成型方案的核心對照基線（Strong Baseline），是檢驗任何新檢索器是否具備真實泛化能力的試金石。
 
 ---
 
