@@ -50,6 +50,15 @@ flowchart LR
 **Dynamic Index ≠ Memory.**  
 D10 管 external knowledge base 的狀態；D11 管跨 interaction 的 persistent state。
 
+## Representative Notes
+
+**Current primary-note coverage: 1**
+
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs]]
+
+> [!NOTE]
+> 目前 repo 對 incremental vector/graph maintenance、deletion semantics、staleness detection 與 versioned index 的 dedicated literature coverage 仍不足。
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
