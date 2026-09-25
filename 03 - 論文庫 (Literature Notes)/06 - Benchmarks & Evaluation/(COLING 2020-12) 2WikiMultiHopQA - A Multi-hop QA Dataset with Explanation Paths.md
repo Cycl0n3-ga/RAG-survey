@@ -13,10 +13,10 @@ doi: "10.18653/v1/2020.coling-main.580"
 arxiv: "2011.01060"
 url: "https://aclanthology.org/2020.coling-main.580/"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(COLING 2020-12) 2WikiMultiHopQA - A Multi-hop QA Dataset with Explanation Paths.pdf"
-domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)|Domain 07 - 分層推理與樹狀檢索 (RAPTOR, Hierarchical QA)]]"
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 17 - RAG Benchmarks & Evaluation Protocols|Domain 17 - RAG Benchmarks & Evaluation Protocols]]"
+domains: []
+- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]"
+  - "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]"
 tags:
   - paper
   - dataset
@@ -126,7 +126,7 @@ flowchart TD
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-- **GraphRAG 的黃金評測基準**：2WikiMultiHopQA 是本專案評估 [[02 - 研究領域專題 (Research Domains)/Domain 05 - Graph RAG 與結構化知識 (Microsoft GraphRAG, HippoRAG)|Domain 05]] 中路徑檢索與子圖推理的首選基準。
+- **GraphRAG 的黃金評測基準**：2WikiMultiHopQA 是本專案評估 [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]] 中路徑檢索與子圖推理的首選基準。
 - **支撐長文推理透明化**：為長篇報告撰寫系統中「如何將檢索到的多段零散事實還原為結構化思維鏈」提供了資料支撐。
 
 ---
