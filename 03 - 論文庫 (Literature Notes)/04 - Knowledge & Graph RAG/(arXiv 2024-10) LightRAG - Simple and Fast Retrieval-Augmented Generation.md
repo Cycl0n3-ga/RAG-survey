@@ -149,7 +149,7 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 05 (Graph RAG) 的架構選型意義**：明確指出工業實踐中應優先考慮「雙層檢索（Low/High）」與「輕量增量圖」，而非盲目套用全域社群聚類的重型架構。
+1. **對 D04/D05 (Graph Representation & Retrieval) 的架構選型意義**：明確指出工業實踐中應優先考慮「雙層檢索（Low/High）」與「輕量增量圖」，而非盲目套用全域社群聚類的重型架構。
 2. **對企業長文本知識庫落地的指引**：在合約、法規與技術手冊等動態增長場景中，LightRAG 提供了一種低成本兼具結構化關聯的標準實踐樣式。
 
 ---
