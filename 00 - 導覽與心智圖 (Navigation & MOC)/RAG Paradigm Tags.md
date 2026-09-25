@@ -7,7 +7,7 @@ last_updated: "2026-09-25"
 
 # RAG Paradigm Tags
 
-Paradigm 是橫跨 lifecycle 的方法族，不是 canonical Domain。
+Paradigm 是橫跨 lifecycle 的方法族，不是額外 Domain。
 
 | Tag | Definition | Typical Domains |
 |---|---|---|
