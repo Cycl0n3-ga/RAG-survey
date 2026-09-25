@@ -1,7 +1,7 @@
 ---
 title: "Paper Domain Migration Manifest"
 taxonomy_version: "v2"
-status: "reviewed-mapping"
+status: "yaml-applied"
 paper_count: 125
 last_updated: "2026-09-25"
 ---
@@ -11,7 +11,7 @@ last_updated: "2026-09-25"
 > [!IMPORTANT]
 > 本表是 **125 篇現有 paper notes 的遷移 mapping**。它把「RAG core Domain」與「Adjacent Interface」分開，避免把 Long Context、KV Cache、general agents 等硬塞入 D01–D14。
 >
-> 下一階段會把此 mapping 寫回每篇 YAML：`taxonomy_home`、`primary_domain`、`secondary_domains`、`paradigm_tags`、`adjacent_interfaces`。Broad survey 若真正橫跨多層，可使用 `taxonomy_home: CROSS` 並將 `primary_domain: null`。
+> ✅ 2026-09-25：此 mapping 已寫回全部 125 篇 Literature Notes YAML：`taxonomy_home`、`primary_domain`、`secondary_domains`、`paradigm_tags`、`adjacent_interfaces`。Broad survey 若真正橫跨多層，可使用 `taxonomy_home: CROSS` 並將 `primary_domain: null`。
 
 ## Metadata target schema
 

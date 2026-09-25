@@ -1,5 +1,8 @@
 ---
 title: "Domain 04: Chunking 策略、結構化知識擷取與證據治理 (Proposition, Typed Knowledge & Evidence Governance)"
+canonical: false
+migration_status: "split-into-D02-D03"
+legacy_since: "2026-09-25"
 tags:
   - "domain/chunking-knowledge"
   - research-domain
@@ -8,6 +11,14 @@ tags:
 ---
 
 # Domain 04: Chunking 策略、結構化知識擷取與證據治理 (Proposition, Typed Knowledge & Evidence Governance)
+
+> [!WARNING] Legacy Domain — 已完成第一階段拆分
+> 本頁不再是 Canonical Taxonomy 的 Domain 04。其內容已開始拆分到：
+> - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]：Chunking、Dense X、LumberChunker、Late Chunking、retrieval granularity。
+> - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]：UIE / OpenIE / entity-relation-event extraction、qualifier preservation、cross-chunk consolidation。
+>
+> 本頁暫時保留只為維持舊 Wikilinks / backlinks。F/R/D/A/P/C/T 與 Evidence-Governed pipeline 仍是 project proposal，應以 `04 - 研究想法與待驗證提案` 為 canonical source。
+
 
 > [!ABSTRACT] 核心問題意識 (Core Problem Statement)
 > **文件切塊（Chunking）與知識擷取（Knowledge Extraction）絕非單純的字數切片或純粹的實體辨識，而是整個系統最關鍵的『知識語意表示（Knowledge Representation）』與『證據治理（Evidence Governance）』基石。**

@@ -13,7 +13,7 @@ last_updated: "2026-09-25"
 | 01 Long Context | Adjacent + D07 | 只保留 RAG interface；架構本身移出 core |
 | 02 Compression | D07 + D14 + Adjacent | context / systems / KV 分流 |
 | 03 Advanced RAG | D05 + D06 + D12 | retrieval / control / orchestration 分流 |
-| 04 Chunking & KE | D02 + D03 | segmentation 與 extraction 分離 |
+| 04 Chunking & KE | D02 + D03 | ✅ 第一階段內容拆分完成；legacy page 僅保留 backlinks |
 | 05 GraphRAG | D03 + D04 + D05 + tag | 降為 paradigm |
 | 06 Memory | D11 | persistent memory |
 | 07 Hierarchical Reasoning | D04 + D05 + tag | representation / retrieval 分離 |
@@ -27,6 +27,13 @@ last_updated: "2026-09-25"
 | 15 Temporal/Conflict/Provenance | D08 | retain |
 | 16 Context Utilization/Faithfulness | D07 + D09 | utilization / output support 分離 |
 | 17 Benchmarks/Evaluation | D13 | merge |
+
+## Migration Status
+
+- ✅ Canonical D01–D14 scaffold 已建立。
+- ✅ 125 篇 Literature Notes 已寫入 Taxonomy v2 YAML metadata。
+- ✅ Legacy Domain 04 已拆分至 D02 / D03。
+- ⏳ 其餘 legacy domains 尚待逐一搬移與 backlinks 清理。
 
 ## Definition of Done
 - Literature Notes 可解析到 canonical `primary_domain`。

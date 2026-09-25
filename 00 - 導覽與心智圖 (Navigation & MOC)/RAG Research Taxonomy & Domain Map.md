@@ -11,6 +11,15 @@ last_updated: "2026-09-25"
 > 這是 **RAG-survey 的研究組織 taxonomy**，不是宣稱學界存在唯一標準分類。
 > 主軸採 **lifecycle / research problem**；GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等改為 orthogonal paradigms/tags。
 
+## Taxonomy Count：到底是 14、17 還是 32？
+
+- **14 = Canonical Domains（D01–D14）**：目前唯一正式的 top-level RAG research domains。
+- **17 = Legacy Domain pages**：舊架構留下的 17 個頁面，遷移期間暫存，**不再計入 canonical domain 數量**。
+- **32 = Legacy Level-2 research topics**：原本 research map 的細分 topics，不是 32 個 domains；正逐步收斂到 D01–D14 內的 Level-2 topics。
+- **5 = Adjacent Interfaces（A01–A05）**：Long Context、Compression/KV、General Agents 等相鄰研究線，**不是 RAG core domains**。
+
+因此目前 repo 的正式口徑是：**14 Canonical Domains + 5 Adjacent Interfaces；17 legacy pages 暫存；32 舊 topics 僅作遷移對照。**
+
 ## Canonical Lifecycle
 
 ```mermaid
