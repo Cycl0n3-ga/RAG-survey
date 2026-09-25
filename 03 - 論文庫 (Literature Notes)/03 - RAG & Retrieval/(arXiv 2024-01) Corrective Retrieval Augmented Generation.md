@@ -13,8 +13,8 @@ doi: "10.48550/arXiv.2401.15884"
 arxiv: "2401.15884"
 url: "https://arxiv.org/abs/2401.15884"
 pdf_file: "Papers/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation.pdf"
-domains:
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)]]"
+domains: []
+- "[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]"
 tags:
   - paper
   - corrective-rag
@@ -209,4 +209,4 @@ flowchart TD
   - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2024-06) Adaptive-RAG - Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity|Adaptive-RAG: Learning to Adapt Retrieval-Augmented LLMs]]
   - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|Chain-of-Note: Enhancing Robustness in RALMs]]
 - **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 03 - 先進 RAG 與檢索機制 (ColBERT, HyDE, Self-RAG)|Domain 03 - 先進 RAG 與檢索機制]]
+  - [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
