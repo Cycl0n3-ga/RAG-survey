@@ -142,7 +142,7 @@ flowchart TD
 ---
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-1. **對 Domain 04 (Chunking & Proposition) 的直接驗證**：實證證明了「原子命題（Proposition）+ 路徑導航」在多跳任務中大幅優於「粗切塊（Chunk）+ 向量檢索」，為本專案知識單元解構提供了堅實的理論與數據支撐。
+1. **對 D02 (Segmentation & Contextualization) 的直接驗證**：實證證明了「原子命題（Proposition）+ 路徑導航」在多跳任務中大幅優於「粗切塊（Chunk）+ 向量檢索」，為本專案知識單元解構提供了堅實的理論與數據支撐。
 2. **對 Domain 05 & 07 的融合啟示**：架構了命題層與樹狀/圖狀階層檢索的橋樑，說明推理鏈路不一定非要依賴昂貴的全圖構建，以命題束搜尋同樣能達到超群的多跳推導能力。
 
 ---
