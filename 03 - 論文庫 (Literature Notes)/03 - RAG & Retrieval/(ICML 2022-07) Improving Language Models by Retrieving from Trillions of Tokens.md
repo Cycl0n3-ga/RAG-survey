@@ -199,7 +199,7 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 03 (Advanced RAG) 的歷史定位**：
+1. **對 D05 (Query Understanding & Retrieval) 的歷史定位**：
    - RETRO 是檢索增強進入「超大預訓練時代」的劃時代標竿，奠定了當前「用外部檢索庫替代模型參數記憶」的 Scaling 新範式。
 2. **對細粒度檢索切分（Chunking）的借鑑**：
    - 證明了「64-token 細粒度 Chunk 搭配因果 Cross-Attention」在連續語言建模中優於粗粒度篇章拼接。
