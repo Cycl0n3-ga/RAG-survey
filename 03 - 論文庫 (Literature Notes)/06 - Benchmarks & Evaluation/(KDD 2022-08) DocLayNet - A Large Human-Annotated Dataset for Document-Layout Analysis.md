@@ -159,9 +159,9 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 04（Chunking 策略）的關鍵支撐**：
+1. **對 D01/D02（Document Ingestion & Segmentation）的關鍵支撐**：
    - 證明了「盲目以固定 Token 數切塊」是 RAG 的低效做法；利用 DocLayNet 訓練的模型可將文檔解析為語義完整的 Section-header、Paragraph 與 Table，實現「版面感知切塊（Layout-aware Chunking）」。
-2. **對 Domain 17（RAG 評測基準）的關鍵支撐**：
+2. **對 D13（RAG Evaluation & Failure Attribution）的關鍵支撐**：
    - 作為 RAG 前置解析（Parser / Ingestion）階段不可或缺的 Oracle 評測基準，可用於精確診斷資訊遺失究竟是發生在 PDF 解析層還是後續檢索層。
 
 ---
