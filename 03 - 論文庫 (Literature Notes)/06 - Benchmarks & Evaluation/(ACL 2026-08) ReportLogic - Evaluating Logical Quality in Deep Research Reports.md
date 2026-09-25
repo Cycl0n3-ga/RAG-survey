@@ -154,9 +154,9 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 08（長篇生成與報告撰寫）的關鍵支撐**：
+1. **對 D09（Grounded Generation & Long-form Synthesis）的關鍵支撐**：
    - 本專案開發的長篇研報工作流（如 Evidence Store + Claim-driven Generation），可直接將 LogicJudge 作為最終交付前的「審查員（Critic Agent）」，在生成後即時抓出邏輯斷層與無證據支撐之結論。
-2. **對 Domain 17（評測基準與評估協議）的補充**：
+2. **對 D13（RAG Evaluation & Failure Attribution）的補充**：
    - 與評估微觀引文精確度的 ALCE / RAGChecker 形成完美的宏微觀互補。
 
 ---
