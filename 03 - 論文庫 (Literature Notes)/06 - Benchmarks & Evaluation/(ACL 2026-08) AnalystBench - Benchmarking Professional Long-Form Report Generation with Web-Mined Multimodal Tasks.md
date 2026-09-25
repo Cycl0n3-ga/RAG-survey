@@ -169,9 +169,9 @@ AnalystBench 在 ACL 2026 原文（Pages 23894–23926）中提供了豐富的�
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **Domain 08 (長篇生成與報告撰寫)**：證實長篇報告不能依賴一次性 prompt 輸出，必須建立「大綱規劃 $\to$ 證據收集與核查 $\to$ 子章節分段生成 $\to$ 全文一致性編排」的解耦架構。
-2. **Domain 09 (Agentic Workflows)**：打破了「只要加 Agent 就必然提升效能」的學術迷思，指出 Agent 架構對底層 LLM 的指令遵循穩定性與上下文長程管理能力有極高門檻。
-3. **Domain 17 (RAG Benchmarks & Evaluation)**：為深度研報評測提供了黃金標準（Gold Standard），展示如何透過「領域事實清單 (Checklist)」解決長文本中語義重複度量失真的根本難題。
+1. **D09 (Grounded Generation & Long-form Synthesis)**：證實長篇報告不能依賴一次性 prompt 輸出，必須建立「大綱規劃 $\to$ 證據收集與核查 $\to$ 子章節分段生成 $\to$ 全文一致性編排」的解耦架構。
+2. **D12 (Agentic RAG & Orchestration)**：打破了「只要加 Agent 就必然提升效能」的學術迷思，指出 Agent 架構對底層 LLM 的指令遵循穩定性與上下文長程管理能力有極高門檻。
+3. **D13 (RAG Evaluation & Failure Attribution)**：為深度研報評測提供了黃金標準（Gold Standard），展示如何透過「領域事實清單 (Checklist)」解決長文本中語義重複度量失真的根本難題。
 
 ---
 
