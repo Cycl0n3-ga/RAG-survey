@@ -146,6 +146,13 @@ flowchart LR
 ## 八、文獻來源與相關專題導覽 (Sources, Citations & Wikilinks)
 
 - **核心論文**：
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems|ARES: Automated RAG Evaluation with Prediction-Powered Inference (Saad-Falcon et al., NAACL 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) RAGTruth - A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models|RAGTruth: Hallucination Corpus for RAG (Yuan et al., ACL 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-06) RAGBench - Explainable Benchmark for Retrieval-Augmented Generation Systems|RAGBench: Explainable Benchmark for RAG Systems (Truong et al., arXiv 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(COLM 2024-10) MultiHop-RAG - Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries|MultiHop-RAG: Benchmarking Multi-Hop Queries in RAG (Tang & Yang, COLM 2024)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NeurIPS 2021-12) BEIR - A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models|BEIR: Zero-shot Information Retrieval Benchmark (Thakur et al., NeurIPS 2021)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2018-10) HotpotQA - A Dataset for Diverse, Explainable Multi-hop Question Answering|HotpotQA: Multi-hop QA with Supporting Facts (Yang et al., EMNLP 2018)]]
+  - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2026-03) T2-RAGBench - Benchmarking Text-and-Table Retrieval Augmented Generation|T²-RAGBench: Text-and-Table RAG Benchmark (Li et al., EACL 2026)]]
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker: Fine-grained RAG Diagnosis (Ru et al., NeurIPS 2024)]]
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS: Automated Evaluation of RAG (Es et al., EACL 2024)]]
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-04) RULER - What is the Real Context Size of Your Long-Context Language Models|RULER: Real Context Size Benchmark (Hsieh et al., 2024)]]
