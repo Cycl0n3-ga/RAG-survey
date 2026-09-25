@@ -165,7 +165,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **D02 (Segmentation & Contextualization) & Domain 12 (Typed Knowledge)**：
+1. **D03 Knowledge Extraction & Information Preservation**：
    PURE 給出了一個極具顛覆性的學術洞察：**強行追求單一模型統一解決所有問題往往會遭遇表示瓶頸；適度解耦並透過 Prompt/Marker 進行上下文交互，其效果反而遠勝複雜的端到端黑盒**。
 2. **現代 LLM 中的 In-Context 實體關係標註**：
    PURE 的 Entity Markers 思想是現代大模型提示工程（Prompt-based IE）的直接鼻祖。在 RAG 知識庫構建中，若需使用判別式小模型快速標註海量高精三元組，PURE 依然是兼顧精度與穩定性的首選工程基石。
