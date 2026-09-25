@@ -178,9 +178,9 @@ graph TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 Domain 01 (Long Context & Sequence) 的啟發**：
+1. **對 A01 (Long Context & Sequence Architecture) 的啟發**：
    - Reformer 是早期解決二次方計算與顯存爆炸的集大成者。其提出的可逆殘差思想啟發了後續眾多長序列架構（如 RevViT、Mamba 中的梯度重算設計）。
-2. **對 Domain 02 (KV Cache 與顯存優化) 的理論價值**：
+2. **對 A02 (Context/KV Compression & Inference Efficiency) 的理論價值**：
    - 證明了「激活值顯存」在長文本中佔比遠高於權重顯存，推動了後續顯存優化從單純關注權重轉向關注動態狀態（KV Cache / Activation Memory）。
 
 ---
