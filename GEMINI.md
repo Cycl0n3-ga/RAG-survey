@@ -90,7 +90,7 @@ arxiv: "1706.03762"                                    # arXiv ID (字串，無�
 url: "https://arxiv.org/abs/1706.03762"                # 官方發布或 arXiv 永久連結 (URL 字串)
 pdf_file: "Papers/01 - Long Context & Sequence/(NeurIPS 2017-12) Attention Is All You Need.pdf" # 本地相對路徑
 domains:                                               # 所屬專題領域 (List of Wikilinks)
-  - "[[02 - 研究領域專題 (Research Domains)/Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)|Domain 01 - Long Context 與序列架構 (Attention, SSM, Ring)]]"
+  - "[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]"
 tags:                                                  # 標籤 (List of tags)
   - paper
   - dense-attention

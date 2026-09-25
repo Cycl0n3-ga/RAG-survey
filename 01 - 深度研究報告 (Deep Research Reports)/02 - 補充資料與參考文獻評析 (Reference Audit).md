@@ -17,7 +17,7 @@ tags:
 > 4. 記錄已核實來源（Verified Literature）與待驗證佇列（Pending Verification Queue）。
 > - **回主報告**：[[01 - 深度研究報告 (Deep Research Reports)/01 - LLM 超長文件閱讀與撰寫技術全景 (完整深度報告)|LLM 超長文件閱讀與撰寫技術全景報告]]
 > - **規範性修訂基準**：[[01 - 深度研究報告 (Deep Research Reports)/04 - RAG Survey 完整修訂基準與研究架構 (Normative Revision Baseline)|RAG Survey 完整修訂基準與研究架構]]
-> - **領域專題**：[[02 - 研究領域專題 (Research Domains)/Domain 04 - Chunking 策略與知識擷取 (Proposition, Cross-chunk)|Domain 04: Chunking 策略與知識擷取]] · [[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12: Knowledge Extraction]] · [[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13: Information Preservation]]
+> - **領域專題**：[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]] · [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]] · [[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
 
 ---
 
@@ -171,13 +171,13 @@ P_{\text{chain}} = 0.95 \times 0.95 \times 0.90 \times 0.90 \approx 73.1\%
 
 1. **資訊保真抽取與跨塊修復**：
    - 深入分析否定、條件、時間範圍在切塊中的遺失率，對比 Dense X（命題）、PropRAG（命題路徑）與 CrossAug（跨塊圖擴增）。
-   - 對應專題：[[02 - 研究領域專題 (Research Domains)/Domain 12 - Knowledge Extraction & Typed Knowledge|Domain 12]]、[[02 - 研究領域專題 (Research Domains)/Domain 13 - Information Preservation & Cross-chunk Consolidation|Domain 13]]。
+   - 對應專題：[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]、[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]。
 2. **證據充分性與自適應檢索**：
    - 區分「相關（Relevance）」與「充分（Sufficiency）」，研究 Evidence Gap 定位與拒答機制（Abstention）。
-   - 對應專題：[[02 - 研究領域專題 (Research Domains)/Domain 14 - Evidence Sufficiency & Adaptive Retrieval|Domain 14]]。
+   - 對應專題：[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]。
 3. **時序衝突與來源仲裁**：
    - 區分 valid time、record time、source version，避免「較新文檔永遠覆蓋舊文檔」的武斷假設。
-   - 對應專題：[[02 - 研究領域專題 (Research Domains)/Domain 15 - Temporal Conflict & Provenance-aware RAG|Domain 15]]。
+   - 對應專題：[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]。
 4. **評測基準目錄與規範**：
    - 建立涵蓋 BEIR、HotpotQA、RAGBench、RAGChecker、T²-RAGBench、RAG4Reports 等官方元數據的評測目錄。
-   - 對應目錄：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]、[[02 - 研究領域專題 (Research Domains)/Domain 17 - RAG Benchmarks & Evaluation Protocols|Domain 17]]。
+   - 對應目錄：[[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]、[[02 - 研究領域專題 (Research Domains)/Canonical RAG Domains/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]。
