@@ -36,6 +36,16 @@ metrics:
   - "ANLS"
   - "Accuracy"
   - "Answer Page Accuracy"
+taxonomy_version: "v2"
+taxonomy_home: "D01"
+primary_domain: "D01"
+secondary_domains:
+  - "D13"
+paradigm_tags:
+  - "multimodal_rag"
+  - "document_qa"
+adjacent_interfaces: []
+
 ---
 
 # Hierarchical Multimodal Transformers for Multi-Page DocVQA

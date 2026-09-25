@@ -36,6 +36,15 @@ metrics:
   - "nDCG@10"
   - "Recall@100"
   - "MRR@10"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models

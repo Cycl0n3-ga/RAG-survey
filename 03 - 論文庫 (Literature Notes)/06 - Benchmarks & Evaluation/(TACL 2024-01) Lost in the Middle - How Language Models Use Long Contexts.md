@@ -24,6 +24,16 @@ tags:
   - "long-context-evaluation-&-analysis"
 verification_status: "verified"
 last_verified: "2026-09-24"
+taxonomy_version: "v2"
+taxonomy_home: "D07"
+primary_domain: "D07"
+secondary_domains:
+  - "D13"
+paradigm_tags:
+  - "context_utilization"
+adjacent_interfaces:
+  - "A01"
+
 ---
 
 # Lost in the Middle: How Language Models Use Long Contexts

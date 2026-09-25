@@ -38,6 +38,15 @@ benchmark_ids:
 metrics:
   - "Answer-F1"
   - "Evidence-F1"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers (QASPER)

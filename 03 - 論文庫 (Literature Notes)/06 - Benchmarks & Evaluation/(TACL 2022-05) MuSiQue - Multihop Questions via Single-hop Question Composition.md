@@ -41,6 +41,16 @@ metrics:
   - "exact_match"
   - "f1"
   - "hop_completion_rate"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains:
+  - "D05"
+paradigm_tags:
+  - "multi_hop_rag"
+  - "benchmark"
+adjacent_interfaces: []
+
 ---
 
 # MuSiQue: Multihop Questions via Single-hop Question Composition

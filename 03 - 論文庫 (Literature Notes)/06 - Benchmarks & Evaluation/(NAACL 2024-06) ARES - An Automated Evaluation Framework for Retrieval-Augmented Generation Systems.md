@@ -35,6 +35,14 @@ metrics:
   - "Answer Faithfulness"
   - "Answer Relevance"
   - "Prediction-Powered Inference (PPI)"
+taxonomy_version: "v2"
+taxonomy_home: "D13"
+primary_domain: "D13"
+secondary_domains: []
+paradigm_tags:
+  - "rag_evaluation"
+adjacent_interfaces: []
+
 ---
 
 # ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems
