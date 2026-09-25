@@ -143,7 +143,7 @@ $$\text{KILT-score} = \text{Downstream Metric} \times \text{Provenance Match}$$
 ---
 
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
-- **支撐 Domain 17（評測協議）**：KILT-score 是現代 RAG 評測中「雙重約束（Groundedness + Accuracy）」的鼻祖，直接啟發了 ALCE、Ragas 與 RAGTruth 的設計思維。
+- **支撐 D13（RAG Evaluation & Failure Attribution）**：KILT-score 是現代 RAG 評測中「雙重約束（Groundedness + Accuracy）」的鼻祖，直接啟發了 ALCE、Ragas 與 RAGTruth 的設計思維。
 - **統一檢索底座**：為本專案在對比不同檢索算法時提供了公認的跨任務基準參照。
 
 ---
