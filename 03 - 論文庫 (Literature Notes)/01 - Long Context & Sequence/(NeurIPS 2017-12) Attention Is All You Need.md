@@ -24,13 +24,13 @@ verification_status: "verified"
 last_verified: "2026-09-24"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
-taxonomy_home: "A01"
+taxonomy_home: "A03"
 primary_domain: null
 secondary_domains: []
 paradigm_tags:
   - "long_context"
 adjacent_interfaces:
-  - "A01"
+  - "A03"
 
 ---
 
