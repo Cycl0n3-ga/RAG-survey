@@ -64,12 +64,13 @@ D14 是 deployment / infrastructure / robustness plane，不是 retrieval qualit
 
 ## Literature Coverage
 
-**Current primary-note coverage: 1**
+**Current primary-note coverage: 2**
 
-目前已有一篇直接的 RAG-specific security primary anchor：
+目前已有兩條直接 primary anchors：
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation|METIS]] — RAG-specific serving / scheduling / quality-latency configuration adaptation。
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models|PoisonedRAG]] — corpus / knowledge-base poisoning。
 
-但 **systems/serving、observability 與 privacy/access-control** 仍缺 dedicated primary notes；KIVI、CacheGen 等是 A02 inference/serving efficiency 與 D14 的交界，不能替代完整的 RAG systems literature。
+因此 D14 的 **systems** 與 **security** 已各有直接 anchor；仍缺的是 **observability/tracing 與 privacy/access-control/tenant isolation** 的 dedicated RAG primary literature。KIVI、CacheGen 等仍是 A02 inference/serving efficiency 與 D14 的交界。
 
 Adjacent notes:
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|KIVI]]
@@ -105,7 +106,7 @@ Retrieved Document ≠ Trusted Instruction
 Retrieved Document ≠ Trusted Truth
 ```
 
-目前已有 RAG-specific security primary anchor，但 D14 的 systems/serving 與 privacy/access-control coverage 仍不足。
+目前 RAG-specific systems（METIS）與 security（PoisonedRAG）都已有 primary anchor；下一個真正缺口是 observability/tracing 與 privacy/access-control，而不是再堆一般 LLM serving papers。
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
