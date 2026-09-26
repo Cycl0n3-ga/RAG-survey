@@ -58,7 +58,7 @@ last_updated: "2026-09-26"
 - **Yu et al. — Evaluation of Retrieval-Augmented Generation: A Survey**, CCF BigData 2024 proceedings, Springer 2025, DOI: 10.1007/978-981-96-1024-2_8.  
   支撐 D13 的 retrieval / generation evaluation、faithfulness 與 benchmark design。  
   [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey|Literature Note]]
-- **Ni et al. — Towards Trustworthy Retrieval Augmented Generation for Large Language Models: A Survey** (arXiv:2502.06872).  
+- **Ni et al. — Towards Trustworthy Retrieval Augmented Generation for Large Language Models: A Survey**, ACM Computing Surveys, 2026, DOI: 10.1145/3837074 (arXiv:2502.06872).  
   支撐 reliability、privacy、safety、fairness、explainability、accountability；主要對應 D14。
 - **Khonde et al. — End-to-end security threats and defenses in retrieval-augmented LLM agents**, Discover Artificial Intelligence, 2026, DOI: 10.1007/s44163-026-01726-x.  
   最新 peer-reviewed security review 之一；明確整理 retrieval poisoning、indirect prompt injection、tool attacks 與跨 pipeline defenses。
@@ -101,7 +101,7 @@ last_updated: "2026-09-26"
 - Generative IE Survey: https://aclanthology.org/2025.coling-main.324/
 - Multimodal RAG Survey: https://aclanthology.org/2025.findings-acl.861/
 - RAG Evaluation Survey: https://doi.org/10.1007/978-981-96-1024-2_8
-- Trustworthy RAG Survey: https://arxiv.org/abs/2502.06872
+- Trustworthy RAG Survey: https://doi.org/10.1145/3837074
 - End-to-end RAG Security Review 2026: https://doi.org/10.1007/s44163-026-01726-x
 - Agent Memory Survey: https://arxiv.org/abs/2512.13564
 
