@@ -25,9 +25,7 @@ taxonomy_version: "v2"
 taxonomy_home: "A03"
 primary_domain: null
 secondary_domains: []
-paradigm_tags:
-  - "tokenization"
-  - "model_architecture"
+paradigm_tags: []
 adjacent_interfaces:
   - "A03"
 
