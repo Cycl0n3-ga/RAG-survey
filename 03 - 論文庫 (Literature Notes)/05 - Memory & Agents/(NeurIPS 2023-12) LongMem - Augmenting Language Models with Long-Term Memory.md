@@ -37,13 +37,13 @@ metrics:
   - "Perplexity (PPL)"
   - "Accuracy"
 taxonomy_version: "v2"
-taxonomy_home: "D11"
-primary_domain: "D11"
+taxonomy_home: "A01"
+primary_domain: null
 secondary_domains:
-  - "D12"
-paradigm_tags:
-  - "memory_augmented_rag"
-adjacent_interfaces: []
+  - "D11"
+paradigm_tags: []
+adjacent_interfaces:
+  - "A01"
 
 ---
 
