@@ -56,17 +56,19 @@ Dynamic index = maintenance of the canonical external knowledge/index after sour
 
 ## Representative Notes
 
-**Current primary-note coverage: 6**
+**Current direct RAG primary-note coverage: 2**
 
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory|LongMem]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery|MemoRAG]]
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|From RAG to Memory]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|From RAG to Memory / HippoRAG 2]]
+
+**Adjacent memory anchors (not D11-primary):**
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]] — general conversational LLM memory (A04).
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]] — general agent memory organization/evolution (A04).
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]] — general agent/virtual-context memory management (A04).
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory|LongMem]] — model-side long-context memory augmentation (A01).
 
 > [!NOTE]
-> D11 不再只等同「個人對話記憶」。LongMem、MemoRAG、HippoRAG/From-RAG-to-Memory 類工作顯示，RAG literature 也會把 persistent non-parametric knowledge layer 視為 memory。D10 與 D11 的分界應看「是否在維護外部 canonical index」或「是否在形成系統自身持續演化的 memory state」。
+> D11 is justified by RAG-specific work such as MemoRAG and HippoRAG 2, while general LLM/agent-memory papers are retained only as adjacent mechanisms. They should not be counted as evidence that memory is a universally standardized top-level RAG domain. D10 vs D11 remains: D10 maintains the canonical external knowledge/index after source change; D11 forms or uses persistent memory state beyond one-shot context construction.
 
 ## Memory Types and Governance Boundary
 Memory 不應只用「向量庫」一詞概括。可用下列維度理解：
