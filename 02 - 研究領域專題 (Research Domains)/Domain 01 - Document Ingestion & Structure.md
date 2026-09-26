@@ -4,7 +4,7 @@ domain_id: "D01"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Corpus Construction"
-last_updated: "2026-09-25"
+last_updated: "2026-09-26"
 ---
 
 # Domain 01 - Document Ingestion & Structure
@@ -49,9 +49,10 @@ D01 的輸出是 **structured source units**；它不決定最終 retrieval gran
 
 ## Representative Notes
 
-**Current primary-note coverage: 1**
+**Current primary-note coverage: 2**
 
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis|DocLayNet]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CVPR 2025-06) OmniDocBench - Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations|OmniDocBench]]
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
