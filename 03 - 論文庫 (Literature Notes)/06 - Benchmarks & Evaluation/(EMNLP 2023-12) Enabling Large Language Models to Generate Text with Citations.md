@@ -34,10 +34,10 @@ metrics:
   - "QA-F1"
   - "ROUGE-L"
 taxonomy_version: "v2"
-taxonomy_home: "D09"
-primary_domain: "D09"
+taxonomy_home: "D13"
+primary_domain: "D13"
 secondary_domains:
-  - "D13"
+  - "D09"
 paradigm_tags:
   - "citation_aware_rag"
 adjacent_interfaces: []
