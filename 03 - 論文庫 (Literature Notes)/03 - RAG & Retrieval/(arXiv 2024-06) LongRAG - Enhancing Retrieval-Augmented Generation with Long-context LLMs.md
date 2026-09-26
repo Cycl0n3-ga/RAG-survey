@@ -34,10 +34,10 @@ metrics:
   - "f1"
   - "answer_recall"
 taxonomy_version: "v2"
-taxonomy_home: "D05"
-primary_domain: "D05"
+taxonomy_home: "D02"
+primary_domain: "D02"
 secondary_domains:
-  - "D02"
+  - "D05"
   - "D07"
 paradigm_tags:
   - "long_context_hybrid"
