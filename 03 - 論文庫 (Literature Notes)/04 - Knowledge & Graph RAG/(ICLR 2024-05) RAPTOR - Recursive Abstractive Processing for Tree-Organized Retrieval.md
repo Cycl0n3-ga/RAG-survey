@@ -28,7 +28,6 @@ secondary_domains:
   - "D05"
 paradigm_tags:
   - "hierarchical_rag"
-  - "multi_resolution"
 adjacent_interfaces: []
 
 ---
