@@ -40,7 +40,6 @@ secondary_domains:
   - "D09"
 paradigm_tags:
   - "graph_rag"
-  - "survey"
 adjacent_interfaces: []
 ---
 
