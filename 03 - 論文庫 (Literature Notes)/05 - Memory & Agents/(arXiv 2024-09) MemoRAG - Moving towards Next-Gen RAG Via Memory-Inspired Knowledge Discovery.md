@@ -40,7 +40,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D11"
 primary_domain: "D11"
 secondary_domains:
-  - "D12"
+  - "D05"
 paradigm_tags:
   - "memory_augmented_rag"
 adjacent_interfaces: []
