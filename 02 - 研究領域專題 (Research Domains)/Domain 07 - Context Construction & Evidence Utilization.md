@@ -60,9 +60,8 @@ Evidence retrieved
 
 ## Representative Notes
 
-**Current primary-note coverage: 3**
+**Current primary-note coverage: 2**
 
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts|Lost in the Middle]]
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|Chain-of-Note]]
 
@@ -76,6 +75,10 @@ Evidence retrieved
 
 這些 failure 與 D05 retrieval miss 不同：**Gold evidence 已存在於候選或 final context 時，錯誤不能再全部歸咎於 retriever。**
 
+
+
+> [!NOTE]
+> [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts|Lost in the Middle]] is an A01 long-context evaluation anchor with D07/D13 relevance, not a RAG-specific D07-primary method.
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
