@@ -34,7 +34,6 @@ secondary_domains:
   - "D09"
 paradigm_tags:
   - "graph_rag"
-  - "global_sensemaking"
 adjacent_interfaces: []
 
 ---
