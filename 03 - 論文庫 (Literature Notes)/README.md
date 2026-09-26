@@ -12,7 +12,7 @@ last_updated: "2026-09-26"
 > [!INFO] 結構說明
 > 本目錄收錄專案中精讀與標準化結構之論文筆記，**storage folder 與命名規範原則上對齊 `Papers/`；remote-only 全文例外明列**：
 > - 子目錄劃分為 6 個 **storage folders**，僅用於檔案整理，不代表 Research Domains；
-> - 筆記檔名統一採用 `(發表會議/期刊 發表年月) 論文名稱.md`；
+> - **新建 note** 優先採 `(正式會議/期刊 發表年月) 論文名稱.md`；既有 preprint 後續正式發表時，為避免大規模 backlink / PDF path churn，可保留原 stable path，並以 YAML 的 `publication_year` / `venue` / `doi` / `url` 作為唯一 canonical citation truth；同一研究工作仍只保留一份 note；
 > - corpus 狀態：**128 篇 notes；121 份 local PDF；7 篇使用官方 remote full text**（A-MEM、AURORA、When Facts Change、PoisonedRAG、EviReport、EFSG、T²-RAGBench）。
 >
 > 正式分類一律看 YAML 的 `taxonomy_home` / `primary_domain` / `secondary_domains` / `paradigm_tags` / `adjacent_interfaces`；不再使用 `domains` 欄位。
