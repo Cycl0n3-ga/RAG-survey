@@ -36,7 +36,7 @@ extraction_confidence: null
 ```
 
 > [!NOTE]
-> `applicable_scope`、`approval_state` 與 `source_span` 是從舊版 D15 救回的必要治理欄位：它們分別用來避免把不同適用範圍誤判成矛盾、避免 Draft 覆蓋 Approved 文件，以及保留可審計的原文定位。這些欄位是 project schema，不宣稱為通用 RAG 標準。
+> `applicable_scope`、`approval_state` 與 `source_span` 分別用來避免把不同適用範圍誤判成矛盾、避免 Draft 覆蓋 Approved 文件，以及保留可審計的原文定位。這些欄位是 project schema，不宣稱為通用 RAG 標準。
 
 ## 研究問題
 
