@@ -29,8 +29,7 @@ taxonomy_home: "D02"
 primary_domain: "D02"
 secondary_domains:
   - "D05"
-paradigm_tags:
-  - "semantic_chunking"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
