@@ -64,9 +64,12 @@ D14 是 deployment / infrastructure / robustness plane，不是 retrieval qualit
 
 ## Literature Coverage
 
-**Current primary-note coverage: 0**
+**Current primary-note coverage: 1**
 
-目前 repo 尚未收錄以 D14 為 primary contribution 的 dedicated RAG systems / robustness / security paper note。已有的 KIVI、CacheGen 等是 A02 inference/serving efficiency 與 D14 的交界，不能代替 RAG-specific robustness/security literature。
+目前已有一篇直接的 RAG-specific security primary anchor：
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models|PoisonedRAG]] — corpus / knowledge-base poisoning。
+
+但 **systems/serving、observability 與 privacy/access-control** 仍缺 dedicated primary notes；KIVI、CacheGen 等是 A02 inference/serving efficiency 與 D14 的交界，不能替代完整的 RAG systems literature。
 
 Adjacent notes:
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|KIVI]]
