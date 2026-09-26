@@ -126,8 +126,8 @@ flowchart TD
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
-1. **首創拒絕回答（Abstention）的長篇可靠性邊界**：明確證明了「知道自己不知道」是提升 RAG 長篇生成可信度的最有效手段。
-2. **逐字精確引用的剛性約束**：徹底根除了傳統 LLM「自創引文」與「張冠李戴」的嚴重視覺欺騙問題。
+1. **Abstention / selective answering**：將「證據不足時拒答」納入有引用回答的品質控制，展示 coverage–quality trade-off；不能由此推出 abstention 對所有 RAG 任務都是最有效策略。
+2. **逐字引用約束**：把回答綁定到可驗證 quote，可降低 unsupported / misattributed quotation，但不能保證所有 factual 或 attribution error 都消失。
 
 ### 限制與 Trade-offs
 1. **拒答率與回答覆蓋率的權衡（Coverage-Precision Trade-off）**：若將品質要求設為極高，模型拒答率可能上升至 20%–40%，在要求必須給出建設性提案的業務中需精心調優閾值。
