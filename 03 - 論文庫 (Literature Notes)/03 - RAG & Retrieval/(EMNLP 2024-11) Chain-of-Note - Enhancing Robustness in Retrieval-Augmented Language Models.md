@@ -43,8 +43,7 @@ taxonomy_home: "D07"
 primary_domain: "D07"
 secondary_domains:
   - "D09"
-paradigm_tags:
-  - "evidence_utilization"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
