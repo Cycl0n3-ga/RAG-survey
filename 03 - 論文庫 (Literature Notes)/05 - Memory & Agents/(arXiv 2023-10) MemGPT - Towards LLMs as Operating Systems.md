@@ -38,13 +38,13 @@ metrics:
   - "ROUGE-L Recall"
   - "Conversation opener similarity"
 taxonomy_version: "v2"
-taxonomy_home: "D11"
-primary_domain: "D11"
+taxonomy_home: "A04"
+primary_domain: null
 secondary_domains:
-  - "D12"
-paradigm_tags:
-  - "memory_augmented_rag"
-adjacent_interfaces: []
+  - "D11"
+paradigm_tags: []
+adjacent_interfaces:
+  - "A04"
 ---
 
 # MemGPT: Towards LLMs as Operating Systems
