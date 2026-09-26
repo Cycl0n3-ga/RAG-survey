@@ -21,13 +21,13 @@ last_updated: "2026-09-26"
 | Corpus / parsing / indexing / retrieval-unit design | D01–D04 | 高度對齊；本 repo 拆得更細 |
 | Query / retrieval / reranking / multi-hop / adaptive retrieval | D05–D06 | 高度對齊；D06 的「retrieval control」文獻較成熟 |
 | Post-retrieval / context construction / evidence use | D07 | 高度對齊 |
-| Temporal freshness / conflict / provenance | D08 | **部分對齊**；temporal/freshness 有文獻，authority arbitration 仍偏薄 |
+| Temporal freshness / conflict / provenance | D08 | **部分對齊**；temporal/freshness/conflict 與 source reliability 已有文獻，provenance lineage / approval / scope arbitration 仍偏薄 |
 | Grounded generation / attribution / long-form synthesis | D09 | 高度對齊 |
 | Dynamic knowledge / index maintenance | D10 | **部分對齊**；Wu et al. 2026 survey 有 knowledge-base update section，AURORA 提供 direct primary anchor |
 | Memory / non-parametric knowledge | D11 | 對齊近年 memory / RAG 交界，但定義需涵蓋 interaction memory 與 derived persistent memory |
 | Agentic / iterative orchestration | D12 | 高度對齊近年 Agentic RAG |
 | Evaluation / benchmark / failure diagnosis | D13 | 高度對齊 |
-| Systems / efficiency / robustness / security / trust | D14 | 有 survey 支撐 trustworthiness；systems/serving 仍需獨立補文獻 |
+| Systems / efficiency / robustness / security / trust | D14 | trust/security 有 survey；METIS 補 systems/serving primary anchor，observability 與 privacy/access-control 仍薄 |
 
 ## 2. Core Survey Anchors — Keep This List Small
 
@@ -78,10 +78,10 @@ last_updated: "2026-09-26"
 
 - **D03 information-preserving extraction / extraction-to-RAG error propagation**：保留為 Level-2 research lens + Idea 01。
 - **D06 explicit evidence requirement → gap localization → targeted retrieval controller**：現有 adaptive-retrieval literature 主要解 retrieval control，不等同完整 evidence-set sufficiency。
-- **D08 authority-weighted provenance arbitration**：temporal / freshness / version conflict 較有直接 literature；一般 authority resolver 仍薄。
+- **D08 provenance / governance arbitration**：RA-RAG 已直接支撐 source reliability；但 document lineage、Draft/Approved workflow、applicability scope 與多訊號聯合仲裁仍薄。
 - **D10 production-grade continual index maintenance**：AURORA 已補 direct primary anchor，但 CRUD、deletion propagation、derived-index invalidation 與真實 update stream 仍缺。
 - **D11 unified memory taxonomy**：interaction memory、model-side long-term memory、corpus/world memory 與 non-parametric continual knowledge 仍需用 memory survey / primary papers補齊。
-- **D14 RAG serving systems**：trust/security 有 survey，但 serving / scheduling / caching / observability 應補 systems literature。
+- **D14 observability / privacy governance**：METIS 已補 RAG serving / scheduling，PoisonedRAG 補 corpus poisoning；仍缺 RAG-specific tracing/observability、ACL/tenant isolation 與 deletion/persistence governance。
 
 ## 4. Version / Deduplication Rule
 
