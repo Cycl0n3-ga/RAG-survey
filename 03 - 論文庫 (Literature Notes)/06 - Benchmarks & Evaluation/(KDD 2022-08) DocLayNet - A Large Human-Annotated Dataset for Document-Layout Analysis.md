@@ -37,10 +37,7 @@ taxonomy_home: "D01"
 primary_domain: "D01"
 secondary_domains:
   - "D13"
-paradigm_tags:
-  - "document_structure"
-  - "benchmark"
-  - "multimodal_rag"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
