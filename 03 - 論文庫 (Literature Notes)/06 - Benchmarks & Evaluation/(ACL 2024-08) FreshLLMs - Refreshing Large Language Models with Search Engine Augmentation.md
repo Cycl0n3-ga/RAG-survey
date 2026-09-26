@@ -47,8 +47,7 @@ secondary_domains:
   - "D05"
   - "D13"
 paradigm_tags:
-  - "dynamic_rag"
-  - "freshness"
+  - "temporal_rag"
 adjacent_interfaces: []
 
 ---
