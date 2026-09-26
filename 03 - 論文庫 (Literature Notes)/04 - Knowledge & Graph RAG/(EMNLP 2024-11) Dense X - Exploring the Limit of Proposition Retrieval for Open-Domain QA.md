@@ -32,7 +32,6 @@ secondary_domains:
   - "D05"
 paradigm_tags:
   - "proposition_rag"
-  - "retrieval_granularity"
 adjacent_interfaces: []
 
 ---
