@@ -13,7 +13,7 @@ last_updated: "2026-09-26"
 > 本目錄收錄專案中精讀與標準化結構之論文筆記，**storage folder 與命名規範原則上對齊 `Papers/`；remote-only 全文例外明列**：
 > - 子目錄劃分為 6 個 **storage folders**，僅用於檔案整理，不代表 Research Domains；
 > - **新建 note** 優先採 `(正式會議/期刊 發表年月) 論文名稱.md`；既有 preprint 後續正式發表時，為避免大規模 backlink / PDF path churn，可保留原 stable path，並以 YAML 的 `publication_year` / `venue` / `doi` / `url` 作為唯一 canonical citation truth；同一研究工作仍只保留一份 note；
-> - corpus 狀態：**128 篇 notes；121 份 local PDF；7 篇使用官方 remote full text**（A-MEM、AURORA、When Facts Change、PoisonedRAG、EviReport、EFSG、T²-RAGBench）。
+> - corpus 狀態：**130 篇 notes；121 份 local PDF；9 篇使用官方 remote full text**（A-MEM、AURORA、RA-RAG、METIS、When Facts Change、PoisonedRAG、EviReport、EFSG、T²-RAGBench）。
 >
 > 正式分類一律看 YAML 的 `taxonomy_home` / `primary_domain` / `secondary_domains` / `paradigm_tags` / `adjacent_interfaces`；不再使用 `domains` 欄位。
 
@@ -60,7 +60,7 @@ last_updated: "2026-09-26"
 | SIGCOMM 2024 | CacheGen: KV Cache Compression and Streaming for Fast Large Language Model Serving | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving\|(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving]] | [[Papers/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving.pdf\|PDF]] |
 | NeurIPS 2024 | MiniCache: KV Cache Compression in Depth Dimension for Large Language Models | [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models\|(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models]] | [[Papers/02 - Compression & KV Cache/(NeurIPS 2024-12) MiniCache - KV Cache Compression in Depth Dimension for Large Language Models.pdf\|PDF]] |
 
-### 03 - RAG & Retrieval (26 篇)
+### 03 - RAG & Retrieval (28 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -89,7 +89,9 @@ last_updated: "2026-09-26"
 | arXiv 2024 | Late Chunking: Contextual Chunk Embeddings for Retrieval | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval\|(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval.pdf\|PDF]] |
 | CCF BigData 2024 / Springer 2025 | Evaluation of Retrieval-Augmented Generation: A Survey | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey\|(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey]] | [[Papers/03 - RAG & Retrieval/(arXiv 2024-05) Evaluation of Retrieval-Augmented Generation - A Survey.pdf\|PDF]] |
 
-| Findings of ACL 2026 | AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) AURORA - Neuro-Symbolic Continual Indexing for Evolving RAG Systems\|(ACL 2026-07) AURORA]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.495/) |\n\n| USENIX Security 2025 | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models\|(USENIX Security 2025-08) PoisonedRAG]] | [USENIX](https://www.usenix.org/conference/usenixsecurity25/presentation/zou-poisonedrag) |\n\n### 04 - Knowledge & Graph RAG (23 篇)
+| Findings of ACL 2026 | AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) AURORA - Neuro-Symbolic Continual Indexing for Evolving RAG Systems\|(ACL 2026-07) AURORA]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.495/) |
+| EMNLP 2025 | Retrieval-Augmented Generation with Estimation of Source Reliability (RA-RAG) | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Retrieval-Augmented Generation with Estimation of Source Reliability\|(EMNLP 2025-11) RA-RAG]] | [ACL Anthology](https://aclanthology.org/2025.emnlp-main.1738/) |\n\n| USENIX Security 2025 | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models\|(USENIX Security 2025-08) PoisonedRAG]] | [USENIX](https://www.usenix.org/conference/usenixsecurity25/presentation/zou-poisonedrag) |
+| SOSP 2025 | METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation\|(SOSP 2025-10) METIS]] | [ACM](https://doi.org/10.1145/3731569.3764855) |\n\n### 04 - Knowledge & Graph RAG (23 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
