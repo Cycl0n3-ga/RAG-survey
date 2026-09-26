@@ -70,7 +70,7 @@ Raw-chunk RAG 可由 D02 直接進 D04；D03 是可選支線，不是所有 RAG 
 
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG|LumberChunker]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-06) LongRAG - Enhancing Retrieval-Augmented Generation with Long-context LLMs|LongRAG]]
 
 ## Segmentation Strategies
 
@@ -87,7 +87,7 @@ Raw-chunk RAG 可由 D02 直接進 D04；D03 是可選支線，不是所有 RAG 
 
 「Contextualization」不等於重新做 information extraction；它的目的是讓 retrieval unit 在脫離全文後仍保留足夠語境。
 
-### 1. Contextual Chunk Representation：Late Chunking
+### 1. Contextual Chunk Representation：Late Chunking（D04 primary / D02 interface）
 - Representative work: [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
 - Late Chunking 的重點不是「重新做 IE」，而是解決傳統 chunking 破壞全域語意上下文的問題：
 ```text
@@ -99,7 +99,7 @@ chunk-level pooling
         ↓
 contextualized chunk embeddings
 ```
-- 因此它位於 D02 與 D04 的交界：**chunk boundary / contextualization 屬 D02；embedding representation 屬 D04**。
+- 因此它位於 D02 與 D04 的交界；但論文真正改動的是 **embedding representation**，故 Primary Domain = D04，D02 僅保留 contextualization interface。
 
 ### 2. Contextual Retrieval (Prepended Context)
 - **Contextual Retrieval（Anthropic, engineering technique, 2024）**：為每個 chunk 產生簡短的 document-specific context，將其 prepend 到 chunk 後再建立 embedding 與 BM25 index。這是產業工程技術，不是本 repo 的 peer-reviewed paper note；官方說明：https://www.anthropic.com/engineering/contextual-retrieval。
