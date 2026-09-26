@@ -54,8 +54,7 @@ taxonomy_home: "D01"
 primary_domain: "D01"
 secondary_domains:
   - "D13"
-paradigm_tags:
-  - "multimodal_rag"
+paradigm_tags: []
 adjacent_interfaces: []
 ---
 
