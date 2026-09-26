@@ -78,7 +78,6 @@ primary_domain: "D05"
 secondary_domains:
   - "D04"
 paradigm_tags:
-  - "retrieval"
   - "retrieval_augmented_training"
 adjacent_interfaces: []
 
