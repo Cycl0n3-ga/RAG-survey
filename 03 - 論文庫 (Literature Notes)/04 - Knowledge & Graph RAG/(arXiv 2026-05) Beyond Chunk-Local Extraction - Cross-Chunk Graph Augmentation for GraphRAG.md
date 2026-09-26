@@ -39,7 +39,6 @@ secondary_domains:
   - "D05"
 paradigm_tags:
   - "graph_rag"
-  - "cross_chunk"
 adjacent_interfaces: []
 
 ---
