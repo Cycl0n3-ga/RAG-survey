@@ -58,16 +58,16 @@ Research Domains
 | D01 | 1 |
 | D02 | 3 |
 | D03 | 12 |
-| D04 | 5 |
+| D04 | 6 |
 | D05 | 17 |
 | D06 | 4 |
 | D07 | 3 |
-| D08 | 3 |
+| D08 | 4 |
 | D09 | 6 |
 | D10 | 1 |
 | D11 | 6 |
 | D12 | 2 |
 | D13 | 21 |
-| D14 | 1 |
+| D14 | 2 |
 
-目前最需要補文獻的區域是 **D08、D10、D12、D14**，但缺口已變得更具體：D08 已有 temporal/freshness/context–memory conflict anchors，仍缺 authority/provenance arbitration；D10 已有 AURORA，但缺 production CRUD / deletion / invalidation；D14 已有 PoisonedRAG security anchor，但 systems/serving 與 privacy/access-control 仍薄。
+目前的缺口已不適合用「再加更多 Domain」處理：D08 已有 temporal/conflict + RA-RAG source-reliability anchors，仍缺 provenance lineage / approval-state / applicability-scope arbitration；D10 已有 AURORA，但缺 production CRUD / deletion / invalidation；D12 primary method coverage 仍少；D14 已有 METIS systems + PoisonedRAG security anchors，剩下 observability/tracing 與 privacy/access-control 較薄。
