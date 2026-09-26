@@ -26,8 +26,7 @@ taxonomy_home: "D05"
 primary_domain: "D05"
 secondary_domains:
   - "D09"
-paradigm_tags:
-  - "rag"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
