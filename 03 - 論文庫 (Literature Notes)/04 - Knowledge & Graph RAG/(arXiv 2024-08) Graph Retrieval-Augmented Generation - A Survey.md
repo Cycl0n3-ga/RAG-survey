@@ -32,10 +32,11 @@ benchmark_ids:
 metrics:
   - "survey catalog: task-dependent"
 taxonomy_version: "v2"
-taxonomy_home: "D04"
-primary_domain: "D04"
+taxonomy_home: "CROSS"
+primary_domain: null
 secondary_domains:
   - "D03"
+  - "D04"
   - "D05"
   - "D09"
 paradigm_tags:
