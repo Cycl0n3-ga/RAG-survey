@@ -56,15 +56,22 @@ End-to-end score 不能直接說明 bottleneck 位於 retrieval、evidence const
 
 ## Representative Notes
 
-**Current primary-note coverage: 21**
+**Current primary-note coverage: 22**
 
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems|ARES]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-06) RAGBench - Explainable Benchmark for Retrieval-Augmented Generation Systems|RAGBench]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2023-12) Enabling Large Language Models to Generate Text with Citations|ALCE]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CMC 2026-08) Do LLMs Know When Evidence is Insufficient - An Evidence Sufficiency Benchmark|Evidence Sufficiency Benchmark]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports|ReportLogic]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA|MP-DocVQA / Hi-VT5]]
+
+## Primary-Domain Rule for Evaluation Artifacts
+
+Use D13 as **Primary** only when the paper's main research contribution is RAG/evidence/grounded-generation evaluation itself: benchmark design, diagnostic methodology, metric design, evaluator framework, failure attribution, or end-to-end RAG evaluation.
+
+If a benchmark mainly evaluates a specific capability, keep the capability as Primary and D13 as Secondary. Examples: document parsing benchmark → D01 + D13; long-context utilization benchmark → A01 + D13. Artifact type alone never determines Primary Domain.
 
 ## Evaluation Artifact Types
 
