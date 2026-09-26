@@ -23,12 +23,12 @@ verification_status: "verified"
 last_verified: "2026-09-24"
 artifact_type: "benchmark_paper"
 taxonomy_version: "v2"
-taxonomy_home: "D07"
-primary_domain: "D07"
+taxonomy_home: "A01"
+primary_domain: null
 secondary_domains:
+  - "D07"
   - "D13"
-paradigm_tags:
-  - "context_utilization"
+paradigm_tags: []
 adjacent_interfaces:
   - "A01"
 
