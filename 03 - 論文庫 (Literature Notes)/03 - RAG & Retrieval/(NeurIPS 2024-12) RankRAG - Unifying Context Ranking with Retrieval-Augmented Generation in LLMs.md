@@ -54,8 +54,7 @@ primary_domain: "D05"
 secondary_domains:
   - "D07"
   - "D09"
-paradigm_tags:
-  - "reranking"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
