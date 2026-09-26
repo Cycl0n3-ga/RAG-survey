@@ -22,8 +22,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D07"
 primary_domain: "D07"
 secondary_domains: []
-paradigm_tags:
-  - "context_compression"
+paradigm_tags: []
 adjacent_interfaces:
   - "A02"
 
