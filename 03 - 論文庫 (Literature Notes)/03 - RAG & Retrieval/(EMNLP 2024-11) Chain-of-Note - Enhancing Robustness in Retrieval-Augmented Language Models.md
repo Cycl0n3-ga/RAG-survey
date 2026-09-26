@@ -96,7 +96,7 @@ Chain-of-Note (CON) 提出在檢索文檔與最終生成之間插入**循序閱�
 
 ### 2. 最終證據合成與誠實拒答 (Evidence Synthesis & Rejection)
 在輸出完全部 $k$ 條閱讀筆記後，模型進入最終決策階段：
-1. **充分證據合成**：若存在類型 1 筆記，綜合所有有效筆記合成最終答案，並具備天然的引用透明性。
+1. **充分證據合成**：若存在類型 1 筆記，綜合有效筆記生成最終答案；中間 note 可讓 evidence use 更容易檢視，但不等同正式 citation/attribution guarantee。
 2. **誠實拒絕回答**：若所有筆記均為類型 2 或 3，模型明確輸出：「檢索到的資訊不足以回答此問題」，或依據模型自身參數記憶謹慎補足。
 
 ### 3. 弱監督合成與指令微調 (Data Synthesis & Training)
@@ -156,7 +156,7 @@ graph TD
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 1. 技術優勢
-- **極致的雜訊容忍度**：徹底破解 RAG 領域「檢索器一旦出錯、生成器必然跟著幻覺」的死鎖難題。
+- **對檢索雜訊較具韌性**：論文實驗顯示 Chain-of-Note 能改善 noisy / irrelevant retrieval 下的回答表現，但不能解讀為 retriever failure 對 generation 的影響已被普遍消除。
 - **具備天然的審計透明度**：每條筆記清晰展示了模型對各篇參考資料的採信態度，為後續人工校對與 Evidence Ledger 記錄提供了直接抓手。
 
 ### 2. 限制與 Trade-offs
