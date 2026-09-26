@@ -33,10 +33,10 @@ metrics:
   - "Accuracy"
   - "Answer Page Accuracy"
 taxonomy_version: "v2"
-taxonomy_home: "D01"
-primary_domain: "D01"
+taxonomy_home: "D13"
+primary_domain: "D13"
 secondary_domains:
-  - "D13"
+  - "D01"
 paradigm_tags:
   - "multimodal_rag"
   - "document_qa"
