@@ -50,8 +50,7 @@ secondary_domains:
   - "D07"
   - "D09"
   - "D13"
-paradigm_tags:
-  - "survey"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
