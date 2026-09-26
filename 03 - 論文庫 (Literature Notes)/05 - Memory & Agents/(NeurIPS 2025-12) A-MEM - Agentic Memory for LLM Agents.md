@@ -37,13 +37,13 @@ metrics:
   - "BLEU-1"
   - "Token Length"
 taxonomy_version: "v2"
-taxonomy_home: "D11"
-primary_domain: "D11"
+taxonomy_home: "A04"
+primary_domain: null
 secondary_domains:
-  - "D12"
-paradigm_tags:
-  - "memory_augmented_rag"
-adjacent_interfaces: []
+  - "D11"
+paradigm_tags: []
+adjacent_interfaces:
+  - "A04"
 ---
 
 # A-Mem: Agentic Memory for LLM Agents
