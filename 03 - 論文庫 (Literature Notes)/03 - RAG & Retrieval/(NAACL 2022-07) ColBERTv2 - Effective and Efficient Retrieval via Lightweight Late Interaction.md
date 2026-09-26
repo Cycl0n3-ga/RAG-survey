@@ -41,8 +41,7 @@ taxonomy_home: "D05"
 primary_domain: "D05"
 secondary_domains:
   - "D04"
-paradigm_tags:
-  - "retrieval"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
