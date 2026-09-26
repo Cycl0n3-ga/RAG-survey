@@ -144,8 +144,8 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 A01（Long Context & Sequence Architecture）與 A02（Context/KV Compression & Inference Efficiency）的頂層支撐**：
-   - 本綜述完美對齊本知識庫前兩個核心專題，為長序列架構演進提供了標準的學術脈絡依據。
+1. **對 A01（Long Context & Sequence Architecture）與 A02（Context/KV Compression & Inference Efficiency）的相鄰介面支撐**：
+   - 本綜述主要支撐 Long Context 與 Context/KV Compression 兩個 Adjacent Interfaces，為長序列架構演進提供學術脈絡；它們不計入 D01–D14 Core RAG Domains。
 2. **對 Long Context vs. RAG 選型權衡的理論支撐**：
    - 綜述指出的「KV Cache 顯存爆炸」與「深層推理衰退」直接解釋了為何在超長文件分析中，不能盲目無限擴大 Context Window，而必須與 RAG、知識圖譜及外部記憶體架構深度協同。
 
