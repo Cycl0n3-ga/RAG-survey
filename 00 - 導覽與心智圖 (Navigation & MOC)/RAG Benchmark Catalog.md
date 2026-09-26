@@ -6,7 +6,7 @@ tags:
   - rag
   - dataset-catalog
   - failure-attribution
-last_updated: "2026-09-24"
+last_updated: "2026-09-26"
 ---
 
 # RAG 評測基準與資料集總索引 (RAG Benchmark Catalog)
@@ -34,6 +34,7 @@ last_updated: "2026-09-24"
 | 評測任務領域 | 資源名稱 | 工件類型 | 模態 (Modality) | Gold 標籤 / 核心評估重點 | 最適合測試之專題 | 局限性：不能單獨證明什麼？ | 官方來源與存取連結 | 驗證狀態 |
 | :--- | :--- | :---: | :---: | :--- | :--- | :--- | :--- | :---: |
 | **版面解析** | **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis|DocLayNet]]** | `dataset` | 多模態 (PDF 圖像 + 文字) | 11 類版面區域人工標註邊框 (Bounding Boxes, 80,863 頁) | 文件結構解析、多欄排版還原 | **不能**證明文字內容語意理解與生成能力 | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis|文獻筆記]] · [GitHub](https://github.com/DS4SD/DocLayNet) | `verified` |
+| **端到端 PDF 解析** | **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CVPR 2025-06) OmniDocBench - Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations|OmniDocBench]]** | `benchmark_paper` | 多模態 (PDF 頁面 + structured output) | 9 類 PDF、19 layout categories、15 attributes；end-to-end + task-specific + attribute-level parsing | [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Ingestion & Structure|D01 Document Ingestion & Structure]] 與 parsing oracle | **不能**單獨證明 retrieval / generation / faithfulness；多模態 parser 分數也不可直接當純文字 RAG 分數 | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CVPR 2025-06) OmniDocBench - Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations|文獻筆記]] · [CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Ouyang_OmniDocBench_Benchmarking_Diverse_PDF_Document_Parsing_with_Comprehensive_Annotations_CVPR_2025_paper.html) | `verified` |
 | **多頁視覺問答** | **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA|MP-DocVQA]]** | `dataset` / `benchmark_paper` | 多模態 (多頁 PDF 影像) | 46,236 組多頁工業/商業文件視覺問答與答案頁碼定位 (至多 20 頁) | 多頁長篇文件問答、階層跨注意力推理 | **不能**證明純文字 RAG 系統之語意抽取能力 | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA|文獻筆記]] · [PR 2023](https://doi.org/10.1016/j.patcog.2023.109833) | `verified` |
 | **長文論文問答** | **[[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers|QASPER]]** | `dataset` / `benchmark_paper` | 純文字 (Text) | 5,049 組學術長文資訊尋求問答 + 跨段落 Evidence Spans | 學術文獻長文問答、細粒度引文追蹤 | **不能**證明跨文件檢索與多跳合成能力 | [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2021-06) QASPER - A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers|文獻筆記]] · [NAACL 2021](https://doi.org/10.18653/v1/2021.naacl-main.365) | `verified` |
 | **實體與關係** | **DocRED** | `dataset` | 純文字 (Text) | 跨句子命名實體、關係與指代消解 Gold | [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]] | **不能**證明企業特定操作語意 (無 F/R/D/A/P/C/T) | [GitHub DocRED](https://github.com/thunlp/DocRED) | `verified` |
@@ -64,7 +65,7 @@ last_updated: "2026-09-24"
 ```mermaid
 flowchart TD
     subgraph eval_chain["端到端 RAG 評測鏈"]
-        D1["1. 解析與版面 (Parsing / Layout)<br/>DocLayNet: Bounding Box mAP"] --> D2["2. 知識抽取 (IE / Extraction)<br/>DocRED / MAVEN: F1, Span Precision"]
+        D1["1. 解析與版面 (Parsing / Layout)<br/>DocLayNet + OmniDocBench"] --> D2["2. 知識抽取 (IE / Extraction)<br/>DocRED / MAVEN: F1, Span Precision"]
         D2 --> D3["3. 檢索與多跳 (Retrieval / Multi-hop)<br/>BEIR / HotpotQA: nDCG@10, Recall@k"]
         D3 --> D4["4. 充分性判定 (Sufficiency / Abstention)<br/>Evidence Sufficiency BM: Gap F1, Selective Accuracy"]
         D4 --> D5["5. 上下文利用 (Context Utilization)<br/>RULER / Lost in the Middle: Position Robustness"]
