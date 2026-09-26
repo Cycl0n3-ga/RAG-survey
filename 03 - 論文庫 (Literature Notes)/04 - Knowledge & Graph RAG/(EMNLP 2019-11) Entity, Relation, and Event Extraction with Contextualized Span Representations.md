@@ -40,8 +40,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D03"
 primary_domain: "D03"
 secondary_domains: []
-paradigm_tags:
-  - "knowledge_extraction"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
