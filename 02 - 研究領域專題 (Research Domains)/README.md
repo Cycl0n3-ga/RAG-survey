@@ -55,7 +55,7 @@ Research Domains
 
 | Domain | Primary notes |
 |---|---:|
-| D01 | 1 |
+| D01 | 2 |
 | D02 | 3 |
 | D03 | 12 |
 | D04 | 6 |
@@ -66,8 +66,8 @@ Research Domains
 | D09 | 6 |
 | D10 | 1 |
 | D11 | 6 |
-| D12 | 2 |
+| D12 | 3 |
 | D13 | 21 |
 | D14 | 2 |
 
-目前的缺口已不適合用「再加更多 Domain」處理：D08 已有 temporal/conflict + RA-RAG source-reliability anchors，仍缺 provenance lineage / approval-state / applicability-scope arbitration；D10 已有 AURORA，但缺 production CRUD / deletion / invalidation；D12 primary method coverage 仍少；D14 已有 METIS systems + PoisonedRAG security anchors，剩下 observability/tracing 與 privacy/access-control 較薄。
+目前的缺口已不適合用「再加更多 Domain」處理：D08 已有 temporal/conflict + RA-RAG source-reliability anchors，仍缺 provenance lineage / approval-state / applicability-scope arbitration；D10 已有 AURORA，但缺 production CRUD / deletion / invalidation；D12 已有 GraphReader + RAG-Critic 的 direct method anchors，但 coverage 仍比 retrieval/evaluation 薄；D14 已有 METIS systems + PoisonedRAG security anchors，剩下 observability/tracing 與 privacy/access-control 較薄。
