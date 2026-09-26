@@ -36,7 +36,7 @@ flowchart LR
 
 > [!CAUTION]
 > **Source authority / generic provenance governance 不等於已成熟的單一 RAG subfield。**  
-> 目前最直接的 literature support 是 temporal / version-aware retrieval 與 conflict handling；authority-weighted arbitration 應視為較薄的 Level-2 topic 或 project hypothesis，除非有直接 primary literature。
+> temporal / version-aware retrieval 與 conflict handling 已有直接 literature；EMNLP 2025 RA-RAG 也直接支撐 source reliability。較薄的部分現在縮小為 **document provenance lineage、workflow approval state、applicability scope 與多條治理訊號的聯合仲裁**。
 
 ## Excludes
 - citation formatting / attribution output → D09
@@ -47,7 +47,7 @@ flowchart LR
 
 1. **Temporal / Version Alignment**：freshness、valid time、version 與 query time 是否一致。
 2. **Knowledge Conflict**：context–memory、inter-context、intra-memory conflict 的 detection / diagnosis / resolution。
-3. **Provenance / Authority**：source identity、lineage、authority / credibility；目前 direct RAG literature 相對較薄，不能把它當成與 temporal conflict 同樣成熟。
+3. **Provenance / Authority**：source reliability 已有 RA-RAG 類直接工作；source identity / lineage、Draft→Approved workflow、scope-aware arbitration 仍較薄。
 
 ## Level-2 Topics
 - Temporal RAG
@@ -64,14 +64,15 @@ Citation answers「輸出引用哪裡」；provenance answers「這份 evidence 
 
 ## Representative Notes
 
-**Current primary-note coverage: 3**
+**Current primary-note coverage: 4**
 
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs / FreshQA]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-07) When Facts Change - Temporal Knowledge Conflict Resolution in LLMs|When Facts Change]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Retrieval-Augmented Generation with Estimation of Source Reliability|RA-RAG]]
 
 > [!NOTE]
-> 目前 temporal / version / context–memory conflict 已有直接 literature；真正仍偏薄的是 **source authority / credibility arbitration、provenance-aware multi-source resolution、condition-aware arbitration**。這些仍應標成 coverage gap，而不是用 project proposal 補成「既有共識」。
+> 目前 temporal / version / context–memory conflict 與 **source reliability estimation** 已有直接 literature；真正仍偏薄的是 **provenance lineage、approval-state arbitration、scope/condition-aware multi-source resolution**。這些仍應標成 coverage gap，而不是用 project proposal 補成「既有共識」。
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
