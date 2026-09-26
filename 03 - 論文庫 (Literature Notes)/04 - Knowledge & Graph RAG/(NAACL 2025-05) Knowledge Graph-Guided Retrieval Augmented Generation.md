@@ -40,7 +40,6 @@ secondary_domains:
   - "D04"
 paradigm_tags:
   - "graph_rag"
-  - "knowledge_graph_rag"
 adjacent_interfaces: []
 
 ---
