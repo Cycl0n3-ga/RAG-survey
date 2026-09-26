@@ -9,6 +9,9 @@ last_updated: "2026-09-25"
 
 Paradigm 是橫跨 lifecycle 的方法族，不是額外 Domain。
 
+> [!IMPORTANT]
+> 本表是 `paradigm_tags` 的**封閉字典（closed vocabulary）**。未列在表中的詞不要自行塞入 `paradigm_tags`：benchmark/survey 身分用 `artifact_type`，一般技術主題用 `tags` / `research_questions`，Long Context / KV / General Agents 等用 `adjacent_interfaces`。
+
 | Tag | Definition | Typical Domains |
 |---|---|---|
 | graph_rag | graph/KG/community structure 支援 indexing、retrieval 或 synthesis | D03,D04,D05,D09,D10 |
