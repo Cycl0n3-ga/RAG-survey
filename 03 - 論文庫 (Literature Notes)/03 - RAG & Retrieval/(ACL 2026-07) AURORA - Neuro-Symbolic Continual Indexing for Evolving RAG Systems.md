@@ -41,8 +41,7 @@ primary_domain: "D10"
 secondary_domains:
   - "D04"
   - "D05"
-paradigm_tags:
-  - "dynamic_rag"
+paradigm_tags: []
 adjacent_interfaces:
   - "A05"
 ---
