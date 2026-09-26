@@ -53,7 +53,7 @@ BEIR 是神經檢索領域最權威的異質零樣本評測基準（Zero-Shot Re
 
 ## 研究背景與問題定義 (Problem Statement)
 在神經檢索模型（Dense Retrieval）蓬勃發展初期，檢索領域面臨嚴重的評測同質化弊病：
-1. **MS MARCO 單一資料集的嚴重過擬合**：幾乎所有神經檢索器均在 MS MARCO 搜尋查詢集上進行訓練與評測，形成了「學術指標高、真實落地差」的虛假繁榮。
+1. **單一訓練/評測分布的泛化限制**：只在 MS MARCO 等少數資料分布上訓練與評估，無法充分反映跨領域 zero-shot retrieval 的泛化能力。
 2. **分佈外（OOD）泛化能力未知**：真實世界場景充斥著專有術語、罕見實體與長篇文檔（如醫學文獻 PubMed、金融報表 FiQA、事實核查 SciFact），稠密嵌入模型缺乏未見領域的零樣本檢驗標準。
 3. **稀疏與稠密模型的公平對比缺失**：缺乏在統一 API、標準化文檔切塊與一致指標（nDCG@10）下的跨架構基準。
 
@@ -119,7 +119,7 @@ flowchart TD
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
-1. **確立現代資訊檢索的黃金標準**：徹底終結了單一資料集自嗨評測，成為此後所有檢索模型（Contriever, BGE, E5）必測的法定基準。
+1. **建立異質 zero-shot IR 評測套件**：BEIR 將多個領域與 retrieval tasks 納入統一 protocol，並被大量後續 retrieval 工作採用；它是重要 benchmark，但不是所有檢索研究的強制或唯一標準。
 2. **正本清源的工程啟示**：證明了「BM25 絕非過時玩具」，在缺乏特定領域標註時，BM25 仍是極其強韌的第一道防線。
 
 ### 限制與 Trade-offs
