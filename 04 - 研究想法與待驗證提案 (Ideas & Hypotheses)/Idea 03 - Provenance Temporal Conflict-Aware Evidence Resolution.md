@@ -77,3 +77,15 @@ Temporal accuracy、conflict detection F1、source selection accuracy、citation
 - [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 Dynamic Knowledge & Index Maintenance]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³ (ACL 2026)]]
+
+
+## Retained Falsifiable Experiment: Provenance-Aware Arbitration
+
+在含 version、valid-time、approval-state、scope 與 contradictory sources 的資料上，比較：
+
+- relevance-only ranking；
+- recency-only heuristic；
+- juxtaposition / disclose-all；
+- provenance-aware arbitration。
+
+評估 temporal accuracy、source selection、conflict detection、abstention / uncertainty 與 answer faithfulness。重點是驗證多訊號仲裁是否真的優於單純「最新文件優先」，而不是先假定 provenance schema 必然有效。

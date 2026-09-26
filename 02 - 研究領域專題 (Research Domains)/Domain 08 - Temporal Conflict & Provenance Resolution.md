@@ -62,6 +62,16 @@ flowchart LR
 ## Boundary
 Citation answers「輸出引用哪裡」；provenance answers「這份 evidence 從哪裡來、何時有效、適用於什麼條件」。兩者相關但不是同一問題。
 
+## Resolution Principle
+
+```text
+Newer != correct
+More relevant != more authoritative
+Citation-entailing != temporally/applicability valid
+```
+
+歷史查詢需要對準 query time；Draft 不能僅因較新就覆蓋 Approved；不同 site / condition 的 evidence 也不能因表面數值不同就直接標成 genuine contradiction。
+
 ## Representative Notes
 
 **Current primary-note coverage: 4**

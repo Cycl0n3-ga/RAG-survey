@@ -107,6 +107,15 @@ Long-context benchmark、retrieval benchmark、RAG benchmark 與 long-form repor
 
 若 gold evidence 已完整放入 context，答案仍錯，主要問題就不應再歸咎於 retriever；應繼續檢查 D07 utilization、reasoning、generation 或 attribution。
 
+## Evaluation Failure Modes
+- **Pretraining / benchmark contamination**：模型可能憑參數記憶回答，造成 RAG 增益被高估。
+- **LLM-as-a-Judge bias**：可能有 verbosity、position、self-preference 等偏差；需做 judge calibration / human audit。
+- **Dynamic API drift**：未鎖模型 snapshot、dataset revision、evaluation script 版本時，結果難以重現。
+- **Budget mismatch**：多輪 agent / retrieval 系統不能只和 single-call baseline 比 accuracy；token、calls、latency、memory / cost 需一起報。
+- **Nonlinear component interaction**：oracle swap 不是嚴格可加的線性誤差分解；單層替換可能改變其他模組輸入分布。
+
+所以 failure attribution 應被視為 diagnostic intervention，而不是宣稱 total error 可以簡單線性相加。
+
 ## Navigation
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]

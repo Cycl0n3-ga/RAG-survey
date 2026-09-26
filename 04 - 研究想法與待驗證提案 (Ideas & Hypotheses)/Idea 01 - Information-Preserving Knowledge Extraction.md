@@ -123,3 +123,16 @@ Knowledge extraction 同時有兩個方向：
 - **structural augmentation**：補上 entity link、time、condition、source、event state 等顯式結構。
 
 兩者存在 trade-off：壓得越激進，越可能丟失限定條件；結構加得越多，extraction / consolidation error surface 也越大。
+
+
+## Retained Falsifiable Experiment: Qualified Representation Budget Parity
+
+比較：
+- raw chunk；
+- proposition；
+- bare triple / graph；
+- raw chunk + qualified proposition / evidence object。
+
+必須固定或報告相同的 token、retrieval candidate、LLM-call 與 compute budget。研究問題不是「哪個 representation 比較酷」，而是 **在 budget parity 下，保留 qualifier 的表示是否真的改善 evidence recall、faithfulness 與 downstream task quality**。
+
+若 candidate-pool 膨脹、成本增加後 end-to-end quality 沒有穩定改善，則這個假設應被否決。

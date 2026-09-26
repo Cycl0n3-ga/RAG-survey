@@ -204,6 +204,16 @@ D05 Retrieval
 - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 01 - Information-Preserving Knowledge Extraction|Idea 01 - Information-Preserving Knowledge Extraction]]
 - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05 - Evidence-Governed RAG 系統架構構想]]
 
+## Consolidation Failure Modes
+跨 chunk / cross-document consolidation 不只是「多抽一些 relation」；至少要防四類錯誤：
+
+- **False merge / over-coreference**：不同實體被錯合併。
+- **Unsupported edge**：跨段關係沒有 raw-span evidence 支持。
+- **Qualifier cascade**：前一階段丟失 condition / time / negation，後續 multi-hop 將錯誤放大。
+- **Extraction budget explosion**：為修復跨段關係反覆擴張 source window / re-extract，造成離線成本快速增加。
+
+這些 failure 應與 Idea 01 的 information-preservation ablation 一起量測，而不是只看最終 QA accuracy。
+
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]

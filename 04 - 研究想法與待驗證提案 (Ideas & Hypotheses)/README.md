@@ -68,5 +68,6 @@ last_updated: "2026-09-24"
 - **Claim-Evidence Graph / Ledger**：claim 與 evidence 以 direct-support、contradicts、qualifies、depends-on 等 edge 建模；canonical proposal 見 Idea 04 / 05。
 - **Long-document Consistency Memory**：維護跨章 entities、definitions、numbers、claims、assumptions 等 document state，避免跨章漂移；與 D11 / D09 相交。
 - **Cross-chunk / Cross-document Event Knowledge**：事件表示需保留 trigger、condition、state-before/after、time、actor、quantity、exception、source；與 Idea 01 / D03 相交。
+- **Context Packing vs Position Bias**：在相同 evidence set 下比較 relevance-order、random、position-aware / dependency-aware packing；與 D07 / D13 相交。不得預設特定 two-end packing 對所有新模型都有效。
 
 這些方向只有在形成清楚 task definition、baseline、benchmark 與 falsifiable hypothesis 後，才適合升格為獨立研究工作。

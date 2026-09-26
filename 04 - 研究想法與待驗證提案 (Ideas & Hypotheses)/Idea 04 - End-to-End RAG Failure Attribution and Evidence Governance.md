@@ -83,3 +83,19 @@ flowchart LR
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
 - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 05 - Evidence-Governed RAG 系統架構構想 (Delta Pipeline Design)|Idea 05: Evidence-Governed RAG 系統架構構想]]
 - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 06 - 主流 RAG 框架生態與系統定位分析 (Framework Landscape & Positioning)|Idea 06: 主流 RAG 框架生態與系統定位分析]]
+
+
+## Retained Falsifiable Experiment: Oracle Error Localization Validity
+
+用逐層 oracle replacement 檢查 failure attribution 是否可信：
+
+- gold parse / layout；
+- gold segmentation；
+- gold extraction / consolidation；
+- gold retrieval / evidence set；
+- gold context；
+- gold claims / citations。
+
+核心問題：**oracle intervention 所造成的改善，是否能穩定對應到 human expert 對 bottleneck 的判斷？**
+
+反例也必須保留：pipeline component 可能高度耦合，某層修正會改變其他層輸入分布，因此 oracle gain 不應被當成可線性相加的「責任百分比」。

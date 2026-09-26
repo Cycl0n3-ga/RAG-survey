@@ -137,3 +137,16 @@ $$
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]
+
+
+## Retained Falsifiable Experiment: Gap-Aware vs Fixed-Round
+
+比較：
+- fixed Top-k RAG；
+- fixed N-round iterative RAG；
+- Self-RAG / Adaptive-RAG；
+- explicit slot/gap-aware controller。
+
+在相同 retrieval / token / LLM-call budget 下，比較 answer quality、evidence coverage、false-sufficient rate、abstention quality 與平均 retrieval rounds。
+
+若 gap localization 本身的成本抵銷了節省的 retrieval，且品質沒有穩定改善，則 gap-aware controller 在該 task 上不成立。
