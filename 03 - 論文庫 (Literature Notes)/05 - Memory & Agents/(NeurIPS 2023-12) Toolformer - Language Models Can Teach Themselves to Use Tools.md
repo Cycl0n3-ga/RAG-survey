@@ -45,9 +45,7 @@ taxonomy_home: "A04"
 primary_domain: null
 secondary_domains:
   - "D12"
-paradigm_tags:
-  - "general_agent"
-  - "tool_use"
+paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 
