@@ -29,8 +29,7 @@ primary_domain: "D04"
 secondary_domains:
   - "D02"
   - "D05"
-paradigm_tags:
-  - "contextual_chunking"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
