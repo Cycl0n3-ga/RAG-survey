@@ -56,13 +56,12 @@ flowchart LR
 
 ## Representative Notes
 
-**Current primary-note coverage: 6**
+**Current primary-note coverage: 5**
 
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|Microsoft GraphRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|RAPTOR]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation|LightRAG]]
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey|GraphRAG Survey]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
 
 ## Representation Families
@@ -83,6 +82,10 @@ flowchart LR
 - RAPTOR-style recursive summaries are a hierarchical representation; tree traversal / collapsed retrieval are D05 retrieval choices.
 
 因此「Vector RAG vs GraphRAG vs Hierarchical RAG」不是三個互斥 Domain，而是可組合的 representation / retrieval paradigms。
+
+
+> [!NOTE]
+> [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey|GraphRAG Survey]] is a cross-lifecycle survey anchor (D03/D04/D05/D09), not a D04-primary paper.
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
