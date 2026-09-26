@@ -23,8 +23,7 @@ taxonomy_home: "A02"
 primary_domain: null
 secondary_domains:
   - "D07"
-paradigm_tags:
-  - "context_compression"
+paradigm_tags: []
 adjacent_interfaces:
   - "A02"
 
