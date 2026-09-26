@@ -68,7 +68,7 @@ D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是�
 
 ## Representative Notes
 
-**Current primary-note coverage: 18**
+**Current primary-note coverage: 17**
 
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering|DPR]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT|ColBERT]]
