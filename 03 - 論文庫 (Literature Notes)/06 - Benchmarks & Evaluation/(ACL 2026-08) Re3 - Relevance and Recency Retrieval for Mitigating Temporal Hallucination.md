@@ -53,7 +53,6 @@ secondary_domains:
   - "D13"
 paradigm_tags:
   - "temporal_rag"
-  - "recency"
 adjacent_interfaces: []
 
 ---
