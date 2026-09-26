@@ -39,7 +39,6 @@ secondary_domains:
   - "D11"
 paradigm_tags:
   - "agentic_rag"
-  - "survey"
 adjacent_interfaces: []
 
 ---
