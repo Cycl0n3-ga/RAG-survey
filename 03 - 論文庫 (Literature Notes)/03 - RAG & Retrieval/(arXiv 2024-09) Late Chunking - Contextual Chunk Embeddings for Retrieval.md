@@ -24,10 +24,10 @@ verification_status: "verified"
 last_verified: 2026-09-24
 artifact_type: "method_paper"
 taxonomy_version: "v2"
-taxonomy_home: "D02"
-primary_domain: "D02"
+taxonomy_home: "D04"
+primary_domain: "D04"
 secondary_domains:
-  - "D04"
+  - "D02"
   - "D05"
 paradigm_tags:
   - "contextual_chunking"
