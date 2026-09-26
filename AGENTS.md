@@ -100,8 +100,7 @@ taxonomy_version: "v2"
 taxonomy_home: "A01"                                   # D01-D14；若主要屬相鄰研究則 A01-A05；跨域 survey 可用 CROSS
 primary_domain: null                                   # RAG core method 使用 D01-D14；adjacent-only paper 填 null
 secondary_domains: []
-paradigm_tags:
-  - "long_context"
+paradigm_tags: []                                    # 僅接受 RAG Paradigm Tags 頁定義的封閉字典；Long Context 等應放 adjacent_interfaces
 adjacent_interfaces:
   - "A01"
 research_questions: []                                 # 探討之核心研究子題標籤 (如 retrieval_granularity, context_utilization)
@@ -173,7 +172,7 @@ metrics: []                                            # 評測指標
 
 本 Repo 名稱為 RAG-survey，因此「Research Domains」中的分類與結論必須能由可追溯文獻支撐。
 
-1. **Survey-backed domain**：每個 Domain 至少連到一篇與該領域直接相關的 survey / review / tutorial / benchmark overview；若目前找不到合適 survey，必須標示 `survey_coverage: partial`，不可假裝已有社群共識。
+1. **Survey-backed domain**：Domain-level survey coverage 只在 `00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index.md` 集中維護，避免在 14 個 Domain frontmatter 重複保存 `survey_coverage`。若某條研究線只有 primary papers、尚缺成熟 survey，應在 Survey Papers Index 與對應 Domain 正文明確標為 coverage gap，不可假裝已有社群共識。
 2. **Primary-paper evidence**：Survey 只能用來證明「這是一條已存在的研究線」；具體方法、數字與機制仍需回到 primary paper 核實。
 3. **Ideas are not survey findings**：F/R/D/A/P/C/T、四層 Citation→Entailment→Authority→Sufficiency、Evidence Gap Controller、Temporal Conflict Resolver 等若沒有直接文獻證明其完整組合，必須放在 `04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/`，Research Domain 只能以「研究假設／設計草案」連結過去。
 4. **禁止 novelty 宣告**：不得使用「唯一」「最高學術價值」「藍海」「已解決」「必然優於」等字眼，除非有明確、同條件、可追溯證據；研究價值應改寫成可反駁假設。
@@ -216,7 +215,7 @@ metrics: []                                            # 評測指標
 ### 分類規則
 1. **Domain = lifecycle / system research problem**。
 2. 每篇 method paper 使用 `taxonomy_home`、`primary_domain`、`secondary_domains`、`paradigm_tags`、`adjacent_interfaces`；不要再維護重複的 `domains` 欄位。
-3. GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等使用 paradigm tags，不新增平行 top-level Domain。
+3. `paradigm_tags` 是**封閉字典**，唯一 canonical 清單見 `RAG Paradigm Tags.md`。GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等可使用 paradigm tags；`benchmark`、`survey`、`retrieval`、`knowledge_extraction`、`kv_cache`、`tool_use`、`long_context` 等一般 topic / artifact / adjacent label 不得放入 `paradigm_tags`，應分別放 `artifact_type`、`tags`、`research_questions` 或 `adjacent_interfaces`。
 4. Long Context、KV Cache、general model architecture、general agents、continual learning 使用 Adjacent Interfaces。
 5. 研究優先順序 / 實驗藍圖、Evidence Gap Controller、F/R/D/A/P/C/T 等 project-specific proposal 放在 `04 - 研究想法與待驗證提案`。
 6. 新增 X-RAG 名詞時，先判斷 Primary Domain，再決定 paradigm tag。
