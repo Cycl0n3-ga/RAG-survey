@@ -55,11 +55,11 @@ Research Domains
 
 | Domain | Primary notes |
 |---|---:|
-| D01 | 2 |
+| D01 | 1 |
 | D02 | 3 |
 | D03 | 12 |
 | D04 | 5 |
-| D05 | 18 |
+| D05 | 17 |
 | D06 | 4 |
 | D07 | 3 |
 | D08 | 3 |
@@ -67,7 +67,7 @@ Research Domains
 | D10 | 1 |
 | D11 | 6 |
 | D12 | 2 |
-| D13 | 20 |
+| D13 | 21 |
 | D14 | 1 |
 
 目前最需要補文獻的區域是 **D08、D10、D12、D14**，但缺口已變得更具體：D08 已有 temporal/freshness/context–memory conflict anchors，仍缺 authority/provenance arbitration；D10 已有 AURORA，但缺 production CRUD / deletion / invalidation；D14 已有 PoisonedRAG security anchor，但 systems/serving 與 privacy/access-control 仍薄。
