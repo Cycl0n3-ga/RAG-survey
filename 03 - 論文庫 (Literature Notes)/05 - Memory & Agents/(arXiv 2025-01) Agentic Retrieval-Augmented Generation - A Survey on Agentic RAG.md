@@ -56,7 +56,7 @@ adjacent_interfaces: []
 1. **傳統 RAG 範式的固有瓶頸（Naive & Advanced RAG Limitations）**：
    - 傳統 RAG 與進階 RAG（如重排序、HyDE、分塊優化）大多遵循**單向、前饋式（One-shot feed-forward）**的管線流程；當使用者的查詢高度模糊、涉及多階段目標或檢索到誤導性資訊時，固定管線無法主動調整檢索關鍵字、發起多步補充檢索或進行自我驗證。
 2. **LLM 自主 Agent 技術的興起與交匯**：
-   - 隨著 ReAct、Reflexion、Toolformer 等自主代理架構的發展，將「檢索器」從靜態組件轉化為 Agent 手中的「可動態調用工具（Dynamic Tool）」，賦予系統動態規劃（Planning）、反思審查（Self-reflection）與環境互動（Action）的能力成為必然趨勢。
+   - 隨著 ReAct、Reflexion、Toolformer 等 agent 架構的發展，把 retrieval 作為可動態選擇的 action/tool，並加入 planning、reflection 與 environment interaction，形成一條明確的 Agentic RAG 研究方向。
 3. **缺乏系統性架構藍圖與技術分類**：
    - 當前「Agentic RAG」概念被廣泛討論，但架構設計雜亂（單 Agent 迴圈 vs 多 Agent 協商 vs 分層樹狀檢索），亟需一份權威分類學以界定其能力邊界與落地代價。
 
@@ -127,7 +127,7 @@ flowchart TD
 2. **幻覺率顯著降低**：反思與批判循環能夠即時攔截不被檢索證據背書的無效生成。
 
 ### 限制與 Trade-offs
-1. **延遲與推論成本呈指數級增長**：多輪反思、多 Agent 群聊與多步重檢索導致單次請求的 Token 消耗增加 5–20 倍，難以滿足亞秒級即時互動需求。
+1. **延遲與推論成本增加**：多輪反思、多 Agent 協作與多步重檢索通常增加 model calls、tokens 與 wall-clock latency；增加幅度依 workflow、模型與 stopping policy 而異，不能使用跨系統固定倍率概括。
 2. **Agent 級聯失效與漂移風險（Cascade Failures & Goal Drift）**：若前端 Planning 出現偏差，後續一系列檢索可能全數偏離主題，造成嚴重的資源浪費。
 
 ---
