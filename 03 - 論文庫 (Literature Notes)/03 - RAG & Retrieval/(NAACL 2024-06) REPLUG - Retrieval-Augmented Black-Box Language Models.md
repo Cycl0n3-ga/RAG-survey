@@ -91,7 +91,7 @@ REPLUG 將大型語言模型視為**純黑盒（Frozen Black-Box LLM）**，透�
 
 $$P(y | x) = \sum_{i=1}^k \lambda_i P_{\text{LM}}(y | d_i, x), \quad \lambda_i = \frac{\exp(\text{Score}(x, d_i) / \tau)}{\sum_{j} \exp(\text{Score}(x, d_j) / \tau)}$$
 
-這使得上下文長度開銷從 $O(k \cdot |d|)$ 降為單篇文檔的長度，完美規避長上下文瓶頸。
+平行 document passes 可避免把全部 retrieved documents 同時塞進一個 prompt，降低單次 input-length 壓力；代價是需要多次 LM evaluation，總計算/API 成本會隨 documents 數增加。
 
 ### 2. REPLUG LSR：語言模型監督的檢索器微調 (LM-Supervised Retrieval)
 為讓檢索器學會檢索「LLM 最容易答對」的文檔：
@@ -163,8 +163,8 @@ graph TD
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 1. 技術優勢
-- **極致的工程普適性**：適用於任何 OpenAI、Anthropic、Google 等閉源 API，無需存取底層權重即可構建 SOTA 級別 RAG。
-- **化解長文截斷風險**：平行獨立輸入架構徹底擺脫了「單一 Prompt 塞滿多篇文檔」導致的 Context 溢出與注意力稀釋。
+- **Black-box 相容性**：REPLUG 不需修改 LM parameters 或存取 hidden representations；但 ensemble 與 LM-supervised retriever 會使用模型 prediction / scoring signals，因此實際能否套用某個 API 仍取決於該 API 暴露的介面。
+- **降低單一 prompt 的長度壓力**：平行處理 documents 可避免一次拼接全部 evidence，但會換成多次模型呼叫與 aggregation 成本。
 
 ### 2. 限制與 Trade-offs
 - **API 呼叫成本倍增**：若檢索 $k=10$ 篇文檔，每一步需平行呼叫 10 次黑盒 API，API 成本與網路傳輸延遲線性增加。
