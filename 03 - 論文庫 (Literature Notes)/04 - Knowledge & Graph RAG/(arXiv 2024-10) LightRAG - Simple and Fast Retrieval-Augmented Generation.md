@@ -54,16 +54,16 @@ LightRAG 針對微軟 GraphRAG 索引構建成本高昂（依賴全域社群層�
 ## 研究背景與問題定義 (Problem Statement)
 現有 RAG 架構在處理全域摘要與跨篇章推理時存在兩極分化：
 1. **扁平式 Naive RAG 的語意碎片化**：單純以 Chunk 向量檢索缺乏全局概念關係，無法回答「請總結整個語料庫的核心主題與爭議點」等宏觀問題。
-2. **微軟 GraphRAG 的計算成本天文數字**：
-   - 離線構建時需執行 Leidun 社群聚類，並針對各級社群生成數千份 Community Summary，消耗海量 API Tokens；
-   - 查詢時採用 Map-Reduce 掃描所有社群摘要，單次查詢消耗高達 600,000+ tokens；
+2. **GraphRAG 的索引與查詢成本較高**：
+   - 離線構建包含 community detection 與 community summary generation，會增加額外的 LLM token / API 成本；
+   - global-search 類 query path 可能需要處理多個 community summaries；實際 token cost 依 corpus size、community hierarchy、query mode 與模型設定而變，不應固定外推單一 token 數。
    - **完全無法高效進行增量更新**：新增一篇文檔需要重新計算全域社群聚類並重寫摘要。
 
 ---
 
 ## 核心方法與技術架構 (Methodology & Architecture)
 
-LightRAG 設計了**基於圖的雙層檢索與無損增量更新機制**：
+LightRAG 設計了**基於圖的雙層檢索與增量更新機制**：
 1. **輕量級圖結構索引構建（Lightweight Graph Indexing）**：
    - 從文本區塊中提取實體節點與關係邊（含關係文字描述）；
    - 為實體與關係分別計算語意向量並建立向量索引，同時記錄原始文本指針，摒棄昂貴的全域社群層次聚合。
@@ -71,7 +71,7 @@ LightRAG 設計了**基於圖的雙層檢索與無損增量更新機制**：
    - **低層級檢索（Low-Level Retrieval）**：聚焦於特定實體及其一階鄰居節點與精確關聯，捕獲具體事實細節；
    - **高層級檢索（High-Level Retrieval）**：聚焦於宏觀關係邊與全局主題概念，匯聚跨文檔的高階概念連結；
    - **混合檢索模式（Hybrid Mode）**：根據查詢關鍵字動態平衡 Low-Level 與 High-Level 上下文，一次性完成結構化召回。
-3. **無損增量動態更新（Incremental Graph Adaptation）**：
+3. **增量動態更新（Incremental Graph Adaptation）**：
    - 新文本傳入時，抽取的新節點直接插入圖拓撲，已有節點則增量合併關係描述，無需全局重新聚類。
 
 ```mermaid
@@ -135,7 +135,7 @@ flowchart TD
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
-1. **極致的推論成本效益**：將 GraphRAG 從「實驗室玩具」轉化為工業界可負擔的架構，單次查詢成本幾乎等同於傳統 Naive RAG。
+1. **較低的更新與檢索開銷**：論文設計目標是降低 graph-based RAG 的更新與查詢成本；實際成本仍依 corpus、抽取模型、retrieval mode 與生成模型而定。
 2. **優雅的增量動態更新**：原生支援即時圖結構寫入與節點關係累加，完全擺脫全域聚類重算。
 3. **雙層多樣性兼顧**：同時涵蓋微觀具體事實與宏觀主題架構，生成答案的層次感更為豐富。
 
