@@ -1,4 +1,9 @@
 ---
+paradigm_tags:
+  - "graph_rag"
+  - "agentic_rag"
+secondary_domains:
+  - "D04"
 paper_id: "Li2024_GraphReader"
 title: "GraphReader: Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models"
 authors:
@@ -44,11 +49,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D12"
 primary_domain: "D12"
-secondary_domains:
-  - "D04"
-paradigm_tags:
-  - "graph_rag"
-  - "agentic_rag"
 adjacent_interfaces:
   - "A01"
 
