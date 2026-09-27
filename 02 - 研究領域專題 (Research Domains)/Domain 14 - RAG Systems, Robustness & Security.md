@@ -57,15 +57,22 @@ Generic “robustness” is not a D14 catch-all. Only adversarial robustness / i
 
 **Current primary-note coverage: 8**
 
-目前已有兩條直接 primary anchors：
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation|METIS]] — RAG-specific serving / scheduling / quality-latency configuration adaptation。
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models|PoisonedRAG]] — corpus / knowledge-base poisoning。
+### Systems & Serving
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation|METIS]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(KDD 2025-08) PipeRAG - Fast RAG via Algorithm-System Co-design|PipeRAG]]
+- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EuroSys 2025-04) CacheBlend - Fast Large Language Model Serving for RAG with Cached Knowledge Fusion|CacheBlend]]
+- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(TOCS 2026) RAGCache - Efficient Knowledge Caching for Retrieval-Augmented Generation|RAGCache]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(MLSys 2026) TeleRAG - Efficient Retrieval-Augmented Generation Inference with Lookahead Retrieval|TeleRAG]]
 
-因此 D14 的 **systems** 與 **security** 已各有直接 anchor；仍缺的是 **observability/tracing 與 privacy/access-control/tenant isolation** 的 dedicated RAG primary literature。KIVI、CacheGen 等仍是 A02 inference/serving efficiency 與 D14 的交界。
+### Security & Integrity
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models|PoisonedRAG]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2026-08) Overcoming the Retrieval Barrier - Indirect Prompt Injection in the Wild for LLM Systems|Indirect Prompt Injection / Retrieval Barrier]]
 
-Adjacent notes:
-- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|KIVI]]
-- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving|CacheGen]]
+### Privacy
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Safeguarding Privacy of Retrieval Data against Membership Inference Attacks|Retrieval-data Membership Inference]]
+
+> [!NOTE]
+> D14 is no longer supported by only one systems paper and one security paper. RAG-specific serving/caching and direct privacy/security literature now exist. The comparatively thin areas are **observability/tracing、tenant isolation、fine-grained access control、derived-data deletion/persistence governance**.
 
 ## Systems and Threat Model
 
