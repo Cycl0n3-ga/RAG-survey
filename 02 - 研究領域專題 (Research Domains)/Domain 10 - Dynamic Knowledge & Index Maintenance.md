@@ -13,45 +13,31 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-外部 knowledge base 持續新增、修改、刪除或失效時，RAG index 如何正確且低成本地保持最新？
-
-```mermaid
-flowchart LR
-    CH["Source Change"] --> DET["Detect / Validate Change"]
-    DET --> VER["Version / Freshness"]
-    VER --> UP["Insert / Update / Delete"]
-    UP --> V["Vector / Lexical Refresh"]
-    UP --> G["Graph / Summary Refresh"]
-    V --> IDX["Current Index"]
-    G --> IDX
-```
+當 canonical external knowledge 發生新增、修改、刪除或語意分布改變時，RAG 所衍生的 chunks、embeddings、graphs、summaries 與 indexes 應如何正確且低成本地同步更新？
 
 ## Includes
-- change detection
-- freshness / staleness
-- insert / update / delete semantics
-- incremental indexing
-- embedding refresh
-- entity resolution across versions
-- graph / summary recomputation
-- version-aware retrieval support
+- source change detection
+- derived-artifact dependency tracking
+- insert / update / delete
+- partial re-indexing / embedding refresh
+- graph update / orphan cleanup
+- summary / hierarchy recomputation
+- version storage / index freshness / stale-artifact detection
 
 ## Excludes
-- persistent user/agent memory → D11
-- evidence conflict resolution at query time → D08
-- parametric model editing → A05
+- initial index construction → D04
+- query-time temporal/version reconciliation → D08
+- persistent interaction-derived memory → D11
+- parametric model editing / continual learning → A05
 
 ## Level-2 Topics
-- Dynamic Indexing
-- Freshness / Staleness
-- Incremental Embedding Update
-- Graph Maintenance
-- Versioned Knowledge
-- Deletion / Invalidation
+- Change & Dependency Management
+- Incremental Index Maintenance
+- Structured Knowledge Maintenance
+- Version & Freshness Maintenance
 
 ## Boundary
-**Dynamic Index ≠ Memory.**  
-D10 管 canonical external knowledge/index 的更新；D11 管系統形成且持續演化的 derived memory state。
+`D04 = build the index`；`D10 = maintain it when source-of-truth changes`。D10 同步 canonical source state；D11 則維護並演化 derived persistent state。
 
 ## Representative Notes
 
