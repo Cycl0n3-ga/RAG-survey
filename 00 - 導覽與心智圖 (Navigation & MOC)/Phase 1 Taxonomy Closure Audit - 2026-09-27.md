@@ -246,3 +246,14 @@ Those belong to later phases:
 **Phase 1 status: CLOSED.**
 
 The next step is **Phase 2 — Legacy Forensic Audit**: compare deleted/legacy concepts against the closed D01–D14 taxonomy to identify over-pruning, stale remnants, duplicated concepts, and semantic loss.
+
+## 11. Branch Validation
+
+Final validation performed on `taxonomy-phase1-closure-20260927`:
+
+- **108 / 108 changed literature notes** passed frontmatter/schema lint.
+- No changed note contains a `taxonomy_home` / `primary_domain` mismatch for D01–D14.
+- No changed note contains a `paradigm_tags` value outside the closed vocabulary.
+- Required metadata fields checked on all changed literature notes: `paper_id`, `title`, `authors`, `year`, `publication_year`, `venue`, `verification_status`, `artifact_type`, `taxonomy_version`, `taxonomy_home`, `primary_domain`, `secondary_domains`, `paradigm_tags`, `adjacent_interfaces`.
+- Existing domain filenames were deliberately not renamed, so Phase 1 does not introduce path-level breakage solely from the canonical display-name changes.
+- README's old primary-domain counts are explicitly marked as a **historical pre-closure snapshot**; authoritative counts will be regenerated during Phase 7/8 normalization/lint after the branch is merged.
