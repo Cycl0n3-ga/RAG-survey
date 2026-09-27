@@ -39,7 +39,6 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D06"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
@@ -70,7 +69,7 @@ adjacent_interfaces: []
   - **L2 (Partial Support)**：上下文包含核心事實，需要進行微小的常識連結，仍屬可答範圍；
 - **需拒答條件 (Insufficient-Evidence Conditions Requiring Abstention)**：
   - **L3 (Irrelevant Evidence)**：檢索內容完全不包含問題所需實體或屬性；
-  - **L4 (No Context)**：檢索內容看似高度相關，但精確缺失了最終推理所需的決定性關鍵變數；
+  - **L4 (No Context)**：不提供可用的檢索上下文，測試模型在缺乏外部 evidence 時是否仍會強行作答；
   - **L5 (Contradictory / Conflicting Evidence)**：檢索內容中存在兩個權威性相當但結論相互矛盾的斷言。
 
 ```mermaid
