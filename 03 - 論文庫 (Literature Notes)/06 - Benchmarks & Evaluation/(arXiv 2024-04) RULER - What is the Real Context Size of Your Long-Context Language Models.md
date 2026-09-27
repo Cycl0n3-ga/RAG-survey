@@ -39,11 +39,10 @@ taxonomy_home: "A01"
 primary_domain: null
 secondary_domains:
   - "D13"
-paradigm_tags: []
 adjacent_interfaces:
   - "A01"
----
 
+---
 # RULER: What’s the Real Context Size of Your Long-Context Language Models?
 
 ## 一話摘要
