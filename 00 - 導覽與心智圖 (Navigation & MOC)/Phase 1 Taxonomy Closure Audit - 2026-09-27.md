@@ -257,3 +257,19 @@ Final validation performed on `taxonomy-phase1-closure-20260927`:
 - Required metadata fields checked on all changed literature notes: `paper_id`, `title`, `authors`, `year`, `publication_year`, `venue`, `verification_status`, `artifact_type`, `taxonomy_version`, `taxonomy_home`, `primary_domain`, `secondary_domains`, `paradigm_tags`, `adjacent_interfaces`.
 - Existing domain filenames were deliberately not renamed, so Phase 1 does not introduce path-level breakage solely from the canonical display-name changes.
 - README's old primary-domain counts are explicitly marked as a **historical pre-closure snapshot**; authoritative counts will be regenerated during Phase 7/8 normalization/lint after the branch is merged.
+
+## 12. Phase 3 Duplicate Cleanup Queue
+
+The following duplicate/preprint-formal pairs were detected while applying Phase 1. They are **not deleted in Phase 1** because branch code-search does not index non-default branches reliably enough to prove that no stale wikilink points to the older path. They must be handled by **link rewrite + deletion in one atomic Phase 3/7 change**.
+
+| Keep | Delete after link rewrite | Reason |
+|---|---|---|
+| `(KDD 2025-08) PipeRAG - Fast RAG via Algorithm-System Co-design.md` | `(arXiv 2024-03) PipeRAG - Fast Retrieval-Augmented Generation via Algorithm-System Co-design.md` | same paper; formal KDD version supersedes arXiv-only note |
+| `(TOCS 2026) RAGCache - Efficient Knowledge Caching for Retrieval-Augmented Generation.md` | `(TOCS 2025-11) RAGCache - Efficient Knowledge Caching for Retrieval-Augmented Generation.md` | same DOI `10.1145/3768628`; 2026 TOCS canonical record retained |
+| `(ACL 2025-07) A Reality Check on Context Utilisation for RAG.md` | `(ACL 2025-07) A Reality Check on Context Utilisation for Retrieval-Augmented Generation.md` | same ACL paper / DOI `10.18653/v1/2025.acl-long.968`; duplicate literature note |
+
+This queue is intentional: **do not count both copies as independent literature anchors**.
+
+## 13. Post-Closure Consistency Note
+
+After the initial Phase 1 validation, additional high-confidence metadata/remapping fixes were applied on the same branch (including D13 ownership cleanup and canonical DOI updates). These edits preserve the same schema rules and closed paradigm vocabulary. A final full-repository lint/count regeneration remains a Phase 8 task after Phase 3 duplicate cleanup, so any interim paper-count snapshot should be treated as provisional rather than a scientific claim.
