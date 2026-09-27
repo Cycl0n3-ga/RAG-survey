@@ -17,12 +17,13 @@ taxonomy_version: "v2"
 
 ## Read the Survey
 
-1. [[SURVEY|RAG Survey — From Knowledge Construction to Evidence-Grounded Generation]]
-2. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
-3. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG System Maps|RAG System Maps]]
+1. [[SURVEY|RAG Survey — From Knowledge Construction to Evidence-Grounded Generation (英文綜述主文)]]
+2. [[00 - 導覽與心智圖 (Navigation & MOC)/LLM 超長文件閱讀與撰寫技術全景 (深度調研報告)|LLM 超長文件閱讀與撰寫技術全景 (正體中文旗艦深度調研報告)]]
+3. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
+4. [[00 - 導覽與心智圖 (Navigation & MOC)/RAG System Maps|RAG System Maps]]
 
 > [!NOTE]
-> `SURVEY.md` 是目前給人從頭讀到尾的主體成品；下面的頁面則是支撐它的研究資料庫。
+> `SURVEY.md` 與 `LLM 超長文件閱讀與撰寫技術全景 (深度調研報告).md` 是目前給人從頭讀到尾的主體綜述；下面的頁面則是支撐它們的研究資料庫。
 
 ## Research Database
 

@@ -14,7 +14,8 @@ The repository now has two layers:
 
 ## Read First
 
-- **[RAG Survey — From Knowledge Construction to Evidence-Grounded Generation](./SURVEY.md)** ← main readable artifact
+- **[RAG Survey — From Knowledge Construction to Evidence-Grounded Generation](./SURVEY.md)** ← main readable artifact (English)
+- **[LLM 超長文件閱讀與撰寫技術全景 (深度調研報告)](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/LLM%20%E8%B6%85%E9%95%B7%E6%96%87%E4%BB%B6%E9%96%B1%E8%AE%80%E8%88%87%E6%92%B0%E5%AF%AB%E6%8A%80%E8%A1%93%E5%85%A8%E6%99%AF%20%28%E6%B7%B1%E5%BA%A6%E8%AA%BF%E7%A0%94%E5%A0%B1%E5%91%8A%29.md)** ← 繁體中文旗艦全景報告 (Traditional Chinese)
 - [RAG Research Taxonomy & Domain Map](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/RAG%20Research%20Taxonomy%20%26%20Domain%20Map.md)
 - [RAG System Maps](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/RAG%20System%20Maps.md)
 
