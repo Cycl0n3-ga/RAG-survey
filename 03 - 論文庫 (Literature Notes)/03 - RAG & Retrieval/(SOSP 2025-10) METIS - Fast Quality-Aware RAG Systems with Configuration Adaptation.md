@@ -40,12 +40,11 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D14"
 primary_domain: "D14"
-secondary_domains: []
 paradigm_tags: []
 adjacent_interfaces:
   - "A02"
----
 
+---
 # METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation
 
 ## 一話摘要 (TL;DR)
