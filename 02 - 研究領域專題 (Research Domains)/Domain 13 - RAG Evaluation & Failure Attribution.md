@@ -13,49 +13,34 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-如何分層評估 retrieval、evidence、context、generation 與 end-to-end quality，並定位 failure 真正發生在哪一層？
-
-```mermaid
-flowchart LR
-    R["Retrieval"] -.-> E["Evaluation"]
-    EV["Evidence"] -.-> E
-    C["Context"] -.-> E
-    G["Generation"] -.-> E
-    E --> F["Failure Attribution"]
-    O["Oracle / Ablation"] -.-> F
-```
+如何對 RAG 元件與端到端行為進行可重現評估，並透過 metrics、controlled interventions、oracle experiments 與 failure diagnosis 判斷瓶頸真正發生在哪一層？
 
 ## Includes
-- benchmark / dataset / metric / evaluation framework
-- retrieval evaluation
-- evidence coverage / sufficiency evaluation
-- context utilization evaluation
-- faithfulness / citation evaluation
-- long-form evaluation
-- oracle / ablation protocol
-- failure attribution / error propagation
-- meta-evaluation
+- benchmark / dataset design
+- retrieval / evidence / context / generation / citation evaluation
+- long-form and report evaluation
+- claim-level / component-level / trajectory-level diagnosis
+- oracle swaps / controlled intervention / ablation
+- meta-evaluation of judges and metrics
+- cost-aware quality evaluation
 
 ## Excludes
-- retrieval algorithm design → D05
-- runtime observability / serving telemetry → D14
-- project-specific benchmark proposal presented as public benchmark
+- benchmark that primarily measures a non-RAG capability without an evaluation-method contribution → corresponding domain or CROSS
+- generation/repair method → D09
+- action-control method → D12
+- serving/security engineering → D14
 
 ## Level-2 Topics
-- Retrieval Evaluation
-- Evidence Evaluation
-- Context Utilization Evaluation
-- Generation / Faithfulness Evaluation
-- Citation Evaluation
-- Long-form Evaluation
-- Oracle Evaluation
+- Benchmark & Dataset Design
+- Component Evaluation
+- Long-form & Report Evaluation
 - Failure Attribution
+- Oracle & Controlled Intervention
+- Meta-Evaluation
+- Cost-Aware Evaluation
 
 ## Boundary
-```text
-Benchmark != Dataset != Metric != Evaluation Framework
-```
-End-to-end score 不能直接說明 bottleneck 位於 retrieval、evidence construction、context utilization 或 generation。
+`Benchmark != Dataset != Metric != Evaluation Framework`。End-to-end score 不等於 failure attribution；oracle / component swap 是 diagnostic intervention，不代表 total error 可線性分解。
 
 ## Representative Notes
 
