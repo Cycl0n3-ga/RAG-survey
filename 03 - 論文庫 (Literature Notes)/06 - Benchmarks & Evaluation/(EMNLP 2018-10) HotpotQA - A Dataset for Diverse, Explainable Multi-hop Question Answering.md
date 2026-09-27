@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Yang2018_HotpotQA"
 title: "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering"
 authors:
