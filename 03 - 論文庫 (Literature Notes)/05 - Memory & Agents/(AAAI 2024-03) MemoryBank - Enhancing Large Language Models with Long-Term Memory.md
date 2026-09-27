@@ -1,4 +1,8 @@
 ---
+adjacent_interfaces:
+  - "A04"
+paradigm_tags:
+  - "memory_augmented_rag"
 secondary_domains: []
 paper_id: "Zhong2024_MemoryBank"
 title: "MemoryBank: Enhancing Large Language Models with Long-Term Memory"
@@ -37,11 +41,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D11"
 primary_domain: "D11"
-secondary_domains: []
-paradigm_tags:
-  - "memory_augmented_rag"
-adjacent_interfaces:
-  - "A04"
 ---
 
 # MemoryBank: Enhancing Large Language Models with Long-Term Memory
