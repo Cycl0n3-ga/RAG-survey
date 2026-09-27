@@ -28,7 +28,7 @@ last_updated: "2026-09-27"
 | **Grounded Generation** | D09 | evidence-grounded generation / attribution / long-form synthesis |
 | **Stateful & Agentic RAG** | D10–D12 | dynamic knowledge / memory / iterative-agentic orchestration |
 | **Evaluation** | D13 | retrieval + generation evaluation / diagnosis |
-| **Deployment & Trust** | D14 | efficiency / robustness / privacy / security / governance |
+| **Deployment & Trust** | D14 | serving efficiency / security / privacy / access control |
 
 這 6 組只是 navigation layer；正式 paper metadata 仍只使用 D01–D14。
 
@@ -90,7 +90,7 @@ flowchart LR
 | D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|Persistent Memory Management]] | 如何管理可跨 interaction/task 持續演化的 derived memory？ |
 | D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|RAG Orchestration & Action Control]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
 | D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的問題來源？ |
-| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Security & Privacy]] | 如何管理 latency、cost、observability、robustness 與 security？ |
+| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Security & Privacy]] | 如何管理 latency、cost、observability、security、privacy 與 access control？ |
 
 ## 4. Other Axes
 
