@@ -45,6 +45,9 @@ D05 問「哪些候選較相關？」；D07 問「哪些內容值得真正佔據
 
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|Chain-of-Note]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2025-07) The Distracting Effect - Understanding Irrelevant Passages in RAG|The Distracting Effect]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) SARA - Selective and Adaptive Retrieval-augmented Generation with Context Compression|SARA]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) Attention Basin - Why Contextual Position Matters in Large Language Models|Attention Basin / AttnRank]]
 
 ## Failure Modes Retained from Earlier Synthesis
 
