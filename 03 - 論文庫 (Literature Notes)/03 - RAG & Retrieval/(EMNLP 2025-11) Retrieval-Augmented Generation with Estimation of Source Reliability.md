@@ -1,4 +1,6 @@
 ---
+secondary_domains:
+  - "D05"
 paper_id: "Hwang2025_RARAG"
 title: "Retrieval-Augmented Generation with Estimation of Source Reliability"
 authors:
@@ -36,8 +38,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D08"
 primary_domain: "D08"
-secondary_domains:
-  - "D05"
 paradigm_tags: []
 adjacent_interfaces: []
 ---
