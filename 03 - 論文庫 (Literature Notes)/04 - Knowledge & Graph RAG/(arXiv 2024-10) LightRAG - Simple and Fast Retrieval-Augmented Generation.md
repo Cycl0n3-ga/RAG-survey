@@ -1,4 +1,7 @@
 ---
+secondary_domains:
+  - "D05"
+  - "D10"
 paper_id: "Guo2024_LightRAG"
 title: "LightRAG: Simple and Fast Retrieval-Augmented Generation"
 authors:
@@ -36,9 +39,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D04"
 primary_domain: "D04"
-secondary_domains:
-  - "D05"
-  - "D10"
 paradigm_tags:
   - "graph_rag"
 adjacent_interfaces: []
