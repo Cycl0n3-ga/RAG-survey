@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "Zhang2026_EvidenceSufficiency"
 title: "Do LLMs Know When Evidence is Insufficient? An Evidence Sufficiency Benchmark for Answer-Abstention Calibration in Retrieval-Augmented Generation"
 authors:
