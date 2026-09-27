@@ -13,49 +13,29 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-知識應以什麼形式表示、編碼與建立索引，才能支援後續 retrieval、multi-hop 與 synthesis？
-
-```mermaid
-flowchart LR
-    U["Units from D02 / D03"] --> TXT["Raw Text / Chunk"]
-    U --> PROP["Proposition / Claim"]
-    U --> STR["Triple / Event"]
-    TXT --> ENC["Dense / Sparse / Late Interaction"]
-    PROP --> ENC
-    STR --> G["Graph Representation"]
-    ENC --> V["Vector / Lexical Index"]
-    G --> GI["Graph Index"]
-    TXT --> H["Hierarchical / Multi-resolution"]
-    H --> HI["Hierarchical Index"]
-    V --> HY["Optional Hybrid Index"]
-    GI --> HY
-    HI --> HY
-```
+D02/D03 產生的 retrieval 或 semantic units，應如何被編碼並組織成 searchable representations 與 index structures？
 
 ## Includes
-- chunk / proposition / claim / qualified triple / event / evidence-object representation
-- dense / sparse / late-interaction encoding
-- vector / lexical / graph / hierarchical index
-- knowledge graph construction
-- multi-resolution / hybrid indexing
-- ANN infrastructure
+- dense / sparse / lexical / contextualized representations
+- multimodal representations
+- graph representation and index organization
+- hierarchical / multi-resolution representations
+- hybrid vector + graph / lexical + dense organization
 
 ## Excludes
-- query rewrite / ranking → D05
-- evidence sufficiency / stopping → D06
-- index refresh / version update → D10
+- unit formation / retrieval granularity → D02
+- semantic extraction → D03
+- query-time scorer / retriever / reranker → D05
+- generic ANN/vector-DB serving infrastructure → engineering / D14 interface
 
 ## Level-2 Topics
-- Knowledge Representation
-- Embedding & Representation Learning
-- KG Construction
-- Multi-resolution & Hierarchical Indexing
-- Hybrid Indexing
-- ANN / Vector Infrastructure
+- Unit Representation
+- Graph Representation & Index Organization
+- Hierarchical / Multi-resolution Representation
+- Hybrid Index Organization
 
 ## Boundary
-**Chunk、Proposition、Triple、Event、Graph 不是成熟度階梯。**  
-它們可能分別是 retrieval unit、semantic unit、representation 或 index structure；GraphRAG / Hierarchical RAG 因此以 paradigm tag 表示，不另立 top-level Domain。
+D04 是 **corpus-side representation/index design**。使用 embedding 或 graph 不代表 paper 必然屬 D04；若主要 contribution 是 query-time relevance/retrieval policy，應歸 D05。
 
 ## Representative Notes
 
