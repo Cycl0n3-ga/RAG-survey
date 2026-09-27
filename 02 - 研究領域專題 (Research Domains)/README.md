@@ -51,25 +51,25 @@ Research Domains
 
 ## Literature Coverage Snapshot
 
-> [!WARNING]
-> 下表是 **Phase 1 provisional snapshot**，只用來觀察 coverage。Phase 3 仍有 PipeRAG / RAGCache / DRUID duplicate-pair cleanup，且 Phase 8 才會做全 repo 自動重算；因此不要把下列數字當成最終 canonical count。
+> [!NOTE]
+> 下表是 **2026-09-27 master 即時重算值**，只計 `primary_domain`；secondary domain、Adjacent Interface 與 CROSS 不計入。之後若新增／移動 paper，Phase 8 CI 仍應自動重算以避免 drift。
 
 | Domain | Primary notes |
 |---|---:|
-| D01 | 3 |
+| D01 | 5 |
 | D02 | 5 |
 | D03 | 12 |
-| D04 | 4 |
-| D05 | 18 |
-| D06 | 5 |
-| D07 | 3 |
-| D08 | 6 |
+| D04 | 6 |
+| D05 | 20 |
+| D06 | 6 |
+| D07 | 5 |
+| D08 | 9 |
 | D09 | 8 |
 | D10 | 1 |
-| D11 | 4 |
+| D11 | 6 |
 | D12 | 6 |
-| D13 | 18 |
-| D14 | 6 |
+| D13 | 19 |
+| D14 | 8 |
 
 > Duplicate cleanup queue 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27#12. Phase 3 Duplicate Cleanup Queue|Phase 1 Audit — Duplicate Cleanup Queue]]。
 
