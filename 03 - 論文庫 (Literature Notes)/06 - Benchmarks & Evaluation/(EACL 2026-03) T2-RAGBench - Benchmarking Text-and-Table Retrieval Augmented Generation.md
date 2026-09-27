@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "T2RAGBench2026"
 title: "T²-RAGBench: Text-and-Table Benchmark for Evaluating Retrieval-Augmented Generation"
 authors:
