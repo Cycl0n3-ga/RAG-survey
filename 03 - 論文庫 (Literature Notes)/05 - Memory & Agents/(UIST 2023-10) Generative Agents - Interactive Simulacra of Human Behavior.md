@@ -28,12 +28,11 @@ primary_domain: null
 secondary_domains:
   - "D11"
   - "D12"
-paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 
----
 
+---
 # Generative Agents: Interactive Simulacra of Human Behavior
 
 > [!INFO] 論文元數據 (Metadata)
@@ -46,17 +45,14 @@ adjacent_interfaces:
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/05 - Memory & Agents/(UIST 2023-10) Generative Agents - Interactive Simulacra of Human Behavior.pdf|開啟本地 PDF 檔案]]
 ---
-
 ## 一話摘要 (TL;DR)
 **在虛擬小鎮中實現 25 個自主 Agent，提出包含記憶流（Memory Stream）、反思（Reflection）與規劃（Planning）的長期行為架構。**
 
 ---
-
 ## 研究背景與問題定義 (Problem Statement)
 LLM 缺乏長期的經驗累積與自我演化機制，在開放環境中無法維持長達數天的行事邏輯與性格一致性。
 
 ---
-
 ## 核心方法與技術架構 (Methodology & Architecture)
 核心架構包含三要素：1. Memory Stream：按時間順序完整記錄感知到的所有事件；2. Retrieval：根據『時間新鮮度（Recency）』、『事件重要性（Importance）』與『語意相關度（Relevance）』加權提取記憶；3. Reflection：定期觸發高階抽象思考，將細碎記憶提煉為信念與世界觀；4. Planning：將信念轉化為行動大綱。
 
@@ -68,23 +64,19 @@ graph LR
 ```
 
 ---
-
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
 > **出處與評估條件**：Figure 4 & Section 5 (Page 8-10): 在 25 個 Agent 的長期沙盒模擬中，反思機制使得 Agent 能夠從碎片事件自主湧現出長程計畫 (如舉辦情人節派對並成功相互邀請傳播)。
 
 ---
-
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：展現出驚人的長期湧現行為（自主傳播訊息、籌辦派對）；缺點：記憶流不斷線性增長，需要持續的反思摘要以防止檢索效率衰竭。
 
 ---
-
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
 現代 Agent 記憶架構（三維加權檢索與週期性反思）的靈魂先驅，廣泛啟發了長程任務自主智慧體的設計。
 
 ---
-
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
