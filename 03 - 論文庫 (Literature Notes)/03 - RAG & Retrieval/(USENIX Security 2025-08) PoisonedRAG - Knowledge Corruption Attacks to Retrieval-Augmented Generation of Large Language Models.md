@@ -37,11 +37,10 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D14"
 primary_domain: "D14"
-secondary_domains: []
 paradigm_tags: []
 adjacent_interfaces: []
----
 
+---
 # PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
 
 ## 一話摘要 (TL;DR)
