@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 secondary_domains:
   - "D05"
   - "D13"
@@ -47,15 +46,14 @@ taxonomy_home: "CROSS"
 primary_domain: null
 adjacent_interfaces: []
 
----
 
+---
 # MuSiQue: Multihop Questions via Single-hop Question Composition
 
 ## 1. 一話摘要 (TL;DR)
 MuSiQue 揭露了現有多跳問答資料集（如 HotpotQA）中高達 60%+ 的題目可被模型利用「單跳捷徑（Reasoning Shortcuts）」投機破解的致命漏洞，並透過嚴格的單跳問題自底向上可控組合，構建了包含 25,000 題、真正需要 2–4 跳鏈式推理的嚴謹基準。
 
 ---
-
 ## 2. 研究背景與問題定義 (Problem Statement)
 
 ### 2.1 多跳問答的「偽推理」危機
@@ -65,7 +63,6 @@ MuSiQue 揭露了現有多跳問答資料集（如 HotpotQA）中高達 60%+ 的
 3. **缺乏子問題拆解評估**：無法驗證模型究竟在第幾跳推理斷裂。
 
 ---
-
 ## 3. 核心方法與技術架構 (Methodology & Architecture)
 
 ### 3.1 自底向上單跳組合 (Bottom-Up Question Composition)
@@ -95,7 +92,6 @@ flowchart TD
 ```
 
 ---
-
 ## 4. 主要實驗結果與證據 (Empirical Results & Evidence)
 
 論文在 MuSiQue 上對比了主流神經模型（RoBERTa、Longformer、ETC）與傳統多跳基準（Table 2 & Table 3, Page 6–7）：
@@ -106,7 +102,6 @@ flowchart TD
   - 當只給予包含答案的單個段落時，模型在 HotpotQA 上的正確率高達 62.4%，而在 MuSiQue 上僅為 11.2%，證實 MuSiQue 成功排除了單跳投機漏洞。
 
 ---
-
 ## 5. 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
@@ -118,13 +113,11 @@ flowchart TD
 2. **構建成本高昂**：依賴大量人工核驗以消除語言不自然與語意歧義，規模難以輕易擴展至數十萬級。
 
 ---
-
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 - **支撐 Domain 03（多步檢索）與 D04/D05（Hierarchical Representation & Retrieval）**：MuSiQue 是檢驗 IRCoT、Self-RAG 與 RAPTOR 多跳鏈接能力的終極試金石。
 - **評測誠信守則**：警示本專案在進行多跳技術比較時，絕不能單憑 HotpotQA 的分數宣稱「多跳推理已解決」。
 
 ---
-
 ## 7. 原始來源及相關筆記連結 (Sources & Related Notes)
 - **開啟本地 PDF**：[[Papers/06 - Benchmarks & Evaluation/(TACL 2022-05) MuSiQue - Multihop Questions via Single-hop Question Composition.pdf|開啟原始論文 PDF]]
 - **關聯文獻**：
