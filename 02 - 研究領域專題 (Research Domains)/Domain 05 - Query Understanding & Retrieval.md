@@ -13,50 +13,75 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-Given a query and a searchable index, what evidence should be retrieved, fused and ranked?
+如何理解 query，選擇 retrieval strategy，並找出、融合與排序最相關的候選 evidence？
+
+```mermaid
+flowchart LR
+    Q["Query"] --> U["Understand"]
+    U -. "optional" .-> RW["Rewrite / Expand / HyDE"]
+    U -. "optional" .-> DC["Decompose"]
+    U --> RT["Route"]
+    RW --> RT
+    DC --> RT
+    RT --> D["Dense"]
+    RT --> S["Sparse"]
+    RT --> G["Graph"]
+    RT --> H["Hierarchical"]
+    D --> F["Fusion / Rerank"]
+    S --> F
+    G --> F
+    H --> F
+    DC -. "next hop" .-> MH["Multi-hop"]
+    F -. "need next hop" .-> MH
+    MH -.-> RT
+    F --> EV["Candidate Evidence"]
+```
 
 ## Includes
-- query rewriting / expansion / disambiguation / HyDE
-- query decomposition and multi-hop retrieval
-- dense / sparse / late-interaction retrieval
-- graph / subgraph / path retrieval
-- hybrid fusion and reranking
-- retriever–generator alignment
+- query understanding / constraint extraction
+- query rewrite / expansion / HyDE
+- decomposition / sub-question planning
+- sparse / dense / late-interaction retrieval
+- graph / hierarchical retrieval
+- fusion / reranking / filtering
+- multi-hop / compositional retrieval
+- query-adaptive retrieval granularity
 
 ## Excludes
-- retrieval-unit granularity → D02
-- corpus representation/index design → D04
-- whether/when retrieval is necessary, retry or stop → D06
-- heterogeneous tool/action orchestration → D12
+- 是否已取得足夠 evidence → D06
+- context packing / compression → D07
+- general controller / tool orchestration → D12
 
 ## Level-2 Topics
+- Query Understanding
 - Query Transformation
-- Query Decomposition & Multi-hop Retrieval
-- Retrieval & Relevance Modeling
-- Fusion & Reranking
-- Retriever–Generator Alignment
+- Query Decomposition
+- Retrieval Routing
+- Retrieval & Reranking
+- Fusion
+- Multi-hop Retrieval
+- Retrieval Granularity
+- Retriever / Joint Training
 
 ## Boundary
-D05 決定 **what to retrieve**。使用 retrieval 只是 pipeline dependency，不足以成為 D05 contribution；general RAG architecture papers 可使用 `CROSS`，避免灌大 D05 coverage。
+```text
+Relevance ≠ Sufficiency
+```
+D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是否已足夠完成任務」。
 
 ## Representative Notes
 
-**Current primary-note coverage: 20**
+**Current primary-note coverage: 18**
 
-Canonical representatives（不是完整 20 篇清單）：
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering|DPR]] — dense retrieval.
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2022-07) ColBERTv2 - Effective and Efficient Retrieval via Lightweight Late Interaction|ColBERTv2]] — late interaction.
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels|HyDE]] — query transformation.
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2023-12) Query Rewriting in Retrieval-Augmented Large Language Models|Query Rewriting]] — rewrite-retrieve-read.
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(COLM 2024-10) RQ-RAG - Learning to Refine Queries for Retrieval Augmented Generation|RQ-RAG]] — query refine/decompose/disambiguate.
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions|IRCoT]] — multi-hop iterative retrieval.
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs|RankRAG]] — reranking.
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]] — associative graph retrieval.
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation|KG²RAG]] — graph-guided expansion.
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths|PropRAG]] — proposition-path retrieval.
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2025-12) GFM-RAG - Graph Foundation Model for Retrieval Augmented Generation|GFM-RAG]] — learned graph retriever.
-
-Foundational RAG/LM architecture papers such as RAG 2020, RETRO and Atlas are retained under `CROSS`, not counted as D05-primary merely because they use retrieval.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering|DPR]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SIGIR 2020-07) ColBERT - Efficient and Effective Passage Search via Contextualized Late Interaction over BERT|ColBERT]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Precise Zero-Shot Dense Retrieval without Relevance Labels|HyDE]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions|IRCoT]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs|RankRAG]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICML 2020-07) REALM - Retrieval-Augmented Language Model Pre-Training|REALM]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICML 2022-07) Improving Language Models by Retrieving from Trillions of Tokens|RETRO]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(JMLR 2023-01) Atlas - Few-shot Learning with Retrieval Augmented Language Models|Atlas]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) RA-DIT - Retrieval-Augmented Dual Instruction Tuning|RA-DIT]]
 
 ## Retrieval Strategy Spectrum
 舊版「Advanced RAG」頁面的有效內容保留為 retrieval strategy spectrum，但重新放回正確邊界：
