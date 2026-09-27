@@ -10,6 +10,7 @@ authors:
   - "Yuxi Bi"
   - "Yi Dai"
   - "Jiawei Sun"
+  - "Qianyu Guo"
   - "Meng Wang"
   - "Haofen Wang"
 year: 2023
@@ -26,7 +27,7 @@ tags:
   - modular-rag
   - advanced-rag
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-28
 artifact_type: "survey"
 research_questions:
   - "rag_taxonomy"
