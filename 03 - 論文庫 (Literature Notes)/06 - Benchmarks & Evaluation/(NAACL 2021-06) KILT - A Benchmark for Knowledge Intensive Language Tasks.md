@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 paper_id: "Petroni2021_KILT"
 title: "KILT: a Benchmark for Knowledge Intensive Language Tasks"
 authors:
