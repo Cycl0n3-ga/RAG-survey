@@ -77,20 +77,20 @@ flowchart LR
 
 | ID | Domain | Core question |
 |---|---|---|
-| D01 | [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Parsing & Structure Recovery|Document Parsing & Structure Recovery]] | 如何把來源轉成保留結構與 provenance 的 corpus？ |
-| D02 | [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Retrieval Granularity|Segmentation & Retrieval Granularity]] | 應切成什麼 retrieval units，且如何保留必要上下文？ |
-| D03 | [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Consolidation|Knowledge Extraction & Consolidation]] | 要抽哪些 semantic units，並如何避免資訊失真？ |
-| D04 | [[02 - 研究領域專題 (Research Domains)/Domain 04 - Representation & Indexing|Representation & Indexing]] | 知識如何表示、編碼與建立 index？ |
+| D01 | [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Ingestion & Structure|Document Parsing & Structure Recovery]] | 如何把來源轉成保留結構與 provenance 的 corpus？ |
+| D02 | [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|Segmentation & Retrieval Granularity]] | 應切成什麼 retrieval units，且如何保留必要上下文？ |
+| D03 | [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|Knowledge Extraction & Consolidation]] | 要抽哪些 semantic units，並如何避免資訊失真？ |
+| D04 | [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|Representation & Indexing]] | 知識如何表示、編碼與建立 index？ |
 | D05 | [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|Query Understanding & Retrieval]] | 如何理解 query，搜尋、融合與 rerank 候選 evidence？ |
-| D06 | [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Retrieval Control|Evidence Sufficiency & Retrieval Control]] | 何時 retrieve/retry/stop；以及 evidence set 是否足夠？ |
-| D07 | [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Utilization|Context Construction & Utilization]] | 如何建構有限 context，並確保模型實際利用 evidence？ |
-| D08 | [[02 - 研究領域專題 (Research Domains)/Domain 08 - Evidence Reconciliation|Evidence Reconciliation]] | 如何處理 freshness、時間/版本與互相衝突的 evidence？ |
-| D09 | [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation & Long-form Synthesis|Grounded Generation & Long-form Synthesis]] | 如何產生可驗證、可歸因的答案或長篇報告？ |
-| D10 | [[02 - 研究領域專題 (Research Domains)/Domain 10 - Knowledge & Index Maintenance|Knowledge & Index Maintenance]] | Knowledge base 變動時如何正確更新？ |
-| D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Persistent Memory Management|Persistent Memory Management]] | 如何管理可跨 interaction/task 持續演化的 derived memory？ |
-| D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - RAG Orchestration & Action Control|RAG Orchestration & Action Control]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
-| D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - Evaluation & Failure Attribution|Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的問題來源？ |
-| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Security & Privacy|RAG Systems, Security & Privacy]] | 如何管理 latency、cost、observability、robustness 與 security？ |
+| D06 | [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|Evidence Sufficiency & Retrieval Control]] | 何時 retrieve/retry/stop；以及 evidence set 是否足夠？ |
+| D07 | [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|Context Construction & Utilization]] | 如何建構有限 context，並確保模型實際利用 evidence？ |
+| D08 | [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|Evidence Reconciliation]] | 如何處理 freshness、時間/版本與互相衝突的 evidence？ |
+| D09 | [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|Grounded Generation & Long-form Synthesis]] | 如何產生可驗證、可歸因的答案或長篇報告？ |
+| D10 | [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|Knowledge & Index Maintenance]] | Knowledge base 變動時如何正確更新？ |
+| D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|Persistent Memory Management]] | 如何管理可跨 interaction/task 持續演化的 derived memory？ |
+| D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|RAG Orchestration & Action Control]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
+| D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的問題來源？ |
+| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Security & Privacy]] | 如何管理 latency、cost、observability、robustness 與 security？ |
 
 ## 4. Other Axes
 
