@@ -1,4 +1,7 @@
 ---
+secondary_domains:
+  - "D05"
+  - "D09"
 paper_id: "Lewis2020_RAG"
 title: "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
 authors:
@@ -24,9 +27,6 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D05"
-  - "D09"
 paradigm_tags: []
 adjacent_interfaces: []
 
