@@ -13,41 +13,60 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-候選 evidence 已取得後，如何在有限有效的 context budget 中進行選擇、去重、壓縮、排序與配置，並使模型可靠利用關鍵資訊？
+候選 evidence 找到後，如何在有限 context budget 中組織資訊，並確保模型真的使用關鍵 evidence？
+
+```mermaid
+flowchart LR
+    EV["Selected Evidence"] --> F["Filter / Dedup"]
+    F --> P["Pack"]
+    P -. "optional" .-> C["Compress"]
+    P --> O["Order"]
+    C --> O
+    O --> B["Budget"]
+    B --> CTX["Final Context"]
+    CTX --> U["Evidence Utilization"]
+    LC["A01 Long Context"] -.-> CTX
+    KV["A02 Context / KV Compression"] -.-> C
+```
 
 ## Includes
-- post-retrieval context selection / deduplication
-- RAG-specific evidence compression
-- context packing and token-budget allocation
-- evidence ordering / position-aware allocation
-- distractor handling and retrieved-context utilization
+- evidence filtering / deduplication
+- context packing
+- retrieval-aware compression
+- ordering / position effects
+- token budget allocation
+- lost-in-the-middle
+- retrieved-vs-parametric knowledge interaction
+- context utilization
 
 ## Excludes
-- relevance reranking → D05
-- generic prompt / KV compression → A02
-- parametric-vs-retrieved factual conflict → D08
-- citation / claim support generation → D09
-- generic security robustness → D14
+- retrieval ranking → D05
+- evidence sufficiency → D06
+- KV-cache optimization本身 → A02
+- output claim verification / citation → D09
 
 ## Level-2 Topics
-- Post-Retrieval Context Selection
-- Context Compression
-- Context Packing & Budget Allocation
-- Ordering & Position
-- Retrieved-Context Utilization
+- Context Selection
+- Context Packing
+- Context Compression for RAG
+- Ordering / Position
+- Budget Allocation
+- Context Utilization
+- Parametric vs Retrieved Knowledge
 
 ## Boundary
-D05 問「哪些候選較相關？」；D07 問「哪些內容值得真正佔據有限 prompt budget，以及模型是否能有效使用它們？」。Knowledge conflict 不屬 D07，應進 D08。
+```text
+Evidence retrieved
+    != evidence placed in context
+    != evidence actually used by the model
+```
 
 ## Representative Notes
 
-**Current primary-note coverage: 5**
+**Current primary-note coverage: 3**
 
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|Chain-of-Note]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2025-07) The Distracting Effect - Understanding Irrelevant Passages in RAG|The Distracting Effect]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) SARA - Selective and Adaptive Retrieval-augmented Generation with Context Compression|SARA]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) Attention Basin - Why Contextual Position Matters in Large Language Models|Attention Basin / AttnRank]]
 
 ## Failure Modes Retained from Earlier Synthesis
 
