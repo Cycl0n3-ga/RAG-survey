@@ -13,40 +13,59 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-D02/D03 產生的 retrieval 或 semantic units，應如何被編碼並組織成 searchable representations 與 index structures？
+知識應以什麼形式表示、編碼與建立索引，才能支援後續 retrieval、multi-hop 與 synthesis？
+
+```mermaid
+flowchart LR
+    U["Units from D02 / D03"] --> TXT["Raw Text / Chunk"]
+    U --> PROP["Proposition / Claim"]
+    U --> STR["Triple / Event"]
+    TXT --> ENC["Dense / Sparse / Late Interaction"]
+    PROP --> ENC
+    STR --> G["Graph Representation"]
+    ENC --> V["Vector / Lexical Index"]
+    G --> GI["Graph Index"]
+    TXT --> H["Hierarchical / Multi-resolution"]
+    H --> HI["Hierarchical Index"]
+    V --> HY["Optional Hybrid Index"]
+    GI --> HY
+    HI --> HY
+```
 
 ## Includes
-- dense / sparse / lexical / contextualized representations
-- multimodal representations
-- graph representation and index organization
-- hierarchical / multi-resolution representations
-- hybrid vector + graph / lexical + dense organization
+- chunk / proposition / claim / qualified triple / event / evidence-object representation
+- dense / sparse / late-interaction encoding
+- vector / lexical / graph / hierarchical index
+- knowledge graph construction
+- multi-resolution / hybrid indexing
+- ANN infrastructure
 
 ## Excludes
-- unit formation / retrieval granularity → D02
-- semantic extraction → D03
-- query-time scorer / retriever / reranker → D05
-- generic ANN/vector-DB serving infrastructure → engineering / D14 interface
+- query rewrite / ranking → D05
+- evidence sufficiency / stopping → D06
+- index refresh / version update → D10
 
 ## Level-2 Topics
-- Unit Representation
-- Graph Representation & Index Organization
-- Hierarchical / Multi-resolution Representation
-- Hybrid Index Organization
+- Knowledge Representation
+- Embedding & Representation Learning
+- KG Construction
+- Multi-resolution & Hierarchical Indexing
+- Hybrid Indexing
+- ANN / Vector Infrastructure
 
 ## Boundary
-D04 是 **corpus-side representation/index design**。使用 embedding 或 graph 不代表 paper 必然屬 D04；若主要 contribution 是 query-time relevance/retrieval policy，應歸 D05。
+**Chunk、Proposition、Triple、Event、Graph 不是成熟度階梯。**  
+它們可能分別是 retrieval unit、semantic unit、representation 或 index structure；GraphRAG / Hierarchical RAG 因此以 paradigm tag 表示，不另立 top-level Domain。
 
 ## Representative Notes
 
-**Current primary-note coverage: 6**
+**Current primary-note coverage: 4**
 
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|RAPTOR]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|Microsoft GraphRAG]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|RAPTOR]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation|LightRAG]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) Situated Embedding Models for Context-Aware Dense Retrieval|Situated Embeddings]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(CVPR 2025-06) VDocRAG - Retrieval-Augmented Generation over Visually-Rich Documents|VDocRAG]]
 
 ## Representation Families
 舊版 GraphRAG / hierarchical 頁面中的核心概念保留為 **representation/index choices**，而不是額外 top-level Domain：
