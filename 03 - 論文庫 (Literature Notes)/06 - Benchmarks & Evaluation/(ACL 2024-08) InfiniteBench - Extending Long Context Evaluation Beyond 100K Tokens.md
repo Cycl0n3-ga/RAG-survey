@@ -8,20 +8,24 @@ authors:
   - "Shengding Hu"
   - "Zihang Xu"
   - "Junhao Chen"
-  - "Mao Sheng"
-  - "et al."
+  - "Moo Hao"
+  - "Xu Han"
+  - "Zhen Thai"
+  - "Shuo Wang"
+  - "Zhiyuan Liu"
+  - "Maosong Sun"
 year: 2024
 publication_year: 2024
 venue: "ACL 2024"
-doi: null
+doi: "10.18653/v1/2024.acl-long.814"
 arxiv: "2402.13718"
-url: "https://arxiv.org/abs/2402.13718"
+url: "https://aclanthology.org/2024.acl-long.814/"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) InfiniteBench - Extending Long Context Evaluation Beyond 100K Tokens.pdf"
 tags:
   - "paper"
   - "extreme-long-context-benchmark-(>100k)"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-28"
 artifact_type: "benchmark_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A01"
@@ -37,10 +41,10 @@ adjacent_interfaces:
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Zhang2024_InfiniteBench`
-> - **作者**：Xinrong Zhang, Yingfa Chen, Shengding Hu, Zihang Xu, Junhao Chen, Mao Sheng, et al.
+> - **作者**：Xinrong Zhang, Yingfa Chen, Shengding Hu, Zihang Xu, Junhao Chen, Moo Hao, Xu Han, Zhen Thai, Shuo Wang, Zhiyuan Liu, Maosong Sun
 > - **預印本初次發布年份 (Preprint)**：2024
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ACL 2024)
-> - **DOI**：無
+> - **DOI**：10.18653/v1/2024.acl-long.814
 > - **arXiv**：[2402.13718](https://arxiv.org/abs/2402.13718)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) InfiniteBench - Extending Long Context Evaluation Beyond 100K Tokens.pdf|開啟本地 PDF 檔案]]
