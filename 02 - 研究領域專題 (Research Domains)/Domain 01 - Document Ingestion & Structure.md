@@ -52,7 +52,7 @@ D01 的輸出是 **structured source units**；它不決定最終 retrieval gran
 
 ## Representative Notes
 
-**Current primary-note coverage: 5**
+**Current primary-note coverage: 3**
 
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis|DocLayNet]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CVPR 2025-06) OmniDocBench - Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations|OmniDocBench]]
