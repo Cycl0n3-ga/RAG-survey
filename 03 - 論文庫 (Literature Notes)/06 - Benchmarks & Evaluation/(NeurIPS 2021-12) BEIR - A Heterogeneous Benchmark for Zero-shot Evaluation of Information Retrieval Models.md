@@ -1,6 +1,7 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
+secondary_domains:
+  - "D13"
 paper_id: "Thakur2021_BEIR"
 title: "BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models"
 authors:
@@ -38,9 +39,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains:
-  - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
