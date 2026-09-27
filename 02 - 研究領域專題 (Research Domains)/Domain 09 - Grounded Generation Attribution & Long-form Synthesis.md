@@ -13,45 +13,63 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-如何從已取得的 evidence 產生其 claims 可被支持、可追溯的答案或長篇 synthesis，並在生成過程中發現 unsupported content 時進行 revision、citation 或 selective abstention？
+如何由 evidence 產生可驗證、可歸因的答案或長篇報告，並在無法支持時選擇修正或 abstain？
+
+```mermaid
+flowchart LR
+    CTX["Grounded Context"] --> GEN["Generate"]
+    GEN -. "long-form" .-> PLAN["Outline / Section Plan"]
+    PLAN --> LONG["Section Synthesis"]
+    GEN --> CL["Claims"]
+    LONG --> CL
+    CL --> VER["Claim-Evidence Verification"]
+    VER --> CITE["Citation / Attribution"]
+    CITE --> OUT["Answer / Report"]
+    VER -. "unsupported" .-> FIX["Repair / Retrieve / Abstain"]
+```
 
 ## Includes
-- evidence-conditioned grounded answer generation
-- claim→evidence attribution / citation generation
-- unsupported-claim detection and revision
-- selective abstention
+- grounded generation
+- claim decomposition
+- claim-evidence verification
+- faithfulness / groundedness
+- citation / attribution
+- abstention
 - outline / section planning
-- multi-source long-form synthesis
-- cross-section revision and consistency
+- long-form synthesis
+- revision / cross-section consistency
 
 ## Excludes
-- whether evidence is sufficient → D06
-- context selection / compression / packing → D07
-- benchmark / metric-only evaluation → D13
-- general action/tool orchestration → D12
+- retrieval algorithm → D05/D06
+- context packing → D07
+- benchmark methodology → D13
 
 ## Level-2 Topics
-- Grounded Answer Generation
-- Attribution & Citation
-- Verification & Revision
-- Selective Abstention
-- Long-form Evidence Synthesis
+- Grounded Generation
+- Claim Verification
+- Citation / Attribution
+- Abstention
+- Long-form Report Generation
+- Evidence-to-Section Planning
+- Revision / Consistency
 
 ## Boundary
-D06：是否夠證據；D09：在已給 evidence 下生成可支持輸出。Generation-time verifier 若會修改／重寫輸出屬 D09；若只做 scoring / benchmark 則屬 D13。
+```text
+Citation present
+    != citation relevant
+    != citation entails claim
+    != answer complete
+```
 
 ## Representative Notes
 
 **Current primary-note coverage: 8**
 
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes|GopherCite]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2023-07) RARR - Researching and Revising What Language Models Say, Using Language Models|RARR]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models|OpenScholar]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-07) RioRAG - Reinforced Informativeness Optimization for Long-Form Retrieval-Augmented Generation|RioRAG]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports|EviReport]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation|EFSG]]
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2022-12) ASQA - Factoid Questions Meet Long-Form Answers|ASQA]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes|GopherCite]]
 
 ## Long-form Orchestration Patterns
 
