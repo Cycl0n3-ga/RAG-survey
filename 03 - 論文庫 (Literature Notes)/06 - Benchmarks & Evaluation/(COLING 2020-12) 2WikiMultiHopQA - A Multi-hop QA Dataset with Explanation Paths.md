@@ -1,5 +1,8 @@
 ---
 paradigm_tags: []
+secondary_domains:
+  - "D05"
+  - "D13"
 paper_id: "Ho2020_2WikiMultiHopQA"
 title: "Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps"
 authors:
@@ -39,10 +42,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D05"
-  - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
