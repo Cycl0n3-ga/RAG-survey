@@ -13,50 +13,33 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-系統如何根據目前 state 自主選擇下一個 retrieval、tool、verification、memory 或 generation action？
-
-```mermaid
-flowchart LR
-    S["Current State"] --> C["Controller / Policy"]
-    C --> Q["Rewrite / Decompose"]
-    C --> R["Retrieve / Route"]
-    C --> V["Verify / Resolve"]
-    C --> G["Generate / Abstain"]
-    C --> M["Read / Write Memory"]
-    Q -.-> S
-    R -.-> S
-    V -.-> S
-    G -.-> S
-    M -.-> S
-```
+根據目前 query、evidence、memory、中間結果、failure 與 resource state，RAG 系統下一步應執行哪個 action，以及如何把這些 actions 動態組合成 adaptive workflow？
 
 ## Includes
-- controller / policy
-- planning / routing
-- tool selection
-- iterative search-read-verify-generate loops
-- multi-agent coordination
-- workflow orchestration
-- action selection from system state
+- planning / task decomposition / replanning
+- heterogeneous action / tool selection
+- adaptive workflow branching
+- failure-aware repair
+- state→action policy learning
+- process supervision / trajectory optimization
+- adaptive multi-agent coordination
 
 ## Excludes
-- retrieval algorithm本身 → D05
-- retrieve / retry / stop 的局部 sufficiency policy → D06
-- persistent memory lifecycle本身 → D11
-- generic agents without RAG-specific evidence control → A04
+- fixed retrieve→reason loops → D05/D06 depending problem
+- retrieval-only retry / stop control → D06
+- fixed modular role pipeline without adaptive action selection
+- generic agent/tool-use research not centered on evidence lifecycle → A04
 
 ## Level-2 Topics
-- Planning
-- Controller / Policy
-- Tool Use
-- Routing
-- Multi-Agent Coordination
-- Research Workflow Orchestration
-- Failure-aware Repair
+- Planning & Task Decomposition
+- Action / Tool Selection
+- Adaptive Workflow Execution
+- Failure-Aware Repair
+- Policy Learning
+- Adaptive Multi-Agent Coordination
 
 ## Boundary
-**Agentic RAG 是 control plane，不是固定 pipeline stage。**  
-若 paper 只改 retrieval method，不因為使用 agent loop 就自動歸 D12。
+`multi-step != agentic`；`reflection != D12`；`multiple agents != adaptive orchestration`。D06 controls retrieval decisions；D12 controls heterogeneous RAG actions across the process.
 
 ## Representative Notes
 
