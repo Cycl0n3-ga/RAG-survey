@@ -8,11 +8,11 @@ authors:
   - "Taranjeet Singh"
   - "Deshraj Yadav"
 year: 2025
-publication_year: null
-venue: "arXiv"
-doi: null
+publication_year: 2025
+venue: "ECAI 2025"
+doi: "10.3233/FAIA251160"
 arxiv: "2504.19413"
-url: "https://arxiv.org/abs/2504.19413"
+url: "https://doi.org/10.3233/FAIA251160"
 pdf_file: null
 tags:
   - paper
@@ -20,7 +20,7 @@ tags:
   - conversational-memory
   - graph-memory
 verification_status: "verified"
-last_verified: 2026-09-27
+last_verified: 2026-09-28
 artifact_type: "method_paper"
 research_questions:
   - "persistent_conversation_memory"
@@ -53,7 +53,8 @@ Mem0 研究可跨 multi-session 對話持續存在的 memory lifecycle：從 ong
 - 不把 full conversation history 塞入 context 視為 D11；重點在 persistent memory state 的建立與管理。
 
 ## Status
-2025 arXiv preprint；作 supporting/production-oriented memory evidence，不取代 MemoryBank / A-MEM 等 peer-reviewed anchors。
+已正式發表於 ECAI 2025（Frontiers in Artificial Intelligence and Applications；DOI 10.3233/FAIA251160）。原 arXiv:2504.19413 保留作 preprint identifier。
 
 ## Sources
+- https://doi.org/10.3233/FAIA251160
 - https://arxiv.org/abs/2504.19413
