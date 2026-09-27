@@ -1,4 +1,6 @@
 ---
+paradigm_tags:
+  - "multi_hop_rag"
 paper_id: "Tang2024_MultiHopRAG"
 title: "MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries"
 authors:
@@ -32,8 +34,6 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D05"
-paradigm_tags:
-  - "multi_hop_rag"
 adjacent_interfaces: []
 
 ---
