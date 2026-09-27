@@ -1,4 +1,6 @@
 ---
+secondary_domains:
+  - "D02"
 paper_id: "Gunther2024_LateChunking"
 title: "Late Chunking: Contextual Chunk Embeddings Using Long-Context Embedding Models"
 authors:
@@ -26,8 +28,6 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D04"
 primary_domain: "D04"
-secondary_domains:
-  - "D02"
 paradigm_tags: []
 adjacent_interfaces: []
 
