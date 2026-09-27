@@ -44,11 +44,14 @@ D06：是否夠證據；D09：在已給 evidence 下生成可支持輸出。Gene
 
 **Current primary-note coverage: 8**
 
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes|GopherCite]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2023-07) RARR - Researching and Revising What Language Models Say, Using Language Models|RARR]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models|OpenScholar]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-07) RioRAG - Reinforced Informativeness Optimization for Long-Form Retrieval-Augmented Generation|RioRAG]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EviReport - From Reasoned Outlines to Evidence Tracked Long-Form Reports|EviReport]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-08) EFSG - Evidence-First Structured Generation for Multilingual RAG Report Generation|EFSG]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes|GopherCite]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2022-12) ASQA - Factoid Questions Meet Long-Form Answers|ASQA]]
 
 ## Long-form Orchestration Patterns
 
