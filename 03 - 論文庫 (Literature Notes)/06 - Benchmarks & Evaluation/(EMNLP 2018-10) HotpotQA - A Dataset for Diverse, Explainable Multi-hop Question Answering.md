@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 secondary_domains:
   - "D05"
   - "D13"
