@@ -1,4 +1,10 @@
 ---
+adjacent_interfaces:
+  - "A04"
+paradigm_tags:
+  - "memory_augmented_rag"
+secondary_domains:
+  - "D12"
 paper_id: "Packer2023_MemGPT"
 title: "MemGPT: Towards LLMs as Operating Systems"
 authors:
@@ -40,12 +46,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D11"
 primary_domain: "D11"
-secondary_domains:
-  - "D12"
-paradigm_tags:
-  - "memory_augmented_rag"
-adjacent_interfaces:
-  - "A04"
 ---
 
 # MemGPT: Towards LLMs as Operating Systems
