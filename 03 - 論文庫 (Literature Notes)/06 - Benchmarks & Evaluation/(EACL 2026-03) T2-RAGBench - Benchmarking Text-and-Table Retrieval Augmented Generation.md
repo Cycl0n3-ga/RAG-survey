@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "T2RAGBench2026"
 title: "T²-RAGBench: Text-and-Table Benchmark for Evaluating Retrieval-Augmented Generation"
 authors:
@@ -37,15 +36,14 @@ primary_domain: "D13"
 secondary_domains: []
 adjacent_interfaces: []
 
----
 
+---
 # T²-RAGBench: Benchmarking Text-and-Table Retrieval Augmented Generation
 
 ## 一話摘要 (TL;DR)
 T²-RAGBench 是首個專門針對「非結構化文本與半結構化表格深度交織文檔」構建的大規模真實場景評測基準，包含 **23,088 個精確標註的問答-上下文三元組**，系統性揭示現有以文字段落為中心（Text-centric）的 RAG 系統在檢索與解析混合圖表文檔時出現的嚴重跨模態語意割裂。
 
 ---
-
 ## 研究背景與問題定義 (Problem Statement)
 在金融審計、工程招標書、學術文獻與政府年報中，最核心的事實與關鍵結論往往並非純文字，而是以「文字段落 + 數據表格」的混合形態呈現：
 1. **純文字切塊破壞表格結構**：標準 RAG 將文檔依固定字數切片，使結構嚴謹的表格被粗暴截斷為無語意的 Markdown 碎行，遺失了表頭、行列關係與跨單元格約束。
@@ -53,7 +51,6 @@ T²-RAGBench 是首個專門針對「非結構化文本與半結構化表格深�
 3. **缺乏標準化的大規模評測協議**：過往數據集要麼是純文本問答（NQ, HotpotQA），要麼是純表格 QA（WikiTableQuestions），缺乏真實業務中兩者共存且緊密依賴的大規模多模態基準。
 
 ---
-
 ## 核心方法與技術架構 (Methodology & Architecture)
 
 T²-RAGBench 構建了**跨模態混合語料庫**與**階層式檢索生成評測協議**：
@@ -103,7 +100,6 @@ flowchart TD
 - `CHECK_CELL`：針對表格行列坐標的硬約束核對器。
 
 ---
-
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 
 論文在 23,088 條樣本上廣泛評測了主流 RAG 框架（包含 Dense RAG, ColBERT, BM25, Table-BERT）與生成模型（GPT-4, Claude-3.5, Llama-3）。
@@ -117,7 +113,6 @@ flowchart TD
   - 開源模型（如 Llama-3-70B）在混合問答上的準確率僅為 36.1%，多數失敗源於對表頭與行列索引關係的錯位解讀。
 
 ---
-
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
@@ -128,13 +123,11 @@ flowchart TD
 1. **對多模態視覺版面（PDF Visual Layout）依賴較低**：目前表格以結構化 HTML/Markdown 表示，對包含複雜合併單元格（Colspan/Rowspan）及折線圖、柱狀圖的多模態混合評估仍需後續版本擴展。
 
 ---
-
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 1. **對 D02 (Segmentation & Contextualization) 的直接指導**：證明了「Table-Aware Chunking（表格感知切塊）」與「表格線性化（Table Linearization）」在工業 RAG 中是不可或缺的剛需模組，純按 Token 長度切塊在企業級文件上注定失敗。
 2. **對 D13 (RAG Evaluation & Failure Attribution) 的維度擴展**：為本專案建立跨模態可審計檢索體系提供了最重要的基準錨點。
 
 ---
-
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - 官方發布版本：[ACL Anthology: 2026.eacl-long.8](https://aclanthology.org/2026.eacl-long.8/)
 - 關聯專題領域：[[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]、[[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
