@@ -9,6 +9,9 @@ last_updated: "2026-09-27"
 
 # Domain 06 - Evidence Sufficiency & Retrieval Control
 
+> [!WARNING]
+> **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
+
 ## Core Question
 目前 evidence 是否足以回答問題；若不足，缺什麼、是否要再檢索，以及何時停止？
 
