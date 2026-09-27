@@ -1,4 +1,5 @@
 ---
+secondary_domains: []
 paper_id: "Gao2023_HyDE"
 title: "Precise Zero-Shot Dense Retrieval without Relevance Labels"
 authors:
