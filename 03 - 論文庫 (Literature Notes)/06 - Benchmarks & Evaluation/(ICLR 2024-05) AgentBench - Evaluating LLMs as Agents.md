@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Liu2024_AgentBench"
 title: "AgentBench: Evaluating LLMs as Agents"
 authors:
