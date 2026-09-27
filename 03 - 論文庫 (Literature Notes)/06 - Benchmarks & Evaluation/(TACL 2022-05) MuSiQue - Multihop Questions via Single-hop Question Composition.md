@@ -1,5 +1,8 @@
 ---
 paradigm_tags: []
+secondary_domains:
+  - "D05"
+  - "D13"
 paper_id: "Trivedi2022_MuSiQue"
 title: "MuSiQue: Multihop Questions via Single-hop Question Composition"
 authors:
@@ -41,10 +44,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D05"
-  - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
