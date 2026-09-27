@@ -43,19 +43,19 @@ A paper is not D11 merely because it uses the word “memory”. `D10 = synchron
 
 ## Representative Notes
 
-**Current direct RAG primary-note coverage: 2**
+**Current primary-note coverage: 6**
 
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery|MemoRAG]]
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|From RAG to Memory / HippoRAG 2]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|HippoRAG 2 / From RAG to Memory]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-04) Mem0 - Building Production-Ready AI Agents with Scalable Long-Term Memory|Mem0]] — supporting preprint.
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2026-04) EviMem - Evidence-Gap-Driven Iterative Retrieval for Long-Term Conversational Memory|EviMem]] — emerging D11↔D06 work.
 
-**Adjacent memory anchors (not D11-primary):**
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]] — general conversational LLM memory (A04).
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]] — general agent memory organization/evolution (A04).
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]] — general agent/virtual-context memory management (A04).
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory|LongMem]] — model-side long-context memory augmentation (A01).
-
-> [!NOTE]
-> D11 is justified by RAG-specific work such as MemoRAG and HippoRAG 2, while general LLM/agent-memory papers are retained only as adjacent mechanisms. They should not be counted as evidence that memory is a universally standardized top-level RAG domain. D10 vs D11 remains: D10 maintains the canonical external knowledge/index after source change; D11 forms or uses persistent memory state beyond one-shot context construction.
+**Adjacent / interface examples**
+- MemoRAG → D05 primary / D11 secondary / A01 interface.
+- LongMem → A01 primary interface / D11 secondary.
+- Generative Agents → A04 / D11+D12 secondary.
 
 ## Memory Types and Governance Boundary
 Memory 不應只用「向量庫」一詞概括。可用下列維度理解：
