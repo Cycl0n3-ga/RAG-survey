@@ -13,42 +13,35 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-如何把 PDF、Web、DB、表格、圖片等來源轉成保留結構、版面、metadata 與 source anchors 的可處理 corpus？
-
-```mermaid
-flowchart LR
-    SRC["Documents / Web / DB / Tables / Images"] --> P["Parse"]
-    SRC -. "scanned / image" .-> OCR["OCR / Vision Parsing"]
-    P --> S["Structure Recovery"]
-    OCR --> S
-    S --> M["Metadata / Source Anchors"]
-    M --> D02["D02 Segmentation"]
-```
+如何將 PDF、掃描文件、圖片式文件等原始或視覺結構化來源，轉換為可機器處理的 source units，同時保留文字、版面、閱讀順序、階層與表格／圖像等結構？
 
 ## Includes
-- PDF / HTML / Office / database ingestion
-- OCR / vision parsing
-- layout / heading / section / table structure recovery
-- metadata normalization
-- page / span / URI / hash anchoring
-- multimodal document structure
+- text / OCR extraction
+- layout analysis
+- reading-order recovery
+- document hierarchy parsing
+- table / formula / figure parsing
+- end-to-end structured document extraction
+- multimodal structure recovery
+- stable source localization when available（page / span / bbox / source URI）
 
 ## Excludes
-- chunk boundary selection → D02
-- entity / relation / event extraction → D03
-- index representation → D04
+- retrieval-unit boundary / chunk design → D02
+- entity / relation / event / claim extraction → D03
+- vector / graph / index organization → D04
+- Office / Web / DB connectors、hashing、URI normalization 等 generic ingestion plumbing → engineering requirements
 
 ## Level-2 Topics
-- Document Parsing
-- OCR / Vision Parsing
-- Layout Understanding
-- Structure Recovery
-- Table / Figure Structure
-- Metadata / Source Anchoring
-- Multimodal Document Ingestion
+- Text / OCR Extraction
+- Layout Analysis
+- Reading Order Recovery
+- Document Hierarchy Parsing
+- Table / Formula / Figure Parsing
+- End-to-End Structured Document Extraction
+- Multimodal Structure Recovery
 
 ## Boundary
-D01 的輸出是 **structured source units**；它不決定最終 retrieval granularity，也不把文件直接轉成 knowledge graph。
+D01 的 scientific output 是 **structured source units**。Source anchors 是重要 output contract，但目前不應被表述成和 document parsing 同等成熟的獨立 research track。
 
 ## Representative Notes
 
