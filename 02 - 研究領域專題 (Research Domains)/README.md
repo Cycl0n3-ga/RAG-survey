@@ -51,27 +51,33 @@ Research Domains
 
 ## Literature Coverage Snapshot
 
-> [!WARNING]
-> 下表是 **Phase 1 provisional snapshot**，只用來觀察 coverage。Phase 3 仍有 PipeRAG / RAGCache / DRUID duplicate-pair cleanup，且 Phase 8 才會做全 repo 自動重算；因此不要把下列數字當成最終 canonical count。
+> [!NOTE]
+> **Master-validated snapshot (2026-09-27).** This was recomputed directly from all **169 literature-note frontmatters** on `master`, not inferred from the pre-closure counts.
+>
+> - D01–D14 primary notes: **116**
+> - `primary_domain: null` (Adjacent / CROSS): **53**
+> - Total literature notes: **169**
+> - Invalid `paradigm_tags` against the closed vocabulary: **0**
+> - Duplicate YAML root keys after normalization: **0**
 
 | Domain | Primary notes |
 |---|---:|
-| D01 | 3 |
+| D01 | 5 |
 | D02 | 5 |
 | D03 | 12 |
-| D04 | 4 |
-| D05 | 18 |
-| D06 | 5 |
-| D07 | 3 |
-| D08 | 6 |
+| D04 | 6 |
+| D05 | 20 |
+| D06 | 6 |
+| D07 | 5 |
+| D08 | 9 |
 | D09 | 8 |
 | D10 | 1 |
-| D11 | 4 |
+| D11 | 6 |
 | D12 | 6 |
-| D13 | 18 |
-| D14 | 6 |
+| D13 | 19 |
+| D14 | 8 |
 
-> Duplicate cleanup queue 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27#12. Phase 3 Duplicate Cleanup Queue|Phase 1 Audit — Duplicate Cleanup Queue]]。
+Coverage size is diagnostic only; it does **not** imply domain importance or maturity. In particular, D10 remains academically thin despite being a valid maintenance-plane problem.
 
 目前的 coverage gap 應以 Level-2 research question 處理，而不是再增加 Domain：
 - **D08**：provenance lineage / approval-state / applicability-scope governance 仍薄。
