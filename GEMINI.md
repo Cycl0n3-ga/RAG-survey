@@ -186,28 +186,29 @@ metrics: []                                            # 評測指標
 `02 - 研究領域專題 (Research Domains)/` 是本 repo 唯一正式的 RAG Domain 集合，共 **D01–D14**。
 
 ### Domains
-- D01 Document Ingestion & Structure
-- D02 Segmentation & Contextualization
-- D03 Knowledge Extraction & Information Preservation
-- D04 Knowledge Representation & Indexing
+- D01 Document Parsing & Structure Recovery
+- D02 Segmentation & Retrieval Granularity
+- D03 Knowledge Extraction & Consolidation
+- D04 Representation & Indexing
 - D05 Query Understanding & Retrieval
-- D06 Evidence Sufficiency & Adaptive Retrieval
-- D07 Context Construction & Evidence Utilization
-- D08 Temporal Conflict & Provenance Resolution
-- D09 Grounded Generation, Attribution & Long-form Synthesis
-- D10 Dynamic Knowledge & Index Maintenance
-- D11 Memory-Augmented RAG
-- D12 Agentic RAG & Orchestration
-- D13 RAG Evaluation & Failure Attribution
-- D14 RAG Systems, Robustness & Security
+- D06 Evidence Sufficiency & Retrieval Control
+- D07 Context Construction & Utilization
+- D08 Evidence Reconciliation
+- D09 Grounded Generation & Long-form Synthesis
+- D10 Knowledge & Index Maintenance
+- D11 Persistent Memory Management
+- D12 RAG Orchestration & Action Control
+- D13 Evaluation & Failure Attribution
+- D14 RAG Systems, Security & Privacy
 
 ### 分類規則
 1. **Domain = lifecycle / system research problem**。
 2. 每篇 method paper 使用 `taxonomy_home`、`primary_domain`、`secondary_domains`、`paradigm_tags`、`adjacent_interfaces`；不要再維護重複的 `domains` 欄位。
-3. GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等使用 paradigm tags，不新增平行 top-level Domain。
+3. `paradigm_tags` 是封閉字典；GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG 等可作 paradigm tags，但 `benchmark`、`survey`、`retrieval`、`knowledge_extraction`、`kv_cache`、`tool_use`、`long_context` 等一般 topic / artifact / adjacent label 不得放入 `paradigm_tags`。
 4. Long Context、KV Cache、general model architecture、general agents、continual learning 使用 Adjacent Interfaces。
 5. 研究優先順序 / 實驗藍圖、Evidence Gap Controller、F/R/D/A/P/C/T 等 project-specific proposal 放在 `04 - 研究想法與待驗證提案`。
 6. 新增 X-RAG 名詞時，先判斷 Primary Domain，再決定 paradigm tag。
+7. Hard boundaries：`Segmentation != Extraction != Representation != Retrieval`；`Relevance != Sufficiency != Utilization != Reconciliation != Grounded Generation`；`Source Synchronization != Persistent Memory != Action Control`；`Evaluation != Systems/Security Engineering`。
 
 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]。
 
