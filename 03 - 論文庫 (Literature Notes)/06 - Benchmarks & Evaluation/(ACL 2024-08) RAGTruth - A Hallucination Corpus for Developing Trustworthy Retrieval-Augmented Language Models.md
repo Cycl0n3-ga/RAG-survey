@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "Niu2024_RAGTruth"
 title: "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models"
 authors:
@@ -39,7 +38,6 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D09"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
