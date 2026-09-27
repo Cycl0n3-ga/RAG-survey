@@ -1,4 +1,5 @@
 ---
+secondary_domains: []
 paper_id: "Duarte2024_LumberChunker"
 title: "LumberChunker: Long-Form Narrative Document Segmentation"
 authors:
@@ -27,7 +28,6 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D02"
 primary_domain: "D02"
-secondary_domains: []
 paradigm_tags: []
 adjacent_interfaces: []
 
