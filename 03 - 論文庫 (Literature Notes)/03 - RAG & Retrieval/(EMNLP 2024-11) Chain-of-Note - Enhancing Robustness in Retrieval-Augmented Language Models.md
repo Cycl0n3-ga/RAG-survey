@@ -55,7 +55,7 @@ adjacent_interfaces: []
 > - **作者**：Wenhao Yu, Hongming Zhang, Xiaoman Pan, Peixin Cao, Kaixin Ma, Jian Li, Hongwei Wang, Dong Yu (Tencent AI Lab & Notre Dame)
 > - **預印本初次發布年份 (Preprint)**：2023 (arXiv:2311.09210)
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (EMNLP 2024)
-> - **DOI**：無 (ACL Anthology / arXiv)
+> - **DOI**：`10.18653/v1/2024.emnlp-main.813`
 > - **arXiv**：[2311.09210](https://arxiv.org/abs/2311.09210)
 > - **驗證狀態**：`verified` (已比對 EMNLP 官方錄取版本與論文 PDF)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models.pdf|開啟本地 PDF 檔案]]
