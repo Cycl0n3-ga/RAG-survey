@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "Min2023_FActScore"
 title: "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation"
 authors:
@@ -40,7 +39,6 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D09"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
