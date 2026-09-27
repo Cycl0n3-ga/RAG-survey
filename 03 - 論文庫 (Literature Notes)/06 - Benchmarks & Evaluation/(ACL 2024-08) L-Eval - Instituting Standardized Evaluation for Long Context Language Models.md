@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "An2024_LEval"
 title: "L-Eval: Instituting Standardized Evaluation for Long Context Language Models"
 authors:
