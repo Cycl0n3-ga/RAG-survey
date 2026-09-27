@@ -1,4 +1,9 @@
 ---
+paradigm_tags:
+  - "temporal_rag"
+secondary_domains:
+  - "D05"
+  - "D13"
 paper_id: "Vu2024_FreshLLMs"
 title: "FreshLLMs: Refreshing Large Language Models with Search Engine Augmentation"
 authors:
@@ -43,11 +48,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D08"
 primary_domain: "D08"
-secondary_domains:
-  - "D05"
-  - "D13"
-paradigm_tags:
-  - "temporal_rag"
 adjacent_interfaces: []
 
 ---
