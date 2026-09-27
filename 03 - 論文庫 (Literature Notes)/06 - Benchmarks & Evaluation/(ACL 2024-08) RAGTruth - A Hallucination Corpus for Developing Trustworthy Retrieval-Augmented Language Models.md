@@ -45,7 +45,7 @@ adjacent_interfaces: []
 # RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models
 
 ## 一話摘要 (TL;DR)
-RAGTruth 是首個針對 RAG 系統中生成幻覺進行大規模細粒度人工標註的權威語料庫，包含來自多種開源與閉源大模型（GPT-4、GPT-3.5、LLaMA-2 等）在問答、摘要與資料轉文本三大任務下的 **17,790 條生成回答**，人工逐字標註出 **14,289 個幻覺文字跨度（Word/Phrase-level Spans）**，揭示整體 RAG 生成回答的事實幻覺率高達 **43.1%**。
+RAGTruth 是首個針對 RAG 系統中生成幻覺進行大規模細粒度人工標註的權威語料庫，包含來自多種開源與閉源大模型（GPT-4、GPT-3.5、LLaMA-2 等）在問答、摘要與資料轉文本三大任務下的 **17,790 條生成回答**，並提供細粒度的人工 hallucination span annotations；不同任務與模型的 hallucination rate 應依原文各實驗設定分別解讀，不將單一比例外推成所有 RAG 系統的整體幻覺率。
 
 ---
 
