@@ -1,4 +1,5 @@
 ---
+secondary_domains: []
 paper_id: "Trivedi2023_IRCoT"
 title: "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions"
 authors:
