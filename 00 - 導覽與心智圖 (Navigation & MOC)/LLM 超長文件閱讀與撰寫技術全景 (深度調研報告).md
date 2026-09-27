@@ -125,6 +125,27 @@ flowchart TD
 - **階段三 (D09, D13)**：[[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 可信長篇生成]] · [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 歸因核對與評測]]
 - **階段四 (D10–D14)**：[[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 索引維護同步]] · [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 持久記憶管理]] · [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agent 行動編排]] · [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|D14 系統防禦與可靠性]]
 
+#### 核心生命週期模組職能一覽 (D01–D14 究竟在幹嘛)
+
+為消除模糊地帶，下表精確定義文字在生命週期各站點由哪個 Domain 負責、核心任務是什麼，以及防範哪類系統失效：
+
+| 階段 | Domain | 模組名稱 | 核心在幹嘛 (Core Responsibility) | 關鍵邊界與防範問題 |
+|---|---|---|---|---|
+| **建構** | **D01** | [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Ingestion & Structure\|Document Ingestion & Structure]] | **文件解析與結構還原**：將 PDF/掃描件/網頁轉成保留版面、標題階層、表格行列與圖表的多模態結構化文字。 | 下游檢索無法修復上游被摧毀的結構；表格若被攤平成字串，行列關聯便永久遺失。 |
+| **建構** | **D02** | [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization\|Segmentation & Contextualization]] | **切分與檢索顆粒度**：決定什麼樣的單元（Chunk、Proposition、父子塊）應被獨立檢索，並注入上下文消解代名詞。 | 顆粒度權衡：切太小遺失語境（Dangling Reference），切太大引入無關雜訊。 |
+| **建構** | **D03** | [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation\|Knowledge Extraction & Preservation]] | **語意抽取與資訊保全**：提煉實體、關係、事件或 Claim，且嚴格保留時序、條件、範圍、狀態與否定詞。 | 檢索單元 $\neq$ 語意單元；三元組若丟失限定條件（如「*Q4 批准後才支援*」）即成偽事實。 |
+| **建構** | **D04** | [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing\|Representation & Indexing]] | **知識表示與索引構建**：將文字或物件編碼為 Dense/Sparse 向量、構建知識圖譜（Graph）或聚類層級樹（RAPTOR）。 | 語料庫靜態表示；「建圖/建樹」屬 D04，「查詢時怎麼查」屬 D05。 |
+| **檢索** | **D05** | [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval\|Query Understanding & Retrieval]] | **查詢理解與候選檢索**：查詢改寫、擴充（HyDE）、多跳分解，並自多通道（向量/關鍵字/圖譜）召回候選證據並重排。 | 核心解決「相關性（Relevance）」；確保最相關的前 K 篇候選排在最前面。 |
+| **控制** | **D06** | [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval\|Evidence Sufficiency & Control]] | **充足性決策與檢索控制**：評估現有證據「到底夠不夠回答」；不足時決定再檢索、換策略或主動拒答（Abstain）。 | 相關不等於充足；防止「找到一堆相關廢話，卻因缺乏關鍵證據而強行幻覺」。 |
+| **整合** | **D07** | [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization\|Context Construction & Utilization]] | **上下文組裝與注意力利用**：在輸入 LLM 前進行證據去重、Prompt 壓縮（LLMLingua）與黃金位置排序（對抗 Lost-in-the-Middle）。 | 檢索到了 $\neq$ 模型真能用好；防止關鍵證據被無關干擾項（Distractors）淹沒。 |
+| **仲裁** | **D08** | [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution\|Temporal Conflict & Reconciliation]] | **時序衝突與來源仲裁**：當多筆證據互相矛盾、版本不一時，依據時間戳（Recency）、版本號與權威度判定誰是真相。 | 互斥事實不能同時為真；新舊政策或衝突數據打架時，必須有仲裁機制。 |
+| **生成** | **D09** | [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis\|Grounded Generation & Long-form Synthesis]] | **可信生成與長篇綜合**：依據大綱樹規劃與證據池逐章撰寫萬字報告，並為每個核心 Claim 嚴格標註句級引用。 | 確保每一個生成的 Claim 都有具體 Evidence 支撐，做到「言必有據」。 |
+| **維護** | **D10** | [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance\|Dynamic Knowledge Maintenance]] | **動態知識與索引同步**：真實語料刪改時，同步失效或更新衍生之 Chunk、向量、圖譜節點與快取，避免全量重構。 | 解決語料動態性與「依賴性刪除傳播」；防止已刪除檔案從向量殘留中洩漏。 |
+| **狀態** | **D11** | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG\|Memory-Augmented RAG]] | **持久記憶管理**：維護跨對話、跨任務存在的長期記憶（User Profile、歷史結論），支援整合與受控遺忘。 | D10 同步外部世界真實語料，D11 沉澱系統自身的長期運作經驗與認知。 |
+| **編排** | **D12** | [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration\|Agentic RAG & Orchestration]] | **Agent 行動編排與控制**：作為中央大腦，依據目前狀態、證據缺口、反思評價與 Token 預算，動態決定下一步動作。 | 不是死板的固定流水線，而是依據反饋動態跳轉決策（State-dependent policy）。 |
+| **評估** | **D13** | [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution\|Evaluation & Failure Attribution]] | **評估基準與故障歸因**：建立各層級度量指標，透過 Oracle Gold Evidence 介入等手段精確定位故障發生在何處。 | 回答錯誤時，精確診斷到底是 Retriever 召回失敗、還是 Generator 推理失敗。 |
+| **系統** | **D14** | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security\|RAG Systems, Robustness & Security]] | **系統工程與安全防禦**：突破真實硬體極限（首字延遲 TTFT、KV 快取服務），並防範 Prompt 注入、語料投毒與隱私洩漏。 | 檢索文件 $\neq$ 可信指令（防注入）；檢索文件 $\neq$ 可信事實（防投毒）。 |
+
 ---
 
 ## 三、模型底層支撐：長序列架構與壓縮技術 (A01, A02)
