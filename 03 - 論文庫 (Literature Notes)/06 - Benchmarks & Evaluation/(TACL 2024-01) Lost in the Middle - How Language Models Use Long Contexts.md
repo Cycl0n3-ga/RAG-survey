@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Liu2024_LostInTheMiddle"
 title: "Lost in the Middle: How Language Models Use Long Contexts"
 authors:
