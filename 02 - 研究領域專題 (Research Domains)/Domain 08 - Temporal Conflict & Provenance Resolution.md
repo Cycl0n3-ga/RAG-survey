@@ -57,13 +57,18 @@ D08 only activates when evidence cannot simply coexist. `Relevance != Reliabilit
 
 **Current primary-note coverage: 9**
 
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs / FreshQA]]
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³]]
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-07) When Facts Change - Temporal Knowledge Conflict Resolution in LLMs|When Facts Change]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Retrieval-Augmented Generation with Estimation of Source Reliability|RA-RAG]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs / FreshQA]] — temporal freshness.
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³]] — relevance/recency arbitration.
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-07) When Facts Change - Temporal Knowledge Conflict Resolution in LLMs|When Facts Change]] — temporal/context-memory conflict benchmark.
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2024-11) Who's Who - Large Language Models Meet Knowledge Conflicts in Practice|Who's Who]] — practical knowledge conflicts.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2025-07) FaithfulRAG - Fact-Level Conflict Modeling for Context-Faithful Retrieval-Augmented Generation|FaithfulRAG]] — fact-level context/parametric conflict.
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2025-11) MAGIC - A Multi-Hop and Graph-Based Benchmark for Inter-Context Conflicts in Retrieval-Augmented Generation|MAGIC]] — inter-context conflict benchmark.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) KCR - Disentangling Reasoning Logic to Resolve Explicit Knowledge Conflicts|KCR]] — explicit conflict reasoning/resolution.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Retrieval-Augmented Generation with Estimation of Source Reliability|RA-RAG]] — source reliability.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2025-10) VersionRAG - Version-Aware Retrieval-Augmented Generation for Evolving Documents|VersionRAG]] — emerging version-aware retrieval/reconciliation.
 
 > [!NOTE]
-> 目前 temporal / version / context–memory conflict 與 **source reliability estimation** 已有直接 literature；真正仍偏薄的是 **provenance lineage、approval-state arbitration、scope/condition-aware multi-source resolution**。這些仍應標成 coverage gap，而不是用 project proposal 補成「既有共識」。
+> Temporal/version conflict, knowledge conflict and source reliability now have direct literature. Provenance lineage、approval-state、tenant/policy scope 與 applicability-aware arbitration 仍應標成 coverage gaps。
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
