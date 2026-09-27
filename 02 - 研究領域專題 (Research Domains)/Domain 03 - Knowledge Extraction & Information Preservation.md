@@ -17,41 +17,22 @@ last_updated: "2026-09-27"
 > Chunk boundary 本身屬 D02；knowledge representation / index schema 屬 D04。
 
 ## Core Question
-從原始文字抽取哪些 semantic units，且如何在抽取、對齊與整合時避免遺失關鍵語義？如何從 document / chunk 中建立可供下游 RAG 使用的 entity、relation、event、proposition、claim 等語意單元，同時保留否定、模態、條件、時間、數量、來源與跨段關係？
-
-```mermaid
-flowchart LR
-    SRC["Document / Chunk"] --> IE["Extraction"]
-    IE --> ER["Entity / Relation"]
-    IE --> EV["Event"]
-    IE --> PC["Proposition / Claim"]
-    ER --> Q["Preserve Qualifiers"]
-    EV --> Q
-    PC --> Q
-    Q --> RES["Coreference / Entity Resolution"]
-    RES --> CONS["Cross-chunk / Cross-document Consolidation"]
-    CONS --> D04["D04 Representation & Indexing"]
-    CONS -. "Extraction Error" .-> REP["Re-extract / Expand Source"]
-    REP -.-> IE
-```
+應從原始內容抽取哪些語意知識單元，以及在進入 representation/indexing 前，如何完成必要的對齊、消歧與整合？
 
 ## Includes
-- entity extraction / linking / resolution
-- relation extraction / OpenIE
-- event extraction
-- proposition / atomic fact / claim extraction
-- coreference resolution
-- negation / modality / condition preservation
-- temporal / quantitative qualifiers
-- source / provenance preservation during extraction
+- entity / relation / OpenIE / event extraction
+- proposition / claim extraction
+- coreference / entity resolution
 - cross-chunk / cross-document consolidation
-- extraction repair and error propagation
+- extraction repair
+- semantic fidelity：negation、modality、condition、temporal scope、quantity/unit、source scope、status
 
 ## Excludes
-- retrieval-unit boundary → [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02]]
-- final vector / graph / index schema → [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04]]
-- query-time retrieval → [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05]]
-- evidence sufficiency controller → [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06]]
+- retrieval-unit boundary → D02
+- final vector / graph / index representation → D04
+- query-time retrieval → D05
+- evidence sufficiency controller → D06
+- query-time evidence conflict resolution → D08
 
 ## Level-2 Topics
 - Entity Extraction
@@ -59,22 +40,12 @@ flowchart LR
 - Event Extraction
 - Proposition / Claim Extraction
 - Coreference / Entity Resolution
-- Qualifier Preservation
-- Cross-chunk Consolidation
+- Cross-chunk / Cross-document Consolidation
 - Extraction Repair
-- Extraction-to-RAG Error Propagation
+- Semantic Fidelity / Information Preservation
 
 ## Boundary
-抽取結果可以是 entity、relation、event、proposition 或 claim；之後要如何表示成 vector、qualified triple、graph 或 evidence object，屬於 D04。
-
-本專案的 **F/R/D/A/P/C/T** ontology 與 Evidence-Governed pipeline 是 project hypothesis，放在 Ideas & Hypotheses，不當作既有文獻共識。
-
-## Conceptual Boundaries
-
-- **Retrieval Unit ≠ Semantic Unit**：chunk / passage 是檢索單元；entity / event / proposition / claim 是語意單元，兩者不可強行一對一。
-- **Knowledge Type ≠ Authority / Usability**：一段內容被抽成 Fact / Requirement / Claim，不代表它自動具有足夠權威、時效或可用性；這些需由 D08 / evidence governance 另外判斷。
-- **Extraction Correctness ≠ Evidence Sufficiency**：抽取得正確，仍可能沒有涵蓋回答問題所需的全部 evidence；那是 D06 的問題。
-- **Structured ≠ More Faithful by default**：結構化可能提高可檢索性，也可能丟失 negation、condition、scope、time、unit 或 provenance，因此需做 preservation ablation。
+**Retrieval Unit ≠ Semantic Unit.** Information Preservation 是 D03 的品質目標／research lens，而不是目前與 Extraction / Consolidation 同等成熟的獨立方法線。F/R/D/A/P/C/T 仍是本專案 hypothesis，不是既有 taxonomy 共識。
 
 ## Representative Notes
 
