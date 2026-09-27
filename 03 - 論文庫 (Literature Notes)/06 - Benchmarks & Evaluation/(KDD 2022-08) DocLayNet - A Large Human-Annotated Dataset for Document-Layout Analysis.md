@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 paper_id: "Pfitzmann2022_DocLayNet"
 title: "DocLayNet: A Large Human-Annotated Dataset for Document-Layout Analysis"
 authors:
