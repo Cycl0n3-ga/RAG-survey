@@ -45,12 +45,15 @@ last_updated: "2026-09-27"
 
 **Current primary-note coverage: 6**
 
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|GraphReader]] — plan/function/explore loop.
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2025-07) RAG-Critic - Leveraging Automated Critic-Guided Agentic Workflow for Retrieval Augmented Generation|RAG-Critic]] — failure-aware action planning.
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(EMNLP 2025-11) DecEx-RAG - Boosting Agentic RAG with Decision and Execution Optimization via Process Supervision|DecEx-RAG]] — formal decision/execution optimization.
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-07) Reflective RAG - Self-Evaluation Driven Strategy Optimization in Agentic Retrieval-Augmented Generation|Reflective RAG]] — reflection-driven strategy optimization.
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG|Agentic RAG Survey]]
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|GraphReader]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2025-07) RAG-Critic - Leveraging Automated Critic-Guided Agentic Workflow for Retrieval Augmented Generation|RAG-Critic]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-07) Data-Centric Perspectives on Agentic Retrieval-Augmented Generation - A Survey|Data-Centric Agentic RAG Survey]]
 
 > [!NOTE]
-> ReAct、Toolformer、AutoGen、WebGPT 等目前放在 A04 General Agents & Tool Use；只有當 contribution 直接控制 RAG evidence lifecycle 時，才歸 D12。RAG-Critic 是一個較直接的 D12 method anchor，因為 critic feedback 會驅動 planning model 選擇並執行 RAG repair actions。
+> ReAct、Toolformer、AutoGen、WebGPT 等保留於 A04；只有 contribution 直接控制 RAG evidence lifecycle 的 state→action policy，才歸 D12。
 
 ## Control Mechanisms
 Agentic RAG 的核心不是「用了 Agent」三個字，而是 **state → action policy**。舊版 Agentic/Deep-Research 頁面中的有效機制保留如下：
