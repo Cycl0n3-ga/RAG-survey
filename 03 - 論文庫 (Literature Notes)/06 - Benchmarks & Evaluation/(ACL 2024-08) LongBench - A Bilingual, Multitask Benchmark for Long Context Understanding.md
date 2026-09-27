@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Bai2024_LongBench"
 title: "LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding"
 authors:
