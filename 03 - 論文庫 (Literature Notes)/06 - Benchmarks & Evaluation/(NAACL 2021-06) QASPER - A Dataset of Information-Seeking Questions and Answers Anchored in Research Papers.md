@@ -1,6 +1,8 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
+secondary_domains:
+  - "D05"
+  - "D13"
 paper_id: "Dasigi2021_QASPER"
 title: "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers"
 authors:
@@ -39,10 +41,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D05"
-  - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
