@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Zhou2024_WebArena"
 title: "WebArena: A Realistic Web Environment for Building Autonomous Agents"
 authors:
