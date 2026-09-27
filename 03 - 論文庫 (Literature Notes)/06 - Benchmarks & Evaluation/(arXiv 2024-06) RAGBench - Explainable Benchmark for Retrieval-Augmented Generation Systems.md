@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 paper_id: "Friel2024_RAGBench"
 title: "RAGBench: Explainable Benchmark for Retrieval-Augmented Generation Systems"
 authors:
