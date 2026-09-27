@@ -1,13 +1,13 @@
 ---
-title: "Domain 12 - Agentic RAG & Orchestration"
+title: "Domain 12 - RAG Orchestration & Action Control"
 domain_id: "D12"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Cross-Lifecycle Control"
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
-# Domain 12 - Agentic RAG & Orchestration
+# Domain 12 - RAG Orchestration & Action Control
 
 ## Core Question
 系統如何根據目前 state 自主選擇下一個 retrieval、tool、verification、memory 或 generation action？
@@ -83,3 +83,36 @@ ReAct、Toolformer、AutoGen、WebGPT 等一般 agent/tool-use 工作仍放 A04�
 - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation, Attribution & Long-form Synthesis]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D12 RAG Orchestration & Action Control.**
+> `agentic_rag` remains a paradigm tag. The scientific identity of D12 is **state → action control**, not the word “agent”.
+
+**Core question**：根據目前 query、evidence、memory、中間結果、failure 與 resource state，RAG 系統下一步應執行哪個 action，以及如何將 actions 動態組合成 adaptive workflow？
+
+**Canonical Level-2**
+- Planning & Task Decomposition
+- Action / Tool Selection
+- Adaptive Workflow Execution
+- Failure-Aware Repair
+- Policy Learning / process supervision / trajectory optimization
+- Adaptive Multi-Agent Coordination
+
+**Hard boundary**
+- multi-step retrieval ≠ automatically agentic
+- reflection ≠ automatically D12
+- multiple agents ≠ adaptive orchestration
+- fixed agent pipeline ≠ D12 unless state changes action selection
+- D06 locally controls retrieve/retry/stop; D12 controls heterogeneous RAG actions
+
+**Paper decisions**
+- GraphReader: KEEP D12 / D04 secondary; remove D05 secondary; add DOI `10.18653/v1/2024.findings-emnlp.746`.
+- RAG-Critic: KEEP D12 / D13 secondary; remove D06 secondary.
+- ADD DecEx-RAG (EMNLP 2025 Industry) as formal state/action-policy anchor.
+- ADD Reflective RAG (Findings ACL 2026) as strategy-optimization anchor.
+- ADD newer peer-reviewed Agentic RAG survey (Findings ACL 2026); keep Singh et al. broad survey.
+- AutoSearch: D06 primary / D12 secondary.
+- AgenticRAGTracer: D13 primary / D12 secondary.
+- STORM/OpenScholar/etc. are not D12-primary merely because they are iterative or role-based.

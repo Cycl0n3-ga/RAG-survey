@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Stelmakh2022_ASQA"
 title: "ASQA: Factoid Questions Meet Long-Form Answers"
 authors:
@@ -20,7 +21,7 @@ tags:
   - long-form-qa
   - ambiguous-questions
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 benchmark_ids:
   - "ASQA"
@@ -30,13 +31,11 @@ metrics:
   - "ROUGE-L"
   - "STR-EM"
 taxonomy_version: "v2"
-taxonomy_home: "D13"
-primary_domain: "D13"
+taxonomy_home: "D09"
+primary_domain: "D09"
 secondary_domains:
-  - "D09"
-paradigm_tags:
-  - "long_form_rag"
-  - "benchmark"
+  - "D13"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

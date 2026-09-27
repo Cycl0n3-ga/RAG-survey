@@ -1,4 +1,6 @@
 ---
+paradigm_tags: []
+paradigm_tags: []
 paper_id: "Ru2024_RAGChecker"
 title: "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation"
 authors:
@@ -34,14 +36,13 @@ tags:
   - claim-level
   - benchmark
 verification_status: "verified"
-last_verified: 2026-09-24
+last_verified: 2026-09-27
 artifact_type: "evaluation_framework"
 taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags:
-  - "rag_evaluation"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

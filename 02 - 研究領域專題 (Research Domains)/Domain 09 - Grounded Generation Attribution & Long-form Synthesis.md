@@ -1,13 +1,13 @@
 ---
-title: "Domain 09 - Grounded Generation Attribution & Long-form Synthesis"
+title: "Domain 09 - Grounded Generation & Long-form Synthesis"
 domain_id: "D09"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Generation"
-last_updated: "2026-09-25"
+last_updated: "2026-09-27"
 ---
 
-# Domain 09 - Grounded Generation, Attribution & Long-form Synthesis
+# Domain 09 - Grounded Generation & Long-form Synthesis
 
 ## Core Question
 如何由 evidence 產生可驗證、可歸因的答案或長篇報告，並在無法支持時選擇修正或 abstain？
@@ -94,3 +94,33 @@ Citation present
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D09 Grounded Generation & Long-form Synthesis.**
+
+**Core question**：如何從已取得的 evidence 產生其 claims 可被支持、可追溯的答案或長篇 synthesis，並在生成過程中發現 unsupported content 時進行 revision、citation 或 selective abstention？
+
+**Canonical Level-2**
+- Grounded Answer Generation
+- Attribution & Citation
+- Verification & Revision
+- Selective Abstention
+- Long-form Evidence Synthesis: outline / section planning / multi-source synthesis / cross-section revision
+
+**Hard boundary**
+- D06: is evidence enough?
+- D07: what context reaches the generator?
+- D09: given evidence/context, produce supported output.
+- D13: evaluate/score output rather than generate/repair it.
+- D12: action/tool orchestration; multi-stage writing alone is not automatically agentic.
+
+**Paper decisions**
+- KEEP GopherCite, STORM, OpenScholar, EviReport, EFSG.
+- STORM: fix DOI `10.18653/v1/2024.naacl-long.347`; remove unsupported headline win-rate claims.
+- OpenScholar: remove D12/`agentic_rag` unless stronger action-policy evidence is documented.
+- EviReport: keep D09; remove unsupported Source Hash / Evidence Ledger / “38% gap recovery” claims unless verified.
+- EFSG: high-priority rewrite; current repo metrics overclaim shared-task performance.
+- ADD RARR (ACL 2023) and RioRAG (ACL 2026).
+- Claim–Evidence Ledger remains project Idea 04, not an established paper mechanism.

@@ -1,13 +1,13 @@
 ---
-title: "Domain 06 - Evidence Sufficiency & Adaptive Retrieval"
+title: "Domain 06 - Evidence Sufficiency & Retrieval Control"
 domain_id: "D06"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Retrieval Control"
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
-# Domain 06 - Evidence Sufficiency & Adaptive Retrieval
+# Domain 06 - Evidence Sufficiency & Retrieval Control
 
 ## Core Question
 目前 evidence 是否足以回答問題；若不足，缺什麼、是否要再檢索，以及何時停止？
@@ -85,3 +85,33 @@ Adaptive RAG 是 paradigm tag；只有當 paper 的主要研究問題是「何�
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D06 Evidence Sufficiency & Retrieval Control.**
+> `adaptive_rag`, `corrective_rag`, and `reflective_rag` are paradigms/method families, not Domain names.
+
+**Core question**：目前 evidence 是否已足以支持回答；若不足，系統應繼續檢索、切換策略、拒答，還是停止？
+
+**Canonical Level-2**
+- Retrieval Necessity
+- Evidence Sufficiency / Sufficient Context
+- Retrieval Control: retry / corrective / escalation / stopping
+- Evidence Gap Diagnosis
+- Selective Answering / evidence-conditioned abstention
+
+**Hard boundary**
+- D05 decides *what* to retrieve.
+- D06 decides whether retrieval is needed, whether current evidence is enough, and whether to continue/stop.
+- conflict detection may make evidence insufficient; conflict resolution belongs D08.
+- explicit requirement-slot decomposition → gap localization → targeted retrieval remains a project hypothesis / emerging line.
+
+**Paper decisions**
+- FLARE: KEEP D06.
+- Adaptive-RAG: KEEP D06; remove D05 secondary.
+- Self-RAG: KEEP D06 / D09 secondary.
+- CRAG: KEEP D06 / D07 secondary; remove D05/D12.
+- Sufficient Context (ICLR 2025): ADD as canonical direct sufficiency anchor.
+- Evidence Sufficiency Benchmark 2026: D13 primary / D06 secondary.
+- SURE-RAG 2026: emerging preprint.

@@ -43,10 +43,11 @@ metrics:
   - "Accuracy"
   - "Perplexity"
 taxonomy_version: "v2"
-taxonomy_home: "D05"
-primary_domain: "D05"
+taxonomy_home: "CROSS"
+primary_domain: null
 secondary_domains:
-  - "D04"
+  - "D05"
+  - "D09"
 paradigm_tags:
   - "retrieval_augmented_training"
 adjacent_interfaces: []

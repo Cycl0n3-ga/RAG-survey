@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Petroni2021_KILT"
 title: "KILT: a Benchmark for Knowledge Intensive Language Tasks"
 authors:
@@ -29,7 +30,7 @@ tags:
   - knowledge-intensive
   - provenance
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 research_questions:
   - "benchmark_standardization"
@@ -54,8 +55,7 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D05"
-paradigm_tags:
-  - "benchmark"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

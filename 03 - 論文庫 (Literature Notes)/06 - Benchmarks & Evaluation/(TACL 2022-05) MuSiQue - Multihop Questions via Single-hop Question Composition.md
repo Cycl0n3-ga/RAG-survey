@@ -20,7 +20,7 @@ tags:
   - reasoning-shortcuts
   - musique
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "dataset"
 research_questions:
   - "multihop_reasoning_shortcuts"
@@ -38,13 +38,12 @@ metrics:
   - "f1"
   - "hop_completion_rate"
 taxonomy_version: "v2"
-taxonomy_home: "D13"
-primary_domain: "D13"
+taxonomy_home: "CROSS"
+primary_domain: null
 secondary_domains:
   - "D05"
-paradigm_tags:
-  - "multi_hop_rag"
-  - "benchmark"
+  - "D13"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

@@ -40,17 +40,15 @@ tags:
   - literature-rag
   - citation-verification
 verification_status: "verified"
-last_verified: 2026-09-26
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D09"
 primary_domain: "D09"
 secondary_domains:
   - "D05"
-  - "D12"
 paradigm_tags:
   - "long_form_rag"
-  - "agentic_rag"
 adjacent_interfaces: []
 ---
 
@@ -82,10 +80,13 @@ flowchart LR
 ## 對本 Taxonomy 的位置
 - **Primary: D09** Grounded Generation, Attribution & Long-form Synthesis
 - **Secondary: D05** Query Understanding & Retrieval
-- **Secondary: D12** Agentic RAG & Orchestration
-- Paradigm tags: `long_form_rag`, `agentic_rag`
+- Paradigm tags: `long_form_rag`
 
 ## Sources
 - Nature 650, 857–863 (2026): https://doi.org/10.1038/s41586-025-10072-4
 - arXiv preprint: 2411.14199
 - [[Papers/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models.pdf|開啟本地 PDF]]
+
+## Phase 1 Audit Note — 2026-09-27
+
+OpenScholar remains **D09 primary / D05 secondary**. Iterative self-feedback alone is not sufficient evidence for D12 action-orchestration or the `agentic_rag` paradigm tag; those labels are removed unless a stronger state→heterogeneous-action contribution is documented.

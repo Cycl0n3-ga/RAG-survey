@@ -6,7 +6,7 @@ tags:
   - survey
   - rag
   - research-map
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
 # RAG Research Taxonomy & Domain Map
@@ -36,18 +36,18 @@ last_updated: "2026-09-26"
 
 ```mermaid
 flowchart LR
-    SRC["Knowledge Sources"] --> D01["D01 Ingestion & Structure"]
-    D01 --> D02["D02 Segmentation & Contextualization"]
+    SRC["Knowledge Sources"] --> D01["D01 Document Parsing & Structure Recovery"]
+    D01 --> D02["D02 Segmentation & Retrieval Granularity"]
 
     D02 --> D04["D04 Representation & Indexing"]
-    D02 -. "optional extraction" .-> D03["D03 Knowledge Extraction & Preservation"]
+    D02 -. "optional extraction" .-> D03["D03 Knowledge Extraction & Consolidation"]
     D03 --> D04
 
     Q["User Query"] --> D05["D05 Query Understanding & Retrieval"]
     D04 --> D05
 
-    D05 --> D06["D06 Evidence Sufficiency & Adaptive Retrieval"]
-    D05 -. "when time / source / version matters" .-> D08["D08 Temporal / Conflict / Provenance"]
+    D05 --> D06["D06 Evidence Sufficiency & Retrieval Control"]
+    D05 -. "when time / source / version matters" .-> D08["D08 Evidence Reconciliation"]
     D08 --> D06
 
     D06 --> D07["D07 Context Construction & Utilization"]
@@ -66,31 +66,31 @@ D03 與 D08 都是條件式路徑：
 
 ```mermaid
 flowchart LR
-    D10["D10 Dynamic Knowledge & Index Maintenance"] --> CORE["Core RAG Lifecycle"]
-    D11["D11 Memory-Augmented RAG"] --> CORE
-    D12["D12 Agentic RAG & Orchestration"] --> CORE
+    D10["D10 Knowledge & Index Maintenance"] --> CORE["Core RAG Lifecycle"]
+    D11["D11 Persistent Memory Management"] --> CORE
+    D12["D12 RAG Orchestration & Action Control"] --> CORE
     CORE --> D13["D13 Evaluation & Failure Attribution"]
-    D14["D14 Systems, Robustness & Security"] --> CORE
+    D14["D14 Systems, Security & Privacy"] --> CORE
 ```
 
 ## 3. The 14 Domains
 
 | ID | Domain | Core question |
 |---|---|---|
-| D01 | [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Ingestion & Structure|Document Ingestion & Structure]] | 如何把來源轉成保留結構與 provenance 的 corpus？ |
-| D02 | [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|Segmentation & Contextualization]] | 應切成什麼 retrieval units，且如何保留必要上下文？ |
-| D03 | [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|Knowledge Extraction & Information Preservation]] | 要抽哪些 semantic units，並如何避免資訊失真？ |
-| D04 | [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|Knowledge Representation & Indexing]] | 知識如何表示、編碼與建立 index？ |
+| D01 | [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Parsing & Structure Recovery|Document Parsing & Structure Recovery]] | 如何把來源轉成保留結構與 provenance 的 corpus？ |
+| D02 | [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Retrieval Granularity|Segmentation & Retrieval Granularity]] | 應切成什麼 retrieval units，且如何保留必要上下文？ |
+| D03 | [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Consolidation|Knowledge Extraction & Consolidation]] | 要抽哪些 semantic units，並如何避免資訊失真？ |
+| D04 | [[02 - 研究領域專題 (Research Domains)/Domain 04 - Representation & Indexing|Representation & Indexing]] | 知識如何表示、編碼與建立 index？ |
 | D05 | [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|Query Understanding & Retrieval]] | 如何理解 query，搜尋、融合與 rerank 候選 evidence？ |
-| D06 | [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|Evidence Sufficiency & Adaptive Retrieval]] | 何時 retrieve/retry/stop；以及 evidence set 是否足夠？ |
-| D07 | [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|Context Construction & Evidence Utilization]] | 如何建構有限 context，並確保模型實際利用 evidence？ |
-| D08 | [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|Temporal Conflict & Provenance Resolution]] | 如何處理 freshness、時間/版本與互相衝突的 evidence？ |
-| D09 | [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|Grounded Generation, Attribution & Long-form Synthesis]] | 如何產生可驗證、可歸因的答案或長篇報告？ |
-| D10 | [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|Dynamic Knowledge & Index Maintenance]] | Knowledge base 變動時如何正確更新？ |
-| D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|Memory-Augmented RAG]] | 如何管理可跨 interaction/task 持續演化的 derived memory？ |
-| D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|Agentic RAG & Orchestration]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
-| D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|RAG Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的問題來源？ |
-| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|RAG Systems, Robustness & Security]] | 如何管理 latency、cost、observability、robustness 與 security？ |
+| D06 | [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Retrieval Control|Evidence Sufficiency & Retrieval Control]] | 何時 retrieve/retry/stop；以及 evidence set 是否足夠？ |
+| D07 | [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Utilization|Context Construction & Utilization]] | 如何建構有限 context，並確保模型實際利用 evidence？ |
+| D08 | [[02 - 研究領域專題 (Research Domains)/Domain 08 - Evidence Reconciliation|Evidence Reconciliation]] | 如何處理 freshness、時間/版本與互相衝突的 evidence？ |
+| D09 | [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation & Long-form Synthesis|Grounded Generation & Long-form Synthesis]] | 如何產生可驗證、可歸因的答案或長篇報告？ |
+| D10 | [[02 - 研究領域專題 (Research Domains)/Domain 10 - Knowledge & Index Maintenance|Knowledge & Index Maintenance]] | Knowledge base 變動時如何正確更新？ |
+| D11 | [[02 - 研究領域專題 (Research Domains)/Domain 11 - Persistent Memory Management|Persistent Memory Management]] | 如何管理可跨 interaction/task 持續演化的 derived memory？ |
+| D12 | [[02 - 研究領域專題 (Research Domains)/Domain 12 - RAG Orchestration & Action Control|RAG Orchestration & Action Control]] | 誰決定下一個 retrieve / tool / verify / generate action？ |
+| D13 | [[02 - 研究領域專題 (Research Domains)/Domain 13 - Evaluation & Failure Attribution|Evaluation & Failure Attribution]] | 如何分離 retrieval、evidence、context、generation 的問題來源？ |
+| D14 | [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Security & Privacy|RAG Systems, Security & Privacy]] | 如何管理 latency、cost、observability、robustness 與 security？ |
 
 ## 4. Other Axes
 
@@ -114,3 +114,55 @@ Domain != Paradigm Tag != Benchmark
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
+
+## Phase 1 Closure Status — 2026-09-27
+
+All D01–D14 domains have completed boundary closure. Canonical display names are:
+
+| ID | Canonical domain |
+|---|---|
+| D01 | Document Parsing & Structure Recovery |
+| D02 | Segmentation & Retrieval Granularity |
+| D03 | Knowledge Extraction & Consolidation |
+| D04 | Representation & Indexing |
+| D05 | Query Understanding & Retrieval |
+| D06 | Evidence Sufficiency & Retrieval Control |
+| D07 | Context Construction & Utilization |
+| D08 | Evidence Reconciliation |
+| D09 | Grounded Generation & Long-form Synthesis |
+| D10 | Knowledge & Index Maintenance |
+| D11 | Persistent Memory Management |
+| D12 | RAG Orchestration & Action Control |
+| D13 | Evaluation & Failure Attribution |
+| D14 | RAG Systems, Security & Privacy |
+
+> [!NOTE]
+> Existing file paths are intentionally retained during Phase 1. Path/file renaming belongs to Phase 7 Repository Normalization so internal links can be migrated atomically.
+
+### Closure hard boundaries
+
+```text
+D01 source structure
+  != D02 retrieval-unit formation
+  != D03 semantic extraction/consolidation
+  != D04 representation/index organization
+  != D05 query-time retrieval
+
+Relevance (D05)
+  != Sufficiency / retrieval control (D06)
+  != Context utilization (D07)
+  != Evidence reconciliation (D08)
+  != Grounded output / citation (D09)
+
+Source-of-truth synchronization (D10)
+  != Derived persistent memory (D11)
+  != Heterogeneous action orchestration (D12)
+
+Evaluation / diagnosis (D13)
+  != Serving / security / privacy engineering (D14)
+
+Domain != Paradigm Tag != Benchmark/Dataset/Metric
+```
+
+## Audit Trail
+- [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27|Phase 1 Taxonomy Closure Audit]]

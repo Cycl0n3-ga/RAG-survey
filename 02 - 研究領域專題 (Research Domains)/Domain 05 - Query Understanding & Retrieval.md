@@ -4,7 +4,7 @@ domain_id: "D05"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Retrieval"
-last_updated: "2026-09-25"
+last_updated: "2026-09-27"
 ---
 
 # Domain 05 - Query Understanding & Retrieval
@@ -100,3 +100,32 @@ D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是�
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name remains D05 Query Understanding & Retrieval.**
+
+**Core question**：Given a query and a searchable index, what evidence should be retrieved, fused and ranked?
+
+**Canonical Level-2**
+- Query Transformation: rewrite / expansion / HyDE / disambiguation
+- Query Decomposition & Multi-hop Retrieval
+- Retrieval & Relevance Modeling: dense / sparse / late-interaction / graph
+- Fusion & Reranking
+- Retriever–Generator Alignment
+
+**Hard boundary**
+- retrieval granularity → D02
+- whether/when to retrieve, retry or stop → D06
+- general tool/action routing → D12
+- using retrieval does not automatically make D05 a secondary contribution
+
+**Paper decisions**
+- KEEP DPR, ColBERT/ColBERTv2, SPLADE, Contriever, HyDE, IRCoT, RankRAG, PropRAG, KG²RAG, G-Retriever.
+- HippoRAG: MOVE here from D04; D04 secondary.
+- GFM-RAG: ADD D05 / D04 secondary.
+- Query Rewriting in RAG (EMNLP 2023): ADD.
+- RQ-RAG (COLM 2024): ADD.
+- RAG 2020, RETRO and Atlas: move to CROSS rather than inflate D05 primary coverage.
+- Adaptive-RAG remains D06 primary.

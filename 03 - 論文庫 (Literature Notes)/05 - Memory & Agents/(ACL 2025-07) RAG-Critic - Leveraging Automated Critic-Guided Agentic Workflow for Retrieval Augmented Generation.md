@@ -22,7 +22,7 @@ tags:
   - self-correction
   - failure-repair
 verification_status: "verified"
-last_verified: 2026-09-26
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - "rag_error_critique"
@@ -46,7 +46,6 @@ taxonomy_home: "D12"
 primary_domain: "D12"
 secondary_domains:
   - "D13"
-  - "D06"
 paradigm_tags:
   - "agentic_rag"
   - "reflective_rag"

@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "SaadFalcon2024_ARES"
 title: "ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems"
 authors:
@@ -9,9 +10,9 @@ authors:
 year: 2023
 publication_year: 2024
 venue: "NAACL 2024"
-doi: null
+doi: "10.18653/v1/2024.naacl-long.20"
 arxiv: "2311.09476"
-url: "https://arxiv.org/abs/2311.09476"
+url: "https://aclanthology.org/2024.naacl-long.20/"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems.pdf"
 tags:
   - paper
@@ -20,7 +21,7 @@ tags:
   - prediction-powered-inference
   - statistical-guarantees
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "evaluation_framework"
 benchmark_ids:
   - "NaturalQuestions"
@@ -35,8 +36,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags:
-  - "rag_evaluation"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

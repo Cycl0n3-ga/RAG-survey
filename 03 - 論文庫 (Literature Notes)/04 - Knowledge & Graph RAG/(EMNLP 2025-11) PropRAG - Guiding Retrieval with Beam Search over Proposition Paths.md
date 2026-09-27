@@ -7,9 +7,9 @@ authors:
 year: 2025
 publication_year: 2025
 venue: "EMNLP 2025"
-doi: null
+doi: "10.18653/v1/2025.emnlp-main.317"
 arxiv: "2504.18070"
-url: "https://arxiv.org/abs/2504.18070"
+url: "https://aclanthology.org/2025.emnlp-main.317/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths.pdf"
 tags:
   - paper
@@ -33,7 +33,6 @@ taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
 secondary_domains:
-  - "D03"
   - "D04"
 paradigm_tags:
   - "proposition_rag"

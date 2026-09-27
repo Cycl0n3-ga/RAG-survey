@@ -7,38 +7,38 @@
 
 ```text
 Research Domains
-├── D01 Document Ingestion & Structure
-├── D02 Segmentation & Contextualization
-├── D03 Knowledge Extraction & Information Preservation
-├── D04 Knowledge Representation & Indexing
+├── D01 Document Parsing & Structure Recovery
+├── D02 Segmentation & Retrieval Granularity
+├── D03 Knowledge Extraction & Consolidation
+├── D04 Representation & Indexing
 ├── D05 Query Understanding & Retrieval
-├── D06 Evidence Sufficiency & Adaptive Retrieval
-├── D07 Context Construction & Evidence Utilization
-├── D08 Temporal Conflict & Provenance Resolution
-├── D09 Grounded Generation, Attribution & Long-form Synthesis
-├── D10 Dynamic Knowledge & Index Maintenance
-├── D11 Memory-Augmented RAG
-├── D12 Agentic RAG & Orchestration
-├── D13 RAG Evaluation & Failure Attribution
-└── D14 RAG Systems, Robustness & Security
+├── D06 Evidence Sufficiency & Retrieval Control
+├── D07 Context Construction & Utilization
+├── D08 Evidence Reconciliation
+├── D09 Grounded Generation & Long-form Synthesis
+├── D10 Knowledge & Index Maintenance
+├── D11 Persistent Memory Management
+├── D12 RAG Orchestration & Action Control
+├── D13 Evaluation & Failure Attribution
+└── D14 RAG Systems, Security & Privacy
 ```
 
 ## Domain Index
 
-- [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Ingestion & Structure|D01 Document Ingestion & Structure]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 01 - Document Parsing & Structure Recovery|D01 Document Parsing & Structure Recovery]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Retrieval Granularity|D02 Segmentation & Retrieval Granularity]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Consolidation|D03 Knowledge Extraction & Consolidation]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 04 - Representation & Indexing|D04 Representation & Indexing]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Evidence Utilization|D07 Context Construction & Evidence Utilization]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation, Attribution & Long-form Synthesis]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 Dynamic Knowledge & Index Maintenance]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
-- [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|D14 RAG Systems, Robustness & Security]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Retrieval Control|D06 Evidence Sufficiency & Retrieval Control]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 07 - Context Construction & Utilization|D07 Context Construction & Utilization]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 08 - Evidence Reconciliation|D08 Evidence Reconciliation]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 10 - Knowledge & Index Maintenance|D10 Knowledge & Index Maintenance]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 11 - Persistent Memory Management|D11 Persistent Memory Management]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 12 - RAG Orchestration & Action Control|D12 RAG Orchestration & Action Control]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 13 - Evaluation & Failure Attribution|D13 Evaluation & Failure Attribution]]
+- [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Security & Privacy|D14 RAG Systems, Security & Privacy]]
 
 ## Other Axes
 
@@ -51,7 +51,7 @@ Research Domains
 
 ## Literature Coverage Snapshot
 
-> 這是目前 repo 的**實際 primary-domain paper-note 數量**；只計 `primary_domain`，不計 secondary domain 或 Adjacent Interface。它用來顯示 survey coverage，不代表領域重要性。
+> [!WARNING]\n> 下表是 **Phase 1 closure 前的 historical snapshot**。2026-09-27 已完成多筆 primary-domain remap，因此這些數字不再視為 authoritative；最新統計應在 Phase 7/8 normalization + lint 後重新產生。
 
 | Domain | Primary notes |
 |---|---:|
@@ -71,3 +71,17 @@ Research Domains
 | D14 | 2 |
 
 目前的缺口已不適合用「再加更多 Domain」處理：D08 已有 temporal/conflict + RA-RAG source-reliability anchors，仍缺 provenance lineage / approval-state / applicability-scope arbitration；D10 已有 AURORA，但缺 production CRUD / deletion / invalidation；D12 已有 GraphReader + RAG-Critic 的 direct method anchors，但 coverage 仍比 retrieval/evaluation 薄；D14 已有 METIS systems + PoisonedRAG security anchors，剩下 observability/tracing 與 privacy/access-control 較薄。
+
+## Phase 1 Canonical Names — 2026-09-27
+
+The canonical display names above are authoritative after Phase 1 closure. Existing filenames remain unchanged until Phase 7 path normalization.
+
+Key cleanup outcomes:
+- D03 preservation is a quality lens; canonical research problem is extraction + consolidation.
+- D08 is restored to general evidence reconciliation instead of temporal-only scope.
+- D11 is defined by persistent derived-state lifecycle, not the word “memory”.
+- D12 is defined by state→action orchestration, not by whether a system uses agents.
+- D14 no longer uses generic robustness as a catch-all; adversarial integrity/security remains in D14 while ordinary distractor/context robustness is assigned to the relevant lifecycle domain.
+
+## Audit Trail
+- [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27|Phase 1 Taxonomy Closure Audit]]

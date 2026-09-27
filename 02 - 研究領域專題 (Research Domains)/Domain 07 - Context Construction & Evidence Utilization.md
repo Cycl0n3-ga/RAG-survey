@@ -1,13 +1,13 @@
 ---
-title: "Domain 07 - Context Construction & Evidence Utilization"
+title: "Domain 07 - Context Construction & Utilization"
 domain_id: "D07"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Post-Retrieval"
-last_updated: "2026-09-25"
+last_updated: "2026-09-27"
 ---
 
-# Domain 07 - Context Construction & Evidence Utilization
+# Domain 07 - Context Construction & Utilization
 
 ## Core Question
 候選 evidence 找到後，如何在有限 context budget 中組織資訊，並確保模型真的使用關鍵 evidence？
@@ -84,3 +84,33 @@ Evidence retrieved
 - [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D07 Context Construction & Utilization.**
+
+**Core question**：候選 evidence 已取得後，如何在有限有效的 context budget 中進行選擇、去重、壓縮、排序與配置，並使模型可靠利用關鍵資訊？
+
+**Canonical Level-2**
+- Post-Retrieval Context Selection / deduplication
+- RAG-specific Context Compression
+- Context Packing & Budget Allocation
+- Ordering & Position
+- Retrieved-Context Utilization / distractor sensitivity
+
+**Hard boundary**
+- relevance reranking → D05
+- generic prompt/KV compression → A02
+- parametric-vs-retrieved factual conflict → D08
+- citation / claim support in output → D09
+- generic noise/security robustness is not automatically D14; distractor use in supplied context can be D07
+
+**Paper decisions**
+- RECOMP: KEEP D07.
+- Chain-of-Note: KEEP D07; D06 secondary; update DOI to `10.18653/v1/2024.emnlp-main.813`.
+- SARA (ACL 2026): ADD.
+- The Distracting Effect (ACL 2025): ADD.
+- Attention Basin / AttnRank (ACL 2026): ADD.
+- LongLLMLingua and Selective Context remain A02 with D07 interface.
+- Lost in the Middle remains A01 / D07+D13 interface.

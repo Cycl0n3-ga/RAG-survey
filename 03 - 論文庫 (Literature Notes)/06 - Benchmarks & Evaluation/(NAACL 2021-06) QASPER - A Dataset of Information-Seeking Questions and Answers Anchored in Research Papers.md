@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Dasigi2021_QASPER"
 title: "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers"
 authors:
@@ -23,7 +24,7 @@ tags:
   - evidence-selection
   - long-context
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "dataset"
 research_questions:
   - "information_seeking_qa"
@@ -35,12 +36,12 @@ metrics:
   - "Answer-F1"
   - "Evidence-F1"
 taxonomy_version: "v2"
-taxonomy_home: "D13"
-primary_domain: "D13"
+taxonomy_home: "CROSS"
+primary_domain: null
 secondary_domains:
   - "D05"
-paradigm_tags:
-  - "benchmark"
+  - "D13"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

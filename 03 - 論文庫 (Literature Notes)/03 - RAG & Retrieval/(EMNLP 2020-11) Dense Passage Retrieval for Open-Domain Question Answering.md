@@ -13,9 +13,9 @@ authors:
 year: 2020
 publication_year: 2020
 venue: "EMNLP 2020"
-doi: null
+doi: "10.18653/v1/2020.emnlp-main.550"
 arxiv: "2004.04906"
-url: "https://arxiv.org/abs/2004.04906"
+url: "https://aclanthology.org/2020.emnlp-main.550/"
 pdf_file: "Papers/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering.pdf"
 tags:
   - "paper"
@@ -26,8 +26,7 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains:
-  - "D04"
+secondary_domains: []
 paradigm_tags: []
 adjacent_interfaces: []
 
@@ -40,7 +39,7 @@ adjacent_interfaces: []
 > - **作者**：Vladimir Karpukhin, Barlas Oğuz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, Wen-tau Yih
 > - **預印本初次發布年份 (Preprint)**：2020
 > - **正式發表年份 / 會議或期刊 (Venue)**：2020 (EMNLP 2020)
-> - **DOI**：無
+> - **DOI**：`10.18653/v1/2020.emnlp-main.550`
 > - **arXiv**：[2004.04906](https://arxiv.org/abs/2004.04906)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(EMNLP 2020-11) Dense Passage Retrieval for Open-Domain Question Answering.pdf|開啟本地 PDF 檔案]]

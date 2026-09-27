@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Niu2024_RAGTruth"
 title: "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models"
 authors:
@@ -24,7 +25,7 @@ tags:
   - hallucination-corpus
   - word-level-spans
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "dataset"
 benchmark_ids:
   - "RAGTruth"
@@ -37,9 +38,7 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D09"
-paradigm_tags:
-  - "rag_evaluation"
-  - "hallucination"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

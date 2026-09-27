@@ -22,9 +22,10 @@ verification_status: "verified"
 last_verified: "2026-09-24"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
-taxonomy_home: "D05"
-primary_domain: "D05"
+taxonomy_home: "CROSS"
+primary_domain: null
 secondary_domains:
+  - "D05"
   - "D09"
 paradigm_tags: []
 adjacent_interfaces: []

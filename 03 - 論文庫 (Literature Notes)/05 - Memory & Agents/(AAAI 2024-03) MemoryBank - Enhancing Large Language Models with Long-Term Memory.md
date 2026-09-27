@@ -20,7 +20,7 @@ tags:
   - ebbinghaus-forgetting-curve
   - conversational-agent
 verification_status: "verified"
-last_verified: 2026-09-26
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - "long_term_conversation_memory"
@@ -34,11 +34,11 @@ metrics:
   - "Contextual Coherence"
   - "Model Ranking Score"
 taxonomy_version: "v2"
-taxonomy_home: "A04"
-primary_domain: null
-secondary_domains:
-  - "D11"
-paradigm_tags: []
+taxonomy_home: "D11"
+primary_domain: "D11"
+secondary_domains: []
+paradigm_tags:
+  - "memory_augmented_rag"
 adjacent_interfaces:
   - "A04"
 ---

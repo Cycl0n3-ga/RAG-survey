@@ -11,9 +11,9 @@ authors:
 year: 2024
 publication_year: 2024
 venue: "Findings of EMNLP 2024"
-doi: null
+doi: "10.18653/v1/2024.findings-emnlp.377"
 arxiv: "2406.17526"
-url: "https://arxiv.org/abs/2406.17526"
+url: "https://aclanthology.org/2024.findings-emnlp.377/"
 pdf_file: "Papers/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG.pdf"
 tags:
   - paper
@@ -22,13 +22,12 @@ tags:
   - semantic-boundary
   - rag
 verification_status: "verified"
-last_verified: 2026-09-24
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D02"
 primary_domain: "D02"
-secondary_domains:
-  - "D05"
+secondary_domains: []
 paradigm_tags: []
 adjacent_interfaces: []
 

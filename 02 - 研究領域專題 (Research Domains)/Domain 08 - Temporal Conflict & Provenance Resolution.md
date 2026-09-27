@@ -1,13 +1,13 @@
 ---
-title: "Domain 08 - Temporal Conflict & Provenance Resolution"
+title: "Domain 08 - Evidence Reconciliation"
 domain_id: "D08"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Evidence Resolution"
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
-# Domain 08 - Temporal Conflict & Provenance Resolution
+# Domain 08 - Evidence Reconciliation
 
 ## Core Question
 當 evidence 隨時間或版本改變、或不同來源對同一事實互相衝突時，如何判斷哪些 evidence 對目前 query 仍有效？
@@ -89,3 +89,38 @@ Citation-entailing != temporally/applicability valid
 - [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06 Evidence Sufficiency & Adaptive Retrieval]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation, Attribution & Long-form Synthesis]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 Dynamic Knowledge & Index Maintenance]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D08 Evidence Reconciliation.**
+> Earlier cleanup narrowed D08 too far to temporal/provenance only; general evidence conflict and source reliability are restored where literature supports them.
+
+**Core question**：當候選 evidence 因內容、時間、版本、來源可靠度或適用條件而無法直接共同成立時，系統應如何偵測衝突並決定保留、降權、分流、合併或顯式揭露哪些 evidence？
+
+**Activation rule**
+> D08 only activates when evidence cannot simply coexist.
+
+**Canonical Level-2**
+- Temporal & Version Reconciliation
+- Knowledge Conflict Resolution
+- Source Reliability & Provenance-Aware Resolution
+- Counter-evidence / contradiction handling
+
+**Signal definitions**
+- provenance = where evidence came from / derivation
+- temporal validity = when a claim holds
+- applicability = conditions/scope under which it applies
+- reliability = how much a source should be trusted
+
+**Hard boundary**
+- D05 relevance ≠ reliability
+- D06 sufficiency ≠ reconciliation
+- D10 maintains versions; D08 reasons over versions at query time
+- D14 handles malicious manipulation/security, not ordinary evidence disagreement
+
+**Paper decisions**
+- KEEP RA-RAG, When Facts Change, FreshLLMs, Re³.
+- RA-RAG: D08 primary / D05 secondary; remove D14.
+- ADD Who's Who (Findings EMNLP 2024), FaithfulRAG (ACL 2025), MAGIC (Findings EMNLP 2025), KCR (ACL 2026).
+- provenance lineage / approval-state / applicability governance remain thin and should be marked gaps, not mature consensus.

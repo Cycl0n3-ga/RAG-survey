@@ -1,13 +1,13 @@
 ---
-title: "Domain 10 - Dynamic Knowledge & Index Maintenance"
+title: "Domain 10 - Knowledge & Index Maintenance"
 domain_id: "D10"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Cross-Lifecycle"
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
-# Domain 10 - Dynamic Knowledge & Index Maintenance
+# Domain 10 - Knowledge & Index Maintenance
 
 ## Core Question
 外部 knowledge base 持續新增、修改、刪除或失效時，RAG index 如何正確且低成本地保持最新？
@@ -66,3 +66,32 @@ AURORA 是目前最直接的 D10 primary anchor：它研究 distribution shift �
 - [[02 - 研究領域專題 (Research Domains)/Domain 08 - Temporal Conflict & Provenance Resolution|D08 Temporal Conflict & Provenance Resolution]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 11 - Memory-Augmented RAG|D11 Memory-Augmented RAG]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D10 Knowledge & Index Maintenance.**
+> This is a cross-lifecycle maintenance plane. Direct academic coverage is emerging; several production CRUD/invalidation concerns are engineering-mature but research-thin.
+
+**Core question**：當 canonical external knowledge 發生新增、修改、刪除或語意分布改變時，RAG 衍生的 chunks、embeddings、graphs、summaries 與 indexes 應如何正確且低成本地同步更新？
+
+**Canonical Level-2**
+- Change & Dependency Management
+- Incremental Index Maintenance: insert/update/delete, partial re-indexing, embedding refresh
+- Structured Knowledge Maintenance: entity reconciliation, graph updates, orphan cleanup, summary recomputation
+- Version & Freshness Maintenance: index freshness, version storage, stale-artifact detection, synchronization
+
+**Hard boundary**
+- initial index construction → D04
+- query-time temporal/version reconciliation → D08
+- source-of-truth synchronization → D10
+- evolving derived interaction memory → D11
+- parametric model editing → A05
+
+**Paper decisions**
+- AURORA: KEEP canonical D10 / D04 secondary; remove unnecessary D05 secondary.
+- LightRAG: D04 primary / D05+D10 secondary.
+- HippoRAG 2: D11 primary / D10 secondary.
+- VersionRAG: D08 primary / D10 secondary, emerging preprint.
+- Generic stale-embedding work caused by encoder-parameter drift is not automatically D10.
+- CRUD, deletion propagation, dependency-aware recomputation, real update-stream benchmarks remain explicit gaps.

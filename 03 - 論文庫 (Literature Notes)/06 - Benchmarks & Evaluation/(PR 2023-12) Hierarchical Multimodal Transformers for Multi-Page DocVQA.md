@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Tito2023_MPDocVQA"
 title: "Hierarchical multimodal transformers for Multi-Page DocVQA"
 authors:
@@ -20,7 +21,7 @@ tags:
   - benchmark
   - dataset
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 research_questions:
   - "multi_page_docvqa"
@@ -33,13 +34,11 @@ metrics:
   - "Accuracy"
   - "Answer Page Accuracy"
 taxonomy_version: "v2"
-taxonomy_home: "D13"
-primary_domain: "D13"
+taxonomy_home: "CROSS"
+primary_domain: null
 secondary_domains:
-  - "D01"
-paradigm_tags:
-  - "multimodal_rag"
-  - "document_qa"
+  - "D13"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

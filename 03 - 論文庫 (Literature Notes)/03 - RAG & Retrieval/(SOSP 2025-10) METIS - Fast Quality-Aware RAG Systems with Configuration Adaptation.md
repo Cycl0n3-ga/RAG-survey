@@ -39,12 +39,8 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D14"
 primary_domain: "D14"
-secondary_domains:
-  - "D05"
-  - "D06"
-  - "D07"
-paradigm_tags:
-  - "adaptive_rag"
+secondary_domains: []
+paradigm_tags: []
 adjacent_interfaces:
   - "A02"
 ---
@@ -84,7 +80,6 @@ METIS 補的是 D14 中原本缺失的 **RAG-specific serving / scheduling / con
 
 ## 對本專案研究領域的意義
 - **D14 primary**：RAG serving、quality-latency trade-off、resource-aware scheduling。
-- **D05/D06/D07 secondary**：系統調整 retrieval count、query-dependent configuration 與 synthesis/context strategy，但主要 contribution 是 systems optimization。
 - 正式出版名稱為 **METIS**；早期 arXiv 工作曾使用 RAGServe 名稱，canonical record 應以 SOSP 2025 正式版本為準。
 
 ## Sources

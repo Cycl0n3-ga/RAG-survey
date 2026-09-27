@@ -27,7 +27,7 @@ tags:
   - multimodal-rag
   - agentic-rag
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 research_questions:
   - "report_generation_evaluation"
@@ -50,7 +50,6 @@ secondary_domains:
   - "D09"
 paradigm_tags:
   - "long_form_rag"
-  - "benchmark"
 adjacent_interfaces: []
 
 ---

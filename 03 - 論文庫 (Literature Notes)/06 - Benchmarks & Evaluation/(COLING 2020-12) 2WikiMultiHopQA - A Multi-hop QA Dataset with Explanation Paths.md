@@ -20,7 +20,7 @@ tags:
   - multihop-qa
   - explanation-path
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "dataset"
 research_questions:
   - "explanation_paths"
@@ -36,13 +36,12 @@ metrics:
   - "supporting_fact_f1"
   - "reasoning_path_f1"
 taxonomy_version: "v2"
-taxonomy_home: "D13"
-primary_domain: "D13"
+taxonomy_home: "CROSS"
+primary_domain: null
 secondary_domains:
   - "D05"
-paradigm_tags:
-  - "multi_hop_rag"
-  - "benchmark"
+  - "D13"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

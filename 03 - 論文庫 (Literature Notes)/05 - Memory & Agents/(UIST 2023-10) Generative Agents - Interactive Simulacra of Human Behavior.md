@@ -27,9 +27,7 @@ primary_domain: null
 secondary_domains:
   - "D11"
   - "D12"
-paradigm_tags:
-  - "general_agent"
-  - "memory"
+paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 

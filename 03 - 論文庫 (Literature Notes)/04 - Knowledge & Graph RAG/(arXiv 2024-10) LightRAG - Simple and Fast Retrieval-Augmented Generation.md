@@ -8,11 +8,11 @@ authors:
   - "Tu Ao"
   - "Chao Huang"
 year: 2024
-publication_year: null
-venue: "arXiv"
-doi: null
+publication_year: 2025
+venue: "Findings of EMNLP 2025"
+doi: "10.18653/v1/2025.findings-emnlp.568"
 arxiv: "2410.05779"
-url: "https://arxiv.org/abs/2410.05779"
+url: "https://aclanthology.org/2025.findings-emnlp.568/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation.pdf"
 tags:
   - paper
@@ -21,7 +21,7 @@ tags:
   - efficient-rag
   - incremental-update
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 benchmark_ids:
   - "Agriculture"
@@ -38,6 +38,7 @@ taxonomy_home: "D04"
 primary_domain: "D04"
 secondary_domains:
   - "D05"
+  - "D10"
 paradigm_tags:
   - "graph_rag"
 adjacent_interfaces: []

@@ -22,7 +22,7 @@ tags:
   - virtual-context-management
   - llm-agent
 verification_status: "verified"
-last_verified: 2026-09-26
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - "virtual_context_management"
@@ -38,11 +38,12 @@ metrics:
   - "ROUGE-L Recall"
   - "Conversation opener similarity"
 taxonomy_version: "v2"
-taxonomy_home: "A04"
-primary_domain: null
+taxonomy_home: "D11"
+primary_domain: "D11"
 secondary_domains:
-  - "D11"
-paradigm_tags: []
+  - "D12"
+paradigm_tags:
+  - "memory_augmented_rag"
 adjacent_interfaces:
   - "A04"
 ---

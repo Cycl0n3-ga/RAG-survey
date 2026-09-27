@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Min2023_FActScore"
 title: "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation"
 authors:
@@ -25,7 +26,7 @@ tags:
   - factuality
   - long-form-generation
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "evaluation_framework"
 benchmark_ids:
   - "FActScore-Bio"
@@ -38,9 +39,7 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D09"
-paradigm_tags:
-  - "factuality"
-  - "evaluation"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

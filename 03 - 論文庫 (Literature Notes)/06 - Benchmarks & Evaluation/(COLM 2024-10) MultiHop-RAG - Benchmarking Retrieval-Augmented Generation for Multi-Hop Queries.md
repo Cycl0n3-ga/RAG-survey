@@ -34,7 +34,6 @@ secondary_domains:
   - "D05"
 paradigm_tags:
   - "multi_hop_rag"
-  - "benchmark"
 adjacent_interfaces: []
 
 ---

@@ -13,9 +13,9 @@ authors:
 year: 2023
 publication_year: 2024
 venue: "EMNLP 2024"
-doi: null
+doi: "10.18653/v1/2024.emnlp-main.813"
 arxiv: "2311.09210"
-url: "https://arxiv.org/abs/2311.09210"
+url: "https://aclanthology.org/2024.emnlp-main.813/"
 pdf_file: "Papers/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models.pdf"
 tags:
   - paper
@@ -24,7 +24,7 @@ tags:
   - reading-notes
   - hallucination-mitigation
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - retrieval_noise_robustness
@@ -42,7 +42,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D07"
 primary_domain: "D07"
 secondary_domains:
-  - "D09"
+  - "D06"
 paradigm_tags: []
 adjacent_interfaces: []
 

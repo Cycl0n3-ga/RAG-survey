@@ -49,8 +49,7 @@ primary_domain: null
 secondary_domains:
   - "D13"
   - "D12"
-paradigm_tags:
-  - "agent_evaluation"
+paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 

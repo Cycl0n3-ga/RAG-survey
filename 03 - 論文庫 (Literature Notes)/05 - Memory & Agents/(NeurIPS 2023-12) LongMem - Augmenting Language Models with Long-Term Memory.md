@@ -12,7 +12,7 @@ authors:
 year: 2023
 publication_year: 2023
 venue: "NeurIPS 2023"
-doi: null
+doi: "10.52202/075280-3259"
 arxiv: "2306.07174"
 url: "https://arxiv.org/abs/2306.07174"
 pdf_file: "Papers/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory.pdf"

@@ -12,9 +12,9 @@ authors:
 year: 2026
 publication_year: 2026
 venue: "ACL 2026"
-doi: null
+doi: "10.18653/v1/2026.acl-long.384"
 arxiv: "2602.18446"
-url: "https://arxiv.org/abs/2602.18446"
+url: "https://aclanthology.org/2026.acl-long.384/"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports.pdf"
 tags:
   - paper
@@ -24,7 +24,7 @@ tags:
   - logical-quality
   - deep-research
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 research_questions:
   - "report_logical_quality"
@@ -42,7 +42,6 @@ secondary_domains:
   - "D09"
 paradigm_tags:
   - "long_form_rag"
-  - "benchmark"
 adjacent_interfaces: []
 
 ---

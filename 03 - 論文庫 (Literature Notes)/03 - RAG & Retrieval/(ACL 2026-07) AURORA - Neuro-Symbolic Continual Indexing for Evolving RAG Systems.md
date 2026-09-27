@@ -40,7 +40,6 @@ taxonomy_home: "D10"
 primary_domain: "D10"
 secondary_domains:
   - "D04"
-  - "D05"
 paradigm_tags: []
 adjacent_interfaces:
   - "A05"

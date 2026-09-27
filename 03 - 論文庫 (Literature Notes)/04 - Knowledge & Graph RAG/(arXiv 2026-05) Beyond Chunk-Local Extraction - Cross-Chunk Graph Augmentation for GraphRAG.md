@@ -36,7 +36,6 @@ taxonomy_home: "D03"
 primary_domain: "D03"
 secondary_domains:
   - "D04"
-  - "D05"
 paradigm_tags:
   - "graph_rag"
 adjacent_interfaces: []

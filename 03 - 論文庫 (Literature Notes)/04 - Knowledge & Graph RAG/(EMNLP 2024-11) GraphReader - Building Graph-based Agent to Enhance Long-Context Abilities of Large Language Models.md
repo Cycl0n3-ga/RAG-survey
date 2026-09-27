@@ -17,9 +17,9 @@ authors:
 year: 2024
 publication_year: 2024
 venue: "Findings of EMNLP 2024"
-doi: null
+doi: "10.18653/v1/2024.findings-emnlp.746"
 arxiv: "2406.14550"
-url: "https://arxiv.org/abs/2406.14550"
+url: "https://aclanthology.org/2024.findings-emnlp.746/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models.pdf"
 tags:
   - paper
@@ -28,7 +28,7 @@ tags:
   - multi-hop-qa
   - coarse-to-fine
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 benchmark_ids:
   - "HotpotQA"
@@ -46,7 +46,6 @@ taxonomy_home: "D12"
 primary_domain: "D12"
 secondary_domains:
   - "D04"
-  - "D05"
 paradigm_tags:
   - "graph_rag"
   - "agentic_rag"

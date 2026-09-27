@@ -10,9 +10,9 @@ authors:
 year: 2025
 publication_year: 2025
 venue: "NAACL 2025"
-doi: null
+doi: "10.18653/v1/2025.naacl-long.449"
 arxiv: "2502.06864"
-url: "https://arxiv.org/abs/2502.06864"
+url: "https://aclanthology.org/2025.naacl-long.449/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(NAACL 2025-05) Knowledge Graph-Guided Retrieval Augmented Generation.pdf"
 tags:
   - paper

@@ -1,13 +1,13 @@
 ---
-title: "Domain 04 - Knowledge Representation & Indexing"
+title: "Domain 04 - Representation & Indexing"
 domain_id: "D04"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Indexing"
-last_updated: "2026-09-25"
+last_updated: "2026-09-27"
 ---
 
-# Domain 04 - Knowledge Representation & Indexing
+# Domain 04 - Representation & Indexing
 
 ## Core Question
 知識應以什麼形式表示、編碼與建立索引，才能支援後續 retrieval、multi-hop 與 synthesis？
@@ -91,3 +91,34 @@ flowchart LR
 - [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D04 Representation & Indexing.**
+> `Knowledge` is removed from the canonical display name because chunk, visual, hierarchical, graph and hybrid representations need not originate from explicit knowledge extraction.
+
+**Core question**：D02/D03 產生的 retrieval 或 semantic units，應如何被編碼並組織成 searchable representations / index structures？
+
+**Canonical Level-2**
+- Unit Representation: dense / sparse / contextualized / multimodal
+- Graph Representation & Index Organization
+- Hierarchical / Multi-resolution Representation
+- Hybrid Index Organization
+
+**Boundary**
+- D02 = unit formation
+- D03 = semantic extraction
+- D04 = corpus-side representation and index organization
+- D05 = query-time relevance/retrieval algorithm
+- generic ANN/vector-DB infrastructure is engineering or D14 interface, not a D04 research topic by itself
+
+**Paper decisions**
+- Late Chunking: KEEP D04 / D02 secondary; remove D05 secondary.
+- RAPTOR: KEEP D04 / D05 secondary.
+- Microsoft GraphRAG: KEEP D04 / D05 secondary; D03/D09 need not be secondary.
+- LightRAG: KEEP D04; update to Findings EMNLP 2025, DOI `10.18653/v1/2025.findings-emnlp.568`; D05+D10 secondary.
+- HippoRAG (2024): MOVE to D05 primary / D04 secondary; remove D11.
+- Situated Embedding Models (ACL 2026): ADD D04 / D02 secondary.
+- VDocRAG (CVPR 2025): ADD D04 / D05 secondary.
+- GFM-RAG (NeurIPS 2025): D05 primary / D04 secondary.

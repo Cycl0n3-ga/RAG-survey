@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Yang2024_CRAGBenchmark"
 title: "CRAG -- Comprehensive RAG Benchmark"
 authors:
@@ -29,7 +30,7 @@ tags:
   - temporal-dynamism
   - web-search
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 research_questions:
   - "temporal_dynamism"
@@ -47,9 +48,8 @@ taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
-  - "D05"
-paradigm_tags:
-  - "benchmark"
+  - "D08"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

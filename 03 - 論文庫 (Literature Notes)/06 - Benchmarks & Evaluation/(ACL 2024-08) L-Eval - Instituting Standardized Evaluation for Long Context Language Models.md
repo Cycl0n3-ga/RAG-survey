@@ -28,8 +28,7 @@ taxonomy_home: "A01"
 primary_domain: null
 secondary_domains:
   - "D13"
-paradigm_tags:
-  - "long_context_evaluation"
+paradigm_tags: []
 adjacent_interfaces:
   - "A01"
 

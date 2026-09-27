@@ -9,22 +9,20 @@ authors:
 year: 2022
 publication_year: 2023
 venue: "ACL 2023"
-doi: null
+doi: "10.18653/v1/2023.acl-long.557"
 arxiv: "2212.10509"
-url: "https://arxiv.org/abs/2212.10509"
+url: "https://aclanthology.org/2023.acl-long.557/"
 pdf_file: "Papers/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions.pdf"
 tags:
   - "paper"
   - "multi-hop-reasoning---iterative-retrieval"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains:
-  - "D06"
-  - "D12"
+secondary_domains: []
 paradigm_tags:
   - "multi_hop_rag"
 adjacent_interfaces: []
@@ -38,7 +36,7 @@ adjacent_interfaces: []
 > - **作者**：Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, Ashish Sabharwal
 > - **預印本初次發布年份 (Preprint)**：2022
 > - **正式發表年份 / 會議或期刊 (Venue)**：2023 (ACL 2023)
-> - **DOI**：無
+> - **DOI**：`10.18653/v1/2023.acl-long.557`
 > - **arXiv**：[2212.10509](https://arxiv.org/abs/2212.10509)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/03 - RAG & Retrieval/(ACL 2023-07) Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions.pdf|開啟本地 PDF 檔案]]

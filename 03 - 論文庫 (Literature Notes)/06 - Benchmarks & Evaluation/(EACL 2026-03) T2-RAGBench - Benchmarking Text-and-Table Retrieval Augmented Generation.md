@@ -1,12 +1,17 @@
 ---
+paradigm_tags: []
 paper_id: "T2RAGBench2026"
-title: "T²-RAGBench: Benchmarking Text-and-Table Retrieval Augmented Generation"
+title: "T²-RAGBench: Text-and-Table Benchmark for Evaluating Retrieval-Augmented Generation"
 authors:
-  - "EACL 2026 Authors"
+  - "Jan Strich"
+  - "Enes Kutay Isgorur"
+  - "Maximilian Trescher"
+  - "Chris Biemann"
+  - "Martin Semmann"
 year: 2026
 publication_year: 2026
 venue: "EACL 2026"
-doi: null
+doi: "10.18653/v1/2026.eacl-long.8"
 arxiv: null
 url: "https://aclanthology.org/2026.eacl-long.8/"
 pdf_file: null
@@ -17,7 +22,7 @@ tags:
   - multi-modal-rag
   - structured-data
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 benchmark_ids:
   - "T²-RAGBench"
@@ -29,8 +34,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags:
-  - "rag_evaluation"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

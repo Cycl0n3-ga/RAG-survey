@@ -36,9 +36,7 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D02"
 primary_domain: "D02"
-secondary_domains:
-  - "D05"
-  - "D07"
+secondary_domains: []
 paradigm_tags:
   - "long_context_hybrid"
 adjacent_interfaces:

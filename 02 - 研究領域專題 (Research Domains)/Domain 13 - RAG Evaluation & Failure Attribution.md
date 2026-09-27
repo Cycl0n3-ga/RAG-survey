@@ -1,13 +1,13 @@
 ---
-title: "Domain 13 - RAG Evaluation & Failure Attribution"
+title: "Domain 13 - Evaluation & Failure Attribution"
 domain_id: "D13"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Evaluation"
-last_updated: "2026-09-25"
+last_updated: "2026-09-27"
 ---
 
-# Domain 13 - RAG Evaluation & Failure Attribution
+# Domain 13 - Evaluation & Failure Attribution
 
 ## Core Question
 如何分層評估 retrieval、evidence、context、generation 與 end-to-end quality，並定位 failure 真正發生在哪一層？
@@ -128,3 +128,35 @@ Long-context benchmark、retrieval benchmark、RAG benchmark 與 long-form repor
 - [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05 Query Understanding & Retrieval]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 09 - Grounded Generation Attribution & Long-form Synthesis|D09 Grounded Generation & Long-form Synthesis]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 14 - RAG Systems, Robustness & Security|D14 RAG Systems, Robustness & Security]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D13 Evaluation & Failure Attribution.**
+> D13 is not a folder for every dataset used by RAG. Primary assignment depends on whether the paper's main contribution is evaluation/diagnosis itself.
+
+**Core question**：如何對 RAG 元件與端到端行為進行可重現評估，並透過 metrics、controlled interventions、oracle experiments 與 failure diagnosis 判斷瓶頸真正發生在哪一層？
+
+**Canonical Level-2**
+- Benchmark & Dataset Design
+- Component Evaluation: retrieval / evidence / context utilization / generation / citation
+- Long-form & Report Evaluation
+- Failure Attribution: claim/component/trajectory-level
+- Oracle & Controlled Intervention
+- Meta-Evaluation: judge calibration, human agreement, evaluator bias
+- Cost-Aware Evaluation
+
+**Principles**
+- Benchmark != Dataset != Metric != Evaluation Framework
+- End-to-end score != failure attribution
+- Gold-evidence/oracle swaps are diagnostic interventions, not linear error decomposition
+
+**Paper decisions**
+- KEEP RAGAS, ARES, RAGChecker, ALCE, RAGTruth, FActScore, MultiHop-RAG, KILT, CRAG Benchmark, T²-RAGBench, AnalystBench, ReportLogic, Evidence Sufficiency Benchmark.
+- HotpotQA / 2WikiMultiHopQA / MuSiQue: MOVE to CROSS; D05+D13 secondary.
+- BEIR: MOVE to D05 primary / D13 secondary.
+- QASPER: MOVE to CROSS; D05+D13 secondary.
+- ASQA: MOVE to D09 primary / D13 secondary.
+- MP-DocVQA: MOVE to CROSS; D13 secondary.
+- ADD Context Utilisation / DRUID (ACL 2025), AgenticRAGTracer (Findings ACL 2026), SafeRAG (ACL 2025), Knowledge Selection analysis (Findings EMNLP 2025).
+- Remove non-paradigm tags such as `benchmark`, `rag_evaluation`, `evaluation`, `factuality`, `hallucination`, `document_qa`, `evidence_sufficiency` from `paradigm_tags`.

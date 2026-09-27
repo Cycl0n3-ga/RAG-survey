@@ -1,13 +1,13 @@
 ---
-title: "Domain 11 - Memory-Augmented RAG"
+title: "Domain 11 - Persistent Memory Management"
 domain_id: "D11"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Cross-Lifecycle"
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
-# Domain 11 - Memory-Augmented RAG
+# Domain 11 - Persistent Memory Management
 
 ## Core Question
 系統如何建立可跨 interaction / task 持續存在的 derived memory，並進行 write、link、retrieve、consolidate、evolve 與 forget，而不是每次只從原始 corpus 重新開始？
@@ -93,3 +93,36 @@ Persistent memory 還需要回答：
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 10 - Dynamic Knowledge & Index Maintenance|D10 Dynamic Knowledge & Index Maintenance]]
 - [[02 - 研究領域專題 (Research Domains)/Domain 12 - Agentic RAG & Orchestration|D12 Agentic RAG & Orchestration]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D11 Persistent Memory Management.**
+> `memory_augmented_rag` remains a paradigm tag. A paper is not D11 merely because it calls a database or retrieval structure “memory”.
+
+**Core question**：系統如何建立跨 interaction/task 持續存在的 derived memory，並完成 write、retrieve、organize、consolidate、evolve 與 forget？
+
+**Canonical Level-2**
+- Memory Formation / Write
+- Memory Organization: linking / hierarchy / graph
+- Memory Retrieval
+- Consolidation & Evolution
+- Forgetting & Invalidation
+- Memory Governance / provenance / scope
+
+**Hard boundary**
+- ordinary external corpus ≠ persistent memory
+- working prompt/context → D07/A01
+- source-of-truth synchronization → D10
+- action planning around memory → D12
+- D10 synchronizes canonical source state; D11 evolves derived persistent state
+
+**Paper decisions**
+- HippoRAG 2: KEEP D11 / D10 secondary.
+- MemoRAG: MOVE to D05 primary / D11 secondary / A01 interface; update to formal WWW 2025 version.
+- A-MEM: MOVE A04 → D11 primary / A04 adjacent.
+- MemoryBank: MOVE A04 → D11 primary / A04 adjacent.
+- MemGPT: MOVE A04 → D11 primary / D12 secondary / A04 adjacent.
+- LongMem: KEEP A01 / D11 secondary.
+- Mem0: ADD as supporting preprint.
+- EviMem 2026: ADD D11 / D06 secondary as emerging work.

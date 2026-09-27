@@ -20,7 +20,7 @@ tags:
   - web-search-augmentation
   - decompose-recompose
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - retrieval_quality_evaluation
@@ -38,8 +38,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D06"
 primary_domain: "D06"
 secondary_domains:
-  - "D05"
-  - "D12"
+  - "D07"
 paradigm_tags:
   - "corrective_rag"
 adjacent_interfaces: []

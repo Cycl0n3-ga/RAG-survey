@@ -1,13 +1,13 @@
 ---
-title: "Domain 03 - Knowledge Extraction & Information Preservation"
+title: "Domain 03 - Knowledge Extraction & Consolidation"
 domain_id: "D03"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Corpus Construction"
-last_updated: "2026-09-25"
+last_updated: "2026-09-27"
 ---
 
-# Domain 03 - Knowledge Extraction & Information Preservation
+# Domain 03 - Knowledge Extraction & Consolidation
 
 > [!IMPORTANT]
 > 本 Domain 只回答：**從文字抽出什麼 semantic knowledge units，以及抽取、對齊與整合時如何避免失真？**
@@ -219,3 +219,30 @@ D05 Retrieval
 - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
 - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D03 Knowledge Extraction & Consolidation.**
+> `Information Preservation` remains an important quality objective / research lens, but current literature does not justify treating it as an equally mature named research track.
+
+**Core question**：應從原始內容抽取哪些語意知識單元，以及在進入 representation/indexing 前，如何完成必要的對齊、消歧與整合？
+
+**Canonical scope**
+- entity / relation / OpenIE / event extraction
+- proposition / claim extraction
+- coreference / entity resolution
+- cross-chunk / cross-document consolidation
+- semantic fidelity: negation, modality, condition, temporal scope, quantity/unit, source scope, status
+
+**Boundary**
+- retrieval unit ≠ semantic unit
+- D02 chunking ≠ D03 extraction
+- D04 representation/index ≠ D03 extraction
+- D08 query-time evidence conflict ≠ D03 consolidation
+- F/R/D/A/P/C/T remains a project-specific Idea/Hypothesis, not literature consensus
+
+**Paper decisions**
+- Keep the 12 current D03 anchors as extraction/consolidation coverage.
+- CrossAug: D03 primary / D04 secondary; remove D05 secondary.
+- Do not infer qualifier preservation merely from schema-valid output.

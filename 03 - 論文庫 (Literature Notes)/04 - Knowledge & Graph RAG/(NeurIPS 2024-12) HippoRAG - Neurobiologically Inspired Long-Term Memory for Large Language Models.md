@@ -18,17 +18,15 @@ tags:
   - "paper"
   - "neurobiologically-inspired-graph-memory"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 taxonomy_version: "v2"
-taxonomy_home: "D04"
-primary_domain: "D04"
+taxonomy_home: "D05"
+primary_domain: "D05"
 secondary_domains:
-  - "D05"
-  - "D11"
+  - "D04"
 paradigm_tags:
   - "graph_rag"
-  - "memory_augmented_rag"
 adjacent_interfaces: []
 
 ---

@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Es2024_RAGAS"
 title: "Ragas: Automated Evaluation of Retrieval Augmented Generation"
 authors:
@@ -20,14 +21,13 @@ tags:
   - faithfulness
   - hallucination
 verification_status: "verified"
-last_verified: 2026-09-24
+last_verified: 2026-09-27
 artifact_type: "evaluation_framework"
 taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags:
-  - "rag_evaluation"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

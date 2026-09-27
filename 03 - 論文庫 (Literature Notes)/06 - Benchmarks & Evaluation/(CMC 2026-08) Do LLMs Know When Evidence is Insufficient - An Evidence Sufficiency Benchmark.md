@@ -19,7 +19,7 @@ tags:
   - over-answering
   - cmc
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: "2026-09-27"
 artifact_type: "benchmark_paper"
 research_questions:
   - "evidence_sufficiency_levels"
@@ -38,9 +38,7 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D06"
-paradigm_tags:
-  - "evidence_sufficiency"
-  - "benchmark"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---
@@ -71,7 +69,7 @@ adjacent_interfaces: []
   - **L2 (Partial Support)**：上下文包含核心事實，需要進行微小的常識連結，仍屬可答範圍；
 - **需拒答條件 (Insufficient-Evidence Conditions Requiring Abstention)**：
   - **L3 (Irrelevant Evidence)**：檢索內容完全不包含問題所需實體或屬性；
-  - **L4 (Incomplete / Missing Key Entity)**：檢索內容看似高度相關，但精確缺失了最終推理所需的決定性關鍵變數；
+  - **L4 (No Context)**：檢索內容看似高度相關，但精確缺失了最終推理所需的決定性關鍵變數；
   - **L5 (Contradictory / Conflicting Evidence)**：檢索內容中存在兩個權威性相當但結論相互矛盾的斷言。
 
 ```mermaid
@@ -83,7 +81,7 @@ flowchart LR
 
     subgraph InsufficientZone["不可回答/必須拒答區間 (Insufficient - Abstain)"]
         L3["L3: Irrelevant Evidence<br/>(完全無關雜訊)"]
-        L4["L4: Incomplete Evidence<br/>(缺失關鍵推理變數)"]
+        L4["L4: No Context<br/>(無可用上下文)"]
         L5["L5: Contradictory Evidence<br/>(多來源結論衝突)"]
     end
 
@@ -148,3 +146,9 @@ flowchart LR
   - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|(EMNLP 2024-11) Chain-of-Note]]
   - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2022-03) Teaching language models to support answers with verified quotes|(arXiv 2022-03) GopherCite]]
   - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NeurIPS 2024-12) CRAG - Comprehensive RAG Benchmark|(NeurIPS 2024-12) Meta CRAG]]
+
+
+## Phase 1 Audit Correction — 2026-09-27
+
+- Corrected the benchmark's L4 condition to **No Context**. The previous note incorrectly described L4 as “Incomplete / Missing Key Entity”.
+- `benchmark` and `evidence_sufficiency` are not paradigm tags; the former is represented by `artifact_type`, while the latter belongs under research questions/topics.

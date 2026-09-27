@@ -1,16 +1,18 @@
 ---
 paper_id: "Qian2024_MemoRAG"
-title: "MemoRAG: Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery"
+title: "MemoRAG: Boosting Long Context Processing with Global Memory-Enhanced Retrieval Augmentation"
 authors:
   - "Hongjin Qian"
   - "Zheng Liu"
   - "Peitian Zhang"
   - "Kelong Mao"
+  - "Defu Lian"
   - "Zhicheng Dou"
+  - "Tiejun Huang"
 year: 2024
 publication_year: 2025
 venue: "WWW 2025"
-doi: null
+doi: "10.1145/3696410.3714805"
 arxiv: "2409.05591"
 url: "https://arxiv.org/abs/2409.05591"
 pdf_file: "Papers/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery.pdf"
@@ -22,7 +24,7 @@ tags:
   - long-context
   - www
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - "memory_inspired_retrieval"
@@ -37,13 +39,14 @@ metrics:
   - "ROUGE"
   - "Retrieval Recall"
 taxonomy_version: "v2"
-taxonomy_home: "D11"
-primary_domain: "D11"
+taxonomy_home: "D05"
+primary_domain: "D05"
 secondary_domains:
-  - "D05"
+  - "D11"
 paradigm_tags:
   - "memory_augmented_rag"
-adjacent_interfaces: []
+adjacent_interfaces:
+  - "A01"
 
 ---
 

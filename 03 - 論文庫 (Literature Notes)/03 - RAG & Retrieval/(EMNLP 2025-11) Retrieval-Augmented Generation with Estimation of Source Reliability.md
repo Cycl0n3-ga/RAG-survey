@@ -38,7 +38,6 @@ taxonomy_home: "D08"
 primary_domain: "D08"
 secondary_domains:
   - "D05"
-  - "D14"
 paradigm_tags: []
 adjacent_interfaces: []
 ---
@@ -74,7 +73,6 @@ RA-RAG 提供的是 **source reliability estimation + reliability-aware retrieva
 ## 對本專案研究領域的意義
 - **D08 primary**：提供直接的 source reliability 方法文獻，不再只能以 temporal RAG 旁證 authority/credibility。
 - **D05 secondary**：reliability 直接參與 source selection / retrieval。
-- **D14 secondary**：可作為 misinformation / untrusted-corpus robustness 的方法交界。
 
 ## Sources
 - ACL Anthology: https://aclanthology.org/2025.emnlp-main.1738/

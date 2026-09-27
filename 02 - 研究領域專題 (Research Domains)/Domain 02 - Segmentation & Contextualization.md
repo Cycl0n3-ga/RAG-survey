@@ -1,13 +1,13 @@
 ---
-title: "Domain 02 - Segmentation & Contextualization"
+title: "Domain 02 - Segmentation & Retrieval Granularity"
 domain_id: "D02"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Corpus Construction"
-last_updated: "2026-09-25"
+last_updated: "2026-09-27"
 ---
 
-# Domain 02 - Segmentation & Contextualization
+# Domain 02 - Segmentation & Retrieval Granularity
 
 > [!IMPORTANT]
 > 本頁是目前正式 RAG Taxonomy v2 的 D02。核心只處理 retrieval unit 的切分與 contextualization；knowledge extraction 屬 D03，index design 屬 D04。
@@ -161,3 +161,30 @@ D02 Segmentation / Contextualization
 - [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Paradigm Tags|RAG Paradigm Tags]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D02 Segmentation & Retrieval Granularity.**
+> `Contextualization` is retained only as a D02↔D04 interface when broader context changes a unit's representation; it is no longer the identity of the Domain.
+
+**Core question**：來源內容應如何被切分或轉換成 retrieval units，以及這些單元應採取多細或多粗的粒度，才能平衡語意完整性、檢索品質與成本？
+
+**Canonical Level-2**
+- Boundary Selection: fixed / overlapping / semantic / structure-aware
+- Retrieval Granularity: document / section / passage / sentence / proposition
+- Hierarchical Retrieval Units: parent-child / multi-level / auto-merge
+- Segmentation Failure & Trade-offs
+
+**Hard boundary**
+- D02 = which source content constitutes one retrievable unit
+- D04 = how that unit is represented/indexed
+- D05 = given a query, which units are retrieved/ranked
+
+**Paper decisions**
+- Dense X: KEEP D02; D03 secondary only.
+- LumberChunker: KEEP D02; remove D05 secondary; add DOI `10.18653/v1/2024.findings-emnlp.377`.
+- LongRAG: KEEP as supporting coarse-granularity / long-context extreme; A01 interface.
+- MultiDocFusion (EMNLP 2025): ADD, D02 primary / D01 secondary.
+- HiChunk (ACL 2026): ADD as strong hierarchical-chunking anchor, D13 secondary.
+- Late Chunking and Situated Embeddings: D04 primary, D02 interface.

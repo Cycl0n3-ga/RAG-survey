@@ -21,7 +21,7 @@ tags:
   - dynamic-routing
   - latency-efficiency
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - query_complexity_classification
@@ -42,8 +42,7 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D06"
 primary_domain: "D06"
-secondary_domains:
-  - "D05"
+secondary_domains: []
 paradigm_tags:
   - "adaptive_rag"
 adjacent_interfaces: []

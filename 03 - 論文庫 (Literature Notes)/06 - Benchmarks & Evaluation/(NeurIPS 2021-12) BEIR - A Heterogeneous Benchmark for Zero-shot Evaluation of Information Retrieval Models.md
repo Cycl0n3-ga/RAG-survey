@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Thakur2021_BEIR"
 title: "BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models"
 authors:
@@ -21,7 +22,7 @@ tags:
   - zero-shot-evaluation
   - out-of-distribution
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 benchmark_ids:
   - "BEIR"
@@ -34,12 +35,11 @@ metrics:
   - "Recall@100"
   - "MRR@10"
 taxonomy_version: "v2"
-taxonomy_home: "D13"
-primary_domain: "D13"
+taxonomy_home: "D05"
+primary_domain: "D05"
 secondary_domains:
-  - "D05"
-paradigm_tags:
-  - "benchmark"
+  - "D13"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

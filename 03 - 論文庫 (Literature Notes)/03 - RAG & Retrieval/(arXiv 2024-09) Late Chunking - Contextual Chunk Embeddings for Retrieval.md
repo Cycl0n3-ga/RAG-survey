@@ -21,14 +21,13 @@ tags:
   - context-preservation
   - retrieval
 verification_status: "verified"
-last_verified: 2026-09-24
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D04"
 primary_domain: "D04"
 secondary_domains:
   - "D02"
-  - "D05"
 paradigm_tags: []
 adjacent_interfaces: []
 

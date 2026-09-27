@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Friel2024_RAGBench"
 title: "RAGBench: Explainable Benchmark for Retrieval-Augmented Generation Systems"
 authors:
@@ -19,7 +20,7 @@ tags:
   - explainable-metrics
   - industrial-rag
 verification_status: "verified"
-last_verified: 2026-09-25
+last_verified: 2026-09-27
 artifact_type: "benchmark_paper"
 benchmark_ids:
   - "RAGBench"
@@ -38,8 +39,7 @@ taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags:
-  - "rag_evaluation"
+paradigm_tags: []
 adjacent_interfaces: []
 
 ---

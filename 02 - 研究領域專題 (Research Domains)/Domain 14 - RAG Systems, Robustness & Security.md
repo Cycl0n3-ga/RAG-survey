@@ -1,13 +1,13 @@
 ---
-title: "Domain 14 - RAG Systems, Robustness & Security"
+title: "Domain 14 - RAG Systems, Security & Privacy"
 domain_id: "D14"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Deployment"
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
-# Domain 14 - RAG Systems, Robustness & Security
+# Domain 14 - RAG Systems, Security & Privacy
 
 ## Core Question
 如何在真實部署條件下控制 latency、throughput、cost 與 observability，同時維持 RAG 對雜訊、錯誤資料與攻擊面的韌性？
@@ -113,3 +113,31 @@ Retrieved Document ≠ Trusted Truth
 - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|RAG Research Taxonomy & Domain Map]]
 - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|RAG Adjacent Interfaces]]
+
+## Phase 1 Closure — 2026-09-27
+
+> [!IMPORTANT]
+> **Canonical name: D14 RAG Systems, Security & Privacy.**
+> Generic “robustness” is removed from the title to prevent D14 from becoming a catch-all. Only adversarial robustness / integrity under malicious manipulation belongs here by default.
+
+**Core question**：當 RAG 引入外部資料庫、檢索階段、長 context、額外 state 與新的 attack surface 後，如何在真實部署條件下提供有效率、安全且具資料隔離能力的服務？
+
+**Canonical tracks**
+- Systems & Serving: latency/TTFT, throughput, scheduling, caching, retrieval–generation overlap, memory/resource allocation, cost/scalability
+- Security & Integrity: corpus poisoning, retrieval manipulation, indirect prompt injection, backdoor/adversarial retrieval, defenses
+- Privacy & Access Control: membership inference, retrieval-data leakage, access control, tenant isolation, deletion/persistence
+
+**Robustness redistribution**
+- irrelevant passage ranking/filtering → D05
+- distractor handling/context utilization → D07
+- generator revision against misleading context → D09
+- robustness benchmark/measurement → D13
+- malicious/adversarial integrity attacks/defenses → D14
+
+**Paper decisions**
+- METIS: KEEP D14; reduce secondaries substantially (D05/D06/D07 knobs are not independent contributions).
+- PoisonedRAG: KEEP D14; remove D05/D13 secondary unless the note documents an independent contribution.
+- ADD PipeRAG, CacheBlend, canonical 2026 RAGCache, TeleRAG as RAG-specific systems anchors.
+- ADD direct RAG membership-inference/privacy and retrieved-content indirect-prompt-injection work.
+- SafeRAG and “RAG LLMs are Not Safer” are evaluation-oriented → D13 primary / D14 secondary.
+- Observability/tracing, tenant isolation and deletion governance remain comparatively thin.

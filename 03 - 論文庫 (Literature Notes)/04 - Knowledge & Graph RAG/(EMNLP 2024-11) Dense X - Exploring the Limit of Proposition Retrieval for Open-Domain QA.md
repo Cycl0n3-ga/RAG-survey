@@ -21,15 +21,13 @@ tags:
   - "paper"
   - "proposition-level-chunking"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D02"
 primary_domain: "D02"
 secondary_domains:
   - "D03"
-  - "D04"
-  - "D05"
 paradigm_tags:
   - "proposition_rag"
 adjacent_interfaces: []

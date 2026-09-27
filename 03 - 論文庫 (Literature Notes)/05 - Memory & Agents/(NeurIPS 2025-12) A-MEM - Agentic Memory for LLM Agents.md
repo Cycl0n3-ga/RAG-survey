@@ -22,7 +22,7 @@ tags:
   - dynamic-linking
   - memory-evolution
 verification_status: "verified"
-last_verified: 2026-09-26
+last_verified: 2026-09-27
 artifact_type: "method_paper"
 research_questions:
   - "dynamic_memory_organization"
@@ -37,11 +37,11 @@ metrics:
   - "BLEU-1"
   - "Token Length"
 taxonomy_version: "v2"
-taxonomy_home: "A04"
-primary_domain: null
-secondary_domains:
-  - "D11"
-paradigm_tags: []
+taxonomy_home: "D11"
+primary_domain: "D11"
+secondary_domains: []
+paradigm_tags:
+  - "memory_augmented_rag"
 adjacent_interfaces:
   - "A04"
 ---
