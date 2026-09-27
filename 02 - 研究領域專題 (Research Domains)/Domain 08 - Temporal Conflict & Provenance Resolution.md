@@ -77,7 +77,7 @@ Citation-entailing != temporally/applicability valid
 
 ## Representative Notes
 
-**Current primary-note coverage: 9**
+**Current primary-note coverage: 6**
 
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) FreshLLMs - Refreshing Large Language Models with Search Engine Augmentation|FreshLLMs / FreshQA]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) Re3 - Relevance and Recency Retrieval for Mitigating Temporal Hallucination|Re³]]
