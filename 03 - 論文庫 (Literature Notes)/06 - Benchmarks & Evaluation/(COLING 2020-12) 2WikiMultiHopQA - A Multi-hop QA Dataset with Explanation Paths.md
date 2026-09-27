@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 secondary_domains:
   - "D05"
   - "D13"
@@ -45,15 +44,14 @@ taxonomy_home: "CROSS"
 primary_domain: null
 adjacent_interfaces: []
 
----
 
+---
 # Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps (2WikiMultiHopQA)
 
 ## 1. 一話摘要 (TL;DR)
 2WikiMultiHopQA 是首個同時提供「最終答案、支援事實句子（Supporting Facts）與顯式結構化推理路徑（三元組鏈條）」的大規模多跳問答資料集（19.2 萬題），使評估多跳 RAG 的每一步邏輯推導具備了精確客觀的真值標註。
 
 ---
-
 ## 2. 研究背景與問題定義 (Problem Statement)
 
 ### 2.1 現有多跳資料集的「黑箱解釋」缺陷
@@ -63,7 +61,6 @@ adjacent_interfaces: []
 3. **路徑幻覺無從檢驗**：模型可能檢索出了正確的句子，但給出了一段邏輯完全顛倒或胡亂關聯的解釋，評測指標卻無法捕捉。
 
 ---
-
 ## 3. 核心方法與技術架構 (Methodology & Architecture)
 
 ### 3.1 結合 Wikipedia 與 Wikidata 的雙向圖譜合成
@@ -97,7 +94,6 @@ flowchart TD
 ```
 
 ---
-
 ## 4. 主要實驗結果與證據 (Empirical Results & Evidence)
 
 論文在 192,606 題規模的資料集上全面測試了 BERT 與 RoBERTa 模型（Table 1 & Table 4, Page 6–7）：
@@ -108,7 +104,6 @@ flowchart TD
 - 這一鮮明對比直接證明：**主流神經模型雖然能從段落中「猜出」實體名詞，但對於背後的因果關係鏈條根本缺乏穩固的結構化理解**。
 
 ---
-
 ## 5. 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
@@ -120,13 +115,11 @@ flowchart TD
 2. **實體捷徑依然部分存在**：與後續的 MuSiQue 相比，部分組合題仍存在少量可被雙編碼器利用的實體共現線索。
 
 ---
-
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 - **GraphRAG 的黃金評測基準**：2WikiMultiHopQA 是本專案評估 [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04 Knowledge Representation & Indexing]] 中路徑檢索與子圖推理的首選基準。
 - **支撐長文推理透明化**：為長篇報告撰寫系統中「如何將檢索到的多段零散事實還原為結構化思維鏈」提供了資料支撐。
 
 ---
-
 ## 7. 原始來源及相關筆記連結 (Sources & Related Notes)
 - **開啟本地 PDF**：[[Papers/06 - Benchmarks & Evaluation/(COLING 2020-12) 2WikiMultiHopQA - A Multi-hop QA Dataset with Explanation Paths.pdf|開啟原始論文 PDF]]
 - **關聯文獻**：
