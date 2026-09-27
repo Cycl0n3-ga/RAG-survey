@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Zhang2024_InfiniteBench"
 title: "$\infty$Bench: Extending Long Context Evaluation Beyond 100K Tokens"
 authors:
