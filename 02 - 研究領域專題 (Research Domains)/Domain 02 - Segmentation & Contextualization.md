@@ -9,6 +9,9 @@ last_updated: "2026-09-27"
 
 # Domain 02 - Segmentation & Retrieval Granularity
 
+> [!WARNING]
+> **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
+
 > [!IMPORTANT]
 > 本頁是目前正式 RAG Taxonomy v2 的 D02。核心只處理 retrieval unit 的切分與 contextualization；knowledge extraction 屬 D03，index design 屬 D04。
 
