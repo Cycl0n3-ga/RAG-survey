@@ -67,7 +67,7 @@ D14 是 deployment / infrastructure / robustness plane，不是 retrieval qualit
 
 ## Literature Coverage
 
-**Current primary-note coverage: 6**
+**Current primary-note coverage: 8**
 
 目前已有兩條直接 primary anchors：
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation|METIS]] — RAG-specific serving / scheduling / quality-latency configuration adaptation。
