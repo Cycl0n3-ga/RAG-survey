@@ -13,61 +13,31 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-如何理解 query，選擇 retrieval strategy，並找出、融合與排序最相關的候選 evidence？
-
-```mermaid
-flowchart LR
-    Q["Query"] --> U["Understand"]
-    U -. "optional" .-> RW["Rewrite / Expand / HyDE"]
-    U -. "optional" .-> DC["Decompose"]
-    U --> RT["Route"]
-    RW --> RT
-    DC --> RT
-    RT --> D["Dense"]
-    RT --> S["Sparse"]
-    RT --> G["Graph"]
-    RT --> H["Hierarchical"]
-    D --> F["Fusion / Rerank"]
-    S --> F
-    G --> F
-    H --> F
-    DC -. "next hop" .-> MH["Multi-hop"]
-    F -. "need next hop" .-> MH
-    MH -.-> RT
-    F --> EV["Candidate Evidence"]
-```
+Given a query and a searchable index, what evidence should be retrieved, fused and ranked?
 
 ## Includes
-- query understanding / constraint extraction
-- query rewrite / expansion / HyDE
-- decomposition / sub-question planning
-- sparse / dense / late-interaction retrieval
-- graph / hierarchical retrieval
-- fusion / reranking / filtering
-- multi-hop / compositional retrieval
-- query-adaptive retrieval granularity
+- query rewriting / expansion / disambiguation / HyDE
+- query decomposition and multi-hop retrieval
+- dense / sparse / late-interaction retrieval
+- graph / subgraph / path retrieval
+- hybrid fusion and reranking
+- retriever–generator alignment
 
 ## Excludes
-- 是否已取得足夠 evidence → D06
-- context packing / compression → D07
-- general controller / tool orchestration → D12
+- retrieval-unit granularity → D02
+- corpus representation/index design → D04
+- whether/when retrieval is necessary, retry or stop → D06
+- heterogeneous tool/action orchestration → D12
 
 ## Level-2 Topics
-- Query Understanding
 - Query Transformation
-- Query Decomposition
-- Retrieval Routing
-- Retrieval & Reranking
-- Fusion
-- Multi-hop Retrieval
-- Retrieval Granularity
-- Retriever / Joint Training
+- Query Decomposition & Multi-hop Retrieval
+- Retrieval & Relevance Modeling
+- Fusion & Reranking
+- Retriever–Generator Alignment
 
 ## Boundary
-```text
-Relevance ≠ Sufficiency
-```
-D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是否已足夠完成任務」。
+D05 決定 **what to retrieve**。使用 retrieval 只是 pipeline dependency，不足以成為 D05 contribution；general RAG architecture papers 可使用 `CROSS`，避免灌大 D05 coverage。
 
 ## Representative Notes
 
