@@ -1,6 +1,5 @@
 ---
 secondary_domains: []
-secondary_domains: []
 paper_id: "Jeong2024_AdaptiveRAG"
 title: "Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity"
 authors:
