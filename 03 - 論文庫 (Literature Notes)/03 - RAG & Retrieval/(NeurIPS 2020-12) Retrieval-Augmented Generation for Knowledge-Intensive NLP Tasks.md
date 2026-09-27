@@ -27,7 +27,8 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-paradigm_tags: []
+paradigm_tags:
+  - "retrieval_augmented_training"
 adjacent_interfaces: []
 
 ---
