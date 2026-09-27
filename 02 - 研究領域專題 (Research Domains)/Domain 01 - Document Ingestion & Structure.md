@@ -9,6 +9,9 @@ last_updated: "2026-09-27"
 
 # Domain 01 - Document Parsing & Structure Recovery
 
+> [!WARNING]
+> **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
+
 ## Core Question
 如何把 PDF、Web、DB、表格、圖片等來源轉成保留結構、版面、metadata 與 source anchors 的可處理 corpus？
 
