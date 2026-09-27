@@ -1,4 +1,8 @@
 ---
+adjacent_interfaces:
+  - "A04"
+paradigm_tags:
+  - "memory_augmented_rag"
 secondary_domains: []
 paper_id: "Xu2025_AMEM"
 title: "A-Mem: Agentic Memory for LLM Agents"
@@ -40,11 +44,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D11"
 primary_domain: "D11"
-secondary_domains: []
-paradigm_tags:
-  - "memory_augmented_rag"
-adjacent_interfaces:
-  - "A04"
 ---
 
 # A-Mem: Agentic Memory for LLM Agents
