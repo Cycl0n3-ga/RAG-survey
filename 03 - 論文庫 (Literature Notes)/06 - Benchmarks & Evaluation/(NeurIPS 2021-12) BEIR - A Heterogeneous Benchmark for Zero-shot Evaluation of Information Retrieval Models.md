@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 paper_id: "Thakur2021_BEIR"
 title: "BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models"
 authors:
