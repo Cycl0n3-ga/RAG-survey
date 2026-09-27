@@ -17,7 +17,7 @@ authors:
   - "Tiejun Huang"
 year: 2024
 publication_year: 2025
-venue: "The Web Conference 2025"
+venue: "WWW 2025"
 doi: "10.1145/3696410.3714805"
 arxiv: "2409.05591"
 url: "https://doi.org/10.1145/3696410.3714805"
