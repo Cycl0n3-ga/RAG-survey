@@ -1,4 +1,9 @@
 ---
+paradigm_tags:
+  - "agentic_rag"
+  - "reflective_rag"
+secondary_domains:
+  - "D13"
 paper_id: "Dong2025_RAGCritic"
 title: "RAG-Critic: Leveraging Automated Critic-Guided Agentic Workflow for Retrieval Augmented Generation"
 authors:
@@ -44,11 +49,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D12"
 primary_domain: "D12"
-secondary_domains:
-  - "D13"
-paradigm_tags:
-  - "agentic_rag"
-  - "reflective_rag"
 adjacent_interfaces: []
 ---
 
