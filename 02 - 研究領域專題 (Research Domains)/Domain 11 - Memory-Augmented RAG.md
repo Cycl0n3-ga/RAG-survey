@@ -13,49 +13,33 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-系統如何建立可跨 interaction / task 持續存在的 derived memory，並進行 write、link、retrieve、consolidate、evolve 與 forget，而不是每次只從原始 corpus 重新開始？
-
-```mermaid
-flowchart LR
-    I["Interaction / Observation"] --> W["Memory Write"]
-    W --> C["Consolidate"]
-    C --> M["Persistent Memory"]
-    M --> R["Memory Retrieval"]
-    R --> CTX["Context / Action"]
-    M -. "outdated / invalid" .-> F["Forget / Invalidate"]
-    F -.-> M
-```
+系統如何建立跨 interaction/task 持續存在的 derived memory，並完成 write、retrieve、organize、consolidate、evolve 與 forget？
 
 ## Includes
-- episodic / semantic / task memory
-- memory write / retrieval
-- memory linking / consolidation / evolution
-- forgetting / invalidation
-- long-horizon interaction or task state
-- derived corpus / world memory used as a persistent memory layer
-- non-parametric continual knowledge integration
-- memory provenance
+- memory formation / salience-based write
+- persistent episodic / semantic / task memory
+- linking / hierarchy / graph organization
+- memory retrieval
+- consolidation / merge / summarize / evolution
+- forgetting / decay / deletion / invalidation
+- memory provenance / ownership / scope policy
 
 ## Excludes
-- general corpus update → D10
-- single-turn context packing → D07
-- controller deciding when/how to use tools → D12
+- ordinary external corpus / static index → D04
+- current prompt / working context → D07 / A01
+- canonical source synchronization → D10
+- action planning around memory → D12
 
 ## Level-2 Topics
-- Memory Write
+- Memory Formation / Write
+- Memory Organization
 - Memory Retrieval
-- Episodic / Semantic Memory
-- Consolidation
-- Forgetting / Invalidation
-- Long-horizon State
-- Memory Provenance
+- Consolidation & Evolution
+- Forgetting & Invalidation
+- Memory Governance
 
 ## Boundary
-```text
-RAG corpus = canonical external source collection
-Persistent memory = system-created state / derived representation that persists and evolves across interactions or tasks
-Dynamic index = maintenance of the canonical external knowledge/index after source changes
-```
+A paper is not D11 merely because it uses the word “memory”. `D10 = synchronize source of truth`；`D11 = evolve persistent derived state`。普通 RAG corpus 或單純長 context 不算 D11。
 
 ## Representative Notes
 
