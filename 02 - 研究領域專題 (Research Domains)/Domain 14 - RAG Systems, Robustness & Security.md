@@ -13,66 +13,71 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-當 RAG 引入外部資料庫、檢索階段、長 context、額外 state 與新的 attack surface 後，如何在真實部署條件下提供有效率、安全且具資料隔離能力的服務？
+如何在真實部署條件下控制 latency、throughput、cost 與 observability，同時維持 RAG 對雜訊、錯誤資料與攻擊面的韌性？
+
+```mermaid
+flowchart LR
+    CORE["RAG Core"] --- PERF["Latency / Throughput / Cost"]
+    CORE --- OBS["Observability / Tracing"]
+    CORE --- ROB["Robustness / Data Quality"]
+    CORE --- SEC["Security / Privacy / Access Control"]
+    A02["A02 KV / Inference Efficiency"] -.-> PERF
+```
 
 ## Includes
-- RAG serving latency / TTFT / throughput / scheduling
-- RAG-specific caching and retrieval-generation overlap
-- memory / resource allocation and cost/scalability
-- corpus poisoning / retrieval manipulation
-- retrieved-content indirect prompt injection
-- adversarial retrieval / backdoor / integrity defenses
-- membership inference / retrieval-data leakage
-- access control / tenant isolation
-- derived-data deletion / persistence governance
+- latency / throughput / cost
+- indexing / serving scalability
+- cache / batching
 - observability / tracing
+- robustness to noisy or adversarial evidence
+- corpus / retrieval integrity
+- privacy / access control
+- retrieved-content prompt injection and corpus poisoning defenses
 
 ## Excludes
-- ordinary relevance / ranking quality → D05
-- distractor/context-utilization robustness → D07
-- generator repair against misleading context → D09
-- robustness/security benchmark measurement → D13
-- generic KV/inference efficiency not RAG-specific → A02
+- general model architecture → Adjacent Interface
+- benchmark methodology → D13
+- retrieval relevance algorithm → D05
 
 ## Research Tracks
-1. **Systems & Serving**
-2. **Security & Integrity**
-3. **Privacy & Access Control**
+
+D14 是 deployment umbrella，不代表下列三條線已經是一個單一成熟 subfield：
+
+1. **RAG Systems / Serving**：latency、throughput、cost、index/search scalability、cache/batching、observability。
+2. **Robustness & Security**：corpus poisoning、retrieval manipulation、retrieved-content prompt injection、adversarial / noisy evidence。
+3. **Privacy & Governance**：access control、tenant isolation、retrieval-data leakage、derived-data persistence。
+
+Security paper 不能拿來當 systems paper；KV-cache / serving paper 也不能替代 RAG-specific security evidence。
 
 ## Level-2 Topics
 - Serving Latency / Throughput / Cost
-- Scheduling / Caching / Retrieval–Generation Overlap
+- Indexing & Serving Scalability
+- Cache / Batching
 - Observability / Tracing
+- Robustness to Noise
 - Corpus / Retrieval Integrity
 - Retrieved-content Prompt Injection
-- Corpus Poisoning / Adversarial Retrieval
+- Corpus Poisoning
 - Retrieval-data Privacy
 - Access Control / Tenant Isolation
 - Derived-data Deletion / Persistence
 
 ## Boundary
-Generic “robustness” is not a D14 catch-all. Only adversarial robustness / integrity under malicious manipulation belongs here by default. Evaluation-only security work → D13；generic serving/compression work → A02 unless it is RAG-specific systems research.
+D14 是 deployment / infrastructure / robustness plane，不是 retrieval quality 本身。若研究主要改進 ranking relevance，歸 D05；若主要評估 failure，歸 D13。
 
 ## Literature Coverage
 
-**Current primary-note coverage: 8**
+**Current primary-note coverage: 6**
 
-### Systems & Serving
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation|METIS]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(KDD 2025-08) PipeRAG - Fast RAG via Algorithm-System Co-design|PipeRAG]]
-- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(EuroSys 2025-04) CacheBlend - Fast Large Language Model Serving for RAG with Cached Knowledge Fusion|CacheBlend]]
-- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(TOCS 2026) RAGCache - Efficient Knowledge Caching for Retrieval-Augmented Generation|RAGCache]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(MLSys 2026) TeleRAG - Efficient Retrieval-Augmented Generation Inference with Lookahead Retrieval|TeleRAG]]
+目前已有兩條直接 primary anchors：
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation|METIS]] — RAG-specific serving / scheduling / quality-latency configuration adaptation。
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models|PoisonedRAG]] — corpus / knowledge-base poisoning。
 
-### Security & Integrity
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models|PoisonedRAG]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2026-08) Overcoming the Retrieval Barrier - Indirect Prompt Injection in the Wild for LLM Systems|Indirect Prompt Injection / Retrieval Barrier]]
+因此 D14 的 **systems** 與 **security** 已各有直接 anchor；仍缺的是 **observability/tracing 與 privacy/access-control/tenant isolation** 的 dedicated RAG primary literature。KIVI、CacheGen 等仍是 A02 inference/serving efficiency 與 D14 的交界。
 
-### Privacy
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Safeguarding Privacy of Retrieval Data against Membership Inference Attacks|Retrieval-data Membership Inference]]
-
-> [!NOTE]
-> D14 is no longer supported by only one systems paper and one security paper. RAG-specific serving/caching and direct privacy/security literature now exist. The comparatively thin areas are **observability/tracing、tenant isolation、fine-grained access control、derived-data deletion/persistence governance**.
+Adjacent notes:
+- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICML 2024-07) KIVI - A Tuning-Free Asymmetric 2-bit Quantization for KV Cache|KIVI]]
+- [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(SIGCOMM 2024-08) CacheGen - KV Cache Compression and Streaming for Fast Large Language Model Serving|CacheGen]]
 
 ## Systems and Threat Model
 
