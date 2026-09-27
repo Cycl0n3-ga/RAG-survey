@@ -1,4 +1,5 @@
 ---
+secondary_domains: []
 paper_id: "Zou2025_PoisonedRAG"
 title: "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models"
 authors:
