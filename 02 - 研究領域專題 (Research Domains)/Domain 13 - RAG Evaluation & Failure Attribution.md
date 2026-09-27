@@ -13,54 +13,62 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-如何對 RAG 元件與端到端行為進行可重現評估，並透過 metrics、controlled interventions、oracle experiments 與 failure diagnosis 判斷瓶頸真正發生在哪一層？
+如何分層評估 retrieval、evidence、context、generation 與 end-to-end quality，並定位 failure 真正發生在哪一層？
+
+```mermaid
+flowchart LR
+    R["Retrieval"] -.-> E["Evaluation"]
+    EV["Evidence"] -.-> E
+    C["Context"] -.-> E
+    G["Generation"] -.-> E
+    E --> F["Failure Attribution"]
+    O["Oracle / Ablation"] -.-> F
+```
 
 ## Includes
-- benchmark / dataset design
-- retrieval / evidence / context / generation / citation evaluation
-- long-form and report evaluation
-- claim-level / component-level / trajectory-level diagnosis
-- oracle swaps / controlled intervention / ablation
-- meta-evaluation of judges and metrics
-- cost-aware quality evaluation
+- benchmark / dataset / metric / evaluation framework
+- retrieval evaluation
+- evidence coverage / sufficiency evaluation
+- context utilization evaluation
+- faithfulness / citation evaluation
+- long-form evaluation
+- oracle / ablation protocol
+- failure attribution / error propagation
+- meta-evaluation
 
 ## Excludes
-- benchmark that primarily measures a non-RAG capability without an evaluation-method contribution → corresponding domain or CROSS
-- generation/repair method → D09
-- action-control method → D12
-- serving/security engineering → D14
+- retrieval algorithm design → D05
+- runtime observability / serving telemetry → D14
+- project-specific benchmark proposal presented as public benchmark
 
 ## Level-2 Topics
-- Benchmark & Dataset Design
-- Component Evaluation
-- Long-form & Report Evaluation
+- Retrieval Evaluation
+- Evidence Evaluation
+- Context Utilization Evaluation
+- Generation / Faithfulness Evaluation
+- Citation Evaluation
+- Long-form Evaluation
+- Oracle Evaluation
 - Failure Attribution
-- Oracle & Controlled Intervention
-- Meta-Evaluation
-- Cost-Aware Evaluation
 
 ## Boundary
-`Benchmark != Dataset != Metric != Evaluation Framework`。End-to-end score 不等於 failure attribution；oracle / component swap 是 diagnostic intervention，不代表 total error 可線性分解。
+```text
+Benchmark != Dataset != Metric != Evaluation Framework
+```
+End-to-end score 不能直接說明 bottleneck 位於 retrieval、evidence construction、context utilization 或 generation。
 
 ## Representative Notes
 
-**Current primary-note coverage: 19**
+**Current primary-note coverage: 18**
 
-Canonical representatives（不是完整 19 篇清單）：
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS]] — reference-free RAG metrics.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems|ARES]] — calibrated automated evaluation.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker]] — fine-grained failure diagnosis.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2023-12) Enabling Large Language Models to Generate Text with Citations|ALCE]] — citation evaluation.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2024-08) RAGTruth - A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models|RAGTruth]] — RAG hallucination corpus.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2025-07) A Reality Check on Context Utilisation for Retrieval-Augmented Generation|DRUID / ACU]] — context utilization.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CMC 2026-08) Do LLMs Know When Evidence is Insufficient - An Evidence Sufficiency Benchmark|Evidence Sufficiency Benchmark]] — sufficiency/abstention.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-07) AgenticRAGTracer - A Hop-Aware Benchmark for Diagnosing Multi-Step Retrieval Reasoning in Agentic RAG|AgenticRAGTracer]] — trajectory-level diagnosis.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2025-07) SafeRAG - Benchmarking Security in Retrieval-Augmented Generation of Large Language Model|SafeRAG]] — security evaluation.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) AnalystBench - Benchmarking Professional Long-Form Report Generation with Web-Mined Multimodal Tasks|AnalystBench]] — professional report evaluation.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports|ReportLogic]] — report logic.
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2026-03) T2-RAGBench - Benchmarking Text-and-Table Retrieval Augmented Generation|T²-RAGBench]] — text/table RAG.
-
-Capability datasets such as HotpotQA、2WikiMultiHopQA、MuSiQue、QASPER 已移到 `CROSS`；BEIR 移到 D05；ASQA 移到 D09；MP-DocVQA 移到 `CROSS`。
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(NAACL 2024-06) ARES - An Automated Evaluation Framework for Retrieval-Augmented Generation Systems|ARES]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-06) RAGBench - Explainable Benchmark for Retrieval-Augmented Generation Systems|RAGBench]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2023-12) Enabling Large Language Models to Generate Text with Citations|ALCE]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CMC 2026-08) Do LLMs Know When Evidence is Insufficient - An Evidence Sufficiency Benchmark|Evidence Sufficiency Benchmark]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2026-08) ReportLogic - Evaluating Logical Quality in Deep Research Reports|ReportLogic]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(PR 2023-12) Hierarchical Multimodal Transformers for Multi-Page DocVQA|MP-DocVQA / Hi-VT5]]
 
 ## Primary-Domain Rule for Evaluation Artifacts
 
