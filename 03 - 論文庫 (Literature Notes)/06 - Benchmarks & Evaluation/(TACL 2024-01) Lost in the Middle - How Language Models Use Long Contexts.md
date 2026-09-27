@@ -29,12 +29,11 @@ primary_domain: null
 secondary_domains:
   - "D07"
   - "D13"
-paradigm_tags: []
 adjacent_interfaces:
   - "A01"
 
----
 
+---
 # Lost in the Middle: How Language Models Use Long Contexts
 
 > [!INFO] 論文元數據 (Metadata)
@@ -47,17 +46,14 @@ adjacent_interfaces:
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/06 - Benchmarks & Evaluation/(TACL 2024-01) Lost in the Middle - How Language Models Use Long Contexts.pdf|開啟本地 PDF 檔案]]
 ---
-
 ## 一話摘要 (TL;DR)
 **揭示所有主流長文本 LLM 普遍存在的 U 型效應：模型在利用頭尾資訊時表現優異，但對位於長 Context 中間的關鍵資訊極易視而不見。**
 
 ---
-
 ## 研究背景與問題定義 (Problem Statement)
 學界與業界盲目追求擴展 Context Window，卻未經嚴格檢驗模型是否能在百萬序列的『任何位置』都同等具備穩健的檢索與推理能力。
 
 ---
-
 ## 核心方法與技術架構 (Methodology & Architecture)
 設計多文檔問答（Multi-document QA）與鍵值檢索實驗，精確控制包含答案的目標文檔在整個 Context Window 中的相對位置（0% 到 100%）。橫向評估了當時最強的各類開源與閉源模型（GPT-3.5、Claude、MPT-30B 等）。
 
@@ -69,23 +65,19 @@ graph LR
 ```
 
 ---
-
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
 > **出處與評估條件**：Figure 1 & Figure 2 (Page 3-4): 實證展示主流 LLM 在處理長上下文時呈現顯著 U 型曲線：答案位於輸入頭部時準確率 >70%，位於中間時劇跌至 <30%。
 
 ---
-
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：以嚴謹的實證數據打破了『長上下文窗口 = 完美長文本理解』的迷思；缺點：該現象在 2024 年後的頂級模型（如 Gemini 1.5 Pro）中藉由訓練改進有所緩解，但在複雜推理場景下依然潛伏存在。
 
 ---
-
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
 震撼整個 NLP 界，催生了後續 Needle In A Haystack 測試標準以及長文本 Prompt 重排技術（如把關鍵證據置於開頭或結尾）。
 
 ---
-
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Adjacent Interfaces|A01 Long Context & Sequence Architecture]]
