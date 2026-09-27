@@ -14,15 +14,15 @@ authors:
 year: 2023
 publication_year: 2024
 venue: "ACL 2024"
-doi: null
+doi: "10.18653/v1/2024.acl-long.776"
 arxiv: "2307.11088"
-url: "https://arxiv.org/abs/2307.11088"
+url: "https://aclanthology.org/2024.acl-long.776/"
 pdf_file: "Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) L-Eval - Instituting Standardized Evaluation for Long Context Language Models.pdf"
 tags:
   - "paper"
   - "long-context-evaluation-standard"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-28"
 artifact_type: "benchmark_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A01"
@@ -41,7 +41,7 @@ adjacent_interfaces:
 > - **作者**：Chenxin An, Shansan Gong, Ming Zhong, Xingjian Zhao, Mukai Li, Jun Zhang, Lingpeng Kong, Xipeng Qiu
 > - **預印本初次發布年份 (Preprint)**：2023
 > - **正式發表年份 / 會議或期刊 (Venue)**：2024 (ACL 2024)
-> - **DOI**：無
+> - **DOI**：10.18653/v1/2024.acl-long.776
 > - **arXiv**：[2307.11088](https://arxiv.org/abs/2307.11088)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) L-Eval - Instituting Standardized Evaluation for Long Context Language Models.pdf|開啟本地 PDF 檔案]]
