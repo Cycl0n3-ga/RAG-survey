@@ -52,7 +52,6 @@ taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
 secondary_domains:
-  - "D07"
   - "D09"
 paradigm_tags: []
 adjacent_interfaces: []
