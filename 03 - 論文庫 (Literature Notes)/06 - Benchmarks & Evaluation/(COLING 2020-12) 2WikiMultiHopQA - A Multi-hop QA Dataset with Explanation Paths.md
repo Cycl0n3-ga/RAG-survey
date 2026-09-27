@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Ho2020_2WikiMultiHopQA"
 title: "Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps"
 authors:
