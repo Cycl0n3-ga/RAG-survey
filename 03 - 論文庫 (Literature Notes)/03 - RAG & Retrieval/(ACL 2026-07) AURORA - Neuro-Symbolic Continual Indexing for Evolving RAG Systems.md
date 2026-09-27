@@ -1,4 +1,8 @@
 ---
+adjacent_interfaces:
+  - "A05"
+secondary_domains:
+  - "D04"
 paper_id: "Saravanan2026_AURORA"
 title: "AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems"
 authors:
@@ -38,11 +42,7 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D10"
 primary_domain: "D10"
-secondary_domains:
-  - "D04"
 paradigm_tags: []
-adjacent_interfaces:
-  - "A05"
 ---
 
 # AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems
