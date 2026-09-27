@@ -6,19 +6,25 @@ authors:
   - "Yichi Zhang"
   - "Bofei Gao"
   - "Yuliang Liu"
-  - "et al."
+  - "Yucheng Li"
+  - "Tianyu Liu"
+  - "Keming Lu"
+  - "Wayne Xiong"
+  - "Yue Dong"
+  - "Junjie Hu"
+  - "Wen Xiao"
 year: 2024
-publication_year: 2024
-venue: "EMNLP 2024"
+publication_year: 2025
+venue: "COLM 2025"
 doi: null
 arxiv: "2406.02069"
-url: "https://arxiv.org/abs/2406.02069"
+url: "https://openreview.net/forum?id=ayi7qezU87"
 pdf_file: "Papers/02 - Compression & KV Cache/(EMNLP 2024-11) PyramidKV - Dynamic KV Cache Compression based on Pyramidal Information Funneling.pdf"
 tags:
   - "paper"
   - "layer-wise-pyramidal-kv-cache-compression"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-28"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A02"
@@ -35,10 +41,11 @@ adjacent_interfaces:
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Cai2024_PyramidKV`
-> - **作者**：Zefan Cai, Yichi Zhang, Bofei Gao, Yuliang Liu, et al.
+> - **作者**：Zefan Cai, Yichi Zhang, Bofei Gao, Yuliang Liu, Yucheng Li, Tianyu Liu, Keming Lu, Wayne Xiong, Yue Dong, Junjie Hu, Wen Xiao
 > - **預印本初次發布年份 (Preprint)**：2024
-> - **正式發表年份 / 會議或期刊 (Venue)**：2024 (EMNLP 2024)
-> - **DOI**：無
+> - **正式發表年份 / 會議或期刊 (Venue)**：2025 (COLM 2025, Spotlight)
+> - **DOI**：無（OpenReview conference publication）
+> - **Phase 3 note**：舊檔名中的 `(EMNLP 2024-11)` 為錯誤 legacy venue；路徑延至 Phase 7 原子化 rename。
 > - **arXiv**：[2406.02069](https://arxiv.org/abs/2406.02069)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(EMNLP 2024-11) PyramidKV - Dynamic KV Cache Compression based on Pyramidal Information Funneling.pdf|開啟本地 PDF 檔案]]
