@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "Es2024_RAGAS"
 title: "Ragas: Automated Evaluation of Retrieval Augmented Generation"
 authors:
@@ -28,7 +27,6 @@ taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
