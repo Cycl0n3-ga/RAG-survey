@@ -49,19 +49,17 @@ taxonomy_home: "A04"
 primary_domain: null
 secondary_domains:
   - "D12"
-paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 
----
 
+---
 # AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation
 
 ## 一話摘要 (TL;DR)
 微軟提出的 **AutoGen** 是一個基於「可對話代理（Conversable Agents）」的多 Agent 協同開發框架，將複雜 LLM 應用解耦為多個具備特定角色、工具與人類介入機制的 Agent 之間的結構化對話，在數學推理、互動式檢索與實體環境決策（如 ALFWorld 達成率提升 15%）中顯著超越單 Agent 與靜態 Prompting。
 
 ---
-
 ## 研究背景與問題定義 (Problem Statement)
 
 1. **現有 LLM 應用的單一性與脆弱性**：
@@ -72,7 +70,6 @@ adjacent_interfaces:
    - 只要定義好 Agent 的**可對話性（Conversability）**與**會話控制（Conversation Programming）**，即可透過純自然語言訊息交換統一規劃、工具調用、自我修正與人機協作。
 
 ---
-
 ## 核心方法與技術架構 (Methodology & Architecture)
 
 AutoGen 的架構由兩大核心概念構成：**Conversable Agents** 與 **Conversation-Driven Execution**。
@@ -116,7 +113,6 @@ flowchart TD
 - **群組動態對話（GroupChat & GroupChatManager）**：透過管理者（Manager）利用 LLM 動態決定下一個發言的 Agent，或依狀態機（FSM）約束發言順序。
 
 ---
-
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 
 論文在六大具代表性的應用場景中進行實證評估（第 6–10 頁）：
@@ -134,7 +130,6 @@ flowchart TD
    - 多 Agent 角色扮演（財務、物流、庫存）在動態發言選擇機制下，辨識關鍵約束條件的 F1 分數顯著提高，同時動態發言選擇大幅減少了 30% 以上的冗餘 LLM 調用。
 
 ---
-
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
@@ -148,7 +143,6 @@ flowchart TD
 3. **沙箱安全風險**：若未部署於嚴密隔離的 Docker 容器中，Agent 生成的任意代碼可能對宿主機檔案系統造成不可逆破壞。
 
 ---
-
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
 1. **對 D12（Agentic RAG & Orchestration）的啟示**：
@@ -157,7 +151,6 @@ flowchart TD
    - 可以在 Agent 內部客製化記憶模組（如專屬向量庫或 HippoRAG 圖譜），實現多 Agent 協同且異質的知識庫管理。
 
 ---
-
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 
 - **本地 PDF**：`[[Papers/05 - Memory & Agents/(arXiv 2023-08) AutoGen - Enabling Next-Gen LLM Applications via Multi-Agent Conversation.pdf|開啟本地 PDF 檔案]]`
