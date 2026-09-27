@@ -60,7 +60,7 @@ Citation present
 
 ## Representative Notes
 
-**Current primary-note coverage: 5**
+**Current primary-note coverage: 8**
 
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NAACL 2024-06) Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models|STORM]]
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-11) OpenScholar - Synthesizing Scientific Literature with Retrieval-Augmented Language Models|OpenScholar]]
