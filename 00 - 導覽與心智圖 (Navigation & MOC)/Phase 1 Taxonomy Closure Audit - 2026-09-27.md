@@ -247,29 +247,51 @@ Those belong to later phases:
 
 The next step is **Phase 2 — Legacy Forensic Audit**: compare deleted/legacy concepts against the closed D01–D14 taxonomy to identify over-pruning, stale remnants, duplicated concepts, and semantic loss.
 
-## 11. Branch Validation
+## 11. Master Validation
 
-Final validation performed on `taxonomy-phase1-closure-20260927`:
+Final validation was performed on **`master`** after the Phase 1 branch was fast-forwarded and duplicate-note cleanup completed.
 
-- **108 / 108 changed literature notes** passed frontmatter/schema lint.
-- No changed note contains a `taxonomy_home` / `primary_domain` mismatch for D01–D14.
-- No changed note contains a `paradigm_tags` value outside the closed vocabulary.
-- Required metadata fields checked on all changed literature notes: `paper_id`, `title`, `authors`, `year`, `publication_year`, `venue`, `verification_status`, `artifact_type`, `taxonomy_version`, `taxonomy_home`, `primary_domain`, `secondary_domains`, `paradigm_tags`, `adjacent_interfaces`.
-- Existing domain filenames were deliberately not renamed, so Phase 1 does not introduce path-level breakage solely from the canonical display-name changes.
-- README's old primary-domain counts are explicitly marked as a **historical pre-closure snapshot**; authoritative counts will be regenerated during Phase 7/8 normalization/lint after the branch is merged.
+- **169 / 169 literature notes** were scanned directly from current master frontmatter.
+- **116** notes have a D01–D14 `primary_domain`; **53** are Adjacent/CROSS with `primary_domain: null`.
+- No scanned note contains a `paradigm_tags` value outside the closed vocabulary.
+- No scanned note contains duplicate YAML root keys after normalization.
+- Existing domain filenames remain deliberately unchanged until Phase 7, so display-name changes do not introduce path-level breakage by themselves.
 
-## 12. Phase 3 Duplicate Cleanup Queue
+### Validated primary-domain counts
 
-The following duplicate/preprint-formal pairs were detected while applying Phase 1. They are **not deleted in Phase 1** because branch code-search does not index non-default branches reliably enough to prove that no stale wikilink points to the older path. They must be handled by **link rewrite + deletion in one atomic Phase 3/7 change**.
+| Domain | Count |
+|---|---:|
+| D01 | 5 |
+| D02 | 5 |
+| D03 | 12 |
+| D04 | 6 |
+| D05 | 20 |
+| D06 | 6 |
+| D07 | 5 |
+| D08 | 9 |
+| D09 | 8 |
+| D10 | 1 |
+| D11 | 6 |
+| D12 | 6 |
+| D13 | 19 |
+| D14 | 8 |
 
-| Keep | Delete after link rewrite | Reason |
+## 12. Duplicate / Canonical-Version Cleanup Completed
+
+The duplicate pairs found during Phase 1 were cleaned on master after canonical-version verification:
+
+| Retained canonical note | Removed duplicate | Reason |
 |---|---|---|
-| `(KDD 2025-08) PipeRAG - Fast RAG via Algorithm-System Co-design.md` | `(arXiv 2024-03) PipeRAG - Fast Retrieval-Augmented Generation via Algorithm-System Co-design.md` | same paper; formal KDD version supersedes arXiv-only note |
-| `(TOCS 2026) RAGCache - Efficient Knowledge Caching for Retrieval-Augmented Generation.md` | `(TOCS 2025-11) RAGCache - Efficient Knowledge Caching for Retrieval-Augmented Generation.md` | same DOI `10.1145/3768628`; 2026 TOCS canonical record retained |
-| `(ACL 2025-07) A Reality Check on Context Utilisation for RAG.md` | `(ACL 2025-07) A Reality Check on Context Utilisation for Retrieval-Augmented Generation.md` | same ACL paper / DOI `10.18653/v1/2025.acl-long.968`; duplicate literature note |
+| `(KDD 2025-08) PipeRAG - Fast RAG via Algorithm-System Co-design.md` | arXiv-only PipeRAG note | formal KDD 2025 record supersedes the preprint-only note |
+| `(TOCS 2026) RAGCache - Efficient Knowledge Caching for Retrieval-Augmented Generation.md` | duplicate TOCS 2025-named note | same DOI `10.1145/3768628`; 2026 TOCS canonical record retained |
+| `(ACL 2025-07) A Reality Check on Context Utilisation for Retrieval-Augmented Generation.md` | shortened-title duplicate | same ACL paper / DOI `10.18653/v1/2025.acl-long.968`; full canonical title retained |
 
-This queue is intentional: **do not count both copies as independent literature anchors**.
+These pairs are no longer double-counted in the validated 169-note snapshot.
 
-## 13. Post-Closure Consistency Note
+## 13. Post-Closure Baseline
 
-After the initial Phase 1 validation, additional high-confidence metadata/remapping fixes were applied on the same branch (including D13 ownership cleanup and canonical DOI updates). These edits preserve the same schema rules and closed paradigm vocabulary. A final full-repository lint/count regeneration remains a Phase 8 task after Phase 3 duplicate cleanup, so any interim paper-count snapshot should be treated as provisional rather than a scientific claim.
+**Master is now the authoritative Phase 1 baseline.**
+
+The taxonomy closure, paper remaps, canonical metadata upgrades, added literature anchors, duplicate cleanup, closed-vocabulary paradigm-tag cleanup, and YAML-key normalization are all present on `master`.
+
+The next planned task remains **Phase 2 — Legacy Forensic Audit**. Phase 3/4 should still revisit paper-by-paper factual claims and remaining preprint→formal upgrades, but the Phase 1 taxonomy itself is closed and internally consistent at the metadata level.
