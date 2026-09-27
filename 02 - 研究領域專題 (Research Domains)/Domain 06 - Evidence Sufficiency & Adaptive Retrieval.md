@@ -69,7 +69,7 @@ Adaptive RAG 是 paradigm tag；只有當 paper 的主要研究問題是「何�
 
 ## Representative Notes
 
-**Current primary-note coverage: 5**
+**Current primary-note coverage: 6**
 
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2023-12) Active Retrieval Augmented Generation|FLARE / Active Retrieval]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection|Self-RAG]]
