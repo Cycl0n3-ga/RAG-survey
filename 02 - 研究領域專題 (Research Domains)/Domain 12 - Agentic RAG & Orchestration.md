@@ -13,47 +13,61 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-根據目前 query、evidence、memory、中間結果、failure 與 resource state，RAG 系統下一步應執行哪個 action，以及如何把這些 actions 動態組合成 adaptive workflow？
+系統如何根據目前 state 自主選擇下一個 retrieval、tool、verification、memory 或 generation action？
+
+```mermaid
+flowchart LR
+    S["Current State"] --> C["Controller / Policy"]
+    C --> Q["Rewrite / Decompose"]
+    C --> R["Retrieve / Route"]
+    C --> V["Verify / Resolve"]
+    C --> G["Generate / Abstain"]
+    C --> M["Read / Write Memory"]
+    Q -.-> S
+    R -.-> S
+    V -.-> S
+    G -.-> S
+    M -.-> S
+```
 
 ## Includes
-- planning / task decomposition / replanning
-- heterogeneous action / tool selection
-- adaptive workflow branching
-- failure-aware repair
-- state→action policy learning
-- process supervision / trajectory optimization
-- adaptive multi-agent coordination
+- controller / policy
+- planning / routing
+- tool selection
+- iterative search-read-verify-generate loops
+- multi-agent coordination
+- workflow orchestration
+- action selection from system state
 
 ## Excludes
-- fixed retrieve→reason loops → D05/D06 depending problem
-- retrieval-only retry / stop control → D06
-- fixed modular role pipeline without adaptive action selection
-- generic agent/tool-use research not centered on evidence lifecycle → A04
+- retrieval algorithm本身 → D05
+- retrieve / retry / stop 的局部 sufficiency policy → D06
+- persistent memory lifecycle本身 → D11
+- generic agents without RAG-specific evidence control → A04
 
 ## Level-2 Topics
-- Planning & Task Decomposition
-- Action / Tool Selection
-- Adaptive Workflow Execution
-- Failure-Aware Repair
-- Policy Learning
-- Adaptive Multi-Agent Coordination
+- Planning
+- Controller / Policy
+- Tool Use
+- Routing
+- Multi-Agent Coordination
+- Research Workflow Orchestration
+- Failure-aware Repair
 
 ## Boundary
-`multi-step != agentic`；`reflection != D12`；`multiple agents != adaptive orchestration`。D06 controls retrieval decisions；D12 controls heterogeneous RAG actions across the process.
+**Agentic RAG 是 control plane，不是固定 pipeline stage。**  
+若 paper 只改 retrieval method，不因為使用 agent loop 就自動歸 D12。
 
 ## Representative Notes
 
 **Current primary-note coverage: 6**
 
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|GraphReader]] — plan/function/explore loop.
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2025-07) RAG-Critic - Leveraging Automated Critic-Guided Agentic Workflow for Retrieval Augmented Generation|RAG-Critic]] — failure-aware action planning.
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(EMNLP 2025-11) DecEx-RAG - Boosting Agentic RAG with Decision and Execution Optimization via Process Supervision|DecEx-RAG]] — formal decision/execution optimization.
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-07) Reflective RAG - Self-Evaluation Driven Strategy Optimization in Agentic Retrieval-Augmented Generation|Reflective RAG]] — reflection-driven strategy optimization.
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-01) Agentic Retrieval-Augmented Generation - A Survey on Agentic RAG|Agentic RAG Survey]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2026-07) Data-Centric Perspectives on Agentic Retrieval-Augmented Generation - A Survey|Data-Centric Agentic RAG Survey]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|GraphReader]]
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(ACL 2025-07) RAG-Critic - Leveraging Automated Critic-Guided Agentic Workflow for Retrieval Augmented Generation|RAG-Critic]]
 
 > [!NOTE]
-> ReAct、Toolformer、AutoGen、WebGPT 等保留於 A04；只有 contribution 直接控制 RAG evidence lifecycle 的 state→action policy，才歸 D12。
+> ReAct、Toolformer、AutoGen、WebGPT 等目前放在 A04 General Agents & Tool Use；只有當 contribution 直接控制 RAG evidence lifecycle 時，才歸 D12。RAG-Critic 是一個較直接的 D12 method anchor，因為 critic feedback 會驅動 planning model 選擇並執行 RAG repair actions。
 
 ## Control Mechanisms
 Agentic RAG 的核心不是「用了 Agent」三個字，而是 **state → action policy**。舊版 Agentic/Deep-Research 頁面中的有效機制保留如下：
