@@ -13,67 +13,45 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-當 evidence 隨時間或版本改變、或不同來源對同一事實互相衝突時，如何判斷哪些 evidence 對目前 query 仍有效？
-
-```mermaid
-flowchart LR
-    EV["Evidence"] --> P["Source / Provenance"]
-    EV --> T["Valid Time / Version"]
-    EV -. "when source trust matters" .-> A["Authority / Credibility"]
-    P --> C["Conflict Detection"]
-    T --> C
-    A --> C
-    C -->|No conflict| OUT["Resolved Evidence"]
-    C -->|Conflict| R["Temporal / Version / Source Resolution"]
-    R --> OUT
-```
+當候選 evidence 因內容、時間、版本、來源可靠度或適用條件而無法直接共同成立時，系統應如何偵測衝突並決定保留、降權、分流、合併或顯式揭露哪些 evidence？
 
 ## Includes
-- valid time / record time
-- document / knowledge versioning
-- freshness / recency at query time
-- temporal constraint matching
-- temporal / version conflict detection
-- provenance needed to identify competing evidence sources
-- condition-aware evidence resolution
-
-> [!CAUTION]
-> **Source authority / generic provenance governance 不等於已成熟的單一 RAG subfield。**  
-> temporal / version-aware retrieval 與 conflict handling 已有直接 literature；EMNLP 2025 RA-RAG 也直接支撐 source reliability。較薄的部分現在縮小為 **document provenance lineage、workflow approval state、applicability scope 與多條治理訊號的聯合仲裁**。
+- temporal / version reconciliation
+- knowledge conflict detection and resolution
+- source reliability / credibility estimation
+- provenance-aware resolution
+- counter-evidence / contradiction handling
+- applicability / scope-aware arbitration
 
 ## Excludes
-- citation formatting / attribution output → D09
-- index refresh mechanics → D10
-- generic relevance ranking → D05
+- relevance ranking → D05
+- evidence sufficiency / retrieve-more decision → D06
+- context packing → D07
+- source-of-truth version maintenance → D10
+- malicious poisoning / prompt injection → D14
 
 ## Research Tracks
-
-1. **Temporal / Version Alignment**：freshness、valid time、version 與 query time 是否一致。
-2. **Knowledge Conflict**：context–memory、inter-context、intra-memory conflict 的 detection / diagnosis / resolution。
-3. **Provenance / Authority**：source reliability 已有 RA-RAG 類直接工作；source identity / lineage、Draft→Approved workflow、scope-aware arbitration 仍較薄。
+1. **Temporal & Version Reconciliation**
+2. **Knowledge Conflict Resolution**
+3. **Source Reliability & Provenance-Aware Resolution**
 
 ## Level-2 Topics
-- Temporal RAG
-- Version-aware RAG
-- Context–Memory Conflict
-- Inter-context Conflict
-- Conflict Detection
-- Conflict Resolution
-- Provenance
-- Authority / Credibility
+- Temporal Validity
+- Version Reconciliation
+- Knowledge Conflict Resolution
+- Source Reliability / Credibility
+- Provenance-Aware Resolution
+- Counter-evidence Handling
+- Applicability / Scope Arbitration
 
 ## Boundary
-Citation answers「輸出引用哪裡」；provenance answers「這份 evidence 從哪裡來、何時有效、適用於什麼條件」。兩者相關但不是同一問題。
+D08 only activates when evidence cannot simply coexist. `Relevance != Reliability`；`Sufficiency != Reconciliation`。D10 維護 versions，D08 在 query time 判斷哪一版本／哪一來源適用。
 
 ## Resolution Principle
-
-```text
-Newer != correct
-More relevant != more authoritative
-Citation-entailing != temporally/applicability valid
-```
-
-歷史查詢需要對準 query time；Draft 不能僅因較新就覆蓋 Approved；不同 site / condition 的 evidence 也不能因表面數值不同就直接標成 genuine contradiction。
+- provenance：evidence 從哪裡來、經過哪些 derivation
+- temporal validity：claim 在什麼時間成立
+- applicability：在什麼產品／場域／條件下適用
+- reliability：來源值得信任的程度
 
 ## Representative Notes
 
