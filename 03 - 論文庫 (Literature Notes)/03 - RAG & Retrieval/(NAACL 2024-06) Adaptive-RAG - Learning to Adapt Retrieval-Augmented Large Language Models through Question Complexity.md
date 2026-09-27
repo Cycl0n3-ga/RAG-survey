@@ -43,7 +43,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D06"
 primary_domain: "D06"
-secondary_domains: []
 paradigm_tags:
   - "adaptive_rag"
 adjacent_interfaces: []
