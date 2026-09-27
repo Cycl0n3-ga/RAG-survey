@@ -50,19 +50,17 @@ primary_domain: null
 secondary_domains:
   - "D13"
   - "D12"
-paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 
----
 
+---
 # WebArena: A Realistic Web Environment for Building Autonomous Agents
 
 ## 1. 一話摘要 (TL;DR)
 WebArena 構建了一個可完全本地化部署的四大類真實網站高仿真環境（E-commerce, Social Forum, Collaborative Software Dev, CMS），包含 812 個多步驟、長視野日常任務與難以達成的任務（Unachievable Tasks），並基於終態功能執行正確性進行評測；實驗顯示人類成功率達 78.24%，而最頂尖的 GPT-4 即使無 UA 提示也僅達 14.41%（有 UA 提示時為 11.70%），凸顯了現有 LLM 在動態網頁交互、多跳規劃與拒答校準上的巨大鴻溝。
 
 ---
-
 ## 2. 研究背景與問題定義 (Problem Statement)
 
 ### 現有 Agent 評測基準的四大瓶頸
@@ -76,7 +74,6 @@ WebArena 構建了一個可完全本地化部署的四大類真實網站高仿�
    - 真實使用者經常提出權限不足、資料缺失或功能不支援的要求；現有代理人通常會盲目幻覺操作，缺乏辨識任務不可行並主動拒答的能力。
 
 ---
-
 ## 3. 核心方法與技術架構 (Methodology & Architecture)
 
 ```mermaid
@@ -126,7 +123,6 @@ flowchart TD
    - 設計因缺乏權限、產品缺貨、目標不存在等根本無法完成的任務，評估代理人在無法達成時是否能輸出特定停止信號（例如回答無法完成），而非胡亂點擊。
 
 ---
-
 ## 4. 主要實驗結果與證據 (Empirical Results & Evidence)
 
 ### 端到端任務成功率 (End-to-End Task Success Rate)
@@ -154,7 +150,6 @@ flowchart TD
      - DOM 複雜結構理解失敗（無法對準正確的表單或下拉選單）。
 
 ---
-
 ## 5. 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
@@ -168,7 +163,6 @@ flowchart TD
 3. **拒答校準依然困難**：LLM 在積極探索（探索可行方案）與及時拒答（判斷不可能完成）之間存在嚴重的 Trade-off。
 
 ---
-
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 
 ### 對 D12 (Agentic RAG & Orchestration) 與 D13 (RAG Evaluation & Failure Attribution) 的啟發
@@ -180,7 +174,6 @@ flowchart TD
    - WebArena 的軌跡長度動輒 20–50 步，每一步的 AXT 達數千 Token，直接考驗長文本檢索、動態 KV Cache 管理與短期記憶摘要的工程能力。
 
 ---
-
 ## 7. 原始來源及相關筆記連結 (Sources & Related Notes)
 
 ### 原始來源
