@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "Pfitzmann2022_DocLayNet"
 title: "DocLayNet: A Large Human-Annotated Dataset for Document-Layout Analysis"
 authors:
@@ -39,7 +38,6 @@ taxonomy_home: "D01"
 primary_domain: "D01"
 secondary_domains:
   - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
@@ -156,7 +154,7 @@ flowchart TD
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
 1. **對 D01/D02（Document Ingestion & Segmentation）的關鍵支撐**：
-   - 證明了「盲目以固定 Token 數切塊」是 RAG 的低效做法；利用 DocLayNet 訓練的模型可將文檔解析為語義完整的 Section-header、Paragraph 與 Table，實現「版面感知切塊（Layout-aware Chunking）」。
+   - DocLayNet 提供 Section-header、Text、Table 等 layout elements 的高品質標註，可作為後續 structure-aware segmentation 的基礎；但 DocLayNet 本身不比較 fixed-token 與 structure-aware RAG chunking，因此不應把 downstream chunking 優勢寫成其直接實驗結論。
 2. **對 D13（RAG Evaluation & Failure Attribution）的關鍵支撐**：
    - 作為 RAG 前置解析（Parser / Ingestion）階段不可或缺的 Oracle 評測基準，可用於精確診斷資訊遺失究竟是發生在 PDF 解析層還是後續檢索層。
 
