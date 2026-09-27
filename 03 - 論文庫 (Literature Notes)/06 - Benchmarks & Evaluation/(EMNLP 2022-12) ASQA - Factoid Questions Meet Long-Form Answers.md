@@ -1,6 +1,7 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
+secondary_domains:
+  - "D13"
 paper_id: "Stelmakh2022_ASQA"
 title: "ASQA: Factoid Questions Meet Long-Form Answers"
 authors:
@@ -34,9 +35,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D09"
 primary_domain: "D09"
-secondary_domains:
-  - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
