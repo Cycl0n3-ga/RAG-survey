@@ -23,9 +23,9 @@ artifact_type: "method_paper"
 benchmark_ids:
   - "RAG4Reports-Bench"
 metrics:
-  - "Factual Support Rate"
-  - "Cross-Lingual Consistency"
-  - "Hallucination Free Rate"
+  - "sentence_support"
+  - "nugget_coverage"
+  - "F1"
 taxonomy_version: "v2"
 taxonomy_home: "D09"
 primary_domain: "D09"
