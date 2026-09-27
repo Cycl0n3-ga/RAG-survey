@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 secondary_domains:
   - "D08"
 paper_id: "Yang2024_CRAGBenchmark"
