@@ -1,6 +1,6 @@
 ---
 paper_id: "Jiang2023_LLMLingua"
-title: "LLMLingua: Compressing Context for Accelerated Inference of Large Language Models"
+title: "LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models"
 authors:
   - "Huiqiang Jiang"
   - "Qianhui Wu"
@@ -10,15 +10,15 @@ authors:
 year: 2023
 publication_year: 2023
 venue: "EMNLP 2023"
-doi: null
+doi: "10.18653/v1/2023.emnlp-main.825"
 arxiv: "2310.05736"
-url: "https://arxiv.org/abs/2310.05736"
+url: "https://aclanthology.org/2023.emnlp-main.825/"
 pdf_file: "Papers/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models.pdf"
 tags:
   - "paper"
   - "prompt-token-pruning"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-28"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A02"
@@ -31,14 +31,15 @@ adjacent_interfaces:
 
 ---
 
-# LLMLingua: Compressing Context for Accelerated Inference of Large Language Models
+# LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Jiang2023_LLMLingua`
 > - **作者**：Huiqiang Jiang, Qianhui Wu, Chin-Yew Lin, Yuqing Yang, Lili Qiu
 > - **預印本初次發布年份 (Preprint)**：2023
 > - **正式發表年份 / 會議或期刊 (Venue)**：2023 (EMNLP 2023)
-> - **DOI**：無
+> - **DOI**：10.18653/v1/2023.emnlp-main.825
+> - **Phase 3 note**：正式題名使用 `Compressing Prompts`；舊檔名延至 Phase 7 rename。
 > - **arXiv**：[2310.05736](https://arxiv.org/abs/2310.05736)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/02 - Compression & KV Cache/(EMNLP 2023-12) LLMLingua - Compressing Context for Accelerated Inference of Large Language Models.pdf|開啟本地 PDF 檔案]]
