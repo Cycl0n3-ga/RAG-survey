@@ -1,4 +1,6 @@
 ---
+secondary_domains:
+  - "D09"
 paper_id: "Asai2024_SelfRAG"
 title: "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
 authors:
@@ -23,8 +25,6 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D06"
 primary_domain: "D06"
-secondary_domains:
-  - "D09"
 paradigm_tags:
   - "adaptive_rag"
   - "reflective_rag"
