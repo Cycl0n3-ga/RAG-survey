@@ -9,6 +9,9 @@ last_updated: "2026-09-27"
 
 # Domain 07 - Context Construction & Utilization
 
+> [!WARNING]
+> **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
+
 ## Core Question
 候選 evidence 找到後，如何在有限 context budget 中組織資訊，並確保模型真的使用關鍵 evidence？
 
