@@ -167,6 +167,7 @@ The following papers identified during closure have now been added as literature
 
 ### D06 / D07
 - Sufficient Context — ICLR 2025
+- SURE-RAG — 2026 arXiv preprint (emerging/supporting)
 - SARA — ACL 2026
 - The Distracting Effect — ACL 2025
 - Attention Basin / AttnRank — ACL 2026
@@ -176,10 +177,15 @@ The following papers identified during closure have now been added as literature
 - FaithfulRAG — ACL 2025
 - MAGIC — Findings EMNLP 2025
 - KCR — ACL 2026
+- VersionRAG — 2025 arXiv preprint (emerging/supporting; D10 secondary)
 
 ### D09
 - RARR — ACL 2023
 - RioRAG — ACL 2026
+
+### D11
+- Mem0 — 2025 arXiv preprint (supporting)
+- EviMem — 2026 arXiv preprint (emerging; D06 secondary)
 
 ### D12
 - DecEx-RAG — EMNLP 2025 Industry
@@ -201,13 +207,14 @@ The following papers identified during closure have now been added as literature
 - end-to-end retrieved-content indirect prompt-injection work (USENIX Security 2026)
 
 ### Remaining emerging/watchlist items
-These were deliberately **not promoted to canonical notes in Phase 1**:
+These remain outside the core representative set even when a supporting note exists:
 - SURE-RAG — 2026 preprint
+- VersionRAG — 2025 preprint
 - Mem0 — 2025 preprint
 - EviMem — 2026 preprint
-- Search-P1 — ACL Industry 2026 supporting work
+- Search-P1 — ACL Industry 2026 supporting work (not yet added)
 
-They may be added during Phase 3/4 if they add non-duplicative value after full-text comparison.
+Preprints are explicitly labeled as emerging/supporting and do not replace peer-reviewed canonical anchors.
 
 ## 8. Known Thin / Emerging Areas
 
@@ -223,7 +230,7 @@ They may be added during Phase 3/4 if they add non-duplicative value after full-
 The following are **not** silently performed during Phase 1:
 - mass file/path renames
 - deletion of legacy notes
-- adding every missing paper without full canonical-source verification
+- adding every possible adjacent paper merely to maximize paper count
 - changing the project-specific F/R/D/A/P/C/T ontology into a literature claim
 - claiming D01–D14 is a standard taxonomy from one survey
 
