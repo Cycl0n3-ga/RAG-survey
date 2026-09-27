@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Park2023_GenerativeAgents"
 title: "Generative Agents: Interactive Simulacra of Human Behavior"
 authors:
