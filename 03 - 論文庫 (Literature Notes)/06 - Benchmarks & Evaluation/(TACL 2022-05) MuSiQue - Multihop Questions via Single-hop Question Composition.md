@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Trivedi2022_MuSiQue"
 title: "MuSiQue: Multihop Questions via Single-hop Question Composition"
 authors:
