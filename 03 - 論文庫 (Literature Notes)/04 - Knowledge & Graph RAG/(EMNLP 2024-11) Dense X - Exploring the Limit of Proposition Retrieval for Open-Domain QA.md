@@ -1,4 +1,6 @@
 ---
+secondary_domains:
+  - "D03"
 paper_id: "Chen2024_DenseX"
 title: "Dense X Retrieval: What Retrieval Granularity Should We Use?"
 authors:
@@ -26,8 +28,6 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D02"
 primary_domain: "D02"
-secondary_domains:
-  - "D03"
 paradigm_tags:
   - "proposition_rag"
 adjacent_interfaces: []
