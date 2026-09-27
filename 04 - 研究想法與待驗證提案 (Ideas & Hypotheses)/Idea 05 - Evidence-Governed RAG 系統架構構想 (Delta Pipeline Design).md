@@ -211,3 +211,44 @@ D = \{c_1, c_2, \ldots, c_n\} \quad \xrightarrow{\quad\text{Extraction}\quad} \q
   - [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Benchmark Catalog|RAG Benchmark Catalog]]
   - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 04 - End-to-End RAG Failure Attribution and Evidence Governance|Idea 04 - End-to-End Failure Attribution]]
   - [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 06 - 主流 RAG 框架生態與系統定位分析 (Framework Landscape & Positioning)|Idea 06 - 主流 RAG 框架生態與系統定位分析]]
+
+## Document State Store（restored project pattern）
+
+> [!WARNING]
+> 這是從 legacy forensic audit 恢復的 **project orchestration pattern**，不是已建立的 RAG / memory 標準構件，也不應被當成 D11 的文獻共識。
+
+長篇研究、規格撰寫或多階段交付物除了 evidence 本身，還需要持續保存「目前工作做到哪裡」。本專案將這類 derived task state 稱為 **Document State Store**。
+
+建議保存的最小狀態包括：
+
+- deliverable / task identifier 與目前 outline version；
+- section status：planned / researching / drafting / verified / blocked；
+- 已定義的 entities / terms / decisions，避免跨章節語意漂移；
+- unresolved evidence gaps、conflicts、assumptions 與待驗證事項；
+- 已完成與待執行的 workflow actions；
+- section ↔ claim ↔ evidence 的引用關係指標，而不複製 Evidence Store 本身。
+
+### 與其他 store 的邊界
+
+```text
+Document State Store
+  = persistent workflow / deliverable progress state
+  = D11 ↔ D12 ↔ D09 project interface
+
+Evidence Store
+  = stable candidate / verified evidence objects
+  = D09 + evidence-governance design
+
+Claim-Evidence Ledger
+  = generated claims ↔ support / contradiction / verification status
+  = Idea 04 audit mechanism
+
+Canonical source / index state
+  = D10, not Document State Store
+
+Current prompt / working context
+  = D07 / A01, not persistent document state
+```
+
+這個 store 的研究價值必須靠 ablation 驗證：例如關閉 persistent document state 後，是否增加跨章節重複研究、術語漂移、未解 gap 遺漏或不必要的重新檢索。不能只因為工程上方便就宣稱它提升 RAG 品質。
+
