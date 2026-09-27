@@ -51,27 +51,31 @@ Research Domains
 
 ## Literature Coverage Snapshot
 
-> [!WARNING]
-> 下表是 **Phase 1 closure 前的 historical snapshot**。2026-09-27 已完成多筆 primary-domain remap，因此這些數字不再視為 authoritative；最新統計應在 Phase 7/8 normalization + lint 後重新產生。
+> [!INFO]
+> 2026-09-27 Phase 1 closure 後的 primary-domain snapshot。只計 `primary_domain`，不計 secondary domains / Adjacent Interfaces；數量反映目前 branch 的 taxonomy remap 與已補入的 canonical anchors，不代表 Domain 重要性。
 
 | Domain | Primary notes |
 |---|---:|
-| D01 | 2 |
-| D02 | 3 |
+| D01 | 3 |
+| D02 | 5 |
 | D03 | 12 |
-| D04 | 6 |
-| D05 | 17 |
-| D06 | 4 |
+| D04 | 4 |
+| D05 | 18 |
+| D06 | 5 |
 | D07 | 3 |
-| D08 | 4 |
-| D09 | 6 |
+| D08 | 6 |
+| D09 | 8 |
 | D10 | 1 |
-| D11 | 6 |
-| D12 | 3 |
-| D13 | 21 |
-| D14 | 2 |
+| D11 | 4 |
+| D12 | 6 |
+| D13 | 18 |
+| D14 | 6 |
 
-目前的缺口已不適合用「再加更多 Domain」處理：D08 已有 temporal/conflict + RA-RAG source-reliability anchors，仍缺 provenance lineage / approval-state / applicability-scope arbitration；D10 已有 AURORA，但缺 production CRUD / deletion / invalidation；D12 已有 GraphReader + RAG-Critic 的 direct method anchors，但 coverage 仍比 retrieval/evaluation 薄；D14 已有 METIS systems + PoisonedRAG security anchors，剩下 observability/tracing 與 privacy/access-control 較薄。
+目前的 coverage gap 應以 Level-2 research question 處理，而不是再增加 Domain：
+- **D08**：provenance lineage / approval-state / applicability-scope governance 仍薄。
+- **D10**：production CRUD / deletion propagation / dependency-aware invalidation 仍薄。
+- **D11**：forgetting / invalidation / governance 比 write-retrieve-memory literature 薄。
+- **D14**：observability/tracing、tenant isolation、derived-data deletion/privacy governance 仍薄。
 
 ## Phase 1 Canonical Names — 2026-09-27
 
