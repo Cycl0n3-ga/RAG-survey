@@ -1,4 +1,10 @@
 ---
+adjacent_interfaces:
+  - "A01"
+paradigm_tags:
+  - "memory_augmented_rag"
+secondary_domains:
+  - "D11"
 paper_id: "Qian2024_MemoRAG"
 title: "MemoRAG: Boosting Long Context Processing with Global Memory-Enhanced Retrieval Augmentation"
 authors:
@@ -41,12 +47,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains:
-  - "D11"
-paradigm_tags:
-  - "memory_augmented_rag"
-adjacent_interfaces:
-  - "A01"
 
 ---
 
