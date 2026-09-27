@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 paper_id: "Ru2024_RAGChecker"
 title: "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation"
 authors:
