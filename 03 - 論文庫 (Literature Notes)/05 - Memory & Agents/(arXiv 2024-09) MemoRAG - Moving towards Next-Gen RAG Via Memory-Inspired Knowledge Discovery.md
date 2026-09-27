@@ -20,7 +20,7 @@ publication_year: 2025
 venue: "The Web Conference 2025"
 doi: "10.1145/3696410.3714805"
 arxiv: "2409.05591"
-url: "https://arxiv.org/abs/2409.05591"
+url: "https://doi.org/10.1145/3696410.3714805"
 pdf_file: "Papers/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery.pdf"
 tags:
   - paper
@@ -30,7 +30,7 @@ tags:
   - long-context
   - www
 verification_status: "verified"
-last_verified: 2026-09-27
+last_verified: "2026-09-27"
 artifact_type: "method_paper"
 research_questions:
   - "memory_inspired_retrieval"
@@ -50,7 +50,7 @@ primary_domain: "D05"
 
 ---
 
-# MemoRAG: Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery
+# MemoRAG: Boosting Long Context Processing with Global Memory-Enhanced Retrieval Augmentation
 
 ## 1. 一話摘要 (TL;DR)
 MemoRAG 打破傳統 RAG 僅依賴字面相似度搜尋孤立 Chunk 的死板範式，提出**雙系統記憶-檢索架構（Dual-system Memory-RAG）**：先由輕量百萬長上下文「記憶模型（Memory Model）」全域編碼目標數據並生成具備全域視野的「線索（Clues）」，再由通用檢索器精準鎖定外部資料庫中的關鍵細節，在複雜長文本問答與跨文檔概括任務上全面超越 HyDE 與 BGE-M3。
