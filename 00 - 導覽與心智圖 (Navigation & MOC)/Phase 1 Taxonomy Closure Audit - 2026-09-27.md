@@ -249,7 +249,7 @@ The next step is **Phase 2 — Legacy Forensic Audit**: compare deleted/legacy c
 
 ## 11. Master Validation
 
-Final validation was performed on **`master`** after the Phase 1 branch was fast-forwarded and duplicate-note cleanup completed.
+Final validation was performed on **`master`** after the Phase 1 closure changes were applied directly and duplicate-note cleanup completed.
 
 - **169 / 169 literature notes** were scanned directly from current master frontmatter.
 - **116** notes have a D01–D14 `primary_domain`; **53** are Adjacent/CROSS with `primary_domain: null`.
@@ -295,33 +295,3 @@ These pairs are no longer double-counted in the validated 169-note snapshot.
 The taxonomy closure, paper remaps, canonical metadata upgrades, added literature anchors, duplicate cleanup, closed-vocabulary paradigm-tag cleanup, and YAML-key normalization are all present on `master`.
 
 The next planned task remains **Phase 2 — Legacy Forensic Audit**. Phase 3/4 should still revisit paper-by-paper factual claims and remaining preprint→formal upgrades, but the Phase 1 taxonomy itself is closed and internally consistent at the metadata level.
-
-## 10. Master Coverage Snapshot — 2026-09-27
-
-Exact `primary_domain` counts on master after Phase 1 closure:
-
-| Domain | Primary notes |
-|---|---:|
-| D01 | 5 |
-| D02 | 5 |
-| D03 | 12 |
-| D04 | 6 |
-| D05 | 20 |
-| D06 | 6 |
-| D07 | 5 |
-| D08 | 9 |
-| D09 | 8 |
-| D10 | 1 |
-| D11 | 6 |
-| D12 | 6 |
-| D13 | 19 |
-| D14 | 8 |
-
-These counts exclude secondary domains, Adjacent Interfaces and `CROSS` artifacts. They are a repository snapshot, not a measure of domain importance.
-
-## 11. Master Application Status
-
-- Phase 1 canonical D01–D14 names and hard boundaries are applied on `master`.
-- Confirmed paper remaps and canonical metadata fixes listed above are applied on `master`.
-- Existing physical filenames are intentionally unchanged until Phase 7 so Obsidian links can be migrated atomically.
-- Phase 2 should now proceed from this master baseline rather than from the temporary closure branch.
