@@ -2,14 +2,25 @@
 
 A structured literature survey and research map for Retrieval-Augmented Generation (RAG).
 
+> **Want to read the survey, not browse the database? → [Start with the readable survey](./SURVEY.md).**
+
+The repository now has two layers:
+
+1. **Readable survey layer** — one continuous explanation of the field and the D01–D14 research map.
+2. **Research database layer** — paper notes, domain pages, benchmarks, system maps, taxonomy audits, and project hypotheses.
+
 > **Current taxonomy:** 14 Research Domains (D01–D14).  
 > This is the only active top-level domain model in the repository.
 
-## Start Here
+## Read First
 
-- [Home](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/Home%20%28%E4%B8%BB%E7%9B%AE%E9%8C%84%E8%88%87%E7%9F%A5%E8%AD%98%E5%BA%AB%E5%B0%8E%E8%A6%BD%29.md)
+- **[RAG Survey — From Knowledge Construction to Evidence-Grounded Generation](./SURVEY.md)** ← main readable artifact
 - [RAG Research Taxonomy & Domain Map](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/RAG%20Research%20Taxonomy%20%26%20Domain%20Map.md)
 - [RAG System Maps](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/RAG%20System%20Maps.md)
+
+## Research Database
+
+- [Home / Knowledge Base Navigation](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/Home%20%28%E4%B8%BB%E7%9B%AE%E9%8C%84%E8%88%87%E7%9F%A5%E8%AD%98%E5%BA%AB%E5%B0%8E%E8%A6%BD%29.md)
 - [Research Domains](./02%20-%20%E7%A0%94%E7%A9%B6%E9%A0%98%E5%9F%9F%E5%B0%88%E9%A1%8C%20%28Research%20Domains%29/README.md)
 - [Literature Notes](./03%20-%20%E8%AB%96%E6%96%87%E5%BA%AB%20%28Literature%20Notes%29/README.md)
 - [Benchmark Catalog](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/RAG%20Benchmark%20Catalog.md)
@@ -31,9 +42,7 @@ For reading and presentation, use six survey-aligned macro groups. The **canonic
 | Evaluation | D13 | evaluation and failure attribution |
 | Deployment & Trust | D14 | RAG systems/serving, security & integrity, privacy & access control |
 
-Full definitions and boundaries: [RAG Research Taxonomy & Domain Map](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/RAG%20Research%20Taxonomy%20%26%20Domain%20Map.md) and [Research Domains](./02%20-%20%E7%A0%94%E7%A9%B6%E9%A0%98%E5%9F%9F%E5%B0%88%E9%A1%8C%20%28Research%20Domains%29/README.md).
-
-## Classification Rules
+## Core Classification Rules
 
 - **Domain** = where the research problem occurs in the RAG lifecycle/system.
 - **Topic** = a subproblem inside a Domain.
@@ -50,14 +59,24 @@ Source / Index Maintenance != Persistent Derived Memory
 Domain != Paradigm Tag != Benchmark
 ```
 
+## Current Corpus Snapshot
+
+As of the Phase 1 closure baseline on **2026-09-27**:
+
+- **169** literature notes scanned on master
+- **116** notes with D01–D14 primary domains
+- **53** Adjacent/CROSS notes
+- known duplicate-note pairs from Phase 1 have been removed
+
 ## Repository Layout
 
 ```text
-00 - Navigation & MOC
-02 - Research Domains          # D01-D14
-03 - Literature Notes         # paper notes; storage folders are not Domains
-04 - Ideas & Hypotheses       # project proposals / research ideas
-Papers                         # local paper artifacts
+SURVEY.md                     # readable end-to-end survey
+00 - Navigation & MOC         # maps, indexes, taxonomy, audits
+02 - Research Domains         # D01-D14 detailed domain pages
+03 - Literature Notes         # paper-level research notes
+04 - Ideas & Hypotheses       # project-specific proposals
+Papers                        # local paper artifacts
 ```
 
-The literature storage folders (Long Context, Compression/KV, RAG/Retrieval, Knowledge/Graph, Memory/Agents, Benchmarks/Evaluation) are organizational buckets only and are **not** a second taxonomy.
+The literature storage folders are organizational buckets only and are **not** a second taxonomy.
