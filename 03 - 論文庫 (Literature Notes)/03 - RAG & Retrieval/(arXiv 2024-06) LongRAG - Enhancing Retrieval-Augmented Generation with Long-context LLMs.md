@@ -1,4 +1,7 @@
 ---
+adjacent_interfaces:
+  - "A01"
+secondary_domains: []
 paper_id: "Jiang2024_LongRAG"
 title: "LongRAG: Enhancing Retrieval-Augmented Generation with Long-context LLMs"
 authors:
@@ -36,11 +39,8 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D02"
 primary_domain: "D02"
-secondary_domains: []
 paradigm_tags:
   - "long_context_hybrid"
-adjacent_interfaces:
-  - "A01"
 
 ---
 
