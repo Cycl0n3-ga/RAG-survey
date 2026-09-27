@@ -40,7 +40,8 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D14"
 primary_domain: "D14"
-paradigm_tags: []
+paradigm_tags:
+  - "adaptive_rag"
 adjacent_interfaces:
   - "A02"
 
