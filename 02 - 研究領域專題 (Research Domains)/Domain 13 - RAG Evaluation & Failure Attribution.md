@@ -9,6 +9,9 @@ last_updated: "2026-09-27"
 
 # Domain 13 - Evaluation & Failure Attribution
 
+> [!WARNING]
+> **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
+
 ## Core Question
 如何分層評估 retrieval、evidence、context、generation 與 end-to-end quality，並定位 failure 真正發生在哪一層？
 
