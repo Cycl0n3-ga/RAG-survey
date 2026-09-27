@@ -62,19 +62,17 @@ primary_domain: null
 secondary_domains:
   - "D13"
   - "D12"
-paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 
----
 
+---
 # AgentBench: Evaluating LLMs as Agents
 
 ## 一話摘要 (TL;DR)
 AgentBench 是學界第一個針對大語言模型作為智能體（LLM-as-Agent）能力的綜合性基準評測，涵蓋作業系統終端機、資料庫 SQL、知識圖譜、網頁操作及具身決策等 8 大互動環境，對 29 個模型進行多輪閉環評估，定量揭示了開源模型與頂級商用模型在複雜 Agent 能力上的巨大鴻溝。
 
 ---
-
 ## 研究背景與問題定義 (Problem Statement)
 
 1. **傳統 NLP 靜態評測的失效**：
@@ -84,7 +82,6 @@ AgentBench 是學界第一個針對大語言模型作為智能體（LLM-as-Agent
    - 構建涵蓋文字、代碼、終端機與圖形網頁的多環境互動基準，系統性檢驗各 LLM 是否真正具備在複雜環境中完成實質性目標的 Agent 核心能力。
 
 ---
-
 ## 核心方法與技術架構 (Methodology & Architecture)
 
 AgentBench 建立了包含 8 大環境、由多輪交互客戶端與自動化評估器構成的架構體系：
@@ -117,7 +114,6 @@ flowchart TD
 - `EVAL`：基於環境真實狀態變更進行客觀判定（例如檔案是否被正確修改、SQL 查詢結果是否正確）。
 
 ---
-
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 
 論文評估了 29 個代表性 LLM，涵蓋商用 API 模型與各主流開源模型（Table 1, Page 3 & Table 2, Page 6）：
@@ -136,7 +132,6 @@ flowchart TD
    - **Web 網頁環境 (Mind2Web)**：多數模型因無法在龐大 DOM 樹中精確定位元素與維持歷史狀態而頻繁崩潰。
 
 ---
-
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 1. **適用任務與資料集**：為多輪交互式 Agent 提供量化基準，有效隔離靜態知識背誦與動態工具執行能力；
@@ -146,14 +141,12 @@ flowchart TD
    - **環境不可逆副作用**：若沙盒未完全容器化隔離，危險命令（如 `rm -rf`）可能造成環境崩潰。
 
 ---
-
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
 1. **確立 Agentic RAG 與工具呼叫的真實評測標準**：證明單純在文字資料集上提升 BLEU/ROUGE 無法代表模型具備在動態檢索系統中生存的能力。
 2. **為開源與私有化落地敲響警鐘**：明確指出當前開源模型在指令跟蹤與多輪狀態維護上的短板，指明了強化微調（SFT on Agent trajectories）與記憶體增強架構（如 MemGPT, LongMem）的迫切需求。
 
 ---
-
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 
 - **本地 PDF 原文**：[[Papers/06 - Benchmarks & Evaluation/(ICLR 2024-05) AgentBench - Evaluating LLMs as Agents.pdf|開啟本地 PDF 檔案]]
