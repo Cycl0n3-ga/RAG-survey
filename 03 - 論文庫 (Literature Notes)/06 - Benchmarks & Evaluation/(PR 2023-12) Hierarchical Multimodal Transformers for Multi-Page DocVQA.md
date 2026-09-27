@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 paper_id: "Tito2023_MPDocVQA"
 title: "Hierarchical multimodal transformers for Multi-Page DocVQA"
 authors:
