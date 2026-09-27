@@ -4,7 +4,7 @@ tags:
   - index
   - literature-notes
   - papers
-last_updated: "2026-09-26"
+last_updated: "2026-09-27"
 ---
 
 # 論文庫總索引 (Literature Notes Index)
@@ -13,9 +13,15 @@ last_updated: "2026-09-26"
 > 本目錄收錄專案中精讀與標準化結構之論文筆記，**storage folder 與命名規範原則上對齊 `Papers/`；remote-only 全文例外明列**：
 > - 子目錄劃分為 6 個 **storage folders**，僅用於檔案整理，不代表 Research Domains；
 > - **新建 note** 優先採 `(正式會議/期刊 發表年月) 論文名稱.md`；既有 preprint 後續正式發表時，為避免大規模 backlink / PDF path churn，可保留原 stable path，並以 YAML 的 `publication_year` / `venue` / `doi` / `url` 作為唯一 canonical citation truth；同一研究工作仍只保留一份 note；
-> - corpus 狀態：**132 篇 notes；121 份 local PDF；11 篇使用官方 remote full text**（A-MEM、AURORA、RA-RAG、METIS、RAG-Critic、OmniDocBench、When Facts Change、PoisonedRAG、EviReport、EFSG、T²-RAGBench）。
+> - corpus 數量：2026-09-27 Phase 1 已新增與 remap 多篇 notes；舊的 132 notes / 121 local PDFs / 11 remote-full-text 數字僅為 Phase 0 baseline，**不再視為 authoritative**。精確 corpus inventory 將在 Phase 7/8 normalization + lint 重新產生。
 >
 > 正式分類一律看 YAML 的 `taxonomy_home` / `primary_domain` / `secondary_domains` / `paradigm_tags` / `adjacent_interfaces`；不再使用 `domains` 欄位。
+
+## Phase 1 Literature Update — 2026-09-27
+
+Phase 1 taxonomy closure 已完成 paper-level remap、canonical publication metadata cleanup，以及缺漏 anchor 補入。**Storage folder 仍只是檔案整理方式，不代表 taxonomy。**
+
+本階段刻意不做大量 filename/folder rename，避免在 Phase 7 前造成 Obsidian backlink churn。新增且尚未對應 local PDF 的 paper note 可使用官方 proceedings/publisher URL；精確 note/PDF/remote-full-text inventory 延後至 Phase 7/8 自動重算。
 
 ## 一、Storage Folder 導覽
 
