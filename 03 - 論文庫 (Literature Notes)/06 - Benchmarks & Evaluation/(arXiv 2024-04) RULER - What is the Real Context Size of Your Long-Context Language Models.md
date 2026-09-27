@@ -1,4 +1,5 @@
 ---
+paradigm_tags: []
 paper_id: "Hsieh2024_RULER"
 title: "RULER: What’s the Real Context Size of Your Long-Context Language Models?"
 authors:
