@@ -1,6 +1,7 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
+secondary_domains:
+  - "D13"
 paper_id: "Tito2023_MPDocVQA"
 title: "Hierarchical multimodal transformers for Multi-Page DocVQA"
 authors:
@@ -37,9 +38,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
