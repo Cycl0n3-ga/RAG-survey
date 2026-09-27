@@ -59,7 +59,7 @@ End-to-end score 不能直接說明 bottleneck 位於 retrieval、evidence const
 
 ## Representative Notes
 
-**Current primary-note coverage: 19**
+**Current primary-note coverage: 18**
 
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(arXiv 2024-08) RAGChecker - A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation|RAGChecker]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EACL 2024-03) RAGAS - Automated Evaluation of Retrieval Augmented Generation|RAGAS]]
