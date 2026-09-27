@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "SaadFalcon2024_ARES"
 title: "ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems"
 authors:
@@ -37,7 +36,6 @@ taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
