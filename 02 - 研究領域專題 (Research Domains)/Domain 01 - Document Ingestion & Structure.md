@@ -47,8 +47,11 @@ D01 的 scientific output 是 **structured source units**。Source anchors 是�
 
 **Current primary-note coverage: 5**
 
-- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis|DocLayNet]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) PDF-to-Tree - Parsing PDF Text Blocks into a Tree|PDF-to-Tree]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Intelligent Document Parsing - Towards End-to-end Document Parsing via Decoupled Content Parsing and Layout Grounding|Intelligent Document Parsing]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2025-07) READoc - A Unified Benchmark for Realistic Document Structured Extraction|READoc]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(CVPR 2025-06) OmniDocBench - Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations|OmniDocBench]]
+- [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(KDD 2022-08) DocLayNet - A Large Human-Annotated Dataset for Document-Layout Analysis|DocLayNet]]
 
 ## Navigation
 - [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
