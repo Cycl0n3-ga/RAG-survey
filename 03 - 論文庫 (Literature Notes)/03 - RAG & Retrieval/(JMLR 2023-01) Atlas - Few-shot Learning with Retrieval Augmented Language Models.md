@@ -1,4 +1,9 @@
 ---
+paradigm_tags:
+  - "retrieval_augmented_training"
+secondary_domains:
+  - "D05"
+  - "D09"
 paper_id: "Izacard2023_Atlas"
 title: "Atlas: Few-shot Learning with Retrieval Augmented Language Models"
 authors:
@@ -45,11 +50,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D05"
-  - "D09"
-paradigm_tags:
-  - "retrieval_augmented_training"
 adjacent_interfaces: []
 
 ---
