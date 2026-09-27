@@ -13,49 +13,65 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-系統如何建立跨 interaction/task 持續存在的 derived memory，並完成 write、retrieve、organize、consolidate、evolve 與 forget？
+系統如何建立可跨 interaction / task 持續存在的 derived memory，並進行 write、link、retrieve、consolidate、evolve 與 forget，而不是每次只從原始 corpus 重新開始？
+
+```mermaid
+flowchart LR
+    I["Interaction / Observation"] --> W["Memory Write"]
+    W --> C["Consolidate"]
+    C --> M["Persistent Memory"]
+    M --> R["Memory Retrieval"]
+    R --> CTX["Context / Action"]
+    M -. "outdated / invalid" .-> F["Forget / Invalidate"]
+    F -.-> M
+```
 
 ## Includes
-- memory formation / salience-based write
-- persistent episodic / semantic / task memory
-- linking / hierarchy / graph organization
-- memory retrieval
-- consolidation / merge / summarize / evolution
-- forgetting / decay / deletion / invalidation
-- memory provenance / ownership / scope policy
+- episodic / semantic / task memory
+- memory write / retrieval
+- memory linking / consolidation / evolution
+- forgetting / invalidation
+- long-horizon interaction or task state
+- derived corpus / world memory used as a persistent memory layer
+- non-parametric continual knowledge integration
+- memory provenance
 
 ## Excludes
-- ordinary external corpus / static index → D04
-- current prompt / working context → D07 / A01
-- canonical source synchronization → D10
-- action planning around memory → D12
+- general corpus update → D10
+- single-turn context packing → D07
+- controller deciding when/how to use tools → D12
 
 ## Level-2 Topics
-- Memory Formation / Write
-- Memory Organization
+- Memory Write
 - Memory Retrieval
-- Consolidation & Evolution
-- Forgetting & Invalidation
-- Memory Governance
+- Episodic / Semantic Memory
+- Consolidation
+- Forgetting / Invalidation
+- Long-horizon State
+- Memory Provenance
 
 ## Boundary
-A paper is not D11 merely because it uses the word “memory”. `D10 = synchronize source of truth`；`D11 = evolve persistent derived state`。普通 RAG corpus 或單純長 context 不算 D11。
+```text
+RAG corpus = canonical external source collection
+Persistent memory = system-created state / derived representation that persists and evolves across interactions or tasks
+Dynamic index = maintenance of the canonical external knowledge/index after source changes
+```
 
 ## Representative Notes
 
-**Current primary-note coverage: 6**
+**Current direct RAG primary-note coverage: 2**
 
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|HippoRAG 2 / From RAG to Memory]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]]
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2025-04) Mem0 - Building Production-Ready AI Agents with Scalable Long-Term Memory|Mem0]] — supporting preprint.
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2026-04) EviMem - Evidence-Gap-Driven Iterative Retrieval for Long-Term Conversational Memory|EviMem]] — emerging D11↔D06 work.
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery|MemoRAG]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|From RAG to Memory / HippoRAG 2]]
 
-**Adjacent / interface examples**
-- MemoRAG → D05 primary / D11 secondary / A01 interface.
-- LongMem → A01 primary interface / D11 secondary.
-- Generative Agents → A04 / D11+D12 secondary.
+**Adjacent memory anchors (not D11-primary):**
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]] — general conversational LLM memory (A04).
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]] — general agent memory organization/evolution (A04).
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]] — general agent/virtual-context memory management (A04).
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory|LongMem]] — model-side long-context memory augmentation (A01).
+
+> [!NOTE]
+> D11 is justified by RAG-specific work such as MemoRAG and HippoRAG 2, while general LLM/agent-memory papers are retained only as adjacent mechanisms. They should not be counted as evidence that memory is a universally standardized top-level RAG domain. D10 vs D11 remains: D10 maintains the canonical external knowledge/index after source change; D11 forms or uses persistent memory state beyond one-shot context construction.
 
 ## Memory Types and Governance Boundary
 Memory 不應只用「向量庫」一詞概括。可用下列維度理解：
