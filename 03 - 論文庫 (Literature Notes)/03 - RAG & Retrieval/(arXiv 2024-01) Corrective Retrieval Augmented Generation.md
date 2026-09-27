@@ -1,4 +1,6 @@
 ---
+secondary_domains:
+  - "D07"
 paper_id: "Yan2024_CRAG"
 title: "Corrective Retrieval Augmented Generation"
 authors:
@@ -37,8 +39,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D06"
 primary_domain: "D06"
-secondary_domains:
-  - "D07"
 paradigm_tags:
   - "corrective_rag"
 adjacent_interfaces: []
