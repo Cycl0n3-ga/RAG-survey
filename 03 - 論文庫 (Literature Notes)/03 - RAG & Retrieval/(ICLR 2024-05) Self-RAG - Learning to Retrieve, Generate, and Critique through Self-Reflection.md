@@ -26,7 +26,6 @@ taxonomy_version: "v2"
 taxonomy_home: "D06"
 primary_domain: "D06"
 paradigm_tags:
-  - "adaptive_rag"
   - "reflective_rag"
 adjacent_interfaces: []
 
