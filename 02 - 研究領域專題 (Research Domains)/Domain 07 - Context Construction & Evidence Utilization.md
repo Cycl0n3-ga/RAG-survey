@@ -63,7 +63,7 @@ Evidence retrieved
 
 ## Representative Notes
 
-**Current primary-note coverage: 5**
+**Current primary-note coverage: 3**
 
 - [[03 - 論文庫 (Literature Notes)/02 - Compression & KV Cache/(ICLR 2024-05) RECOMP - Improving Retrieval-Augmented LMs with Compression and Selective Augmentation|RECOMP]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) Chain-of-Note - Enhancing Robustness in Retrieval-Augmented Language Models|Chain-of-Note]]
