@@ -16,56 +16,30 @@ last_updated: "2026-09-27"
 > 本頁是目前正式 RAG Taxonomy v2 的 D02。核心只處理 retrieval unit 的切分與 contextualization；knowledge extraction 屬 D03，index design 屬 D04。
 
 ## Core Question
-文件應被切成什麼 retrieval units，且切分後如何保留足夠上下文？如何在 **retrieval granularity、語意完整性、檢索效率、上下文保留** 之間取得可測量的平衡？
-
-```mermaid
-flowchart LR
-    DOC["Structured Document"] --> SEG["Segmentation"]
-    SEG --> FIX["Fixed / Recursive"]
-    SEG --> SEM["Semantic / Structure-aware"]
-    SEG --> FINE["Sentence / Proposition"]
-    SEG --> PC["Parent-Child"]
-    FIX --> U["Retrieval Units"]
-    SEM --> U
-    FINE --> U
-    PC --> U
-    U -. "optional" .-> C["Contextualization"]
-    C --> D04["D04 Representation & Indexing"]
-    U --> D04
-    U -. "optional extraction" .-> D03["D03 Knowledge Extraction"]
-```
+來源內容應如何被切分或轉換成 retrieval units，以及這些單元應採取多細或多粗的粒度，才能平衡語意完整性、檢索品質與成本？
 
 ## Includes
-- fixed / recursive chunking
-- semantic chunking
+- fixed / overlapping / recursive chunking
+- semantic boundary selection
 - structure-aware segmentation
-- sentence / passage / proposition retrieval units
-- parent-child segmentation
-- contextualized chunks
-- retrieval granularity
-- segmentation-induced information loss
+- document / section / passage / sentence / proposition retrieval granularity
+- parent-child / hierarchical / multi-level retrieval units
+- segmentation failure analysis
 
 ## Excludes
-- entity / relation / event / claim extraction → [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03]]
-- embedding / graph / index design → [[02 - 研究領域專題 (Research Domains)/Domain 04 - Knowledge Representation & Indexing|D04]]
-- query-time retrieval algorithm → [[02 - 研究領域專題 (Research Domains)/Domain 05 - Query Understanding & Retrieval|D05]]
-- evidence sufficiency / retry / stopping → [[02 - 研究領域專題 (Research Domains)/Domain 06 - Evidence Sufficiency & Adaptive Retrieval|D06]]
+- entity / relation / event / claim extraction → D03
+- contextualized embedding / representation → D04
+- query-time retrieval / ranking → D05
+- evidence sufficiency / retry / stopping → D06
 
 ## Level-2 Topics
-- Chunking
-- Semantic Segmentation
-- Structure-aware Segmentation
-- Parent-Child Retrieval Units
-- Proposition / Fine-grained Retrieval Units
-- Contextualized Chunks
+- Boundary Selection
 - Retrieval Granularity
-- Segmentation Failure Analysis
+- Hierarchical Retrieval Units
+- Segmentation Failure & Trade-offs
 
 ## Boundary
-```text
-Segmentation != Knowledge Extraction != Knowledge Representation
-```
-Raw-chunk RAG 可由 D02 直接進 D04；D03 是可選支線，不是所有 RAG 的必要步驟。
+`D02 = which source content constitutes one retrievable unit`；`D04 = how that unit is represented/indexed`；`D05 = which units a query retrieves/ranks`。Contextualization 僅在改變 unit formation 時屬 D02；若主要改 embedding representation，則歸 D04。
 
 ## Representative Notes
 
