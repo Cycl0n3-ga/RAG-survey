@@ -66,7 +66,7 @@ Raw-chunk RAG 可由 D02 直接進 D04；D03 是可選支線，不是所有 RAG 
 
 ## Representative Notes
 
-**Current primary-note coverage: 3**
+**Current primary-note coverage: 5**
 
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG|LumberChunker]]
