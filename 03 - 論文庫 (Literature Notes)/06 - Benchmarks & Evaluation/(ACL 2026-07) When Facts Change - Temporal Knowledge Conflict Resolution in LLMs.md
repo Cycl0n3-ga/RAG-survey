@@ -1,4 +1,6 @@
 ---
+secondary_domains:
+  - "D13"
 paper_id: "Wallat2026_WhenFactsChange"
 title: "When Facts Change: Temporal Knowledge Conflict Resolution in LLMs"
 authors:
@@ -34,8 +36,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "D08"
 primary_domain: "D08"
-secondary_domains:
-  - "D13"
 paradigm_tags:
   - "temporal_rag"
 adjacent_interfaces: []
