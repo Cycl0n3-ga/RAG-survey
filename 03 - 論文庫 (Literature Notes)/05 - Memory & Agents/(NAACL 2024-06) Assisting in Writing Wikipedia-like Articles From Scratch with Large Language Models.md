@@ -29,7 +29,6 @@ secondary_domains:
   - "D05"
 paradigm_tags:
   - "long_form_rag"
-  - "agentic_rag"
 adjacent_interfaces: []
 
 ---
