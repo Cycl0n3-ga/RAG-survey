@@ -17,13 +17,12 @@ tags:
   - "paper"
   - "query-expansion---hypothetical-generation"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-27"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains:
-  - "D04"
+secondary_domains: []
 paradigm_tags: []
 adjacent_interfaces: []
 
