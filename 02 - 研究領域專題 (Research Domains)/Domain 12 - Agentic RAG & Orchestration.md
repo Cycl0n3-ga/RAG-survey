@@ -9,6 +9,9 @@ last_updated: "2026-09-27"
 
 # Domain 12 - RAG Orchestration & Action Control
 
+> [!WARNING]
+> **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
+
 ## Core Question
 系統如何根據目前 state 自主選擇下一個 retrieval、tool、verification、memory 或 generation action？
 
