@@ -1,5 +1,8 @@
 ---
 paradigm_tags: []
+secondary_domains:
+  - "D05"
+  - "D13"
 paper_id: "Yang2018_HotpotQA"
 title: "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering"
 authors:
@@ -36,10 +39,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D05"
-  - "D13"
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
