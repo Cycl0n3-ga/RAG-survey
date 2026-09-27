@@ -1,4 +1,8 @@
 ---
+paradigm_tags:
+  - "graph_rag"
+secondary_domains:
+  - "D04"
 paper_id: "Gutierrez2024_HippoRAG"
 title: "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models"
 authors:
@@ -23,10 +27,6 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains:
-  - "D04"
-paradigm_tags:
-  - "graph_rag"
 adjacent_interfaces: []
 
 ---
