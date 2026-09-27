@@ -45,9 +45,11 @@ last_updated: "2026-09-27"
 
 **Current primary-note coverage: 5**
 
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) LumberChunker - Long-Context LLMs as Modular Chunkers for Long-Document RAG|LumberChunker]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-06) LongRAG - Enhancing Retrieval-Augmented Generation with Long-context LLMs|LongRAG]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) MultiDocFusion - Hierarchical and Multimodal Chunking Pipeline for Enhanced RAG on Long Industrial Documents|MultiDocFusion]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) HiChunk - Evaluating and Enhancing Retrieval Augmented Generation with Hierarchical Chunking|HiChunk]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-06) LongRAG - Enhancing Retrieval-Augmented Generation with Long-context LLMs|LongRAG]] — supporting coarse-granularity / long-context extreme.
 
 ## Segmentation Strategies
 
