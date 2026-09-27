@@ -13,59 +13,35 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-目前 evidence 是否足以回答問題；若不足，缺什麼、是否要再檢索，以及何時停止？
-
-```mermaid
-flowchart LR
-    EV["Candidate Evidence"] --> COV["Coverage"]
-    COV --> SUFF["Sufficiency"]
-    SUFF -->|Enough| STOP["Stop Retrieval"]
-    SUFF -->|Missing| GAP["Gap Localization"]
-    GAP --> RET["Retrieve More"]
-    GAP --> RW["Rewrite / Decompose"]
-    GAP --> AB["Abstain / Escalate"]
-    RET -.-> EV
-    RW -.-> EV
-```
+目前 evidence 是否已足以支持回答；若不足，系統應繼續檢索、切換檢索策略、拒答，還是停止？
 
 ## Includes
-- retrieval necessity
-- evidence coverage / completeness
-- evidence sufficiency
-- gap localization
-- adaptive / corrective / iterative retrieval
-- stopping policy
-- retrieval-time abstention / escalation
+- retrieval necessity / retrieve-vs-no-retrieve
+- sufficient-context / evidence-set sufficiency
+- retry / corrective / iterative retrieval control
+- strategy escalation and stopping
+- evidence-gap diagnosis
+- evidence-conditioned abstention / selective answering
 
 ## Excludes
-- relevance ranking → D05
-- time / source / version conflict resolution → D08
-- general multi-action agent controller → D12
+- relevance ranking / which documents to retrieve → D05
+- conflict adjudication / which incompatible evidence wins → D08
+- general action/tool orchestration → D12
+- evaluation-only sufficiency benchmark → D13
 
 ## Two Research Tracks
-
-D06 目前刻意保留在同一 Domain，但必須區分兩個不同問題：
-
-1. **Retrieval Control**：何時 retrieve / retry / rewrite / stop。FLARE、Self-RAG、Adaptive-RAG、Corrective RAG 主要支撐這條線。
-2. **Evidence Sufficiency**：目前 evidence set 是否完整到足以回答、缺哪一類證據、何時應 abstain。這條線的直接方法文獻比 Retrieval Control 薄，不能把前述 adaptive-retrieval papers 當成完整 sufficiency controller 的既有證明。
+1. **Evidence Sufficiency**：current evidence set 是否足以回答。
+2. **Retrieval Control**：根據 evidence state 決定 retrieve / retry / change strategy / stop / abstain。
 
 ## Level-2 Topics
 - Retrieval Necessity
-- Adaptive Retrieval
-- Corrective Retrieval
-- Stopping Policy
-- Evidence Coverage
 - Evidence Sufficiency
-- Gap Localization
-- Abstention / Escalation
+- Retrieval Control
+- Evidence Gap Diagnosis
+- Selective Answering
 
 ## Boundary
-```text
-Relevant evidence
-    != complete evidence
-    != sufficient evidence
-```
-Adaptive RAG 是 paradigm tag；只有當 paper 的主要研究問題是「何時 retrieve / retry / stop」時，Primary Domain 才是 D06。
+`Relevance != Sufficiency`。衝突可使 evidence 被判為 insufficient，但真正的 conflict resolution 屬 D08。Explicit requirement-slot decomposition → gap localization → targeted retrieval 仍屬 emerging/project hypothesis。
 
 ## Representative Notes
 
