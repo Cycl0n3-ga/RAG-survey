@@ -13,53 +13,32 @@ last_updated: "2026-09-27"
 > **Phase 1 closure is authoritative.** 若本頁較早段落與底部「Phase 1 Closure — 2026-09-27」衝突，以 closure 為準；舊文字暫留作 Phase 2 forensic audit，將於 Phase 7 一次正規化。
 
 ## Core Question
-如何由 evidence 產生可驗證、可歸因的答案或長篇報告，並在無法支持時選擇修正或 abstain？
-
-```mermaid
-flowchart LR
-    CTX["Grounded Context"] --> GEN["Generate"]
-    GEN -. "long-form" .-> PLAN["Outline / Section Plan"]
-    PLAN --> LONG["Section Synthesis"]
-    GEN --> CL["Claims"]
-    LONG --> CL
-    CL --> VER["Claim-Evidence Verification"]
-    VER --> CITE["Citation / Attribution"]
-    CITE --> OUT["Answer / Report"]
-    VER -. "unsupported" .-> FIX["Repair / Retrieve / Abstain"]
-```
+如何從已取得的 evidence 產生其 claims 可被支持、可追溯的答案或長篇 synthesis，並在生成過程中發現 unsupported content 時進行 revision、citation 或 selective abstention？
 
 ## Includes
-- grounded generation
-- claim decomposition
-- claim-evidence verification
-- faithfulness / groundedness
-- citation / attribution
-- abstention
+- evidence-conditioned grounded answer generation
+- claim→evidence attribution / citation generation
+- unsupported-claim detection and revision
+- selective abstention
 - outline / section planning
-- long-form synthesis
-- revision / cross-section consistency
+- multi-source long-form synthesis
+- cross-section revision and consistency
 
 ## Excludes
-- retrieval algorithm → D05/D06
-- context packing → D07
-- benchmark methodology → D13
+- whether evidence is sufficient → D06
+- context selection / compression / packing → D07
+- benchmark / metric-only evaluation → D13
+- general action/tool orchestration → D12
 
 ## Level-2 Topics
-- Grounded Generation
-- Claim Verification
-- Citation / Attribution
-- Abstention
-- Long-form Report Generation
-- Evidence-to-Section Planning
-- Revision / Consistency
+- Grounded Answer Generation
+- Attribution & Citation
+- Verification & Revision
+- Selective Abstention
+- Long-form Evidence Synthesis
 
 ## Boundary
-```text
-Citation present
-    != citation relevant
-    != citation entails claim
-    != answer complete
-```
+D06：是否夠證據；D09：在已給 evidence 下生成可支持輸出。Generation-time verifier 若會修改／重寫輸出屬 D09；若只做 scoring / benchmark 則屬 D13。
 
 ## Representative Notes
 
