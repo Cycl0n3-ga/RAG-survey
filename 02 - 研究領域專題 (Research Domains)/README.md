@@ -51,8 +51,8 @@ Research Domains
 
 ## Literature Coverage Snapshot
 
-> [!INFO]
-> 2026-09-27 Phase 1 closure 後的 primary-domain snapshot。只計 `primary_domain`，不計 secondary domains / Adjacent Interfaces；數量反映目前 branch 的 taxonomy remap 與已補入的 canonical anchors，不代表 Domain 重要性。
+> [!WARNING]
+> 下表是 **Phase 1 provisional snapshot**，只用來觀察 coverage。Phase 3 仍有 PipeRAG / RAGCache / DRUID duplicate-pair cleanup，且 Phase 8 才會做全 repo 自動重算；因此不要把下列數字當成最終 canonical count。
 
 | Domain | Primary notes |
 |---|---:|
@@ -70,6 +70,8 @@ Research Domains
 | D12 | 6 |
 | D13 | 18 |
 | D14 | 6 |
+
+> Duplicate cleanup queue 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27#12. Phase 3 Duplicate Cleanup Queue|Phase 1 Audit — Duplicate Cleanup Queue]]。
 
 目前的 coverage gap 應以 Level-2 research question 處理，而不是再增加 Domain：
 - **D08**：provenance lineage / approval-state / applicability-scope governance 仍薄。
