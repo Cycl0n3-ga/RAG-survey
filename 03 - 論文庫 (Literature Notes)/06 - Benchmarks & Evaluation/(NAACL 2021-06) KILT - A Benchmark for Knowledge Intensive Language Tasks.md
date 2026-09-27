@@ -1,6 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
 paper_id: "Petroni2021_KILT"
 title: "KILT: a Benchmark for Knowledge Intensive Language Tasks"
 authors:
@@ -56,18 +55,16 @@ taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains:
   - "D05"
-paradigm_tags: []
 adjacent_interfaces: []
 
----
 
+---
 # KILT: a Benchmark for Knowledge Intensive Language Tasks
 
 ## 1. 一話摘要 (TL;DR)
 KILT 是知識密集型 NLP 與 RAG 領域的里程碑式評測基準，首次將 5 大核心任務共 11 個經典資料集統一映射到單一固定維基百科快照（5.9M 頁面），並提出嚴格綁定檢索出處與生成正確性的「KILT-score」雙重指標。
 
 ---
-
 ## 2. 研究背景與問題定義 (Problem Statement)
 
 ### 2.1 歷史評測的破碎與不可比性
@@ -77,7 +74,6 @@ KILT 是知識密集型 NLP 與 RAG 領域的里程碑式評測基準，首次�
 3. **任務割裂**：事實查核（Fact Checking）、槽位填充（Slot Filling）、開放問答（Open-Domain QA）與對話（Dialogue）被作為獨立孤島分開研究。
 
 ---
-
 ## 3. 核心方法與技術架構 (Methodology & Architecture)
 
 ### 3.1 統一知識庫與 11 大任務映射
@@ -117,7 +113,6 @@ $$\text{KILT-score} = \text{Downstream Metric} \times \text{Provenance Match}$$
 - 如果模型猜中了答案但檢索結果不包含正確頁面，或者檢索對了但答案錯誤，KILT-score 均計為 0。
 
 ---
-
 ## 4. 主要實驗結果與證據 (Empirical Results & Evidence)
 
 論文評估了 BM25、DPR、REALM、RAG、BART 等多種基礎模型架構（Table 2, Page 6）：
@@ -127,7 +122,6 @@ $$\text{KILT-score} = \text{Downstream Metric} \times \text{Provenance Match}$$
   - **DPR + BART**：在實體槽位填充 T-REx 上獲得 52.8% KILT-score，驗證了顯式檢索出處在結構化知識抽取中的關鍵作用。
 
 ---
-
 ## 5. 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
@@ -139,13 +133,11 @@ $$\text{KILT-score} = \text{Downstream Metric} \times \text{Provenance Match}$$
 2. **知識庫版本固定**：2019 快照無法評測 2020 年後的最新時效性問題（Temporal RAG）。
 
 ---
-
 ## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
 - **支撐 D13（RAG Evaluation & Failure Attribution）**：KILT-score 是現代 RAG 評測中「雙重約束（Groundedness + Accuracy）」的鼻祖，直接啟發了 ALCE、Ragas 與 RAGTruth 的設計思維。
 - **統一檢索底座**：為本專案在對比不同檢索算法時提供了公認的跨任務基準參照。
 
 ---
-
 ## 7. 原始來源及相關筆記連結 (Sources & Related Notes)
 - **開啟本地 PDF**：[[Papers/06 - Benchmarks & Evaluation/(NAACL 2021-06) KILT - A Benchmark for Knowledge Intensive Language Tasks.pdf|開啟原始論文 PDF]]
 - **關聯文獻**：
