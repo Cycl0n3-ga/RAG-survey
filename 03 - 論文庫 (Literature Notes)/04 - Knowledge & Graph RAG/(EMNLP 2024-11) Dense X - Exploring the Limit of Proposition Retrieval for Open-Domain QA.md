@@ -17,7 +17,7 @@ publication_year: 2024
 venue: "EMNLP 2024"
 doi: "10.18653/v1/2024.emnlp-main.845"
 arxiv: "2312.06648"
-url: "https://arxiv.org/abs/2312.06648"
+url: "https://aclanthology.org/2024.emnlp-main.845/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA.pdf"
 tags:
   - "paper"
@@ -91,7 +91,7 @@ flowchart TD
 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
-> **出處與評估條件**：Table 2 (Page 6): 在 5 個開放領域問答基準（Natural Questions, TriviaQA, WebQuestions, SQuAD, EntityQuestions）上，命題級檢索在多種 Retriever 下全面超越 100-word 與 200-word 傳統固定切塊；檢索到的無關噪聲大幅降低，下游生成模型的 QA 準確率提升達 1.5%~2.5%。
+> **出處與評估條件**：Table 2 (Page 6): 在 5 個開放領域問答基準（Natural Questions, TriviaQA, WebQuestions, SQuAD, EntityQuestions）上，命題級檢索在多種 Retriever 下全面超越 100-word 與 200-word 傳統固定切塊；檢索到的無關噪聲大幅降低，下游生成模型的 在 LLaMA-2-7B、500-token budget 下，proposition 相對 passage 的平均 EM 提升依 SimCSE／Contriever／DPR／GTR 分別為 +4.1／+3.2／+2.7／+2.8 points。
 
 ---
 
