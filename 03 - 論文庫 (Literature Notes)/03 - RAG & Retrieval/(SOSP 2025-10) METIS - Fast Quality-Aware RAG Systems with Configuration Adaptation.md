@@ -1,4 +1,5 @@
 ---
+secondary_domains: []
 paper_id: "Ray2025_METIS"
 title: "METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation"
 authors:
