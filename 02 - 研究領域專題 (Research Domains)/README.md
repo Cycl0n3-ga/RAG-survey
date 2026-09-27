@@ -56,20 +56,20 @@ Research Domains
 
 | Domain | Primary notes |
 |---|---:|
-| D01 | 3 |
+| D01 | 5 |
 | D02 | 5 |
 | D03 | 12 |
-| D04 | 4 |
-| D05 | 18 |
-| D06 | 5 |
-| D07 | 3 |
-| D08 | 6 |
+| D04 | 6 |
+| D05 | 20 |
+| D06 | 6 |
+| D07 | 5 |
+| D08 | 9 |
 | D09 | 8 |
 | D10 | 1 |
-| D11 | 4 |
+| D11 | 6 |
 | D12 | 6 |
-| D13 | 18 |
-| D14 | 6 |
+| D13 | 19 |
+| D14 | 8 |
 
 > Duplicate cleanup queue 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27#12. Phase 3 Duplicate Cleanup Queue|Phase 1 Audit — Duplicate Cleanup Queue]]。
 
