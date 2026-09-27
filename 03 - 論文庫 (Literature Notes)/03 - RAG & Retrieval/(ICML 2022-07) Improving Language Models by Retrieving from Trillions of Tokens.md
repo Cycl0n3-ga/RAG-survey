@@ -1,4 +1,9 @@
 ---
+paradigm_tags:
+  - "retrieval_augmented_training"
+secondary_domains:
+  - "D05"
+  - "D09"
 paper_id: "Borgeaud2022_RETRO"
 title: "Improving Language Models by Retrieving from Trillions of Tokens"
 authors:
@@ -75,11 +80,6 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "CROSS"
 primary_domain: null
-secondary_domains:
-  - "D05"
-  - "D09"
-paradigm_tags:
-  - "retrieval_augmented_training"
 adjacent_interfaces: []
 
 ---
