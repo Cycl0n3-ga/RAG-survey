@@ -1,4 +1,5 @@
 ---
+secondary_domains: []
 paper_id: "Jiang2023_FLARE"
 title: "Active Retrieval Augmented Generation"
 authors:
