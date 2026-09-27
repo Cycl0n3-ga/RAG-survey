@@ -28,12 +28,11 @@ taxonomy_home: "A01"
 primary_domain: null
 secondary_domains:
   - "D13"
-paradigm_tags: []
 adjacent_interfaces:
   - "A01"
 
----
 
+---
 # LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding
 
 > [!INFO] 論文元數據 (Metadata)
@@ -46,17 +45,14 @@ adjacent_interfaces:
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/06 - Benchmarks & Evaluation/(ACL 2024-08) LongBench - A Bilingual, Multitask Benchmark for Long Context Understanding.pdf|開啟本地 PDF 檔案]]
 ---
-
 ## 一話摘要 (TL;DR)
 **清華大學提出首個雙語、多任務、長序列綜合評測基準，涵蓋單篇問答、多篇問答、摘要、少樣本學習等 21 個子任務。**
 
 ---
-
 ## 研究背景與問題定義 (Problem Statement)
 早期評測主要依賴單一的合成任務（如 Passkey Retrieval），無法真實反映模型在複雜現實長文本任務（如合約分析、論文總結）中的綜合理解力。
 
 ---
-
 ## 核心方法與技術架構 (Methodology & Architecture)
 構建涵蓋中英文的長文本數據集，平均長度在 5k 至 16k tokens 之間。劃分為六大核心能力維度：單文檔 QA、多文檔 QA、長文摘要、Few-shot 學習、合成代碼/鍵值檢索、代碼調試。提出全自動化的評估協議。
 
@@ -68,23 +64,19 @@ graph LR
 ```
 
 ---
-
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 > [!NOTE] 關鍵實證數據與評估條件
 > **出處與評估條件**：Table 2 (Page 6): 評估 14 個主流大模型在 21 個長文子任務上的綜合表現；揭露許多宣稱支援 16k 的模型在真實長文任務上的分數不及 2-shot 检索基線。
 
 ---
-
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs) (Strengths & Trade-offs)
 優點：任務多樣、真實性高、雙語覆蓋全面，成為評估長文本模型綜合實力的行業標準；缺點：平均長度上限約 32k，隨著 2024 年 100k+ 時代到來需要更高維度基準補充。
 
 ---
-
 ## 在長文件處理任務中的角色與啟發 (Implications for Long-Doc Processing)
 成為評估 LLM 長文本能力最權威的公認指標之一，被幾乎所有長文本模型論文引用評測。
 
 ---
-
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - **所屬研究領域**：
   - [[02 - 研究領域專題 (Research Domains)/Domain 13 - RAG Evaluation & Failure Attribution|D13 RAG Evaluation & Failure Attribution]]
