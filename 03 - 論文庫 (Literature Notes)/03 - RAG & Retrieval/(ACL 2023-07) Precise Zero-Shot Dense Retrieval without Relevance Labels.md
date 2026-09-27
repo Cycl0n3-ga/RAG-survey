@@ -23,7 +23,6 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains: []
 paradigm_tags: []
 adjacent_interfaces: []
 
