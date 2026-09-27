@@ -48,19 +48,17 @@ taxonomy_home: "A04"
 primary_domain: null
 secondary_domains:
   - "D12"
-paradigm_tags: []
 adjacent_interfaces:
   - "A04"
 
----
 
+---
 # WebGPT: Browser-assisted question-answering with human feedback
 
 ## 一話摘要 (TL;DR)
 WebGPT 是首個透過純文字網頁瀏覽環境與人類回饋強化學習（RLHF）微調 LLM 進行主動網路檢索與引用引文（Citations）的系統，在 ELI5 長篇開放式問答基準上，其生成回答在人工盲測中以 56% 的勝率擊敗人類專家示範答案，以 69% 的勝率擊敗 Reddit 原生社群參考解答。
 
 ---
-
 ## 研究背景與問題定義 (Problem Statement)
 在 2021 年大語言模型（如 GPT-3）崛起初期，學界面臨長篇開放問答（Long-Form QA）的三大核心痛點：
 1. **事實幻覺與無法驗證性（Unverifiable Hallucinations）**：模型依靠內部參數記憶回答複雜問題，往往編造貌似合理卻錯誤的細節，且沒有任何外部可查驗的參考來源。
@@ -68,7 +66,6 @@ WebGPT 是首個透過純文字網頁瀏覽環境與人類回饋強化學習（R
 3. **被動靜態檢索的侷限**：傳統 RAG 僅由檢索器一次性抓取固定文本，缺乏如同人類研究人員「搜尋關鍵字 $\rightarrow$ 點擊網頁 $\rightarrow$ 滾動閱讀 $\rightarrow$ 摘錄引用」的主動資訊採集決策能力。
 
 ---
-
 ## 核心方法與技術架構 (Methodology & Architecture)
 
 WebGPT 將長篇問答構建為一個**文字互動環境下的序貫決策問題（Sequential Decision Making）**：
@@ -114,7 +111,6 @@ flowchart TD
 - `GEN`：強制錨定引用區塊的回答生成模組。
 
 ---
-
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 
 論文在 Reddit ELI5（Explain Like I'm 5）長篇問答與 TruthfulQA 上進行了雙盲人工評測。
@@ -130,7 +126,6 @@ flowchart TD
 - WebGPT-175B 在 TruthfulQA 上的真實性與資訊量評分達到 **75%**，遠超原始 GPT-3 175B 的 28%，證明結合主動檢索與引用顯著抑制了常見常識偏見與虛假陳述。
 
 ---
-
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
 ### 優勢
@@ -142,13 +137,11 @@ flowchart TD
 2. **缺乏全域結構化規劃**：WebGPT 沒有大綱生成與分節合成機制，回答長度通常限制在數百字，難以直接撰寫數千字甚至上萬字的多章節深度調研報告。
 
 ---
-
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 1. **對 D09 (Grounded Generation & Long-form Synthesis) 的奠基意義**：WebGPT 是後續 STORM、EviReport 等長篇深度研究架構的鼻祖，首次在神經架構層面驗證了「引用引文（Citing Sources）」是保障長文真實性的唯一護城河。
 2. **對 D09 (Grounded Generation & Attribution) 的啟示**：證明了強制模型輸出顯式引用錨點（Quote Spans）能大幅約束解碼空間，杜絕無來源支撐的事實性幻覺。
 
 ---
-
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - 原始論文 PDF：[[Papers/05 - Memory & Agents/(arXiv 2021-12) WebGPT - Browser-assisted question-answering with human feedback.pdf|開啟本地 PDF]]
 - arXiv 永久連結：[arXiv:2112.09332](https://arxiv.org/abs/2112.09332)
