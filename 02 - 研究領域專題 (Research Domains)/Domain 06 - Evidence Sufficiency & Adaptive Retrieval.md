@@ -47,10 +47,12 @@ last_updated: "2026-09-27"
 
 **Current primary-note coverage: 6**
 
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2023-12) Active Retrieval Augmented Generation|FLARE / Active Retrieval]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection|Self-RAG]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2024-06) Adaptive-RAG - Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity|Adaptive-RAG]]
-- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation|CRAG / Corrective RAG]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2023-12) Active Retrieval Augmented Generation|FLARE / Active Retrieval]] — generation-time retrieval triggering.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2024-06) Adaptive-RAG - Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity|Adaptive-RAG]] — pre-retrieval policy selection.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) Self-RAG - Learning to Retrieve, Generate, and Critique through Self-Reflection|Self-RAG]] — self-reflective retrieval/generation control.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation|CRAG / Corrective RAG]] — retrieval-quality-conditioned correction.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2025-04) Sufficient Context - A New Lens on Retrieval Augmented Generation Systems|Sufficient Context]] — direct context/evidence sufficiency anchor.
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2026-05) SURE-RAG - Sufficiency and Uncertainty-Aware Evidence Verification for Selective Retrieval-Augmented Generation|SURE-RAG]] — emerging set-level sufficiency verification.
 
 ## Failure Modes
 - **False-sufficient**：背景文字很多，但關鍵 evidence slot 仍缺失，controller 卻提前停止。
