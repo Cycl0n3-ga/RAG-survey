@@ -1,5 +1,6 @@
 ---
 paradigm_tags: []
+paradigm_tags: []
 paper_id: "Yang2024_CRAGBenchmark"
 title: "CRAG -- Comprehensive RAG Benchmark"
 authors:
