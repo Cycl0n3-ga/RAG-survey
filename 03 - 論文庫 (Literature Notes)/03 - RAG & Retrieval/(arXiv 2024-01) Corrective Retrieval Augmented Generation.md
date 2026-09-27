@@ -11,7 +11,7 @@ authors:
 year: 2024
 publication_year: null
 venue: "arXiv"
-doi: "10.48550/arXiv.2401.15884"
+doi: null
 arxiv: "2401.15884"
 url: "https://arxiv.org/abs/2401.15884"
 pdf_file: "Papers/03 - RAG & Retrieval/(arXiv 2024-01) Corrective Retrieval Augmented Generation.pdf"
@@ -22,7 +22,7 @@ tags:
   - web-search-augmentation
   - decompose-recompose
 verification_status: "verified"
-last_verified: 2026-09-27
+last_verified: "2026-09-28"
 artifact_type: "method_paper"
 research_questions:
   - retrieval_quality_evaluation
@@ -45,7 +45,10 @@ adjacent_interfaces: []
 
 ---
 
-# Corrective Retrieval Augmented Generation (CRAG)
+# Corrective Retrieval Augmented Generation
+
+> [!NOTE]
+> **Phase 3 canonical-publication note:** this paper remains an arXiv/CoRR preprint. The DataCite-style `10.48550/arXiv.2401.15884` identifier is not stored in the repo's `doi` field because `arxiv: "2401.15884"` already records the preprint identifier; `doi` is reserved for a formal/canonical publication DOI. (CRAG)
 
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Yan2024_CRAG`
