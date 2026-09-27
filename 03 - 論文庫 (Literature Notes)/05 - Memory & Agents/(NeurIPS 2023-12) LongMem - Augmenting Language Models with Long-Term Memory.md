@@ -1,4 +1,8 @@
 ---
+adjacent_interfaces:
+  - "A01"
+secondary_domains:
+  - "D11"
 paper_id: "Wang2023_LongMem"
 title: "Augmenting Language Models with Long-Term Memory"
 authors:
@@ -39,11 +43,7 @@ metrics:
 taxonomy_version: "v2"
 taxonomy_home: "A01"
 primary_domain: null
-secondary_domains:
-  - "D11"
 paradigm_tags: []
-adjacent_interfaces:
-  - "A01"
 
 ---
 
