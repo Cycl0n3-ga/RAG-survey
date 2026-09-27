@@ -1,7 +1,5 @@
 ---
 paradigm_tags: []
-paradigm_tags: []
-paradigm_tags: []
 paper_id: "Ru2024_RAGChecker"
 title: "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation"
 authors:
@@ -43,7 +41,6 @@ taxonomy_version: "v2"
 taxonomy_home: "D13"
 primary_domain: "D13"
 secondary_domains: []
-paradigm_tags: []
 adjacent_interfaces: []
 
 ---
