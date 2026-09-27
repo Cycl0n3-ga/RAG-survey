@@ -6,8 +6,8 @@ authors:
   - "Matthew E. Peters"
   - "Arman Cohan"
 year: 2020
-publication_year: 2020
-venue: "ACL 2020"
+publication_year: null
+venue: "arXiv"
 doi: null
 arxiv: "2004.05150"
 url: "https://arxiv.org/abs/2004.05150"
@@ -16,7 +16,7 @@ tags:
   - "paper"
   - "sparse-attention"
 verification_status: "verified"
-last_verified: "2026-09-24"
+last_verified: "2026-09-28"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "A01"
@@ -34,8 +34,9 @@ adjacent_interfaces:
 > - **Paper ID**：`Beltagy2020_Longformer`
 > - **作者**：Iz Beltagy, Matthew E. Peters, Arman Cohan
 > - **預印本初次發布年份 (Preprint)**：2020
-> - **正式發表年份 / 會議或期刊 (Venue)**：2020 (ACL 2020)
+> - **正式發表年份 / 會議或期刊 (Venue)**：無正式 venue；目前 canonical record 為 arXiv / CoRR (2020)
 > - **DOI**：無
+> - **Phase 3 note**：舊檔名中的 `(ACL 2020-07)` 為錯誤 legacy venue；路徑延至 Phase 7 原子化 rename。
 > - **arXiv**：[2004.05150](https://arxiv.org/abs/2004.05150)
 > - **驗證狀態**：`verified` (已比對原始文獻與 PDF 全文)
 > - **本地 PDF 連結**：[[Papers/01 - Long Context & Sequence/(ACL 2020-07) Longformer - The Long-Document Transformer.pdf|開啟本地 PDF 檔案]]
