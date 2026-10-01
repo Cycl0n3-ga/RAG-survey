@@ -20,32 +20,38 @@ arxiv: "1906.06127"
 url: "https://aclanthology.org/P19-1074/"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(ACL 2019-07) DocRED - A Large-Scale Document-Level Relation Extraction Dataset.pdf"
 tags:
-  - paper
-  - document-level-re
-  - dataset
-  - relation-extraction
-  - multi-hop-reasoning
+  - "paper"
+  - "document-level-re"
+  - "dataset"
+  - "relation-extraction"
+  - "multi-hop-reasoning"
+  - "evidence-identification"
 verification_status: "verified"
-last_verified: "2026-09-25"
+last_verified: "2026-10-01"
 artifact_type: "dataset"
+taxonomy_version: "v2"
+taxonomy_home: "D03"
+primary_domain: "D03"
+secondary_domains:
+  - "D04"
+paradigm_tags: []
+adjacent_interfaces: []
 research_questions:
-  - document_level_relation_extraction
-  - inter_sentence_reasoning
-  - supporting_evidence_identification
+  - "document_level_relation_extraction"
+  - "inter_sentence_reasoning"
+  - "supporting_evidence_identification"
+  - "distant_supervision_denoising"
 benchmark_ids:
   - "DocRED"
+dataset_ids:
+  - "DocRED"
+  - "Wikidata"
+  - "Wikipedia"
 metrics:
   - "F1 Score"
   - "Ign F1"
   - "AUC"
   - "Ign AUC"
-taxonomy_version: "v2"
-taxonomy_home: "D03"
-primary_domain: "D03"
-secondary_domains: []
-paradigm_tags: []
-adjacent_interfaces: []
-
 ---
 
 # DocRED: A Large-Scale Document-Level Relation Extraction Dataset
@@ -53,143 +59,171 @@ adjacent_interfaces: []
 > [!INFO] 論文元數據 (Metadata)
 > - **Paper ID**：`Yao2019_DocRED`
 > - **作者**：Yuan Yao, Deming Ye, Peng Li, Xu Han, Yankai Lin, Zhenghao Liu, Zhiyuan Liu, Lixin Huang, Jie Zhou, Maosong Sun (Tsinghua University, WeChat AI Tencent)
-> - **預印本初次發布年份 (Preprint)**：2019 (arXiv:1906.06127)
-> - **正式發表年份 / 會議或期刊 (Venue)**：2019 (ACL 2019, Long Paper)
+> - **預印本初次發布年份 (Preprint)**：2019-06 (arXiv:1906.06127)
+> - **正式發表年份 / 會議或期刊 (Venue)**：ACL 2019 (Long Paper, Pages 764–777)
 > - **DOI**：[10.18653/v1/P19-1074](https://doi.org/10.18653/v1/P19-1074)
 > - **ACL Anthology**：[https://aclanthology.org/P19-1074/](https://aclanthology.org/P19-1074/)
-> - **驗證狀態**：`verified` (已比對 ACL 2019 官方全文與論文 PDF)
+> - **開源基準庫**：[thunlp/DocRED (GitHub)](https://github.com/thunlp/DocRED)
+> - **驗證狀態**：`verified` (已逐頁比對 ACL 2019 官方發表全文與附錄數據)
 > - **本地 PDF 連結**：[[Papers/04 - Knowledge & Graph RAG/(ACL 2019-07) DocRED - A Large-Scale Document-Level Relation Extraction Dataset.pdf|開啟本地 PDF 檔案]]
 
 ---
 
-## 一話摘要 (TL;DR)
-DocRED 構建了自然語言處理領域首個**大規模篇章級關聯抽取（Document-Level Relation Extraction）**人工標註基準資料集（包含 5,053 篇人工精標文檔、13.2 萬命名實體、96 種關係類型與 5.6 萬關係事實，並附帶 10.1 萬遠程監督文檔），揭示了超過 40.7% 的實體關聯必須依賴跨句子推理，徹底打破了傳統句子級 RE 的局部假設。
+## 1. 一話摘要 (TL;DR)
+DocRED 構建了自然語言處理領域首個**大規模篇章級關聯抽取（Document-Level Relation Extraction, DocRE）**基準資料集，包含 5,053 篇人工精標文檔、13.2 萬命名實體、96 種關係類型、5.6 萬個關係事實與 10.1 萬篇遠程監督語料；實證揭示有 **40.7% 的實體關係必須依賴跨句子合成推理**，並首次將「支撐證據句（Supporting Evidence Sentences）」納入聯合評測體系，徹底打破了傳統句子級抽取將實體關係局限於局部單句的簡化假設。
 
 ---
 
-## 研究背景與問題定義 (Problem Statement)
+## 2. 研究背景與問題定義 (Problem Statement)
 
-### 1. 核心痛點
-在 DocRED 發表之前，絕大多數關係抽取（Relation Extraction, RE）資料集與算法（如 SemEval-2010 Task 8、ACE 2004、TACRED、FewRel）均將任務簡化為**單句內（Intra-sentence）**的實體對關聯分類：
-1. **跨句實體關聯被割裂**：真實文檔中，大量實體提及（Mentions）分散在不同句子、段落甚至章節中，傳統句子級模型無法抽取跨句關係。
-2. **缺乏篇章級推理鏈支撐**：跨句關聯往往無法單純依賴局部句法依存樹，而是需要多跳邏輯推理、指代消解（Coreference Resolution）與常識推理。
-3. **缺乏可解釋的證據標註**：現有資料集僅標註三元組是否存在，不提供模型做此推斷的「支撐句（Supporting Evidence）」索引，導致模型無法進行可解釋性驗證。
+### 2.1 句子級關係抽取 (Sentence-Level RE) 的根本困境
+在 DocRED 提出前，主流關係抽取評測（如 SemEval-2010 Task 8, ACE 2003-2004, TACRED, FewRel）皆建立在**單句閉環假設**上：
+$$\mathcal{D}_{\text{sent}} = \{(s, e_h, e_t, r) \mid e_h \in s \land e_t \in s, \, r \in \mathcal{R}\}$$
+然而在真實文檔、科技報告與企業知識庫中，資訊分散在不同段落與語境中：
+1. **跨句實體關係的結構性遺失**：若僅在單句內抽取，實體提及（Mentions）分散在相鄰或遠距句子中的語意關聯將被直接截斷，造成大量有效事實不可檢索。
+2. **缺乏多跳語意推理機制**：單句 RE 模型嚴重依賴局部語法依存樹（Dependency Parse Tree），而跨句關係往往依賴指代消解（Coreference Resolution）、邏輯三段論傳遞（Logical Deduction）或常識關聯。
+3. **黑盒預測缺乏證據溯源**：傳統資料集僅標註三元組 $\langle e_h, r, e_t \rangle$，缺乏支持該關係成立的上下文證據句子索引，下游系統無法驗證關係是真實依據文檔生成還是模型偏見幻覺。
 
-### 2. 研究假設與設計目標
-構建一個覆蓋多種複雜推理類型、規模大、標註嚴謹的篇章級 RE 基準。同時標註：(1) 篇章中所有命名實體提及及其共指鏈；(2) 實體間的 96 種語意關係；(3) 每一條關係事實對應的完整篇章支撐句集合（Supporting Evidence Sentences）。
+### 2.2 篇章級關係抽取的數學形式化
+給定一篇包含 $K$ 個句子的文檔 $d = \{s_1, s_2, \dots, s_K\}$ 以及預先標註或預測的實體集合 $\mathcal{E} = \{e_i\}_{i=1}^n$。
+每個實體 $e_i$ 包含多個文檔提及（Mentions）：
+$$e_i = \{m_i^1, m_i^2, \dots, m_i^{N_i}\}$$
+其中每個提及 $m_i^j$ 均為文檔中的連續文字跨距（Span），並關聯至其出現的句子編號。
+
+任務目標包含雙重預測：
+1. **關係事實分類**：針對任意實體對 $(e_i, e_j) \in \mathcal{E} \times \mathcal{E}$ ($i \ne j$)，預測其關係標籤集合 $\mathcal{R}_{i,j} \subseteq \mathcal{R} \cup \{\text{NA}\}$（允許一對實體存在多重關係）。
+2. **支撐證據定位 (Supporting Evidence Retrieval)**：若 $\mathcal{R}_{i,j} \ne \{\text{NA}\}$，模型必須同時預測使該關係成立的最小支撐句子集合 $\mathcal{S}_{i,j} \subseteq \{s_1, s_2, \dots, s_K\}$。
 
 ---
 
-## 核心方法與技術架構 (Methodology & Architecture)
+## 3. 核心方法與技術架構 (Methodology & Architecture)
 
-### 1. 資料集構建與規模統計 (Table 1, Page 4)
-- **語料來源**：以 Wikipedia 英文條目與 Wikidata 知識圖譜為基礎。
-- **人工精標數據 (Human-annotated)**：
-  - 5,053 篇完整文檔（包含 40,276 句子、100.2 萬詞）；
-  - 132,375 個命名實體提及（對應 96 種 Wikidata 關聯類型）；
-  - 63,427 個關係實例（共計 56,354 個獨立關係事實）；
-  - 每個關係實例平均由 1.6 個支撐句支撐，46.4% 的實例由多個句子共同佐證。
-- **大規模弱監督數據 (Distantly Supervised)**：
-  - 101,873 篇文檔，包含 2,558,350 個實體、1,508,320 個遠程監督關係實例，供模型進行大規模預訓練。
+### 3.1 篇章級推理分類體系 (Table 2, Page 5)
+DocRED 透過嚴格的人工審查，量化分析了篇章級關係抽取所需的 5 種核心認知推理類型：
+- **模式識別 (Pattern Recognition, 38.9%)**：實體出現在同一個句子中，可透過局部語法結構直接判定。
+- **邏輯推理 (Logical Reasoning, 26.6%)**：需要結合 2 句以上的事實進行多跳傳遞推理（例如：$A \in B \land B \subseteq C \implies A \in C$）。
+- **共指消解推理 (Coreference Reasoning, 17.6%)**：需要透過代名詞（He, It）或同義提及（The company, The university）將遠距實體對齊後推導。
+- **常識推理 (Common-sense Reasoning, 16.6%)**：必須將文檔內的不完整陳述與世界外部常識先驗知識相結合。
+- **時序與其他推理 (Temporal / Other, 0.3%)**：依據時間先後順序或狀態變更進行判定。
 
-### 2. 篇章級推理分類體系 (Table 2, Page 5)
-DocRED 首次對篇章級關係抽取所需的推理類型進行量化分解：
-1. **模式識別 (Pattern Recognition, 38.9%)**：實體關係可由單句或明顯文字特徵直接判斷；
-2. **邏輯推理 (Logical Reasoning, 26.6%)**：需要結合 2 句以上的語義進行多跳傳遞推導（如 A 屬於 B，B 位於 C $\to$ A 位於 C）；
-3. **共指消解推理 (Coreference Reasoning, 17.6%)**：需要跨越代詞（He, It, The company）追蹤實體身分後推斷關係；
-4. **常識推理 (Common-sense Reasoning, 16.6%)**：必須將文檔內部分事實與外部常識相結合才能確認關係；
-5. **時序與其他推理 (0.3%)**。
+### 3.2 資料集構建與規模特徵 (Table 1, Page 4)
+- **人工精標集合 (Human-Annotated)**：
+  - 文檔數：5,053 篇 Wikipedia 完整文章（共計 40,276 句、100.2 萬詞）；
+  - 命名實體：132,375 個提及，歸納為 96 種 Wikidata 關係；
+  - 關係實例：63,427 個實例（56,354 個獨立事實），其中 **40.7% 的事實必須跨句子抽取**；
+  - 支撐證據：每個關係實例平均依賴 1.6 個句子，**46.4% 的實例由多個句子共同佐證**。
+- **遠程監督集合 (Distantly Supervised)**：
+  - 101,873 篇文檔、2,558,350 個實體、1,508,320 個弱監督關係實例，供大規模預訓練與去噪研究。
 
-### 系統架構流程圖 (Mermaid)
+### 3.3 系統架構流程圖 (Mermaid)
 
 ```mermaid
 flowchart TD
-    RawWiki["Wikipedia 文章與 Wikidata KG"] --> Preproc["分句與 BERT 實體候選識別"]
-    Preproc --> Crowdsource["群眾外包人工多階段雙向標註"]
+    WikiCorpus["Wikipedia Raw Corpus & Wikidata KG"] --> Preproc["Sentence Splitting & Named Entity Candidate Detection"]
     
-    subgraph annotation["人工精確標註管線"]
-        Crowdsource --> EntCorefer["1. 命名實體識別與指代消解聚類"]
-        EntCorefer --> RelAnnotate["2. 跨句子實體對關聯標註 (96 類)"]
-        RelAnnotate --> EvidenceLink["3. 關鍵支撐證據句索引標記"]
+    subgraph pipeline["DocRED Annotation & Evaluation Framework"]
+        Preproc --> Step1["Step 1: Entity Mention Recognition & Coreference Clustering"]
+        Step1 --> Step2["Step 2: Cross-Sentence Relation Classification (96 Classes + NA)"]
+        Step2 --> Step3["Step 3: Supporting Evidence Sentence Identification"]
     end
     
-    annotation --> CleanDocRED["DocRED 基準資料集 (5,053 Docs)"]
-    
-    CleanDocRED --> Benchmark1["任務 1: 篇章級關係抽取 (RE)"]
-    CleanDocRED --> Benchmark2["任務 2: 關聯與支撐證據聯合抽取 (RE + Sup)"]
-    
-    Benchmark1 --> Eval["評測指標: F1 / Ign F1 / AUC / Ign AUC"]
-    Benchmark2 --> Eval
+    pipeline --> Bench["DocRED Benchmark"]
+    Bench --> TaskRE["Task 1: Doc-Level RE (Ign F1 / Ign AUC)"]
+    Bench --> TaskJoint["Task 2: Joint RE + Evidence Extraction (RE+Sup)"]
 ```
 
 #### 圖中節點對照
-- `RawWiki`: 原始維基百科全文與知識圖譜項目
-- `EntCorefer`: 實體提及識別與篇章內共指鏈聚類
-- `RelAnnotate`: 跨句實體對的 96 種關聯標註
-- `EvidenceLink`: 關係推導的支撐證據句索引標註
-- `Eval`: 排除訓練集重疊實體的 Ign F1 / Ign AUC 評估體系
+- `WikiCorpus`: [[Papers/04 - Knowledge & Graph RAG/(ACL 2019-07) DocRED - A Large-Scale Document-Level Relation Extraction Dataset.pdf|維基百科原始文檔與 Wikidata 知識庫]]
+- `Step1`: 實體提及識別與篇章內共指消解聚類
+- `Step2`: 跨句子實體對的 96 類關聯分類
+- `Step3`: 最小語意支撐證據句索引標記
+- `TaskRE`: 篇章級關係抽取評測（導入過濾重疊實體的 Ign F1 / Ign AUC 指標）
+- `TaskJoint`: 關係與支撐證據聯合抽取評測
 
 ---
 
-## 主要實驗結果與證據 (Empirical Results & Evidence)
+## 4. 主要實驗結果與證據 (Empirical Results & Evidence)
 
-### 1. 基準神經模型評測表現 (Table 4, Page 7)
-在 DocRED 測試集（Test Set）上評估監督與弱監督設置下的 Baseline 表現：
+### 4.1 基準神經模型全域表現 (Table 4, Page 7)
+在 DocRED 開發集（Dev）與盲測集（Test）上，對比各類經典神經網絡架構在監督學習與遠程監督學習下的表現：
 
-| 設定與模型 | 測試集 Ign F1 (%) | 測試集 Ign AUC | 測試集 F1 (%) | 測試集 AUC |
-| :--- | :---: | :---: | :---: | :---: |
-| **Supervised Setting (人工標註)** | | | | |
-| CNN | 36.44 | 30.44 | 42.33 | 38.98 |
-| LSTM | 43.60 | 39.02 | 50.12 | 49.31 |
-| **BiLSTM** | **44.73** | **40.40** | **51.06** | **50.43** |
-| Context-Aware | 43.93 | 39.30 | 50.64 | 49.70 |
-| **Weakly Supervised (遠程監督)** | | | | |
-| CNN | 25.40 | 13.46 | 42.02 | 36.86 |
-| BiLSTM | 29.96 | 15.50 | 49.82 | 42.90 |
-| Context-Aware | 30.27 | 15.11 | 50.14 | 41.52 |
+| 設定與模型架構 | Dev Ign F1 (%) | Dev F1 (%) | Dev AUC | Test Ign F1 (%) | Test Ign AUC | Test F1 (%) | Test AUC |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Supervised Setting (人工標註訓練)** | | | | | | | |
+| CNN | 37.99 | 43.45 | 39.41 | 36.44 | 30.44 | 42.33 | 38.98 |
+| LSTM | 44.41 | 50.66 | 49.48 | 43.60 | 39.02 | 50.12 | 49.31 |
+| **BiLSTM** | **45.12** | **50.95** | **50.27** | **44.73** | **40.40** | **51.06** | **50.43** |
+| Context-Aware | 44.84 | 51.10 | 50.20 | 43.93 | 39.30 | 50.64 | 49.70 |
+| **Weakly Supervised (遠程監督預訓練)** | | | | | | | |
+| CNN | 26.35 | 42.75 | 38.01 | 25.40 | 13.46 | 42.02 | 36.86 |
+| LSTM | 30.86 | 49.91 | 42.78 | 29.75 | 14.97 | 49.91 | 42.78 |
+| BiLSTM | 32.05 | 51.72 | 44.42 | 29.96 | 15.50 | 49.82 | 42.90 |
+| Context-Aware | 32.43 | 51.39 | 43.02 | 30.27 | 15.11 | 50.14 | 41.52 |
 
 *(出處：Table 4, Page 7)*
 
-- **關鍵結論**：
-  - 傳統經典神經模型在篇章級 RE 上的測試集 F1 僅有 **51.06%**（Ign F1 僅 44.73%），遠低於句子級 RE 在 TACRED 上普遍 70%+ 的分數；
-  - 遠程監督中由於噪聲標註問題，Ign F1 暴跌至 29.96%，凸顯篇章級去噪的極高難度。
+> [!NOTE] 關鍵實驗發現
+> 1. **Ign F1 的必要性**：訓練集與測試集存在不可避免的常識實體對重疊。在遠程監督下，BiLSTM 的標準 F1 達 49.82%，但排除重疊實體後的 **Ign F1 僅為 29.96%**（暴跌近 20 個百分點），證實模型極易死記硬背知識庫偏置，而非真正習得篇章理解能力。
+> 2. **傳統架構天花板**：即使採用雙向長程依賴建模（BiLSTM），在監督設定下的測試集 Ign F1 亦僅達到 **44.73%**，凸顯篇章級非局部推理對淺層序列模型的巨大挑戰。
 
-### 2. 人機表現巨大鴻溝 (Table 5, Page 7)
-對隨機抽樣的 100 篇文檔進行人機對比：
-- **關係抽取 (RE)**：模型 F1 為 **54.1%**，人類專家 F1 達 **88.0%**（相差 33.9 個百分點）；
-- **關係與支撐證據聯合抽取 (RE + Sup)**：模型 F1 為 **44.7%**，人類專家 F1 達 **73.4%**（相差 28.7 個百分點）。
-這證實篇章級推理對現有模型而言存在巨大的認知與推理瓶頸。
+### 4.2 人機表現巨大鴻溝 (Table 5, Page 7)
+在隨機抽取的 100 篇測試集文檔上進行人機對照盲測：
 
----
+| 評測主體 | 關係抽取 (RE) Precision | RE Recall | RE F1 (%) | 聯合抽取 (RE + Sup) Precision | RE+Sup Recall | RE+Sup F1 (%) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **最佳神經模型 (BiLSTM)** | 55.6 | 52.6 | **54.1** | 46.4 | 43.1 | **44.7** |
+| **人類專家表現 (Human)** | 89.7 | 86.3 | **88.0** | 71.2 | 75.8 | **73.4** |
+| **差距 ($\Delta$)** | -34.1 | -33.7 | **-33.9** | -24.8 | -32.7 | **-28.7** |
 
-## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
+*(出處：Table 5, Page 7)*
 
-### 1. 優勢 (Strengths)
-1. **開拓篇章級關聯抽取研究方向**：將 NLP 關係抽取從單句推向篇章級全文理解，成為後續無數圖神經網路、跨塊關聯與 UIE 模型的核心驗證平台。
-2. **具備可解釋證據鏈**：強制標註支撐句（Supporting Evidence），為事實驗證、證據溯源與抗幻覺評估提供了黃金標準。
-3. **引入 Ign F1 評估防範過擬合**：嚴格過濾訓練集與測試集重疊的實體對，避免模型單純依靠記憶知識庫偏見得分。
-
-### 2. 限制與代價 (Limitations & Trade-offs)
-1. **長度局限於維基百科摘要段落**：DocRED 文本長度多在 8 句話、200 詞左右，屬於「短篇章（Paragraph-level to Short Document）」，尚未達到數千詞的長篇技術報告規模。
-2. **關係模式集中於維基百科語域**：96 種關係類型均源自 Wikidata（如出生地、受教育地、配偶），對專業垂直領域（如金融、法律、生醫）的複雜因果關係覆蓋不足。
-
----
-
-## 對本專案研究領域的實際意義 (Implications for Research Domains)
-
-1. **D03 Knowledge Extraction & Information Preservation**：
-   DocRED 證明了 40.7% 的事實無法在單句甚至單個固定 Chunk 內抽齊。這為本專案強調的「跨塊關聯整合（Cross-chunk Consolidation）」與「超越單句的結構化知識圖譜構建」提供了最權威的實驗數據支撐。
-2. **GraphRAG 實體與關聯抽取評估**：
-   在 GraphRAG 系統中，如何從切碎的文本塊精確重建全域實體關係網，DocRED 是評估抽取器是否具備多跳推理能力的第一標竿。
+### 4.3 支撐證據類型對召回率的影響 (Page 8)
+將開發集的 12,332 個關係實例按證據結構拆解：
+- **Single (單句支撐，6,115 實例)**：模型 Recall 為 **51.1%**；
+- **Mix (多句支撐但實體在某單句共現，1,062 實例)**：模型 Recall 下降至 **49.4%**；
+- **Multiple (純跨句支撐，實體完全不在同一句共現，4,668 實例)**：模型 Recall 進一步跌落至 **46.6%**。
+這量化證明了跨句子資訊合成難度顯著高於單句模式匹配。
 
 ---
 
-## 原始來源及相關筆記連結 (Sources & Related Notes)
+## 5. 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 
-- **本地 PDF 連結**：[[Papers/04 - Knowledge & Graph RAG/(ACL 2019-07) DocRED - A Large-Scale Document-Level Relation Extraction Dataset.pdf|開啟本地 PDF 檔案]]
-- **關聯之知識抽取與結構化筆記**：
-  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2022-05) Unified Structure Generation for Universal Information Extraction|UIE: Unified Structure Generation for Universal Information Extraction]]
-  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X: Exploring the Limit of Proposition Retrieval]]
-- **所屬研究領域**：
-  - [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|D02 Segmentation & Contextualization]]
-  - [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|D03 Knowledge Extraction & Information Preservation]]
+### 5.1 核心優勢 (Strengths)
+1. **拓寬資訊抽取典範**：開拓了 NLP 從局部 Sentence RE 向篇章級全局推理的跨越，成為後續圖神經網路、跨塊 GraphRAG 與大語言模型資訊抽取的核心基石。
+2. **證據可溯源性**：首次強制將「關係存在」與「支撐證據索引」綁定評估，防止幻覺歸因。
+3. **評測防護網**：正式確立了 Ign F1 / Ign AUC 評估標準，徹底根除了實體記憶型過擬合。
+
+### 5.2 核心限制 (Limitations)
+1. **文檔長度仍偏短**：DocRED 篇章長度中位數約為 8 句話、200 詞左右，屬於「段落至短文檔（Short Documents）」，尚未觸及數萬詞的長篇工業合約或學術論文。
+2. **關係本體集中於維基百科世界知識**：96 種關係偏向百科通用常識（如出生地、受教育地、從屬國家），對工程、代碼與深層邏輯因果關係的覆蓋有限。
+
+### 5.3 系統 Trade-offs
+- **抽取召回 vs 噪聲放大**：若跨句子枚舉所有實體對做關係分類，計算量從句子級的 $\mathcal{O}(M_{\text{sent}}^2)$ 爆炸至篇章級的 $\mathcal{O}(M_{\text{doc}}^2)$，且絕大多數實體對屬於 NA（負樣本比率極高，超過 98%），對分類器的假陽性抑制能力構成極大考驗。
+
+---
+
+## 6. 對本專案研究領域的實際意義 (Implications for Research Domains)
+
+### 6.1 在 D03 Knowledge Extraction & Consolidation 中的核心地位
+DocRED 提供了最具決定性的文獻實證：**文檔中超過 40% 的關鍵關係需要跨句/跨塊合成**。
+- **對 D02（Segmentation）的啟示**：單純基於滑動窗口或固定長度的語句分塊（Chunking），必然會切斷實體提及與其上下文的關聯。
+- **對 D03（Extraction）的啟示**：知識抽取不能局限於單個 Chunk 內部；必須在 Chunk 抽取後進行**跨塊共指消解與實體整合（Cross-chunk Consolidation）**，否則構建出的知識圖譜將充滿孤立斷裂的碎片。
+
+### 6.2 與 GraphRAG 系統構建的邊界釐清
+- **D03 Extraction 邊界**：識別篇章中的實體、跨句關聯與支撐句證據；
+- **D04 Representation 邊界**：將 DocRED 抽出的多元組存儲為 Qualified Triples 或圖索引；
+- **D08 Reconciliation 邊界**：不同文檔間存在事實衝突時的時間與版本裁決。
+
+---
+
+## 7. 原始來源及相關筆記連結 (Sources & Related Notes)
+
+- **本地原始文獻**：[[Papers/04 - Knowledge & Graph RAG/(ACL 2019-07) DocRED - A Large-Scale Document-Level Relation Extraction Dataset.pdf|開啟本地 PDF 檔案]]
+- **下游篇章級與圖抽取筆記**：
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2019-11) Entity, Relation, and Event Extraction with Contextualized Span Representations|DyGIE++: 跨句圖傳播資訊抽取]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2020-07) A Joint Neural Model for Information Extraction with Global Features|OneIE: 全域特徵聯合抽取模型]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2020-07) SciREX - A Challenge Dataset for Document-Level Information Extraction|SciREX: 長文檔科學文獻四元組抽取基準]]
+  - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-05) Beyond Chunk-Local Extraction - Cross-Chunk Graph Augmentation for GraphRAG|CrossAug: GraphRAG 跨塊圖結構增強]]
+- **關聯研究領域**：
+  - [[02 - 研究領域專題 (Research Domains)/Domain 02 - Segmentation & Contextualization|Domain 02 - Segmentation & Contextualization]]
+  - [[02 - 研究領域專題 (Research Domains)/Domain 03 - Knowledge Extraction & Information Preservation|Domain 03 - Knowledge Extraction & Consolidation]]
