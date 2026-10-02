@@ -4,7 +4,7 @@ tags:
   - index
   - literature-notes
   - papers
-last_updated: "2026-09-27"
+last_updated: "2026-10-02"
 ---
 
 # 論文庫總索引 (Literature Notes Index)
@@ -97,7 +97,7 @@ Phase 1 taxonomy closure 已完成 paper-level remap、canonical publication met
 
 | Findings of ACL 2026 | AURORA: Neuro-Symbolic Continual Indexing for Evolving RAG Systems | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) AURORA - Neuro-Symbolic Continual Indexing for Evolving RAG Systems\|(ACL 2026-07) AURORA]] | [ACL Anthology](https://aclanthology.org/2026.findings-acl.495/) |
 | EMNLP 2025 | Retrieval-Augmented Generation with Estimation of Source Reliability (RA-RAG) | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Retrieval-Augmented Generation with Estimation of Source Reliability\|(EMNLP 2025-11) RA-RAG]] | [ACL Anthology](https://aclanthology.org/2025.emnlp-main.1738/) |\n\n| USENIX Security 2025 | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models\|(USENIX Security 2025-08) PoisonedRAG]] | [USENIX](https://www.usenix.org/conference/usenixsecurity25/presentation/zou-poisonedrag) |
-| SOSP 2025 | METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation\|(SOSP 2025-10) METIS]] | [ACM](https://doi.org/10.1145/3731569.3764855) |\n\n### 04 - Knowledge & Graph RAG (23 篇)
+| SOSP 2025 | METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation\|(SOSP 2025-10) METIS]] | [ACM](https://doi.org/10.1145/3731569.3764855) |\n\n### 04 - Knowledge & Graph RAG (27 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -124,6 +124,11 @@ Phase 1 taxonomy closure 已完成 paper-level remap、canonical publication met
 | EMNLP 2020 | OpenIE6: Iterative Grid Labeling and Coordination Analysis for Open Information Extraction | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction\|(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction]] | [[Papers/04 - Knowledge & Graph RAG/(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction.pdf\|PDF]] |
 | NeurIPS 2024 | G-Retriever: Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering\|(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering]] | [[Papers/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering.pdf\|PDF]] |
 | arXiv 2023 | InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction\|(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction]] | [[Papers/04 - Knowledge & Graph RAG/(arXiv 2023-04) InstructUIE - Multi-task Instruction Tuning for Unified Information Extraction.pdf\|PDF]] |
+
+| ICLR 2024 | Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Think-on-Graph - Deep and Responsible Reasoning of Large Language Model on Knowledge Graph\|(ICLR 2024-05) Think-on-Graph]] | [[Papers/04 - Knowledge & Graph RAG/(ICLR 2024-05) Think-on-Graph - Deep and Responsible Reasoning of Large Language Model on Knowledge Graph.pdf\|PDF]] |
+| ICLR 2024 | Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Reasoning on Graphs - Faithful and Interpretable Large Language Model Reasoning\|(ICLR 2024-05) Reasoning on Graphs]] | [[Papers/04 - Knowledge & Graph RAG/(ICLR 2024-05) Reasoning on Graphs - Faithful and Interpretable Large Language Model Reasoning.pdf\|PDF]] |
+| ICLR 2025 | Simple is Effective: The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2025-05) Simple is Effective - The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation\|(ICLR 2025-05) SubgraphRAG]] | [[Papers/04 - Knowledge & Graph RAG/(ICLR 2025-05) Simple is Effective - The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation.pdf\|PDF]] |
+| Findings of ACL 2025 | GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GNN-RAG - Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs\|(Findings ACL 2025-07) GNN-RAG]] | [[Papers/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GNN-RAG - Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs.pdf\|PDF]] |
 
 ### 05 - Memory & Agents (18 篇)
 

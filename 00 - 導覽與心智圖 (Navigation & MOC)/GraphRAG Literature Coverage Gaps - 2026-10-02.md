@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 0
-candidate_status: "screened; full-paper verification pending"
+independent_literature_notes_added: 4
+candidate_status: "partial; 4 of 44 full-text notes added; 40 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,17 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫現有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 多數項目只核官方 metadata／摘要；少數另讀封面或局部方法章節，各項均明示範圍。尚未完成全文驗證，未建立正式 paper notes、未下載新 PDF，也未將候選算入已驗證的 Domain coverage。優先序與 D01–D14 mapping 是本 repo 的補缺口建議；機制描述由各項原始來源支持。
+**本頁是候選索引。** 此清單已開始逐篇補全文與標準筆記：第一批 4/44 篇已完成正式版全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG）；其餘候選仍待核對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+
+### 補齊進度
+
+| 狀態 | 論文 | 筆記 |
+|---|---|---|
+| 已完成全文核對與 PDF | ToG — ICLR 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Think-on-Graph - Deep and Responsible Reasoning of Large Language Model on Knowledge Graph]] |
+| 已完成全文核對與 PDF | RoG — ICLR 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Reasoning on Graphs - Faithful and Interpretable Large Language Model Reasoning]] |
+| 已完成全文核對與 PDF | SubgraphRAG — ICLR 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2025-05) Simple is Effective - The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation]] |
+| 已完成全文核對與 PDF | GNN-RAG — Findings ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GNN-RAG - Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs]] |
+| 待完成 | 其他 40 篇 | 正式 PDF 與筆記尚未補齊 |
 
 ## 目錄
 
