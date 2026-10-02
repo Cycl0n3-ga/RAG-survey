@@ -59,14 +59,18 @@ flowchart LR
 
 ## Representative Notes
 
-**Current primary-note coverage: 7**
+**Current primary-note coverage: 6**
 
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|Microsoft GraphRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|RAPTOR]]
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation|LightRAG]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
-- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-05) LinearRAG - Linear Graph Retrieval Augmented Generation on Large-scale Corpora|LinearRAG]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) Situated Embedding Models for Context-Aware Dense Retrieval|Situated Embedding Models]]
+- [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(CVPR 2025-06) VDocRAG - Retrieval-Augmented Generation over Visually-Rich Documents|VDocRAG]]
+
+### Cross-domain Anchors
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-05) LinearRAG - Linear Graph Retrieval Augmented Generation on Large-scale Corpora|LinearRAG]] (D03 Primary / D04 Secondary: Tri-Graph representation with zero-token indexing)
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]] (D05 Primary / D04 Secondary: non-parametric knowledge graph index)
 
 ## Representation Families
 舊版 GraphRAG / hierarchical 頁面中的核心概念保留為 **representation/index choices**，而不是額外 top-level Domain：
@@ -126,4 +130,4 @@ flowchart LR
 - Situated Embedding Models (ACL 2026): ADD D04 / D02 secondary.
 - VDocRAG (CVPR 2025): ADD D04 / D05 secondary.
 - GFM-RAG (NeurIPS 2025): D05 primary / D04 secondary.
-- LinearRAG (ICLR 2026): ADD D04 primary / D03, D05 secondary (Tri-Graph representation with zero-token indexing).
+- LinearRAG (ICLR 2026): REALIGN to D03 primary / D04, D05 secondary (relation-free entity extraction primary, Tri-Graph representation as secondary indexing interface).

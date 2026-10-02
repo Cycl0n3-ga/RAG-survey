@@ -28,10 +28,10 @@ verification_status: "verified"
 last_verified: 2026-10-02
 artifact_type: "method_paper"
 taxonomy_version: "v2"
-taxonomy_home: "D04"
-primary_domain: "D04"
+taxonomy_home: "D03"
+primary_domain: "D03"
 secondary_domains:
-  - "D03"
+  - "D04"
   - "D05"
 paradigm_tags:
   - "graph_rag"
