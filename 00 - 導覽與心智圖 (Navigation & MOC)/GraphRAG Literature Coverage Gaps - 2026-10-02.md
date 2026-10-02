@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 12
-candidate_status: "partial; 12 of 44 full-text notes added; 32 pending"
+independent_literature_notes_added: 16
+candidate_status: "partial; 16 of 44 full-text notes added; 28 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：12/44 篇完成全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG、PathRAG、HyperGraphRAG、OG-RAG、KGGen、StructRAG、A2RAG、Zep、CatRAG）；其餘 32 篇仍待核對。CatRAG 的本地 PDF 與實驗證據取自 arXiv v1；正式 ACL PDF 尚待取得與版本比對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：16/44 篇完成全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG、PathRAG、HyperGraphRAG、OG-RAG、KGGen、StructRAG、A2RAG、Zep、CatRAG、GraphRAG-Bench、WildGraphBench、PVLDB Unified Analysis、LogicPoison）；其餘 28 篇仍待核對。CatRAG、WildGraphBench、LogicPoison 的本地 PDF 與數據分別取自註記版本的 arXiv 全文，正式 ACL PDF 尚待比對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -34,7 +34,11 @@ taxonomy_version: "v2"
 | 已完成 arXiv 全文核對與 PDF | A2RAG — arXiv v2 (2026) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-01) A2RAG - Adaptive Agentic Graph Retrieval for Cost-Aware and Reliable Reasoning]] |
 | 已完成 arXiv 全文核對與 PDF | Zep — arXiv v1 (2025) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Zep - A Temporal Knowledge Graph Architecture for Agent Memory]] |
 | 已完成 arXiv v1 全文核對與 PDF；正式版待比對 | CatRAG traversal — Findings ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) Breaking the Static Graph - Context-Aware Traversal for Graph-Based RAG]] |
-| 待完成 | 其他 32 篇 | 正式 PDF 與筆記尚未補齊 |
+| 已完成 ICLR 全文核對與 PDF | GraphRAG-Bench — ICLR 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-04) When to Use Graphs in RAG - A Comprehensive Analysis for Graph Retrieval-Augmented Generation]] |
+| 已完成 arXiv v2 全文核對與 PDF；正式版待比對 | WildGraphBench — Findings ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) WildGraphBench - Benchmarking GraphRAG with Wild-Source Corpora]] |
+| 已完成 PVLDB 正式全文核對與 PDF | Unified Analysis — PVLDB 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(PVLDB 2025-09) In-depth Analysis of Graph-based RAG in a Unified Framework]] |
+| 已完成 arXiv v1 全文核對與 PDF；正式版待比對 | LogicPoison — ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) LogicPoison - Logical Attacks on Graph Retrieval-Augmented Generation]] |
+| 待完成 | 其他 28 篇 | 正式 PDF 與筆記尚未補齊 |
 
 ## 目錄
 
@@ -794,13 +798,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2506.05690](https://arxiv.org/abs/2506.05690)。
 
-**內容與補缺分析：** 提出 GraphRAG-Bench，按事實查詢、複雜推理、脈絡摘要與創作任務，評估建圖、檢索與生成。值得補成獨立 evaluation anchor，讓圖結構收益的判斷帶有任務和比較條件；benchmark 和介紹它的論文只計一篇。 [原始來源：GraphRAG-Bench 論文, Abstract／詳見閱讀範圍](https://proceedings.iclr.cc/paper_files/paper/2026/hash/6c9e01d6cefbbf4cdd265032550e767f-Abstract-Conference.html)。
+**內容與補缺分析：** 提出 GraphRAG-Bench，按事實查詢、複雜推理、脈絡摘要與創作任務，評估建圖、檢索與生成。值得補成獨立 evaluation anchor，讓圖結構收益的判斷帶有任務和比較條件；benchmark 和介紹它的論文只計一篇。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-04) When to Use Graphs in RAG - A Comprehensive Analysis for Graph Retrieval-Augmented Generation]]。[原始來源：ICLR 2026 正式全文 §3–4、Tables 3–7, pp. 6–9](https://proceedings.iclr.cc/paper_files/paper/2026/hash/6c9e01d6cefbbf4cdd265032550e767f-Abstract-Conference.html)。
 
 **建議定位：** 評測論文；primary_domain = D13；secondary_domains = D04, D05, D09。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official proceedings abstract and bibliographic metadata only; full text not reviewed。
+**閱讀範圍：** ICLR 2026 正式 PDF 全文（34 頁）已讀；與 arXiv v3 比對標題、作者、Table 3–7 主要數字一致，作者 affiliation 排列呈現略有差異。
 
-**核對位置：** ICLR 2026 official proceedings: abstract and author list；https://arxiv.org/abs/2506.05690: v1 2025-06-06; latest v3 2026-02-22。
+**核對位置：** ICLR 2026 official proceedings: title/authors/abstract；正式 PDF §3–4、Tables 3–7, pp. 6–9；https://arxiv.org/abs/2506.05690: v1 2025-06-06, latest v3 2026-02-22。
 
 <a id="paper-wang2026-wildgraphbench"></a>
 ### WildGraphBench
@@ -813,13 +817,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2602.02053](https://arxiv.org/abs/2602.02053)；[DOI: 10.18653/v1/2026.findings-acl.679](https://doi.org/10.18653/v1/2026.findings-acl.679)。
 
-**內容與補缺分析：** 用 Wikipedia 引用到的外部長文件作 corpus，並以帶引用的敘述建立事實、聚合與摘要問題。可補目前較缺的異質來源、長文件與細節保留評測，避免只用整理好的短段落評斷 GraphRAG。 [原始來源：WildGraphBench, Abstract／詳見閱讀範圍](https://aclanthology.org/2026.findings-acl.679/)。
+**內容與補缺分析：** 用 Wikipedia 引用到的外部長文件作 corpus，並以帶引用的敘述建立事實、聚合與摘要問題。可補目前較缺的異質來源、長文件與細節保留評測，避免只用整理好的短段落評斷 GraphRAG。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) WildGraphBench - Benchmarking GraphRAG with Wild-Source Corpora]]。[原始來源：arXiv v2 全文 Tables 1–2, pp. 5–6](https://arxiv.org/abs/2602.02053)。
 
 **建議定位：** 評測論文；primary_domain = D13；secondary_domains = D05, D07, D09。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official abstract and bibliographic metadata only; full text not reviewed。
+**閱讀範圍：** arXiv v2 全文已讀；ACL Anthology 正式 PDF 未取得，正式版差異待比對。
 
-**核對位置：** ACL Anthology 2026.findings-acl.679: abstract, authors, venue, DOI and pp.13875–13890；https://arxiv.org/abs/2602.02053: v1 2026-02-02; v2 2026-02-03。
+**核對位置：** ACL Anthology 2026.findings-acl.679: official title/authors/venue/DOI/pages 13875–13890；arXiv v2 Table 1 p. 5（1,197 題）和 Table 2 p. 6（baseline 結果）；https://arxiv.org/abs/2602.02053: v1 2026-02-02; v2 2026-02-03。
 
 <a id="paper-jin2024-graphcot"></a>
 ### Graph-CoT／GRBench
@@ -851,13 +855,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2503.04338](https://arxiv.org/abs/2503.04338)；[DOI: 10.14778/3773731.3773738](https://doi.org/10.14778/3773731.3773738)。
 
-**內容與補缺分析：** 以統一框架和共同實驗設定比較多種 graph-based RAG，涵蓋具体與抽象 QA。可補同條件比較及組件歸因，避免把不同 GraphRAG 系統的單篇結果直接排名；它是比較性實證研究，不能只因整理方法就當作 survey。 [原始來源：PVLDB Unified Analysis, Abstract／詳見閱讀範圍](https://www.vldb.org/pvldb/vol18/p5623-zhou.pdf)。
+**內容與補缺分析：** 以統一框架和共同實驗設定比較多種 graph-based RAG，涵蓋具体與抽象 QA。可補同條件比較及組件歸因，避免把不同 GraphRAG 系統的單篇結果直接排名；它是比較性實證研究，不能只因整理方法就當作 survey。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(PVLDB 2025-09) In-depth Analysis of Graph-based RAG in a Unified Framework]]。[原始來源：PVLDB 正式全文 Tables 4–10, pp. 6–12](https://www.vldb.org/pvldb/vol18/p5623-zhou.pdf)。
 
 **建議定位：** 比較性實證研究（非 survey）；primary_domain = D13；secondary_domains = D04, D05。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official abstract, first-page bibliographic block and publisher metadata only; full text and 2025/2026 version differences not reviewed。
+**閱讀範圍：** PVLDB 正式全文 15 頁已讀；對照 arXiv v2 的標題、作者與主要 Table 5/8 數值一致，arXiv 另含附錄、共 34 頁；未逐條核完新增附錄差異。正式發表年份依 PVLDB 2025-09。
 
-**核對位置：** official PVLDB PDF first-page abstract and reference block: vol.18 no.13, pp.5623–5637, 2025, DOI；official publisher metadata https://doi.org/10.14778/3773731.3773738；https://arxiv.org/abs/2503.04338: v1 2025-03-06; latest v2 2026-04-27。
+**核對位置：** PVLDB PDF title page/DOI/page range；正式版 Tables 5/8/10, pp. 7/11/12；[出版社 metadata](https://doi.org/10.14778/3773731.3773738)；[arXiv:2503.04338](https://arxiv.org/abs/2503.04338): v1 2025-03-06; latest v2 2026-04-27。
 
 <a id="paper-han2024-graphragsurvey"></a>
 ### Han et al. GraphRAG Survey
@@ -927,13 +931,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2604.02954](https://arxiv.org/abs/2604.02954)；[DOI: 10.18653/v1/2026.acl-long.252](https://doi.org/10.18653/v1/2026.acl-long.252)。
 
-**內容與補缺分析：** 研究 GraphRAG 的 topology integrity 失效，透過保持 entity type 的置換干擾全域連結和 query-specific reasoning bridges。值得作為 graph-specific security anchor，檢查看似合理的文字如何破壞多跳取證路徑；摘要所述效果不可推廣為所有 GraphRAG 防禦必然失效。 [原始來源：LogicPoison, Abstract／詳見閱讀範圍](https://aclanthology.org/2026.acl-long.252/)。
+**內容與補缺分析：** 研究 GraphRAG 的 topology integrity 失效，透過保持 entity type 的置換干擾全域連結和 query-specific reasoning bridges。值得作為 graph-specific security anchor，檢查看似合理的文字如何破壞多跳取證路徑；摘要所述效果不可推廣為所有 GraphRAG 防禦必然失效。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) LogicPoison - Logical Attacks on Graph Retrieval-Augmented Generation]]。[原始來源：arXiv v1 全文 Tables 1–4, pp. 5–7](https://arxiv.org/abs/2604.02954)。
 
 **建議定位：** 方法論文；primary_domain = D14；secondary_domains = D04, D05。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official abstract and bibliographic metadata only; full text and detailed threat model not reviewed。
+**閱讀範圍：** arXiv v1 全文已讀；ACL Anthology 正式 PDF 未取得，正式版差異待比對。
 
-**核對位置：** ACL Anthology 2026.acl-long.252: abstract, complete authors, venue, DOI and pp.5575–5591；https://arxiv.org/abs/2604.02954: v1 submitted 2026-04-03。
+**核對位置：** ACL Anthology 2026.acl-long.252: official title/authors/venue/DOI/pages 5575–5591；arXiv v1 Table 1 p. 5, Table 3 p. 7；https://arxiv.org/abs/2604.02954: v1 submitted 2026-04-03。
 
 <a id="enabling-baselines"></a>
 ## 抽取支援與非圖式基線
