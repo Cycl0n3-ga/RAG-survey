@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 39
-candidate_status: "partial; 38 of 44 full-text notes added; 1 abstract-only note; 5 pending"
+independent_literature_notes_added: 44
+candidate_status: "partial; 43 of 44 full-text notes added; 1 abstract-only note; 0 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 38/44 篇已有全文閱讀筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 5 篇待補。最近新增 GeAR、GRADA、Han et al. GraphRAG survey 及 QO-Bench；本輪又完成 Graph-CoT／GRBench、Re-DocRED 與 FiD。GeAR、GRADA 已讀 arXiv 全文並核正式 ACL 書目；Han survey 與 QO-Bench 已讀 arXiv 全文，後者 arXiv v2 註明 accepted to Findings EMNLP 2026，正式 proceedings metadata 尚待發布核對。KAG 的 ACM 正式 PDF 仍回 403，故只以 arXiv v3 作全文來源、正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 43/44 篇已有全文閱讀筆記與本地 PDF；ReGraphRAG 仍只有摘要層級筆記，正式 PDF 與全文核對尚待完成。HydraRAG 已完成 arXiv v4 全文與 PDF 筆記，並核對 EMNLP 2025 正式書目；publisher PDF 與預印本尚未逐段比對。最近新增 GeAR、GRADA、Han et al. GraphRAG survey 及 QO-Bench；本輪又完成 Graph-CoT／GRBench、Re-DocRED、FiD、GLiNER、M3-Embedding、UPR、Nougat 與 HydraRAG。GeAR、GRADA 已讀 arXiv 全文並核正式 ACL 書目；Han survey 與 QO-Bench 已讀 arXiv 全文，後者 arXiv v2 註明 accepted to Findings EMNLP 2026，正式 proceedings metadata 尚待發布核對。KAG 的 ACM 正式 PDF 仍回 403，故只以 arXiv v3 作全文來源、正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -61,7 +61,11 @@ taxonomy_version: "v2"
 | 已讀 arXiv v3 全文與 PDF；正式 ACL 書目已核 | Graph-CoT／GRBench — Findings ACL 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) Graph Chain-of-Thought - Augmenting Large Language Models by Reasoning on Graphs]] |
 | 已讀 arXiv v3 全文與 PDF；正式 ACL 書目已核 | Re-DocRED — EMNLP 2022 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction]] |
 | 已讀 arXiv 全文與 PDF；正式 ACL 書目已核 | FiD — EACL 2021 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EACL 2021-04) Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering]] |
-| 待完成 | 其他 5 篇 | 正式出版版或可核全文與筆記尚未補齊 |
+| 已讀 arXiv v1 全文與 PDF；正式 ACL 書目已核 | GLiNER — NAACL 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2024-06) GLiNER - Generalist Model for Named Entity Recognition using Bidirectional Transformer]] |
+| 已讀 arXiv v5 全文與 PDF；正式 ACL 書目已核 | M3-Embedding — Findings ACL 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) M3-Embedding - Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation]] |
+| 已讀 arXiv v4 全文與 PDF；正式 ACL 書目已核 | UPR — EMNLP 2022 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Improving Passage Retrieval with Zero-Shot Question Generation]] |
+| 已讀 arXiv v1 全文與 PDF；ICLR metadata 已核 | Nougat — ICLR 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Nougat - Neural Optical Understanding for Academic Documents]] |
+| 已讀 arXiv v4 全文與 PDF；正式 ACL metadata 已核 | HydraRAG — EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) HydraRAG - Structured Cross-Source Enhanced Large Language Model Reasoning]] |
 
 ## 目錄
 
@@ -121,7 +125,7 @@ taxonomy_version: "v2"
 <a id="coverage-and-priority"></a>
 ## 收錄狀態與優先順序
 
-「未見獨立筆記／PDF」與「完全沒有提過」需分開。**GraphRAG-Bench** 已在 LinearRAG 的 benchmark 與正文出現；**FiD** 在 Atlas 正文出現；**M3-Embedding／BGE-M3** 已列 D04 候選並出現在多篇筆記；**Nougat** 已列 D01 候選。其他 40 項未找到實質正文提及。這是 2026-10-02 的檔案及文字查核結果，非宣稱已窮盡所有 PDF 的 references。
+「未見獨立筆記／PDF」與「完全沒有提過」需分開。初始盤點時 GraphRAG-Bench 已在 LinearRAG 正文出現、FiD 已在 Atlas 正文出現；M3-Embedding 和 Nougat 僅零星提及且沒有獨立筆記。其餘 40 項當時未找到實質正文提及。本輪已將 M3-Embedding、Nougat、GLiNER、UPR、HydraRAG 寫成全文筆記；該項文字查核不代表窮盡所有 PDF references。
 
 目前已有 GraphRAG、LightRAG、HippoRAG 1／2、GFM-RAG、KG2RAG、GraphReader、PropRAG、LinearRAG、RAPTOR、CrossAug。它們仍是比較的既有 anchor，本頁不重複列為新增；收錄位置見 [[03 - 論文庫 (Literature Notes)/README|Literature Notes Index]]。
 
@@ -774,17 +778,17 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **作者（本次核對版本）：** Xingyu Tan；Xiaoyang Wang；Qing Liu；Xiwei Xu；Xin Yuan；Liming Zhu；Wenjie Zhang。
 
-**書目：** 預印年份：未核得；正式出版年份：2025；已核 venue／狀態：EMNLP 2025。
+**書目：** 預印年份：2025；正式出版年份：2025；已核 venue／狀態：EMNLP 2025。
 
-**識別碼：** [DOI: 10.18653/v1/2025.emnlp-main.730](https://doi.org/10.18653/v1/2025.emnlp-main.730)。
+**識別碼：** [arXiv:2505.17464](https://arxiv.org/abs/2505.17464)；[正式版 DOI: 10.18653/v1/2025.emnlp-main.730](https://doi.org/10.18653/v1/2025.emnlp-main.730)。
 
 **內容與補缺分析：** 機制：training-free 的 agent-driven graph/text exploration，結合 source trustworthiness、cross-source corroboration、entity-path alignment 三因素 cross-source verification 與 graph-based pruning。補缺判斷：可補 graph-centric retrieval 的多來源驗證與 D08 evidence reconciliation 介面；不因作者稱 verification 就推定其涵蓋所有權威性或充分性控制。Domain mapping 為本次分析建議。 [原始來源：HydraRAG, Abstract／詳見閱讀範圍](https://aclanthology.org/2025.emnlp-main.730/)。
 
 **建議定位：** 方法論文；primary_domain = D05；secondary_domains = D08, D12。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official_metadata_and_abstract_only；未核全文 reliability scoring、校準或實驗；未確認 arXiv / 初次預印年份，所以相關欄位為 null。
+**閱讀範圍：** 已讀 arXiv v4 全文與本地 PDF（29 頁），並核正式 ACL metadata；正式 proceedings PDF 與預印本尚未逐段比對。
 
-**核對位置：** [metadata、Abstract、DOI；pp.14431–14459](https://aclanthology.org/2025.emnlp-main.730/)：完整作者、正式 EMNLP 2025、cross-source verification mechanism。
+**核對位置：** arXiv v4 Table 1, PDF p. 8（七個 benchmark 的 Hits@1）、Table 2, p. 9（不同 backbone）、Table 9, p. 21（AdvHotpotQA efficiency）；ACL 正式記錄核完整作者、DOI 與頁 14431–14459。
 
 <a id="graph-evaluation-security"></a>
 ## 評測、比較研究、Survey 與安全
@@ -1002,9 +1006,10 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D03；secondary_domains = []。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official published abstract and metadata only; full text not reviewed。
+**閱讀範圍：** 已讀 arXiv v1 全文（11 頁）；ACL Anthology 正式書目已核，正式 proceedings PDF 與 arXiv 版本待比對。
 
-**核對位置：** ACL Anthology 2024.naacl-long.300: abstract, full authors, venue, DOI and pp.5364–5376；https://arxiv.org/abs/2311.08526: v1 submitted 2023-11-14。
+**核對位置：** arXiv v1 Tables 1–3、§7；ACL 正式 metadata。
+
 
 <a id="paper-fid"></a>
 ### FiD
@@ -1021,9 +1026,9 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D07；secondary_domains = D09。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 arXiv 全文（6 頁）及本地 PDF；EACL 正式 metadata 已核，尚未逐段比對 proceedings PDF。
 
-**核對位置：** 官方 Abstract / publication metadata。
+**核對位置：** arXiv paper 全文；EACL 2021 正式書目與 DOI。
 
 <a id="paper-m3-embedding"></a>
 ### M3-Embedding／BGE-M3
@@ -1040,11 +1045,11 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D04；secondary_domains = D05。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 arXiv v5 全文（18 頁）；正式 ACL 書目已核，2024 proceedings 與 2025 v5 差異待逐項比對。
 
-**版本注意：** 正式版本使用 M3-Embedding 與作者 Jianlyu Chen；arXiv 標題加 BGE，作者拼作 Jianlv Chen，未逐章比較版本。
+**版本注意：** 正式版本作者拼作 Jianlyu Chen；arXiv PDF 為 Jianlv Chen。
 
-**核對位置：** 官方 Abstract / publication metadata。
+**核對位置：** ACL Anthology metadata；arXiv v5 Tables 1–6、Limitations。
 
 <a id="paper-upr"></a>
 ### UPR
@@ -1061,16 +1066,17 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D05；secondary_domains = []。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 arXiv v4 全文（18 頁；此版註記 EMNLP 2022 camera-ready）；ACL Anthology 正式書目已核，未逐項比較 proceedings PDF。
 
-**核對位置：** 官方 Abstract / publication metadata。
+**核對位置：** arXiv v4 Tables 2、6、7、§3.5、Limitations；正式出版 metadata。
+
 
 <a id="paper-nougat"></a>
 ### Nougat
 
 **完整標題：** [Nougat: Neural Optical Understanding for Academic Documents](https://proceedings.iclr.cc/paper_files/paper/2024/hash/a39a9aceda771cded859ae7560530e09-Abstract-Conference.html)。
 
-**作者（本次核對版本）：** Lukas Blecher；Guillem Cucurull；Thomas Scialom；Robert Stojnic。
+**作者（本次核對版本）：** Lukas Blecher；Guillem Cucurull Preixens；Thomas Scialom；Robert Stojnic。
 
 **書目：** 預印年份：2023；正式出版年份：2024；已核 venue／狀態：ICLR 2024。
 
@@ -1080,9 +1086,11 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D01；secondary_domains = []。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 arXiv v1 全文（17 頁）；ICLR 2024 publication metadata 已核，正式 proceedings PDF 尚未逐項比對。
 
-**核對位置：** 官方 Abstract / publication metadata。
+**版本注意：** arXiv 記作 Guillem Cucurull，正式記錄列 Guillem Cucurull Preixens。
+
+**核對位置：** arXiv v1 Table 1、§5.4–5.5；ICLR official record。
 
 <a id="taxonomy-version-boundaries"></a>
 ## 分類與版本邊界

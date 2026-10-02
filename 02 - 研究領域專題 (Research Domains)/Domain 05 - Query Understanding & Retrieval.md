@@ -135,6 +135,7 @@ ARL2 候選使用 LLM relevance labeling 支援 retriever learning，提供與 l
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ICLR 2024-05) RA-DIT - Retrieval-Augmented Dual Instruction Tuning|RA-DIT]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NAACL 2024-06) REPLUG - Retrieval-Augmented Black-Box Language Models|REPLUG]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(NeurIPS 2024-12) RankRAG - Unifying Context Ranking with Retrieval-Augmented Generation in LLMs|RankRAG]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Improving Passage Retrieval with Zero-Shot Question Generation|UPR]] — zero-shot passage reranking by log p(query|passage); high top-1,000 reranking cost is recorded in its note.
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(COLM 2024-10) RQ-RAG - Learning to Refine Queries for Retrieval Augmented Generation|RQ-RAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) G-Retriever - Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering|G-Retriever]]
@@ -145,6 +146,7 @@ ARL2 候選使用 LLM relevance labeling 支援 retriever learning，提供與 l
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-07) DyG-RAG - Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning|DyG-RAG]] — event timeline retrieval；時間相近的 graph edge 代表檢索結構，不直接視作因果關係。
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases|HybGRAG]] — SKB 中結合 textual relevance 與 graph relation constraints；critic repair 作 D12 secondary。
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GeAR - Graph-enhanced Agent for Retrieval-augmented Generation|GeAR]] — base retriever 上的 graph expansion 與跨步 retrieval；gist memory 是單次問答內的短期證據狀態。
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) HydraRAG - Structured Cross-Source Enhanced Large Language Model Reasoning|HydraRAG]] — hybrid graph/text retrieval 與 query-time agentic exploration；來源互證另連 D08，agent control 連 D12。
 
 ### Evaluation Anchor
 

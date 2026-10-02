@@ -64,8 +64,8 @@ Domain != Paradigm Tag != Benchmark
 
 As of the metadata recount on **2026-10-02**:
 
-- **216** literature notes with a `paper_id`
-- **161** notes with D01–D14 primary domains
+- **221** literature notes with a `paper_id`
+- **166** notes with D01–D14 primary domains
 - **55** Adjacent/CROSS notes
 - supplemental slide artifacts and abstract-only candidate lists are excluded
 

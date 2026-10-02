@@ -120,6 +120,7 @@ flowchart LR
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) MAVEN-ERE - A Unified Large-scale Dataset for Event Coreference, Temporal, Causal, and Subevent Relation Extraction|MAVEN-ERE]] (統一事件時序、因果、子事件與共指抽取)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2020-11) OpenIE6 - Iterative Grid Labeling and Coordination Analysis for Open Information Extraction|OpenIE6]] (迭代網格標註與並列分析)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2021-06) A Frustratingly Easy Approach for Entity and Relation Extraction|PURE]] (實體標記解耦流水線)
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2024-06) GLiNER - Generalist Model for Named Entity Recognition using Bidirectional Transformer|GLiNER]] (文字化類型條件的 open-type NER；不含 entity linking / relation extraction)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2021-11) REBEL - Relation Extraction By End-to-end Language generation|REBEL]] (端到端自回歸生成式關聯抽取)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2022-05) Unified Structure Generation for Universal Information Extraction|UIE]] (統一結構生成與 SSI/SEL)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2022-07) GenIE - Generative Information Extraction|GenIE]] (前綴樹約束解碼封閉抽取)

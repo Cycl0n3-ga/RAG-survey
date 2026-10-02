@@ -54,14 +54,14 @@ flowchart LR
 - Figure / Caption Association
 - End-to-end Structured Document Parsing
 
-這些是本 repo 對 parsing 問題的操作性細分，不表示每一項都是獨立的 RAG 社群分類。表格／公式解析目前已有 scope，但專門方法文獻仍需補強；下列官方候選未計入已驗證的 primary-note coverage。
+這些是本 repo 對 parsing 問題的操作性細分，不表示每一項都是獨立的 RAG 社群分類。表格／公式解析目前已有 scope，但專門方法文獻仍需補強；以下仍待全文核對的來源未計入已驗證 primary-note coverage。
 
 ### Table and Formula Structure
 
 表格區域的位置、儲存格／跨列跨欄結構，以及 column / row header 的功能角色，應分開描述。
 [PubTables-1M (2022/06), 官方摘要](https://openaccess.thecvf.com/content/CVPR2022/html/Smock_PubTables-1M_Towards_Comprehensive_Table_Extraction_From_Unstructured_Documents_CVPR_2022_paper.html) 明確區分 table detection、structure recognition、functional analysis，並處理標註 oversegmentation。**本 repo 分類判斷**：還原表格既有結構屬 D01；把表格中的敘述抽成 semantic records 屬 D03；建立可搜尋表示屬 D04。
 
-[Nougat (ICLR 2024), 官方摘要](https://proceedings.iclr.cc/paper_files/paper/2024/hash/a39a9aceda771cded859ae7560530e09-Abstract-Conference.html) 研究 scientific document images 到 markup 的轉換，指出 PDF 中數學表達式的語義資訊問題。其預印本為 [arXiv:2308.13418 (2023/08)](https://arxiv.org/abs/2308.13418)，正式發表為 ICLR 2024。**候選狀態：兩篇均僅核對官方摘要與 publication record，全文待驗證；不據此填入 parser 分數或 downstream RAG 改善數據。**
+[Nougat (ICLR 2024), 正式記錄](https://proceedings.iclr.cc/paper_files/paper/2024/hash/a39a9aceda771cded859ae7560530e09-Abstract-Conference.html) 研究 scientific document images 到 markup 的轉換，指出 PDF 中數學表達式的語義資訊問題。其預印本為 [arXiv:2308.13418 (2023/08)](https://arxiv.org/abs/2308.13418)，正式發表為 ICLR 2024。**全文核對：** arXiv v1 Table 1（PDF p. 7）報 Nougat base 在該 arXiv test set 的 all-text F1 93.1，math F1 76.5、table F1 78.0；此為 markup 轉寫指標，不是 downstream RAG 品質。版本與條件見 [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Nougat - Neural Optical Understanding for Academic Documents|Nougat note]]。
 
 ### Parsing Quality and Downstream Diagnosis
 
@@ -82,6 +82,7 @@ D01 的輸出是 **structured source units**；D02 決定何種來源內容構�
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2024-11) PDF-to-Tree - Parsing PDF Text Blocks into a Tree|PDF-to-Tree]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(EMNLP 2025-11) Intelligent Document Parsing - Towards End-to-end Document Parsing via Decoupled Content Parsing and Layout Grounding|Intelligent Document Parsing]]
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(ACL 2025-07) READoc - A Unified Benchmark for Realistic Document Structured Extraction|READoc]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Nougat - Neural Optical Understanding for Academic Documents|Nougat]]
 
 ## Survey Alignment and Coverage Gap
 
@@ -132,4 +133,3 @@ D01 的輸出是 **structured source units**；D02 決定何種來源內容構�
 以下只完成官方 metadata / abstract 核對，全文待驗證，不計入已驗證 primary coverage。
 
 - [PubTables-1M, 2022/06] Brandon Smock et al. "PubTables-1M: Towards Comprehensive Table Extraction From Unstructured Documents." CVPR 2022. [官方記錄](https://openaccess.thecvf.com/content/CVPR2022/html/Smock_PubTables-1M_Towards_Comprehensive_Table_Extraction_From_Unstructured_Documents_CVPR_2022_paper.html)
-- [Nougat, 2024] Lukas Blecher et al. "Nougat: Neural Optical Understanding for Academic Documents." ICLR 2024; preprint 2023/08. [正式記錄](https://proceedings.iclr.cc/paper_files/paper/2024/hash/a39a9aceda771cded859ae7560530e09-Abstract-Conference.html) / [arXiv:2308.13418](https://arxiv.org/abs/2308.13418)

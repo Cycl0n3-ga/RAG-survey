@@ -112,6 +112,7 @@ ColBERTv2 的表示與壓縮、後續 PLAID search engine、使用者採用的�
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-05) LinearRAG - Linear Graph Retrieval Augmented Generation on Large-scale Corpora|LinearRAG]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(ACL 2026-07) Situated Embedding Models for Context-Aware Dense Retrieval|Situated Embedding Models]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) M3-Embedding - Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation|M3-Embedding]] — D04 representation / D05 retrieval interface; local PDF is arXiv v5, 2024 proceedings comparison pending.
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(CVPR 2025-06) VDocRAG - Retrieval-Augmented Generation over Visually-Rich Documents|VDocRAG]]
 
 ### Cross-domain Anchors
@@ -122,7 +123,6 @@ ColBERTv2 的表示與壓縮、後續 PLAID search engine、使用者採用的�
 
 | 候選來源 | 可補的機制 | 本次驗證範圍 |
 |---|---|---|
-| [M3-Embedding: Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation](https://aclanthology.org/2024.findings-acl.137/) — Chen et al., Findings ACL 2024，DOI 10.18653/v1/2024.findings-acl.137 | 同一模型支持 dense、sparse、multi-vector，避免將 encoding families 當互斥分類 | 官方 metadata / abstract；全文、training 與實驗條件待查驗 |
 | [PLAID: An Efficient Engine for Late Interaction Retrieval](https://arxiv.org/abs/2205.09707) — Santhanam et al., arXiv 2205.09707 (2022) | centroid interaction / pruning 的 retrieval engine；D05/D14 interface，非新的 representation family | 官方 arXiv metadata / abstract；正式出版版本、全文與 engine 數據待查驗 |
 
 ## Classification Decisions — 2026-10-02
