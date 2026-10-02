@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 24
-candidate_status: "partial; 24 of 44 full-text notes added; 20 pending"
+independent_literature_notes_added: 28
+candidate_status: "partial; 27 of 44 full-text notes added; 1 abstract-only note; 16 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：24/44 篇已建立全文筆記與本地 PDF；上一批新增 ToG-2、GRAG、KG-FiD、SimGRAG，本批新增 G-RAG reranker、FastToG、PoG、DynaGRAG。其餘 20 篇仍待補。arXiv 是 G-RAG、FastToG、DynaGRAG 的目前可核版本；PoG 全文為 arXiv v4，正式 WWW 2025 metadata 另核、出版 PDF 差異待查。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 27/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）先建摘要層級筆記，官方 PDF 暫未能下載；其餘 16 篇待補。最近一批新增 HyperRAG（n-ary）、HyperRAG（hyperbolic）、MeshRAG 及 ReGraphRAG。HyperRAG（n-ary）本地全文為 arXiv v1，ACL HyperRAG 與 MeshRAG 使用正式 ACL 全文；ReGraphRAG 的實驗細節待 PDF 取得後核驗。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -46,7 +46,11 @@ taxonomy_version: "v2"
 | 已讀 arXiv v1 全文與 PDF；正式出版未核得 | FastToG — arXiv 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Fast Think-on-Graph - Wider, Deeper and Faster Reasoning of Large Language Model on Knowledge Graph]] |
 | 已讀 arXiv v4 全文與 PDF；WWW 2025 publisher PDF 待比對 | PoG — The Web Conference 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW 2025-04) Paths-over-Graph - Knowledge Graph Empowered Large Language Model Reasoning]] |
 | 已讀 arXiv v3 全文與 PDF；正式出版未核得 | DynaGRAG — arXiv 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-12) DynaGRAG - Exploring the Topology of Information for Advancing Language Understanding and Generation in Graph Retrieval-Augmented Generation]] |
-| 待完成 | 其他 20 篇 | 正式出版版或可核全文與筆記尚未補齊 |
+| 已讀 arXiv v1 全文與 PDF；正式 WWW 版 metadata 已核 | HyperRAG（n-ary）— WWW 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW 2026-04) HyperRAG - Reasoning N-ary Facts over Hypergraphs for Retrieval Augmented Generation]] |
+| 已讀 ACL 正式全文與 PDF | HyperRAG（hyperbolic）— ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) Query-Aware Knowledge Retrieval via Hyperbolic Structuring]] |
+| 已讀 ACL 正式全文與 PDF | MeshRAG — ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) Collision to Cognition - Hash-Driven Graph Construction for Efficient RAG]] |
+| 僅官方摘要；ACL PDF 下載待處理 | ReGraphRAG — Findings EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings EMNLP 2025-11) ReGraphRAG - Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation]] |
+| 待完成 | 其他 16 篇 | 正式出版版或可核全文與筆記尚未補齊 |
 
 ## 目錄
 
@@ -426,10 +430,10 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 | [HyperGraphRAG](https://proceedings.neurips.cc/paper_files/paper/2025/hash/df55ee6e59f8ac4a625219e11fe9ddba-Abstract-Conference.html) — NeurIPS 2025 | n-ary facts 的超圖表示 | D04／D03／D05 | P1 |
 | [HyperRAG（n-ary）](https://arxiv.org/abs/2602.14470) — WWW 2026 | 超圖 traversal 與推理鏈 | D05／D04 | P2 |
 | [OG-RAG](https://aclanthology.org/2025.emnlp-main.1674/) — EMNLP 2025 | ontology-grounded hypergraph | D04／D05／D07 | P1 |
-| [HyperRAG（Hyperbolic）](https://aclanthology.org/2026.acl-long.986/) — ACL 2026 | 雙曲空間與 query-aware graph | D05／D04 | P2 |
+| [HyperRAG（Hyperbolic）](https://aclanthology.org/2026.acl-long.986/) — ACL 2026 | 雙曲空間與 query-aware graph | D04／D05／D07 | P2 |
 | [ReGraphRAG](https://aclanthology.org/2025.findings-emnlp.290/) — Findings EMNLP 2025 | 碎裂圖重組與多視角 | D04／D03／D05 | P2 |
 | [KGGen](https://proceedings.neurips.cc/paper_files/paper/2025/hash/2b368455e832d2b1a60bcad8c4c6481f-Abstract-Conference.html) — NeurIPS 2025 | 實體／關係抽取與整併 | D03／D04 | P1 |
-| [MeshRAG](https://aclanthology.org/2026.acl-long.1156/) — ACL 2026 | hash-induced graph construction | D04／D05／D14 | P2 |
+| [MeshRAG](https://aclanthology.org/2026.acl-long.1156/) — ACL 2026 | hash-induced graph construction | D04／D05 | P2 |
 
 P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級均待全文核對後定案。
 <a id="paper-luo2025-hypergraphrag"></a>
@@ -468,11 +472,11 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已讀官方摘要與 arXiv metadata；已核 ACM Crossref deposit，正式版全文待查驗。
+**閱讀範圍：** 已讀 arXiv v1 全文（12 頁），並核 arXiv submission history、ACM/Crossref DOI deposit；正式出版版全文差異待查。
 
 **版本注意：** 不要與 ACL2026 Chuang Zhou 等 Query-Aware Knowledge Retrieval via Hyperbolic Structuring（其方法也叫 HyperRAG）或 Hyper-RAG2504.08758 混為同一研究。
 
-**核對位置：** arXiv2602.14470v1 Abstract / authors / WWW2026 acceptance / related DOI；ACM DOI registration metadata: https://api.crossref.org/works/10.1145/3774904.3792710 (publisher-deposited title/authors/venue/year)。。
+**核對位置：** arXiv:2602.14470v1 §§3–4、Tables 1–3, pp. 5–7、Appendix A.1（資源）；WWW 2026 author/title page；ACM DOI registration metadata: https://api.crossref.org/works/10.1145/3774904.3792710。
 
 <a id="paper-og-rag"></a>
 ### OG-RAG
@@ -504,15 +508,15 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [DOI: 10.18653/v1/2026.acl-long.986](https://doi.org/10.18653/v1/2026.acl-long.986)。
 
-**內容與補缺分析：** HyperRAG 在雙曲空間結合 entity-based links 與隱含 query-aware connections，建立查詢導向圖結構。 [原始來源：HyperRAG（Hyperbolic）, Abstract／詳見閱讀範圍](https://aclanthology.org/2026.acl-long.986/)。
+**內容與補缺分析：** 正文以共享 keyword 比例建立最多 5 個鄰居的靜態邊，並由 LLM 把查詢分解成 atomic reasoning units、構造隱式連結，之後合併成無環樹並在 Poincaré ball 學習表示；補 D04 圖表示、D05 query-time evidence retrieval 與 D07 context delivery。[ACL 正式全文 §§3.1–3.3, pp. 2–4](https://aclanthology.org/2026.acl-long.986/)。
 
-**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
+**建議定位：** 方法論文；primary_domain = D04；secondary_domains = D05, D07。主要貢獻在 query-conditioned graph construction 與 hyperbolic representation；檢索和 context use 為相鄰 lifecycle interfaces。這是本 repo 的 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 ACL Anthology 正式 PDF 全文（14 頁），核對 §3 方法、§4 實驗、Table 1（p. 5）、Table 2（p. 7）、Limitations（p. 9）；本地 PDF 已保存。
 
 **版本注意：** 與 Lien 等人的 n-ary hypergraph HyperRAG 不同；本次未核得關聯 arXiv ID，預印年份留空。
 
-**核對位置：** 官方 Abstract / publication metadata。
+**核對位置：** ACL Anthology 2026.acl-long.986 PDF title/authors pp. 1、21601–21614；DOI 10.18653/v1/2026.acl-long.986。
 
 <a id="paper-kim2025-regraphrag"></a>
 ### ReGraphRAG
@@ -529,9 +533,9 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D04；secondary_domains = D03, D05。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 僅基於官方摘要整理，全文待查驗；未找到可核 preprint identifier，因此preprint_year/arxiv留null。
+**閱讀範圍：** 目前僅讀官方摘要及正式書目頁；未找到可核 preprint identifier，因此 preprint year/arXiv 留 null。ACL PDF endpoint 多次逾時，尚無本地副本；benchmark 名稱、方法流程與實驗數字全部待查全文。
 
-**核對位置：** ACL Anthology2025.findings-emnlp.290 Abstract、完整5authors、FindingsEMNLP2025年份與DOI。。
+**核對位置：** ACL Anthology 2025.findings-emnlp.290 官方摘要、完整 5 位作者、Findings EMNLP 2025 書目 metadata、DOI 10.18653/v1/2025.findings-emnlp.290。
 
 <a id="paper-mo2025-kggen"></a>
 ### KGGen
@@ -565,15 +569,15 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [DOI: 10.18653/v1/2026.acl-long.1156](https://doi.org/10.18653/v1/2026.acl-long.1156)。
 
-**內容與補缺分析：** 以局部 hash collisions 誘導 chunk 關係與全局圖結構，研究減少顯式 triple extraction 的圖建構方式。 [原始來源：MeshRAG, Abstract／詳見閱讀範圍](https://aclanthology.org/2026.acl-long.1156/)。
+**內容與補缺分析：** 本地 ACL 全文顯示 MeshRAG 用 LSH hash collisions 建 chunk 近鄰圖與重疊社群，以 Bloom filter、Hamming similarity、top-20 anchors 及 k-hop 擴展檢索 top-5 chunks；建圖不依賴 LLM，但碰撞只是近似相似訊號，不能當成已驗證的語意關係。[§3–4、Table 1 p. 6、Figure 3 p. 7](https://aclanthology.org/2026.acl-long.1156/)。
 
-**建議定位：** 方法論文；primary_domain = D04；secondary_domains = D05, D14。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
+**建議定位：** 方法論文；primary_domain = D04；secondary_domains = D05。這是本 repo 的 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 ACL Anthology 正式 PDF 全文（17 頁），核對方法、實驗、Table 1–3、效率分析與 limitations；作者公開頁同版全文已保存本地。
 
 **版本注意：** hash-based connections 不能僅憑摘要當成已驗證 semantic entailment；本次未核得關聯 arXiv ID。
 
-**核對位置：** 官方 Abstract / publication metadata。
+**核對位置：** ACL Anthology 2026.acl-long.1156 PDF title/authors pp. 1、25224–25240；DOI 10.18653/v1/2026.acl-long.1156。
 
 <a id="graph-control-memory"></a>
 ## 證據控制、圖式記憶與編排

@@ -52,24 +52,24 @@ Research Domains
 ## Literature Coverage Snapshot
 
 > [!NOTE]
-> 下表是 **2026-10-02 的 metadata 重算快照**：177 份含 `paper_id` 的 literature notes 中，123 份有 D01–D14 `primary_domain`，54 份為 Adjacent/CROSS。只計 primary；secondary 關聯、摘要候選與 UIE 簡報工件不計入。這是筆記數量，並非已驗證方法數或領域重要性排序；新增／移動 paper 後需重新計算。
+> 下表是 **2026-10-02 的 metadata 重算快照**：205 份含 `paper_id` 的 literature notes 中，151 份有 D01–D14 `primary_domain`，54 份為 Adjacent/CROSS。只計 primary；secondary 關聯、摘要候選與 UIE 簡報工件不計入。這是筆記數量，並非已驗證方法數或領域重要性排序；新增／移動 paper 後需重新計算。
 
 | Domain | Primary notes |
 |---|---:|
 | D01 | 5 |
 | D02 | 5 |
-| D03 | 18 |
-| D04 | 7 |
-| D05 | 19 |
-| D06 | 6 |
-| D07 | 5 |
+| D03 | 19 |
+| D04 | 12 |
+| D05 | 34 |
+| D06 | 7 |
+| D07 | 6 |
 | D08 | 9 |
 | D09 | 8 |
 | D10 | 1 |
-| D11 | 7 |
+| D11 | 8 |
 | D12 | 6 |
-| D13 | 19 |
-| D14 | 8 |
+| D13 | 22 |
+| D14 | 9 |
 
 > Duplicate cleanup queue 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27#12. Phase 3 Duplicate Cleanup Queue|Phase 1 Audit — Duplicate Cleanup Queue]]。
 
