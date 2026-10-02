@@ -7,16 +7,16 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 4
-candidate_status: "partial; 4 of 44 full-text notes added; 40 pending"
+independent_literature_notes_added: 12
+candidate_status: "partial; 12 of 44 full-text notes added; 32 pending"
 taxonomy_version: "v2"
 ---
 
 # GraphRAG 文獻缺口與候選閱讀清單
 
-查核日期：2026-10-02。範圍：本庫現有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
+查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：8/44 篇完成正式版全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG、PathRAG、HyperGraphRAG、OG-RAG、KGGen）；其餘候選仍待核對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：12/44 篇完成全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG、PathRAG、HyperGraphRAG、OG-RAG、KGGen、StructRAG、A2RAG、Zep、CatRAG）；其餘 32 篇仍待核對。CatRAG 的本地 PDF 與實驗證據取自 arXiv v1；正式 ACL PDF 尚待取得與版本比對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -30,7 +30,11 @@ taxonomy_version: "v2"
 | 已完成全文核對與 PDF | HyperGraphRAG — NeurIPS 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2025-12) HyperGraphRAG - Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation]] |
 | 已完成全文核對與 PDF | OG-RAG — EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) OG-RAG - Ontology-grounded Retrieval-Augmented Generation for Large Language Models]] |
 | 已完成全文核對與 PDF | KGGen — NeurIPS 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2025-12) KGGen - Extracting Knowledge Graphs from Plain Text with Language Models]] |
-| 待完成 | 其他 36 篇 | 正式 PDF 與筆記尚未補齊 |
+| 已完成全文核對與 PDF | StructRAG — ICLR 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2025-05) StructRAG - Boosting Knowledge Intensive Reasoning of LLMs via Inference-time Hybrid Information Structurization]] |
+| 已完成 arXiv 全文核對與 PDF | A2RAG — arXiv v2 (2026) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-01) A2RAG - Adaptive Agentic Graph Retrieval for Cost-Aware and Reliable Reasoning]] |
+| 已完成 arXiv 全文核對與 PDF | Zep — arXiv v1 (2025) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Zep - A Temporal Knowledge Graph Architecture for Agent Memory]] |
+| 已完成 arXiv v1 全文核對與 PDF；正式版待比對 | CatRAG traversal — Findings ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) Breaking the Static Graph - Context-Aware Traversal for Graph-Based RAG]] |
+| 待完成 | 其他 32 篇 | 正式 PDF 與筆記尚未補齊 |
 
 ## 目錄
 
