@@ -13,12 +13,12 @@ venue: "Findings of the Association for Computational Linguistics: EMNLP 2025"
 doi: "10.18653/v1/2025.findings-emnlp.290"
 arxiv: null
 url: "https://aclanthology.org/2025.findings-emnlp.290/"
-pdf_file: null
+pdf_file: "Papers/04 - Knowledge & Graph RAG/(Findings EMNLP 2025-11) ReGraphRAG - Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation.pdf"
 tags:
   - paper
   - fragmented-knowledge-graphs
   - graph-reorganization
-verification_status: "pending_verification"
+verification_status: "verified"
 last_verified: "2026-10-02"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
@@ -47,7 +47,7 @@ metrics:
 
 # ReGraphRAG: Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation
 
-> **已讀官方 PDF 文字抽取；本地 PDF／圖像附錄待核：** 透過 alphaXiv PDF reader 讀取 ACL Anthology 正式 18 頁 PDF 的可抽取正文，已核方法 §§3–4、實驗 §§5.1–5.5、Table 1–4、Limitations 與主要附錄文字。ACL PDF 本體在本地環境下載逾時，因此尚無本地副本；Appendix A 的 prompt 頁及 Appendix F 的 case study 頁以圖像呈現，文字抽取未提供其圖內內容，仍需視覺核對。故 `verification_status` 保持 `pending_verification`，不將圖像頁或本地 PDF 狀態說成已驗。
+> **版本與核對範圍：** 已讀 ACL Anthology 正式版 18 頁 PDF 的可抽取正文，並取得一份固定版本的本地 PDF 副本，核對首頁書目、頁碼 5426–5443、主要正文與 ACL 正文抽取一致；附錄 A（PDF pp. 12–15；論文頁 5437–5440）及附錄 F（PDF p. 18；論文頁 5443）也已視覺核對。此本地副本來自 Hugging Face 公開論文資料集的固定 commit，不是 ACL 官方下載端點；SHA-256 為 `1dd7ce3d194c5ab7f2994a1d9bd7944988a90500258943fc3301b276f717cb03`。ACL 正式 entry 與 PDF 仍是書目及內容的權威來源。
 
 ## 一話摘要 (TL;DR)
 ReGraphRAG 先以多視角子查詢擴展檢索，再連接檢索到的碎裂子圖並按原查詢重排三元組；在 Ultradomain 的 LLM 成對評審中，對四個基線的平均 Diversity win rate 為 84.9%–93.4%（Table 1），這是相對偏好勝率，不是 accuracy。
@@ -63,7 +63,7 @@ ReGraphRAG 先以多視角子查詢擴展檢索，再連接檢索到的碎裂子
 3. **Query-aware Reranking（§4.3）**：將結果拆成 `(node_i, edge_ij, node_j)` 三元組，以 edge embedding 與原 query representation 的 cosine similarity 排序，將較相關資訊放在 prompt 較有利的位置。
 4. **Graph-oriented prompt（§4.4）**：按視角將三元組格式化為 `[Perspective]: <Node_i> is connected to <Node_j> with {Edge Description} relation.`；跨視角重複的 triplet 去重後列在 `[Across all]`，用較精簡文字保留拓樸與語境。
 
-所有 RAG 系統使用 GPT-4o-mini 生成、text-embedding-3-small embeddings、chunk size 1200；LightRAG 與 ReGraphRAG 共用同一份知識圖譜。附錄 prompt 頁以圖像呈現，尚未讀取圖內 prompt 原文。[ACL 官方全文，§§4–5.1、Algorithm 1，pp. 5428–5431]
+所有 RAG 系統使用 GPT-4o-mini 生成、text-embedding-3-small embeddings、chunk size 1200；LightRAG 與 ReGraphRAG 共用同一份知識圖譜。視覺核對的附錄 A 列出 entity／relationship extraction、四視角 query expansion、以 perspective-wise KG 為條件的回覆，以及 pairwise LLM evaluation prompts（PDF pp. 12–15；論文頁 5437–5440）。[ACL 官方全文，§§4–5.1、Algorithm 1，pp. 5428–5431；本地正式版副本，Appendix A]
 
 ```mermaid
 flowchart LR
@@ -89,17 +89,19 @@ flowchart LR
 
 **Table 2（p. 5432）ablation：** 完整 ReGraphRAG 對移除 Perspective Expansion 的平均 win rate 為 58.8/67.8/62.6/62.0%（四維依上表順序）；對移除 Graph Reorganization 為 51.9/51.8/55.5/54.0%；對移除 Query-aware Reranking 則為 47.8/45.4/45.8/46.0%，即此設定下無 reranking 的 ablation 多數面向反而勝過完整模型。
 
-Table 1–2 均是同篇論文、同一 LLM judge 協議下的相對偏好；不與其他論文的 QA accuracy／retrieval metrics 直接比較。Appendix D 未在文字中指出 pairwise judge 的具體模型名稱或各領域 query 樣本數；Appendix A.4 評審 prompt 頁是圖像，待視覺核對。[ACL 官方全文，§5.1–5.3、Tables 1–3、Appendices C–D，pp. 5431–5432、5441]
+Table 1–2 均是同篇論文、同一 LLM judge 協議下的相對偏好；不與其他論文的 QA accuracy／retrieval metrics 直接比較。Appendix D 未在文字中指出 pairwise judge 的具體模型名稱或各領域 query 樣本數。Appendix A.4 的圖像 prompt 明確要求 judge 比較兩個答案在 Comprehensiveness、Diversity、Empowerment 三項的優劣，並選整體勝者；其模型名稱仍未在該頁標明。[ACL 官方全文，§5.1–5.3、Tables 1–3、Appendices C–D，pp. 5431–5432、5441；本地正式版副本，Appendix A.4]
 
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
-作者明確指出 reranking ablation 有時更好，表示 edge embedding/query cosine similarity 可能沒有充分捕捉圖結構的多跳推理；query perspective/subquery expansion 增加 retrieval 與 inference 時間，可能不適合即時或資源受限情境。Table 4（p. 5442）報告近似時間與 token 成本：NaïveRAG 0.8 秒／3,800 tokens、GraphRAG 8.4 秒／360,000、LightRAG 7.2 秒／29,000、ReGraphRAG 無 expansion 4.8 秒／3,700、完整 ReGraphRAG 19.8 秒／18,000。作者說完整模型的 19.8 秒來自 sequential setup；平行化可能降至 4–5 秒是作者推測，非表格實測值。文中未在所讀段落報 GPU／硬體規格或 API 費用。另須注意，Graph Reorganization 在無原圖路徑時會依 embedding 相似度補新邊；將此視為語義關係仍須防止錯誤連線，這是由設計推得的風險，不是作者量測結論。[ACL 官方全文，§5.4、Limitations、Appendix E／Table 4，pp. 5432–5433、5442]
+作者明確指出 reranking ablation 有時更好，表示 edge embedding/query cosine similarity 可能沒有充分捕捉圖結構的多跳推理；query perspective/subquery expansion 增加 retrieval 與 inference 時間，可能不適合即時或資源受限情境。Table 4（p. 5442）報告近似時間與 token 成本：NaïveRAG 0.8 秒／3,800 tokens、GraphRAG 8.4 秒／360,000、LightRAG 7.2 秒／29,000、ReGraphRAG 無 expansion 4.8 秒／3,700、完整 ReGraphRAG 19.8 秒／18,000。作者說完整模型的 19.8 秒來自 sequential setup；平行化可能降至 4–5 秒是作者推測，非表格實測值。文中未在所讀段落報 GPU／硬體規格或 API 費用。另須注意，Graph Reorganization 在無原圖路徑時會依 embedding 相似度補新邊；將此視為語義關係仍須防止錯誤連線，這是由設計推得的風險，不是作者量測結論。Appendix F 以 bee hive management 問題展示 GraphRAG 與 ReGraphRAG 回答的質性比較；它是單一示例，不構成額外量化證據。[ACL 官方全文，§5.4、Limitations、Appendix E／Table 4，pp. 5432–5433、5442；本地正式版副本，Appendix F，p. 5443]
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 依已讀方法章節，建議 primary_domain = D05：所有 graph reorganization 都在 query time 對已檢索子圖執行，輸出服務於當次回答；D04 作為 graph representation／結構化 context 的 secondary domain，D07 對應整理成 triplet prompt 並控制 context。D03 不列入，因論文沒有做持久化圖譜抽取／consolidation 更新。此為依 repo lifecycle boundary 所做的分類，不是作者標籤。
 
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - [ACL Anthology 官方 entry／metadata／摘要](https://aclanthology.org/2025.findings-emnlp.290/)，DOI [10.18653/v1/2025.findings-emnlp.290](https://doi.org/10.18653/v1/2025.findings-emnlp.290)。
-- [ACL 官方 PDF](https://aclanthology.org/2025.findings-emnlp.290.pdf)（全文文字透過 alphaXiv PDF reader 讀取；ACL 本體在本地仍下載逾時，尚無本地副本或 prompt／case-study 頁截圖）。
+- [ACL 官方 PDF](https://aclanthology.org/2025.findings-emnlp.290.pdf)（正式內容與書目來源；本地網路無法直接連線下載）。
+- [本地 PDF 副本來源：Hugging Face 論文資料集固定 commit](https://huggingface.co/datasets/Chelsea707/Conference_2020-2025/commit/0be08ad5751d514d28cc9477c4b9acbcad3a646c)（檔案為 18 頁、8,538,683 bytes；LFS SHA-256 `1dd7ce3d194c5ab7f2994a1d9bd7944988a90500258943fc3301b276f717cb03`；此為第三方鏡像，已核首頁、頁碼、正文與 ACL 正式版一致）。
+- 本地 PDF：[[Papers/04 - Knowledge & Graph RAG/(Findings EMNLP 2025-11) ReGraphRAG - Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation.pdf|開啟本地正式版 PDF 副本]]（含圖像附錄 A 與 F，已視覺核對）。
 - [Hanyang ScholarWorks 機構典藏記錄](https://hanyang.scholarworks.kr/item/a81fc59c-c9f6-4dce-bb69-f32f035fb991)（核對作者、DOI、venue、發表年月與頁碼；僅提供摘要）。
 - [作者公開程式庫](https://github.com/ToBeSuperior/ReGraphRAG)（程式碼可用性來源，不作為實驗結果的替代證據）。
 - 相關筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings NAACL 2025-04) GRAG - Graph Retrieval-Augmented Generation|GRAG]]、[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) PropRAG - Guiding Retrieval with Beam Search over Proposition Paths|PropRAG]]。
