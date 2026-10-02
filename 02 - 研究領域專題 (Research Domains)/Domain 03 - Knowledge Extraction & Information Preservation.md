@@ -112,6 +112,7 @@ flowchart LR
 文獻數量以 paper frontmatter 與 [[02 - 研究領域專題 (Research Domains)/README|Research Domains coverage snapshot]] 為準。下列既有筆記與 cross-domain anchors 分列；新官方候選不視為已驗證 primary anchors。
 
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2019-07) DocRED - A Large-Scale Document-Level Relation Extraction Dataset|DocRED]] (篇章級關聯抽取基準)
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction|Re-DocRED]] (關係標註 false negatives 修訂資料集)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2019-11) Entity, Relation, and Event Extraction with Contextualized Span Representations|DyGIE++]] (跨句圖傳播多任務抽取)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2020-07) A Joint Neural Model for Information Extraction with Global Features|OneIE]] (全局特徵導向圖解碼)
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2020-07) SciREX - A Challenge Dataset for Document-Level Information Extraction|SciREX]] (長篇科學論文四元組抽取)

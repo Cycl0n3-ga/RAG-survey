@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 36
-candidate_status: "partial; 35 of 44 full-text notes added; 1 abstract-only note; 8 pending"
+independent_literature_notes_added: 39
+candidate_status: "partial; 38 of 44 full-text notes added; 1 abstract-only note; 5 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 35/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 8 篇待補。最近新增 GeAR、GRADA、Han et al. GraphRAG survey 及 QO-Bench。GeAR、GRADA 已讀 arXiv 全文並核正式 ACL 書目；Han survey 與 QO-Bench 已讀 arXiv 全文，後者 arXiv v2 註明 accepted to Findings EMNLP 2026，正式 proceedings metadata 尚待發布核對。KAG 的 ACM 正式 PDF 仍回 403，故只以 arXiv v3 作全文來源、正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 38/44 篇已有全文閱讀筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 5 篇待補。最近新增 GeAR、GRADA、Han et al. GraphRAG survey 及 QO-Bench；本輪又完成 Graph-CoT／GRBench、Re-DocRED 與 FiD。GeAR、GRADA 已讀 arXiv 全文並核正式 ACL 書目；Han survey 與 QO-Bench 已讀 arXiv 全文，後者 arXiv v2 註明 accepted to Findings EMNLP 2026，正式 proceedings metadata 尚待發布核對。KAG 的 ACM 正式 PDF 仍回 403，故只以 arXiv v3 作全文來源、正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -58,7 +58,10 @@ taxonomy_version: "v2"
 | 已讀 arXiv v3 全文；正式 ACL metadata 已核 | GRADA — EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) GRADA - Graph-based Reranking against Adversarial Documents Attack]] |
 | 已讀 arXiv v2 全文與 PDF | Han et al. GraphRAG Survey — arXiv 2025-01 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Retrieval-Augmented Generation with Graphs (GraphRAG)]] |
 | 已讀 arXiv v2 全文與 PDF；Findings EMNLP 2026 accepted status 已核 | QO-Bench — arXiv 2026-06 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-06) QO-Bench - Diagnosing Query-Operator-Preserving Retrieval over Typed Event Tuples]] |
-| 待完成 | 其他 8 篇 | 正式出版版或可核全文與筆記尚未補齊 |
+| 已讀 arXiv v3 全文與 PDF；正式 ACL 書目已核 | Graph-CoT／GRBench — Findings ACL 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) Graph Chain-of-Thought - Augmenting Large Language Models by Reasoning on Graphs]] |
+| 已讀 arXiv v3 全文與 PDF；正式 ACL 書目已核 | Re-DocRED — EMNLP 2022 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction]] |
+| 已讀 arXiv 全文與 PDF；正式 ACL 書目已核 | FiD — EACL 2021 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EACL 2021-04) Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering]] |
+| 待完成 | 其他 5 篇 | 正式出版版或可核全文與筆記尚未補齊 |
 
 ## 目錄
 
@@ -255,7 +258,7 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04, D07。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 arXiv 全文（6 頁）；ACL Anthology 正式書目已核，未逐段比對 proceedings PDF 與 arXiv 版本。
 
 **版本注意：** 關聯預印本標題較短；本清單採正式版本標題，尚未逐章比對版本差異。
 
@@ -501,9 +504,9 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D04；secondary_domains = D05, D07。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已讀 arXiv 全文（6 頁）；ACL Anthology 正式書目已核，尚未逐段比對 proceedings PDF 與 arXiv 版本。
 
-**核對位置：** 官方 Abstract / publication metadata。
+**核對位置：** ACL Anthology 2021.eacl-main.74: official metadata/title/authors/DOI/pages 874–880；arXiv:2007.01282 全文 Tables 1–2, PDF pp. 3, 5。
 
 <a id="paper-hyperrag-hyperbolic"></a>
 ### HyperRAG（Hyperbolic）
@@ -852,7 +855,7 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文＋GRBench 評測資源；primary_domain = D05；secondary_domains = D12, D13。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official abstract and bibliographic metadata only; full text not reviewed。
+**閱讀範圍：** 已讀 arXiv v3 全文（22 頁）；ACL Anthology 正式書目已核，arXiv v3 與 proceedings 正文尚未逐段比對。
 
 **核對位置：** ACL Anthology 2024.findings-acl.11: abstract, complete author list, venue, DOI and pp.163–184；https://arxiv.org/abs/2404.07103: v1 2024-04-10; latest v3 2024-10-03。
 
@@ -980,7 +983,7 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 資料集／標註修訂論文；primary_domain = D03；secondary_domains = D13。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official published abstract and metadata only; full text and later arXiv revision differences not reviewed。
+**閱讀範圍：** 已讀 arXiv v3 全文（16 頁）；ACL Anthology 正式書目已核，尚未逐項比對 arXiv v3 與正式版差異。
 
 **核對位置：** ACL Anthology 2022.emnlp-main.580: abstract, full authors, venue, DOI and pp.8472–8487；https://arxiv.org/abs/2205.12696: v1 2022-05-25; v2 2022-10-25; later v3 2023-06-16。
 
@@ -1095,7 +1098,7 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 <a id="checks-and-limits"></a>
 ## 查核方式與限制
 
-本次由三個並行子任務查 graph retrieval、graph construction／memory、evaluation／security；主 agent 另查 GNN-RAG、GRAG、OG-RAG、KG-FiD、A2RAG、CatRAG、MeshRAG 與非圖基線，彙整後再依 arXiv、DOI、正規化完整標題查重。44 項識別碼／標題均未與既有 177 篇 paper records 重複；Notes／Papers 檔名沒有相符工件。
+初次候選盤點由多個子任務與主 agent 分角度完成，並按 arXiv、DOI、正規化完整標題查重。後續補筆記由單一 agent 逐篇讀取全文、核對正式書目並記錄版本限制。44 項識別碼／標題均未與初次盤點時 177 篇 paper records 重複；本次三篇新增筆記依據為 arXiv 全文及 ACL Anthology metadata。
 
 已完成：官方 title／authors／年份／已找到的 venue 與識別碼核對；預印與正式出版區分；候選間同名與版本辨識；各項閱讀範圍標示；D01–D14／CROSS 建議合法性檢查。未知 DOI／預印年份／正式版本留未核，未以 ID 前綴推算年份。
 

@@ -52,17 +52,17 @@ Research Domains
 ## Literature Coverage Snapshot
 
 > [!NOTE]
-> 下表是 **2026-10-02 的 metadata 重算快照**：213 份含 `paper_id` 的 literature notes 中，158 份有 D01–D14 `primary_domain`，55 份為 Adjacent/CROSS。只計 primary；secondary 關聯、摘要候選與 UIE 簡報工件不計入。這是筆記數量，並非已驗證方法數或領域重要性排序；新增／移動 paper 後需重新計算。
+> 下表是 **2026-10-02 的 metadata 重算快照**：216 份含 `paper_id` 的 literature notes 中，161 份有 D01–D14 `primary_domain`，55 份為 Adjacent/CROSS。只計 primary；secondary 關聯、摘要候選與 UIE 簡報工件不計入。這是筆記數量，並非已驗證方法數或領域重要性排序；新增／移動 paper 後需重新計算。
 
 | Domain | Primary notes |
 |---|---:|
 | D01 | 5 |
 | D02 | 5 |
-| D03 | 19 |
+| D03 | 20 |
 | D04 | 12 |
-| D05 | 37 |
+| D05 | 38 |
 | D06 | 7 |
-| D07 | 6 |
+| D07 | 7 |
 | D08 | 9 |
 | D09 | 8 |
 | D10 | 1 |

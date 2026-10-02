@@ -101,7 +101,7 @@ Phase 1 taxonomy closure 已完成 paper-level remap、canonical publication met
 | USENIX Security 2025 | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models\|(USENIX Security 2025-08) PoisonedRAG]] | [USENIX](https://www.usenix.org/conference/usenixsecurity25/presentation/zou-poisonedrag) |
 | SOSP 2025 | METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation\|(SOSP 2025-10) METIS]] | [ACM](https://doi.org/10.1145/3731569.3764855) |
 
-### 04 - Knowledge & Graph RAG (67 篇)
+### 04 - Knowledge & Graph RAG (70 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -181,6 +181,10 @@ Phase 1 taxonomy closure 已完成 paper-level remap、canonical publication met
 | WWW Companion 2025 | KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation\|KAG]] | [[Papers/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation.pdf\|arXiv v3 PDF; formal version comparison pending]] |
 | EMNLP 2023 | StructGPT: A General Framework for Large Language Model to Reason over Structured Data | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data\|StructGPT]] | [[Papers/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data.pdf\|arXiv PDF; EMNLP full text verified]] |
 | ACL 2025 | HybGRAG: Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases\|HybGRAG]] | [[Papers/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases.pdf\|arXiv v2 PDF; ACL text checked]] |
+
+| Findings ACL 2024 | Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) Graph Chain-of-Thought - Augmenting Large Language Models by Reasoning on Graphs\|(Findings ACL 2024-08) Graph-CoT / GRBench]] | [[Papers/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) Graph Chain-of-Thought - Augmenting Large Language Models by Reasoning on Graphs.pdf\|arXiv v3 PDF; formal-version comparison pending]] |
+| EMNLP 2022 | Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction\|(EMNLP 2022-12) Re-DocRED]] | [[Papers/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction.pdf\|arXiv v3 PDF; formal-version comparison pending]] |
+| EACL 2021 | Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering (FiD) | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EACL 2021-04) Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering\|(EACL 2021-04) FiD]] | [[Papers/04 - Knowledge & Graph RAG/(EACL 2021-04) Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering.pdf\|arXiv PDF; formal-version comparison pending]] |
 
 ### 05 - Memory & Agents (18 篇)
 
