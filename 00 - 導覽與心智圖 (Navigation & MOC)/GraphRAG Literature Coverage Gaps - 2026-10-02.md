@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 16
-candidate_status: "partial; 16 of 44 full-text notes added; 28 pending"
+independent_literature_notes_added: 20
+candidate_status: "partial; 20 of 44 full-text notes added; 24 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：16/44 篇完成全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG、PathRAG、HyperGraphRAG、OG-RAG、KGGen、StructRAG、A2RAG、Zep、CatRAG、GraphRAG-Bench、WildGraphBench、PVLDB Unified Analysis、LogicPoison）；其餘 28 篇仍待核對。CatRAG、WildGraphBench、LogicPoison 的本地 PDF 與數據分別取自註記版本的 arXiv 全文，正式 ACL PDF 尚待比對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：20/44 篇已建立獨立全文筆記與本地 PDF；本輪新增 ToG-2（ICLR 正式 PDF）、GRAG（arXiv v3）、KG-FiD（arXiv v2）、SimGRAG（arXiv v2）。其餘 24 篇仍待核對。GRAG、KG-FiD、SimGRAG 的 PDF 下載自 arXiv，正式 ACL PDF 端點連線逾時，出版版逐表差異尚待查驗；這三篇數據均明確標示為預印版本。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -38,7 +38,11 @@ taxonomy_version: "v2"
 | 已完成 arXiv v2 全文核對與 PDF；正式版待比對 | WildGraphBench — Findings ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) WildGraphBench - Benchmarking GraphRAG with Wild-Source Corpora]] |
 | 已完成 PVLDB 正式全文核對與 PDF | Unified Analysis — PVLDB 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(PVLDB 2025-09) In-depth Analysis of Graph-based RAG in a Unified Framework]] |
 | 已完成 arXiv v1 全文核對與 PDF；正式版待比對 | LogicPoison — ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) LogicPoison - Logical Attacks on Graph Retrieval-Augmented Generation]] |
-| 待完成 | 其他 28 篇 | 正式 PDF 與筆記尚未補齊 |
+| 已完成 ICLR 正式版全文與 PDF | ToG-2 — ICLR 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2025-05) Think-on-Graph 2.0 - Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation]] |
+| 已讀 arXiv v3 全文與 PDF；正式版待比對 | GRAG — Findings NAACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings NAACL 2025-04) GRAG - Graph Retrieval-Augmented Generation]] |
+| 已讀 arXiv v2 全文與 PDF；正式版待比對 | KG-FiD — ACL 2022 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2022-05) KG-FiD - Infusing Knowledge Graph in Fusion-in-Decoder for Open-Domain Question Answering]] |
+| 已讀 arXiv v2 全文與 PDF；正式版待比對 | SimGRAG — Findings ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) SimGRAG - Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation]] |
+| 待完成 | 其他 24 篇 | 正式出版版或可核全文與筆記尚未補齊 |
 
 ## 目錄
 
@@ -177,12 +181,11 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **內容與補缺分析：** 機制：KG 透過 entities 連接 documents，引導 context retrieval；documents 又作為 entity contexts 改善 graph retrieval，兩者反覆交替。補缺判斷：可補 KG×text 的互相約束機制，與單純融合多個 retrieval channels 或單向 KG-guided chunk expansion 對照。Domain mapping 為本次分析建議。 [原始來源：ToG-2, Abstract／詳見閱讀範圍](https://proceedings.iclr.cc/paper_files/paper/2025/hash/830b1abc6d2da85f23d41169fa44d185-Abstract-Conference.html)。
 
-**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
+**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04, D07, D09。這是本 repo 的 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official_metadata_and_abstract_only；未查驗停止條件、全文機制細節、實驗數據或與初版的完整差異。
+**閱讀範圍：** 已閱讀 ICLR 2025 正式 PDF 全文（25 頁）；Table 1–3、§3–4 方法與設定已核對。arXiv v1 與正式版的逐段差異未另做系統性比對。
 
 **核對位置：** [metadata、Abstract、Submission history v1 (2024-07-15)](https://arxiv.org/abs/2407.10805)：預印年份、作者與機制；[title、authors、ICLR 2025 Conference、Abstract](https://proceedings.iclr.cc/paper_files/paper/2025/hash/830b1abc6d2da85f23d41169fa44d185-Abstract-Conference.html)：正式版本、venue/year與 tight coupling。
-
 <a id="paper-luo2023-reasoningongraphs"></a>
 ### RoG
 
@@ -255,12 +258,11 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **內容與補缺分析：** 檢索 textual subgraphs，並結合 text view 與 graph view 向生成模型提供文字與拓撲資訊。 [原始來源：GRAG, Abstract／詳見閱讀範圍](https://aclanthology.org/2025.findings-naacl.232/)。
 
-**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04, D07。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
+**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04, D07, D09。這是本 repo 的 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已閱讀 arXiv v3 全文（13 頁）；方法、Table 1–3、Table 5 與附錄設定已核對。此版本晚於 Findings NAACL 2025 正式發表，ACL publisher PDF 逾時未取回，正式版差異待比對。
 
 **核對位置：** 官方 Abstract / publication metadata。
-
 <a id="paper-kg-fid"></a>
 ### KG-FiD
 
@@ -276,10 +278,9 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04, D07。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已核官方 metadata 與摘要；全文待驗證。
+**閱讀範圍：** 已閱讀 arXiv v2 全文（14 頁）；方法、Table 1–3 與計算量／延遲比較已核對。ACL publisher PDF 逾時未取回，正式版差異待比對。
 
 **核對位置：** 官方 Abstract / publication metadata。
-
 <a id="paper-dong2024-grag-reranking"></a>
 ### G-RAG
 
@@ -348,14 +349,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2412.15272](https://arxiv.org/abs/2412.15272)；[DOI: 10.18653/v1/2025.findings-acl.163](https://doi.org/10.18653/v1/2025.findings-acl.163)。
 
-**內容與補缺分析：** 機制：query-to-pattern 將自然語言需求變成 graph pattern；pattern-to-subgraph 再用 graph semantic distance 比較並檢索相似子圖。補缺判斷：可補 query text 與 KG structure 的對齊，以及 pattern-based graph matching，與 embedding similarity、PPR 或 beam traversal 分開比較。Domain mapping 為本次分析建議。 [原始來源：SimGRAG, Abstract／詳見閱讀範圍](https://aclanthology.org/2025.findings-acl.163/)。
+**內容與補缺分析：** 機制：query-to-pattern 將自然語言需求變成 graph pattern；pattern-to-subgraph 再用 graph semantic distance 比較並檢索相似子圖。補缺判斷：可補 query text 與 KG structure 的對齊，以及 pattern-based graph matching，與 embedding similarity、PPR 或 beam traversal 分開比較。Domain mapping 為本次分析建議；詳見下方全文筆記與實驗證據。 [原始來源：SimGRAG, Abstract／詳見閱讀範圍](https://aclanthology.org/2025.findings-acl.163/)。
 
-**建議定位：** 方法論文；primary_domain = D05；secondary_domains = []。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
+**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D04, D09。這是本 repo 的 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official_metadata_and_abstract_only；PDF 僅核 title page / Abstract；未讀 GSD 定義、search algorithm 或實驗全文。
+**閱讀範圍：** 已閱讀 arXiv v2 全文（20 頁）；Table 1、Table 4–5 與實作附錄已核對。Findings ACL 2025 publisher PDF 逾時未取回，正式版差異待比對。
 
 **核對位置：** [metadata、Abstract、Submission history v1 (2024-12-17)](https://arxiv.org/abs/2412.15272)：預印年份與作者；[metadata、Abstract、DOI；pp.3139–3158](https://aclanthology.org/2025.findings-acl.163/)：正式 Findings ACL 2025、query-to-pattern / pattern-to-subgraph；作者欄呈現 YiWen / WanRui；[PDF title page / Abstract](https://aclanthology.org/2025.findings-acl.163.pdf)：PDF 作者呈現 Yiwen Pei / Wanrui Bian。
-
 <a id="paper-chen2025-pathrag"></a>
 ### PathRAG
 
