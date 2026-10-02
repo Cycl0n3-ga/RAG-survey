@@ -74,7 +74,7 @@ flowchart LR
 - **Retrieval Unit ≠ Semantic Unit**：chunk / passage 是檢索單元；entity / event / proposition / claim 是語意單元，兩者不可強行一對一。
 - **Knowledge Type ≠ Authority / Usability**：一段內容被抽成 Fact / Requirement / Claim，不代表它自動具有足夠權威、時效或可用性；這些需由 D08 / evidence governance 另外判斷。
 - **Extraction Correctness ≠ Evidence Sufficiency**：抽取得正確，仍可能沒有涵蓋回答問題所需的全部 evidence；那是 D06 的問題。
-- **Structured ≠ More Faithful by default**：結構化可能提高可檢索性，也可能丟失 negation、condition、scope、time、unit 或 provenance，因此需做 preservation ablation。
+- **Structured ≠ More Faithful by default**：結構化可能提高可檢索性，也可能丟失 negation、condition、scope、time、unit 或 provenance，因此需做 preservation ablation。例如 [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-05) LinearRAG - Linear Graph Retrieval Augmented Generation on Large-scale Corpora|LinearRAG]] 實證揭露關係抽取常將「Einstein did not win Nobel Prize for relativity」抽成肯定三元組，造成嚴重的否定詞反轉；主張以 Entity-only 搭配保留原始段落全文來避免過度抽取失真。
 
 ## Representative Notes
 
@@ -102,6 +102,7 @@ flowchart LR
 **Cross-domain Anchors (語意單元抽取重要交叉論文)**：
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) Dense X - Exploring the Limit of Proposition Retrieval for Open-Domain QA|Dense X]] (D02 Primary / D03 Secondary: 自包含命題抽取與 Propositionizer)
 - [[03 - 論文庫 (Literature Notes)/06 - Benchmarks & Evaluation/(EMNLP 2023-12) FActScore - Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation|FActScore]] (D13 Primary / D03 Secondary: 長篇生成之原子事實分解與 Claim 核驗)
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-05) LinearRAG - Linear Graph Retrieval Augmented Generation on Large-scale Corpora|LinearRAG]] (D04 Primary / D03 Secondary: 否定詞丟失分析與 Relation-free 實體錨定範式)
 
 ## Extraction Targets
 

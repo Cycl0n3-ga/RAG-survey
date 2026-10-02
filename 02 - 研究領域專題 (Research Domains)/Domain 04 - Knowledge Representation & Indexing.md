@@ -59,13 +59,14 @@ flowchart LR
 
 ## Representative Notes
 
-**Current primary-note coverage: 6**
+**Current primary-note coverage: 7**
 
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-04) From Local to Global - A Graph RAG Approach to Query-Focused Summarization|Microsoft GraphRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) RAPTOR - Recursive Abstractive Processing for Tree-Organized Retrieval|RAPTOR]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-10) LightRAG - Simple and Fast Retrieval-Augmented Generation|LightRAG]]
 - [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(arXiv 2024-09) Late Chunking - Contextual Chunk Embeddings for Retrieval|Late Chunking]]
+- [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-05) LinearRAG - Linear Graph Retrieval Augmented Generation on Large-scale Corpora|LinearRAG]]
 
 ## Representation Families
 舊版 GraphRAG / hierarchical 頁面中的核心概念保留為 **representation/index choices**，而不是額外 top-level Domain：
@@ -74,7 +75,7 @@ flowchart LR
 |---|---|---|---|
 | Raw text / chunk | passage text | local evidence fidelity | segmentation in D02 |
 | Proposition / claim | self-contained semantic unit | fine-grained retrieval | extraction may touch D03 |
-| Graph / KG | entity / relation / event graph | relational traversal / global structure | query-time graph search in D05 |
+| Graph / KG | entity / relation / event graph，或無關係 Tri-Graph (LinearRAG) | relational traversal / global structure / 零 Token 擴展力 | query-time graph search in D05 |
 | Hierarchical / multi-resolution | tree / community / recursive summaries | local↔global resolution switching | retrieval policy in D05 |
 | Hybrid | lexical + dense + graph + hierarchy | channel complementarity | fusion/reranking in D05 |
 
@@ -125,3 +126,4 @@ flowchart LR
 - Situated Embedding Models (ACL 2026): ADD D04 / D02 secondary.
 - VDocRAG (CVPR 2025): ADD D04 / D05 secondary.
 - GFM-RAG (NeurIPS 2025): D05 primary / D04 secondary.
+- LinearRAG (ICLR 2026): ADD D04 primary / D03, D05 secondary (Tri-Graph representation with zero-token indexing).

@@ -96,6 +96,7 @@ D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是�
 | Decomposition / multi-hop | sub-question → iterative retrieval | D05 |
 | Adaptive / active retrieval | decide whether/when to retrieve again | D06（不是 D05 的 relevance 問題） |
 | Agent-controlled retrieval | controller selects tools/actions | D12 |
+| Graph / PPR retrieval | 局部實體激活 + 全局 PageRank 傳播 (HippoRAG, LinearRAG) | D04 圖索引 + D05 遍歷排序 |
 | Retrieval-augmented training | retrieval is trained/used during pretraining, joint retriever-reader training, or dual instruction tuning | D05（with D04 representation/training interface） |
 
 這個表的目的，是避免再把「Advanced RAG」當成一個模糊大 Domain。
@@ -132,3 +133,4 @@ D05 判斷「哪些 evidence 比較相關」；D06 判斷「目前 evidence 是�
 - RQ-RAG (COLM 2024): ADD.
 - RAG 2020, RETRO and Atlas: move to CROSS rather than inflate D05 primary coverage.
 - Adaptive-RAG remains D06 primary.
+- LinearRAG (ICLR 2026): D04 primary / D05 secondary (two-stage SpMM semantic bridging + PPR ranking).
