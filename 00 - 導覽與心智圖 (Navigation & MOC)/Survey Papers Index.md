@@ -54,6 +54,9 @@ last_updated: "2026-10-02"
 - **Peng et al. — Graph Retrieval-Augmented Generation: A Survey**, ACM Transactions on Information Systems 44(2), 2026, DOI: 10.1145/3777378 (online first 2025-12-23).  
   以 Graph-Based Indexing → Graph-Guided Retrieval → Graph-Enhanced Generation 組織 GraphRAG；支撐 D03/D04/D05/D09 的 graph interface。  
   [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-08) Graph Retrieval-Augmented Generation - A Survey|Literature Note]]
+- **Han et al. — Retrieval-Augmented Generation with Graphs (GraphRAG)** (arXiv:2501.00309, v2).
+  以 query processor、graph data source、retriever、organizer、generator 五組件並按圖資料領域分類；是另一套 survey framework，與 Peng et al. 的流程軸及 repo D01–D14 都要分清。
+  [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Retrieval-Augmented Generation with Graphs (GraphRAG)|Literature Note]]
 - **Zhang et al. — A Survey of Generative Information Extraction**, COLING 2025.  
   支撐 D03 的 generative IE；**不**直接證明本 repo 的 information-preservation / F/R/D/A/P/C/T research proposal。
 

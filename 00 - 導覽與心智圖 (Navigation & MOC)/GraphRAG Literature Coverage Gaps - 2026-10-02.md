@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 33
-candidate_status: "partial; 32 of 44 full-text notes added; 1 abstract-only note; 11 pending"
+independent_literature_notes_added: 36
+candidate_status: "partial; 35 of 44 full-text notes added; 1 abstract-only note; 8 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 32/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 11 篇待補。最近一批新增 DyG-RAG、KAG、StructGPT、HybGRAG 及 GeAR。GeAR 本地 PDF 為 arXiv v2，並已與 ACL 2025 正式全文的書目、Table 2–4 及 Limitations 交叉核對；KAG 正式 DOI／WWW Companion metadata 已核但 ACM 出版 PDF 回 403，故本地全文及實驗只據 arXiv v3，正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 35/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 8 篇待補。最近新增 GeAR、GRADA、Han et al. GraphRAG survey 及 QO-Bench。GeAR、GRADA 已讀 arXiv 全文並核正式 ACL 書目；Han survey 與 QO-Bench 已讀 arXiv 全文，後者 arXiv v2 註明 accepted to Findings EMNLP 2026，正式 proceedings metadata 尚待發布核對。KAG 的 ACM 正式 PDF 仍回 403，故只以 arXiv v3 作全文來源、正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -55,7 +55,10 @@ taxonomy_version: "v2"
 | 已核 arXiv 與 EMNLP 正式全文及 PDF | StructGPT — EMNLP 2023 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data]] |
 | 已讀 arXiv v2 全文及 ACL 正式全文；本地 PDF 為 arXiv v2 | HybGRAG — ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases]] |
 | 已讀 arXiv v2 全文及 ACL 正式全文；本地 PDF 為 arXiv v2 | GeAR — Findings ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GeAR - Graph-enhanced Agent for Retrieval-augmented Generation]] |
-| 待完成 | 其他 12 篇 | 正式出版版或可核全文與筆記尚未補齊 |
+| 已讀 arXiv v3 全文；正式 ACL metadata 已核 | GRADA — EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) GRADA - Graph-based Reranking against Adversarial Documents Attack]] |
+| 已讀 arXiv v2 全文與 PDF | Han et al. GraphRAG Survey — arXiv 2025-01 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Retrieval-Augmented Generation with Graphs (GraphRAG)]] |
+| 已讀 arXiv v2 全文與 PDF；Findings EMNLP 2026 accepted status 已核 | QO-Bench — arXiv 2026-06 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-06) QO-Bench - Diagnosing Query-Operator-Preserving Retrieval over Typed Event Tuples]] |
+| 待完成 | 其他 8 篇 | 正式出版版或可核全文與筆記尚未補齊 |
 
 ## 目錄
 
@@ -883,13 +886,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2501.00309](https://arxiv.org/abs/2501.00309)。
 
-**內容與補缺分析：** 以 query processor、retriever、organizer、generator 和 data source 整理 GraphRAG，並強調不同 graph domains 的關係模式。可提供與 Peng 2408.08921 不同的 survey 視角，尤其釐清 graph source、retrieval 和 context organization；預印本首日是 2024-12-31，不能由 2501 ID 推為 2025。 [原始來源：Han et al. GraphRAG Survey, Abstract／詳見閱讀範圍](https://arxiv.org/abs/2501.00309)。
+**內容與補缺分析：** 全文以 query processor、graph data source、retriever、organizer、generator 五組件整理 GraphRAG，並按圖資料領域盤點任務與設計。Table 1, PDF p.6 是 domain/task examples；Table 2, p.7 比較 query processing；Table 3, p.9 整理 retriever 類型；§10, pp.50–53 討論 system integration、scalability、trustworthiness 與評測需求。它和 Peng survey 提供不同組織方式；兩者都不是 repo D01–D14，也不是 controlled benchmark。預印本首日是 2024-12-31，不能由 2501 ID 推為 2025。[arXiv v2 全文](https://arxiv.org/abs/2501.00309)。
 
 **建議定位：** Survey；taxonomy_home = CROSS；primary_domain = null；secondary_domains = D04, D05, D07, D09。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official arXiv v2 abstract and metadata only; full text not reviewed; formal publication not verified。
+**閱讀範圍：** 已讀本地 arXiv v2 全文（88 頁）；已查五組件 framework、Table 1–3、graph domain coverage 及 §10 challenges。正式出版版未核得。
 
-**核對位置：** official arXiv abstract, authors and submission history: 2501.00309v1 2024-12-31; v2 2025-01-08。
+**核對位置：** [arXiv v1/v2 metadata 與版本歷史](https://arxiv.org/abs/2501.00309)：v1 2024-12-31，v2 2025-01-08；本地 arXiv v2 PDF pp.5–9、50–53。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Retrieval-Augmented Generation with Graphs (GraphRAG)]]。
 
 <a id="paper-zhang2026-qobench"></a>
 ### QO-Bench
@@ -902,13 +905,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2606.04646](https://arxiv.org/abs/2606.04646)。
 
-**內容與補缺分析：** 以 typed event tuples 的確定性答案評估 filter、join、intersection、counting 等 query operators，並比較 RAG、ReAct RAG、GraphRAG 與 extraction-to-SQL。可補 D03 資訊保留到 D05 query execution 的 failure attribution；目前是官方 arXiv 註記已接收、正式 proceedings 尚未核對。 [原始來源：QO-Bench, Abstract／詳見閱讀範圍](https://arxiv.org/abs/2606.04646)。
+**內容與補缺分析：** 全文提供 22,984 篇 news articles、614 個 corporate events、18 templates／785 題 benchmark；以 typed tuple gold 比較 RAG、ReAct、GraphRAG-local/global、IE→SQL。Table 4, PDF p.8 給 per-operator recall；Table 18, p.18 trace event date 從 extraction 到 community report 的存留；Table 19, p.18 分類 gold-context 下的 generation failures。補 D03 欄位保留、D05 coverage 與 D13 failure attribution；arXiv 註明 accepted to Findings EMNLP 2026，但截至 2026-10-02 尚無正式 proceedings metadata 可核。[arXiv v2 全文](https://arxiv.org/abs/2606.04646)。
 
 **建議定位：** 評測論文；primary_domain = D13；secondary_domains = D03, D05, D09。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official arXiv v2 abstract and metadata only; full text and formal proceedings not reviewed。
+**閱讀範圍：** 已讀 arXiv v2 全文與本地 PDF（19 頁）；已查 methodology、Table 1–4、Table 10–19、Limitations。正式 Anthology proceedings 頁面待發布／核對。
 
-**核對位置：** official arXiv v2 abstract, complete authors and comments: accepted to Findings of EMNLP 2026；submission history: v1 2026-06-03; v2 2026-09-08。
+**核對位置：** [arXiv metadata／版本與 acceptance comment](https://arxiv.org/abs/2606.04646)：v1 2026-06-03、v2 2026-09-08、accepted to Findings EMNLP 2026；本地 PDF Table 4 p.8、Table 18–19 pp.18–19。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-06) QO-Bench - Diagnosing Query-Operator-Preserving Retrieval over Typed Event Tuples]]。
 
 <a id="paper-zheng2025-grada"></a>
 ### GRADA
@@ -921,13 +924,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2505.07546](https://arxiv.org/abs/2505.07546)；[DOI: 10.18653/v1/2025.emnlp-main.1132](https://doi.org/10.18653/v1/2025.emnlp-main.1132)。
 
-**內容與補缺分析：** 利用 retrieved documents 之間的相似度圖與 score propagation，降低只對 query 高度相似的 adversarial documents 的影響。可補 D14 攻擊防禦与 D05 reranking 界面；此處的圖是 document similarity graph，不能直接當成 semantic knowledge graph 或 entity-relation extraction 方法。 [原始來源：GRADA, Abstract／詳見閱讀範圍](https://aclanthology.org/2025.emnlp-main.1132/)。
+**內容與補缺分析：** arXiv v3 全文建 weighted undirected document graph，使用 D2DSIM/HRSIM 的 query–document 與 document–document similarity 進行 propagation/reranking。Table 1–3, PDF pp.6–7 展示 black-box/white-box attack 和 benign-input EM；HRSIM 在 GPT-3.5-Turbo 的 PIA/NQ、MS-MARCO 條件將 ASR 98%/88% 降至 2%/1%，但 HotpotQA benign EM 由 64.3% 降至 50.0%。此處圖是候選文件相似度網絡，不是 semantic KG。正式 EMNLP metadata 已核、publisher PDF 未取得，數據只依 arXiv v3。[arXiv v3 全文](https://arxiv.org/abs/2505.07546)。
 
 **建議定位：** 方法論文；primary_domain = D14；secondary_domains = D05, D04。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official abstract and metadata, plus §3.1–3.2 method excerpts; full paper and version differences not reviewed。
+**閱讀範圍：** 已讀 arXiv v3 全文及本地 PDF（23 頁）；已查 §3 方法、Tables 1–3、Limitations。正式 ACL PDF／預印本差異待比對。
 
-**核對位置：** ACL Anthology 2025.emnlp-main.1132: abstract, full authors, DOI and pp.22244–22266；official ACL PDF §3.1 Graph Construction and §3.2 Reranking, p.22247 (method excerpts)；https://arxiv.org/abs/2505.07546: submitted 2025-05-12; early title uses Reranker, formal title uses Reranking。
+**核對位置：** [ACL Anthology 2025.emnlp-main.1132 metadata、authors、DOI、pp.22244–22266](https://aclanthology.org/2025.emnlp-main.1132/)；[arXiv v3](https://arxiv.org/abs/2505.07546)：v1 submitted 2025-05-12、v3 2025-09-18。正式出版版內容差異待比對。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) GRADA - Graph-based Reranking against Adversarial Documents Attack]]。
 
 <a id="paper-xiao2026-logicpoison"></a>
 ### LogicPoison
