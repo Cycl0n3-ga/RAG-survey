@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫現有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 此清單已開始逐篇補全文與標準筆記：第一批 4/44 篇已完成正式版全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG）；其餘候選仍待核對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；現已開始逐篇補全文與標準筆記：8/44 篇完成正式版全文核對、PDF 落檔與筆記建立（ToG、RoG、SubgraphRAG、GNN-RAG、PathRAG、HyperGraphRAG、OG-RAG、KGGen）；其餘候選仍待核對。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -26,7 +26,11 @@ taxonomy_version: "v2"
 | 已完成全文核對與 PDF | RoG — ICLR 2024 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Reasoning on Graphs - Faithful and Interpretable Large Language Model Reasoning]] |
 | 已完成全文核對與 PDF | SubgraphRAG — ICLR 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2025-05) Simple is Effective - The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation]] |
 | 已完成全文核對與 PDF | GNN-RAG — Findings ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GNN-RAG - Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs]] |
-| 待完成 | 其他 40 篇 | 正式 PDF 與筆記尚未補齊 |
+| 已完成全文核對與 PDF | PathRAG — AAAI 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(AAAI 2026-03) PathRAG - Pruning Graph-Based Retrieval Augmented Generation with Relational Paths]] |
+| 已完成全文核對與 PDF | HyperGraphRAG — NeurIPS 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2025-12) HyperGraphRAG - Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation]] |
+| 已完成全文核對與 PDF | OG-RAG — EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) OG-RAG - Ontology-grounded Retrieval-Augmented Generation for Large Language Models]] |
+| 已完成全文核對與 PDF | KGGen — NeurIPS 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2025-12) KGGen - Extracting Knowledge Graphs from Plain Text with Language Models]] |
+| 待完成 | 其他 36 篇 | 正式 PDF 與筆記尚未補齊 |
 
 ## 目錄
 

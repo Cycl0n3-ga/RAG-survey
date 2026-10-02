@@ -53,10 +53,10 @@ taxonomy_version: "v2"
 
 2026-10-02 已收錄筆記盤點（候選閱讀清單不計入）：
 
-- **177** literature notes
-- **123** notes have a D01–D14 `primary_domain`
+- **185** literature notes
+- **131** notes have a D01–D14 `primary_domain`
 - **54** notes are Adjacent/CROSS
-- D01–D14 primary counts：5 / 5 / 18 / 7 / 19 / 6 / 5 / 9 / 8 / 1 / 7 / 6 / 19 / 8
+- D01–D14 primary counts：5 / 5 / 19 / 9 / 24 / 6 / 5 / 9 / 8 / 1 / 7 / 6 / 19 / 8
 - 已知 Phase 1 duplicate pairs 已完成 canonical-version cleanup
 
 > [!WARNING]
