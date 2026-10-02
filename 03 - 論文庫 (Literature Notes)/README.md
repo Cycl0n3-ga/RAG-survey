@@ -101,7 +101,7 @@ Phase 1 taxonomy closure 已完成 paper-level remap、canonical publication met
 | USENIX Security 2025 | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(USENIX Security 2025-08) PoisonedRAG - Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models\|(USENIX Security 2025-08) PoisonedRAG]] | [USENIX](https://www.usenix.org/conference/usenixsecurity25/presentation/zou-poisonedrag) |
 | SOSP 2025 | METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation | [[03 - 論文庫 (Literature Notes)/03 - RAG & Retrieval/(SOSP 2025-10) METIS - Fast Quality-Aware RAG Systems with Configuration Adaptation\|(SOSP 2025-10) METIS]] | [ACM](https://doi.org/10.1145/3731569.3764855) |
 
-### 04 - Knowledge & Graph RAG (63 篇)
+### 04 - Knowledge & Graph RAG (64 篇)
 
 | 發表時間 / 會議 | 論文標題 | 筆記連結 | 本地 PDF |
 |---|---|---|---|
@@ -152,6 +152,7 @@ Phase 1 taxonomy closure 已完成 paper-level remap、canonical publication met
 | Findings of NAACL 2025 | GRAG: Graph Retrieval-Augmented Generation | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings NAACL 2025-04) GRAG - Graph Retrieval-Augmented Generation\|(Findings NAACL 2025-04) GRAG]] | [[Papers/04 - Knowledge & Graph RAG/(Findings NAACL 2025-04) GRAG - Graph Retrieval-Augmented Generation.pdf\|arXiv v3 PDF; formal-version comparison pending]] |
 | ACL 2022 | KG-FiD: Infusing Knowledge Graph in Fusion-in-Decoder for Open-Domain Question Answering | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2022-05) KG-FiD - Infusing Knowledge Graph in Fusion-in-Decoder for Open-Domain Question Answering\|(ACL 2022-05) KG-FiD]] | [[Papers/04 - Knowledge & Graph RAG/(ACL 2022-05) KG-FiD - Infusing Knowledge Graph in Fusion-in-Decoder for Open-Domain Question Answering.pdf\|arXiv v2 PDF; formal-version comparison pending]] |
 | Findings of ACL 2025 | SimGRAG: Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) SimGRAG - Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation\|(Findings ACL 2025-07) SimGRAG]] | [[Papers/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) SimGRAG - Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation.pdf\|arXiv v2 PDF; formal-version comparison pending]] |
+| Findings of ACL 2025 | GeAR: Graph-enhanced Agent for Retrieval-augmented Generation | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GeAR - Graph-enhanced Agent for Retrieval-augmented Generation\|(Findings ACL 2025-07) GeAR]] | [[Papers/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GeAR - Graph-enhanced Agent for Retrieval-augmented Generation.pdf\|arXiv v2 PDF; ACL formal version cross-checked]] |
 
 
 | arXiv 2024 | Don't Forget to Connect! Improving RAG with Graph-based Reranking | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2024-05) Don’t Forget to Connect! Improving RAG with Graph-based Reranking\|(arXiv 2024-05) G-RAG reranker]] | [[Papers/04 - Knowledge & Graph RAG/(arXiv 2024-05) Don’t Forget to Connect! Improving RAG with Graph-based Reranking.pdf\|PDF]] |

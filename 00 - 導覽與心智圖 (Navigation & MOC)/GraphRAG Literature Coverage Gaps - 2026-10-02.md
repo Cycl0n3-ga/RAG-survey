@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 32
-candidate_status: "partial; 31 of 44 full-text notes added; 1 abstract-only note; 12 pending"
+independent_literature_notes_added: 33
+candidate_status: "partial; 32 of 44 full-text notes added; 1 abstract-only note; 11 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 31/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 12 篇待補。最近一批新增 DyG-RAG、KAG、StructGPT 及 HybGRAG。四篇全文均已讀；DyG-RAG／StructGPT／HybGRAG 的書目與正式全文由 arXiv 及 ACL Anthology 核對，KAG 正式 DOI／WWW Companion metadata 已核但 ACM 出版 PDF 回 403，故本地全文及實驗只據 arXiv v3，正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的實驗細節待官方 PDF 取得後核驗。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 32/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 11 篇待補。最近一批新增 DyG-RAG、KAG、StructGPT、HybGRAG 及 GeAR。GeAR 本地 PDF 為 arXiv v2，並已與 ACL 2025 正式全文的書目、Table 2–4 及 Limitations 交叉核對；KAG 正式 DOI／WWW Companion metadata 已核但 ACM 出版 PDF 回 403，故本地全文及實驗只據 arXiv v3，正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -54,6 +54,7 @@ taxonomy_version: "v2"
 | 已讀 arXiv v3 全文與 PDF；WWW Companion metadata 已核，正式全文待比對 | KAG — WWW Companion 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation]] |
 | 已核 arXiv 與 EMNLP 正式全文及 PDF | StructGPT — EMNLP 2023 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data]] |
 | 已讀 arXiv v2 全文及 ACL 正式全文；本地 PDF 為 arXiv v2 | HybGRAG — ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases]] |
+| 已讀 arXiv v2 全文及 ACL 正式全文；本地 PDF 為 arXiv v2 | GeAR — Findings ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GeAR - Graph-enhanced Agent for Retrieval-augmented Generation]] |
 | 待完成 | 其他 12 篇 | 正式出版版或可核全文與筆記尚未補齊 |
 
 ## 目錄
@@ -752,13 +753,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [arXiv:2412.18431](https://arxiv.org/abs/2412.18431)；[DOI: 10.18653/v1/2025.findings-acl.624](https://doi.org/10.18653/v1/2025.findings-acl.624)。
 
-**內容與補缺分析：** 機制：以 graph expansion 增強 conventional base retriever（例如 BM25），再由 agent framework 將 graph-based retrieval 用於 multi-step retrieval。補缺判斷：可補保留既有 lexical/dense retriever 的 graph augmentation 路線，與完整替換 first-stage retriever 的 KG-only 方法分開比較。Domain mapping 為本次分析建議。 [原始來源：GeAR, Abstract／詳見閱讀範圍](https://aclanthology.org/2025.findings-acl.624/)。
+**內容與補缺分析：** 離線將 passage 對齊 extracted triples；SyncGE 由 LLM 尋找 proximal triples，再以 dense semantic scoring 做 diverse triple beam search，將圖擴展 passages 與初始結果以 RRF 融合；multi-step agent 以 gist memory 累積 proximal triples、改寫查詢並判斷是否停止。可補 graph augmentation 與 KG-only traversal 的方法差異，也能對照跨輪檢索狀態和長期持續記憶的界線。[ACL 正式全文 §§3–5、pp.12050–12053](https://aclanthology.org/2025.findings-acl.624.pdf)。
 
-**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D12。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
+**建議定位：** 方法論文；primary_domain = D05；secondary_domains = D12, D04。D12 對應 multi-step retrieval controller；D04 對應 passage–triple 對齊索引。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official_metadata_and_abstract_only；authors 欄採正式 Anthology 15 位作者，不混入 v1 的 11 位作者順序；v1/current/正式版的方法與實驗差異待全文比對。
+**閱讀範圍：** 已讀 arXiv v2 全文及 ACL 正式全文；本地 PDF 為 arXiv v2。已核查 ACL 正式版 Tables 2–4 與 Limitations，正式全文對照範圍不宣稱逐句版本一致。
 
-**核對位置：** [v1 metadata、Abstract、first submission (2024-12-24)](https://arxiv.org/abs/2412.18431v1)：預印年份；v1 列 11 位作者，與正式版不同；[current arXiv metadata](https://arxiv.org/abs/2412.18431)：目前 arXiv metadata 已列 15 位作者，與正式版本一致；名字大小寫呈現不同；[metadata、Abstract、DOI；pp.12049–12072](https://aclanthology.org/2025.findings-acl.624/)：正式 Findings ACL 2025、15 位作者、graph expansion / agent framework。
+**核對位置：** [arXiv v2](https://arxiv.org/abs/2412.18431)：本地全文版本；[正式版 metadata、DOI、pp.12049–12072](https://aclanthology.org/2025.findings-acl.624/)；正式版 Table 2, p.12054（Recall@5/10/15）、Table 3–4, p.12055（top-5 passage QA 與 diversity 消融）、Limitations, p.12056。v1 (2024-12-24) metadata 列 11 位作者，正式版列 15 位；本筆記 authors 依正式版，local preprint 版本資訊另行標明。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GeAR - Graph-enhanced Agent for Retrieval-augmented Generation]]。
 
 <a id="paper-tan2025-hydrarag"></a>
 ### HydraRAG
