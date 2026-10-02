@@ -28,10 +28,11 @@ verification_status: "verified"
 last_verified: 2026-10-02
 artifact_type: "method_paper"
 taxonomy_version: "v2"
-taxonomy_home: "D03"
-primary_domain: "D03"
+last_taxonomy_review: 2026-10-02
+taxonomy_home: "D04"
+primary_domain: "D04"
 secondary_domains:
-  - "D04"
+  - "D03"
   - "D05"
 paradigm_tags:
   - "graph_rag"
@@ -52,7 +53,15 @@ metrics:
 # LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora
 
 ## 一話摘要 (TL;DR)
-**LinearRAG 徹底顛覆了傳統 GraphRAG 依賴高昂且易錯之 LLM 關係抽取（Relation Extraction）的沉重範式，提出了一種無關係的階層式 Tri-Graph 索引（段落-句子-實體）與兩階段線性檢索演算法（局部語意橋接 + 全局 PPR 重要度聚合），在索引建構期達成 0 額外 LLM Token 消耗與 $O(N)$ 線性複雜度（索引速度提升 77% 以上），並在 HotpotQA、2Wiki、MuSiQue 與 Medical 評測中全面超越 LightRAG、HippoRAG2 等 SOTA 圖檢索方法。**
+LinearRAG 以實體、句子與段落形成不抽取語意關係標籤的 Tri-Graph，配合實體激活與段落重要度聚合進行檢索。[Zhuang et al. (2025/11), §§3.1–3.2](https://arxiv.org/html/2510.10114v4#S3)
+
+### 本 repo 分類決策 — 2026-10-02
+
+- **D04 primary**：主要 corpus-side 貢獻是 Tri-Graph 的表示與索引組織；§3.1 使用既有 spaCy NER，並非提出新的通用實體抽取模型。
+- **D03 secondary**：§2.2 的抽取失真分析與 entity-only 設計連到語意抽取邊界；保留段落不等於證明所有抽取、連結與檢索皆無錯誤。
+- **D05 secondary**：§3.2 的 semantic bridging 與重要度聚合屬 query-time retrieval。
+
+以上是本 repo 的操作性歸類，依據原文 [§§2.2、3.1–3.2](https://arxiv.org/html/2510.10114v4)。本次重核分類與方法定位；下方既有實驗表未在本次逐項重核。
 
 ---
 
@@ -172,7 +181,7 @@ flowchart TD
 | | HippoRAG2 | 62.90 / 64.30 | 62.70 / 55.00 | 31.00 / 35.00 | 60.77 |
 | **Ours** | **LinearRAG** | **64.30 / 66.50** | **70.20 / 63.70** | **33.90 / 37.00** | **63.72** |
 
-- **關鍵突破**：在所有 4 個資料集上，LinearRAG 全面斬獲第一名（SOTA）。特別在 2Wiki 上，GPT-Acc 達到 63.70%，比次優基準高出 **3.80%** 絕對值；Contain-Acc 更突破 **70.20%**。
+- **關鍵突破**：在 Table 1 的比較方法與評估設定下，LinearRAG 的列示分數最高。特別在 2Wiki 上，GPT-Acc 達到 63.70%，比該表次優基準高出 **3.80 個百分點**；Contain-Acc 更突破 **70.20%**。
 
 ### 2. 效率與 Token 消耗對比 (Table 2, Page 9)
 在 2WikiMultiHopQA 數據集上評估離線索引時間、在線檢索時間與 LLM Token 開銷：
@@ -215,13 +224,7 @@ flowchart TD
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
 
-1. **對 D03 (Knowledge Extraction) 的深刻啟示**：
-   - 強力支撐了專案的 **Idea 01 (Information-Preserving Knowledge Extraction)**：結構化圖譜抽取若丟失了 Negation / Modality / Condition，對檢索反而是負向損害。
-   - 證實了「抽取實體（Entity Extraction）比抽取關係（Relation Extraction）更穩健、更經濟」，為知識工程劃定了合理的抽取粒度邊界。
-2. **對 D04 (Representation & Indexing) 的範式突破**：
-   - 建立了經典的 **Relation-Free Tri-Graph 索引範式**，證明了稀疏二分關聯矩陣（$C$ 與 $M$）可以作為傳統三元組圖（Knowledge Graph）的高效替代方案。
-3. **對 D05 (Query Understanding & Retrieval) 的算法借鑑**：
-   - 示範了如何透過向量化 SpMM 矩陣運算，將多跳圖遍歷轉化為 GPU 高度並行化的張量乘法，大幅壓低了 PPR 圖檢索的線上延遲。
+本 repo 將其分成 **D04 索引組織、D03 抽取界面、D05 檢索算法**，詳見上方分類決策。[[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/Idea 01 - Information-Preserving Knowledge Extraction|Idea 01]] 可將「保留原文是否降低抽取失真對 RAG 的影響」作為待驗證問題；此專案假設不由單篇論文確立，也不推導 entity-only 在所有任務中優於 relation extraction。
 
 ---
 

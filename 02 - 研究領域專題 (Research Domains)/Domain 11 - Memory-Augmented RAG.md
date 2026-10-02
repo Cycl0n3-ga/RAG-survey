@@ -4,7 +4,7 @@ domain_id: "D11"
 canonical: true
 taxonomy_version: "v2"
 lifecycle_stage: "Cross-Lifecycle"
-last_updated: "2026-09-27"
+last_updated: "2026-10-02"
 ---
 
 # Domain 11 - Persistent Memory Management
@@ -59,19 +59,19 @@ Dynamic index = maintenance of the canonical external knowledge/index after sour
 
 ## Representative Notes
 
-**Current direct RAG primary-note coverage: 2**
+**Direct RAG-specific anchors：以下 2 篇；不是全部 D11-primary notes 的統計。** 全庫 primary-domain 數量見 [[02 - 研究領域專題 (Research Domains)/README#Literature Coverage Snapshot|Research Domains coverage snapshot]]。
 
 - [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2024-09) MemoRAG - Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery|MemoRAG]]
 - [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|From RAG to Memory / HippoRAG 2]]
 
-**Adjacent memory anchors (not D11-primary):**
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]] — general conversational LLM memory (A04).
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]] — general agent memory organization/evolution (A04).
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]] — general agent/virtual-context memory management (A04).
-- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory|LongMem]] — model-side long-context memory augmentation (A01).
+**General memory mechanisms and adjacent interfaces：依現有 metadata 分列**
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(AAAI 2024-03) MemoryBank - Enhancing Large Language Models with Long-Term Memory|MemoryBank]] — D11 primary / A04 adjacent；general conversational memory mechanism。
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2025-12) A-MEM - Agentic Memory for LLM Agents|A-MEM]] — D11 primary / A04 adjacent；general agent memory organization/evolution。
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(arXiv 2023-10) MemGPT - Towards LLMs as Operating Systems|MemGPT]] — D11 primary / D12 secondary / A04 adjacent；persistent memory management 與 action-control interface。
+- [[03 - 論文庫 (Literature Notes)/05 - Memory & Agents/(NeurIPS 2023-12) LongMem - Augmenting Language Models with Long-Term Memory|LongMem]] — A01 home / D11 secondary；model-side long-context memory augmentation。
 
 > [!NOTE]
-> D11 is justified by RAG-specific work such as MemoRAG and HippoRAG 2, while general LLM/agent-memory papers are retained only as adjacent mechanisms. They should not be counted as evidence that memory is a universally standardized top-level RAG domain. D10 vs D11 remains: D10 maintains the canonical external knowledge/index after source change; D11 forms or uses persistent memory state beyond one-shot context construction.
+> RAG-specific anchors 與 general memory mechanisms 分開呈現：本 repo 可以依 persistent-state 研究問題將後者歸 D11，並以 A04 記 general-agent interface；這個操作性歸類不能證明 memory 是所有 RAG survey 的標準 top-level Domain。D10 維護 canonical source/index 的同步；D11 建立或演化可重用的 derived persistent state。
 
 ## Memory Types and Governance Boundary
 Memory 不應只用「向量庫」一詞概括。可用下列維度理解：
@@ -122,7 +122,7 @@ Persistent memory 還需要回答：
 
 **Paper decisions**
 - HippoRAG 2: KEEP D11 / D10 secondary.
-- MemoRAG: MOVE to D05 primary / D11 secondary / A01 interface; update to formal WWW 2025 version.
+- MemoRAG: KEEP D11 primary / D05 secondary / A01 interface（2026-10-02 重核）：原文 Algorithm 1 先形成 global memory，再供多個 queries 共用，並允許 offload 到 disk 供未來重用。這是本 repo 的 derived persistent-state 歸類；clue-based retrieval 為 D05 界面，並不表示已有完整 memory governance／forgetting 方法。[Qian et al. (2025/04), §2.2、Algorithm 1](https://arxiv.org/html/2409.05591v3#S2.SS2)
 - A-MEM: MOVE A04 → D11 primary / A04 adjacent.
 - MemoryBank: MOVE A04 → D11 primary / A04 adjacent.
 - MemGPT: MOVE A04 → D11 primary / D12 secondary / A04 adjacent.

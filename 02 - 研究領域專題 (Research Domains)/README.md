@@ -52,21 +52,21 @@ Research Domains
 ## Literature Coverage Snapshot
 
 > [!NOTE]
-> 下表是 **2026-09-27 master 即時重算值**，只計 `primary_domain`；secondary domain、Adjacent Interface 與 CROSS 不計入。之後若新增／移動 paper，Phase 8 CI 仍應自動重算以避免 drift。
+> 下表是 **2026-10-02 的 metadata 重算快照**：177 份含 `paper_id` 的 literature notes 中，123 份有 D01–D14 `primary_domain`，54 份為 Adjacent/CROSS。只計 primary；secondary 關聯、摘要候選與 UIE 簡報工件不計入。這是筆記數量，並非已驗證方法數或領域重要性排序；新增／移動 paper 後需重新計算。
 
 | Domain | Primary notes |
 |---|---:|
 | D01 | 5 |
 | D02 | 5 |
-| D03 | 12 |
-| D04 | 6 |
-| D05 | 20 |
+| D03 | 18 |
+| D04 | 7 |
+| D05 | 19 |
 | D06 | 6 |
 | D07 | 5 |
 | D08 | 9 |
 | D09 | 8 |
 | D10 | 1 |
-| D11 | 6 |
+| D11 | 7 |
 | D12 | 6 |
 | D13 | 19 |
 | D14 | 8 |
@@ -74,6 +74,9 @@ Research Domains
 > Duplicate cleanup queue 詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27#12. Phase 3 Duplicate Cleanup Queue|Phase 1 Audit — Duplicate Cleanup Queue]]。
 
 目前的 coverage gap 應以 Level-2 research question 處理，而不是再增加 Domain：
+- **D01**：RAG-specific parsing／structure recovery 的專門 survey coverage 仍需補核；Huang 的 pre-retrieval 概述不代替專門 survey。
+- **D03**：entity linking／event argument extraction 的新候選尚待全文核實；information-preserving extraction 的整體壓力測試仍屬研究提案。
+- **D06**：retrieval control、evidence-set sufficiency 與 answer-risk calibration 分開管理；完整 gap controller 仍屬 Idea 02。
 - **D08**：provenance lineage / approval-state / applicability-scope governance 仍薄。
 - **D10**：production CRUD / deletion propagation / dependency-aware invalidation 仍薄。
 - **D11**：forgetting / invalidation / governance 比 write-retrieve-memory literature 薄。
@@ -89,6 +92,16 @@ Key cleanup outcomes:
 - D11 is defined by persistent derived-state lifecycle, not the word “memory”.
 - D12 is defined by state→action orchestration, not by whether a system uses agents.
 - D14 no longer uses generic robustness as a catch-all; adversarial integrity/security remains in D14 while ordinary distractor/context robustness is assigned to the relevant lifecycle domain.
+
+## D01–D06 Classification Refresh — 2026-10-02
+
+- D01：分開表格偵測／結構／功能角色與公式轉寫。
+- D02：分開 indexed／retrieved／reader-context units，明定 query-adaptive 粒度的 D02/D04/D05/D07 分工。
+- D03：分開 entity recognition／coreference／linking 與 event trigger／argument roles／inter-event relations。
+- D04：以 unit × encoding × index organization 整理；semantic graph 與 ANN neighbor graph 分開。
+- D05：以 query transformation 及 alignment signal／trained module 比較方法；reranking 依問題仍屬 D05。
+- D06：以 trigger timing × signal × decision 整理；停止取證、充分性與統計 coverage 分開。
+- Huang 2404.10981 收為 CROSS survey，已核 2024 v2 內容與 2026 正式書目；全文版本與 coverage 對照集中見 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]。
 
 ## Audit Trail
 - [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27|Phase 1 Taxonomy Closure Audit]]

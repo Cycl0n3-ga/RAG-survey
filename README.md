@@ -62,12 +62,14 @@ Domain != Paradigm Tag != Benchmark
 
 ## Current Corpus Snapshot
 
-As of the Phase 1 closure baseline on **2026-09-27**:
+As of the metadata recount on **2026-10-02**:
 
-- **169** literature notes scanned on master
-- **116** notes with D01–D14 primary domains
-- **53** Adjacent/CROSS notes
-- known duplicate-note pairs from Phase 1 have been removed
+- **177** literature notes with a `paper_id`
+- **123** notes with D01–D14 primary domains
+- **54** Adjacent/CROSS notes
+- supplemental slide artifacts and abstract-only candidate lists are excluded
+
+The D01–D06 topic maps now distinguish unit formation, semantic extraction, encoding/index organization, query-time retrieval, and evidence/control decisions. Huang and Huang's survey is included as a complementary process view, with its verified 2024 preprint content separated from 2026 publication metadata. The current domain counts and classification refresh are recorded in [Research Domains](./02%20-%20%E7%A0%94%E7%A9%B6%E9%A0%98%E5%9F%9F%E5%B0%88%E9%A1%8C%20%28Research%20Domains%29/README.md).
 
 ## Repository Layout
 

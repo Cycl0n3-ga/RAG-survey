@@ -1,6 +1,5 @@
 ---
 secondary_domains: []
-secondary_domains: []
 paper_id: "Jeong2024_AdaptiveRAG"
 title: "Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity"
 authors:
@@ -109,9 +108,9 @@ graph TD
     
     Classifier --> ClassifyResult{"判定問題複雜度等級"}
     
-    ClassifyResult -- "簡單 (內部知識充足)" --> BranchA["等級 A: 無檢索 (No-Retrieval)<br>直接調用 LLM 參數生成"]
-    ClassifyResult -- "中等 (單跳實體事實)" --> BranchB["等級 B: 單步檢索 (Single-step)<br>檢索 1 次 -> 拼接上下文 -> 生成"]
-    ClassifyResult -- "複雜 (多跳邏輯推理)" --> BranchC["等級 C: 多步檢索 (Multi-step)<br>IRCoT 多輪迭代檢索與推理鏈"]
+    ClassifyResult -- "簡單 (內部知識充足)" --> BranchA["等級 A: 無檢索 (No-Retrieval)<br/>直接調用 LLM 參數生成"]
+    ClassifyResult -- "中等 (單跳實體事實)" --> BranchB["等級 B: 單步檢索 (Single-step)<br/>檢索 1 次 -> 拼接上下文 -> 生成"]
+    ClassifyResult -- "複雜 (多跳邏輯推理)" --> BranchC["等級 C: 多步檢索 (Multi-step)<br/>IRCoT 多輪迭代檢索與推理鏈"]
     
     BranchA --> FinalAns["產出最終回答 Output Answer"]
     BranchB --> FinalAns

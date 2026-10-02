@@ -6,7 +6,7 @@ tags:
   - survey
   - rag
   - research-map
-last_updated: "2026-09-27"
+last_updated: "2026-10-02"
 ---
 
 # RAG Research Taxonomy & Domain Map
@@ -31,6 +31,8 @@ last_updated: "2026-09-27"
 | **Deployment & Trust** | D14 | serving efficiency / security / privacy / access control |
 
 這 6 組只是 navigation layer；正式 paper metadata 仍只使用 D01–D14。
+
+Huang et al. 的流程視角為 **Pre-Retrieval → Retrieval → Post-Retrieval → Generation**（2024 v2, §2.2、Figure 3）。本 repo 依研究問題再分領域，因此同一階段可以跨多個 Domain；例如 query manipulation 位於 pre-retrieval，歸 D05；post-retrieval 的 reranking 仍歸 D05。這是本 repo 的映射，完整章節對照與 coverage 限制集中在 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]。[Huang & Huang (2024/08), §2.2、Figure 3](https://arxiv.org/html/2404.10981v2)
 
 ## 1. Core Lifecycle
 
@@ -98,6 +100,27 @@ flowchart LR
 - **Paradigm Tags**：GraphRAG、Hierarchical RAG、Adaptive RAG、Agentic RAG、Multimodal RAG。
 - **Adjacent Interfaces**：Long Context、KV Cache、General Agents、Continual Learning 等與 RAG 高度相關但不屬於 core lifecycle 的研究線。
 
+### D01–D06 的操作性分類維度 — 2026-10-02
+
+下表是本 repo 的整理規則；各研究線的來源與待核候選見對應 Domain，不能將這組整理規則當成任何單篇 survey 的原始 taxonomy。
+
+| Domain | 內部分類維度 | 與相鄰 Domain 的分工 |
+|---|---|---|
+| D01 | layout／reading order／hierarchy；表格偵測、結構與功能角色；公式與視覺元素轉寫 | 恢復來源已有的結構；形成 retrieval units 是 D02，抽取語意關係／事件是 D03 |
+| D02 | 邊界策略與可選粒度；indexed unit／retrieved unit／reader-context unit 的關係 | 可選單位的形成是 D02；編碼 D04；query-time 選擇 D05；最終 reader context 的配置 D07 |
+| D03 | recognition／coreference／entity linking；event trigger／argument roles／inter-event relations；consolidation 與語意保真 | canonical identity／semantic records 屬 D03；將記錄組成 searchable index 是 D04，query-time 衝突仲裁是 D08 |
+| D04 | **unit × encoding × index organization**；單向量／learned sparse／multi-vector；semantic graph／ANN neighbor graph | unit 形成 D02，語意抽取 D03；候選搜尋與 scoring D05；runtime／storage／serving 工程 D14 |
+| D05 | query transformation；search／fusion／reranking；training signal × trained module 的 alignment | 搜尋代理文字不能自動當證據；必要性與再檢索控制 D06，有限 context 的建構 D07 |
+| D06 | **trigger timing × observed signal × decision**；retrieval control／evidence-set sufficiency／answer-risk calibration | relevance D05；utilization D07；compatibility D08；評測協議與 risk/coverage 計分 D13 |
+
+### Paper assignment rules
+
+1. 以主要研究問題、提出的方法與評估對象選 `primary_domain`；儲存資料夾、論文標題或使用了某模組不足以決定歸類。
+2. Method paper 的 `taxonomy_home` 與 `primary_domain` 一致；`secondary_domains` 只記實際重要的交叉貢獻，不能重複 primary。
+3. Survey、跨 lifecycle 架構或 adjacent-only paper 可以使用 `taxonomy_home: CROSS`／A01–A05 與 `primary_domain: null`，避免為了統計硬塞某一 Domain。
+4. Offline／online／pre-retrieval／post-retrieval 是流程位置，Domain 是研究問題；兩軸可並存，無須互相替代。
+5. 摘要已核、全文待查的候選來源應與既有 paper notes 分開呈現；候選不計入 primary-note coverage。
+
 ## 5. Hard Boundaries
 
 ```text
@@ -106,6 +129,8 @@ Relevance != Sufficiency != Utilization != Faithfulness
 Dynamic Index != Persistent Memory
 Domain != Paradigm Tag != Benchmark
 ```
+
+補充分工：**ANN neighbor graph != semantic knowledge graph**；**query relevance != evidence-set sufficiency != statistical answer-set coverage**；**停止取證 != 已可回答**。這些是本 repo 分類規則，研究方法與保證條件仍需按各 primary paper 核實。
 
 ## Navigation
 

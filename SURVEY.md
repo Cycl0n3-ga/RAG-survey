@@ -1,6 +1,6 @@
 # RAG Survey: From Knowledge Construction to Evidence-Grounded Generation
 
-> **Readable survey — 2026-09-27**  
+> **Readable survey — classification updated 2026-10-02**
 > This is the main human-readable synthesis of this repository.  
 > The detailed taxonomy, literature notes, benchmarks, and audit trail remain available as supporting material.
 
@@ -9,6 +9,8 @@
 Retrieval-Augmented Generation (RAG) has evolved from a simple retrieve-then-generate pattern into a broader evidence-processing system. A practical RAG pipeline must construct knowledge, retrieve evidence, decide whether the evidence is sufficient, resolve conflicts, control context, generate attributable outputs, maintain changing knowledge and persistent state, evaluate failures, and operate under real deployment constraints.
 
 Existing RAG surveys commonly use broad stages such as indexing, retrieval, post-retrieval processing, generation, and evaluation. Those views are useful for overview, but they can be too coarse for diagnosing where a system succeeds or fails. This survey therefore uses an **operational taxonomy of fourteen research domains (D01–D14)**. It is not presented as an existing community standard; it is a research map designed to separate problems that require different mechanisms and evaluation protocols.
+
+Huang and Huang organize their 2024 v2 survey into pre-retrieval, retrieval, post-retrieval, and generation (§2.2, Figure 3). We use that as a complementary process view: query manipulation maps to D05 even when it precedes retrieval, and reranking remains D05 even when it follows retrieval. The chapter mapping and limits of survey coverage are maintained in the [Survey Papers Index](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/Survey%20Papers%20Index.md). [Huang & Huang (2024/08), §2.2, Figure 3](https://arxiv.org/html/2404.10981v2).
 
 For readability, the fourteen domains are grouped into six macro areas:
 
@@ -33,9 +35,9 @@ Query → Retrieve → Context → Generate
 
 or mathematically,
 
-[
-q ightarrow mathrm{Retrieve}(q) ightarrow C ightarrow mathrm{Generate}(q,C),
-]
+$$
+q \rightarrow \mathrm{Retrieve}(q) \rightarrow C \rightarrow \mathrm{Generate}(q,C),
+$$
 
 where (q) is a query and (C) is retrieved context.
 
@@ -100,6 +102,8 @@ D01 occurs before chunking. Its job is to recover what the source **is** before 
 
 Typical problems include OCR, layout analysis, reading-order recovery, document hierarchy parsing, table/formula/figure parsing, and multimodal document structure recovery. Representative literature in the repository includes DocLayNet, OmniDocBench, PDF-to-Tree, Intelligent Document Parsing, and READoc.
 
+For classification, we separate table detection, table structure recovery, and functional roles such as headers. Formula transcription recovers the source notation; reasoning over the formula belongs to the downstream task. Parsing quality and downstream evidence recovery are separate evaluation targets; the detailed D01 page records the supporting sources and remaining coverage gaps.
+
 The most important boundary is that D01 should not become a generic data-ingestion bucket. File connectors, URI normalization, hashing, and upload plumbing matter in production systems, but they are implementation infrastructure rather than the research identity of document parsing.
 
 Why does this distinction matter? Because downstream retrieval cannot reliably reconstruct structure that was destroyed upstream. A table flattened into an arbitrary token sequence may lose row/column relations. A document with lost heading hierarchy gives later segmentation and retrieval fewer structural cues.
@@ -125,21 +129,19 @@ Common strategies include:
 
 The basic tension is:
 
-[
-	ext{smaller units}
-Rightarrow
-	ext{higher local precision but more context loss},
-]
+$$
+\text{smaller units}\Rightarrow\text{higher local precision but more context loss},
+$$
 
 whereas
 
-[
-	ext{larger units}
-Rightarrow
-	ext{more preserved context but lower specificity and higher context cost}.
-]
+$$
+\text{larger units}\Rightarrow\text{more preserved context but lower specificity and higher context cost}.
+$$
 
 Representative works include Dense X, LumberChunker, and LongRAG.
+
+Our operational map distinguishes three units: the **indexed unit**, the **retrieved unit**, and the **reader-context unit**. They may coincide or differ, as in parent-child expansion. D02 forms the available units; D04 encodes them; D05 selects units or granularity for a query; D07 constructs the context actually read by the generator. Query-adaptive selection therefore connects these domains without changing their boundaries.
 
 D02 is not simply “choose a chunk size.” It asks what information unit should be independently retrievable. Contextualized representation methods such as Late Chunking may interface with D02, but belong primarily to D04 when the main innovation is representation rather than boundary selection.
 
@@ -165,20 +167,21 @@ A central concern is **information preservation**. Correct extraction is not mer
 
 For example, the triple
 
-[
-(	ext{Company}, 	ext{supports}, 	ext{Feature})
-]
+$$
+(\text{Company},\text{supports},\text{Feature})
+$$
 
 is misleading if the source actually says that the company **may** support the feature **after approval** in **Q4**.
 
 Cross-document RAG also requires coreference resolution, entity alignment, event linking, deduplication, temporal normalization, and prevention of unsupported merges.
 
+The refined D03 topic map separates entity recognition, coreference, and canonical entity linking. It also separates event triggers, argument-role filling, and relations between events. Using retrieval inside an entity linker does not by itself make the work D05: its target is entity identity rather than evidence selection for a user question. Supporting sources and candidate papers are listed separately in the detailed D03 page.
+
 The key boundary is:
 
-[
-oxed{	ext{retrieval unit} 
-eq 	ext{semantic unit}}
-]
+$$
+\boxed{\text{retrieval unit}\neq\text{semantic unit}}
+$$
 
 A paragraph can contain many claims, while one claim may depend on several passages.
 
@@ -192,7 +195,17 @@ Detailed domain note: [D03 Knowledge Extraction & Consolidation](./02%20-%20%E7%
 
 **Core question:** How should knowledge be represented, encoded, and organized so that retrieval can efficiently recover useful evidence?
 
-Representation choices include dense vectors, sparse lexical indexes, late-interaction representations, proposition indexes, graphs, hierarchical summaries, and hybrids. Representative works include RAPTOR, Microsoft GraphRAG, LightRAG, and Late Chunking.
+Our representation map uses three independent facets:
+
+| Facet | Classification examples |
+|---|---|
+| Unit supplied by D02/D03 | passage, proposition, entity, event, table, visual region |
+| Encoding | lexical weighting, learned sparse, single-vector dense, multi-vector / late interaction, multimodal |
+| Index organization | inverted index, vector-neighbor index, semantic graph, hierarchy, hybrid |
+
+These facets describe different choices and can be combined. Representative notes include RAPTOR, Microsoft GraphRAG, LightRAG, Late Chunking, and LinearRAG; the detailed D04 page provides their primary/secondary assignments.
+
+An ANN neighbor graph and a semantic knowledge graph must be recorded separately. Index organization interfaces with D04; generic vector-database serving, storage, concurrency, and deployment engineering interface with D14. Query-time search and scoring remain D05.
 
 A crucial distinction is the difference between **corpus-side representation** and **query-time retrieval**:
 
@@ -224,11 +237,13 @@ D05 includes:
 - retrieval fusion,
 - reranking.
 
+For comparison, we distinguish rewriting, term expansion, pseudo-document expansion, dependent subquestion decomposition, and generation-feedback retrieval. A generated query or pseudo-document is a search aid and requires source verification before being used as evidence. Retriever–generator alignment is recorded by both the supervision signal and the trained module; a method that trains one component is not automatically joint training. The detailed D05 page links the corresponding primary notes and clearly marks additional abstract-verified candidates.
+
 The core objective is relevance:
 
-[
-mathrm{Retrieve}(q) ightarrow {e_1,ldots,e_k}
-]
+$$
+\mathrm{Retrieve}(q)\rightarrow\{e_1,\ldots,e_k\}
+$$
 
 such that useful evidence ranks highly.
 
@@ -246,31 +261,33 @@ Representative work includes FLARE, Self-RAG, Adaptive-RAG, and CRAG, with more 
 
 The key conceptual split is:
 
-[
-oxed{	ext{D05: What is relevant?}}
-]
+$$
+\boxed{\text{D05: What is relevant?}}
+$$
 
 versus
 
-[
-oxed{	ext{D06: Is what we have enough?}}
-]
+$$
+\boxed{\text{D06: Is what we have enough?}}
+$$
 
 Suppose a query requires evidence components (E_1,E_2,E_3). Retrieving five passages about (E_1) does not compensate for missing (E_3).
 
-A useful abstraction is:
+A project design sketch is:
 
-[
-S(E,q) in {	ext{sufficient},	ext{insufficient},	ext{unresolvable}},
-]
+$$
+S(E,q)\in\{\text{sufficient},\text{insufficient},\text{unresolvable}\},
+$$
 
 followed by a control policy:
 
-[
-pi(S,	ext{budget},	ext{state})
-ightarrow
-{	ext{retrieve},	ext{rewrite},	ext{switch source},	ext{answer},	ext{abstain}}.
-]
+$$
+\pi(S,\text{budget},\text{state})\rightarrow\{\text{retrieve},\text{rewrite},\text{switch source},\text{answer},\text{abstain}\}.
+$$
+
+This combined evidence-gap controller is a repository hypothesis, recorded in [Idea 02 — Evidence Gap-Aware Adaptive Retrieval](./04%20-%20%E7%A0%94%E7%A9%B6%E6%83%B3%E6%B3%95%E8%88%87%E5%BE%85%E9%A9%97%E8%AD%89%E6%8F%90%E6%A1%88%20%28Ideas%20%26%20Hypotheses%29/Idea%2002%20-%20Evidence%20Gap-Aware%20Adaptive%20Retrieval.md). Existing adaptive-retrieval work does not establish the entire combination as a standard method.
+
+The D06 comparison axes are **trigger timing × observed signal × decision**. Query complexity, model uncertainty, retrieval quality, and evidence-set sufficiency describe different signals. Stopping retrieval can reflect a budget limit rather than answerability. Statistical coverage of an answer set is another distinct object, with method-specific calibration assumptions. D13 evaluates these decisions; D07 context construction can require a new sufficiency check if it removes necessary evidence.
 
 Important failure modes include false-sufficient decisions, infinite retrieval loops, overly conservative abstention, and adaptation whose extra cost exceeds its quality gain.
 
@@ -286,10 +303,9 @@ Representative work includes RECOMP and Chain-of-Note. Long-context studies such
 
 D07 exists because:
 
-[
-oxed{	ext{evidence retrieved} 
-otRightarrow 	ext{evidence effectively used}}
-]
+$$
+\boxed{\text{evidence retrieved}\not\Rightarrow\text{evidence effectively used}}
+$$
 
 A retriever may succeed while the generator fails because the crucial passage is truncated, buried at an unfavorable position, diluted by distractors, or damaged by compression.
 
@@ -343,9 +359,9 @@ No one pattern is universally best. Their value depends on evidence coverage, au
 
 An idealized evidence relationship is:
 
-[
-c_i longleftrightarrow {e_{i1},e_{i2},ldots},
-]
+$$
+c_i\longleftrightarrow\{e_{i1},e_{i2},\ldots\},
+$$
 
 meaning that important generated claims should be traceable to supporting evidence. Citation presence alone does not guarantee that the cited evidence actually supports the claim; citation correctness remains an evaluation problem in D13.
 
@@ -391,15 +407,15 @@ Representative RAG-oriented anchors include MemoRAG and From RAG to Memory / Hip
 
 The key distinction is:
 
-[
-	ext{D10} = 	ext{keep source-derived artifacts synchronized}
-]
+$$
+\text{D10}=\text{keep source-derived artifacts synchronized}
+$$
 
 while
 
-[
-	ext{D11} = 	ext{maintain persistent derived state across interactions/tasks}.
-]
+$$
+\text{D11}=\text{maintain persistent derived state across interactions/tasks}.
+$$
 
 Memory operations include write, retrieve, link, consolidate, evolve, invalidate, and forget.
 
@@ -419,9 +435,9 @@ Representative work includes GraphReader, RAG-Critic, DecEx-RAG, Reflective RAG,
 
 The scientific core is not the word *agent*. It is a state-dependent policy:
 
-[
-a_t = pi(s_t),
-]
+$$
+a_t=\pi(s_t),
+$$
 
 where (s_t) can contain the query, evidence, evidence gaps, verification results, memory, cost, and previous actions.
 
@@ -465,9 +481,9 @@ A single end-to-end answer score is not enough for diagnosis. Evaluation should 
 
 One useful diagnostic test is:
 
-[
-mathrm{Generator}(mathrm{Gold Evidence}).
-]
+$$
+\mathrm{Generator}(\mathrm{Gold\ Evidence}).
+$$
 
 If the generator still fails when gold evidence is directly provided, the problem should not be attributed to the retriever. The next suspects are context utilization, reasoning, generation, or attribution.
 
@@ -495,19 +511,9 @@ Representative systems work includes METIS, PipeRAG, CacheBlend, RAGCache, and T
 
 A simplified latency model is:
 
-[
-T_{	ext{total}}
-=
-T_{	ext{parse/embed}}
-+
-T_{	ext{search}}
-+
-T_{	ext{rerank}}
-+
-T_{	ext{prefill}}
-+
-T_{	ext{decode}}.
-]
+$$
+T_{\text{total}}=T_{\text{parse/embed}}+T_{\text{search}}+T_{\text{rerank}}+T_{\text{prefill}}+T_{\text{decode}}.
+$$
 
 A deployment study should therefore report more than final accuracy: latency/TTFT, throughput, token and model-call budget, peak memory, indexing cost, and serving cost also matter.
 
@@ -534,15 +540,9 @@ Many popular labels describe method families crossing several lifecycle problems
 
 For example, GraphRAG may involve:
 
-[
-	ext{D03 extraction}
-ightarrow
-	ext{D04 graph representation}
-ightarrow
-	ext{D05 graph retrieval}
-ightarrow
-	ext{D09 synthesis}.
-]
+$$
+\text{D03 extraction}\rightarrow\text{D04 graph representation}\rightarrow\text{D05 graph retrieval}\rightarrow\text{D09 synthesis}.
+$$
 
 Adaptive RAG commonly spans D05, D06, and sometimes D12. Agentic RAG is primarily a control paradigm centered on D12 but can invoke any earlier domain. Multimodal RAG may affect parsing, representation, retrieval, context construction, and generation.
 
@@ -556,24 +556,24 @@ See [RAG Paradigm Tags](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA
 
 ## 17. Coverage Snapshot
 
-The current Phase 1 master baseline contains **169 literature notes**.
+The metadata recount on **2026-10-02** contains **177 literature notes with a `paper_id`**, excluding supplemental slide artifacts.
 
-- **116** have a D01–D14 `primary_domain`.
-- **53** are Adjacent/CROSS and are deliberately not forced into a core RAG domain.
+- **123** have a D01–D14 `primary_domain`.
+- **54** are Adjacent/CROSS and are deliberately not forced into a core RAG domain.
 
 | Domain | Primary notes |
 |---|---:|
 | D01 | 5 |
 | D02 | 5 |
-| D03 | 12 |
-| D04 | 6 |
-| D05 | 20 |
+| D03 | 18 |
+| D04 | 7 |
+| D05 | 19 |
 | D06 | 6 |
 | D07 | 5 |
 | D08 | 9 |
 | D09 | 8 |
 | D10 | 1 |
-| D11 | 6 |
+| D11 | 7 |
 | D12 | 6 |
 | D13 | 19 |
 | D14 | 8 |
@@ -587,7 +587,7 @@ The clearest thin areas are:
 - **D11:** memory forgetting, invalidation, ownership, governance;
 - **D14:** observability/tracing, tenant isolation, access control, derived-data deletion.
 
-For the full coverage and audit trail, see [Phase 1 Taxonomy Closure Audit](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/Phase%201%20Taxonomy%20Closure%20Audit%20-%202026-09-27.md).
+For current count definitions and classification updates, see [Research Domains](./02%20-%20%E7%A0%94%E7%A9%B6%E9%A0%98%E5%9F%9F%E5%B0%88%E9%A1%8C%20%28Research%20Domains%29/README.md). The earlier baseline is preserved in [Phase 1 Taxonomy Closure Audit](./00%20-%20%E5%B0%8E%E8%A6%BD%E8%88%87%E5%BF%83%E6%99%BA%E5%9C%96%20%28Navigation%20%26%20MOC%29/Phase%201%20Taxonomy%20Closure%20Audit%20-%202026-09-27.md).
 
 ---
 
@@ -599,15 +599,15 @@ Early RAG research focused heavily on retrieving relevant passages. More recent 
 
 The trajectory can be summarized as:
 
-[
-	ext{retrieve relevant passages}
-]
+$$
+\text{retrieve relevant passages}
+$$
 
 evolving toward:
 
-[
-oxed{	ext{construct, validate, reconcile, and govern an evidence state}}.
-]
+$$
+\boxed{\text{construct, validate, reconcile, and govern an evidence state}}.
+$$
 
 This shift connects D05–D09 and is one of the clearest themes across the current literature map.
 
