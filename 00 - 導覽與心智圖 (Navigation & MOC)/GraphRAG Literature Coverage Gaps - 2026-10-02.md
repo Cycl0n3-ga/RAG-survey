@@ -8,7 +8,7 @@ last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
 independent_literature_notes_added: 44
-candidate_status: "partial; 43 of 44 full-text notes added; 1 abstract-only note; 0 pending"
+candidate_status: "partial; 43 of 44 full-text notes verified; 1 partial official-PDF-index note pending full-text verification; 0 unnoted"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 43/44 篇已有全文閱讀筆記與本地 PDF；ReGraphRAG 仍只有摘要層級筆記，正式 PDF 與全文核對尚待完成。HydraRAG 已完成 arXiv v4 全文與 PDF 筆記，並核對 EMNLP 2025 正式書目；publisher PDF 與預印本尚未逐段比對。最近新增 GeAR、GRADA、Han et al. GraphRAG survey 及 QO-Bench；本輪又完成 Graph-CoT／GRBench、Re-DocRED、FiD、GLiNER、M3-Embedding、UPR、Nougat 與 HydraRAG。GeAR、GRADA 已讀 arXiv 全文並核正式 ACL 書目；Han survey 與 QO-Bench 已讀 arXiv 全文，後者 arXiv v2 註明 accepted to Findings EMNLP 2026，正式 proceedings metadata 尚待發布核對。KAG 的 ACM 正式 PDF 仍回 403，故只以 arXiv v3 作全文來源、正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的全文閱讀與正式 PDF 待完成。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；43/44 篇已有全文閱讀筆記與本地 PDF。ReGraphRAG 的筆記已由 ACL 官方 PDF 搜尋索引補入可查到的方法、實驗設定、Table 1 摘錄及限制段，但官方 PDF 本體下載逾時，尚未完成逐頁核驗或保存本地 PDF，因此仍標為待全文驗證。HydraRAG 已完成 arXiv v4 全文與 PDF 筆記，並核對 EMNLP 2025 正式書目；publisher PDF 與預印本尚未逐段比對。最近新增 GeAR、GRADA、Han et al. GraphRAG survey 及 QO-Bench；本輪又完成 Graph-CoT／GRBench、Re-DocRED、FiD、GLiNER、M3-Embedding、UPR、Nougat 與 HydraRAG。GeAR、GRADA 已讀 arXiv 全文並核正式 ACL 書目；Han survey 與 QO-Bench 已讀 arXiv 全文，後者 arXiv v2 註明 accepted to Findings EMNLP 2026，正式 proceedings metadata 尚待發布核對。KAG 的 ACM 正式 PDF 仍回 403，故只以 arXiv v3 作全文來源、正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -49,7 +49,7 @@ taxonomy_version: "v2"
 | 已讀 arXiv v1 全文與 PDF；正式 WWW 版 metadata 已核 | HyperRAG（n-ary）— WWW 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW 2026-04) HyperRAG - Reasoning N-ary Facts over Hypergraphs for Retrieval Augmented Generation]] |
 | 已讀 ACL 正式全文與 PDF | HyperRAG（hyperbolic）— ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) Query-Aware Knowledge Retrieval via Hyperbolic Structuring]] |
 | 已讀 ACL 正式全文與 PDF | MeshRAG — ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) Collision to Cognition - Hash-Driven Graph Construction for Efficient RAG]] |
-| 僅官方摘要；ACL PDF 下載待處理 | ReGraphRAG — Findings EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings EMNLP 2025-11) ReGraphRAG - Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation]] |
+| 官方 PDF 索引可核部分正文／Table 1；全文及本地 PDF 待驗 | ReGraphRAG — Findings EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings EMNLP 2025-11) ReGraphRAG - Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation]] |
 | 已讀 arXiv v1 全文與 PDF | DyG-RAG — arXiv 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-07) DyG-RAG - Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning]] |
 | 已讀 arXiv v3 全文與 PDF；WWW Companion metadata 已核，正式全文待比對 | KAG — WWW Companion 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation]] |
 | 已核 arXiv 與 EMNLP 正式全文及 PDF | StructGPT — EMNLP 2023 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data]] |
@@ -544,13 +544,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **識別碼：** [DOI: 10.18653/v1/2025.findings-emnlp.290](https://doi.org/10.18653/v1/2025.findings-emnlp.290)。
 
-**內容與補缺分析：** 原文機制：針對從文件抽取後碎裂的 knowledge graphs，組合 Graph Reorganization、Perspective Expansion 與 Query-aware Reranking。補缺口判斷（本 repo 建議）：補 D04 圖連通性與組織、D03→D04 consolidation 接口和 D05 query-aware re-ranking；新增連接與 perspective expansion 的來源忠實度須在全文核對，不能由摘要推定它們皆由原文直接支持。 [原始來源：ReGraphRAG, Abstract／詳見閱讀範圍](https://aclanthology.org/2025.findings-emnlp.290/)。
+**內容與補缺分析：** 官方 PDF 索引可核：ReGraphRAG 在 query time 以有意義的最短路徑連結檢索到的斷裂子圖，產生多視角子查詢擴展互補證據，再以原查詢相似度重排三元組。實驗沿用 LightRAG 的 LLM pairwise-judging 協議及 Ultradomain 資料，包含 Agriculture、Legal、CS、Mix，基線 NaïveRAG、HyDE、GraphRAG、LightRAG；Table 1 索引摘錄中 LightRAG 對照區塊的平均 Diversity win rate 為 ReGraphRAG 92.4%，並非 accuracy。補缺口判斷（本 repo 建議）：涵蓋 D04 圖重組、D05 查詢時檢索及重排、D07 輸入上下文組裝；D03 是否為主要 lifecycle 問題須待全文核定。 [原始來源：ReGraphRAG, §§3–5、Table 1 索引摘錄及 Limitations](https://aclanthology.org/2025.findings-emnlp.290.pdf)。
 
 **建議定位：** 方法論文；primary_domain = D04；secondary_domains = D03, D05。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 目前僅讀官方摘要及正式書目頁；未找到可核 preprint identifier，因此 preprint year/arXiv 留 null。ACL PDF endpoint 多次逾時，尚無本地副本；benchmark 名稱、方法流程與實驗數字全部待查全文。
+**閱讀範圍：** 已核 ACL 官方書目頁、Hanyang ScholarWorks metadata，以及 ACL 官方 PDF 搜尋索引提供的 Introduction、§3 方法摘錄、§5.1 實驗設定、Table 1 摘錄與 Limitations。索引摘要顯示 Ultradomain 18 個教科書領域中取 Agriculture、Computer Science、Legal 及 Mix；Table 1 LightRAG 對照區塊中 ReGraphRAG 的平均 Diversity pairwise win rate 摘錄為 92.4%。尚未逐頁核對 18 頁正式 PDF、Table 1 其餘基線區塊／樣本數／LLM 評審細節與附錄，也未取得本地 PDF，因此 verification status = pending_verification，不算全文已完成。未核得 arXiv/preprint ID，`year` 留 null。
 
-**核對位置：** ACL Anthology 2025.findings-emnlp.290 官方摘要、完整 5 位作者、Findings EMNLP 2025 書目 metadata、DOI 10.18653/v1/2025.findings-emnlp.290。
+**核對位置：** ACL Anthology official entry 核書目與摘要；ACL 官方 PDF 索引核 Figure 1（pp. 5426–5427）、§3／§4.4（pp. 5428–5431 索引摘錄）、§5.1／Table 1（約 pp. 5431–5433，頁碼待 PDF 本體確認）及 Limitations（末頁）；Hanyang ScholarWorks 核發表月與頁碼。完整全文與頁碼仍待本地 PDF 驗證。
 
 <a id="paper-mo2025-kggen"></a>
 ### KGGen
