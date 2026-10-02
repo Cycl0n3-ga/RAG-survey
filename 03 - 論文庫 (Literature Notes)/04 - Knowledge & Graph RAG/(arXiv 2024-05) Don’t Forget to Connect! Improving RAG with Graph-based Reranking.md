@@ -45,6 +45,10 @@ metrics:
   - "MHits@10"
   - "MTRR"
   - "TMHits@10"
+source_version: arXiv:2405.18414v1
+verified_version: arXiv:2405.18414v1
+pdf_pages: 19
+pdf_sha256: 803d7e5295b4a7f2256a35179a9142d1b1c52b59939b10c46eadec97ac0443da
 ---
 
 # Don't Forget to Connect! Improving RAG with Graph-based Reranking

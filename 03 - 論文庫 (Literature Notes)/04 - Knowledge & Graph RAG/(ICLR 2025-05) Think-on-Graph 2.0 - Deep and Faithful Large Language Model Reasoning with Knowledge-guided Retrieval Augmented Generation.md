@@ -58,6 +58,10 @@ dataset_ids:
 metrics:
   - "Exact Match"
   - "Accuracy"
+source_version: ICLR 2025 proceedings
+verified_version: ICLR 2025 proceedings
+pdf_pages: 25
+pdf_sha256: 154e127fd76f802e500e080f4ad8f1f8ca6a7c69c004156ced985fd898ac69fc
 ---
 
 # Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation

@@ -23,6 +23,10 @@ research_questions: ["graph_topology_attack", "knowledge_base_poisoning", "multi
 benchmark_ids: ["HotpotQA", "2WikiMultiHopQA", "MuSiQue"]
 dataset_ids: ["HotpotQA", "2WikiMultiHopQA", "MuSiQue"]
 metrics: ["Attack Success Rate", "ASR-GPT", "Attack Time", "Token Cost"]
+source_version: arXiv:2604.02954v1
+verified_version: arXiv:2604.02954v1
+pdf_pages: 16
+pdf_sha256: 098da3f8f3fa6ccd107e580b88a36c9ca6a6a1ef4edb408177e7993e50424448
 ---
 
 # LogicPoison: Logical Attacks on Graph Retrieval-Augmented Generation

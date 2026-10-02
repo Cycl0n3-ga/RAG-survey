@@ -49,6 +49,10 @@ dataset_ids:
 metrics:
   - "Accuracy"
   - "LLM call count"
+source_version: arXiv:2501.14300v1
+verified_version: arXiv:2501.14300v1
+pdf_pages: 11
+pdf_sha256: 8adf459c81d1d7dfcc1cc10940d04ee1afd3b512b2d11e7dcc2974700ba37967
 ---
 
 # Fast Think-on-Graph: Wider, Deeper and Faster Reasoning of Large Language Model on Knowledge Graph

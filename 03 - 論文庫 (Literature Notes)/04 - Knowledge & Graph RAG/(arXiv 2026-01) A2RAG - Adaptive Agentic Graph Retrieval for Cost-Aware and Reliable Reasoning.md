@@ -23,6 +23,10 @@ research_questions: ["evidence_sufficiency", "progressive_retrieval", "provenanc
 benchmark_ids: ["HotpotQA", "2WikiMultiHopQA"]
 dataset_ids: ["HotpotQA", "2WikiMultiHopQA", "FX operations manual QA"]
 metrics: ["Recall@2", "Recall@5", "Exact Match", "F1", "LLM calls", "latency"]
+source_version: arXiv:2601.21162v2
+verified_version: arXiv:2601.21162v2
+pdf_pages: 10
+pdf_sha256: 05c804d07c5979b146c522791c29714b1eff41d164d726cbb224ca26dfc4f233
 ---
 
 # A2RAG: Adaptive Agentic Graph Retrieval for Cost-Aware and Reliable Reasoning

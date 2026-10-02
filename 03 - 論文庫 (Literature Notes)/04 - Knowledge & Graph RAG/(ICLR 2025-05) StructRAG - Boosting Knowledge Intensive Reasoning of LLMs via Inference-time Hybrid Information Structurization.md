@@ -23,6 +23,10 @@ research_questions: ["context_construction", "task_conditioned_structure_selecti
 benchmark_ids: ["Loong", "Podcast Transcripts evaluation"]
 dataset_ids: ["Loong", "Podcast Transcripts"]
 metrics: ["LLM-judged score", "Exact Match", "LLM-judge win rate"]
+source_version: ICLR 2025 proceedings
+verified_version: ICLR 2025 proceedings
+pdf_pages: 18
+pdf_sha256: 99471b7e33b4aecb028b77405d38c902e55599082eff7c28bb2cc8cbb550b2a2
 ---
 
 # StructRAG: Boosting Knowledge Intensive Reasoning of LLMs via Inference-time Hybrid Information Structurization

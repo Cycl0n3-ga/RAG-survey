@@ -11,7 +11,8 @@ authors:
   - "Xing Sun"
   - "Zhaozhuo Xu"
   - "Xiao Huang"
-year: null
+year: 2026
+year_basis: "earliest_verified_publication"
 publication_year: 2026
 venue: "ACL 2026 (Long Papers)"
 doi: "10.18653/v1/2026.acl-long.986"
@@ -46,11 +47,15 @@ dataset_ids:
 metrics:
   - "String-Match Accuracy"
   - "GPT-evaluation Accuracy"
+source_version: ACL 2026 proceedings-format PDF
+verified_version: ACL 2026 proceedings-format PDF
+pdf_pages: 14
+pdf_sha256: 6e4860ee860fc8157fb74a7b69841c8e9611c9d0ad5c155ea1635abe16a6da67
 ---
 
 # Query-Aware Knowledge Retrieval via Hyperbolic Structuring
 
-> **版本與來源：** ACL Anthology 正式全文，ACL 2026 long paper, pp. 21601–21614；DOI 10.18653/v1/2026.acl-long.986。未找到對應 arXiv ID，因此 preprint year 與 arXiv 均留空。ACL PDF 為本地核對全文版本。
+> **版本與來源：** ACL Anthology 正式全文，ACL 2026 long paper, pp. 21601–21614；DOI 10.18653/v1/2026.acl-long.986。未核得對應 arXiv ID 或更早預印版本；`year` 採目前最早可核的正式發表年 2026，`arxiv` 留 null。ACL PDF 為本地核對全文版本。
 
 ## 一話摘要 (TL;DR)
 HyperRAG 將靜態共現邊與逐查詢推導的隱式關係合併成 passage graph，再以雙曲嵌入檢索 query-relevant passages。

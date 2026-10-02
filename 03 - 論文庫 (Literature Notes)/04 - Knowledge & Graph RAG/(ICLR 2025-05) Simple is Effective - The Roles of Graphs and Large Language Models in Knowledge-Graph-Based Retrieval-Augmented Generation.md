@@ -43,6 +43,10 @@ metrics:
   - "Macro-F1"
   - "Hit"
   - "Recall"
+source_version: ICLR 2025 proceedings
+verified_version: ICLR 2025 proceedings
+pdf_pages: 29
+pdf_sha256: 18b79be6ddcc0e650532762fddf292d9f6f91f70fb1f85770d1bb3d17b2c3d86
 ---
 
 # Simple is Effective: The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation

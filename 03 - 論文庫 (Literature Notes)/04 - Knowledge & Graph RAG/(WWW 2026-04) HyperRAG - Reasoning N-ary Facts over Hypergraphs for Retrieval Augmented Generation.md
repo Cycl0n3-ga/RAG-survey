@@ -48,6 +48,10 @@ metrics:
   - "F1"
   - "MRR"
   - "Hits@10"
+source_version: arXiv:2602.14470v1
+verified_version: arXiv:2602.14470v1
+pdf_pages: 12
+pdf_sha256: 9ded31b003c740817cd72a14cff04c271c73007a77ec529feba72c777c8f5cc4
 ---
 
 # HyperRAG: Reasoning N-ary Facts over Hypergraphs for Retrieval Augmented Generation

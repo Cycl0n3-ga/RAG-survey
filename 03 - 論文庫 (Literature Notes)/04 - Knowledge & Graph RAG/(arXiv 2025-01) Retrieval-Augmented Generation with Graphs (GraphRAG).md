@@ -51,6 +51,10 @@ research_questions:
 benchmark_ids: []
 dataset_ids: []
 metrics: []
+source_version: arXiv:2501.00309v2
+verified_version: arXiv:2501.00309v2
+pdf_pages: 88
+pdf_sha256: 737b0b8fe0aa8459429b5906d66d0bfcb5246c488add534d3ce23f58a0f7b7fc
 ---
 
 # Retrieval-Augmented Generation with Graphs (GraphRAG)

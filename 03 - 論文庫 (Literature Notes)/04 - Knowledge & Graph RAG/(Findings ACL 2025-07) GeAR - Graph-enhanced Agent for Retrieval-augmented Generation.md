@@ -59,6 +59,12 @@ metrics:
   - "Recall@k"
   - "Exact Match"
   - "F1"
+source_version: arXiv:2412.18431v2
+verified_version: arXiv:2412.18431v2
+pdf_pages: 24
+pdf_sha256: ed381fac088ebb547003e88120b23968b485f4162f533d92f862cf8aef224d73
+additional_verified_versions:
+  - "Findings ACL 2025 (Tables 2–4, Limitations)"
 ---
 
 # GeAR: Graph-enhanced Agent for Retrieval-augmented Generation
@@ -93,4 +99,4 @@ GeAR 將 passage–triple 對齊索引、SyncGE 多樣化圖擴展與跨步 gist
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - 正式來源：[ACL Anthology 正式版與 DOI](https://aclanthology.org/2025.findings-acl.624/)；[arXiv:2412.18431](https://arxiv.org/abs/2412.18431)。
 - 本地 PDF：[[Papers/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GeAR - Graph-enhanced Agent for Retrieval-augmented Generation.pdf|開啟本地 PDF 檔案]]（arXiv v2）。
-- 相關筆記：[[03 - 論文庫 (Literature Notes)/(Findings ACL 2025-07) GNN-RAG - Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs|GNN-RAG]]、[[03 - 論文庫 (Literature Notes)/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]、[[03 - 論文庫 (Literature Notes)/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|GraphReader]]。
+- 相關筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GNN-RAG - Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs|GNN-RAG]]、[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NeurIPS 2024-12) HippoRAG - Neurobiologically Inspired Long-Term Memory for Large Language Models|HippoRAG]]、[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2024-11) GraphReader - Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models|GraphReader]]。

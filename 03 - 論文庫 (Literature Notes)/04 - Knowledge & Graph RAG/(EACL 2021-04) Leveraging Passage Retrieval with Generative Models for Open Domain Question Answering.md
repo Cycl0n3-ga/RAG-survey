@@ -40,11 +40,15 @@ dataset_ids:
 metrics:
   - "Exact Match"
   - "F1"
+source_version: arXiv:2007.01282v2
+verified_version: arXiv:2007.01282v2
+pdf_pages: 6
+pdf_sha256: f1ee7e927c3fb31beb2146f8c205692a91b40dadd65d80e025c6686e4d430953
 ---
 
 # Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering
 
-> **版本與閱讀範圍：** arXiv:2007.01282 首次提交 2020-07-02；本地保存 arXiv 版本全文（6 頁）。正式論文刊於 EACL 2021 Main Volume，DOI `10.18653/v1/2021.eacl-main.74`。已讀本地全文並核對 ACL Anthology 正式書目；未逐段比對 proceedings PDF 與 arXiv 版本差異。以下表格位置採本地 PDF 頁碼。
+> **版本與閱讀範圍：** arXiv:2007.01282 首次提交 2020-07-02；本地保存 arXiv v2 全文（6 頁）。正式論文刊於 EACL 2021 Main Volume，DOI `10.18653/v1/2021.eacl-main.74`。已讀本地全文並核對 ACL Anthology 正式書目；未逐段比對 proceedings PDF 與 arXiv 版本差異。以下表格位置採本地 PDF 頁碼。
 
 ## 一話摘要 (TL;DR)
 Fusion-in-Decoder（FiD）分別編碼每篇檢索段落，再讓 decoder 跨段落注意力融合證據，使生成式 QA reader 能處理較多候選 passages。

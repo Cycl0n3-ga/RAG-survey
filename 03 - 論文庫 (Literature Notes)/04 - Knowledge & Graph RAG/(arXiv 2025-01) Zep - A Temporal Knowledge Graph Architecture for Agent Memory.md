@@ -23,6 +23,10 @@ research_questions: ["persistent_memory", "temporal_fact_validity", "memory_retr
 benchmark_ids: ["Deep Memory Retrieval", "LongMemEval"]
 dataset_ids: ["Multi-Session Chat subset", "LongMemEval-s"]
 metrics: ["accuracy", "latency", "context tokens"]
+source_version: arXiv:2501.13956v1
+verified_version: arXiv:2501.13956v1
+pdf_pages: 12
+pdf_sha256: d26f7eb599540e8b14d75e7efda58a07661abbb1b864e58323b5768475a15d42
 ---
 
 # Zep: A Temporal Knowledge Graph Architecture for Agent Memory

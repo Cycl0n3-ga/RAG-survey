@@ -42,6 +42,10 @@ metrics:
   - "Ign_F1"
   - "Precision"
   - "Recall"
+source_version: arXiv:2205.12696v3
+verified_version: arXiv:2205.12696v3
+pdf_pages: 16
+pdf_sha256: 43a61ddc83f84b5cc5cb6c2beca9baa0f88c3f928758589090663863b2c9ed87
 ---
 
 # Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction

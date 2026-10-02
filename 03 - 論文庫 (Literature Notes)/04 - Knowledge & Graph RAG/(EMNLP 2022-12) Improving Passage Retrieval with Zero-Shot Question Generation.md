@@ -44,6 +44,10 @@ metrics:
   - "nDCG@10"
   - "Recall@100"
   - "Exact Match"
+source_version: arXiv:2204.07496v4
+verified_version: arXiv:2204.07496v4
+pdf_pages: 18
+pdf_sha256: 3e8d200937c8acb25866f453d6354f473aa8e681958a2a281ea4edf43d7f81d4
 ---
 
 # Improving Passage Retrieval with Zero-Shot Question Generation

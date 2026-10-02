@@ -12,7 +12,8 @@ authors:
   - "Di Yin"
   - "Xing Sun"
   - "Xiao Huang"
-year: null
+year: 2026
+year_basis: "earliest_verified_publication"
 publication_year: 2026
 venue: "ACL 2026 (Long Papers)"
 doi: "10.18653/v1/2026.acl-long.1156"
@@ -50,11 +51,15 @@ metrics:
   - "GPT-evaluation Accuracy"
   - "Spearman rank correlation"
   - "Kendall rank correlation"
+source_version: ACL 2026 proceedings-format author copy
+verified_version: ACL 2026 proceedings-format author copy
+pdf_pages: 17
+pdf_sha256: 92f71ae6983b3c3f7ef9692dd19918d590cf98989973ab95cceb99c9c335eb05
 ---
 
 # Collision to Cognition: Hash-Driven Graph Construction for Efficient RAG
 
-> **版本與來源：** ACL Anthology 正式全文，ACL 2026 long paper, pp. 25224–25240；DOI 10.18653/v1/2026.acl-long.1156。本地 PDF 由作者公開頁提供的同版論文取得；本次未找到對應 arXiv ID。
+> **版本與來源：** ACL Anthology 正式全文，ACL 2026 long paper, pp. 25224–25240；DOI 10.18653/v1/2026.acl-long.1156。本地 PDF 由作者公開頁提供的同版論文取得；本次未核得對應 arXiv ID 或更早預印版本；`year` 採目前最早可核的正式發表年 2026，`arxiv` 留 null。
 
 ## 一話摘要 (TL;DR)
 MeshRAG 以 locality-sensitive hashing 的碰撞建立 chunk 近鄰圖及重疊社群，再用 Bloom filter、Hamming similarity 與鄰域擴展檢索候選證據。

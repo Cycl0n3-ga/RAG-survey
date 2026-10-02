@@ -23,6 +23,12 @@ research_questions: ["iterative-structured-data-access", "llm-interface-invocati
 benchmark_ids: ["WebQSP", "MetaQA", "WikiSQL", "WTQ", "TabFact", "Spider"]
 dataset_ids: ["WebQSP", "MetaQA", "WikiSQL", "WTQ", "TabFact", "Spider", "Spider-SYN", "Spider-Realistic"]
 metrics: ["Hits@1", "Denotation Accuracy", "Accuracy", "Execution Accuracy"]
+source_version: arXiv:2305.09645v2
+verified_version: arXiv:2305.09645v2
+pdf_pages: 15
+pdf_sha256: 8a6c0a67fe20ebefb8a25e504cfb6d42436b25f88793fd1e2e07e2d1cb29653b
+additional_verified_versions:
+  - "EMNLP 2023 (Tables 1–4, Limitations)"
 ---
 
 # StructGPT: A General Framework for Large Language Model to Reason over Structured Data

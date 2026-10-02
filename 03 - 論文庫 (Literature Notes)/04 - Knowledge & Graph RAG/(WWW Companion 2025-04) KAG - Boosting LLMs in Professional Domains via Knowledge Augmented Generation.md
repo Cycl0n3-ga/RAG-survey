@@ -24,6 +24,10 @@ benchmark_ids: ["HotpotQA", "2WikiMultiHopQA", "MuSiQue"]
 dataset_ids: ["HotpotQA", "2WikiMultiHopQA", "MuSiQue", "CMedQA", "BioASQ"]
 metrics: ["Exact Match", "F1", "Recall@2", "Recall@5", "ROUGE-L", "BLEU"]
 preprint_authors: ["Lei Liang", "Mengshu Sun", "Zhengke Gui", "Zhongshu Zhu", "Zhouyu Jiang", "Ling Zhong", "Yuan Qu", "Peilong Zhao", "Zhongpu Bo", "Jin Yang", "Huaidong Xiong", "Lin Yuan", "Jun Xu", "Zaoyang Wang", "Zhiqiang Zhang", "Wen Zhang", "Huajun Chen", "Wenguang Chen", "Jun Zhou"]
+source_version: arXiv:2409.13731v3
+verified_version: arXiv:2409.13731v3
+pdf_pages: 33
+pdf_sha256: b18ac8a05ba486b85c4306a49b726e45d5ba24835b305699d79440876f315b72
 ---
 
 # KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation

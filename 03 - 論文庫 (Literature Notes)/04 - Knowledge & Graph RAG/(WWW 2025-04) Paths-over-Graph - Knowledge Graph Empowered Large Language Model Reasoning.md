@@ -52,6 +52,10 @@ metrics:
   - "Accuracy"
   - "LLM call count"
   - "Token input"
+source_version: arXiv:2410.14211v4
+verified_version: arXiv:2410.14211v4
+pdf_pages: 18
+pdf_sha256: c10d4fff7c6ba2b57df7241218f82c278cd1dadcbcfd8b0f0f717d71a6fd8029
 ---
 
 # Paths-over-Graph: Knowledge Graph Empowered Large Language Model Reasoning

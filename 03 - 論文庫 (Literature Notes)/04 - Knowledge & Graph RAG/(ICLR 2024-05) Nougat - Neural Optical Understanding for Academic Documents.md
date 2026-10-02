@@ -39,6 +39,10 @@ metrics:
   - "precision"
   - "recall"
   - "F1"
+source_version: arXiv:2308.13418v1
+verified_version: arXiv:2308.13418v1
+pdf_pages: 17
+pdf_sha256: 679be336ce8010d3dc86b9530f0a30d4d5ea2a13153c6f274601b40f4382745b
 ---
 
 # Nougat: Neural Optical Understanding for Academic Documents

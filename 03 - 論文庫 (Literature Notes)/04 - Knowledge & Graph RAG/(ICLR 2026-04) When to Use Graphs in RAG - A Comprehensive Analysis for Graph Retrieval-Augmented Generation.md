@@ -23,6 +23,10 @@ research_questions: ["graph_rag_task_fit", "reasoning_complexity", "stage_wise_e
 benchmark_ids: ["GraphRAG-Bench"]
 dataset_ids: ["GraphRAG-Bench-Novel", "GraphRAG-Bench-Medical"]
 metrics: ["Accuracy", "ROUGE-L", "Context Relevance", "Evidence Recall", "Faithfulness", "Evidence Coverage", "Token Cost"]
+source_version: ICLR 2026 proceedings
+verified_version: ICLR 2026 proceedings
+pdf_pages: 34
+pdf_sha256: 9e7cf0d5d2479d53c22343d3c0302afddc55cf7be58bfaf313454f7562a387e4
 ---
 
 # When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation

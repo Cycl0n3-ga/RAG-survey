@@ -23,6 +23,10 @@ research_questions: ["event-centric-retrieval", "temporal-evidence-linking", "ti
 benchmark_ids: ["TimeQA", "TempReason", "ComplexTR"]
 dataset_ids: ["TimeQA", "TempReason", "ComplexTR"]
 metrics: ["Accuracy", "Recall"]
+source_version: arXiv:2507.13396v1
+verified_version: arXiv:2507.13396v1
+pdf_pages: 18
+pdf_sha256: d41a70db49ce29d69ac7cdcde29fe5ea7686ba36aab76cb975f07b17cfb7e164
 ---
 
 # DyG-RAG: Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning

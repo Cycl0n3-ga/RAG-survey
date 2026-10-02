@@ -55,6 +55,10 @@ metrics:
   - "Hits@1 / exact-match accuracy"
   - "average total time"
   - "API calls per question"
+source_version: arXiv:2505.17464v4
+verified_version: arXiv:2505.17464v4
+pdf_pages: 29
+pdf_sha256: 9d85f333bc74d07887f87c249c23eaf4055b3ec6182a5c062ffba3337b5bdc20
 ---
 
 # HydraRAG: Structured Cross-Source Enhanced Large Language Model Reasoning

@@ -45,6 +45,10 @@ metrics:
   - "F1"
   - "H@1"
   - "Hit@k"
+source_version: Findings ACL 2025 proceedings
+verified_version: Findings ACL 2025 proceedings
+pdf_pages: 18
+pdf_sha256: 656e5eba9d188c31e2dc945746a41f3477df82ca9a8ddbc6711441ef91a661ba
 ---
 
 # GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs
@@ -64,7 +68,7 @@ GNN-RAG 以問題條件化的圖神經網路在 KG 子圖中找答案候選，�
 - **Table 1, p. 16687：** WebQSP / CWQ 上 GNN-RAG Hit 為 85.7 / 66.8、F1 為 71.3 / 59.4；加入 RA 後為 Hit 90.7 / 68.7、F1 73.5 / 60.4。表註指出 GNN-RAG、RoG 等使用微調 7B Llama2，長 context 組使用 Llama 3.1-8B；設定不同者不可直接排名。
 - **Table 3, p. 16688：** CWQ 上 GNN-RAG 的中位 KG tokens 為 114、Hit@1 52.9、Hit@10 64.1、F1 59.4；RoG、SubgraphRAG 的取回 token 數及協議不同，應視為該表特定比較。
 - **Table 7, p. 16689：** 在 WebQSP、7B Llama 生成器、A10G fp16 設定下，報告 retrieval / generation / total 分鐘：RoG 11/31/42、SubgraphRAG 0.1/58/58.1、GNN-RAG 0.9/29/30。該延遲比較限定在作者所列實作設定。
-- **資源與設定：** 使用 WebQSP、CWQ、MetaQA-3；GNN 訓練報告在 GeForce RTX 3090、128GB RAM 機器進行；LLM 實驗使用 4 張 A100。論文亦指出 2 張 A100-80G 上以 30K 訓練資料跑 1 epoch 需超過 8GB GPU memory。評估包含 Hit、F1、H@1、Hit@k。[§5–6, pp. 16686–16689; Appendix C]
+- **資源與設定：** 使用 WebQSP、CWQ、MetaQA-3；GNN 訓練報告在 GeForce RTX 3090、128GB RAM 機器進行；LLM 實驗使用 4 張 A100。Appendix D.3（p. 16698；PDF p. 17）將兩種訓練分開：下游 LLM 在 2 張 A100-80G 上以 30K 資料跑 1 epoch 需超過 12 小時；GNN 在 GeForce RTX 3090 上的相同資料量／epoch 設定需少於 15 分鐘、少於 8GB GPU memory。這是不同模型與硬體的資源報告，不能當作同硬體速度比較。評估包含 Hit、F1、H@1、Hit@k。[§5–6, pp. 16686–16689; Appendices C, D.3]
 
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 - **優勢：** GNN 可在表示空間中處理較深圖交互，避免每一步都由 LLM 導航；只把答案候選相關 shortest paths 傳給 LLM，控制圖 token 數。單一圖檢索流程可不增加 LLM 呼叫。

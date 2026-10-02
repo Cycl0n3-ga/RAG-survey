@@ -23,6 +23,10 @@ research_questions: ["graph_rag_component_comparison", "retrieval_operator_ablat
 benchmark_ids: ["MultihopQA", "Quality", "PopQA", "MusiqueQA", "HotpotQA", "ALCE", "Mix", "MultihopSum", "Agriculture", "CS", "Legal"]
 dataset_ids: ["MultihopQA", "Quality", "PopQA", "MusiqueQA", "HotpotQA", "ALCE", "Mix", "MultihopSum", "Agriculture", "CS", "Legal"]
 metrics: ["Accuracy", "Recall", "STRREC", "STREM", "STRHIT", "Comprehensiveness", "Diversity", "Empowerment", "Token Cost", "Latency"]
+source_version: PVLDB 2025 published article
+verified_version: PVLDB 2025 published article
+pdf_pages: 15
+pdf_sha256: b53cc4e8d934c830d913a36d692980cfe9a7af06b18b3ebc02902effb274e346
 ---
 
 # In-depth Analysis of Graph-based RAG in a Unified Framework

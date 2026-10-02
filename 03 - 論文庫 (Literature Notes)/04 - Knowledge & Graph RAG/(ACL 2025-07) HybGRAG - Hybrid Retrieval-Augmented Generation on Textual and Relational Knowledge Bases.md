@@ -23,6 +23,12 @@ research_questions: ["hybrid-text-graph-retrieval", "question-routing", "critic-
 benchmark_ids: ["STaRK", "CRAG"]
 dataset_ids: ["STaRK-MAG", "STaRK-PRIME", "CRAG"]
 metrics: ["Hit@1", "Hit@5", "Recall@20", "MRR"]
+source_version: arXiv:2412.16311v2
+verified_version: arXiv:2412.16311v2
+pdf_pages: 15
+pdf_sha256: 34a144419fb2069abc1faeebeef2126b80d61f8804cfee182edbaada139dd343
+additional_verified_versions:
+  - "ACL 2025 (method, Tables 2–7, appendices, Limitations)"
 ---
 
 # HybGRAG: Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases

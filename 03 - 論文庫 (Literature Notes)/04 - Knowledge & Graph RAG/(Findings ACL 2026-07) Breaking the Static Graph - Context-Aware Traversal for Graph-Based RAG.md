@@ -8,7 +8,7 @@ venue: "Findings of ACL 2026"
 doi: "10.18653/v1/2026.findings-acl.290"
 arxiv: "2602.01965"
 url: "https://aclanthology.org/2026.findings-acl.290/"
-pdf_file: "Papers/04 - Knowledge & Graph RAG/(arXiv 2026-02) CatRAG - Context-Aware Traversal for Robust Retrieval-Augmented Generation.pdf"
+pdf_file: "Papers/04 - Knowledge & Graph RAG/(arXiv 2026-02) Breaking the Static Graph - Context-Aware Traversal for Robust Retrieval-Augmented Generation.pdf"
 tags: ["paper", "query-aware-traversal", "reasoning-completeness"]
 verification_status: "verified"
 last_verified: "2026-10-02"
@@ -16,18 +16,24 @@ artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D05"
 primary_domain: "D05"
-secondary_domains: ["D04", "D13"]
+secondary_domains: ["D13"]
 paradigm_tags: ["graph_rag", "multi_hop_rag"]
 adjacent_interfaces: []
 research_questions: ["query_aware_graph_traversal", "evidence_chain_completeness", "retrieval_evaluation"]
 benchmark_ids: ["MuSiQue", "2WikiMultiHopQA", "HotpotQA", "HoVer"]
 dataset_ids: ["MuSiQue", "2WikiMultiHopQA", "HotpotQA", "HoVer"]
 metrics: ["Recall@5", "F1", "Accuracy", "Full Chain Retrieval", "Joint Success Rate"]
+source_version: arXiv:2602.01965v1
+verified_version: arXiv:2602.01965v1
+pdf_pages: 13
+pdf_sha256: 3f2e11df25502a75d5e7ba240acb2e69e37e453c5845d959d595272280199f14
+source_title: 'Breaking the Static Graph: Context-Aware Traversal for Robust Retrieval-Augmented
+  Generation'
 ---
 
 # Breaking the Static Graph: Context-Aware Traversal for Graph-Based RAG
 
-> **版本界線：** ACL Anthology 正式版收錄於 Findings ACL 2026，頁 5849–5863；本地 PDF 是 arXiv v1（2026-02-02），預印題名為 “CatRAG: Context-Aware Traversal for Robust Retrieval-Augmented Generation”。出版社 PDF 端點連線逾時，因此正式版全文與預印本差異未核。下列表格數字依 arXiv v1 頁碼整理。
+> **版本界線：** ACL Anthology 正式版收錄於 Findings ACL 2026，頁 5849–5863；本地 PDF 是 arXiv v1（2026-02-02），預印題名為 “Breaking the Static Graph: Context-Aware Traversal for Robust Retrieval-Augmented Generation”。出版社 PDF 端點連線逾時，因此正式版全文與預印本差異未核。下列表格數字依 arXiv v1 頁碼整理。
 
 ## 一話摘要 (TL;DR)
 CatRAG 在 HippoRAG 2 的 PPR 圖檢索上加入 symbolic anchoring、query-aware dynamic edge weighting 和 key-fact passage enhancement，以補齊多跳證據鏈。
@@ -50,13 +56,13 @@ CatRAG 在 HippoRAG 2 的 PPR 圖檢索上加入 symbolic anchoring、query-awar
 
 ## 優勢、限制及 Trade-offs (Strengths, Limitations & Trade-offs)
 - **優勢：** 同時評估 passage recall、QA、FCR/JSR，避免以部分命中推定完整推理成功；包含模組消融。
-- **限制與代價：** Dynamic edge weighting 需 query-time LLM inference，增加延遲和計算量；粗粒度 pruning 只能緩解。僅用 text-embedding-3-small 以隔離拓樸效果；作者未公開完整程式碼。HoVer 使用抽樣資料。[§7, p. 9]
+- **限制與代價：** Dynamic edge weighting 需 query-time LLM inference，增加延遲和計算量；粗粒度 pruning 只能緩解。僅用 text-embedding-3-small 以隔離拓樸效果；arXiv v1 的 Limitations 表示 source code 無法公開；這是該版敘述，ACL 正式紀錄另列資源 repo，程式碼目前的公開範圍尚未查驗。HoVer 使用抽樣資料。[§7, p. 9]
 - **比較邊界：** 部分 HippoRAG 2 基線結果標記為引用文獻數字；需與本文重跑結果區分。作者的 “Static Graph Fallacy” 是研究診斷，不是所有固定圖檢索必然失效的證明。
 
 ## 對本專案研究領域的實際意義 (Implications for Research Domains)
-本 repo 將其歸入 **D05 Query Understanding & Retrieval**，次領域 D04（圖權重／表示）、D13（完整證據鏈評估）；使用 `graph_rag`、`multi_hop_rag`。這是 repo mapping。它補足 PPR retrieval 的 query-conditioned traversal；不因 “complete evidence chain” 一詞就視為已解決 D06 evidence sufficiency。
+本 repo 將其歸入 **D05 Query Understanding & Retrieval**，次領域 D13（完整證據鏈評估）。本文沿用 HippoRAG 2 的 corpus graph；query-conditioned transition matrix 與 runtime edge weighting 是 D05 檢索策略，不另當作 D04 corpus-side indexing 貢獻；使用 `graph_rag`、`multi_hop_rag`。這是 repo mapping。它補足 PPR retrieval 的 query-conditioned traversal；不因 “complete evidence chain” 一詞就視為已解決 D06 evidence sufficiency。
 
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
 - [ACL Anthology 正式紀錄／DOI／頁碼](https://aclanthology.org/2026.findings-acl.290/)；[正式版 PDF](https://aclanthology.org/2026.findings-acl.290.pdf)（本環境連線逾時）；[arXiv:2602.01965 v1](https://arxiv.org/abs/2602.01965)；[可取得全文 PDF](https://arxiv.org/pdf/2602.01965)。
-- 本地 PDF：[[Papers/04 - Knowledge & Graph RAG/(arXiv 2026-02) CatRAG - Context-Aware Traversal for Robust Retrieval-Augmented Generation.pdf|開啟本地 arXiv v1 PDF]]
+- 本地 PDF：[[Papers/04 - Knowledge & Graph RAG/(arXiv 2026-02) Breaking the Static Graph - Context-Aware Traversal for Robust Retrieval-Augmented Generation.pdf|開啟本地 arXiv v1 PDF]]
 - 相關筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICML 2025-07) From RAG to Memory - Non-Parametric Continual Learning for Large Language Models|HippoRAG 2]]、[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2025-07) GNN-RAG - Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs|GNN-RAG]]。

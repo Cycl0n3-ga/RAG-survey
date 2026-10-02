@@ -53,6 +53,10 @@ metrics:
   - "F1"
   - "Retrieval Similarity"
   - "Generation Evaluation"
+source_version: NeurIPS 2025 proceedings
+verified_version: NeurIPS 2025 proceedings
+pdf_pages: 29
+pdf_sha256: 2fae859984154a402b48f33de63c0a8d62fe4d15c61894d14d31f07da2a4a05c
 ---
 
 # HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation

@@ -44,6 +44,10 @@ metrics:
   - "Answer Similarity"
   - "Answer Correctness"
   - "Answer Relevance"
+source_version: EMNLP 2025 proceedings
+verified_version: EMNLP 2025 proceedings
+pdf_pages: 20
+pdf_sha256: ab954064c2e88e6edcfcc789a730ea2104ffa5a7e93aa40d068f22526465f43a
 ---
 
 # OG-RAG: Ontology-grounded retrieval-augmented generation for large language models

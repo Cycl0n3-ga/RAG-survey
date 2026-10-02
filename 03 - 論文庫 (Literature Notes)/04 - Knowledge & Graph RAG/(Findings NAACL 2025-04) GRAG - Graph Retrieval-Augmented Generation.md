@@ -47,6 +47,10 @@ metrics:
   - "Hit@1"
   - "Recall"
   - "Accuracy"
+source_version: arXiv:2405.16506v3
+verified_version: arXiv:2405.16506v3
+pdf_pages: 13
+pdf_sha256: 6a1ccc0a1fb6841be975c2f18bd57cded31b74ada4d15191cdddd614e9c8ec6e
 ---
 
 # GRAG: Graph Retrieval-Augmented Generation

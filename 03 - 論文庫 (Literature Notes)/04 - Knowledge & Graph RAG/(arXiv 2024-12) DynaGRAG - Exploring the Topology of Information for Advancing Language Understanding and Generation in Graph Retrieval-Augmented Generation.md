@@ -40,6 +40,10 @@ metrics:
   - "Diversity"
   - "Depth and Specificity"
   - "Overall Reasoning Score"
+source_version: arXiv:2412.18644v3
+verified_version: arXiv:2412.18644v3
+pdf_pages: 17
+pdf_sha256: b91698db8112ce2eae23473b2c079e9ec4852959621df8bda5b5943bef26116a
 ---
 
 # DynaGRAG: Exploring the Topology of Information for Advancing Language Understanding and Generation in Graph Retrieval-Augmented Generation

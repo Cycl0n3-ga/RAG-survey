@@ -48,6 +48,10 @@ dataset_ids:
 metrics:
   - "Hits@1"
   - "Accuracy"
+source_version: arXiv:2412.15272v2
+verified_version: arXiv:2412.15272v2
+pdf_pages: 20
+pdf_sha256: 1d4985b4b970167475d68a6b6b16ab1b03113ae61ee4c4f1e4ee82298336035b
 ---
 
 # SimGRAG: Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation

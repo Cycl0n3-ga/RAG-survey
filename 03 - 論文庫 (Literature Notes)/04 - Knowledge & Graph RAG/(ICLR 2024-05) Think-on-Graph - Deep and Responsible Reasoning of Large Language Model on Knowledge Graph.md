@@ -53,6 +53,10 @@ dataset_ids:
   - "Creak"
 metrics:
   - "Hits@1"
+source_version: ICLR 2024 proceedings
+verified_version: ICLR 2024 proceedings
+pdf_pages: 31
+pdf_sha256: 45cb3e3bd3524e46bd17df4755907cdc08dbb3872231445395a957fdcd674484
 ---
 
 # Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph

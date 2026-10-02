@@ -45,6 +45,10 @@ metrics:
   - "Gold-article coverage"
   - "Macro-Precision"
   - "Macro-F1"
+source_version: arXiv:2606.04646v2
+verified_version: arXiv:2606.04646v2
+pdf_pages: 19
+pdf_sha256: 54f48409f6642d7fb826479bfe8a78a56dafda3da26c43c54da9086accc5c2af
 ---
 
 # QO-Bench: Diagnosing Query-Operator-Preserving Retrieval over Typed Event Tuples

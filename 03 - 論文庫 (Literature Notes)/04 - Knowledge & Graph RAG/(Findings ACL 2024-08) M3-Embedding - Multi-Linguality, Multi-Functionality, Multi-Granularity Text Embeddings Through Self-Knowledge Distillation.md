@@ -46,6 +46,10 @@ dataset_ids:
 metrics:
   - "nDCG@10"
   - "Recall@100"
+source_version: arXiv:2402.03216v5
+verified_version: arXiv:2402.03216v5
+pdf_pages: 18
+pdf_sha256: eb38e53565da260dc1f3d49708f45441936447a7f3c7d7ef025ff62ea3e1e575
 ---
 
 # M3-Embedding: Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation

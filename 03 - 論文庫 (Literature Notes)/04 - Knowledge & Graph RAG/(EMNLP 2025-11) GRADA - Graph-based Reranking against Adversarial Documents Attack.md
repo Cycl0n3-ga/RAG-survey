@@ -47,6 +47,10 @@ dataset_ids:
 metrics:
   - "Attack Success Rate"
   - "Exact Match"
+source_version: arXiv:2505.07546v3
+verified_version: arXiv:2505.07546v3
+pdf_pages: 23
+pdf_sha256: 8d471634bb9890498cbb6403ea2e5b7f981d6ce1ee7a4ecc69b49ee24076c97e
 ---
 
 # GRADA: Graph-based Reranking against Adversarial Documents Attack

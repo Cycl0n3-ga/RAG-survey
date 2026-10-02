@@ -34,6 +34,10 @@ dataset_ids:
   - "Pile-NER"
 metrics:
   - "micro-F1"
+source_version: arXiv:2311.08526v1
+verified_version: arXiv:2311.08526v1
+pdf_pages: 11
+pdf_sha256: 2b6efdc8337d12814308e480378587059a34a960d1da816f192b8cc0aaea04d0
 ---
 
 # GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer

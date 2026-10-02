@@ -47,6 +47,10 @@ dataset_ids:
 metrics:
   - "Exact Match"
   - "Hits@K"
+source_version: arXiv:2110.04330v2
+verified_version: arXiv:2110.04330v2
+pdf_pages: 14
+pdf_sha256: a5ed2d4098f0299833b3ada66d0292fa92c3f363aba3da96c8be82566319aaf2
 ---
 
 # KG-FiD: Infusing Knowledge Graph in Fusion-in-Decoder for Open-Domain Question Answering

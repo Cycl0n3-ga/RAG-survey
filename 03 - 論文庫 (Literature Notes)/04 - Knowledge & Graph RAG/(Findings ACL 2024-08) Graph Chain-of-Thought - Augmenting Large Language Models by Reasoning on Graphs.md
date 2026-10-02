@@ -47,6 +47,10 @@ dataset_ids:
 metrics:
   - "ROUGE-L"
   - "GPT-4 judged accuracy"
+source_version: arXiv:2404.07103v3
+verified_version: arXiv:2404.07103v3
+pdf_pages: 22
+pdf_sha256: 8b61c9a5792f456bf8533e47bc1d3bc14cf6ca8ded49ac4905d9d58a4f20ce95
 ---
 
 # Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs

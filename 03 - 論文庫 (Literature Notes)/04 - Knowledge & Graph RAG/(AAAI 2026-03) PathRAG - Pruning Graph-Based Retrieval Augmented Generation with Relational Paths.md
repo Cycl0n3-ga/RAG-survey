@@ -52,6 +52,10 @@ metrics:
   - "BLEU"
   - "ROUGE"
   - "METEOR"
+source_version: AAAI 2026 proceedings
+verified_version: AAAI 2026 proceedings
+pdf_pages: 9
+pdf_sha256: 7b004da59de37027172df1b3f042e0bca48b90840a088b7e0481ffb3afb7112c
 ---
 
 # PathRAG: Pruning Graph-Based Retrieval Augmented Generation with Relational Paths

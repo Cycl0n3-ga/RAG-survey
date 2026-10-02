@@ -23,6 +23,10 @@ research_questions: ["in_the_wild_evaluation", "multi_source_evidence_aggregatio
 benchmark_ids: ["WildGraphBench"]
 dataset_ids: ["WildGraphBench"]
 metrics: ["Accuracy", "Statement Precision", "Statement Recall", "Statement F1"]
+source_version: arXiv:2602.02053v2
+verified_version: arXiv:2602.02053v2
+pdf_pages: 18
+pdf_sha256: 7b28df826bd5dd2430deec1fa9e629d1051e1c89af8760f7dc09d72d18f95d71
 ---
 
 # WildGraphBench: Benchmarking GraphRAG with Wild-Source Corpora

@@ -43,6 +43,10 @@ dataset_ids:
 metrics:
   - "Hits@1"
   - "F1"
+source_version: ICLR 2024 proceedings
+verified_version: ICLR 2024 proceedings
+pdf_pages: 24
+pdf_sha256: 29d8a065ed91c5d0fcc58e8fd70faa12c157bee7751bd4b00cd1f6f1eb9eec49
 ---
 
 # Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning
