@@ -1,7 +1,7 @@
 ---
 title: "GraphRAG Supplementation Review — 2026-10-02"
 tags: [literature-audit, graph-rag, version-verification]
-last_updated: "2026-10-02"
+last_updated: "2026-10-03"
 audit_scope: "44 supplemented papers; identifier checks against 221 paper records"
 review_mode: "single-agent; structural audit plus targeted full-text checks"
 taxonomy_version: "v2"
@@ -10,6 +10,8 @@ taxonomy_version: "v2"
 # GraphRAG 補齊成果複核
 
 44 篇新增候選均已有標準筆記與可讀本地 PDF，但先前的進度頁、分類與部分證據敘述需要修正。本次完成格式／檔案／識別碼檢查，並抽查四篇的原文內容；不宣稱重新逐篇核完 44 篇全部實驗，也不把「收錄完成」解讀為「正式版本比對完成」。補齊清單見 [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Literature Coverage Gaps - 2026-10-02|44 篇補齊進度]]。
+
+**2026-10-03 後續更新：** 已核 CatRAG、M3 官方 PDF 的指定文字／表格，修正 M3 分數、頁碼／作者拼寫界線並補正式版資訊；KAG 再核書目及本地表格，正式全文仍待取得。下方 manifest 同步最新狀態；原 2026-10-02 的檢查結果與修正記錄保留。詳細差異見 [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Version Verification - 2026-10-03|三篇版本核對報告]]。
 
 ## 已修正的問題
 
@@ -34,7 +36,7 @@ GNN-RAG 的資源條件依 [ACL 正式全文 Appendix D.3](https://aclanthology.
 - 共檢查 669 條本地連結；新增筆記、進度與文獻索引中的本地 PDF／筆記連結可解析；候選細項 taxonomy 與標準筆記一致。CatRAG PDF 只改名，檔案內容與 hash 未改。
 - 內容抽查包括 ReGraphRAG Tables 1–2 的平均勝率／消融、CatRAG §3 與 Limitations、GNN-RAG Appendix D.3、KGGen Tables 3–4／§6.4。沒有跨論文分數排名。Markdown fence／Mermaid subgraph 配對與 `git diff --check` 通過。
 
-`source_version` 表示實際保存的本地全文版本；`verified_version` 表示筆記所列證據已核的本地版本，不是所有歷史版的完整核驗宣告。GeAR、HybGRAG、StructGPT 另核過正式全文的指定段落／表格，範圍以 `additional_verified_versions` 與正文記錄；欄位不替代這些詳細閱讀範圍。`pdf_sha256` 用於辨認檔案是否改變，不能單獨證明內容正確。
+`source_version` 表示實際保存的本地全文版本；`verified_version` 表示筆記所列證據已核的本地版本，不是所有歷史版的完整核驗宣告。GeAR、HybGRAG、StructGPT，以及 2026-10-03 補核的 CatRAG、M3 另核過正式全文指定證據，範圍以 `additional_verified_versions` 與正文記錄；欄位不替代詳細閱讀範圍。`pdf_sha256` 用於辨認檔案是否改變，不能單獨證明內容正確。
 
 ## 44 篇本地版本清單
 
@@ -53,7 +55,7 @@ GNN-RAG 的資源條件依 [ACL 正式全文 Appendix D.3](https://aclanthology.
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2025-05) StructRAG - Boosting Knowledge Intensive Reasoning of LLMs via Inference-time Hybrid Information Structurization\|Li2025_StructRAG]] | D07 | ICLR 2025 proceedings | 18 | 本地為正式格式；歷史版本未全核 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2026-01) A2RAG - Adaptive Agentic Graph Retrieval for Cost-Aware and Reliable Reasoning\|Liu2026_A2RAG]] | D06 | arXiv:2601.21162v2 | 10 | 正式出版紀錄未核得 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-01) Zep - A Temporal Knowledge Graph Architecture for Agent Memory\|Rasmussen2025_Zep]] | D11 | arXiv:2501.13956v1 | 12 | 正式出版紀錄未核得 |
-| [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) Breaking the Static Graph - Context-Aware Traversal for Graph-Based RAG\|Lau2026_CatRAGTraversal]] | D05 | arXiv:2602.01965v1 | 13 | 正式版全文／版本差異待比對 |
+| [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) Breaking the Static Graph - Context-Aware Traversal for Graph-Based RAG\|Lau2026_CatRAGTraversal]] | D05 | arXiv:2602.01965v1 | 13 | 正式全文指定文字／表格已比對；圖像等差異未全核 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2026-04) When to Use Graphs in RAG - A Comprehensive Analysis for Graph Retrieval-Augmented Generation\|Xiang2026_WhenToUseGraphsInRAG]] | D13 | ICLR 2026 proceedings | 34 | 本地為正式格式；歷史版本未全核 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2026-07) WildGraphBench - Benchmarking GraphRAG with Wild-Source Corpora\|Wang2026_WildGraphBench]] | D13 | arXiv:2602.02053v2 | 18 | 正式版全文／版本差異待比對 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(PVLDB 2025-09) In-depth Analysis of Graph-based RAG in a Unified Framework\|Zhou2025_UnifiedGraphRAGAnalysis]] | D13 | PVLDB 2025 published article | 15 | 本地為正式格式；歷史版本未全核 |
@@ -82,14 +84,14 @@ GNN-RAG 的資源條件依 [ACL 正式全文 Appendix D.3](https://aclanthology.
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Revisiting DocRED - Addressing the False Negative Problem in Relation Extraction\|Tan2022_ReDocRED]] | D03 | arXiv:2205.12696v3 | 16 | 正式版全文／版本差異待比對 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EACL 2021-04) Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering\|Izacard2021_FusionInDecoder]] | D07 | arXiv:2007.01282v2 | 6 | 正式版全文／版本差異待比對 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(NAACL 2024-06) GLiNER - Generalist Model for Named Entity Recognition using Bidirectional Transformer\|Zaratiana2023_GLiNER]] | D03 | arXiv:2311.08526v1 | 11 | 正式版全文／版本差異待比對 |
-| [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) M3-Embedding - Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation\|Chen2024_M3Embedding]] | D04 | arXiv:2402.03216v5 | 18 | 正式版全文／版本差異待比對 |
+| [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) M3-Embedding - Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation\|Chen2024_M3Embedding]] | D04 | arXiv:2402.03216v5 | 18 | 正式全文指定文字／表格已比對；圖像等差異未全核 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2022-12) Improving Passage Retrieval with Zero-Shot Question Generation\|Sachan2022_UPR]] | D05 | arXiv:2204.07496v4 | 18 | 正式版全文／版本差異待比對 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ICLR 2024-05) Nougat - Neural Optical Understanding for Academic Documents\|Blecher2023_Nougat]] | D01 | arXiv:2308.13418v1 | 17 | 正式版全文／版本差異待比對 |
 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2025-11) HydraRAG - Structured Cross-Source Enhanced Large Language Model Reasoning\|Tan2025_HydraRAG]] | D05 | arXiv:2505.17464v4 | 29 | 正式版全文／版本差異待比對 |
 
 ## 還需要改善的工作
 
-**正式版差異核對優先於繼續累積 GraphRAG 數量。** 29 份本地 arXiv 來源中，21 篇已有正式出版 metadata，仍應逐項追蹤方法、作者、表格與附錄差異；其中 3 篇另已讀正式全文指定證據，完整版本差異仍未系統性核完。優先處理 CatRAG（題名／頁數改變）、KAG（預印與正式作者名單不同）、M3-Embedding（2025 v5 晚於 2024 proceedings），再補其餘正式版全文。這是 repo 的查核順序建議，不代表已證明版本中方法或結果必然不同。
+**正式版差異核對優先於繼續累積 GraphRAG 數量。** 29 份本地 arXiv 來源中，21 篇已有正式出版 metadata。截至 2026-10-03，共 5 篇另核正式全文指定證據（GeAR、HybGRAG、StructGPT、CatRAG、M3），完整文字／公式／圖像差異仍未全部核完。CatRAG 的新增基線／效率／案例與 M3 的主要表格／資源已比對；優先繼續取得 KAG 正式 10 頁全文，再核其他已有出版 metadata 的版本。這是 repo 的查核順序建議，不代表未讀版本必然有實質改變。
 
 ReGraphRAG 可在 ACL 下載可用時保存官方檔並比較 checksum／內容。QO-Bench 的接收註記應在正式 proceedings 發布後核 venue、DOI、作者與數字；本地目前仍是 arXiv v2。KGGen 的時間差異需要作者說明或可重現實作佐證，現階段保留原文矛盾。
 

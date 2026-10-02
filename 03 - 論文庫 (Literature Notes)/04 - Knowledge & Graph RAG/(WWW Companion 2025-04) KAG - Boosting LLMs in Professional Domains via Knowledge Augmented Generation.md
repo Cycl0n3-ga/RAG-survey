@@ -11,7 +11,7 @@ url: "https://doi.org/10.1145/3701716.3715240"
 pdf_file: "Papers/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation.pdf"
 tags: ["paper", "professional-domain-qa", "logical-form-reasoning"]
 verification_status: "verified"
-last_verified: "2026-10-02"
+last_verified: "2026-10-03"
 artifact_type: "method_paper"
 taxonomy_version: "v2"
 taxonomy_home: "D12"
@@ -28,11 +28,15 @@ source_version: arXiv:2409.13731v3
 verified_version: arXiv:2409.13731v3
 pdf_pages: 33
 pdf_sha256: b18ac8a05ba486b85c4306a49b726e45d5ba24835b305699d79440876f315b72
+version_comparison_status: "published_full_text_unavailable"
+published_pdf_last_attempt: "2026-10-03"
 ---
 
 # KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation
 
 > **版本與閱讀範圍：** 正式出版記錄為 WWW 2025 Companion，頁 334–343，DOI 10.1145/3701716.3715240；本次 ACM publisher PDF 端點回 403，故未取得正式版全文。本地全文為 arXiv:2409.13731 v3（2024-09-27，19 位作者），已讀全文；正式版作者名單（12 位）依 DOI metadata，與預印本作者及順序不同。以下方法與實驗明確指向 arXiv v3，不宣稱已驗證正式版正文相同。
+
+2026-10-03 再核出版社 DOI deposit：正式版頁 334–343（10 頁），本地 v3 為 33 頁；Crossref `published` 日期是 2025-05-08，會議舉辦為 2025-04-28 至 05-02，檔名月份依會議起始月份。ACM PDF／EPDF／全文端點仍無法取得；Semantic Scholar 的該 DOI record 所連全文實際返回 arXiv v3／19 作者，未當成正式版。另視覺抽查本地 Tables 8–9、11，補記兩表 recall 差異，沒有新增正式版已讀標記。[ACM DOI deposit（2026-10-03 查閱）, authors／page／published](https://api.crossref.org/works/10.1145/3701716.3715240)；[會議官方歷史頁, WWW 2025 日期](https://thewebconf.org/)；[[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Version Verification - 2026-10-03|版本核對報告]]
 
 ## 一話摘要 (TL;DR)
 KAG 將知識圖與原文 chunks 互相索引，並以 logical-form-guided hybrid solver 執行檢索、排序、計算、推導與反思，支援專業領域及多跳 QA。
@@ -46,6 +50,7 @@ KAG 的設計包括 LLM-friendly knowledge representation、KG 與原始 chunks 
 ## 主要實驗結果與證據 (Empirical Results & Evidence)
 - **Table 8, 本地 arXiv v3 PDF p. 18：** 多跳 QA 以 DeepSeek-V2 API 比較，KAG `LFSH_ref3` 在 HotpotQA／2WikiMultiHopQA／MuSiQue 的 EM 為 62.5／67.8／36.7，F1 為 76.2／76.2／48.7；同 backbone 的 IRCoT+HippoRAG F1 為 63.7／57.1／36.5。依表中列值計算，KAG 相對該 baseline 的 F1 增幅約 19.6%／33.5%／33.4%（本筆記按表格自行計算）。同表另含 ChatGPT-3.5 組別，不應跨 backbone 混作控制比較。
 - **Table 11, 本地 arXiv v3 PDF p. 20：** `LFSH_ref3` 的 Recall@5 為 HotpotQA 88.8、2Wiki 91.9、MuSiQue 65.6；作者註明部分 LFS 路徑可用 KG 推理而不檢索支持 chunks，相關 recall 行因此不可直接比較。
+- **原文表格差異：** Table 9, p. 18 的 KAG MuSiQue Recall@5 為 65.7，Table 11, p. 20 的 `K_Alignment + LFSH_ref3` 為 65.6；HotpotQA／2Wiki 則同為 88.8／91.9。表間差異成因未核，不默默合成單一數值，也不能推定正式版是否修正。[arXiv v3 (2024/09), Tables 9、11, PDF pp. 18、20](https://arxiv.org/abs/2409.13731v3)
 - **專業領域案例：** Table 6, 本地 arXiv v3 PDF p. 16 的 CMedQA／BioASQ 表列 Rouge-L、BLEU；例如 KAG_Llama2 相對 Llama2 的四項分數為 15.44／3.46／24.21／7.79 對 14.02／2.86／23.47／7.11。不同資料和指標分開報告，不與 QA F1 合併排名。
 - **條件與資源：** 主多跳端到端比較採 DeepSeek-V2 API、三個資料集；各 1,000 個 test problems，最多 3 輪 reflection，20 個並行 task。論文另有 GPT-3.5 結果及 OneGen 實驗；未提供可比的整體 GPU／API 成本帳。[§3–4；Tables 6, 8, 11；Figure 8]
 
@@ -58,6 +63,6 @@ KAG 的設計包括 LLM-friendly knowledge representation、KG 與原始 chunks 
 本 repo 歸入 **D12 RAG Orchestration & Action Control**：主要研究對象是將問題變為 operator 序列並控制 retrieval／reasoning／reflection 行動；D04 表示圖–chunk 表示及互索引，D05 表示 hybrid retrieval。雖然 KAG 同時是一套 GraphRAG，主要分類依 lifecycle 問題，不由名稱決定。它適合與 StructGPT 比較可執行介面，以及與 HybGRAG 比較圖／文本 retrieval 的選擇機制。
 
 ## 原始來源及相關筆記連結 (Sources & Related Notes)
-- 正式書目：[ACM DOI 10.1145/3701716.3715240](https://doi.org/10.1145/3701716.3715240)；[arXiv:2409.13731 v3 全文](https://arxiv.org/abs/2409.13731)。
+- 正式書目：[ACM DOI 10.1145/3701716.3715240](https://doi.org/10.1145/3701716.3715240)；[出版社 DOI deposit](https://api.crossref.org/works/10.1145/3701716.3715240)；[arXiv:2409.13731 v3 全文](https://arxiv.org/abs/2409.13731v3)。
 - 本地 PDF：[[Papers/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation.pdf|開啟本地 arXiv v3 PDF]]
 - 相關筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data|StructGPT]]、[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases|HybGRAG]]。

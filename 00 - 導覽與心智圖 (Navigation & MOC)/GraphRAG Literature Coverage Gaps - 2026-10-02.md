@@ -4,7 +4,7 @@ tags:
   - literature-audit
   - graph-rag
   - reading-list
-last_updated: "2026-10-02"
+last_updated: "2026-10-03"
 audit_mode: "parallel-subagents"
 candidate_count: 44
 independent_literature_notes_added: 44
@@ -19,6 +19,8 @@ taxonomy_version: "v2"
 **本頁記錄初始 44 篇候選的補齊狀態。** 目前 44/44 篇均有七板塊全文筆記與可讀本地 PDF；這是收錄完成，不等於所有預印／正式版差異均完成核對。本地來源有 29 份 arXiv 版本、15 份 proceedings-format／published PDFs，其中 ReGraphRAG 為第三方鏡像。各篇 `source_version`、`verified_version`、`pdf_pages`、`pdf_sha256` 記錄所核本地版本；metadata 的正式 venue 不會把預印 PDF 自動變成正式版全文。
 
 ReGraphRAG 鏡像的 hash 與固定資料集 commit 相符，已核首頁、頁碼、主要方法／表格和圖像附錄；尚未與 ACL 官方 binary 比對。QO-Bench 的 arXiv v2 註明 Findings EMNLP 2026 accepted，正式 proceedings metadata 尚待發布核對。下表優先級與 mapping 是本 repo 的研究整理，具體方法與數字以各篇指定版本原文為準。完整修正、版本清單與剩餘工作見 [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Supplementation Review - 2026-10-02|補齊成果複核報告]]。
+
+2026-10-03 後續核對已補入 CatRAG 正式版新增基線／效率分析，以及 M3 正式表格／訓練資源；KAG 正式全文仍待取得。閱讀範圍、筆記修正及版本限制見 [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Version Verification - 2026-10-03|三篇版本核對報告]]。
 
 ### 補齊進度
 
@@ -412,7 +414,7 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類依已讀版�
 
 **建議定位：** 方法論文；taxonomy_home = D05；primary_domain = D05；secondary_domains = D13。這是本 repo 依標準筆記所做的 lifecycle mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已讀 arXiv:2602.01965v1 全文（13 頁）；§3 方法、Tables 2–5 與 Limitations 已整理。ACL 正式書目已核，15 頁出版版全文與預印本差異仍待比對。
+**閱讀範圍：** 本地保留 arXiv:2602.01965v1（13 頁）。2026-10-03 已核 ACL 官方 PDF 可抽取文字（15 頁）：題名／作者、核心方法、Tables 1–8、效率／限制及附錄案例／prompts。正式版新增 PropRAG／HyperGraphRAG、Table 6 成本與延遲、Appendix B 案例；共有 Tables 2–5 行數值相符。正式版 binary 未保存、圖像與逐符號公式比對未完成。[正式全文 (2026/07), pp. 5849–5863](https://aclanthology.org/2026.findings-acl.290.pdf)。
 
 **版本注意：** 與 arXiv:2603.21524 的 CatRAG Debiasing 是不同工作；本文評估的 reasoning completeness 不等於 D06 的 retrieve/retry/stop controller。
 
@@ -708,11 +710,11 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類依已讀版�
 
 **建議定位：** 方法論文；taxonomy_home = D12；primary_domain = D12；secondary_domains = D04, D05。這是本 repo 依標準筆記所做的 lifecycle mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已讀 arXiv v3 全文與本地 PDF；正式出版 metadata 已核 ACM DOI record，正式版全文與 preprint 差異待比較。ACM PDF 端點本次回 403，沒有把預印本冒稱正式版。
+**閱讀範圍：** 已讀本地 arXiv v3（33 頁）。2026-10-03 再核出版社 DOI deposit 的正式作者／334–343 頁（10 頁），ACM PDF／EPDF／全文仍無法取得；Semantic Scholar 該 DOI record 所連全文返回的是 arXiv v3，未當成正式版。本地 Tables 8–9、11 已視覺抽查；MuSiQue Recall@5 兩表分別為 65.7／65.6，成因未核，正式版差異仍待全文。[出版社 DOI deposit（2026-10-03 查閱）](https://api.crossref.org/works/10.1145/3701716.3715240)；[arXiv v3 (2024/09), Tables 9、11](https://arxiv.org/abs/2409.13731v3)。
 
 **關聯正式記錄作者：** Lei Liang；Zhongpu Bo；Zhengke Gui；Zhongshu Zhu；Ling Zhong；Peilong Zhao；Mengshu Sun；Zhiqiang Zhang；Jun Zhou；Wenguang Chen；Wen Zhang；Huajun Chen。此名單與上面的已讀 preprint 作者名單分開保存。
 
-**版本注意：** arXivv3 19 作者；ACM正式 DOI deposit 12 作者，authors 欄保留所讀 preprint 的完整19人，published_authors另列正式12人。不得將兩版本內容直接宣告完全相同。
+**版本注意：** arXiv v3 有 19 作者；ACM DOI deposit 有 12 作者。標準筆記的 `authors` 保存正式書目 12 人，`preprint_authors` 保存預印 19 人；上面的「本次核對版本」名單指已讀 preprint。不得將兩版本內容直接宣告完全相同。
 
 **核對位置：** arXiv2409.13731v3 §§2.2–2.5、Tables 6/8/11、Figure 8；正式 DOI metadata: https://doi.org/10.1145/3701716.3715240。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation]]。
 
@@ -1037,7 +1039,7 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類依已讀版�
 
 **完整標題：** [M3-Embedding: Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation](https://aclanthology.org/2024.findings-acl.137/)。
 
-**作者（本次核對版本）：** Jianlyu Chen；Shitao Xiao；Peitian Zhang；Kun Luo；Defu Lian；Zheng Liu。
+**作者（正式書目索引）：** Jianlyu Chen；Shitao Xiao；Peitian Zhang；Kun Luo；Defu Lian；Zheng Liu。兩版 PDF 封面的第一作者均拼為 Jianlv Chen，與索引拼寫不同。
 
 **書目：** 預印年份：2024；正式出版年份：2024；已核 venue／狀態：Findings of ACL 2024。
 
@@ -1047,11 +1049,11 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類依已讀版�
 
 **建議定位：** 方法論文；taxonomy_home = D04；primary_domain = D04；secondary_domains = D05。這是本 repo 依標準筆記所做的 lifecycle mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已讀 arXiv v5 全文（18 頁）；正式 ACL 書目已核，2024 proceedings 與 2025 v5 差異待逐項比對。 證據與版本限制詳見 [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) M3-Embedding - Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation|標準筆記]]。
+**閱讀範圍：** 本地保留 arXiv v5（18 頁）；2026-10-03 已核 2024 官方 PDF 可抽取文字的核心方法、Tables 1–15、Limitations／Appendix B。已核表格數值相符，書目／引用文字有差異，不宣稱全文相同；正式版 binary 未保存、圖像未視覺比對。MIRACL Sparse 誤植改為 53.9，補訓練硬體與 reranking 協議。證據與範圍詳見 [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings ACL 2024-08) M3-Embedding - Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation|標準筆記]]。[正式全文 (2024/08), Tables 1–15／Appendix B](https://aclanthology.org/2024.findings-acl.137.pdf)。
 
-**版本注意：** 正式版本作者拼作 Jianlyu Chen；arXiv PDF 為 Jianlv Chen。
+**版本注意：** 正式書目索引拼作 Jianlyu Chen；正式及 arXiv PDF 封面均為 Jianlv Chen。這是索引與正文差異，不能寫成兩版封面不同。
 
-**核對位置：** ACL Anthology metadata；arXiv v5 Tables 1–6、Limitations。
+**核對位置：** ACL Anthology metadata／官方 PDF Tables 1–15、Limitations（印刷 p. 2326／PDF p. 9）、Appendix B.1（p. 2331／PDF p. 14）；arXiv v5 對照。
 
 <a id="paper-upr"></a>
 ### UPR
@@ -1112,6 +1114,6 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類依已讀版�
 
 `verified` 表示筆記列出的證據已核於指定版本；不代表所有歷史版本、全部實驗或出版社 binary 全面驗證。複核抽查了 CatRAG 的題名／方法／限制、ReGraphRAG 的 Tables 1–2 與來源範圍、GNN-RAG Appendix D.3 訓練資源，以及 KGGen Tables 3–4／§6.4 指標定義，並同步候選與筆記分類；沒有在這次複核中重新逐篇閱讀 44 篇的全部實驗。
 
-本清單不是系統性 review，也不是截至該日 GraphRAG 論文全集；初始「未見提及」限 repo Markdown 及檔名，未全面讀取當時 129 個既有 PDF references。29 份本地 arXiv 來源中有 21 篇具已核正式出版 metadata；其中 GeAR、HybGRAG、StructGPT 另已核正式全文的指定段落／表格，但完整版本差異仍未系統性比對。剩餘版本工作與本地檔案 manifest 見 [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Supplementation Review - 2026-10-02|補齊成果複核報告]]。
+本清單不是系統性 review，也不是截至該日 GraphRAG 論文全集；初始「未見提及」限 repo Markdown 及檔名，未全面讀取當時 129 個既有 PDF references。29 份本地 arXiv 來源中有 21 篇具已核正式出版 metadata；截至 2026-10-03，GeAR、HybGRAG、StructGPT、CatRAG、M3 共 5 篇另核正式全文指定證據，仍不表示全部版本差異都已完成。剩餘版本工作與本地 manifest 見 [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Supplementation Review - 2026-10-02|補齊成果複核報告]]；新增查核詳見 [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Version Verification - 2026-10-03|三篇版本核對報告]]。
 
 筆記中缺少的硬體、API 費用、context budget 或其他比較條件保持待驗證；不同實驗環境的分數不可直接排名。方法、數據與 benchmark／dataset／metric 定義仍須依 primary paper。Han et al. GraphRAG survey 已登錄 [[00 - 導覽與心智圖 (Navigation & MOC)/Survey Papers Index|Survey Papers Index]]；Domain-level survey coverage 只在該索引維護，primary method notes 不直接充當 survey coverage。
