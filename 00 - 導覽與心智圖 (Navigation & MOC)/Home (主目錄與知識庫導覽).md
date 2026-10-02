@@ -34,7 +34,7 @@ taxonomy_version: "v2"
 5. [[00 - 導覽與心智圖 (Navigation & MOC)/技術全景與 Pareto 權衡分析 (Trade-offs)|技術全景與 Pareto 權衡分析 (Trade-offs)]]
 6. [[00 - 導覽與心智圖 (Navigation & MOC)/Phase 1 Taxonomy Closure Audit - 2026-09-27|Phase 1 Taxonomy Closure Audit]]
 7. [[04 - 研究想法與待驗證提案 (Ideas & Hypotheses)/README|Ideas & Hypotheses]]
-8. [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Literature Coverage Gaps - 2026-10-02|GraphRAG 文獻缺口與候選閱讀清單（44 篇，全文待驗證）]]
+8. [[00 - 導覽與心智圖 (Navigation & MOC)/GraphRAG Literature Coverage Gaps - 2026-10-02|GraphRAG 文獻候選清單（44 篇，全文筆記補齊中）]]
 
 ## Simple Research Map
 
@@ -53,10 +53,10 @@ taxonomy_version: "v2"
 
 2026-10-02 已收錄筆記盤點（候選閱讀清單不計入）：
 
-- **205** literature notes
-- **151** notes have a D01–D14 `primary_domain`
+- **209** literature notes
+- **155** notes have a D01–D14 `primary_domain`
 - **54** notes are Adjacent/CROSS
-- D01–D14 primary counts：5 / 5 / 19 / 12 / 34 / 7 / 6 / 9 / 8 / 1 / 8 / 6 / 22 / 9
+- D01–D14 primary counts：5 / 5 / 19 / 12 / 36 / 7 / 6 / 9 / 8 / 1 / 8 / 8 / 22 / 9
 - 已知 Phase 1 duplicate pairs 已完成 canonical-version cleanup
 
 > [!WARNING]

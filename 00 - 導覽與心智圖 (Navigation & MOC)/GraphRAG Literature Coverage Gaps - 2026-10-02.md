@@ -7,8 +7,8 @@ tags:
 last_updated: "2026-10-02"
 audit_mode: "parallel-subagents"
 candidate_count: 44
-independent_literature_notes_added: 28
-candidate_status: "partial; 27 of 44 full-text notes added; 1 abstract-only note; 16 pending"
+independent_literature_notes_added: 32
+candidate_status: "partial; 31 of 44 full-text notes added; 1 abstract-only note; 12 pending"
 taxonomy_version: "v2"
 ---
 
@@ -16,7 +16,7 @@ taxonomy_version: "v2"
 
 查核日期：2026-10-02。範圍：本庫初次盤點時有 177 篇 `paper_id` 筆記、129 個 `Papers/` PDF、全部 Markdown 的 title／alias／arXiv／DOI 提及。新增候選按識別碼與完整標題查重，共 **44 篇未見獨立筆記或 PDF**。查重盤點對照 [[03 - 論文庫 (Literature Notes)/README|Literature Notes]]；分類定義對照 [[00 - 導覽與心智圖 (Navigation & MOC)/RAG Research Taxonomy & Domain Map|Taxonomy & Domain Map]]。
 
-**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 27/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）先建摘要層級筆記，官方 PDF 暫未能下載；其餘 16 篇待補。最近一批新增 HyperRAG（n-ary）、HyperRAG（hyperbolic）、MeshRAG 及 ReGraphRAG。HyperRAG（n-ary）本地全文為 arXiv v1，ACL HyperRAG 與 MeshRAG 使用正式 ACL 全文；ReGraphRAG 的實驗細節待 PDF 取得後核驗。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
+**本頁是候選索引。** 初次盤點時共 44 篇候選；目前 31/44 篇已有全文核對筆記與本地 PDF，另有 1 篇（ReGraphRAG）仍為摘要層級筆記、正式 PDF 暫未取得；其餘 12 篇待補。最近一批新增 DyG-RAG、KAG、StructGPT 及 HybGRAG。四篇全文均已讀；DyG-RAG／StructGPT／HybGRAG 的書目與正式全文由 arXiv 及 ACL Anthology 核對，KAG 正式 DOI／WWW Companion metadata 已核但 ACM 出版 PDF 回 403，故本地全文及實驗只據 arXiv v3，正式版差異待比對。前批版本注意：G-RAG、FastToG、DynaGRAG 目前使用可核 arXiv 版；PoG 為 arXiv v4，正式 WWW 2025 metadata 已核、出版 PDF 差異待查；ReGraphRAG 的實驗細節待官方 PDF 取得後核驗。下表的優先順序與 D01–D14 mapping 是本 repo 的補缺口建議；具體方法與實驗數據以各篇原始全文為準。
 
 ### 補齊進度
 
@@ -50,7 +50,11 @@ taxonomy_version: "v2"
 | 已讀 ACL 正式全文與 PDF | HyperRAG（hyperbolic）— ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) Query-Aware Knowledge Retrieval via Hyperbolic Structuring]] |
 | 已讀 ACL 正式全文與 PDF | MeshRAG — ACL 2026 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2026-07) Collision to Cognition - Hash-Driven Graph Construction for Efficient RAG]] |
 | 僅官方摘要；ACL PDF 下載待處理 | ReGraphRAG — Findings EMNLP 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(Findings EMNLP 2025-11) ReGraphRAG - Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation]] |
-| 待完成 | 其他 16 篇 | 正式出版版或可核全文與筆記尚未補齊 |
+| 已讀 arXiv v1 全文與 PDF | DyG-RAG — arXiv 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-07) DyG-RAG - Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning]] |
+| 已讀 arXiv v3 全文與 PDF；WWW Companion metadata 已核，正式全文待比對 | KAG — WWW Companion 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation]] |
+| 已核 arXiv 與 EMNLP 正式全文及 PDF | StructGPT — EMNLP 2023 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data]] |
+| 已讀 arXiv v2 全文及 ACL 正式全文；本地 PDF 為 arXiv v2 | HybGRAG — ACL 2025 | [[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases]] |
+| 待完成 | 其他 12 篇 | 正式出版版或可核全文與筆記尚未補齊 |
 
 ## 目錄
 
@@ -672,9 +676,9 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D05；secondary_domains = D03, D04, D09。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 僅基於官方摘要整理，全文與所用因果/時間關係定義待查驗；正式出版未核實。
+**閱讀範圍：** 已讀 arXiv v1 全文與本地 PDF；正式出版未核實。
 
-**核對位置：** arXiv2507.13396v1 Abstract/title/all8authors/submission history。。
+**核對位置：** arXiv2507.13396v1 §§2–4、Table 2–3、Figures 3–5；title/authors/submission history。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(arXiv 2025-07) DyG-RAG - Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning]]。
 
 <a id="paper-liang2024-kag"></a>
 ### KAG
@@ -691,13 +695,13 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D12；secondary_domains = D04, D05。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** 已讀 arXiv 官方摘要及 v3 §§2.2–2.3 方法；正式出版 metadata 已核 ACM Crossref deposit，正式版全文與 preprint 差異待比較。
+**閱讀範圍：** 已讀 arXiv v3 全文與本地 PDF；正式出版 metadata 已核 ACM DOI record，正式版全文與 preprint 差異待比較。ACM PDF 端點本次回 403，沒有把預印本冒稱正式版。
 
 **關聯正式記錄作者：** Lei Liang；Zhongpu Bo；Zhengke Gui；Zhongshu Zhu；Ling Zhong；Peilong Zhao；Mengshu Sun；Zhiqiang Zhang；Jun Zhou；Wenguang Chen；Wen Zhang；Huajun Chen。此名單與上面的已讀 preprint 作者名單分開保存。
 
 **版本注意：** arXivv3 19 作者；ACM正式 DOI deposit 12 作者，authors 欄保留所讀 preprint 的完整19人，published_authors另列正式12人。不得將兩版本內容直接宣告完全相同。
 
-**核對位置：** arXiv2409.13731v3 §2.2 Mutual Indexing, §2.3 Logical Form Solver (Algorithms1–2 / Table1): https://arxiv.org/html/2409.13731v3#S2.SS3；formal ACM publisher-deposited DOI metadata: https://api.crossref.org/works/10.1145/3701716.3715240。。
+**核對位置：** arXiv2409.13731v3 §§2.2–2.5、Tables 6/8/11、Figure 8；正式 DOI metadata: https://doi.org/10.1145/3701716.3715240。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(WWW Companion 2025-04) KAG - Boosting LLMs in Professional Domains via Knowledge Augmented Generation]]。
 
 <a id="paper-jiang2023-structgpt"></a>
 ### StructGPT
@@ -714,9 +718,9 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D12；secondary_domains = D05, D07。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official_metadata_and_abstract_only；PDF 僅核 title page / Abstract；未核 structured interfaces 的全部種類或實驗全文。
+**閱讀範圍：** 已核 ACL Anthology 正式全文與 arXiv 全文；Table 1–4、Limitations 均已查驗。本地 PDF 為 arXiv:2305.09645 副本。
 
-**核對位置：** [metadata、Abstract、Submission history v1 (2023-05-16)](https://arxiv.org/abs/2305.09645)：預印年份與完整作者；[metadata、Abstract、citation DOI；pages 9237–9251](https://aclanthology.org/2023.emnlp-main.574/)：正式版本、EMNLP 2023、機制；Anthology 作者欄呈現 Xin Zhao；[PDF title page / Abstract](https://aclanthology.org/2023.emnlp-main.574.pdf)：正式 PDF 呈現 Wayne Xin Zhao。
+**核對位置：** [ACL Anthology 正式 metadata、DOI、頁碼 9237–9251](https://aclanthology.org/2023.emnlp-main.574/)；[ACL 正式全文 PDF](https://aclanthology.org/2023.emnlp-main.574.pdf)；[arXiv:2305.09645](https://arxiv.org/abs/2305.09645)。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(EMNLP 2023-12) StructGPT - A General Framework for Large Language Model to Reason over Structured Data]]。
 
 <a id="paper-lee2024-hybgrag"></a>
 ### HybGRAG
@@ -733,9 +737,9 @@ P1 為上表第一批；P2 為後續按研究問題選讀。分類與優先級�
 
 **建議定位：** 方法論文；primary_domain = D05；secondary_domains = D12。這是本 repo 的候選 mapping，非作者提出的 taxonomy。
 
-**閱讀範圍：** official_metadata_and_abstract_only；未核各 retriever、critic signal、refinement stopping rule 或實驗全文。
+**閱讀範圍：** 已讀 ACL Anthology 正式全文與 arXiv v2 全文；已核 retriever bank、critic、Table 2–7、附錄 benchmark／implementation 和 Limitations。本地 PDF 為 arXiv v2。
 
-**核對位置：** [metadata、Abstract、Submission history v1 (2024-12-20)](https://arxiv.org/abs/2412.16311)：預印年份與作者；[metadata、Abstract、DOI；pp.879–893](https://aclanthology.org/2025.acl-long.43/)：正式 ACL 2025、retriever bank / critic mechanism。
+**核對位置：** [ACL Anthology 正式 metadata、DOI、pp.879–893](https://aclanthology.org/2025.acl-long.43/)；[ACL 正式全文 PDF](https://aclanthology.org/2025.acl-long.43.pdf)；[arXiv:2412.16311 v2](https://arxiv.org/abs/2412.16311)。全文筆記：[[03 - 論文庫 (Literature Notes)/04 - Knowledge & Graph RAG/(ACL 2025-07) HybGRAG - Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases]]。
 
 <a id="paper-shen2024-gear"></a>
 ### GeAR
